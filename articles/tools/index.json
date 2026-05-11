@@ -1,231 +1,69 @@
 {
-  "version": 1,
+  "version": 2,
   "section": "tools",
+  "title": {
+    "zh": "工具",
+    "en": "Tools"
+  },
   "updatedAt": "2026-05-11",
+  "navigation": {
+    "style": "curated-shelf",
+    "groups": [
+      {
+        "id": "workflow-enhancement",
+        "title": {
+          "zh": "工作流增强",
+          "en": "Workflow Enhancement"
+        },
+        "description": {
+          "zh": "让 Codex 和本地工作台更顺手：打开项目、切换配置、找回历史会话。",
+          "en": "Make Codex and the local workspace smoother: open projects, switch configs, and recover historical sessions."
+        },
+        "items": [
+          "vscode",
+          "cc-switch",
+          "codex-history"
+        ]
+      },
+      {
+        "id": "local-environment",
+        "title": {
+          "zh": "本机环境",
+          "en": "Local Environment"
+        },
+        "description": {
+          "zh": "看清和维护本机开发、设计、内容生产环境。",
+          "en": "Inspect and maintain the local environment used for development, design, and content work."
+        },
+        "items": [
+          "mole"
+        ]
+      },
+      {
+        "id": "creative-output",
+        "title": {
+          "zh": "创作输出",
+          "en": "Creative Output"
+        },
+        "description": {
+          "zh": "把 agent 能力变成设计、幻灯片和视频等可交付成果。",
+          "en": "Turn agent capability into deliverables such as design work, slide decks, and video."
+        },
+        "items": [
+          "open-design",
+          "open-slide",
+          "hyperframes"
+        ]
+      }
+    ]
+  },
   "articles": [
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "Tools",
-      "sectionOrder": 28,
-      "slug": "cc-switch",
-      "locale": "en",
-      "title": "CC-Switch",
-      "summary": "An advanced config-switching tool for graphical endpoint, API key, and multi-runtime configuration management.",
-      "order": 1,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/cc-switch/en.md",
-      "assetBaseUrl": "articles/tools/cc-switch/",
-      "route": "/docs/tools/cc-switch"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "工具",
-      "sectionOrder": 28,
-      "slug": "cc-switch",
-      "locale": "zh",
-      "title": "CC-Switch",
-      "summary": "进阶配置切换工具。适合需要图形化管理 endpoint、API Key 和多 runtime 配置的人。",
-      "order": 1,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/cc-switch/zh.md",
-      "assetBaseUrl": "articles/tools/cc-switch/",
-      "route": "/docs/tools/cc-switch"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "Tools",
-      "sectionOrder": 28,
-      "slug": "codex-history",
-      "locale": "en",
-      "title": "What to do when old Codex sessions disappear after switching providers",
-      "summary": "Use codex-history to find local Codex sessions and resume the right one.",
-      "order": 7,
-      "updatedAt": "2026-05-10",
-      "markdownPath": "articles/tools/codex-history/en.md",
-      "assetBaseUrl": "articles/tools/codex-history/",
-      "route": "/docs/tools/codex-history",
-      "sourceUrl": "https://github.com/leozejia/codex-history",
-      "coverPath": "articles/tools/codex-history/cover.png"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "工具",
-      "sectionOrder": 28,
-      "slug": "codex-history",
-      "locale": "zh",
-      "title": "Codex 换 provider 后，旧 session 找不到了怎么办",
-      "summary": "用 codex-history 找回本机 Codex 历史 session，并继续 resume。",
-      "order": 7,
-      "updatedAt": "2026-05-10",
-      "markdownPath": "articles/tools/codex-history/zh.md",
-      "assetBaseUrl": "articles/tools/codex-history/",
-      "route": "/docs/tools/codex-history",
-      "sourceUrl": "https://github.com/leozejia/codex-history",
-      "coverPath": "articles/tools/codex-history/cover.png"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "Tools",
-      "sectionOrder": 28,
-      "slug": "hyperframes",
-      "locale": "en",
-      "title": "HyperFrames",
-      "summary": "A toolchain for writing HTML video compositions with agents, then previewing and rendering them as MP4. Useful for product videos, launch motion, intros, and social clips.",
-      "order": 6,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/hyperframes/en.md",
-      "assetBaseUrl": "articles/tools/hyperframes/",
-      "route": "/docs/tools/hyperframes",
-      "sourceUrl": "https://github.com/heygen-com/hyperframes"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "工具",
-      "sectionOrder": 28,
-      "slug": "hyperframes",
-      "locale": "zh",
-      "title": "HyperFrames",
-      "summary": "用 agent 写 HTML 视频 composition，再预览和渲染成 MP4 的工具链。适合产品短视频、发布动效、课程片头和社媒视频。",
-      "order": 6,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/hyperframes/zh.md",
-      "assetBaseUrl": "articles/tools/hyperframes/",
-      "route": "/docs/tools/hyperframes",
-      "sourceUrl": "https://github.com/heygen-com/hyperframes"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "Tools",
-      "sectionOrder": 28,
-      "slug": "mole",
-      "locale": "en",
-      "title": "Mole",
-      "summary": "A local Mac maintenance tool. Start by seeing where disk space went, then preview cleanup for dev caches, installers, app leftovers, and temporary files.",
-      "order": 2,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/mole/en.md",
-      "assetBaseUrl": "articles/tools/mole/",
-      "route": "/docs/tools/mole",
-      "sourceUrl": "https://github.com/tw93/Mole"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "工具",
-      "sectionOrder": 28,
-      "slug": "mole",
-      "locale": "zh",
-      "title": "Mole",
-      "summary": "一个 Mac 本地维护工具。先看清空间被什么占用，再安全预览清理开发缓存、安装包、App 残留和临时文件。",
-      "order": 2,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/mole/zh.md",
-      "assetBaseUrl": "articles/tools/mole/",
-      "route": "/docs/tools/mole",
-      "sourceUrl": "https://github.com/tw93/Mole"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "Tools",
-      "sectionOrder": 28,
-      "slug": "open-design",
-      "locale": "en",
-      "title": "Open Design",
-      "summary": "An open-source design workbench that combines local agent CLIs, skills, DESIGN.md design systems, and artifact preview.",
-      "order": 4,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/open-design/en.md",
-      "assetBaseUrl": "articles/tools/open-design/",
-      "route": "/docs/tools/open-design",
-      "sourceUrl": "https://github.com/nexu-io/open-design"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "工具",
-      "sectionOrder": 28,
-      "slug": "open-design",
-      "locale": "zh",
-      "title": "Open Design",
-      "summary": "一个开源设计工作台。把本地 agent CLI、Skills、DESIGN.md 设计系统和 artifact preview 组织成完整设计生产链路。",
-      "order": 4,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/open-design/zh.md",
-      "assetBaseUrl": "articles/tools/open-design/",
-      "route": "/docs/tools/open-design",
-      "sourceUrl": "https://github.com/nexu-io/open-design"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "Tools",
-      "sectionOrder": 28,
-      "slug": "open-slide",
-      "locale": "en",
-      "title": "Open Slide",
-      "summary": "A tool for creating React slide decks with Codex or Claude Code. Useful for code-based decks, comments, presentation mode, and HTML/PDF export.",
-      "order": 5,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/open-slide/en.md",
-      "assetBaseUrl": "articles/tools/open-slide/",
-      "route": "/docs/tools/open-slide",
-      "sourceUrl": "https://github.com/1weiho/open-slide"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "工具",
-      "sectionOrder": 28,
-      "slug": "open-slide",
-      "locale": "zh",
-      "title": "Open Slide",
-      "summary": "用 Codex 或 Claude Code 写 React 幻灯片的工具。适合代码式 deck、评论修改、演讲预览和 HTML/PDF 导出。",
-      "order": 5,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/open-slide/zh.md",
-      "assetBaseUrl": "articles/tools/open-slide/",
-      "route": "/docs/tools/open-slide",
-      "sourceUrl": "https://github.com/1weiho/open-slide"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "Tools",
-      "sectionOrder": 28,
-      "slug": "vscode",
-      "locale": "en",
-      "title": "VS Code",
-      "summary": "An optional visual project workspace. Open folders, inspect files and diffs, and install Codex / Claude Code extensions when needed.",
-      "order": 3,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/vscode/en.md",
-      "assetBaseUrl": "articles/tools/vscode/",
-      "route": "/docs/tools/vscode",
-      "sourceUrl": "https://code.visualstudio.com/"
-    },
-    {
-      "type": "article",
-      "section": "tools",
-      "sectionTitle": "工具",
-      "sectionOrder": 28,
-      "slug": "vscode",
-      "locale": "zh",
-      "title": "VS Code",
-      "summary": "一个可选的可视化项目工作台。用它打开项目、查看文件和改动，并按需安装 Codex / Claude Code 插件。",
-      "order": 3,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/tools/vscode/zh.md",
-      "assetBaseUrl": "articles/tools/vscode/",
-      "route": "/docs/tools/vscode",
-      "sourceUrl": "https://code.visualstudio.com/"
-    }
+    "vscode",
+    "cc-switch",
+    "codex-history",
+    "mole",
+    "open-design",
+    "open-slide",
+    "hyperframes"
   ]
 }
