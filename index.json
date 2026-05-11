@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-11",
+  "articles": [
+    {
+      "slug": "codex-history",
+      "locale": "zh",
+      "title": "Codex 换 provider 后，旧 session 找不到了怎么办",
+      "summary": "用 codex-history 找回本机 Codex 历史 session，并继续 resume。",
+      "section": "tools",
+      "sectionTitle": "工具",
+      "order": 7,
+      "updatedAt": "2026-05-10",
+      "markdownPath": "articles/codex-history/zh.md",
+      "assetBaseUrl": "articles/codex-history/",
+      "coverPath": "articles/codex-history/cover.png",
+      "sourceUrl": "https://github.com/leozejia/codex-history"
+    }
+  ]
+}
