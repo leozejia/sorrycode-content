@@ -1,10 +1,11 @@
 ---
 title: Codex 换 provider 后，旧 session 找不到了怎么办
 slug: codex-history
+order: 7
 summary: 用 codex-history 找回本机 Codex 历史 session，并继续 resume。
 section: tools
 section_title: 工具
-order: 7
+section_order: 28
 updated_at: 2026-05-10
 source_url: https://github.com/leozejia/codex-history
 ---
