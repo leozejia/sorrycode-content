@@ -15,15 +15,15 @@
           "zh": "工作流增强",
           "en": "Workflow Enhancement"
         },
-        "description": {
-          "zh": "让 Codex 和本地工作台更顺手：打开项目、切换配置、找回历史会话。",
-          "en": "Make Codex and the local workspace smoother: open projects, switch configs, and recover historical sessions."
-        },
         "items": [
           "vscode",
           "cc-switch",
           "codex-history"
-        ]
+        ],
+        "description": {
+          "zh": "让 Codex 和本地工作台更顺手：打开项目、切换配置、找回历史会话。",
+          "en": "Make Codex and the local workspace smoother: open projects, switch configs, and recover historical sessions."
+        }
       },
       {
         "id": "local-environment",
@@ -31,13 +31,13 @@
           "zh": "本机环境",
           "en": "Local Environment"
         },
+        "items": [
+          "mole"
+        ],
         "description": {
           "zh": "看清和维护本机开发、设计、内容生产环境。",
           "en": "Inspect and maintain the local environment used for development, design, and content work."
-        },
-        "items": [
-          "mole"
-        ]
+        }
       },
       {
         "id": "creative-output",
@@ -45,15 +45,15 @@
           "zh": "创作输出",
           "en": "Creative Output"
         },
-        "description": {
-          "zh": "把 agent 能力变成设计、幻灯片和视频等可交付成果。",
-          "en": "Turn agent capability into deliverables such as design work, slide decks, and video."
-        },
         "items": [
           "open-design",
           "open-slide",
           "hyperframes"
-        ]
+        ],
+        "description": {
+          "zh": "把 agent 能力变成设计、幻灯片和视频等可交付成果。",
+          "en": "Turn agent capability into deliverables such as design work, slide decks, and video."
+        }
       }
     ]
   },

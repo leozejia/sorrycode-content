@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "section": "agent-infra",
+  "title": {
+    "en": "Agent Infrastructure",
+    "zh": "Agent 基建"
+  },
+  "updatedAt": "2026-05-11",
+  "navigation": {
+    "style": "flat",
+    "groups": []
+  },
+  "articles": [
+    "overview",
+    "agents-md",
+    "claude-md",
+    "design-md",
+    "mcp",
+    "skills"
+  ]
+}

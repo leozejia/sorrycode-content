@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "section": "platform",
+  "title": {
+    "en": "Platform",
+    "zh": "Platform"
+  },
+  "updatedAt": "2026-05-11",
+  "navigation": {
+    "style": "flat",
+    "groups": []
+  },
+  "articles": [
+    "create-api-key",
+    "runtime-models",
+    "first-request",
+    "image-request"
+  ]
+}

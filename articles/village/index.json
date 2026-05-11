@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "section": "village",
+  "title": {
+    "en": "Village",
+    "zh": "新手村"
+  },
+  "updatedAt": "2026-05-11",
+  "navigation": {
+    "style": "curated-shelf",
+    "groups": [
+      {
+        "id": "code-project",
+        "title": {
+          "en": "Reading Code",
+          "zh": "AI 读项目"
+        },
+        "items": [
+          "read-project",
+          "edit-first-file"
+        ]
+      },
+      {
+        "id": "one-pager",
+        "title": {
+          "en": "One-pager",
+          "zh": "One-pager"
+        },
+        "items": [
+          "one-pager",
+          "product-intro",
+          "personal-intro"
+        ]
+      },
+      {
+        "id": "content-creation",
+        "title": {
+          "en": "Content Creation",
+          "zh": "内容创作"
+        },
+        "items": [
+          "long-article",
+          "first-image"
+        ]
+      },
+      {
+        "id": "presentation",
+        "title": {
+          "en": "Presentation",
+          "zh": "演示表达"
+        },
+        "items": [
+          "share-ppt"
+        ]
+      }
+    ]
+  },
+  "articles": [
+    "read-project",
+    "edit-first-file",
+    "one-pager",
+    "product-intro",
+    "personal-intro",
+    "long-article",
+    "first-image",
+    "share-ppt"
+  ]
+}

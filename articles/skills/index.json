@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "section": "skills",
+  "title": {
+    "en": "Skills",
+    "zh": "Skills"
+  },
+  "updatedAt": "2026-05-11",
+  "navigation": {
+    "style": "curated-shelf",
+    "groups": [
+      {
+        "id": "office-docs",
+        "title": {
+          "en": "Office Docs",
+          "zh": "办公文档"
+        },
+        "items": [
+          "office-docs",
+          "docx",
+          "xlsx",
+          "pptx",
+          "pdf"
+        ]
+      },
+      {
+        "id": "creation-design",
+        "title": {
+          "en": "Creation and Design",
+          "zh": "创作与设计"
+        },
+        "items": [
+          "creation-design",
+          "sorrycode-image2",
+          "kami",
+          "magazine-web-ppt",
+          "huashu-design",
+          "design-skills"
+        ]
+      },
+      {
+        "id": "workflow",
+        "title": {
+          "en": "Workflow",
+          "zh": "工作流"
+        },
+        "items": [
+          "waza",
+          "dbskill"
+        ]
+      }
+    ]
+  },
+  "articles": [
+    "featured-skills",
+    "office-docs",
+    "docx",
+    "xlsx",
+    "pptx",
+    "pdf",
+    "creation-design",
+    "sorrycode-image2",
+    "kami",
+    "magazine-web-ppt",
+    "huashu-design",
+    "design-skills",
+    "waza",
+    "dbskill"
+  ]
+}

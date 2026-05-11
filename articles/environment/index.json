@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "section": "environment",
+  "title": {
+    "en": "Environment",
+    "zh": "环境准备"
+  },
+  "updatedAt": "2026-05-11",
+  "navigation": {
+    "style": "flat",
+    "groups": []
+  },
+  "articles": [
+    "nodejs",
+    "windows-powershell"
+  ]
+}
