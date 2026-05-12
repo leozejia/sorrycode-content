@@ -17,7 +17,7 @@ group: creation-design
 
 如果你想让 agent 直接做出一张图、一份材料或一套演示，而不是只给你一段文字，先从这里选。
 
-如果你第一次做 PPT、设计、图片、一页纸或封面，先读 [设计类 Skills 怎么用](/docs/skills/design-workflow)。这类产物有强主观性，skill 负责给你强起点，最终判断和迭代方向仍然由你负责。
+如果你第一次做 PPT、设计、图片、一页纸或封面，可以先读 [设计类 Skills 怎么用](/docs/skills/design-workflow)。这类产物通常需要几轮判断和修改，先得到可修改的初稿，再通过具体反馈逐步靠近你要的结果。
 
 <h2 id="choose">怎么选</h2>
 

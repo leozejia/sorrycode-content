@@ -2,7 +2,7 @@
 title: How to Use Design Skills
 slug: design-workflow
 order: 2
-summary: Design, decks, images, and writing are subjective deliverables. Use skills to create a strong starting point, then iterate with your own judgment instead of expecting one prompt to finish the work.
+summary: Design, decks, images, and writing usually need iteration. Use skills to create an editable first draft, then guide the agent with specific feedback.
 section: skills
 section_title: Skills
 section_order: 15
@@ -10,41 +10,55 @@ section_order: 15
 
 # How to Use Design Skills
 
-SorryCode provides methods and tools. It does not define the final taste for you.
+Design skills help you move from a blank page to a usable first draft, then make the next revisions easier to direct.
 
-Design, decks, images, writing, one-pagers, and covers are subjective deliverables. Different people will disagree: one person thinks the text is too small, another thinks the layout is too empty, one likes an editorial look, another wants a restrained business style.
+Decks, images, writing, one-pagers, covers, and product visuals rarely become final after one prompt. They usually need adjustment based on audience, context, brand, reading format, and personal preference. That does not mean the skill failed. It is a normal part of design work.
 
-A design skill is not a one-prompt final-output machine. Its value is to help the agent produce a structured starting point that you can keep shaping. You still own the goal, the audience, the context, the tradeoffs, and the final result.
+The clearer your feedback is, the easier it is for the agent to revise in the right direction.
 
-<h2 id="mindset">Use the Right Mindset</h2>
+<h2 id="what-it-solves">What It Solves First</h2>
 
-Do not treat a design skill as an outsourced designer. Do not treat the agent as the final judge of taste.
+The hard part of design work is often not drawing or layout. It is getting from a vague request to something concrete enough to discuss.
 
-A better workflow is:
+A skill helps by:
 
-1. You provide the goal, audience, context, assets, and constraints
-2. The skill helps the agent create a first draft or route
-3. You judge what is wrong
-4. The agent revises specific parts based on your feedback
-5. Repeated preferences become your own `DESIGN.md`, references, or skill
+1. getting you started without a blank page
+2. giving the agent a stable process, such as asking questions, proposing a route, and saving files
+3. producing a version you can react to
+4. keeping revisions local instead of rebuilding everything each time
+5. turning repeated preferences into long-lived rules
 
-One prompt can start the work. It should not be expected to finish the work.
+So the first result is not always the endpoint. More often, it is the first useful version you can judge and improve.
+
+<h2 id="why-iterate">Why Iteration Is Normal</h2>
+
+The same content can need different design choices in different contexts.
+
+| Context | What tends to matter more |
+| --- | --- |
+| Projected talk | Type size, contrast, and page rhythm |
+| Client reading | Structure, credibility, and completeness |
+| Social cover | First-glance recognition and title clarity |
+| Internal report | Restraint, accuracy, and scanability |
+| Personal portfolio | Memorability and expressive tone |
+
+If that context is missing, the agent can only create a reasonable default. Iteration moves the result from “usable by default” toward “right for this situation.”
 
 <h2 id="three-feedback-types">Split Feedback Into Three Types</h2>
 
-When something feels wrong, first decide what kind of problem it is.
+When something feels wrong, split the feedback first.
 
-| Type | Examples | What to do |
+| Type | Examples | How to respond |
 | --- | --- | --- |
-| Quality issue | Text is too small, contrast is weak, image is blurry, layout overflows, export fails | Ask the agent to fix it directly |
-| Context issue | Wrong for projection, wrong for executives, wrong for sales, off-brand | Add audience, occasion, and constraints |
-| Preference issue | You want it simpler, louder, more editorial, more restrained, closer to a reference | State the direction; turn repeated preferences into rules |
+| Quality issue | Text is too small, contrast is weak, image is blurry, layout overflows, export fails | Point to the issue and ask the agent to make it usable |
+| Context issue | Wrong for projection, wrong for clients, wrong for sales, off-brand | Add audience, occasion, brand, and delivery constraints |
+| Preference issue | You want it simpler, more restrained, more striking, closer to a reference | Give a direction or reference; turn repeated preferences into rules |
 
-This matters because “the style is bad” is not actionable enough. The agent needs to know whether it failed the quality floor, missed the context, or simply chose a taste direction you do not want.
+This is more useful than saying “the style is bad.” The agent does not have to guess what you care about. It can revise based on the type of problem.
 
 <h2 id="how-to-iterate">How to Iterate Faster</h2>
 
-Do not restart the whole artifact every time. Narrow the scope and state the standard.
+Narrow the scope first, then state the standard. Many revisions do not need a full rebuild.
 
 ```text
 Do not rebuild the whole deck. Only revise slides 3-6:
@@ -55,20 +69,20 @@ Do not rebuild the whole deck. Only revise slides 3-6:
 5. After editing, list which slides changed
 ```
 
-If you are not sure what is wrong, ask the agent to diagnose first.
+If you are not sure what is wrong yet, ask the agent to review first.
 
 ```text
 Do not edit yet. Review this deck and split the issues into:
 1. Quality issues
 2. Context issues
-3. Preference disagreements
+3. Preference issues
 
 List only the top 3 issues in each group, then ask me which group to fix first.
 ```
 
 <h2 id="choose-path">Choose the Route Before the Tool</h2>
 
-For design work, do not start with “which skill is strongest?” Start with the deliverable.
+For design work, start with the deliverable, then choose the skill or tool.
 
 | Deliverable | Start with |
 | --- | --- |
@@ -79,24 +93,22 @@ For design work, do not start with “which skill is strongest?” Start with th
 | Editing an existing PowerPoint file | [PPTX](/docs/skills/pptx) |
 | Code-based, maintainable, reviewable decks | [Tools / Open Slide](/docs/tools/open-slide) |
 
-If this is your first presentation attempt, use [Village / Make a Sharing Deck](/docs/village/share-ppt). It gives you a default path without requiring you to compare every tool first.
+If this is your first presentation attempt, use [Village / Make a Sharing Deck](/docs/village/share-ppt). It gives you a default path without asking you to compare every tool first.
 
-<h2 id="make-it-yours">Turn Your Taste Into Rules</h2>
+<h2 id="make-it-yours">Write Down Stable Preferences</h2>
 
-If you keep repeating feedback like this, stop adding it manually every time:
+If you keep asking for similar revisions, turn them into long-lived rules:
 
 - Type must be readable on a projector
 - Avoid heavy gradients
 - Do not make it look like a marketing poster
 - Chinese headings need more breathing room
 - The deck should feel closer to a consulting report
-- Every cover must keep a specific brand color
-
-Those are not one-off prompts. They are long-lived rules.
+- Every cover should keep a specific brand color
 
 The lightest version is a `DESIGN.md`. It can store brand colors, fonts, references, banned styles, delivery formats, and acceptance criteria. Next: [Agent Infrastructure / DESIGN.md](/docs/agent-infra/design-md).
 
-If you use the same workflow repeatedly, turn it into your own skill. Next time, you can name the skill and let the agent start with your method.
+If you use the same workflow repeatedly, consider turning it into your own skill. Next time, you can name that skill and let the agent start with your method.
 
 <h2 id="first-prompt">First Prompts</h2>
 

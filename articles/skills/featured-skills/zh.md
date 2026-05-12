@@ -119,7 +119,7 @@ Generate or edit images. Use when the user asks for covers, posters, product vis
 
 当你发现自己反复对 agent 说同一套要求，就可以考虑做一个自己的 skill。
 
-这在设计、PPT、图片和写作类任务里尤其重要。别人提供的 skill 只能给你方法和起点，不能替你定义最终品味。稳定出现的风格偏好、修改意见和验收标准，应该沉淀到自己的 `DESIGN.md`、references 或 skill。
+这在设计、PPT、图片和写作类任务里尤其重要。稳定出现的风格偏好、修改意见和验收标准，可以沉淀到自己的 `DESIGN.md`、references 或 skill，让 agent 下次更快接近你要的方向。
 
 `Skill Creator` 做的不是帮你写一条更长的 prompt，而是把工作流变成可复用能力：
 

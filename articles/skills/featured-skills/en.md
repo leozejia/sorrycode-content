@@ -119,7 +119,7 @@ As a normal user, you do not need to learn this first. If you name the skill in 
 
 When you notice yourself repeating the same instructions to the agent, it may be time to create your own skill.
 
-This matters especially for design, decks, images, and writing. Someone else's skill can give you a method and a starting point. It cannot define your final taste. Repeated style preferences, revision notes, and acceptance rules should become your own `DESIGN.md`, references, or skill.
+This matters especially for design, decks, images, and writing. Repeated style preferences, revision notes, and acceptance rules can become your own `DESIGN.md`, references, or skill, so the agent can start closer to your direction next time.
 
 `Skill Creator` does not just write a longer prompt. It turns a workflow into a reusable capability:
 

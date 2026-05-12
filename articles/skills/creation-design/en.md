@@ -17,7 +17,7 @@ This skill group is for finished artifacts.
 
 If you want the agent to make an image, a polished document, or a presentation deck instead of only giving you text in chat, start here.
 
-If this is your first time making a deck, design, image, one-pager, or cover, read [How to Use Design Skills](/docs/skills/design-workflow) first. These deliverables are subjective: the skill gives you a strong starting point, but you still own the judgment and iteration direction.
+If this is your first time making a deck, design, image, one-pager, or cover, read [How to Use Design Skills](/docs/skills/design-workflow) first. These deliverables usually take a few rounds of judgment and revision: start with an editable draft, then use specific feedback to move it closer to what you need.
 
 <h2 id="choose">How to Choose</h2>
 
