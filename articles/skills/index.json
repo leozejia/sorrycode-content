@@ -34,8 +34,7 @@
           "sorrycode-image2",
           "kami",
           "magazine-web-ppt",
-          "huashu-design",
-          "design-skills"
+          "huashu-design"
         ]
       },
       {
@@ -53,6 +52,7 @@
   },
   "articles": [
     "featured-skills",
+    "design-workflow",
     "office-docs",
     "docx",
     "xlsx",
@@ -63,7 +63,6 @@
     "kami",
     "magazine-web-ppt",
     "huashu-design",
-    "design-skills",
     "waza",
     "dbskill"
   ]

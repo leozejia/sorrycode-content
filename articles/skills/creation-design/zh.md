@@ -17,6 +17,8 @@ group: creation-design
 
 如果你想让 agent 直接做出一张图、一份材料或一套演示，而不是只给你一段文字，先从这里选。
 
+如果你第一次做 PPT、设计、图片、一页纸或封面，先读 [设计类 Skills 怎么用](/docs/skills/design-workflow)。这类产物有强主观性，skill 负责给你强起点，最终判断和迭代方向仍然由你负责。
+
 <h2 id="choose">怎么选</h2>
 
 | 你要做什么 | 优先看 |
@@ -27,7 +29,6 @@ group: creation-design
 | 做可评论、可维护、可导出 HTML/PDF 的代码式 PPT | [工具 / Open Slide](/docs/tools/open-slide) |
 | 做产品短视频、发布动效或社媒 MP4 | [工具 / HyperFrames](/docs/tools/hyperframes) |
 | 做 App 原型、动效、信息图、设计变体或专家评审 | [Huashu Design](/docs/skills/huashu-design) |
-| 想理解为什么设计类 skill 更稳定 | [为什么设计类 Skills 特殊](/docs/skills/design-skills) |
 | 想让一个项目长期保持同一套视觉规则 | [Agent 基建 / DESIGN.md](/docs/agent-infra/design-md) |
 
 <h2 id="office-vs-design">它和办公文档的区别</h2>

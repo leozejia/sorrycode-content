@@ -17,6 +17,8 @@ This skill group is for finished artifacts.
 
 If you want the agent to make an image, a polished document, or a presentation deck instead of only giving you text in chat, start here.
 
+If this is your first time making a deck, design, image, one-pager, or cover, read [How to Use Design Skills](/docs/skills/design-workflow) first. These deliverables are subjective: the skill gives you a strong starting point, but you still own the judgment and iteration direction.
+
 <h2 id="choose">How to Choose</h2>
 
 | What you need | Start with |
@@ -27,7 +29,6 @@ If you want the agent to make an image, a polished document, or a presentation d
 | Make code-based decks with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
 | Make product videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
 | Make app prototypes, motion design, infographics, variations, or design critique | [Huashu Design](/docs/skills/huashu-design) |
-| Understand why design skills are steadier than prompts | [Why Design Skills Are Different](/docs/skills/design-skills) |
 | Keep one project aligned to the same visual rules over time | [Agent Infrastructure / DESIGN.md](/docs/agent-infra/design-md) |
 
 <h2 id="office-vs-design">How It Differs From Office Docs</h2>

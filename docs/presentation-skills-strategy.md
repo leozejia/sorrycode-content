@@ -16,6 +16,14 @@ PPT 不是一个单一工具分类，而是一种交付形态。用户说“做 
 
 因此公开文档不能把某一个 skill 写成“PPT 的唯一方案”。应该维护一张“演示 / PPT 交付路线”，再把具体 skill 放进对应路线。
 
+PPT 也是强主观交付。站内不要承诺“一句话得到 100 分 PPT”。正确心智是：SorryCode 提供方法和渔具，agent + skill 提供强起点，用户用自己对主题、受众、场景和审美的判断继续迭代，并对最终产物负责。
+
+公开 PPT 页面应该主动链接到 `Skills / 设计类 Skills 怎么用`，让用户先理解：
+
+- 质量问题、场景问题和个人偏好要分开反馈。
+- 风格分歧不是一定要修的 bug。
+- 高频出现的偏好应该沉淀成 `DESIGN.md`、references 或自己的 skill。
+
 ## 当前路线图
 
 | 需求 | 默认入口 | 页面位置 |
@@ -49,7 +57,7 @@ PPT 不是一个单一工具分类，而是一种交付形态。用户说“做 
 - 和 PPTX、Kami、Huashu Design、Open Slide 怎么选
 - 最近验证口径
 
-路由和 slug 可以暂时保留 `/docs/skills/magazine-web-ppt`，避免断链；展示标题改成 `藏师傅的 PPT Skill`。等有明确迁移需求时，再新增别名或新 slug。
+当前路由仍是 `/docs/skills/magazine-web-ppt`，但这是现状，不是长期兼容承诺。后续如果决定改 slug，按 IA 硬切策略执行：删除旧 slug，更新站内链接，不保留别名或兼容页。
 
 ## `Kami` 和 `Huashu Design` 为什么也出现在 PPT 路线里
 
@@ -85,3 +93,5 @@ PPT 不是一个单一工具分类，而是一种交付形态。用户说“做 
 - `articles/skills/index.json`
 
 如果只是改展示标题和摘要，允许保留旧 slug。改 slug 前要先评估旧链接、搜索入口和站内引用。
+
+如果决定改 slug，执行硬切：旧 slug 从根 `index.json`、section index 和站内正文中一次性移除。

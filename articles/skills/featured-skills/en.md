@@ -73,6 +73,7 @@ If you have not installed a runtime yet, start here:
 
 After your runtime works, choose by goal:
 
+- First deck, design, image, one-pager, or cover: [Skills / How to Use Design Skills](/docs/skills/design-workflow)
 - Work with Word / Excel / PowerPoint / PDF: [Skills / Office Docs](/docs/skills/office-docs)
 - Generate images, one-pagers, resumes, reports, or web-style decks: [Skills / Creation and Design](/docs/skills/creation-design)
 - Diagnose business questions, benchmarks, or content direction: [Skills / DBSkill](/docs/skills/dbskill)
@@ -117,6 +118,8 @@ As a normal user, you do not need to learn this first. If you name the skill in 
 <h2 id="skill-creator">Use Skill Creator to Make Your Own Skills</h2>
 
 When you notice yourself repeating the same instructions to the agent, it may be time to create your own skill.
+
+This matters especially for design, decks, images, and writing. Someone else's skill can give you a method and a starting point. It cannot define your final taste. Repeated style preferences, revision notes, and acceptance rules should become your own `DESIGN.md`, references, or skill.
 
 `Skill Creator` does not just write a longer prompt. It turns a workflow into a reusable capability:
 
