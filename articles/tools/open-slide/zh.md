@@ -25,7 +25,7 @@ source_url: https://github.com/1weiho/open-slide
 - 想在浏览器里演讲，并导出 HTML 或 PDF
 - 能接受一个项目目录和本地开发服务
 
-如果你只是第一次做 PPT，先看 [Magazine Web PPT](/docs/skills/magazine-web-ppt)。如果你必须修改已有 `.pptx` 文件，先看 [PPTX](/docs/skills/pptx)。
+如果你只是第一次做 PPT，先看 [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt)。如果你必须修改已有 `.pptx` 文件，先看 [PPTX](/docs/skills/pptx)。
 
 <h2 id="how-it-works">它怎么工作</h2>
 
@@ -63,7 +63,7 @@ codex
 | 需求 | 优先看 |
 | --- | --- |
 | 改已有 PowerPoint 文件 | [PPTX](/docs/skills/pptx) |
-| 快速做一套杂志风网页 PPT | [Magazine Web PPT](/docs/skills/magazine-web-ppt) |
+| 快速做一套有明确视觉风格的网页演示 | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 | 从零做一份成品材料或纸面风幻灯片 | [Kami](/docs/skills/kami) |
 | 做复杂设计、动效或可编辑 PPTX | [Huashu Design](/docs/skills/huashu-design) |
 | 做可维护、可评论、可导出 HTML/PDF 的代码式 deck | `Open Slide` |

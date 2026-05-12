@@ -1,8 +1,8 @@
 ---
-title: Magazine Web PPT
+title: 藏师傅的 PPT Skill
 slug: magazine-web-ppt
 order: 4
-summary: 一个生成电子杂志风网页 PPT 的 skill。适合做分享会、发布会、私享会和 demo day 的单文件 HTML 幻灯片。
+summary: 一个持续进化的 PPT 制作 skill。适合用 agent 生成有明确设计系统的单文件 HTML 演示，也能承接配图和平台封面。
 section: skills
 section_title: Skills
 section_order: 15
@@ -12,47 +12,53 @@ group: creation-design
 source_url: https://github.com/op7418/guizang-ppt-skill
 ---
 
-# Magazine Web PPT
+# 藏师傅的 PPT Skill
 
-如果你明确要做的是一套演讲幻灯片，而不是普通文档，`Magazine Web PPT` 是 `Kami` 之后第二个值得看的 skill。
+`藏师傅的 PPT Skill` 来自歸藏老师开源的 `guizang-ppt-skill`。它不是 SorryCode 唯一的 PPT 方案，而是我们当前收录的一条优秀演示制作路线。
 
-它会生成一份单文件 HTML 横向翻页 PPT，视觉基调是“电子杂志 × 电子墨水”，适合私享会、发布会、行业分享和 demo day。
-
-<h2 id="what-is-it">它是什么</h2>
-
-- `Magazine Web PPT` 是一个面向演讲幻灯片的设计型 skill
-- 它的产物是单文件 HTML，不是 `.pptx`
-- 它支持键盘、滚轮、触屏、底部圆点和 `ESC` 缩略图索引
-- 它内置 10 种页面布局和 5 套主题色
-
-它来自归藏开源的 `guizang-ppt-skill`。SorryCode 站内文档会用一个更容易理解的名字来讲它：`Magazine Web PPT`。
+它适合让 agent 生成有明确设计系统的单文件 HTML 横向翻页 PPT。当前上游已经不只是“杂志风”：它包含电子杂志风、瑞士国际主义、配图流程、平台封面和质量检查。具体版式、主题、脚本和最新能力，以官方仓库为准。
 
 参考：[guizang-ppt-skill 官方仓库](https://github.com/op7418/guizang-ppt-skill)
 
+<h2 id="what-is-it">它是什么</h2>
+
+- 一个面向演示表达的设计型 skill
+- 产物默认是单文件 HTML，不是 `.pptx`
+- 适合由 agent 按主题、受众、时长、素材和风格生成 deck
+- 上游持续更新，站内只维护长期稳定的使用边界
+
+你可以把它理解成：让 agent 按一套成熟设计工作流做 PPT，而不是每次从零写一长串“高级感”提示词。
+
 <h2 id="what-is-good-for">适合做什么</h2>
 
-你可以优先把它用在这些场景：
+优先用在这些场景：
 
-- 线下分享或行业内部讲话
-- 私享会、发布会、demo day
-- AI 产品发布或研究汇报
+- 线下分享、私享会、行业内部讲话
+- AI 产品发布、研究汇报、demo day
 - 需要强烈个人风格的演讲
-- 想要像电子杂志一样翻页的网页 PPT
+- 想要网页翻页、视觉完整、可直接展示的 HTML deck
+- 需要围绕同一视觉系统生成 PPT 配图或平台封面
 
-它内置的 10 种布局覆盖常见演讲结构：封面、章节幕封、数据大字报、左文右图、图片网格、Pipeline、悬念问题、大引用、Before/After 对比和图文混排。
+如果你只需要改已有 `.pptx`，先看 [PPTX](/docs/skills/pptx)。如果你要做可维护 React deck，先看 [工具 / Open Slide](/docs/tools/open-slide)。
+
+<h2 id="presentation-route">和其他 PPT 能力怎么选</h2>
+
+| 需求 | 优先看 |
+| --- | --- |
+| 修改已有 PowerPoint、套公司模板、最终交付 `.pptx` | [PPTX](/docs/skills/pptx) |
+| 快速生成有明确视觉风格的网页演示 | `藏师傅的 PPT Skill` |
+| 把文章、报告、简历或作品集整理成纸面风材料 | [Kami](/docs/skills/kami) |
+| 做 App 原型、发布视觉、信息图、动效感 PPT 或专家评审 | [Huashu Design](/docs/skills/huashu-design) |
+| 做可维护、可评论、可导出 HTML/PDF 的代码式 deck | [工具 / Open Slide](/docs/tools/open-slide) |
 
 <h2 id="what-is-not-good-for">不适合做什么</h2>
 
-这些场景不建议优先用它：
+这些场景不要优先用它：
 
-- 大段表格数据
-- 信息密度很高的培训课件
-- 需要多人协作编辑的传统 PowerPoint 文件
+- 必须交付公司 `.pptx` 模板
+- 大段表格数据和高密度培训课件
+- 需要多人长期协作编辑的传统 PowerPoint 文件
 - 只想做普通长文、简历、一页纸或作品集
-
-如果你要做的是普通文档、简历、一页纸或作品集，先用 [Skills / Kami](/docs/skills/kami)。
-
-如果你想把 PPT 当成一个可维护的 React 项目，支持评论修改、浏览器演讲和 HTML/PDF 导出，可以看 [工具 / Open Slide](/docs/tools/open-slide)。
 
 <h2 id="one-click-install">一键安装</h2>
 
@@ -75,41 +81,39 @@ npx skills add op7418/guizang-ppt-skill -a claude-code -g -y
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
-安装完成后，不需要记特殊命令。你用自然语言说“做一份杂志风 PPT”就可以触发。
-
 <h2 id="how-to-use">安装后怎么触发</h2>
 
-触发时直接描述你想做的演讲，而不是先讲技术细节。
+触发时直接说你要做什么演示，不要先讲实现细节。
 
-最好一次说清楚：
+最好一次说清：
 
 - 主题是什么
 - 听众是谁
 - 使用场景是什么
 - 大概讲多久
-- 有没有原始素材
-- 想选哪套主题色
+- 有没有原始素材和图片
+- 想要什么视觉方向，比如杂志风、瑞士风、产品发布感
 
-如果你没说全，它会先反问你 6 件事：受众、时长、素材、图片、主题色和硬约束。先对齐大纲，再开始生成 HTML。
+如果你没说全，它会先问必要问题。先对齐大纲，再开始生成最终文件。
 
 <h2 id="first-prompts">第一句可以说什么</h2>
 
-如果你要做私享会：
+做私享会：
 
 ```text
-帮我做一份 20 页左右的杂志风 PPT，主题是 AI 如何改变组织协作，面向公司管理层，适合 30 分钟私享会。先问我受众、素材、图片和主题色，再给大纲。
+请用藏师傅的 PPT Skill 帮我做一份 20 页左右的演示，主题是 AI 如何改变组织协作，面向公司管理层，适合 30 分钟私享会。先问我必要问题，再给大纲。
 ```
 
-如果你要把文章改成幻灯片：
+把文章改成幻灯片：
 
 ```text
-把下面这篇文章改成一套电子杂志风格的演讲幻灯片，主题用靛蓝瓷，输出单文件 HTML。
+请用藏师傅的 PPT Skill 把下面这篇文章改成一套演讲幻灯片。先判断适合电子杂志风还是瑞士风，再给我页面结构。
 ```
 
-如果你要做产品发布：
+做产品发布：
 
 ```text
-我要做一套产品发布会 PPT，包含封面、3 个章节、数据页、Before/After 对比页和结尾页。图片我会放在 images 文件夹里。
+请用藏师傅的 PPT Skill 做一套产品发布会 deck，包含封面、3 个章节、数据页、Before/After 对比页和结尾页。图片我会放在 images 文件夹里。
 ```
 
 <h2 id="images">图片怎么放</h2>
@@ -134,26 +138,14 @@ ppt/
 - 文件名用 `01-cover` 这种补零页码
 - 想换图时，直接用同名文件覆盖，不要去改 HTML 路径
 
-<h2 id="themes">主题怎么选</h2>
-
-它内置 5 套主题色：
-
-- 墨水经典：通用默认、商业发布、不知道选什么时用它
-- 靛蓝瓷：科技、研究、AI、技术发布会
-- 森林墨：自然、可持续、文化、非虚构
-- 牛皮纸：怀旧、人文、文学、独立杂志
-- 沙丘：艺术、设计、创意、画廊感内容
-
-第一次不知道选什么，就选“墨水经典”。
-
 <h2 id="common-issues">常见问题</h2>
 
 - 提示 `npx`、`node` 或 `npm` 找不到
   先去看 [环境准备 / Node.js](/docs/environment/nodejs)
 - 它会生成 `.pptx` 吗
   默认不会，它生成的是单文件 HTML 幻灯片
-- 可以自己指定任意颜色吗
-  不建议，优先从 5 套主题里选，避免画面失控
+- 为什么站内不写完整主题和版式清单
+  上游在持续更新，站内只维护选择、安装、触发和边界；具体能力看官方仓库
 - 我想做普通文档或简历
   先用 [Skills / Kami](/docs/skills/kami)
 - 我用的是 OpenClaw / Hermes Agent
@@ -163,8 +155,4 @@ ppt/
 
 - 官方仓库：<https://github.com/op7418/guizang-ppt-skill>
 - 当前公开安装方式：`npx skills add op7418/guizang-ppt-skill`
-- 官方说明里明确覆盖：
-  - 单文件 HTML 横向翻页 PPT
-  - 10 种页面布局
-  - 5 套主题色
-  - 键盘、滚轮、触屏、缩略图索引交互
+- 最近核对：2026-05-12，上游 README 已覆盖双视觉系统、配图流程、平台封面和质量检查

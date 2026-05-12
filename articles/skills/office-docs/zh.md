@@ -36,7 +36,7 @@ group_order: 10
 
 `DOCX / XLSX / PPTX / PDF` 更适合处理已有文件：你把文件路径给 agent，告诉它要改哪里、提取什么、保留什么格式。
 
-`Kami / Magazine Web PPT / SorryCode Image2` 更适合从零做成品：你给主题、受众、素材和风格，让 agent 直接做出一份可以展示或继续修改的材料。
+`Kami / 藏师傅的 PPT Skill / SorryCode Image2` 更适合从零做成品：你给主题、受众、素材和风格，让 agent 直接做出一份可以展示或继续修改的材料。
 
 <h2 id="first-prompt">第一句话可以怎么说</h2>
 
@@ -49,7 +49,7 @@ group_order: 10
 如果你要从零生成：
 
 ```text
-我想做一份面向客户的产品介绍。先问我必要问题，再建议应该用 Kami、Magazine Web PPT 还是 SorryCode Image2。
+我想做一份面向客户的产品介绍。先问我必要问题，再建议应该用 Kami、藏师傅的 PPT Skill 还是 SorryCode Image2。
 ```
 
 <h2 id="install-note">安装说明</h2>
@@ -62,4 +62,4 @@ group_order: 10
 2. 再按任务安装 [DOCX](/docs/skills/docx)、[XLSX](/docs/skills/xlsx)、[PPTX](/docs/skills/pptx) 或 [PDF](/docs/skills/pdf)
 3. 把文件路径和目标交给 agent
 
-如果你是从零生成一份好看的成品材料，可以先看 [Kami](/docs/skills/kami)、[Magazine Web PPT](/docs/skills/magazine-web-ppt) 或 [SorryCode Image2](/docs/skills/sorrycode-image2)。
+如果你是从零生成一份好看的成品材料，可以先看 [Kami](/docs/skills/kami)、[藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) 或 [SorryCode Image2](/docs/skills/sorrycode-image2)。

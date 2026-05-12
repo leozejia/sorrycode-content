@@ -36,7 +36,7 @@ If you are not editing an existing file and want to create a polished artifact f
 
 `DOCX / XLSX / PPTX / PDF` are better for existing files: give the agent the file path, explain what to change or extract, and say what formatting should be preserved.
 
-`Kami / Magazine Web PPT / SorryCode Image2` are better for new artifacts: give the topic, audience, material, and style, then let the agent produce something presentable or editable.
+`Kami / Guizang PPT Skill / SorryCode Image2` are better for new artifacts: give the topic, audience, material, and style, then let the agent produce something presentable or editable.
 
 <h2 id="first-prompt">First Prompt</h2>
 
@@ -49,7 +49,7 @@ Read this file first. Do not edit it yet. Tell me its structure, what looks wron
 If you are creating from scratch:
 
 ```text
-I want to create a product introduction for customers. Ask me the necessary questions first, then recommend whether I should use Kami, Magazine Web PPT, or SorryCode Image2.
+I want to create a product introduction for customers. Ask me the necessary questions first, then recommend whether I should use Kami, Guizang PPT Skill, or SorryCode Image2.
 ```
 
 <h2 id="install-note">Install Note</h2>
@@ -62,4 +62,4 @@ Use this order:
 2. Install [DOCX](/docs/skills/docx), [XLSX](/docs/skills/xlsx), [PPTX](/docs/skills/pptx), or [PDF](/docs/skills/pdf) for the file type
 3. Give the file path and goal to the agent
 
-If you are creating a polished artifact from scratch, start with [Kami](/docs/skills/kami), [Magazine Web PPT](/docs/skills/magazine-web-ppt), or [SorryCode Image2](/docs/skills/sorrycode-image2).
+If you are creating a polished artifact from scratch, start with [Kami](/docs/skills/kami), [Guizang PPT Skill](/docs/skills/magazine-web-ppt), or [SorryCode Image2](/docs/skills/sorrycode-image2).

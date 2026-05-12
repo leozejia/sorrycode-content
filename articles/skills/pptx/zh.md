@@ -34,7 +34,7 @@ source_url: https://github.com/anthropics/skills/tree/main/skills/pptx
 - 你有公司模板或已有 PPT
 - 你要继续用 PowerPoint 编辑
 
-如果你想做网页风、杂志风演示，先看 [Magazine Web PPT](/docs/skills/magazine-web-ppt)。如果你想从零做一套纸面设计风幻灯片，也可以看 [Kami](/docs/skills/kami)。
+如果你想从零做一套有明确视觉风格的网页演示，先看 [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt)。如果你想从零做一套纸面设计风幻灯片，也可以看 [Kami](/docs/skills/kami)。
 
 <h2 id="how-to-use">怎么用</h2>
 

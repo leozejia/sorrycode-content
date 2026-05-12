@@ -1,0 +1,87 @@
+# 演示 / PPT 交付路线
+
+更新时间：2026-05-12
+
+这份文档定义 SorryCode 如何维护 PPT、slides 和演示表达相关内容。它是 `sorrycode-content` 的内部治理文档，不进入线上 docs。
+
+## 核心判断
+
+PPT 不是一个单一工具分类，而是一种交付形态。用户说“做 PPT”时，真实需求可能是：
+
+- 修改已有 `.pptx`
+- 快速生成一套网页演示
+- 把文章、报告或作品集排成演示材料
+- 做高保真视觉方案、信息图或动效感页面
+- 做可维护、可评论、可导出的代码式 deck
+
+因此公开文档不能把某一个 skill 写成“PPT 的唯一方案”。应该维护一张“演示 / PPT 交付路线”，再把具体 skill 放进对应路线。
+
+## 当前路线图
+
+| 需求 | 默认入口 | 页面位置 |
+| --- | --- | --- |
+| 修改已有 PowerPoint、套公司模板、最终交付 `.pptx` | `PPTX` | `Skills / 办公文档` |
+| 快速生成有明确视觉风格的网页演示 | `藏师傅的 PPT Skill` | `Skills / 创作与设计` |
+| 把文字、报告、简历、作品集整理成纸面风材料或 slides | `Kami` | `Skills / 创作与设计` |
+| 做 App 原型、发布视觉、信息图、动效感 PPT 或专家评审 | `Huashu Design` | `Skills / 创作与设计` |
+| 做可维护、可评论、可导出 HTML/PDF 的代码式 deck | `Open Slide` | `Tools` |
+| 做演示视频、发布动效或社媒 MP4 | `HyperFrames` | `Tools` |
+
+这张表是长期入口。未来出现新的优秀 PPT skill，只加入路线图，不重写整个新手村。
+
+## `藏师傅的 PPT Skill` 怎么定位
+
+上游是 `op7418/guizang-ppt-skill`。站内公开标题使用 `藏师傅的 PPT Skill`，保留作者个人 IP，也避免把它压扁成单一的“杂志风网页 PPT”。
+
+页面要讲清：
+
+- 这是当前收录的一个优秀 PPT 制作 skill，不是 SorryCode 唯一 PPT 方案。
+- 它适合用 agent 生成有明确设计系统的单文件 HTML 横向翻页 PPT。
+- 当前上游已经覆盖电子杂志风、瑞士国际主义、配图流程、平台封面和质量检查。
+- 具体版式数量、主题数量、校验脚本和最新能力以官方仓库为准。
+
+站内不要追着上游 README 逐项同步。站内只维护长期稳定层：
+
+- 适合什么任务
+- 不适合什么任务
+- 怎么安装
+- 怎么触发
+- 和 PPTX、Kami、Huashu Design、Open Slide 怎么选
+- 最近验证口径
+
+路由和 slug 可以暂时保留 `/docs/skills/magazine-web-ppt`，避免断链；展示标题改成 `藏师傅的 PPT Skill`。等有明确迁移需求时，再新增别名或新 slug。
+
+## `Kami` 和 `Huashu Design` 为什么也出现在 PPT 路线里
+
+`Kami` 和 `Huashu Design` 都能做 PPT，但主任务不同。
+
+`Kami` 的核心是排版成品。它适合把文字、访谈、报告、简历、白皮书、作品集整理成稳定、克制、可交付的材料。它做 slides 时，更像纸面文档的演示版。
+
+`Huashu Design` 的核心是设计工作台和视觉方案生成。它适合 App 原型、视觉变体、动效、信息图、PPT 视觉稿和专家评审。它做 PPT 时，更像设计师参与的视觉表达。
+
+所以它们应该出现在“演示 / PPT 交付路线”里，但单页仍按各自核心能力写，不改名成 PPT skill。
+
+## 新手村和 Skills 的分工
+
+`新手村 / 做一套分享 PPT` 只给第一次做演示的默认路径。它可以默认使用 `藏师傅的 PPT Skill`，但不要展开完整比较。
+
+`Skills / 创作与设计` 承担路线图。它解释不同 PPT 交付形态该选哪个入口。
+
+单个 skill 页只讲自己的能力，不复制整张路线图，只保留一小段“和其他 PPT 能力怎么选”。
+
+## 公开页面维护规则
+
+改公开页面时优先更新这些文件：
+
+- `articles/skills/creation-design/zh.md`
+- `articles/skills/creation-design/en.md`
+- `articles/skills/magazine-web-ppt/zh.md`
+- `articles/skills/magazine-web-ppt/en.md`
+- `articles/village/share-ppt/zh.md`
+- `articles/village/share-ppt/en.md`
+- `articles/skills/pptx/*`
+- `articles/tools/open-slide/*`
+- 根 `index.json`
+- `articles/skills/index.json`
+
+如果只是改展示标题和摘要，允许保留旧 slug。改 slug 前要先评估旧链接、搜索入口和站内引用。

@@ -41,7 +41,7 @@ source_url: https://github.com/dontbesilent2025/dbskill
 
 - [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
 - [Skills / Kami](/docs/skills/kami)
-- [Skills / Magazine Web PPT](/docs/skills/magazine-web-ppt)
+- [Skills / 藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt)
 
 <h2 id="install">安装</h2>
 
@@ -114,7 +114,7 @@ npx skills add dontbesilent2025/dbskill -a claude-code -g -y
 - `Kami`：把内容做成成品文档、简历、作品集、PPT
 - `SorryCode Image2`：生成图片、封面、海报、插图
 
-一个自然组合是：先用 `DBSkill` 判断方向，再用 `Kami`、`Magazine Web PPT` 或 `SorryCode Image2` 做成品。
+一个自然组合是：先用 `DBSkill` 判断方向，再用 `Kami`、`藏师傅的 PPT Skill` 或 `SorryCode Image2` 做成品。
 
 <h2 id="common-issues">常见问题</h2>
 

@@ -18,7 +18,7 @@ source_url: https://github.com/alchaincyf/huashu-design
 
 Use it for more complex design deliverables: app prototypes, HTML slides, editable PPTX, motion design, infographics, design variations, and expert critique.
 
-If `Kami` is for polished documents and paper-like artifacts, and `Magazine Web PPT` is for web-style presentations, `Huashu Design` brings the agent into a fuller designer workflow: ask questions, collect brand assets, propose directions, produce, and critique.
+If `Kami` is for polished documents and paper-like artifacts, and `Guizang PPT Skill` is for web presentations with a clear design system, `Huashu Design` brings the agent into a fuller designer workflow: ask questions, collect brand assets, propose directions, produce, and critique.
 
 <h2 id="what-it-does">What It Does</h2>
 
@@ -79,6 +79,6 @@ If you plan to use it commercially, read the upstream license and contact the au
 
 - `SorryCode Image2`: image generation and editing
 - `Kami`: one-pagers, resumes, reports, portfolios, and paper-style slides
-- `Magazine Web PPT`: web-style and magazine-style presentations
+- `Guizang PPT Skill`: web presentations with a clear design system
 - `Huashu Design`: complex prototypes, motion, infographics, and critique
 - `DESIGN.md`: project design context file, see [Agent Infrastructure / DESIGN.md](/docs/agent-infra/design-md)

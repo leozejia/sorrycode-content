@@ -34,7 +34,7 @@ Use `PPTX` first when:
 - you already have a company template or existing deck
 - you want to keep editing in PowerPoint
 
-If you want a web-style or magazine-style presentation, start with [Magazine Web PPT](/docs/skills/magazine-web-ppt). If you want a designed slide deck from scratch, [Kami](/docs/skills/kami) may also fit.
+If you want to create a web deck with a strong visual system from scratch, start with [Guizang PPT Skill](/docs/skills/magazine-web-ppt). If you want a paper-like designed slide deck, [Kami](/docs/skills/kami) may also fit.
 
 <h2 id="how-to-use">How to Use</h2>
 

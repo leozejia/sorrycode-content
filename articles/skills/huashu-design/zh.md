@@ -18,7 +18,7 @@ source_url: https://github.com/alchaincyf/huashu-design
 
 它适合更复杂的设计交付：App 原型、HTML 幻灯片、可编辑 PPTX、动效、信息图、设计变体和专家评审。
 
-如果 `Kami` 更像成品文档和纸面表达，`Magazine Web PPT` 更像网页演示，`Huashu Design` 更像把 agent 带进一个设计师工作流：先问清需求，找品牌资产，给方向，再产出并自检。
+如果 `Kami` 更像成品文档和纸面表达，`藏师傅的 PPT Skill` 更像有设计系统的网页演示，`Huashu Design` 更像把 agent 带进一个设计师工作流：先问清需求，找品牌资产，给方向，再产出并自检。
 
 <h2 id="what-it-does">它能做什么</h2>
 
@@ -79,6 +79,6 @@ npx skills add alchaincyf/huashu-design -a claude-code -g -y
 
 - `SorryCode Image2`：图片生成和编辑
 - `Kami`：一页纸、简历、报告、作品集和纸面风幻灯片
-- `Magazine Web PPT`：网页风 / 杂志风演示
+- `藏师傅的 PPT Skill`：有明确视觉风格的网页演示
 - `Huashu Design`：更复杂的原型、动效、信息图和设计评审
 - `DESIGN.md`：项目设计上下文文件，见 [Agent 基建 / DESIGN.md](/docs/agent-infra/design-md)

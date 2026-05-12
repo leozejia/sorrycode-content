@@ -1,13 +1,16 @@
 # SorryCode Content
 
-Public, reviewed article content for SorryCode docs.
+Public article content and internal content-governance notes for SorryCode docs.
 
-This repository is not an internal docs folder and not a CMS. It stores publishable Markdown articles and public image assets that SorryCode can fetch, cache, sanitize, and render inside the existing docs experience.
+This repository is not a CMS. It stores publishable Markdown articles and public image assets that SorryCode can fetch, cache, sanitize, and render inside the existing docs experience. It may also contain internal editorial notes under `docs/`; SorryCode does not fetch or render those files.
 
 ## Structure
 
 ```text
 index.json
+docs/
+  information-architecture.md
+  presentation-skills-strategy.md
 articles/
   runtime/
     index.json
@@ -41,6 +44,17 @@ This repository can carry public docs for these sections:
 - `troubleshoot`
 
 The main `sorrycode` repository still owns routing, backend caching, asset proxying, fallback behavior, sanitization, Markdown rendering, and release experience.
+
+## Public vs Internal
+
+Only these paths are part of the public remote content contract:
+
+- `index.json`
+- `articles/<section>/index.json`
+- `articles/<section>/<slug>/<locale>.md`
+- public assets stored next to an article, such as `cover.png`
+
+`docs/` is for internal content governance: IA decisions, page contracts, inclusion criteria, and maintenance notes. It is not part of the public content index and must not be referenced by `markdownPath`, `assetBaseUrl`, or `coverPath`.
 
 ## Rules
 

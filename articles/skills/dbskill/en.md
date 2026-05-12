@@ -41,7 +41,7 @@ If you only want image generation, document layout, or web-style presentation de
 
 - [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
 - [Skills / Kami](/docs/skills/kami)
-- [Skills / Magazine Web PPT](/docs/skills/magazine-web-ppt)
+- [Skills / Guizang PPT Skill](/docs/skills/magazine-web-ppt)
 
 <h2 id="install">Install</h2>
 
@@ -114,7 +114,7 @@ Do not try to learn everything on day one. Start with `dbs` and let the agent ro
 - `Kami`: turn material into polished documents, resumes, portfolios, and slides
 - `SorryCode Image2`: generate images, covers, posters, and illustrations
 
-A natural workflow is: use `DBSkill` to decide direction, then use `Kami`, `Magazine Web PPT`, or `SorryCode Image2` to make the final artifact.
+A natural workflow is: use `DBSkill` to decide direction, then use `Kami`, `Guizang PPT Skill`, or `SorryCode Image2` to make the final artifact.
 
 <h2 id="common-issues">Common Issues</h2>
 

@@ -30,7 +30,7 @@ group: creation-design
 - 最后应该输出什么文件
 - 失败时应该怎么继续修改
 
-这也是为什么 `Kami`、`Magazine Web PPT`、`SorryCode Image2`、`Huashu Design` 这类 skill 更适合做成品，而不是每次从零写一长串提示词。
+这也是为什么 `Kami`、`藏师傅的 PPT Skill`、`SorryCode Image2`、`Huashu Design` 这类 skill 更适合做成品，而不是每次从零写一长串提示词。
 
 <h2 id="when-use">什么时候该用</h2>
 
@@ -62,7 +62,7 @@ group: creation-design
 做演示：
 
 ```text
-请用 Magazine Web PPT 做一套 12 页左右的杂志风网页幻灯片，主题是我的产品发布会。先给大纲，不要直接生成最终文件。
+请用藏师傅的 PPT Skill 做一套 12 页左右的产品发布会网页演示。先判断适合电子杂志风还是瑞士风，再给大纲，不要直接生成最终文件。
 ```
 
 <h2 id="design-md">更进一步：把设计要求写下来</h2>

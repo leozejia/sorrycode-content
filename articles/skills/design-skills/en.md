@@ -30,7 +30,7 @@ A normal prompt tells the agent what you want this time. A design skill can also
 - what files to export
 - how to continue after a failed attempt
 
-That is why skills like `Kami`, `Magazine Web PPT`, `SorryCode Image2`, and `Huashu Design` work better as reusable skills than as long prompts you rewrite every time.
+That is why skills like `Kami`, `Guizang PPT Skill`, `SorryCode Image2`, and `Huashu Design` work better as reusable skills than as long prompts you rewrite every time.
 
 <h2 id="when-use">When to Use One</h2>
 
@@ -62,7 +62,7 @@ Use Kami to turn the product introduction below into a one-pager for first-time 
 For presentations:
 
 ```text
-Use Magazine Web PPT to build a 12-page magazine-style web deck for my product launch. Propose the outline first; do not generate the final file yet.
+Use Guizang PPT Skill to build a 12-page web deck for my product launch. First decide whether electronic-magazine style or Swiss Style fits better, then propose the outline. Do not generate the final file yet.
 ```
 
 <h2 id="design-md">Next Step: Write the Design Rules Down</h2>

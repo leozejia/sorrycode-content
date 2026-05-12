@@ -2,7 +2,7 @@
 title: Creation and Design
 slug: creation-design
 order: 1
-summary: The entry point for images, posters, one-pagers, resumes, reports, portfolios, and web-style decks.
+summary: The entry point for images, posters, one-pagers, resumes, reports, portfolios, and presentation work.
 section: skills
 section_title: Skills
 section_order: 15
@@ -23,7 +23,7 @@ If you want the agent to make an image, a polished document, or a presentation d
 | --- | --- |
 | Generate covers, posters, illustrations, product visuals, or 2D game assets | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | Make one-pagers, resumes, reports, white papers, portfolios, or paper-style slides | [Kami](/docs/skills/kami) |
-| Make web-style or magazine-style presentation decks | [Magazine Web PPT](/docs/skills/magazine-web-ppt) |
+| Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 | Make code-based decks with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
 | Make product videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
 | Make app prototypes, motion design, infographics, variations, or design critique | [Huashu Design](/docs/skills/huashu-design) |
@@ -36,12 +36,27 @@ If you want the agent to make an image, a polished document, or a presentation d
 
 `Creation and Design` is for finished artifacts: give the agent the topic, audience, material, and style, then ask it to produce something you can show, publish, or keep editing.
 
+<h2 id="presentation-route">Presentation / PPT Delivery Route</h2>
+
+PPT is not one tool category. It is a delivery format. Start with what you actually need to deliver:
+
+| What you really need | Start with |
+| --- | --- |
+| Edit an existing PowerPoint file, use a company template, deliver `.pptx` | [PPTX](/docs/skills/pptx) |
+| Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
+| Turn writing, reports, resumes, or portfolios into paper-like artifacts | [Kami](/docs/skills/kami) |
+| Build prototypes, launch visuals, infographics, motion-like PPT, or critique | [Huashu Design](/docs/skills/huashu-design) |
+| Build a code-based deck with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
+| Build presentation videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
+
+If this is your first sharing deck, start with [Village / Make a Sharing Deck](/docs/village/share-ppt). It gives you a default path instead of a full tool comparison.
+
 <h2 id="first-prompt">First Prompt</h2>
 
 If you do not know which skill to use, ask the agent:
 
 ```text
-I want to create a polished artifact that I can share with other people. First decide whether I should use SorryCode Image2, Kami, or Magazine Web PPT, then ask me the necessary questions.
+I want to create a polished artifact that I can share with other people. First decide whether I should use SorryCode Image2, Kami, Guizang PPT Skill, PPTX, Huashu Design, or Open Slide, then ask me the necessary questions.
 ```
 
 If you already know you need an image:
@@ -64,7 +79,7 @@ For a first run, use this order:
 
 1. Install [SorryCode Image2](/docs/skills/sorrycode-image2) and generate your first image
 2. Install [Kami](/docs/skills/kami) and make a one-pager
-3. Use [Magazine Web PPT](/docs/skills/magazine-web-ppt) when you need a presentation
+3. Use the [Presentation / PPT Delivery Route](#presentation-route) when you need a presentation
 4. Use [Open Slide](/docs/tools/open-slide) or [HyperFrames](/docs/tools/hyperframes) when you need a code-based deck or video toolchain
 5. Use [Huashu Design](/docs/skills/huashu-design) when you need prototypes, motion, or more complex design work
 

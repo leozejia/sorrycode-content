@@ -2,7 +2,7 @@
 title: 做一套分享 PPT
 slug: share-ppt
 order: 1
-summary: 用 Magazine Web PPT 生成一套杂志风网页幻灯片。
+summary: 第一次做分享 PPT，先用藏师傅的 PPT Skill 生成一套能在浏览器里打开的网页演示。
 section: village
 section_title: 新手村
 section_order: 18
@@ -15,11 +15,11 @@ group_order: 40
 
 <h2 id="goal">任务目标</h2>
 
-用 `Magazine Web PPT` 做出一套可以在浏览器里打开的杂志风网页幻灯片。
+用 `藏师傅的 PPT Skill` 做出一套可以在浏览器里打开的网页演示。
 
 <h2 id="prepare">准备物品</h2>
 
-- 已安装 [Magazine Web PPT](/docs/skills/magazine-web-ppt)
+- 已安装 [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt)
 - 一个演讲主题
 - 如果有图片，准备一个 `images/` 文件夹
 
@@ -33,7 +33,7 @@ group_order: 40
 <h2 id="prompt">复制这句话</h2>
 
 ```text
-帮我做一套 8 页左右的杂志风 PPT，主题是我如何用 AI 改造自己的工作流，面向社群分享，适合 15 分钟演讲。请先问我必要问题，再给大纲，不要直接写 HTML。
+请用藏师傅的 PPT Skill 帮我做一套 8 页左右的分享 PPT，主题是我如何用 AI 改造自己的工作流，面向社群分享，适合 15 分钟演讲。请先问我必要问题，再给大纲，不要直接写 HTML。
 ```
 
 <h2 id="done">通关标志</h2>
@@ -49,3 +49,5 @@ group_order: 40
 下一步可以把自己的真实文章或提纲改成一套分享稿。
 
 如果你想把 PPT 当成一个长期维护的项目，或者需要评论修改和 HTML/PDF 导出，再看 [工具 / Open Slide](/docs/tools/open-slide)。
+
+如果你最终必须交付 `.pptx` 文件，去看 [PPTX](/docs/skills/pptx)。如果你还不确定该选哪条路线，去看 [Skills / 创作与设计](/docs/skills/creation-design) 里的演示 / PPT 交付路线。
