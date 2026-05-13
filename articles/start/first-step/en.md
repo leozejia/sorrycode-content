@@ -89,7 +89,7 @@ Use Claude models through Claude Code first.
 
 Do not chase a new model name by putting it into a random workbench. It may run, but cache behavior and API usage may become inefficient.
 
-For details, read [Platform / Runtimes and Models](/docs/platform/runtime-models).
+For details, read [Platform / Tools Are Not Models](/docs/platform/tools-and-models).
 
 <h2 id="step-4">Step 4: Install for Your Computer</h2>
 
@@ -133,7 +133,7 @@ Choose by goal:
 - Generate an image: [Village / Generate Your First Image](/docs/village/first-image)
 - Make a product intro: [Village / Product Intro](/docs/village/product-intro)
 - Work with office files: [Skills / Office Docs](/docs/skills/office-docs)
-- Understand tools and models: [Platform / Runtimes and Models](/docs/platform/runtime-models)
+- Understand tools and models: [Platform / Tools Are Not Models](/docs/platform/tools-and-models)
 - Understand `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills`: [Agent Infrastructure](/docs/agent-infra/overview)
 
 <h2 id="remember">Remember These</h2>

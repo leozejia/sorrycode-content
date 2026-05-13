@@ -24,7 +24,7 @@ For a first setup, you do not need to understand `settings.json` or env vars up 
 
 Reference: [Claude Code official docs](https://code.claude.com/docs/en/overview)
 
-> Beginner rule: `Claude Code` is a runtime, not a model. It is the default fit for Claude / Anthropic-compatible paths. Do not put `gpt-5.4` into Claude Code just to chase a new GPT model; cache hit rate and API usage can become inefficient. Read [Platform / Runtimes and Models](/docs/platform/runtime-models).
+> Beginner rule: `Claude Code` is a runtime, not a model. It is the default fit for Claude / Anthropic-compatible paths. Do not put `gpt-5.4` into Claude Code just to chase a new GPT model; cache hit rate and API usage can become inefficient. Read [Platform / Tools Are Not Models](/docs/platform/tools-and-models).
 
 <h2 id="prepare-api-key">Prepare the API Key First</h2>
 

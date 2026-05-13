@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-05-12",
+  "updatedAt": "2026-05-13",
   "articles": [
     {
       "type": "article",
@@ -68,30 +68,30 @@
       "section": "platform",
       "sectionTitle": "Platform",
       "sectionOrder": 8,
-      "slug": "runtime-models",
+      "slug": "tools-and-models",
       "locale": "en",
-      "title": "Runtimes and Models",
-      "summary": "Understand Codex, Claude Code, protocols, and models so you do not connect a model to the wrong runtime and waste API usage.",
+      "title": "Tools Are Not Models",
+      "summary": "Understand what SorryCode, Codex, Claude Code, GPT, and Claude each do, then choose the default pairing before experimenting with custom setups.",
       "order": 2,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/platform/runtime-models/en.md",
-      "assetBaseUrl": "articles/platform/runtime-models/",
-      "route": "/docs/platform/runtime-models"
+      "updatedAt": "2026-05-13",
+      "markdownPath": "articles/platform/tools-and-models/en.md",
+      "assetBaseUrl": "articles/platform/tools-and-models/",
+      "route": "/docs/platform/tools-and-models"
     },
     {
       "type": "article",
       "section": "platform",
       "sectionTitle": "Platform",
       "sectionOrder": 8,
-      "slug": "runtime-models",
+      "slug": "tools-and-models",
       "locale": "zh",
-      "title": "工具与模型",
-      "summary": "分清 Codex、Claude Code、协议和模型，避免把模型接到不合适的工具里，造成缓存差和 API 量浪费。",
+      "title": "工具不是模型",
+      "summary": "先分清 SorryCode、Codex、Claude Code、GPT 和 Claude 分别负责什么，再按默认组合选择工具，避免能跑但烧钱。",
       "order": 2,
-      "updatedAt": "2026-05-11",
-      "markdownPath": "articles/platform/runtime-models/zh.md",
-      "assetBaseUrl": "articles/platform/runtime-models/",
-      "route": "/docs/platform/runtime-models"
+      "updatedAt": "2026-05-13",
+      "markdownPath": "articles/platform/tools-and-models/zh.md",
+      "assetBaseUrl": "articles/platform/tools-and-models/",
+      "route": "/docs/platform/tools-and-models"
     },
     {
       "type": "article",

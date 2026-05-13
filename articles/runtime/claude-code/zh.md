@@ -24,7 +24,7 @@ section_order: 10
 
 参考：[Claude Code 官方文档](https://code.claude.com/docs/en/overview)
 
-> 小白先记住：`Claude Code` 是 runtime，不是模型。它默认适合 Claude / Anthropic-compatible 路径。不要为了追新 GPT 模型就把 `gpt-5.4` 直接塞进 Claude Code；缓存命中和 API 消耗可能很不划算。先看 [Platform / 工具与模型](/docs/platform/runtime-models)。
+> 小白先记住：`Claude Code` 是 runtime，不是模型。它默认适合 Claude / Anthropic-compatible 路径。不要为了追新 GPT 模型就把 `gpt-5.4` 直接塞进 Claude Code；缓存命中和 API 消耗可能很不划算。先看 [Platform / 工具不是模型](/docs/platform/tools-and-models)。
 
 <h2 id="prepare-api-key">先准备 API Key</h2>
 

@@ -24,7 +24,7 @@ section_order: 10
 
 参考：[OpenAI Codex 官方仓库](https://github.com/openai/codex)
 
-> 小白先记住：`Codex` 是 runtime，不是模型。它默认适合 GPT / OpenAI-compatible 路径。不要把 Claude 模型随手塞进 Codex；如果你不确定，先看 [Platform / 工具与模型](/docs/platform/runtime-models)。
+> 小白先记住：`Codex` 是 runtime，不是模型。它默认适合 GPT / OpenAI-compatible 路径。不要把 Claude 模型随手塞进 Codex；如果你不确定，先看 [Platform / 工具不是模型](/docs/platform/tools-and-models)。
 
 <h2 id="prepare-api-key">先准备 API Key</h2>
 
@@ -129,7 +129,7 @@ codex resume --last
 codex -m gpt-5.5
 ```
 
-这里的 `gpt-5.5` 只是示例。实际可用模型以 [Platform / 工具与模型](/docs/platform/runtime-models) 和控制台开放情况为准。
+这里的 `gpt-5.5` 只是示例。实际可用模型以 [Platform / 工具不是模型](/docs/platform/tools-and-models) 和控制台开放情况为准。
 
 <h2 id="first-prompt">第一句可以说什么</h2>
 

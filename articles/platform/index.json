@@ -5,14 +5,14 @@
     "en": "Platform",
     "zh": "Platform"
   },
-  "updatedAt": "2026-05-11",
+  "updatedAt": "2026-05-13",
   "navigation": {
     "style": "flat",
     "groups": []
   },
   "articles": [
     "create-api-key",
-    "runtime-models",
+    "tools-and-models",
     "first-request",
     "image-request"
   ]

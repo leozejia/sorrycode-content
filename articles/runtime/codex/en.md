@@ -24,7 +24,7 @@ For a first setup, you do not need to understand `config.toml`, `auth.json`, or 
 
 Reference: [OpenAI Codex official repository](https://github.com/openai/codex)
 
-> Beginner rule: `Codex` is a runtime, not a model. It is the default fit for GPT / OpenAI-compatible paths. Do not put Claude models into Codex casually; if you are unsure, read [Platform / Runtimes and Models](/docs/platform/runtime-models).
+> Beginner rule: `Codex` is a runtime, not a model. It is the default fit for GPT / OpenAI-compatible paths. Do not put Claude models into Codex casually; if you are unsure, read [Platform / Tools Are Not Models](/docs/platform/tools-and-models).
 
 <h2 id="prepare-api-key">Prepare the API Key First</h2>
 
@@ -129,7 +129,7 @@ If Codex has not yet built in the newest released model name, start it with an e
 codex -m gpt-5.5
 ```
 
-`gpt-5.5` is only an example. Use the models currently available in [Platform / Runtimes and Models](/docs/platform/runtime-models) and your console.
+`gpt-5.5` is only an example. Use the models currently available in [Platform / Tools Are Not Models](/docs/platform/tools-and-models) and your console.
 
 <h2 id="first-prompt">What to Say First</h2>
 

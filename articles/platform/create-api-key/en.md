@@ -71,6 +71,6 @@ For example, `Claude Code` calls the field `ANTHROPIC_AUTH_TOKEN`, but the value
 
 - Want to start with Codex: [Runtime / Codex](/docs/runtime/codex)
 - Want to start with Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
-- Unsure how runtimes and models relate: [Platform / Runtimes and Models](/docs/platform/runtime-models)
+- Unsure how runtimes and models relate: [Platform / Tools Are Not Models](/docs/platform/tools-and-models)
 - Want a minimal validation first: [Platform / First Request](/docs/platform/first-request)
 - Want less terminal work: [Tools / CC-Switch](/docs/tools/cc-switch)
