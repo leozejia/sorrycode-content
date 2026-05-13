@@ -136,4 +136,4 @@ Cross-wire only after you know why you are doing it.
 - Claude path: [Runtime / Claude Code](/docs/runtime/claude-code)
 - No API key yet: [Platform / Create API Key](/docs/platform/create-api-key)
 - Manual request check: [Platform / First Request](/docs/platform/first-request)
-- Long-term project context: [Agent Infra / AGENTS.md](/docs/agent-infra/agents-md)
+- Long-term project context: [Agent Infra / Long-Lived Context](/docs/agent-infra/context-management)

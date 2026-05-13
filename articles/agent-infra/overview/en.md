@@ -1,54 +1,74 @@
 ---
-title: What Is Agent Infrastructure
+title: How to Choose Agent Infrastructure
 slug: overview
 order: 1
-summary: A map for runtimes, context files, protocols, and skills.
+summary: Choose the right entry point for long context, AGENTS.md, CLAUDE.md, DESIGN.md, MCP, and Skills.
 section: agent-infra
 section_title: Agent Infrastructure
 section_order: 32
 ---
 
-# What Is Agent Infrastructure
+# How to Choose Agent Infrastructure
 
-AI work is no longer just a chat box.
+After you use agents for a while, the hard part is usually not whether the agent can answer.
 
-A steadier agent setup usually has four layers:
+The hard part is this:
+
+```text
+sessions keep growing
+project rules get repeated
+switching tools loses context
+design style drifts every run
+tools, data, and skills have no clear home
+```
+
+This section is not about chasing model names. It is about turning long-running work into reusable structure.
+
+<h2 id="choose">Choose by Problem</h2>
+
+| Your problem | Go here |
+| --- | --- |
+| The session is long and you do not know when to release it | [How to Manage Long-Lived Context](/docs/agent-infra/context-management) |
+| You use Codex and want it to follow project rules | [AGENTS.md](/docs/agent-infra/agents-md) |
+| You use Claude Code and want to maintain project memory | [CLAUDE.md](/docs/agent-infra/claude-md) |
+| You make UI, posters, slides, or documents and want stable style | [DESIGN.md](/docs/agent-infra/design-md) |
+| You want agents to connect to databases, browsers, knowledge bases, or internal tools | [MCP](/docs/agent-infra/mcp) |
+| You want to package a repeated workflow as a reusable capability | [Skills](/docs/agent-infra/skills) |
+
+If you do not know where to start, read [How to Manage Long-Lived Context](/docs/agent-infra/context-management) first.
+
+Whether you use Codex, Claude Code, OpenClaw, or another agent runtime, the same question appears sooner or later:
+
+```text
+what should the agent keep carrying?
+what should be cleared?
+```
+
+<h2 id="mental-model">Mental Model</h2>
+
+Use this first map:
 
 ```text
 Runtime = where the agent works
-Context files = long-lived rules the agent should follow
-Protocols = how the agent connects to tools and data
-Skills = reusable workflows for classes of tasks
+Session = what is happening right now
+Context files = long-lived rules
+Handoff = transfer note before switching sessions
+MCP = how agents connect to tools and data
+Skills = how agents handle a class of tasks
 ```
 
-`Codex / Claude Code` are runtimes. `AGENTS.md / CLAUDE.md / DESIGN.md` are context files. `MCP` connects tools and data. `Skills` are installable capability packs.
+`Codex / Claude Code` are runtimes.
 
-<h2 id="why">Why This Matters</h2>
+`AGENTS.md / CLAUDE.md / DESIGN.md` are context files.
 
-One prompt is not enough for long-lived work.
+`MCP` handles tool and data connections.
 
-Common problems:
+`Skills` package repeated workflows.
 
-- you repeat the same project structure every time
-- switching agents loses the rules
-- design style changes from run to run
-- tool and data access becomes ad hoc
-- task workflows depend on improvisation
+<h2 id="not-database">One Rule First</h2>
 
-These infrastructure concepts keep long-lived context, tool access, and workflows in reusable form.
+Chat history is not a database.
 
-<h2 id="map">Map</h2>
+A long session can be useful, and it can also become dirty. Cache hits can save money, and they can also repeat old noise. Durable truth belongs in project files. Temporary state belongs in a handoff. Abandoned conclusions should be marked as abandoned.
 
-| Concept | What it solves |
-| --- | --- |
-| [AGENTS.md](/docs/agent-infra/agents-md) | Project instructions for Codex |
-| [CLAUDE.md](/docs/agent-infra/claude-md) | Memory and instructions for Claude Code |
-| [DESIGN.md](/docs/agent-infra/design-md) | Design context for design agents |
-| [MCP](/docs/agent-infra/mcp) | Protocol for connecting tools and data |
-| [Skills](/docs/agent-infra/skills) | Installable reusable workflows |
-
-<h2 id="relationship">How This Relates to SorryCode</h2>
-
-SorryCode helps you create an `API Key` and connect runtimes, models, and capabilities.
-
-Using AI well over time also means knowing which rules belong in project files, which capabilities should become skills, and which tools should connect through protocols.
+That is the starting point for agent infrastructure.

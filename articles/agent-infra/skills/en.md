@@ -1,7 +1,7 @@
 ---
 title: Skills
 slug: skills
-order: 6
+order: 7
 summary: Skills are installable, reusable capability packs for agents. They use SKILL.md, references, scripts, and assets to hand workflows to agents.
 section: agent-infra
 section_title: Agent Infrastructure

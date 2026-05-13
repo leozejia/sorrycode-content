@@ -5,13 +5,14 @@
     "en": "Agent Infrastructure",
     "zh": "Agent 基建"
   },
-  "updatedAt": "2026-05-11",
+  "updatedAt": "2026-05-13",
   "navigation": {
     "style": "flat",
     "groups": []
   },
   "articles": [
     "overview",
+    "context-management",
     "agents-md",
     "claude-md",
     "design-md",

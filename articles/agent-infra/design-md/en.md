@@ -1,7 +1,7 @@
 ---
 title: What Is DESIGN.md
 slug: design-md
-order: 4
+order: 5
 summary: DESIGN.md is a design context file for agents. It captures product goals, brand principles, design tokens, components, layout rules, and things to avoid.
 section: agent-infra
 section_title: Agent Infrastructure

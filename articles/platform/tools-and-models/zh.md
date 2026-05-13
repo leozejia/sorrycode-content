@@ -136,4 +136,4 @@ Claude → Claude Code
 - 想走 Claude 路径：去 [Runtime / Claude Code](/docs/runtime/claude-code)
 - 还没有 API Key：去 [Platform / 创建 API Key](/docs/platform/create-api-key)
 - 想自己验证请求：去 [Platform / 首条请求](/docs/platform/first-request)
-- 想了解长期项目上下文：去 [Agent 基建 / AGENTS.md](/docs/agent-infra/agents-md)
+- 想了解长期项目上下文：去 [Agent 基建 / 长期上下文](/docs/agent-infra/context-management)

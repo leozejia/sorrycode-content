@@ -1,7 +1,7 @@
 ---
 title: DESIGN.md 是什么
 slug: design-md
-order: 4
+order: 5
 summary: DESIGN.md 是设计 agent 的上下文文件。它把产品目标、品牌原则、设计 tokens、组件、布局和禁用规则写成可复用标准。
 section: agent-infra
 section_title: Agent 基建

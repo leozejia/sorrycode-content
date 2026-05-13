@@ -1,7 +1,7 @@
 ---
 title: Skills
 slug: skills
-order: 6
+order: 7
 summary: Skills 是 agent 可安装、可复用的能力包。它用 SKILL.md、参考资料、脚本和资产把工作流交给 agent。
 section: agent-infra
 section_title: Agent 基建

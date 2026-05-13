@@ -1,7 +1,7 @@
 ---
 title: MCP
 slug: mcp
-order: 5
+order: 6
 summary: Model Context Protocol，让 agent 连接外部工具、数据和服务的开放协议。
 section: agent-infra
 section_title: Agent 基建

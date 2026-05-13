@@ -1,7 +1,7 @@
 ---
 title: MCP
 slug: mcp
-order: 5
+order: 6
 summary: Model Context Protocol, an open protocol for connecting agents to tools, data, and services.
 section: agent-infra
 section_title: Agent Infrastructure
