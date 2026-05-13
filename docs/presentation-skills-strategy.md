@@ -1,6 +1,6 @@
 # 演示 / PPT 交付路线
 
-更新时间：2026-05-12
+更新时间：2026-05-13
 
 这份文档定义 SorryCode 如何维护 PPT、slides 和演示表达相关内容。它是 `sorrycode-content` 的内部治理文档，不进入线上 docs。
 
@@ -57,7 +57,7 @@ PPT 也是需要迭代的设计类交付。站内不要承诺“一句话得到 
 - 和 PPTX、Kami、Huashu Design、Open Slide 怎么选
 - 最近验证口径
 
-当前路由仍是 `/docs/skills/magazine-web-ppt`，但这是现状，不是长期兼容承诺。后续如果决定改 slug，按 IA 硬切策略执行：删除旧 slug，更新站内链接，不保留别名或兼容页。
+当前路由仍是 `/docs/skills/magazine-web-ppt`，但这是现状，不是长期兼容承诺。如果这个 slug 后续被判断为不准确，按 IA 硬切策略执行：删除旧 slug，更新站内链接，不保留别名或兼容页。
 
 ## `Kami` 和 `Huashu Design` 为什么也出现在 PPT 路线里
 
@@ -92,6 +92,4 @@ PPT 也是需要迭代的设计类交付。站内不要承诺“一句话得到 
 - 根 `index.json`
 - `articles/skills/index.json`
 
-如果只是改展示标题和摘要，允许保留旧 slug。改 slug 前要先评估旧链接、搜索入口和站内引用。
-
-如果决定改 slug，执行硬切：旧 slug 从根 `index.json`、section index 和站内正文中一次性移除。
+如果名称、slug、目录、栏目或页面定位被判断为不准确，执行硬切：旧 slug 从根 `index.json`、section index 和站内正文中一次性移除。

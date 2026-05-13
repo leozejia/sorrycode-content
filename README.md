@@ -10,6 +10,7 @@ This repository is not a CMS. It stores publishable Markdown articles and public
 index.json
 docs/
   information-architecture.md
+  operator-restructuring-guide.md
   presentation-skills-strategy.md
 articles/
   runtime/
@@ -55,6 +56,16 @@ Only these paths are part of the public remote content contract:
 - public assets stored next to an article, such as `cover.png`
 
 `docs/` is for internal content governance: IA decisions, page contracts, inclusion criteria, and maintenance notes. It is not part of the public content index and must not be referenced by `markdownPath`, `assetBaseUrl`, or `coverPath`.
+
+## Internal Reading Order
+
+For major content restructuring, read these first:
+
+1. `docs/operator-restructuring-guide.md`
+2. `docs/information-architecture.md`
+3. Any relevant topic strategy, such as `docs/presentation-skills-strategy.md`
+
+If a public name, slug, directory path, category, or route is conceptually wrong, restructure it with a hard cut. Do not keep old paths just for compatibility.
 
 ## Rules
 
