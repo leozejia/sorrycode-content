@@ -1,7 +1,7 @@
 ---
 title: 创建 API Key
 slug: create-api-key
-order: 1
+order: 4
 summary: 先理解 API Key 是什么，再在 SorryCode 控制台创建一个 sk-... 给 Codex、Claude Code 或 Skills 使用。
 section: platform
 section_title: Platform
@@ -69,6 +69,8 @@ section_order: 8
 
 ## 下一步
 
+- 不知道自己适不适合：去 [Platform / SorryCode 适合谁](/docs/platform/who-is-sorrycode-for)
+- 想理解 AI 成本：去 [Platform / AI 成本怎么计算](/docs/platform/ai-cost-basics)
 - 想直接开始用 Codex：去 [Runtime / Codex](/docs/runtime/codex)
 - 想直接开始用 Claude Code：去 [Runtime / Claude Code](/docs/runtime/claude-code)
 - 不清楚工具和模型关系：去 [Platform / 工具不是模型](/docs/platform/tools-and-models)

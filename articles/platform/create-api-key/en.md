@@ -1,7 +1,7 @@
 ---
 title: Create API Key
 slug: create-api-key
-order: 1
+order: 4
 summary: Understand what an API key is, then create an sk-... key in the SorryCode console for Codex, Claude Code, or Skills.
 section: platform
 section_title: Platform
@@ -69,6 +69,8 @@ For example, `Claude Code` calls the field `ANTHROPIC_AUTH_TOKEN`, but the value
 
 ## Next
 
+- Unsure whether SorryCode fits you: [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for)
+- Want to understand AI cost: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
 - Want to start with Codex: [Runtime / Codex](/docs/runtime/codex)
 - Want to start with Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
 - Unsure how runtimes and models relate: [Platform / Tools Are Not Models](/docs/platform/tools-and-models)

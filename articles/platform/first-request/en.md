@@ -1,7 +1,7 @@
 ---
 title: First Request
 slug: first-request
-order: 3
+order: 5
 summary: Use one minimal request to validate the API key, Base URL, and network path. This page is a manual-path and troubleshooting reference, not the default beginner entry.
 section: platform
 section_title: Platform

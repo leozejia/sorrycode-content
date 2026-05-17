@@ -1,7 +1,7 @@
 ---
 title: 首条请求
 slug: first-request
-order: 3
+order: 5
 summary: 用最小请求验证 API Key、Base URL 和网络链路都可用。它是手动安装和排障参考，不是新手默认入口。
 section: platform
 section_title: Platform

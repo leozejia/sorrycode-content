@@ -1,7 +1,7 @@
 ---
 title: 图像请求
 slug: image-request
-order: 4
+order: 6
 summary: 用 /v1/images/generations 或 /v1/images/edits 调用 OpenAI-compatible 图片模型，包括 gpt-image-2 和 Gemini 图片模型。
 section: platform
 section_title: Platform

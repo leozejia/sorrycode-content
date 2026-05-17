@@ -2,7 +2,7 @@
 title: First Time Using SorryCode
 slug: first-step
 order: 1
-summary: First time using SorryCode? Learn how SorryCode connects Codex, Claude Code, Skills, and models, then choose the right next step for your goal.
+summary: First time using SorryCode? Decide whether it fits you, create an API key, then choose Codex, Claude Code, Skills, or another entry.
 section: start
 section_title: Getting Started
 section_order: 1
@@ -14,9 +14,19 @@ You probably did not come to SorryCode to study APIs or memorize model names.
 
 You likely want AI to help you finish something concrete: understand a project, edit a file, generate an image, organize an article, make slides, or turn an idea into a usable plan.
 
-SorryCode connects those tools to models. You create a key here, give it to `Codex`, `Claude Code`, or a `Skill`, and the tool can call models using your SorryCode account balance.
+SorryCode connects those tools to models.
+
+Use this first mental model:
+
+```text
+one balance + one API key + multiple AI tool entries
+```
+
+You create a key here, give it to `Codex`, `Claude Code`, or a `Skill`, and the tool can call models using your SorryCode balance.
 
 That key is called an `API Key`. It usually starts with `sk-...`. You can think of it like an access card: without it, the tool cannot enter SorryCode; with it, the tool can start working.
+
+If you are not sure whether SorryCode fits you, start with [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for).
 
 <h2 id="three-words">Understand Three Words First</h2>
 
@@ -26,7 +36,7 @@ You do not need the full concept stack on day one. Start with this:
 | --- | --- |
 | `API` | the channel tools use to talk to models |
 | `API Key` | the key proving this is your account using the channel |
-| `SorryCode` | where you create the key and connect tools to models |
+| `SorryCode` | where you create the key, manage balance, and connect tools to models |
 
 When you chat with AI in a browser, you type into a web page.
 
@@ -64,6 +74,8 @@ Different goals have different first steps:
 
 | What you want to do | Start here |
 | --- | --- |
+| Decide whether SorryCode fits you | [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for) |
+| Understand where AI cost comes from | [Platform / How AI Cost Works](/docs/platform/ai-cost-basics) |
 | Ask AI to read projects, edit files, and run commands | [Runtime / Codex](/docs/runtime/codex) |
 | Use the Claude path for project work | [Runtime / Claude Code](/docs/runtime/claude-code) |
 | Generate or edit images | Install a runtime first, then read [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) |
@@ -133,6 +145,8 @@ Choose by goal:
 - Generate an image: [Village / Generate Your First Image](/docs/village/first-image)
 - Make a product intro: [Village / Product Intro](/docs/village/product-intro)
 - Work with office files: [Skills / Office Docs](/docs/skills/office-docs)
+- Decide whether SorryCode fits you: [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for)
+- Understand AI cost: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
 - Understand tools and models: [Platform / Tools Are Not Models](/docs/platform/tools-and-models)
 - Understand `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills`: [Agent Infrastructure](/docs/agent-infra/overview)
 
@@ -142,4 +156,4 @@ Choose by goal:
 - `API Key` is the key
 - `Codex / Claude Code` are workbenches
 - `Skills` are capability packs
-- `SorryCode` connects these tools to models
+- `SorryCode` connects these tools to models through one balance

@@ -1,7 +1,7 @@
 ---
 title: Image Requests
 slug: image-request
-order: 4
+order: 6
 summary: Use /v1/images/generations or /v1/images/edits for OpenAI-compatible image models, including gpt-image-2 and Gemini image models.
 section: platform
 section_title: Platform
