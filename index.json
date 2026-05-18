@@ -76,7 +76,8 @@
       "updatedAt": "2026-05-17",
       "markdownPath": "articles/platform/ai-cost-basics/en.md",
       "assetBaseUrl": "articles/platform/ai-cost-basics/",
-      "route": "/docs/platform/ai-cost-basics"
+      "route": "/docs/platform/ai-cost-basics",
+      "coverPath": "articles/platform/ai-cost-basics/cover.png"
     },
     {
       "type": "article",
@@ -91,7 +92,8 @@
       "updatedAt": "2026-05-17",
       "markdownPath": "articles/platform/ai-cost-basics/zh.md",
       "assetBaseUrl": "articles/platform/ai-cost-basics/",
-      "route": "/docs/platform/ai-cost-basics"
+      "route": "/docs/platform/ai-cost-basics",
+      "coverPath": "articles/platform/ai-cost-basics/cover.png"
     },
     {
       "type": "article",
@@ -1312,7 +1314,8 @@
       "updatedAt": "2026-05-13",
       "markdownPath": "articles/agent-infra/context-management/en.md",
       "assetBaseUrl": "articles/agent-infra/context-management/",
-      "route": "/docs/agent-infra/context-management"
+      "route": "/docs/agent-infra/context-management",
+      "coverPath": "articles/agent-infra/context-management/cover.png"
     },
     {
       "type": "article",
@@ -1327,7 +1330,8 @@
       "updatedAt": "2026-05-13",
       "markdownPath": "articles/agent-infra/context-management/zh.md",
       "assetBaseUrl": "articles/agent-infra/context-management/",
-      "route": "/docs/agent-infra/context-management"
+      "route": "/docs/agent-infra/context-management",
+      "coverPath": "articles/agent-infra/context-management/cover.png"
     },
     {
       "type": "article",
