@@ -45,13 +45,11 @@ This is the default path. The installer connects `Codex` to `{{API_BASE_URL}}` a
 
 ### macOS / Linux
 
-The one-click installer handles required dependencies automatically. On macOS, it checks `Command Line Tools / Homebrew / Git`, then installs `Node.js 22 LTS` and `Codex CLI`.
+The one-click installer handles the dependencies needed for the Codex setup path. On macOS, it prepares `Node.js 22 LTS` and `Codex CLI`; you do not need to learn Homebrew or Git first.
 
 Open Terminal first: press `Command` + `Space`, type `Terminal`, then press Enter.
 
 Copy the full command below, return to the Terminal input area, press `Command` + `V` to paste it, then press Enter once.
-
-If an Apple system installer appears, click Install and keep the terminal open. If Homebrew asks you to press Enter, press Enter. If the terminal asks for a password, enter your Mac login password; typed password characters are not shown.
 
 ```bash
 curl -fsSL -o /tmp/sorrycode-codex.sh {{INSTALL_SH_URL}} && bash /tmp/sorrycode-codex.sh --base-url "{{API_BASE_URL}}" --source sorrycode-docs
@@ -69,7 +67,6 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-codex.bat {{INSTALL_BAT_URL}} && %TEMP%\s
 <summary>What the installer does</summary>
 
 - checks `Node.js / npm`
-- on macOS, checks `Command Line Tools / Homebrew / Git`
 - installs `Codex CLI`
 - writes `~/.codex/config.toml`
 - writes `~/.codex/auth.json`
@@ -149,6 +146,14 @@ This confirms two things early:
 
 - the runtime opened the correct project folder
 - it can read the project and respond normally
+
+<h2 id="install-skills-with-agent">Next: Let Codex Install Skills</h2>
+
+After Codex is running, you do not need to study `npx`, `Git`, or `Homebrew` yourself. Paste this into Codex and let it read the current SorryCode Skills docs, prepare the environment, and install the skills you need:
+
+```text
+Read the current SorryCode Skills entry first: https://sorrycode.com/docs/skills/featured-skills.md?locale=en. Assume my Mac has no development environment prepared. Check and prepare the required environment first, then decide which skills to install based on the current Skills docs, their categories, recommendation order, and my usage goals. Do not use an old fixed list. Tell me what you plan to do before installing, then verify that Codex can recognize the installed skills and report what succeeded, what failed, and the next step.
+```
 
 <h2 id="manual-install">Manual Install</h2>
 

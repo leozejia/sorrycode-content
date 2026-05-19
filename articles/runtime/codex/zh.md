@@ -45,13 +45,11 @@ section_order: 10
 
 ### macOS / Linux
 
-一键安装会自动处理必要依赖。macOS 会先检查 `Command Line Tools / Homebrew / Git`，再安装 `Node.js 22 LTS` 和 `Codex CLI`。
+一键安装会自动处理 Codex 主安装需要的依赖。macOS 会准备 `Node.js 22 LTS` 和 `Codex CLI`，不要求你先学会 Homebrew 或 Git。
 
 先打开终端：按住 `Command` + `空格`，输入 `Terminal`，按回车。
 
 然后复制下面这整段命令，回到终端输入窗口，按 `Command` + `V` 粘贴，再按一次回车。
-
-如果弹出 Apple 官方安装窗口，点“安装”，不要关闭终端；如果 Homebrew 提示按回车，就按回车；如果终端要求输入密码，输入你的电脑登录密码，输入时屏幕不会显示字符，这是正常的。
 
 ```bash
 curl -fsSL -o /tmp/sorrycode-codex.sh {{INSTALL_SH_URL}} && bash /tmp/sorrycode-codex.sh --base-url "{{API_BASE_URL}}" --source sorrycode-docs
@@ -69,7 +67,6 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-codex.bat {{INSTALL_BAT_URL}} && %TEMP%\s
 <summary>安装器会做什么</summary>
 
 - 检查 `Node.js / npm`
-- macOS 检查 `Command Line Tools / Homebrew / Git`
 - 安装 `Codex CLI`
 - 写入 `~/.codex/config.toml`
 - 写入 `~/.codex/auth.json`
@@ -149,6 +146,14 @@ codex -m gpt-5.5
 
 - 它已经进到了对的项目目录
 - 它能正常读项目并给你回应
+
+<h2 id="install-skills-with-agent">下一步：把 Skills 交给 Codex 安装</h2>
+
+Codex 跑起来以后，不用自己研究 `npx`、`Git` 或 `Homebrew`。把下面这段话复制给 Codex，让它读取当前 SorryCode Skills 文档，帮你准备环境和安装需要的 skills：
+
+```text
+请阅读 SorryCode 当前 Skills 入口：https://sorrycode.com/docs/skills/featured-skills.md?locale=zh。我的 Mac 默认什么环境都没有，请你先检查并准备必要环境，然后根据当前 Skills 文档里的分类、推荐顺序和我的使用目标，判断并安装适合我的 skills。不要使用固定旧清单；请读取当前文档后再决定。安装前告诉我你要做什么，安装后验证 Codex 能识别这些 skills，并报告成功、失败和下一步。
+```
 
 <h2 id="manual-install">手动安装</h2>
 
