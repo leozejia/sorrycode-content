@@ -64,14 +64,14 @@ For more reliable triggering, include three things:
 - what you want done
 - where the input or output should be
 
-<h2 id="agent-install">Let Codex Install Skills for You</h2>
+<h2 id="agent-install">Let Your Agent Install Skills for You</h2>
 
-If `Codex` is already running, you do not need to study `npx`, `Git`, or `Homebrew` first.
+If `Codex` or `Claude Code` is already running, you do not need to study `npx`, `Git`, or `Homebrew` first.
 
-Paste this into Codex. Let the agent read the current docs, check the environment, and decide which skills to install:
+Paste this into the agent you are using. Let it read the current docs, check the environment, and decide which skills to install:
 
 ```text
-Read the current SorryCode Skills entry first: https://sorrycode.com/docs/skills/featured-skills.md?locale=en. Assume my Mac has no development environment prepared. Check and prepare the required environment first, then decide which skills to install based on the current Skills docs, their categories, recommendation order, and my usage goals. Do not use an old fixed list. Tell me what you plan to do before installing, then verify that Codex can recognize the installed skills and report what succeeded, what failed, and the next step.
+Read the current SorryCode Skills entry first: https://sorrycode.com/docs/skills/featured-skills.md?locale=en. Assume my Mac has no development environment prepared. Check and prepare the required environment first, then decide which skills to install based on the current Skills docs, their categories, recommendation order, and my usage goals. Do not use an old fixed list. Tell me what you plan to do before installing, then verify that the current agent can recognize the installed skills and report what succeeded, what failed, and the next step.
 ```
 
 The `.md?locale=en` link is intentional. It gives the agent Markdown content directly, which is more reliable than a browser-rendered page.
