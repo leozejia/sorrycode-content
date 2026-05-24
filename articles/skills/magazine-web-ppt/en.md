@@ -80,6 +80,8 @@ If you have not installed a runtime yet, start here:
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
+If you no longer need it, run `npx skills list --global` to confirm the name, then remove it with `npx skills remove --global guizang-ppt-skill`.
+
 <h2 id="how-to-use">How to Trigger It</h2>
 
 Describe the presentation you want. Do not start with implementation details.

@@ -52,6 +52,8 @@ npx skills add anthropics/skills -s docx -a codex -g -y --full-depth
 npx skills add anthropics/skills -s docx -a claude-code -g -y --full-depth
 ```
 
+如果不想继续使用，先运行 `npx skills list --global` 确认名称，再用 `npx skills remove --global docx` 卸载。
+
 装完后，打开你的 AI 工作台，把 Word 文件放进项目目录，再按下面的方式让 agent 使用。
 
 <h2 id="first-prompt">第一句话</h2>

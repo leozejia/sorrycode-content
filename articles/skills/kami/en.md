@@ -63,6 +63,8 @@ If your runtime is not ready yet, go back first:
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
+If you no longer need it, run `npx skills list --global` to confirm the name, then remove it with `npx skills remove --global kami`.
+
 After install, you do not need to remember a slash command. `Kami` auto-triggers when you describe what you need.
 
 <h2 id="how-to-use">How to Trigger It</h2>

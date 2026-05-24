@@ -147,12 +147,12 @@ codex -m gpt-5.5
 - 它已经进到了对的项目目录
 - 它能正常读项目并给你回应
 
-<h2 id="install-skills-with-agent">下一步：把 Skills 交给 Codex 安装</h2>
+<h2 id="install-skills-with-agent">下一步：把 Skills 交给 Codex 管理</h2>
 
-Codex 跑起来以后，不用自己研究 `npx`、`Git` 或 `Homebrew`。把下面这段话复制给 Codex，让它读取当前 SorryCode Skills 文档，帮你准备环境和安装需要的 skills：
+Codex 跑起来以后，不用自己研究 `npx`、`Git` 或 `Homebrew`。把下面这段话复制给 Codex，让它读取当前 SorryCode Skills 文档，帮你准备环境，并按你的目标安装、查看或卸载需要的 skills：
 
 ```text
-请阅读 SorryCode 当前 Skills 入口：https://sorrycode.com/docs/skills/featured-skills.md?locale=zh。我的 Mac 默认什么环境都没有，请你先检查并准备必要环境，然后根据当前 Skills 文档里的分类、推荐顺序和我的使用目标，判断并安装适合我的 skills。不要使用固定旧清单；请读取当前文档后再决定。安装前告诉我你要做什么，安装后验证 Codex 能识别这些 skills，并报告成功、失败和下一步。
+请阅读 SorryCode 当前 Skills 入口：https://sorrycode.com/docs/skills/featured-skills.md?locale=zh。我的 Mac 默认什么环境都没有，请你先检查并准备必要环境，然后根据当前 Skills 文档里的分类、推荐顺序和我的使用目标，判断并安装适合我的 skills。不要使用固定旧清单；请读取当前文档后再决定。安装、查看或卸载前先告诉我你要做什么；安装后验证 Codex 能识别这些 skills；卸载前先用 npx skills list --global 确认准确名称，并报告成功、失败和下一步。
 ```
 
 <h2 id="manual-install">手动安装</h2>

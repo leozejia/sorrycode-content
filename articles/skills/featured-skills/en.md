@@ -76,6 +76,30 @@ Read the current SorryCode Skills entry first: https://sorrycode.com/docs/skills
 
 The `.md?locale=en` link is intentional. It gives the agent Markdown content directly, which is more reliable than a browser-rendered page.
 
+<h2 id="manage-skills">View and Remove Skills</h2>
+
+Most install commands on SorryCode use `-g`, which means global install. If you are new, do not guess names inside a project folder first. Start by listing global skills:
+
+```bash
+npx skills list --global
+```
+
+Remove one global skill:
+
+```bash
+npx skills remove --global skill-name
+```
+
+If you are not sure about the exact name, copy it from `npx skills list --global`. Do not type from memory, especially for packs such as `Waza` or `DBSkill`, which may install multiple child skills.
+
+If it still cannot be found, ask your current agent:
+
+```text
+Please check the Codex / Claude Code / agents skill install directories and find where this skill is actually installed. Prefer npx skills remove. If the CLI cannot handle it, explain the directory path and risk first, then wait for my confirmation before changing anything.
+```
+
+**Dangerous command: `npx skills remove --all` removes every skill the current CLI can manage. Do not run it unless you explicitly want to reset the environment.**
+
 <h2 id="start">Which Skill to Start With</h2>
 
 If you have not installed a runtime yet, start here:

@@ -42,6 +42,8 @@ npx skills add linxiverse/sorrycode-image2 -a codex -g -y
 npx skills add linxiverse/sorrycode-image2 -a claude-code -g -y
 ```
 
+If you no longer need this skill later, see the view and remove section in [Skills / What Are Skills](/docs/skills/featured-skills).
+
 <h2 id="set-key">Let Your Computer Remember the Image API Key</h2>
 
 The easiest path is to ask the agent to set it up for you. Copy this into Codex or Claude Code:

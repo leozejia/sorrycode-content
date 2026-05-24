@@ -110,12 +110,12 @@ This confirms two things early:
 - the runtime opened the correct project folder
 - it can read the project and respond normally
 
-<h2 id="install-skills-with-agent">Next: Let Claude Code Install Skills</h2>
+<h2 id="install-skills-with-agent">Next: Let Claude Code Manage Skills</h2>
 
-After Claude Code is running, you do not need to study `npx`, `Git`, or `Homebrew` yourself. Paste this into Claude Code and let it read the current SorryCode Skills docs, prepare the environment, and install the skills you need:
+After Claude Code is running, you do not need to study `npx`, `Git`, or `Homebrew` yourself. Paste this into Claude Code and let it read the current SorryCode Skills docs, prepare the environment, and install, list, or remove the skills you need:
 
 ```text
-Read the current SorryCode Skills entry first: https://sorrycode.com/docs/skills/featured-skills.md?locale=en. Assume my Mac has no development environment prepared. Check and prepare the required environment first, then decide which skills to install based on the current Skills docs, their categories, recommendation order, and my usage goals. Do not use an old fixed list. Tell me what you plan to do before installing, then verify that Claude Code can recognize the installed skills and report what succeeded, what failed, and the next step.
+Read the current SorryCode Skills entry first: https://sorrycode.com/docs/skills/featured-skills.md?locale=en. Assume my Mac has no development environment prepared. Check and prepare the required environment first, then decide which skills to install based on the current Skills docs, their categories, recommendation order, and my usage goals. Do not use an old fixed list. Before installing, listing, or removing skills, tell me what you plan to do. After installing, verify that Claude Code can recognize the installed skills. Before removing anything, run npx skills list --global to confirm the exact name. Report what succeeded, what failed, and the next step.
 ```
 
 <h2 id="manual-install">Manual Install</h2>

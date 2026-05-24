@@ -79,6 +79,8 @@ If you have not installed a runtime yet, start here:
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
+`Waza` is a pack and may install multiple child skills. If you no longer need it, run `npx skills list --global`, copy the actual names, then remove them one by one with `npx skills remove --global skill-name`.
+
 <h2 id="common-scenes">5 Common Scenes</h2>
 
 ### Before Building

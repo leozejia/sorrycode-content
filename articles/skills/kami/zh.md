@@ -65,6 +65,8 @@ npx skills add tw93/kami -a claude-code -g -y
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
+如果不想继续使用，先运行 `npx skills list --global` 确认名称，再用 `npx skills remove --global kami` 卸载。
+
 安装完成后，不需要记 slash 命令。`Kami` 会在你描述需求时自动触发。
 
 <h2 id="how-to-use">安装后怎么触发</h2>

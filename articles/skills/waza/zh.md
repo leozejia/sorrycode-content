@@ -79,6 +79,8 @@ npx skills add tw93/Waza -a claude-code -g -y
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
+`Waza` 是整包，可能会安装多个子 skill。如果不想继续使用，先运行 `npx skills list --global` 复制实际名称，再用 `npx skills remove --global skill-name` 逐个卸载。
+
 <h2 id="common-scenes">最常用的 5 个场景</h2>
 
 ### 做功能前

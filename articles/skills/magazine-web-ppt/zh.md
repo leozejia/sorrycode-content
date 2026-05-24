@@ -80,6 +80,8 @@ npx skills add op7418/guizang-ppt-skill -a claude-code -g -y
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
+如果不想继续使用，先运行 `npx skills list --global` 确认名称，再用 `npx skills remove --global guizang-ppt-skill` 卸载。
+
 <h2 id="how-to-use">安装后怎么触发</h2>
 
 触发时直接说你要做什么演示，不要先讲实现细节。

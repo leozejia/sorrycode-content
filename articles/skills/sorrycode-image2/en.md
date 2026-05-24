@@ -51,6 +51,8 @@ If you have not installed a runtime yet, start here:
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
+If you no longer need it, run `npx skills list --global` to confirm the name, then remove it with `npx skills remove --global sorrycode-image2`.
+
 <h2 id="api-key">Let Your Computer Remember the Image API Key</h2>
 
 `SorryCode Image2` needs an API key before it can generate or edit images. Think of it as the key for image tasks.

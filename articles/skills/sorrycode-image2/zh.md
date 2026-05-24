@@ -51,6 +51,8 @@ npx skills add linxiverse/sorrycode-image2 -a claude-code -g -y
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
+如果不想继续使用，先运行 `npx skills list --global` 确认名称，再用 `npx skills remove --global sorrycode-image2` 卸载。
+
 <h2 id="api-key">让电脑记住你的图片 API Key</h2>
 
 `SorryCode Image2` 需要一个 API Key 才能帮你生成或编辑图片。你可以把它理解成“图片功能的钥匙”。

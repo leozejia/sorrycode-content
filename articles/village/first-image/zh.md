@@ -42,6 +42,8 @@ npx skills add linxiverse/sorrycode-image2 -a codex -g -y
 npx skills add linxiverse/sorrycode-image2 -a claude-code -g -y
 ```
 
+如果以后不想继续使用这个 skill，去看 [Skills / Skills 是什么](/docs/skills/featured-skills) 里的查看和卸载说明。
+
 <h2 id="set-key">让电脑记住图片 API Key</h2>
 
 最省心的方式是让 agent 帮你设置。把下面这句话复制给 Codex 或 Claude Code：

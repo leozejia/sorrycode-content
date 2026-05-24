@@ -52,6 +52,8 @@ npx skills add anthropics/skills -s pdf -a codex -g -y --full-depth
 npx skills add anthropics/skills -s pdf -a claude-code -g -y --full-depth
 ```
 
+If you no longer need it, run `npx skills list --global` to confirm the name, then remove it with `npx skills remove --global pdf`.
+
 After installing it, open your AI workbench, put the PDF file in the project folder, then use the prompts below.
 
 <h2 id="first-prompt">First Prompt</h2>
