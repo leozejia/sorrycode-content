@@ -89,7 +89,6 @@ skill 的价值在这里：
 | 封面、海报、插图、产品视觉 | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | 一页纸、简历、报告、白皮书、作品集 | [Kami](/docs/skills/kami) |
 | 有明确设计风格的网页演示 | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
-| App 原型、动效、信息图、设计变体或专家评审 | [Huashu Design](/docs/skills/huashu-design) |
 | 修改已有 PowerPoint 文件 | [PPTX](/docs/skills/pptx) |
 | 代码式、可维护、可评论的 deck | [工具 / Open Slide](/docs/tools/open-slide) |
 
@@ -115,7 +114,7 @@ skill 的价值在这里：
 如果你还不知道该用哪个 skill：
 
 ```text
-我想做一个可以交付给别人的设计类产物。请先判断我应该用 SorryCode Image2、Kami、藏师傅的 PPT Skill、PPTX、Huashu Design 还是 Open Slide。不要直接生成，先问我目标、受众、场景、素材和风格偏好。
+我想做一个可以交付给别人的设计类产物。请先判断我应该用 SorryCode Image2、Kami、藏师傅的 PPT Skill、PPTX、Open Slide 还是 HyperFrames。不要直接生成，先问我目标、受众、场景、素材和风格偏好。
 ```
 
 如果你已经有初稿：

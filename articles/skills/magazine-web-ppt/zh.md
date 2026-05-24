@@ -48,7 +48,6 @@ source_url: https://github.com/op7418/guizang-ppt-skill
 | 修改已有 PowerPoint、套公司模板、最终交付 `.pptx` | [PPTX](/docs/skills/pptx) |
 | 快速生成有明确视觉风格的网页演示 | `藏师傅的 PPT Skill` |
 | 把文章、报告、简历或作品集整理成纸面风材料 | [Kami](/docs/skills/kami) |
-| 做 App 原型、发布视觉、信息图、动效感 PPT 或专家评审 | [Huashu Design](/docs/skills/huashu-design) |
 | 做可维护、可评论、可导出 HTML/PDF 的代码式 deck | [工具 / Open Slide](/docs/tools/open-slide) |
 
 <h2 id="what-is-not-good-for">不适合做什么</h2>

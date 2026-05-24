@@ -88,7 +88,6 @@ npx hyperframes doctor
 | 静态封面、海报、插图 | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | 有明确视觉风格的网页演示 | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 | 代码式 React deck | [Open Slide](/docs/tools/open-slide) |
-| App 原型、动效、信息图和设计评审 | [Huashu Design](/docs/skills/huashu-design) |
 | MP4 短视频和网页式动效 | `HyperFrames` |
 
 <h2 id="not-for">不适合什么</h2>

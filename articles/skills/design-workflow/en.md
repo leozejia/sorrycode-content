@@ -89,7 +89,6 @@ For design work, start with the deliverable, then choose the skill or tool.
 | Covers, posters, illustrations, product visuals | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | One-pagers, resumes, reports, white papers, portfolios | [Kami](/docs/skills/kami) |
 | Web-style presentation decks with a clear visual direction | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
-| App prototypes, motion, infographics, design variants, expert critique | [Huashu Design](/docs/skills/huashu-design) |
 | Editing an existing PowerPoint file | [PPTX](/docs/skills/pptx) |
 | Code-based, maintainable, reviewable decks | [Tools / Open Slide](/docs/tools/open-slide) |
 
@@ -115,7 +114,7 @@ If you use the same workflow repeatedly, consider turning it into your own skill
 If you are not sure which skill to use:
 
 ```text
-I want to create a design deliverable that can be sent to other people. First decide whether I should use SorryCode Image2, Kami, Guizang PPT Skill, PPTX, Huashu Design, or Open Slide. Do not generate yet. Ask me for the goal, audience, context, assets, and style preference first.
+I want to create a design deliverable that can be sent to other people. First decide whether I should use SorryCode Image2, Kami, Guizang PPT Skill, PPTX, Open Slide, or HyperFrames. Do not generate yet. Ask me for the goal, audience, context, assets, and style preference first.
 ```
 
 If you already have a draft:

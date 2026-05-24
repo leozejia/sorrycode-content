@@ -48,7 +48,6 @@ If you only need to edit an existing `.pptx`, start with [PPTX](/docs/skills/ppt
 | Edit an existing PowerPoint file, use a company template, deliver `.pptx` | [PPTX](/docs/skills/pptx) |
 | Quickly make a web deck with a strong visual system | `Guizang PPT Skill` |
 | Turn writing, reports, resumes, or portfolios into paper-like artifacts | [Kami](/docs/skills/kami) |
-| Build prototypes, launch visuals, infographics, motion-like PPT, or critique | [Huashu Design](/docs/skills/huashu-design) |
 | Build a code-based deck with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
 
 <h2 id="what-is-not-good-for">What It Is Not Good For</h2>

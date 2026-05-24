@@ -28,7 +28,6 @@ If this is your first time making a deck, design, image, one-pager, or cover, re
 | Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 | Make code-based decks with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
 | Make product videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
-| Make app prototypes, motion design, infographics, variations, or design critique | [Huashu Design](/docs/skills/huashu-design) |
 | Keep one project aligned to the same visual rules over time | [Agent Infrastructure / DESIGN.md](/docs/agent-infra/design-md) |
 
 <h2 id="office-vs-design">How It Differs From Office Docs</h2>
@@ -46,7 +45,6 @@ PPT is not one tool category. It is a delivery format. Start with what you actua
 | Edit an existing PowerPoint file, use a company template, deliver `.pptx` | [PPTX](/docs/skills/pptx) |
 | Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 | Turn writing, reports, resumes, or portfolios into paper-like artifacts | [Kami](/docs/skills/kami) |
-| Build prototypes, launch visuals, infographics, motion-like PPT, or critique | [Huashu Design](/docs/skills/huashu-design) |
 | Build a code-based deck with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
 | Build presentation videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
 
@@ -57,7 +55,7 @@ If this is your first sharing deck, start with [Village / Make a Sharing Deck](/
 If you do not know which skill to use, ask the agent:
 
 ```text
-I want to create a polished artifact that I can share with other people. First decide whether I should use SorryCode Image2, Kami, Guizang PPT Skill, PPTX, Huashu Design, or Open Slide, then ask me the necessary questions.
+I want to create a polished artifact that I can share with other people. First decide whether I should use SorryCode Image2, Kami, Guizang PPT Skill, PPTX, Open Slide, or HyperFrames, then ask me the necessary questions.
 ```
 
 If you already know you need an image:
@@ -82,6 +80,5 @@ For a first run, use this order:
 2. Install [Kami](/docs/skills/kami) and make a one-pager
 3. Use the [Presentation / PPT Delivery Route](#presentation-route) when you need a presentation
 4. Use [Open Slide](/docs/tools/open-slide) or [HyperFrames](/docs/tools/hyperframes) when you need a code-based deck or video toolchain
-5. Use [Huashu Design](/docs/skills/huashu-design) when you need prototypes, motion, or more complex design work
 
 If you want a full design workbench instead of a single skill, see [Tools / Open Design](/docs/tools/open-design).

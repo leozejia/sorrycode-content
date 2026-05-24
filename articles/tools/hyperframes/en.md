@@ -88,7 +88,6 @@ If Node.js is missing, start with [Environment / Node.js](/docs/environment/node
 | Static covers, posters, or illustrations | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | Web presentation decks with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 | Code-based React decks | [Open Slide](/docs/tools/open-slide) |
-| App prototypes, motion, infographics, and critique | [Huashu Design](/docs/skills/huashu-design) |
 | MP4 short videos and web-style motion graphics | `HyperFrames` |
 
 <h2 id="not-for">When Not to Use It</h2>

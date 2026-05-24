@@ -31,7 +31,6 @@ PPT 也是需要迭代的设计类交付。站内不要承诺“一句话得到 
 | 修改已有 PowerPoint、套公司模板、最终交付 `.pptx` | `PPTX` | `Skills / 办公文档` |
 | 快速生成有明确视觉风格的网页演示 | `藏师傅的 PPT Skill` | `Skills / 创作与设计` |
 | 把文字、报告、简历、作品集整理成纸面风材料或 slides | `Kami` | `Skills / 创作与设计` |
-| 做 App 原型、发布视觉、信息图、动效感 PPT 或专家评审 | `Huashu Design` | `Skills / 创作与设计` |
 | 做可维护、可评论、可导出 HTML/PDF 的代码式 deck | `Open Slide` | `Tools` |
 | 做演示视频、发布动效或社媒 MP4 | `HyperFrames` | `Tools` |
 
@@ -54,20 +53,18 @@ PPT 也是需要迭代的设计类交付。站内不要承诺“一句话得到 
 - 不适合什么任务
 - 怎么安装
 - 怎么触发
-- 和 PPTX、Kami、Huashu Design、Open Slide 怎么选
+- 和 PPTX、Kami、Open Slide 怎么选
 - 最近验证口径
 
 当前路由仍是 `/docs/skills/magazine-web-ppt`，但这是现状，不是长期兼容承诺。如果这个 slug 后续被判断为不准确，按 IA 硬切策略执行：删除旧 slug，更新站内链接，不保留别名或兼容页。
 
-## `Kami` 和 `Huashu Design` 为什么也出现在 PPT 路线里
+## `Kami` 为什么也出现在 PPT 路线里
 
-`Kami` 和 `Huashu Design` 都能做 PPT，但主任务不同。
+`Kami` 也能做 slides，但主任务不同。
 
 `Kami` 的核心是排版成品。它适合把文字、访谈、报告、简历、白皮书、作品集整理成稳定、克制、可交付的材料。它做 slides 时，更像纸面文档的演示版。
 
-`Huashu Design` 的核心是设计工作台和视觉方案生成。它适合 App 原型、视觉变体、动效、信息图、PPT 视觉稿和专家评审。它做 PPT 时，更像设计师参与的视觉表达。
-
-所以它们应该出现在“演示 / PPT 交付路线”里，但单页仍按各自核心能力写，不改名成 PPT skill。
+所以它应该出现在“演示 / PPT 交付路线”里，但单页仍按自己的核心能力写，不改名成 PPT skill。
 
 ## 新手村和 Skills 的分工
 
