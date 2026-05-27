@@ -93,7 +93,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-claude.bat {{INSTALL_CLAUDE_BAT_URL}} && 
 
 <h2 id="first-prompt">第一句可以说什么</h2>
 
-第一次不要上来就让它大改项目，先给一条很稳的指令：
+第一次不要上来就让它大改项目，先让它看清楚项目入口：
 
 ```text
 先看一下这个项目的目录结构，再告诉我应该先读哪些文件。

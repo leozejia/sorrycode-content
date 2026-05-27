@@ -163,7 +163,7 @@ curl {{API_BASE_URL}}/images/edits \
 | --- | --- | --- |
 | `model` | `gpt-image-2` 或 `gemini-3-pro-image-preview` | 按你要用的图片模型选择 |
 | `prompt` | 你的图片描述 | 生成图片时写想生成什么；编辑图片时写想怎么修改 |
-| `size` | `1024x1024` | 第一次使用最稳 |
+| `size` | `1024x1024` | 第一次使用先从这个尺寸开始 |
 | `n` | `1` | 先生成一张 |
 | `response_format` | `b64_json` | 方便直接保存图片 |
 

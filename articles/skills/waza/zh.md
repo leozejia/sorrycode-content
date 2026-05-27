@@ -2,7 +2,7 @@
 title: Waza
 slug: waza
 order: 1
-summary: 一整套工程习惯包。让你在做功能、查 bug、写界面、读资料、改文案、提交前检查时，都有更稳的协作路径。
+summary: 一整套工程习惯包。让你在做功能、查 bug、写界面、读资料、改文案、提交前检查时，都按固定流程推进。
 section: skills
 section_title: Skills
 section_order: 15
@@ -16,11 +16,11 @@ source_url: https://github.com/tw93/Waza
 
 `Waza` 不是某一个工具，而是一整套工程习惯包。
 
-如果 `Kami` 帮你把材料做成成品，`SorryCode Image2` 帮你生成图片，`Waza` 解决的是更底层的问题：你怎么和 agent 一起把事情做稳。
+如果 `Kami` 帮你把材料做成成品，`SorryCode Image2` 帮你生成图片，`Waza` 解决的是更底层的问题：你怎么和 agent 一起把任务推进下去。
 
 <h2 id="what-is-waza">Waza 是什么</h2>
 
-用了 AI 之后，很多人会更快，但不一定更稳。
+用了 AI 之后，很多人会更快，但也更容易跳过思考、排查和检查。
 
 常见问题是：
 
@@ -30,7 +30,7 @@ source_url: https://github.com/tw93/Waza
 - 看资料时只是在复制摘要，没有形成自己的理解
 - 改完代码后没有自检，问题留到上线前才暴露
 
-`Waza` 把这些工程动作整理成一组可以反复调用的 skills。它帮你在关键节点停一下，按更靠谱的流程推进。
+`Waza` 把这些工程动作整理成一组可以反复调用的 skills。它帮你在关键节点停一下，先想清楚，再继续推进。
 
 <h2 id="why-recommend">为什么推荐整包安装</h2>
 
@@ -118,14 +118,14 @@ npx skills add tw93/Waza -a claude-code -g -y
 如果你不知道从哪里开始，可以直接说：
 
 ```text
-我想用 Waza 帮我把这个任务推进得更稳。请先判断现在应该用 think、hunt、design、read、learn、write 还是 check，然后告诉我下一步怎么做。
+我想用 Waza 帮我把这个任务按流程推进。请先判断现在应该用 think、hunt、design、read、learn、write 还是 check，然后告诉我下一步怎么做。
 ```
 
 <h2 id="relationship">和其他 Skills 的关系</h2>
 
 - `Kami`：把内容做成成品文档、简历、作品集、PPT
 - `SorryCode Image2`：生成图片、封面、海报、插图
-- `Waza`：帮你建立工程协作流程，让任务推进更稳
+- `Waza`：帮你建立工程协作流程，让任务先想清楚再推进
 
 它们不是互相替代的关系。更自然的组合是：先用 `Waza` 想清楚，再用 `Kami` 或 `SorryCode Image2` 做成品。
 

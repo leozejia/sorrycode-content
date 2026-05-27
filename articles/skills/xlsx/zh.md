@@ -16,7 +16,7 @@ source_url: https://github.com/anthropics/skills/tree/main/skills/xlsx
 
 `XLSX` skill 适合处理 Excel 表格。
 
-如果你有 `.xlsx`、`.csv` 或表格数据，想让 agent 帮你清洗、分析、补公式、做图表或整理报表，这类 skill 比直接把表格复制到聊天框更稳。
+如果你有 `.xlsx`、`.csv` 或表格数据，想让 agent 帮你清洗、分析、补公式、做图表或整理报表，这类 skill 会保留表格结构，比直接把表格复制到聊天框更适合处理工作簿。
 
 <h2 id="what-is-it">它解决什么问题</h2>
 

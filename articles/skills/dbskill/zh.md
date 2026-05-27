@@ -112,7 +112,7 @@ npx skills add dontbesilent2025/dbskill -a claude-code -g -y
 <h2 id="relationship">和其他 Skills 的关系</h2>
 
 - `DBSkill`：判断商业问题、内容方向和行动卡点
-- `Waza`：让 AI 编程流程更稳
+- `Waza`：让 AI 编程任务先想清楚再动手
 - `Kami`：把内容做成成品文档、简历、作品集、PPT
 - `SorryCode Image2`：生成图片、封面、海报、插图
 

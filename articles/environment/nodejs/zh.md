@@ -20,7 +20,7 @@ section_order: 40
 
 - 很多 CLI 本质上就是 Node.js 程序
 - `node` 或 `npm` 不存在时，runtime 往往根本装不上
-- 这一层不稳时，问题很容易被误判成网关或 API Key 故障
+- 这一层出问题时，报错很容易被误判成网关或 API Key 故障
 
 这页主要解决这些场景：
 
@@ -100,7 +100,7 @@ codex --version
 
 ### 官方安装包
 
-这条路对小白最稳：
+新手建议走官方安装包：
 
 - 打开 [Node.js 官网](https://nodejs.org/en/download)
 - 下载 `LTS` 版本
@@ -163,7 +163,7 @@ npm -v
 
 两个命令都能输出版本号，就说明这一层已经准备好。
 
-更稳的版本选择是：
+第一次接入建议选：
 
 - Node.js `22 LTS`
 

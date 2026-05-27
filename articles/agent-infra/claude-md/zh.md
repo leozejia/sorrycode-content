@@ -32,7 +32,7 @@ your-project/CLAUDE.md
 your-project/apps/web/CLAUDE.md
 ```
 
-具体加载规则以 Claude Code 官方文档为准。对大多数新手来说，最稳的做法是先在项目根目录维护一份 `CLAUDE.md`。
+具体加载规则以 Claude Code 官方文档为准。新手可以先在项目根目录维护一份 `CLAUDE.md`。
 
 <h2 id="where">放在哪里</h2>
 

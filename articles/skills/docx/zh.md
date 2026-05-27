@@ -16,7 +16,7 @@ source_url: https://github.com/anthropics/skills/tree/main/skills/docx
 
 `DOCX` skill 适合处理 Word 文档。
 
-如果你手上已经有 `.docx` 文件，想让 agent 帮你读取、整理、改写、保留格式、处理批注或修订，这类 skill 比普通“复制粘贴正文”更稳。
+如果你手上已经有 `.docx` 文件，想让 agent 帮你读取、整理、改写、保留格式、处理批注或修订，这类 skill 会读取文档结构，比直接复制正文更适合处理 Word 文件。
 
 <h2 id="what-is-it">它解决什么问题</h2>
 
