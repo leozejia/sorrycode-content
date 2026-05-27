@@ -11,6 +11,7 @@ index.json
 docs/
   information-architecture.md
   operator-restructuring-guide.md
+  public-article-assets.md
   presentation-skills-strategy.md
 articles/
   runtime/
@@ -63,7 +64,8 @@ For major content restructuring, read these first:
 
 1. `docs/operator-restructuring-guide.md`
 2. `docs/information-architecture.md`
-3. Any relevant topic strategy, such as `docs/presentation-skills-strategy.md`
+3. If adding covers or article screenshots, read `docs/public-article-assets.md`
+4. Any relevant topic strategy, such as `docs/presentation-skills-strategy.md`
 
 If a public name, slug, directory path, category, or route is conceptually wrong, restructure it with a hard cut. Do not keep old paths just for compatibility.
 
@@ -72,6 +74,7 @@ If a public name, slug, directory path, category, or route is conceptually wrong
 - Use `articles/<section>/<slug>/<locale>.md` for public article content.
 - Keep one public article per locale file.
 - Put public assets next to the article that uses them.
+- Follow `docs/public-article-assets.md` for cover images and inline screenshots.
 - Keep `index.json` as the root machine-readable content index.
 - Keep section indexes such as `articles/<section>/index.json` for curated navigation.
 - Do not commit tokens, private screenshots, provider credentials, account data, or generation diagnostics.

@@ -13,6 +13,7 @@
   "articles": [
     "codex",
     "codex-plugins",
-    "claude-code"
+    "claude-code",
+    "claude-desktop"
   ]
 }

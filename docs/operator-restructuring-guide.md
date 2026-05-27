@@ -12,11 +12,13 @@
    了解仓库结构、公开内容 contract、根 `index.json` 和 section index 的格式。
 2. `docs/information-architecture.md`
    了解栏目职责、页面职责、硬切策略和收录原则。
-3. 相关专题策略文档
+3. `docs/public-article-assets.md`
+   如果要添加封面、截图或正文插图，先了解公开图片资源的使用边界。
+4. 相关专题策略文档
    例如重构 PPT / slides 内容时读 `docs/presentation-skills-strategy.md`。
-4. 要改的公开页面
+5. 要改的公开页面
    同时读中文和英文版本，例如 `articles/skills/design-workflow/zh.md` 和 `articles/skills/design-workflow/en.md`。
-5. 相关 section index
+6. 相关 section index
    例如改 Skills，就读 `articles/skills/index.json`。
 
 ## 重构前先判断
@@ -57,6 +59,7 @@
 - 不承诺万能效果，不把工具写成魔法。
 - 不暴露内部账号池、供应商、私有路由、凭证、日志或生成诊断。
 - 强主观产物要写成“可修改初稿 + 具体反馈 + 逐步迭代”的方法，不写成情绪化立场。
+- 截图和插图只做辅助说明，不能替代文字步骤、命令、参数和错误处理。
 
 ## 写单个 skill 页面
 
