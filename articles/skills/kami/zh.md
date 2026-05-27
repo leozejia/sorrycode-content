@@ -113,7 +113,7 @@ npx skills add tw93/kami -a claude-code -g -y
   直接用自然语言描述目标，`Kami` 会自动触发
 - 我想做 PPT，是不是还要装第二个 skill
   当前不用，先直接用 `Kami`
-- 我用的是 OpenClaw / Hermes Agent
+- 我用的是其他 agent
   `Kami` 官方也提供 generic agents 路径，但站内当前先只验证 `Codex / Claude Code`
 
 <h2 id="references">参考</h2>

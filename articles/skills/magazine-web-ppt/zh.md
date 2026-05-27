@@ -149,7 +149,7 @@ ppt/
   上游在持续更新，站内只维护选择、安装、触发和边界；具体能力看官方仓库
 - 我想做普通文档或简历
   先用 [Skills / Kami](/docs/skills/kami)
-- 我用的是 OpenClaw / Hermes Agent
+- 我用的是其他 agent
   上游可被其他 agent 参考，但站内当前先只验证 `Codex / Claude Code`
 
 <h2 id="references">参考</h2>

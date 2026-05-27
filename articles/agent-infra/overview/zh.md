@@ -37,7 +37,7 @@ Agent 用久了，真正麻烦的通常不是“它会不会回答”。
 
 如果你不确定从哪开始，先看 [长期上下文怎么管理](/docs/agent-infra/context-management)。
 
-因为无论你用 Codex、Claude Code、OpenClaw，还是别的 agent runtime，都迟早会遇到同一个问题：
+因为无论你用 Codex、Claude Code，还是别的 agent runtime，都迟早会遇到同一个问题：
 
 ```text
 哪些内容应该继续留给 agent？

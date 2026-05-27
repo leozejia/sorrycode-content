@@ -37,7 +37,7 @@ This section is not about chasing model names. It is about turning long-running 
 
 If you do not know where to start, read [How to Manage Long-Lived Context](/docs/agent-infra/context-management) first.
 
-Whether you use Codex, Claude Code, OpenClaw, or another agent runtime, the same question appears sooner or later:
+Whether you use Codex, Claude Code, or another agent runtime, the same question appears sooner or later:
 
 ```text
 what should the agent keep carrying?

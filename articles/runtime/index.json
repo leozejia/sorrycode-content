@@ -13,8 +13,6 @@
   "articles": [
     "codex",
     "codex-plugins",
-    "claude-code",
-    "openclaw",
-    "hermes-agent"
+    "claude-code"
   ]
 }

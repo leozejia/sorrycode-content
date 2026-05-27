@@ -59,5 +59,3 @@ Go back to:
 
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
-- [Runtime / OpenClaw](/docs/runtime/openclaw)
-- [Runtime / Hermes Agent](/docs/runtime/hermes-agent)

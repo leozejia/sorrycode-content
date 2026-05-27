@@ -149,7 +149,7 @@ Keep the rules simple:
   Upstream evolves quickly. SorryCode documents selection, install, trigger, and boundaries; the official repository documents latest capabilities
 - I need a normal document or resume
   Start with [Skills / Kami](/docs/skills/kami)
-- I use OpenClaw or Hermes Agent
+- I use another agent
   The upstream skill can inform other agents, but SorryCode currently verifies `Codex / Claude Code`
 
 <h2 id="references">References</h2>

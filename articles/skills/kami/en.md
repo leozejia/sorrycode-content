@@ -111,7 +111,7 @@ Turn this into a long document and add a revenue breakdown donut chart plus a us
   describe the result you want in plain language and let Kami trigger itself
 - I want to make PPT, do I need another skill
   not right now, start with `Kami`
-- I use OpenClaw or Hermes Agent
+- I use another agent
   Kami also documents a generic-agents path, but our current docs verify `Codex / Claude Code` first
 
 <h2 id="references">References</h2>
