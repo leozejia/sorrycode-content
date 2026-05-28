@@ -41,7 +41,7 @@ If you have not done this yet, start with [Platform / Create API Key](/docs/plat
 
 <h2 id="one-click-install">One-Click Install</h2>
 
-This is the default path. The installer connects `Claude Code` to `{{ANTHROPIC_BASE_URL}}` and writes the local config. After install, use `Claude Desktop` or your preferred developer tool.
+This is the default path. The installer connects `Claude Code` to `{{ANTHROPIC_BASE_URL}}` and writes the local config. After install, enter your project folder in a terminal and run `claude`.
 
 ### macOS / Linux
 
@@ -81,13 +81,15 @@ If the last step says the connectivity check failed, that does not always mean t
 
 <h2 id="start-claude-code">How to Start After Install</h2>
 
-Beginners should install `Claude Desktop` for a more graphical entry.
+This one-click installer configures `Claude Code` only. It does not configure `Claude Desktop`.
 
-Claude Desktop download: <https://claude.com/download>
+If you want the model to read local projects, edit code, and run commands, enter your project folder and run:
 
-Claude Desktop can also support similar developer-tool workflows. We do not expand third-party configuration details here; contact SorryCode support if you need help setting it up.
+```bash
+claude
+```
 
-If you do not use the desktop app yet, you can enter your project folder in a terminal and run `claude`.
+If you want to use Claude's graphical chat interface while sending requests through SorryCode, configure Claude Desktop's third-party inference gateway separately. Read [Runtime / Claude Desktop](/docs/runtime/claude-desktop) next.
 
 If you prefer viewing project files and changes inside a visual editor, continue with [Tools / VS Code](/docs/tools/vscode).
 

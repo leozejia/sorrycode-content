@@ -41,7 +41,7 @@ section_order: 10
 
 <h2 id="one-click-install">一键安装</h2>
 
-这是默认主路径。安装器会把 `Claude Code` 接到 `{{ANTHROPIC_BASE_URL}}`，写好本地配置。安装后可以用 `Claude Desktop` 或你熟悉的开发工具打开。
+这是默认主路径。安装器会把 `Claude Code` 接到 `{{ANTHROPIC_BASE_URL}}`，写好本地配置。安装完成后，在终端里进入项目目录运行 `claude` 就可以开始用。
 
 ### macOS / Linux
 
@@ -81,13 +81,15 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-claude.bat {{INSTALL_CLAUDE_BAT_URL}} && 
 
 <h2 id="start-claude-code">安装后怎么开始用</h2>
 
-小白优先安装 `Claude Desktop`，获得更图形化的入口。
+这页的一键安装只配置 `Claude Code`，不等于配置 `Claude Desktop`。
 
-`Claude Desktop` 官方下载入口：<https://claude.com/download>
+如果你要让模型读本地项目、改代码、执行命令，进入项目目录后运行：
 
-如果你想在 Claude Desktop 里做类似开发工具配置，也可以做到。这里不展开第三方配置细节；需要协助时请联系 SorryCode 客服。
+```bash
+claude
+```
 
-如果你暂时不用桌面应用，也可以在终端进入项目目录后运行 `claude`。
+如果你想用 Claude 的图形界面聊天，并让请求走 SorryCode，需要单独配置 `Claude Desktop` 的第三方推理网关。下一步看 [Runtime / Claude Desktop](/docs/runtime/claude-desktop)。
 
 如果你更想在可视化编辑器里看项目文件和改动，也可以继续看 [工具 / VS Code](/docs/tools/vscode)。
 
