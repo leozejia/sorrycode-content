@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "section": "concepts",
+  "title": {
+    "zh": "核心概念",
+    "en": "Core Concepts"
+  },
+  "updatedAt": "2026-06-01",
+  "navigation": {
+    "style": "curated-shelf",
+    "groups": [
+      {
+        "id": "understanding-ai",
+        "title": {
+          "zh": "认识 AI",
+          "en": "Understanding AI"
+        },
+        "items": [
+          "what-is-ai",
+          "why-now",
+          "what-is-agent"
+        ],
+        "description": {
+          "zh": "AI 到底是什么——用一个比喻讲清楚所有 AI 工具的共同底层。",
+          "en": "What AI actually is — one metaphor to explain the foundation of every AI tool."
+        }
+      },
+      {
+        "id": "learning-to-command",
+        "title": {
+          "zh": "学会指挥",
+          "en": "Learning to Command"
+        },
+        "items": [
+          "what-is-prompt",
+          "what-is-context",
+          "calibration"
+        ],
+        "description": {
+          "zh": "怎么跟 AI 说话、怎么管它的记性、什么时候该信它什么时候该质疑。",
+          "en": "How to talk to AI, manage its memory, and know when to trust or question it."
+        }
+      },
+      {
+        "id": "choosing-tools",
+        "title": {
+          "zh": "选对武器",
+          "en": "Choosing the Right Tools"
+        },
+        "items": [
+          "tools-models-platform",
+          "where-to-start"
+        ],
+        "description": {
+          "zh": "分清工具、模型和平台，找到你的第一条路。",
+          "en": "Distinguish tools, models, and platforms, and find your first path."
+        }
+      }
+    ]
+  },
+  "articles": [
+    "what-is-ai",
+    "why-now",
+    "what-is-agent",
+    "what-is-prompt",
+    "what-is-context",
+    "calibration",
+    "tools-models-platform",
+    "where-to-start"
+  ]
+}
