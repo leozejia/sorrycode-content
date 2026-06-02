@@ -39,6 +39,8 @@ section_order: 10
 
 如果你还没做这一步，可以先看 [Platform / 创建 API Key](/docs/platform/create-api-key)。
 
+如果你也准备使用 Codex，建议另外创建一把 API Key 给 Codex。两把 key 仍然消耗同一份余额，但记录、分组和限额可以分开管理。
+
 <h2 id="one-click-install">一键安装</h2>
 
 这是默认主路径。安装器会把 `Claude Code` 接到 `{{ANTHROPIC_BASE_URL}}`，写好本地配置。安装完成后，在终端里进入项目目录运行 `claude` 就可以开始用。

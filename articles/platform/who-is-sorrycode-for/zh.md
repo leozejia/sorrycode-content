@@ -12,7 +12,7 @@ section_order: 8
 
 SorryCode 不是另一个聊天网页。
 
-它更像一个 AI 工具额度入口：你创建一把 API Key，把 `Codex`、`Claude Code`、Gemini 路径、图片接口和 Skills 接进来，用一份余额体验多个模型和工具。
+它更像一个 AI 工具额度入口：你创建 API Key，把 `Codex`、`Claude Code`、Gemini 路径、图片接口和 Skills 接进来，用一份余额体验多个模型和工具。
 
 如果你还不确定自己该订阅哪个 AI 产品，先用 SorryCode 试一圈，通常比一上来买多个月费更轻。
 
@@ -87,9 +87,11 @@ SorryCode 不是要替代所有订阅。
 
 你不需要分别给每个平台都买一份月费。
 
-### 一把 API Key
+### 多把 API Key
 
-你创建一个 `sk-...`，把它交给 Codex、Claude Code、Skills 或其他工具。
+你可以按用途创建多个 `sk-...`。
+
+比如 Codex 一把，Claude Code 一把，图片 Skill 一把。它们消耗同一份余额，但使用记录、分组、限额和排障会分得更清楚。
 
 ### 多个入口
 
@@ -114,7 +116,7 @@ SorryCode 不是要替代所有订阅。
 API Key = 让工具使用你 SorryCode 余额的钥匙
 ```
 
-你不需要第一天就会写代码请求。先创建 Key，再按目标安装 Codex 或 Claude Code。
+你不需要第一天就会写代码请求。先按目标创建 Key，再安装 Codex 或 Claude Code。
 
 ## 下一步
 

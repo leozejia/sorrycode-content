@@ -2,7 +2,7 @@
 title: How AI Cost Works
 slug: ai-cost-basics
 order: 2
-summary: Do not judge cost by visible reply length. Understand input, output, and cache first, then see how web chat, API calls, and agent runtimes trigger usage.
+summary: Do not judge cost by visible reply length. Understand input, output, cache, and group multipliers before comparing model cost.
 section: platform
 section_title: Platform
 section_order: 8
@@ -184,6 +184,69 @@ You can connect Codex, Claude Code, Skills, image APIs, and other tools through 
 But no matter which entry you use, model consumption still comes back to input, output, and cache.
 
 Understanding these three explains why "asking AI one question" can cost differently in web chat, API calls, and agent runtimes.
+
+## What 0.8x, 1x, and 2x Mean in Groups
+
+In the console, you may see labels such as `0.8x multiplier`, `1x multiplier`, or `2x multiplier`.
+
+The `x` is a billing multiplier. It is not speed.
+
+![A 0.8x multiplier label in a console group](./group-multiplier-08.png)
+
+It does not mean:
+
+- faster requests
+- higher permission
+- bigger is always better
+- the best beginner choice
+
+It means this group charges your balance by multiplying the official USD model price.
+
+Use this first:
+
+```text
+USD balance charged = official model USD price × group multiplier
+```
+
+For example, if a model would normally cost `1 USD`:
+
+```text
+0.8x group charges about 0.8 USD balance
+1x group charges about 1 USD balance
+2x group charges about 2 USD balance
+```
+
+## Why 0.8x Can Feel Close to 10 Percent
+
+The current SorryCode recharge rule is roughly:
+
+```text
+1 RMB recharge ≈ 1 USD balance
+```
+
+If you compare official USD pricing as a RMB user, you usually also think through the USD to RMB exchange rate. For rough mental math, use `1 USD ≈ 6.8 RMB`.
+
+So the RMB cost ratio is roughly:
+
+```text
+RMB cost ratio ≈ group multiplier / 6.8
+```
+
+Examples:
+
+| Group multiplier | Rough math | Close to official RMB cost |
+| --- | --- | --- |
+| `0.8x` | `0.8 / 6.8 ≈ 0.12` | a little over 10 percent |
+| `1x` | `1 / 6.8 ≈ 0.15` | about 15 percent |
+| `2x` | `2 / 6.8 ≈ 0.29` | about 30 percent |
+
+This is only a rough way to understand the price feel. It is not an exchange-rate promise. Actual model prices, group multipliers, and model availability follow what the console shows.
+
+Remember this:
+
+```text
+The multiplier is a price multiplier, not a speed multiplier.
+```
 
 ## Next
 

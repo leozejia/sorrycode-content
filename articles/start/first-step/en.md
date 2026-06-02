@@ -2,7 +2,7 @@
 title: First Time Using SorryCode
 slug: first-step
 order: 1
-summary: First time using SorryCode? Decide whether it fits you, create an API key, then choose Codex, Claude Code, Skills, or another entry.
+summary: First time using SorryCode? Decide whether it fits you, create API keys by tool, then choose Codex, Claude Code, Skills, or another entry.
 section: start
 section_title: Getting Started
 section_order: 1
@@ -19,12 +19,14 @@ SorryCode connects those tools to models.
 Use this first mental model:
 
 ```text
-one balance + one API key + multiple AI tool entries
+one balance + separate API keys by tool + multiple AI tool entries
 ```
 
-You create a key here, give it to `Codex`, `Claude Code`, or a `Skill`, and the tool can call models using your SorryCode balance.
+You create keys here, give them to `Codex`, `Claude Code`, or a `Skill`, and those tools can call models using your SorryCode balance.
 
-That key is called an `API Key`. It usually starts with `sk-...`. You can think of it like an access card: without it, the tool cannot enter SorryCode; with it, the tool can start working.
+That kind of key is called an `API Key`. It usually starts with `sk-...`. You can think of it like an access card: without it, the tool cannot enter SorryCode; with it, the tool can start working.
+
+If you use both Codex and Claude Code, create separate API keys for them. The balance is still shared, but usage records, group switching, spending limits, and troubleshooting become clearer.
 
 If you are not sure whether SorryCode fits you, start with [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for).
 
@@ -61,12 +63,12 @@ Create an API key → Install one workbench → Install the Skill for your task
 Do this first:
 
 1. Open `API Keys` in the console
-2. Create a new `sk-...` key
+2. Create a new `sk-...` key for the tool you are setting up
 3. Copy it and keep it nearby
 
 If you cannot find the page, open: `https://sorrycode.com/keys`
 
-The detailed guide is [Platform / Create API Key](/docs/platform/create-api-key). You do not need to read all of it first; just create the `sk-...` key.
+The detailed guide is [Platform / Create API Key](/docs/platform/create-api-key). You do not need to read all of it first; just create the `sk-...` key you need.
 
 <h2 id="step-2">Step 2: Choose Your Entry</h2>
 

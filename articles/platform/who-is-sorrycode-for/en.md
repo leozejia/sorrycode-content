@@ -2,7 +2,7 @@
 title: Who SorryCode Is For
 slug: who-is-sorrycode-for
 order: 1
-summary: Use one balance and one API key to try Codex, Claude Code, Gemini paths, images, and Skills before committing to multiple subscriptions.
+summary: Use one balance and separate API keys to try Codex, Claude Code, Gemini paths, images, and Skills before committing to multiple subscriptions.
 section: platform
 section_title: Platform
 section_order: 8
@@ -12,7 +12,7 @@ section_order: 8
 
 SorryCode is not another chat web app.
 
-It is an AI tool balance and API entry point. You create one API key, connect tools such as `Codex`, `Claude Code`, Gemini paths, image APIs, and Skills, then use one balance across them.
+It is an AI tool balance and API entry point. You create API keys, connect tools such as `Codex`, `Claude Code`, Gemini paths, image APIs, and Skills, then use one balance across them.
 
 If you are not sure which AI product to subscribe to, try the workflow through SorryCode first.
 
@@ -87,9 +87,11 @@ It is better for exploration, mixed tool use, uneven usage, and users who want t
 
 You do not need a separate monthly subscription for every platform you want to try.
 
-### One API key
+### Multiple API keys
 
-Create one `sk-...` key and give it to Codex, Claude Code, Skills, or other compatible tools.
+Create separate `sk-...` keys by use.
+
+For example, one for Codex, one for Claude Code, and one for an image skill. They consume the same balance, but usage records, groups, limits, and troubleshooting stay clearer.
 
 ### Multiple entries
 
@@ -112,7 +114,7 @@ If the word API feels unfamiliar, use this first:
 API Key = the key that lets a tool use your SorryCode balance
 ```
 
-You do not need to write API requests on day one. Create a key, then install Codex or Claude Code based on your goal.
+You do not need to write API requests on day one. Create the key you need, then install Codex or Claude Code based on your goal.
 
 ## Next
 

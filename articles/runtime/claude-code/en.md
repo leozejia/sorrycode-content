@@ -39,6 +39,8 @@ The quick link is `https://sorrycode.com/keys`, but the more important thing is 
 
 If you have not done this yet, start with [Platform / Create API Key](/docs/platform/create-api-key).
 
+If you also plan to use Codex, create a separate API key for Codex. Both keys still use the same balance, but usage records, group switching, spending limits, and troubleshooting become clearer.
+
 <h2 id="one-click-install">One-Click Install</h2>
 
 This is the default path. The installer connects `Claude Code` to `{{ANTHROPIC_BASE_URL}}` and writes the local config. After install, enter your project folder in a terminal and run `claude`.

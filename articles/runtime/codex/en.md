@@ -39,6 +39,8 @@ The quick link is `https://sorrycode.com/keys`, but the more important thing is 
 
 If you have not done this yet, start with [Platform / Create API Key](/docs/platform/create-api-key).
 
+If you also plan to use Claude Code, create a separate API key for Claude Code. Both keys still use the same balance, but usage records, group switching, spending limits, and troubleshooting become clearer.
+
 <h2 id="one-click-install">One-Click Install</h2>
 
 This is the default path. The installer connects `Codex` to `{{API_BASE_URL}}` and writes the local config. After install, use `Codex App` to open your project.

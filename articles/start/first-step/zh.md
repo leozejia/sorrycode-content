@@ -2,7 +2,7 @@
 title: 第一次使用 SorryCode
 slug: first-step
 order: 1
-summary: 第一次使用 SorryCode，先判断它是否适合你，再创建 API Key，选择 Codex、Claude Code、Skills 或其他入口。
+summary: 第一次使用 SorryCode，先判断它是否适合你，再按工具创建 API Key，选择 Codex、Claude Code、Skills 或其他入口。
 section: start
 section_title: 开始使用
 section_order: 1
@@ -19,12 +19,14 @@ SorryCode 负责把这些工具接到模型上。
 你可以先这样理解：
 
 ```text
-一份余额 + 一把 API Key + 多个 AI 工具入口
+一份余额 + 按工具分开的 API Key + 多个 AI 工具入口
 ```
 
-你在这里创建一把钥匙，把它交给 `Codex`、`Claude Code` 或某个 `Skill`，工具就能用你的 SorryCode 账号余额调用模型。
+你在这里创建钥匙，把它交给 `Codex`、`Claude Code` 或某个 `Skill`，工具就能用你的 SorryCode 账号余额调用模型。
 
-这把钥匙叫 `API Key`，通常长这样：`sk-...`。你可以先把它理解成门禁卡：没有它，工具进不了 SorryCode；有了它，工具才能开始干活。
+这种钥匙叫 `API Key`，通常长这样：`sk-...`。你可以先把它理解成门禁卡：没有它，工具进不了 SorryCode；有了它，工具才能开始干活。
+
+如果你同时使用 Codex 和 Claude Code，建议给它们分别创建 API Key。余额仍然是同一份，但记录、分组和限额可以分开管理。
 
 如果你还不确定自己该不该用 SorryCode，先看 [Platform / SorryCode 适合谁](/docs/platform/who-is-sorrycode-for)。
 
@@ -61,12 +63,12 @@ SorryCode 负责把这些工具接到模型上。
 你要做的是：
 
 1. 打开控制台里的 `API 密钥`
-2. 创建一个新的 `sk-...`
+2. 按用途创建新的 `sk-...`
 3. 复制它，先留在手边
 
 如果你找不到入口，直接打开：`https://sorrycode.com/keys`
 
-更详细的说明在 [Platform / 创建 API Key](/docs/platform/create-api-key)。第一次不用先读完那篇，先把 `sk-...` 创建出来就行。
+更详细的说明在 [Platform / 创建 API Key](/docs/platform/create-api-key)。第一次不用先读完那篇，先把要用的 `sk-...` 创建出来就行。
 
 <h2 id="step-2">第 2 步：选择你要用的入口</h2>
 
