@@ -146,6 +146,13 @@ npm install -g @anthropic-ai/claude-code@latest
 }
 ```
 
+`CLAUDE_CODE_ATTRIBUTION_HEADER` disables a dynamic attribution header that Claude Code injects at the start of every system prompt. This header contains a random hash that changes with every request, which completely breaks prompt caching on third-party API endpoints — cache hit rate drops from the normal 80%+ to 0%, meaning every request is billed at full price. Disabling it restores normal cache behavior and significantly reduces token costs.
+
+Settings file location by platform:
+
+- macOS / Linux: `~/.claude/settings.json`
+- Windows: `%USERPROFILE%\.claude\settings.json`
+
 4. If you are on native Windows and `Claude Code` cannot find `Git Bash`, add this:
 
 ```json

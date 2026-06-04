@@ -146,6 +146,13 @@ npm install -g @anthropic-ai/claude-code@latest
 }
 ```
 
+`CLAUDE_CODE_ATTRIBUTION_HEADER` 关掉后，Claude Code 不再在每次请求的 system prompt 前面注入动态归属头。这个头部包含每次变化的随机哈希，会导致第三方 API 的 prompt 缓存完全失效——缓存命中率从正常水平的 80%+ 跌到 0%，每次请求都按全价计费。关掉后缓存恢复正常，token 消耗大幅下降。
+
+配置文件在不同系统中的位置：
+
+- macOS / Linux: `~/.claude/settings.json`
+- Windows: `%USERPROFILE%\.claude\settings.json`
+
 4. 如果你是原生 Windows，且 `Claude Code` 找不到 `Git Bash`，再补一条：
 
 ```json
