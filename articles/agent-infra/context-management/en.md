@@ -46,7 +46,7 @@ Chat is for movement. Files are for durable truth. Handoffs are for switching se
 
 If a piece of information will be reused, do not explain it again every time.
 
-For coding, put it in [AGENTS.md](/docs/agent-infra/agents-md) or [CLAUDE.md](/docs/agent-infra/claude-md).
+For coding, put it in [AGENTS.md](/docs/agent-infra/project-rules) or [CLAUDE.md](/docs/agent-infra/project-rules).
 
 For design, put it in [DESIGN.md](/docs/agent-infra/design-md).
 

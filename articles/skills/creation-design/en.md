@@ -48,7 +48,7 @@ PPT is not one tool category. It is a delivery format. Start with what you actua
 | Build a code-based deck with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
 | Build presentation videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
 
-If this is your first sharing deck, start with [Village / Make a Sharing Deck](/docs/village/share-ppt). It gives you a default path instead of a full tool comparison.
+If this is your first sharing deck, start with [Village / Make a Sharing Deck](/docs/skills/magazine-web-ppt). It gives you a default path instead of a full tool comparison.
 
 <h2 id="first-prompt">First Prompt</h2>
 

@@ -92,7 +92,7 @@ skill 的价值在这里：
 | 修改已有 PowerPoint 文件 | [PPTX](/docs/skills/pptx) |
 | 代码式、可维护、可评论的 deck | [工具 / Open Slide](/docs/tools/open-slide) |
 
-如果只是第一次尝试做一套分享稿，可以走 [新手村 / 做一套分享 PPT](/docs/village/share-ppt)。那里会给默认路径，不要求你先比较所有工具。
+如果只是第一次尝试做一套分享稿，可以走 [新手村 / 做一套分享 PPT](/docs/skills/magazine-web-ppt)。那里会给默认路径，不要求你先比较所有工具。
 
 <h2 id="make-it-yours">把稳定偏好写下来</h2>
 

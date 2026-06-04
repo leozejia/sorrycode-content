@@ -5,10 +5,20 @@
     "en": "Skills",
     "zh": "Skills"
   },
-  "updatedAt": "2026-05-12",
+  "updatedAt": "2026-06-04",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
+      {
+        "id": "getting-started",
+        "title": {
+          "en": "Getting Started",
+          "zh": "入门"
+        },
+        "items": [
+          "featured-skills"
+        ]
+      },
       {
         "id": "office-docs",
         "title": {
@@ -30,6 +40,7 @@
           "zh": "创作与设计"
         },
         "items": [
+          "design-workflow",
           "creation-design",
           "sorrycode-image2",
           "kami",

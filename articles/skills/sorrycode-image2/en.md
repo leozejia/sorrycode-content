@@ -145,6 +145,6 @@ It should contain at least:
 
 <h2 id="next">Next Step</h2>
 
-For a guided task, go to [Village / Generate Your First Image](/docs/village/first-image).
+For a guided task, go to [Village / Generate Your First Image](/docs/skills/sorrycode-image2).
 
 For HTTP details, see [Platform / Image Request](/docs/platform/image-request).

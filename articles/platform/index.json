@@ -5,7 +5,7 @@
     "en": "Platform",
     "zh": "Platform"
   },
-  "updatedAt": "2026-06-02",
+  "updatedAt": "2026-06-04",
   "navigation": {
     "style": "flat",
     "groups": []
@@ -13,9 +13,7 @@
   "articles": [
     "who-is-sorrycode-for",
     "ai-cost-basics",
-    "tools-and-models",
     "create-api-key",
-    "first-request",
     "image-request"
   ]
 }

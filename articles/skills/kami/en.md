@@ -81,6 +81,68 @@ The best prompt shape is:
 
 If you need charts, include the data and chart type directly in your prompt.
 
+<h2 id="scenarios">Scenario Templates</h2>
+
+Not sure how to structure your information? Fill out one of these templates and send it with your prompt.
+
+<h3 id="scenario-product">Product Intro</h3>
+
+```text
+Product name:
+Target audience:
+What problem it solves:
+Top 3 selling points:
+Pricing, entry point, or how to access:
+What the reader should do next:
+Tone: restrained / enthusiastic / professional / creator-style
+```
+
+Then say:
+
+```text
+Take the information below and turn it into a one-pager product intro for first-time users. Give me the page structure first. Once I confirm, generate the finished document.
+```
+
+If the result sounds too much like an ad: `Less marketing language. More concrete details and user scenarios.`
+
+<h3 id="scenario-personal">Personal Intro</h3>
+
+```text
+Who I am:
+What I do now:
+What I am good at:
+Representative works, experience, or projects:
+What people can come to me for:
+One thing I want people to remember about me:
+Tone: professional / approachable / creator-style / formal
+```
+
+Then say:
+
+```text
+Turn the information below into a one-pager personal intro for someone meeting me for the first time. Give me the page structure first. Once I confirm, generate the finished document.
+```
+
+If it reads too much like a resume: `Do not write this like a resume. Write it the way you would introduce yourself to a future collaborator.`
+If it feels too vague: `Ask me 5 questions first to help me add concrete experience and representative work.`
+
+<h3 id="scenario-long-article">Long Article</h3>
+
+```text
+Article topic:
+Target readers:
+Core argument (one sentence):
+Reference materials (notes, interviews, drafts, etc.):
+Desired tone:
+Approximate length (optional):
+```
+
+Then say:
+
+```text
+Take the materials below and organize them into a formal long article. Do not just summarize — reorganize the content so the logic is clearer and the reading flows better. Give me the outline first. Once I confirm, write the full text. After writing, check whether the headings accurately reflect the content.
+```
+
 <h2 id="first-prompts">What to Say First</h2>
 
 If you want to test documents first:

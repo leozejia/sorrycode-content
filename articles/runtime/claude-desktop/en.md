@@ -212,7 +212,7 @@ Check these first:
 3. does the SorryCode account have available balance or permission?
 4. can your current network reach SorryCode?
 
-If you are not sure which layer failed, read [Troubleshoot / Common Errors](/docs/troubleshoot/common-errors).
+If you are not sure which layer failed, read [Troubleshoot / Common Errors](/docs/platform/create-api-key).
 
 ### Code View Does Not Behave As Expected
 

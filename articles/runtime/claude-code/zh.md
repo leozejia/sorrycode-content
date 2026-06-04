@@ -24,7 +24,7 @@ section_order: 10
 
 参考：[Claude Code 官方文档](https://code.claude.com/docs/en/overview)
 
-> 小白先记住：`Claude Code` 是 runtime，不是模型。它默认适合 Claude / Anthropic-compatible 路径。不要为了追新 GPT 模型就把 `gpt-5.4` 直接塞进 Claude Code；缓存命中和 API 消耗可能很不划算。先看 [Platform / 工具不是模型](/docs/platform/tools-and-models)。
+> 小白先记住：`Claude Code` 是 runtime，不是模型。它默认适合 Claude / Anthropic-compatible 路径。不要为了追新 GPT 模型就把 `gpt-5.4` 直接塞进 Claude Code；缓存命中和 API 消耗可能很不划算。先看 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)。
 
 <h2 id="prepare-api-key">先准备 API Key</h2>
 
@@ -165,7 +165,7 @@ npm install -g @anthropic-ai/claude-code@latest
 
 如果你走的是一键安装，通常不用先手动打请求。
 
-只有在这些场景下，再回头看 [Platform / 首条请求](/docs/platform/first-request)：
+只有在这些场景下，再回头看 [Platform / 首条请求](/docs/platform/create-api-key)：
 
 - 安装器最后的连通性检查失败了
 - 你想先确认 `API Key + Base URL + 网络` 这三层都通了
@@ -180,7 +180,7 @@ npm install -g @anthropic-ai/claude-code@latest
 - 原生 Windows 下找不到 `Git Bash`
   把 `CLAUDE_CODE_GIT_BASH_PATH` 写进 `~/.claude/settings.json`
 - `401 / 404 / 429`
-  去看 [排障 / 常见问题](/docs/troubleshoot/common-errors)
+  去看 [排障 / 常见问题](/docs/platform/create-api-key)
 - 下载慢或安装超时
   去看 [环境准备 / Node.js](/docs/environment/nodejs#network)
 - 不知道 API Key 去哪里建

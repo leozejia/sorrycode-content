@@ -216,4 +216,4 @@ Prompt 不是咒语，是工作指令。
 
 答案在下一章：[AI 的"记性"怎么管](/docs/concepts/what-is-context)
 
-如果你想直接开始实践：[新手村 / 修改第一个文件](/docs/village/edit-first-file)
+如果你想直接开始实践：[新手村 / 修改第一个文件](/docs/runtime/codex)

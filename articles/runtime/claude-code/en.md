@@ -24,7 +24,7 @@ For a first setup, you do not need to understand `settings.json` or env vars up 
 
 Reference: [Claude Code official docs](https://code.claude.com/docs/en/overview)
 
-> Beginner rule: `Claude Code` is a runtime, not a model. It is the default fit for Claude / Anthropic-compatible paths. Do not put `gpt-5.4` into Claude Code just to chase a new GPT model; cache hit rate and API usage can become inefficient. Read [Platform / Tools Are Not Models](/docs/platform/tools-and-models).
+> Beginner rule: `Claude Code` is a runtime, not a model. It is the default fit for Claude / Anthropic-compatible paths. Do not put `gpt-5.4` into Claude Code just to chase a new GPT model; cache hit rate and API usage can become inefficient. Read [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform).
 
 <h2 id="prepare-api-key">Prepare the API Key First</h2>
 
@@ -165,7 +165,7 @@ One detail matters here:
 
 If you used one-click install, you usually do not need to send a manual request first.
 
-Go to [Platform / First Request](/docs/platform/first-request) only when:
+Go to [Platform / First Request](/docs/platform/create-api-key) only when:
 
 - the installer's final connectivity check failed
 - you want to verify `API Key + Base URL + network` directly
@@ -180,7 +180,7 @@ Go to [Platform / First Request](/docs/platform/first-request) only when:
 - native Windows cannot find `Git Bash`
   add `CLAUDE_CODE_GIT_BASH_PATH` into `~/.claude/settings.json`
 - `401 / 404 / 429`
-  go to [Troubleshoot / Common Questions](/docs/troubleshoot/common-errors)
+  go to [Troubleshoot / Common Questions](/docs/platform/create-api-key)
 - slow downloads or installer timeouts
   go to [Environment / Node.js](/docs/environment/nodejs#network)
 - not sure where to create the API key

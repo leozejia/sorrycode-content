@@ -2,7 +2,7 @@
 title: Agent 基建怎么选
 slug: overview
 order: 1
-summary: 先按问题选择入口：管理长会话、维护 AGENTS.md / CLAUDE.md / DESIGN.md，还是理解 MCP 和 Skills。
+summary: 先按问题选择入口：管理长会话、维护项目规则文件、统一设计约束、封装可复用 Skills，以及了解 MCP 协议。
 section: agent-infra
 section_title: Agent 基建
 section_order: 32
@@ -29,11 +29,10 @@ Agent 用久了，真正麻烦的通常不是“它会不会回答”。
 | 你现在遇到的问题 | 去哪里 |
 | --- | --- |
 | 会话很长，不知道什么时候该释放 | [长期上下文怎么管理](/docs/agent-infra/context-management) |
-| 用 Codex，想让它长期遵守项目规则 | [AGENTS.md](/docs/agent-infra/agents-md) |
-| 用 Claude Code，想维护项目 memory | [CLAUDE.md](/docs/agent-infra/claude-md) |
+| 想让 Agent 长期遵守项目规则（Codex / Claude Code 通用） | [项目规则文件](/docs/agent-infra/project-rules) |
 | 做 UI、海报、PPT、文档，希望风格别跑偏 | [DESIGN.md](/docs/agent-infra/design-md) |
-| 想让 agent 连接数据库、浏览器、知识库或内部工具 | [MCP](/docs/agent-infra/mcp) |
 | 想把一类重复任务变成可复用能力 | [Skills](/docs/agent-infra/skills) |
+| 想让 agent 连接数据库、浏览器、知识库或内部工具 | 看下方 MCP 说明 |
 
 如果你不确定从哪开始，先看 [长期上下文怎么管理](/docs/agent-infra/context-management)。
 
@@ -64,6 +63,24 @@ Skills = agent 遇到某类任务时怎么做
 `MCP` 负责工具和数据连接。
 
 `Skills` 负责把重复工作流打包。
+
+<h2 id="mcp">MCP 是什么</h2>
+
+MCP（Model Context Protocol）是一个开放协议，让 Agent 连接外部工具、数据和服务的标准化方式。
+
+简单说：如果 Skills 是"操作手册"（教 Agent 怎么做某类任务），MCP 就是"连接线"（让 Agent 能访问数据库、浏览器、API、知识库等外部系统）。
+
+**大多数普通用户不需要主动配置 MCP。** 以下情况才需要关心：
+
+- 你想让 Agent 直接查询公司内部数据库
+- 你想让 Agent 操作浏览器完成复杂流程
+- 你想把内部工具或知识库暴露给 Agent
+
+如果你属于以上情况，参考：
+- [MCP 官方文档](https://modelcontextprotocol.io/introduction)
+- Claude Code 和 Codex 各自的 MCP 配置文档
+
+第一天用 Agent，先不需要学 MCP。等你的项目规则文件、上下文管理和 Skills 都稳定了，再回来看。
 
 <h2 id="not-database">先记住一件事</h2>
 

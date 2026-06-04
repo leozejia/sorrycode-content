@@ -24,7 +24,7 @@ section_order: 10
 
 参考：[OpenAI Codex 官方仓库](https://github.com/openai/codex)
 
-> 小白先记住：`Codex` 是 runtime，不是模型。它默认适合 GPT / OpenAI-compatible 路径。不要把 Claude 模型随手塞进 Codex；如果你不确定，先看 [Platform / 工具不是模型](/docs/platform/tools-and-models)。
+> 小白先记住：`Codex` 是 runtime，不是模型。它默认适合 GPT / OpenAI-compatible 路径。不要把 Claude 模型随手塞进 Codex；如果你不确定，先看 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)。
 
 <h2 id="prepare-api-key">先准备 API Key</h2>
 
@@ -128,7 +128,7 @@ codex resume --last
 codex -m gpt-5.5
 ```
 
-这里的 `gpt-5.5` 只是示例。实际可用模型以 [Platform / 工具不是模型](/docs/platform/tools-and-models) 和控制台开放情况为准。
+这里的 `gpt-5.5` 只是示例。实际可用模型以 [Platform / 工具不是模型](/docs/concepts/tools-models-platform) 和控制台开放情况为准。
 
 <h2 id="first-prompt">第一句可以说什么</h2>
 
@@ -197,7 +197,7 @@ requires_openai_auth = true
 
 如果你走的是一键安装，通常不用先手动打请求。
 
-只有在这些场景下，再回头看 [Platform / 首条请求](/docs/platform/first-request)：
+只有在这些场景下，再回头看 [Platform / 首条请求](/docs/platform/create-api-key)：
 
 - 安装器最后的连通性检查失败了
 - 你想先确认 `API Key + Base URL + 网络` 这三层都通了
@@ -210,7 +210,7 @@ requires_openai_auth = true
 - macOS 安装时卡在 Apple 弹窗、Homebrew 或 Git
   去看 [环境准备 / Node.js](/docs/environment/nodejs#macos)
 - `401 / 404 / 429`
-  去看 [排障 / 常见问题](/docs/troubleshoot/common-errors)
+  去看 [排障 / 常见问题](/docs/platform/create-api-key)
 - 下载慢或安装超时
   去看 [环境准备 / Node.js](/docs/environment/nodejs#network)
 - 不知道 API Key 去哪里建

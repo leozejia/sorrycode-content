@@ -82,7 +82,7 @@ Different goals have different first steps:
 | Use the Claude path for project work | [Runtime / Claude Code](/docs/runtime/claude-code) |
 | Generate or edit images | Install a runtime first, then read [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) |
 | Work with Word, Excel, PowerPoint, or PDF | Install a runtime first, then read [Skills / Office Docs](/docs/skills/office-docs) |
-| Write direct HTTP requests | [Platform / First Request](/docs/platform/first-request) |
+| Write direct HTTP requests | [Platform / First Request](/docs/platform/create-api-key) |
 | Use a more visual file and diff workspace | [Tools / VS Code](/docs/tools/vscode) |
 
 If you have no idea what to choose, start with `Codex`. It is the most direct beginner entry for the GPT path.
@@ -103,7 +103,7 @@ Use Claude models through Claude Code first.
 
 Do not chase a new model name by putting it into a random workbench. It may run, but cache behavior and API usage may become inefficient.
 
-For details, read [Platform / Tools Are Not Models](/docs/platform/tools-and-models).
+For details, read [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform).
 
 <h2 id="step-4">Step 4: Install for Your Computer</h2>
 
@@ -142,14 +142,14 @@ Use SorryCode Image2 to generate a clean warm Chinese podcast cover about AI cod
 
 Choose by goal:
 
-- Read a project: [Village / Read a Project](/docs/village/read-project)
-- Edit the first file: [Village / Edit Your First File](/docs/village/edit-first-file)
-- Generate an image: [Village / Generate Your First Image](/docs/village/first-image)
-- Make a product intro: [Village / Product Intro](/docs/village/product-intro)
+- Read a project: [Village / Read a Project](/docs/runtime/codex)
+- Edit the first file: [Village / Edit Your First File](/docs/runtime/codex)
+- Generate an image: [Village / Generate Your First Image](/docs/skills/sorrycode-image2)
+- Make a product intro: [Village / Product Intro](/docs/skills/kami)
 - Work with office files: [Skills / Office Docs](/docs/skills/office-docs)
 - Decide whether SorryCode fits you: [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for)
 - Understand AI cost: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
-- Understand tools and models: [Platform / Tools Are Not Models](/docs/platform/tools-and-models)
+- Understand tools and models: [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - Understand `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills`: [Agent Infrastructure](/docs/agent-infra/overview)
 
 <h2 id="remember">Remember These</h2>

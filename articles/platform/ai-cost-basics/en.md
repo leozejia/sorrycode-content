@@ -224,21 +224,21 @@ The current SorryCode recharge rule is roughly:
 1 RMB recharge ≈ 1 USD balance
 ```
 
-If you compare official USD pricing as a RMB user, you usually also think through the USD to RMB exchange rate. For rough mental math, use `1 USD ≈ 6.8 RMB`.
+If you compare official USD pricing as a RMB user, you usually also think through the USD to RMB exchange rate. For rough mental math, use `1 USD ≈ 7.2 RMB`.
 
 So the RMB cost ratio is roughly:
 
 ```text
-RMB cost ratio ≈ group multiplier / 6.8
+RMB cost ratio ≈ group multiplier / 7.2
 ```
 
 Examples:
 
 | Group multiplier | Rough math | Close to official RMB cost |
 | --- | --- | --- |
-| `0.8x` | `0.8 / 6.8 ≈ 0.12` | a little over 10 percent |
-| `1x` | `1 / 6.8 ≈ 0.15` | about 15 percent |
-| `2x` | `2 / 6.8 ≈ 0.29` | about 30 percent |
+| `0.8x` | `0.8 / 7.2 ≈ 0.11` | about 11 percent |
+| `1x` | `1 / 7.2 ≈ 0.14` | about 14 percent |
+| `2x` | `2 / 7.2 ≈ 0.28` | about 28 percent |
 
 This is only a rough way to understand the price feel. It is not an exchange-rate promise. Actual model prices, group multipliers, and model availability follow what the console shows.
 
@@ -251,7 +251,7 @@ The multiplier is a price multiplier, not a speed multiplier.
 ## Next
 
 - Unsure whether SorryCode fits you: [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for)
-- Unsure how tools and models differ: [Platform / Tools Are Not Models](/docs/platform/tools-and-models)
+- Unsure how tools and models differ: [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - Ready to start: [Platform / Create API Key](/docs/platform/create-api-key)
 - GPT path: [Runtime / Codex](/docs/runtime/codex)
 - Claude path: [Runtime / Claude Code](/docs/runtime/claude-code)

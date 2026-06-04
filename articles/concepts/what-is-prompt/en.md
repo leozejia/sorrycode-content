@@ -217,4 +217,4 @@ Why do even clear instructions sometimes fail after a long conversation?
 
 The answer is in the next chapter: [How to Manage AI's Memory](/docs/concepts/what-is-context)
 
-If you want to practice right now: [Village / Edit Your First File](/docs/village/edit-first-file)
+If you want to practice right now: [Village / Edit Your First File](/docs/runtime/codex)

@@ -224,21 +224,21 @@ SorryCode 当前充值口径是：
 1 RMB 充值 ≈ 1 USD 余额
 ```
 
-而官方美元价格如果按人民币理解，通常还要乘以美元兑人民币汇率。为了让你快速估算，可以先用 `1 USD ≈ 6.8 RMB` 粗略计算。
+而官方美元价格如果按人民币理解，通常还要乘以美元兑人民币汇率。为了让你快速估算，可以先用 `1 USD ≈ 7.2 RMB` 粗略计算。
 
 所以折扣感大致可以这样估：
 
 ```text
-人民币成本比例 ≈ 分组倍率 / 6.8
+人民币成本比例 ≈ 分组倍率 / 7.2
 ```
 
 几个例子：
 
 | 分组倍率 | 粗略换算 | 接近官方人民币成本 |
 | --- | --- | --- |
-| `0.8x` | `0.8 / 6.8 ≈ 0.12` | 一折多 |
-| `1x` | `1 / 6.8 ≈ 0.15` | 一折半左右 |
-| `2x` | `2 / 6.8 ≈ 0.29` | 三折左右 |
+| `0.8x` | `0.8 / 7.2 ≈ 0.11` | 一折左右 |
+| `1x` | `1 / 7.2 ≈ 0.14` | 一折半左右 |
+| `2x` | `2 / 7.2 ≈ 0.28` | 三折左右 |
 
 这只是帮助你理解价格感的粗略换算，不是固定汇率承诺。实际模型价格、分组倍率和可用模型，以控制台显示为准。
 
@@ -251,7 +251,7 @@ SorryCode 当前充值口径是：
 ## 下一步
 
 - 不知道自己适不适合用 SorryCode：看 [Platform / SorryCode 适合谁](/docs/platform/who-is-sorrycode-for)
-- 不知道工具和模型怎么分：看 [Platform / 工具不是模型](/docs/platform/tools-and-models)
+- 不知道工具和模型怎么分：看 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)
 - 想直接开始：看 [Platform / 创建 API Key](/docs/platform/create-api-key)
 - 想走 GPT 路径：看 [Runtime / Codex](/docs/runtime/codex)
 - 想走 Claude 路径：看 [Runtime / Claude Code](/docs/runtime/claude-code)

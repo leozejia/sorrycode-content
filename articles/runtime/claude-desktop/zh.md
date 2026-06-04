@@ -212,7 +212,7 @@ Help → Troubleshooting → Enable Developer Mode
 3. SorryCode 账号是否有可用余额或权限
 4. 当前网络是否能访问 SorryCode
 
-如果你不确定是哪一层出问题，可以先看 [排障 / 常见问题](/docs/troubleshoot/common-errors)。
+如果你不确定是哪一层出问题，可以先看 [排障 / 常见问题](/docs/platform/create-api-key)。
 
 ### Code 页面不能按预期工作
 

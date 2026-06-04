@@ -5,7 +5,7 @@
     "en": "Agent Infrastructure",
     "zh": "Agent 进阶"
   },
-  "updatedAt": "2026-05-13",
+  "updatedAt": "2026-06-04",
   "navigation": {
     "style": "flat",
     "groups": []
@@ -13,10 +13,8 @@
   "articles": [
     "overview",
     "context-management",
-    "agents-md",
-    "claude-md",
+    "project-rules",
     "design-md",
-    "mcp",
     "skills"
   ]
 }

@@ -121,7 +121,7 @@ API Key = 让工具使用你 SorryCode 余额的钥匙
 ## 下一步
 
 - 不知道 AI 钱花在哪里：看 [Platform / AI 成本怎么计算](/docs/platform/ai-cost-basics)
-- 不知道工具和模型怎么分：看 [Platform / 工具不是模型](/docs/platform/tools-and-models)
+- 不知道工具和模型怎么分：看 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)
 - 已经决定开始：看 [Platform / 创建 API Key](/docs/platform/create-api-key)
 - 想直接走 GPT 路径：看 [Runtime / Codex](/docs/runtime/codex)
 - 想直接走 Claude 路径：看 [Runtime / Claude Code](/docs/runtime/claude-code)

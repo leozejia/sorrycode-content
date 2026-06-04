@@ -92,7 +92,7 @@ For design work, start with the deliverable, then choose the skill or tool.
 | Editing an existing PowerPoint file | [PPTX](/docs/skills/pptx) |
 | Code-based, maintainable, reviewable decks | [Tools / Open Slide](/docs/tools/open-slide) |
 
-If this is your first presentation attempt, use [Village / Make a Sharing Deck](/docs/village/share-ppt). It gives you a default path without asking you to compare every tool first.
+If this is your first presentation attempt, use [Village / Make a Sharing Deck](/docs/skills/magazine-web-ppt). It gives you a default path without asking you to compare every tool first.
 
 <h2 id="make-it-yours">Write Down Stable Preferences</h2>
 

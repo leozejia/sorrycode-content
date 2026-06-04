@@ -119,7 +119,7 @@ You do not need to write API requests on day one. Create the key you need, then 
 ## Next
 
 - Unsure where AI cost comes from: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
-- Unsure how tools and models differ: [Platform / Tools Are Not Models](/docs/platform/tools-and-models)
+- Unsure how tools and models differ: [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - Ready to start: [Platform / Create API Key](/docs/platform/create-api-key)
 - GPT path: [Runtime / Codex](/docs/runtime/codex)
 - Claude path: [Runtime / Claude Code](/docs/runtime/claude-code)

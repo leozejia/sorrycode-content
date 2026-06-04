@@ -24,7 +24,7 @@ For a first setup, you do not need to understand `config.toml`, `auth.json`, or 
 
 Reference: [OpenAI Codex official repository](https://github.com/openai/codex)
 
-> Beginner rule: `Codex` is a runtime, not a model. It is the default fit for GPT / OpenAI-compatible paths. Do not put Claude models into Codex casually; if you are unsure, read [Platform / Tools Are Not Models](/docs/platform/tools-and-models).
+> Beginner rule: `Codex` is a runtime, not a model. It is the default fit for GPT / OpenAI-compatible paths. Do not put Claude models into Codex casually; if you are unsure, read [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform).
 
 <h2 id="prepare-api-key">Prepare the API Key First</h2>
 
@@ -128,7 +128,7 @@ If Codex has not yet built in the newest released model name, start it with an e
 codex -m gpt-5.5
 ```
 
-`gpt-5.5` is only an example. Use the models currently available in [Platform / Tools Are Not Models](/docs/platform/tools-and-models) and your console.
+`gpt-5.5` is only an example. Use the models currently available in [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform) and your console.
 
 <h2 id="first-prompt">What to Say First</h2>
 
@@ -197,7 +197,7 @@ requires_openai_auth = true
 
 If you used one-click install, you usually do not need to send a manual request first.
 
-Go to [Platform / First Request](/docs/platform/first-request) only when:
+Go to [Platform / First Request](/docs/platform/create-api-key) only when:
 
 - the installer's final connectivity check failed
 - you want to verify `API Key + Base URL + network` directly
@@ -210,7 +210,7 @@ Go to [Platform / First Request](/docs/platform/first-request) only when:
 - macOS gets blocked at the Apple installer, Homebrew, or Git
   go to [Environment / Node.js](/docs/environment/nodejs#macos)
 - `401 / 404 / 429`
-  go to [Troubleshoot / Common Questions](/docs/troubleshoot/common-errors)
+  go to [Troubleshoot / Common Questions](/docs/platform/create-api-key)
 - slow downloads or installer timeouts
   go to [Environment / Node.js](/docs/environment/nodejs#network)
 - not sure where to create the API key

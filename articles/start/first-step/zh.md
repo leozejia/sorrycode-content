@@ -82,7 +82,7 @@ SorryCode 负责把这些工具接到模型上。
 | 想用 Claude 路径做项目任务 | [Runtime / Claude Code](/docs/runtime/claude-code) |
 | 生成或编辑图片 | 先装 runtime，再看 [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) |
 | 处理 Word、Excel、PPT、PDF | 先装 runtime，再看 [Skills / 办公文档](/docs/skills/office-docs) |
-| 直接写 HTTP 请求 | [Platform / 首条请求](/docs/platform/first-request) |
+| 直接写 HTTP 请求 | [Platform / 首条请求](/docs/platform/create-api-key) |
 | 想要更可视化地看文件和改动 | [工具 / VS Code](/docs/tools/vscode) |
 
 如果你完全不知道选哪个，先选 `Codex`。它是当前 GPT 路径最直接的新手入口。
@@ -103,7 +103,7 @@ SorryCode 负责把这些工具接到模型上。
 
 不要为了追一个新模型名，就随手把它塞到另一个工作台里。这样可能能跑，但缓存和 API 消耗不一定划算。
 
-更详细的解释在 [Platform / 工具不是模型](/docs/platform/tools-and-models)。
+更详细的解释在 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)。
 
 <h2 id="step-4">第 4 步：按你的电脑安装</h2>
 
@@ -142,14 +142,14 @@ SorryCode 负责把这些工具接到模型上。
 
 按目标继续：
 
-- 想读懂项目：去 [新手村 / 读懂一个项目](/docs/village/read-project)
-- 想改第一个文件：去 [新手村 / 修改第一个文件](/docs/village/edit-first-file)
-- 想生成图片：去 [新手村 / 生成第一张图片](/docs/village/first-image)
-- 想做产品介绍：去 [新手村 / 做一份产品介绍](/docs/village/product-intro)
+- 想读懂项目：去 [新手村 / 读懂一个项目](/docs/runtime/codex)
+- 想改第一个文件：去 [新手村 / 修改第一个文件](/docs/runtime/codex)
+- 想生成图片：去 [新手村 / 生成第一张图片](/docs/skills/sorrycode-image2)
+- 想做产品介绍：去 [新手村 / 做一份产品介绍](/docs/skills/kami)
 - 想处理办公文件：去 [Skills / 办公文档](/docs/skills/office-docs)
 - 想判断 SorryCode 是否适合你：去 [Platform / SorryCode 适合谁](/docs/platform/who-is-sorrycode-for)
 - 想理解 AI 成本：去 [Platform / AI 成本怎么计算](/docs/platform/ai-cost-basics)
-- 想了解工具和模型区别：去 [Platform / 工具不是模型](/docs/platform/tools-and-models)
+- 想了解工具和模型区别：去 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)
 - 想理解 `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills`：去 [Agent 基建](/docs/agent-infra/overview)
 
 <h2 id="remember">最后只记住这几件事</h2>

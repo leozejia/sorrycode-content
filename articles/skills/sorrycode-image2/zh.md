@@ -147,6 +147,6 @@ outputs/images/你的任务名/
 
 <h2 id="next">下一步</h2>
 
-如果你想按任务走，去 [新手村 / 生成第一张图片](/docs/village/first-image)。
+如果你想按任务走，去 [新手村 / 生成第一张图片](/docs/skills/sorrycode-image2)。
 
 如果你想理解 HTTP 请求细节，再看 [Platform / 图像请求](/docs/platform/image-request)。

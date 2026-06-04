@@ -2,7 +2,7 @@
 title: How to Choose Agent Infrastructure
 slug: overview
 order: 1
-summary: Choose the right entry point for long context, AGENTS.md, CLAUDE.md, DESIGN.md, MCP, and Skills.
+summary: Choose the right entry point for long context, project rules files, design constraints, reusable Skills, and the MCP protocol.
 section: agent-infra
 section_title: Agent Infrastructure
 section_order: 32
@@ -29,11 +29,10 @@ This section is not about chasing model names. It is about turning long-running 
 | Your problem | Go here |
 | --- | --- |
 | The session is long and you do not know when to release it | [How to Manage Long-Lived Context](/docs/agent-infra/context-management) |
-| You use Codex and want it to follow project rules | [AGENTS.md](/docs/agent-infra/agents-md) |
-| You use Claude Code and want to maintain project memory | [CLAUDE.md](/docs/agent-infra/claude-md) |
+| You want your agent to follow project rules (Codex or Claude Code) | [Project Rules File](/docs/agent-infra/project-rules) |
 | You make UI, posters, slides, or documents and want stable style | [DESIGN.md](/docs/agent-infra/design-md) |
-| You want agents to connect to databases, browsers, knowledge bases, or internal tools | [MCP](/docs/agent-infra/mcp) |
 | You want to package a repeated workflow as a reusable capability | [Skills](/docs/agent-infra/skills) |
+| You want agents to connect to databases, browsers, knowledge bases, or internal tools | See MCP section below |
 
 If you do not know where to start, read [How to Manage Long-Lived Context](/docs/agent-infra/context-management) first.
 
@@ -64,6 +63,24 @@ Skills = how agents handle a class of tasks
 `MCP` handles tool and data connections.
 
 `Skills` package repeated workflows.
+
+<h2 id="mcp">What Is MCP</h2>
+
+MCP (Model Context Protocol) is an open protocol that standardizes how agents connect to external tools, data, and services.
+
+The short version: if Skills are "instruction manuals" (teaching the agent how to do a type of task), MCP is the "cable" (letting the agent access databases, browsers, APIs, knowledge bases, and other external systems).
+
+**Most ordinary users do not need to configure MCP.** You only need to care if:
+
+- You want the agent to query your company's internal database directly
+- You want the agent to operate a browser for complex workflows
+- You want to expose internal tools or knowledge bases to the agent
+
+If any of those apply, start here:
+- [MCP official documentation](https://modelcontextprotocol.io/introduction)
+- Claude Code and Codex each have their own MCP configuration docs
+
+On day one with agents, you do not need MCP. Come back after your project rules, context management, and Skills are stable.
 
 <h2 id="not-database">One Rule First</h2>
 
