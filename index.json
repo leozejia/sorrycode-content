@@ -11,9 +11,9 @@
       "slug": "first-step",
       "locale": "en",
       "title": "First Time Using SorryCode",
-      "summary": "First time using SorryCode? Decide whether it fits you, create API keys by tool, then choose Codex, Claude Code, Skills, or another entry.",
+      "summary": "Create an API key, install a workbench, and run your first task — three steps to get started with SorryCode, under 10 minutes from signup to AI doing real work.",
       "order": 1,
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-04",
       "markdownPath": "articles/start/first-step/en.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"
@@ -26,9 +26,9 @@
       "slug": "first-step",
       "locale": "zh",
       "title": "第一次使用 SorryCode",
-      "summary": "第一次使用 SorryCode，先判断它是否适合你，再按工具创建 API Key，选择 Codex、Claude Code、Skills 或其他入口。",
+      "summary": "创建 API Key、安装工作台、跑通第一个任务——三步完成 SorryCode 上手，10 分钟内让 AI 开始替你干活。",
       "order": 1,
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-04",
       "markdownPath": "articles/start/first-step/zh.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"

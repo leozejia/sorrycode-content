@@ -2,7 +2,7 @@
 title: First Time Using SorryCode
 slug: first-step
 order: 1
-summary: First time using SorryCode? Decide whether it fits you, create API keys by tool, then choose Codex, Claude Code, Skills, or another entry.
+summary: Create an API key, install a workbench, and run your first task — three steps to get started with SorryCode, under 10 minutes from signup to AI doing real work.
 section: start
 section_title: Getting Started
 section_order: 1
@@ -10,152 +10,132 @@ section_order: 1
 
 # First Time Using SorryCode
 
-You probably did not come to SorryCode to study APIs or memorize model names.
+This page does one thing: gets you from "never heard of SorryCode" to "AI just finished your first task" in under 10 minutes.
 
-You likely want AI to help you finish something concrete: understand a project, edit a file, generate an image, organize an article, make slides, or turn an idea into a usable plan.
+<h2 id="before">Before You Start</h2>
 
-SorryCode connects those tools to models.
+You need a SorryCode account. If you do not have one, sign up at [sorrycode.com](https://sorrycode.com).
 
-Use this first mental model:
+SorryCode is an API platform. You top up a balance here, create keys, and hand those keys to AI tools. The tools then call models using your balance.
+
+The mental model:
 
 ```text
 one balance + separate API keys by tool + multiple AI tool entries
 ```
 
-You create keys here, give them to `Codex`, `Claude Code`, or a `Skill`, and those tools can call models using your SorryCode balance.
-
-That kind of key is called an `API Key`. It usually starts with `sk-...`. You can think of it like an access card: without it, the tool cannot enter SorryCode; with it, the tool can start working.
-
-If you use both Codex and Claude Code, create separate API keys for them. The balance is still shared, but usage records, group switching, spending limits, and troubleshooting become clearer.
-
-If you are not sure whether SorryCode fits you, start with [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for).
-
-<h2 id="three-words">Understand Three Words First</h2>
-
-You do not need the full concept stack on day one. Start with this:
-
-| Word | Beginner meaning |
-| --- | --- |
-| `API` | the channel tools use to talk to models |
-| `API Key` | the key proving this is your account using the channel |
-| `SorryCode` | where you create the key, manage balance, and connect tools to models |
-
-When you chat with AI in a browser, you type into a web page.
-
-Tools like `Codex`, `Claude Code`, and `Skills` do not click web pages like humans do. They need a software-to-software way to request a model. That way is called an `API`.
-
-As a beginner, you do not need to write API requests first. Create an API key, give it to the tool, and let the agent handle the rest.
-
-<h2 id="runtime-skills">Workbenches and Capability Packs</h2>
-
-You can think of `Codex` and `Claude Code` as AI workbenches. The model does the thinking; the workbench reads files, edits files, runs commands, and keeps working on a task.
-
-`Skills` are capability packs installed into the workbench. An image skill, office document skill, or slide skill tells the agent what process to follow, which tools to use, and where to save the result.
-
-So the beginner path is:
-
-```text
-Create an API key → Install one workbench → Install the Skill for your task
-```
+Not sure if this fits you? [Who SorryCode Is For](/docs/platform/who-is-sorrycode-for). Want to understand pricing? [How AI Cost Works](/docs/platform/ai-cost-basics).
 
 <h2 id="step-1">Step 1: Create an API Key</h2>
 
-Do this first:
+An API key is your access card. Without it, tools cannot enter SorryCode.
 
-1. Open `API Keys` in the console
-2. Create a new `sk-...` key for the tool you are setting up
-3. Copy it and keep it nearby
+1. Open [sorrycode.com/keys](https://sorrycode.com/keys)
+2. Click "Create API Key"
+3. Name it after the tool you are setting up, e.g. "Codex" or "Claude Code"
+4. Set the group to "Default"
+5. Leave the rest as default, click create
+6. Copy the string that starts with `sk-...`
 
-If you cannot find the page, open: `https://sorrycode.com/keys`
+**The key is shown only once. Copy and save it now.**
 
-The detailed guide is [Platform / Create API Key](/docs/platform/create-api-key). You do not need to read all of it first; just create the `sk-...` key you need.
+Create separate keys for Codex and Claude Code if you use both. The balance is shared, but separate keys keep usage records and troubleshooting clearer.
 
-<h2 id="step-2">Step 2: Choose Your Entry</h2>
+If you run into issues, see [Create API Key](/docs/platform/create-api-key) for the detailed guide.
 
-Different goals have different first steps:
+<h2 id="step-2">Step 2: Install a Workbench</h2>
 
-| What you want to do | Start here |
-| --- | --- |
-| Decide whether SorryCode fits you | [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for) |
-| Understand where AI cost comes from | [Platform / How AI Cost Works](/docs/platform/ai-cost-basics) |
-| Ask AI to read projects, edit files, and run commands | [Runtime / Codex](/docs/runtime/codex) |
-| Use the Claude path for project work | [Runtime / Claude Code](/docs/runtime/claude-code) |
-| Generate or edit images | Install a runtime first, then read [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) |
-| Work with Word, Excel, PowerPoint, or PDF | Install a runtime first, then read [Skills / Office Docs](/docs/skills/office-docs) |
-| Write direct HTTP requests | [Platform / First Request](/docs/platform/create-api-key) |
-| Use a more visual file and diff workspace | [Tools / VS Code](/docs/tools/vscode) |
+A workbench is where AI does work on your computer. It reads files, writes files, runs commands, and calls tools.
 
-If you have no idea what to choose, start with `Codex`. It is the most direct beginner entry for the GPT path.
-
-<h2 id="step-3">Step 3: Match Tools and Models</h2>
-
-`Codex` and `Claude Code` are not models. They are workbenches. `GPT` and `Claude` are models.
-
-Beginner default:
+**Which one?**
 
 ```text
-Use GPT models through Codex first.
+You primarily use GPT models → install Codex
+You primarily use Claude models → install Claude Code
+Not sure → install Codex, the simplest beginner entry
 ```
+
+**Install command:**
+
+Open a terminal (Mac: search "Terminal", Windows: search "PowerShell"), paste the command, and press enter:
+
+```bash
+# macOS / Linux — Codex
+curl -fsSL https://sorrycode.com/install/codex.sh | bash
+```
+
+```bash
+# macOS / Linux — Claude Code
+curl -fsSL https://sorrycode.com/install/claude-code.sh | bash
+```
+
+After installation, follow the prompt to enter your API key. The workbench is now connected.
+
+If the install gets stuck, see the detailed guides for [Codex](/docs/runtime/codex) or [Claude Code](/docs/runtime/claude-code). Windows users: read [Windows PowerShell](/docs/environment/windows-powershell) first.
+
+<h2 id="step-3">Step 3: Run Your First Task</h2>
+
+The workbench is installed. Now make it do something.
+
+Do not start by editing important files. Run a small test first.
+
+**If you have a code project:**
+
+Open the project folder in the terminal, launch the workbench, and copy this:
 
 ```text
-Use Claude models through Claude Code first.
+Do not edit code yet. Look at this project and tell me what it does, and which files I should read first.
 ```
 
-Do not chase a new model name by putting it into a random workbench. It may run, but cache behavior and API usage may become inefficient.
+**If you do not have a code project:**
 
-For details, read [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform).
-
-<h2 id="step-4">Step 4: Install for Your Computer</h2>
-
-This page does not copy install commands. Install commands live on the runtime pages so you do not copy an outdated version.
-
-Continue based on your choice:
-
-- GPT / Codex path: [Runtime / Codex](/docs/runtime/codex)
-- Claude Code path: [Runtime / Claude Code](/docs/runtime/claude-code)
-- Windows terminal help: [Environment / Windows PowerShell](/docs/environment/windows-powershell)
-- Manual Node.js setup: [Environment / Node.js](/docs/environment/nodejs)
-
-<h2 id="step-5">Step 5: Run One Small Task</h2>
-
-After installation, do not start with a large change. Use a small task to confirm the agent can work.
-
-If you have a code project, copy this:
-
-```text
-Do not change code yet. Look at this project and tell me what it does, and which files I should read first.
-```
-
-If you do not have a code project, create an `AI Workspace` folder on your desktop and copy this:
+Create an "AI Workspace" folder on your desktop, open it in the terminal, launch the workbench, and copy this:
 
 ```text
 Help me draft a personal intro in the current folder. Ask me five necessary questions first. Do not generate the final version yet.
 ```
 
-If you want to generate an image, install [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) first, then copy this:
+**If you want to generate an image:**
 
-```text
-Use SorryCode Image2 to generate a clean warm Chinese podcast cover about AI coding for beginners. Check the API key first; if it is missing, tell me how to set it.
+Install the image skill first:
+
+```bash
+npx skills add linxiverse/sorrycode-image2 -g -y
 ```
 
-<h2 id="what-next">What to Do Next</h2>
+Then say:
 
-Choose by goal:
+```text
+Use SorryCode Image2 to generate a clean warm Chinese podcast cover about AI coding for beginners. Check the API key first. If it is missing, tell me how to set it.
+```
 
-- Read a project: [Village / Read a Project](/docs/runtime/codex)
-- Edit the first file: [Village / Edit Your First File](/docs/runtime/codex)
-- Generate an image: [Village / Generate Your First Image](/docs/skills/sorrycode-image2)
-- Make a product intro: [Village / Product Intro](/docs/skills/kami)
-- Work with office files: [Skills / Office Docs](/docs/skills/office-docs)
-- Decide whether SorryCode fits you: [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for)
-- Understand AI cost: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
-- Understand tools and models: [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
-- Understand `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills`: [Agent Infrastructure](/docs/agent-infra/overview)
+Task complete? You now know more than 90% of people.
 
-<h2 id="remember">Remember These</h2>
+<h2 id="step-4">Step 4: Install the Matching Skill</h2>
 
-- `API` is the channel
-- `API Key` is the key
-- `Codex / Claude Code` are workbenches
-- `Skills` are capability packs
-- `SorryCode` connects these tools to models through one balance
+A Skill is a capability pack for your workbench. Install the one that matches your task.
+
+| What you want to do | Which Skill | Command |
+| --- | --- | --- |
+| Work with Word, Excel, PPT, or PDF | Office Docs | `npx skills add linxiverse/office-docs -g -y` |
+| Create one-pagers, resumes, portfolios, long docs | Kami | `npx skills add tw93/kami -g -y` |
+| Generate images, posters, covers | Image2 | `npx skills add linxiverse/sorrycode-image2 -g -y` |
+| Make web-based slide decks | Guizang PPT | `npx skills add op7418/guizang-ppt-skill -g -y` |
+
+More Skills: [What Are Skills](/docs/skills/featured-skills) and [Creation and Design](/docs/skills/creation-design).
+
+<h2 id="what-next">What Next</h2>
+
+Follow your goal:
+
+- Learn AI concepts systematically: start with [Core Concepts](/docs/concepts/what-is-ai)
+- Go deeper with agent workflows: [Agent Infrastructure](/docs/agent-infra/overview)
+- Understand where your money goes: [How AI Cost Works](/docs/platform/ai-cost-basics)
+- Hit an error: check the [Codex](/docs/runtime/codex) or [Claude Code](/docs/runtime/claude-code) guide
+
+<h2 id="remember">All You Need to Remember</h2>
+
+- API Key = your access card — create it, copy it, save it
+- Codex / Claude Code = workbenches — one command to install
+- Skills = capability packs — install what your task needs
+- Completing one small task beats reading ten tutorials

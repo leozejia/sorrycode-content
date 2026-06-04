@@ -2,7 +2,7 @@
 title: 第一次使用 SorryCode
 slug: first-step
 order: 1
-summary: 第一次使用 SorryCode，先判断它是否适合你，再按工具创建 API Key，选择 Codex、Claude Code、Skills 或其他入口。
+summary: 创建 API Key、安装工作台、跑通第一个任务——三步完成 SorryCode 上手，10 分钟内让 AI 开始替你干活。
 section: start
 section_title: 开始使用
 section_order: 1
@@ -10,152 +10,132 @@ section_order: 1
 
 # 第一次使用 SorryCode
 
-你来 SorryCode，多半不是为了研究 API，也不是为了看一堆模型名字。
+这篇文章只做一件事：让你在 10 分钟内，从"没听说过 SorryCode"到"AI 帮你干完第一件活"。
 
-你可能只是想让 AI 帮你做一件具体的事：读懂项目、改文件、生成图片、整理文章、做 PPT，或者把一个想法变成方案。
+<h2 id="before">开始之前</h2>
 
-SorryCode 负责把这些工具接到模型上。
+你需要一个 SorryCode 账号。如果没有，先去 [sorrycode.com](https://sorrycode.com) 注册。
 
-你可以先这样理解：
+SorryCode 是一个 API 平台。你在这里充值、创建密钥，然后把密钥交给 AI 工具，工具就能用你的余额调用模型。
+
+简单理解：
 
 ```text
 一份余额 + 按工具分开的 API Key + 多个 AI 工具入口
 ```
 
-你在这里创建钥匙，把它交给 `Codex`、`Claude Code` 或某个 `Skill`，工具就能用你的 SorryCode 账号余额调用模型。
-
-这种钥匙叫 `API Key`，通常长这样：`sk-...`。你可以先把它理解成门禁卡：没有它，工具进不了 SorryCode；有了它，工具才能开始干活。
-
-如果你同时使用 Codex 和 Claude Code，建议给它们分别创建 API Key。余额仍然是同一份，但记录、分组和限额可以分开管理。
-
-如果你还不确定自己该不该用 SorryCode，先看 [Platform / SorryCode 适合谁](/docs/platform/who-is-sorrycode-for)。
-
-<h2 id="three-words">先理解三个词</h2>
-
-不用一次学完整套概念，先记住这张表：
-
-| 词 | 小白先这样理解 |
-| --- | --- |
-| `API` | 工具和模型说话的通道 |
-| `API Key` | 证明这是你的账号在用的钥匙 |
-| `SorryCode` | 创建钥匙、管理余额，并把工具接到模型上的地方 |
-
-你平时和 AI 聊天，是打开网页，在输入框里打字。
-
-`Codex`、`Claude Code`、`Skills` 这些工具不会像人一样点网页。它们需要用软件之间的方式去请求模型，这种方式就叫 `API`。
-
-新手阶段不用先学会写 API 请求。先创建 API Key，把它交给工具，剩下的让 agent 帮你做。
-
-<h2 id="runtime-skills">工作台和能力包</h2>
-
-你可以把 `Codex`、`Claude Code` 理解成 AI 的工作台。模型负责思考，工作台负责帮你读文件、改文件、运行命令、持续完成任务。
-
-`Skills` 是装进工作台里的能力包。比如图片 Skill、办公文档 Skill、PPT Skill，本质上是在告诉 agent：遇到这类任务时，应该按什么流程做、用哪些工具、产物保存在哪里。
-
-所以新手阶段先做三件事：
-
-```text
-创建 API Key → 装一个工作台 → 按任务安装对应 Skill
-```
+想知道适不适合你？[SorryCode 适合谁](/docs/platform/who-is-sorrycode-for)。想理解成本和定价？[AI 成本怎么计算](/docs/platform/ai-cost-basics)。
 
 <h2 id="step-1">第 1 步：创建 API Key</h2>
 
-你要做的是：
+API Key 是你的钥匙。没有它，工具进不了 SorryCode。
 
-1. 打开控制台里的 `API 密钥`
-2. 按用途创建新的 `sk-...`
-3. 复制它，先留在手边
+1. 打开 [sorrycode.com/keys](https://sorrycode.com/keys)
+2. 点"创建 API Key"
+3. 名称填你要用的工具，比如"Codex"或"Claude Code"
+4. 分组选"默认分组"
+5. 其他保持默认
+6. 点创建，复制那个 `sk-...` 开头的字符串
 
-如果你找不到入口，直接打开：`https://sorrycode.com/keys`
+**密钥只显示一次，现在复制保存好。**
 
-更详细的说明在 [Platform / 创建 API Key](/docs/platform/create-api-key)。第一次不用先读完那篇，先把要用的 `sk-...` 创建出来就行。
+建议 Codex 和 Claude Code 各创建一把。余额是同一份，但记录分开，方便管理和排障。
 
-<h2 id="step-2">第 2 步：选择你要用的入口</h2>
+如果创建过程遇到问题，看[创建 API Key](/docs/platform/create-api-key)的详细说明。
 
-不同用户的第一步不一样。先按你的目标选：
+<h2 id="step-2">第 2 步：安装工作台</h2>
 
-| 你想做什么 | 建议先去哪里 |
-| --- | --- |
-| 不确定 SorryCode 是否适合你 | [Platform / SorryCode 适合谁](/docs/platform/who-is-sorrycode-for) |
-| 想理解 AI 钱花在哪里 | [Platform / AI 成本怎么计算](/docs/platform/ai-cost-basics) |
-| 让 AI 读项目、改文件、执行命令 | [Runtime / Codex](/docs/runtime/codex) |
-| 想用 Claude 路径做项目任务 | [Runtime / Claude Code](/docs/runtime/claude-code) |
-| 生成或编辑图片 | 先装 runtime，再看 [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) |
-| 处理 Word、Excel、PPT、PDF | 先装 runtime，再看 [Skills / 办公文档](/docs/skills/office-docs) |
-| 直接写 HTTP 请求 | [Platform / 首条请求](/docs/platform/create-api-key) |
-| 想要更可视化地看文件和改动 | [工具 / VS Code](/docs/tools/vscode) |
+工作台是 AI 在你电脑上干活的地方。它负责读文件、写文件、执行命令、调用工具。
 
-如果你完全不知道选哪个，先选 `Codex`。它是当前 GPT 路径最直接的新手入口。
-
-<h2 id="step-3">第 3 步：选对工具和模型</h2>
-
-`Codex`、`Claude Code` 不是模型，它们是工作台。`GPT`、`Claude` 才是模型。
-
-小白默认按这两条走：
+**选哪个？**
 
 ```text
-用 GPT 模型，优先走 Codex。
+你主要用 GPT 模型 → 装 Codex
+你主要用 Claude 模型 → 装 Claude Code
+不确定 → 装 Codex，它是最简单的新手入口
 ```
+
+**安装命令：**
+
+打开终端（Mac 搜"Terminal"，Windows 搜"PowerShell"），复制粘贴，回车：
+
+```bash
+# macOS / Linux 装 Codex
+curl -fsSL https://sorrycode.com/install/codex.sh | bash
+```
+
+```bash
+# macOS / Linux 装 Claude Code
+curl -fsSL https://sorrycode.com/install/claude-code.sh | bash
+```
+
+安装完按提示输入 API Key，工作台就接上了。
+
+如果安装卡住了，看 [Codex](/docs/runtime/codex) 或 [Claude Code](/docs/runtime/claude-code) 的详细说明。Windows 用户先看 [Windows PowerShell](/docs/environment/windows-powershell)。
+
+<h2 id="step-3">第 3 步：跑通第一个任务</h2>
+
+装完了。现在让它干活。
+
+不要一上来就让它改重要文件。先跑一个小任务验证一切正常。
+
+**如果你有代码项目：**
+
+在终端进入你的项目文件夹，启动工作台，复制这句话：
 
 ```text
-用 Claude 模型，优先走 Claude Code。
+先别改代码。看一下这个项目，告诉我它是做什么的，我应该先读哪些文件。
 ```
 
-不要为了追一个新模型名，就随手把它塞到另一个工作台里。这样可能能跑，但缓存和 API 消耗不一定划算。
+**如果你没有代码项目：**
 
-更详细的解释在 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)。
-
-<h2 id="step-4">第 4 步：按你的电脑安装</h2>
-
-这篇不复制安装命令。安装命令只放在对应 runtime 页，避免你复制到过期版本。
-
-按你的选择继续：
-
-- 想走 GPT / Codex 路径：去 [Runtime / Codex](/docs/runtime/codex)
-- 想走 Claude Code 路径：去 [Runtime / Claude Code](/docs/runtime/claude-code)
-- 想确认 Windows 终端怎么打开：去 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)
-- 想手动准备 Node.js：去 [环境准备 / Node.js](/docs/environment/nodejs)
-
-<h2 id="step-5">第 5 步：跑通第一个任务</h2>
-
-安装完成后，不要一上来就让 agent 大改东西。先用一个小任务确认它真的能工作。
-
-如果你有代码项目，复制这句：
+在桌面建一个"AI 工作台"文件夹，在终端进入这个文件夹，启动工作台，复制这句话：
 
 ```text
-先别改代码，先看一下这个项目，告诉我它是做什么的，以及我应该先读哪些文件。
+帮我在当前文件夹里写一份个人介绍草稿。先问我 5 个必要问题，不要直接生成最终稿。
 ```
 
-如果你没有代码项目，可以先在桌面建一个 `AI 工作台` 文件夹，然后复制这句：
+**如果你想生成图片：**
+
+先装图片 Skill：
+
+```bash
+npx skills add linxiverse/sorrycode-image2 -g -y
+```
+
+然后说：
 
 ```text
-请在当前文件夹里帮我整理一份个人介绍草稿。先问我 5 个必要问题，不要直接生成最终稿。
+请用 SorryCode Image2 生成一张中文播客封面，主题是 AI 编程，新手友好，暖色调，干净排版。先检查 API Key，如果没设置就告诉我怎么设置。
 ```
 
-如果你想生成图片，先安装 [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)，然后复制这句：
+任务跑通了？你已经比 90% 的人更会用了。
 
-```text
-请用 SorryCode Image2 帮我生成一张中文播客封面，主题是 AI 编程，新手友好，暖色调，干净排版。先检查 API Key，如果没设置就告诉我怎么设置。
-```
+<h2 id="step-4">第 4 步：装对应的 Skill</h2>
+
+Skill 是给工作台装的能力包。你需要什么能力，就装什么 Skill。
+
+| 你想做什么 | 装哪个 | 命令 |
+| --- | --- | --- |
+| 处理 Word / Excel / PPT / PDF | 办公文档 | `npx skills add linxiverse/office-docs -g -y` |
+| 做一页纸、简历、作品集、长文 | Kami | `npx skills add tw93/kami -g -y` |
+| 生成图片、海报、封面 | Image2 | `npx skills add linxiverse/sorrycode-image2 -g -y` |
+| 做网页 PPT | 藏师傅 PPT | `npx skills add op7418/guizang-ppt-skill -g -y` |
+
+更多 Skill 看 [Skills 是什么](/docs/skills/featured-skills) 和 [创作与设计](/docs/skills/creation-design)。
 
 <h2 id="what-next">接下来做什么</h2>
 
-按目标继续：
+按你的目标走：
 
-- 想读懂项目：去 [新手村 / 读懂一个项目](/docs/runtime/codex)
-- 想改第一个文件：去 [新手村 / 修改第一个文件](/docs/runtime/codex)
-- 想生成图片：去 [新手村 / 生成第一张图片](/docs/skills/sorrycode-image2)
-- 想做产品介绍：去 [新手村 / 做一份产品介绍](/docs/skills/kami)
-- 想处理办公文件：去 [Skills / 办公文档](/docs/skills/office-docs)
-- 想判断 SorryCode 是否适合你：去 [Platform / SorryCode 适合谁](/docs/platform/who-is-sorrycode-for)
-- 想理解 AI 成本：去 [Platform / AI 成本怎么计算](/docs/platform/ai-cost-basics)
-- 想了解工具和模型区别：去 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)
-- 想理解 `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills`：去 [Agent 基建](/docs/agent-infra/overview)
+- 想系统性理解 AI 怎么用：[核心概念](/docs/concepts/what-is-ai)从头读
+- 想把 AI 用得更深：[Agent 进阶](/docs/agent-infra/overview)学项目规则和上下文管理
+- 想知道钱花在哪了：[AI 成本怎么计算](/docs/platform/ai-cost-basics)
+- 遇到报错了：[Codex 常见问题](/docs/runtime/codex)或 [Claude Code 常见问题](/docs/runtime/claude-code)
 
-<h2 id="remember">最后只记住这几件事</h2>
+<h2 id="remember">记住这些就够了</h2>
 
-- `API` 是通道
-- `API Key` 是钥匙
-- `Codex / Claude Code` 是工作台
-- `Skills` 是能力包
-- `SorryCode` 负责用一份余额把这些工具接到模型上
+- API Key 是钥匙，创建后复制保存
+- Codex / Claude Code 是工作台，一个命令装好
+- Skill 是能力包，做什么任务装什么
+- 先跑通一个小任务，比看完十篇教程有用
