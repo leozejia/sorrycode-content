@@ -1406,6 +1406,36 @@
       "markdownPath": "articles/environment/windows-powershell/zh.md",
       "assetBaseUrl": "articles/environment/windows-powershell/",
       "route": "/docs/environment/windows-powershell"
+    },
+    {
+      "type": "article",
+      "section": "troubleshoot",
+      "sectionTitle": "Troubleshoot",
+      "sectionOrder": 50,
+      "slug": "common-errors",
+      "locale": "en",
+      "title": "Common Questions",
+      "summary": "The shortest fix path by error code and symptom.",
+      "order": 1,
+      "updatedAt": "2026-06-12",
+      "markdownPath": "articles/troubleshoot/common-errors/en.md",
+      "assetBaseUrl": "articles/troubleshoot/common-errors/",
+      "route": "/docs/troubleshoot/common-errors"
+    },
+    {
+      "type": "article",
+      "section": "troubleshoot",
+      "sectionTitle": "排障",
+      "sectionOrder": 50,
+      "slug": "common-errors",
+      "locale": "zh",
+      "title": "常见问题",
+      "summary": "按错误码和现象给出最短修复路径。",
+      "order": 1,
+      "updatedAt": "2026-06-12",
+      "markdownPath": "articles/troubleshoot/common-errors/zh.md",
+      "assetBaseUrl": "articles/troubleshoot/common-errors/",
+      "route": "/docs/troubleshoot/common-errors"
     }
   ]
 }

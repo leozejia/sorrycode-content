@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "section": "troubleshoot",
+  "title": {
+    "en": "Troubleshoot",
+    "zh": "排障"
+  },
+  "updatedAt": "2026-06-12",
+  "navigation": {
+    "style": "flat",
+    "groups": []
+  },
+  "articles": [
+    "common-errors"
+  ]
+}
