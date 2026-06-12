@@ -138,5 +138,5 @@ Claude Code
 - 想直接开始用 Codex：去 [Runtime / Codex](/docs/runtime/codex)
 - 想直接开始用 Claude Code：去 [Runtime / Claude Code](/docs/runtime/claude-code)
 - 不清楚工具和模型关系：去 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)
-- 想先做最小验证：去 [Platform / 首条请求](/docs/platform/create-api-key)
+- 想先做最小验证：去 [Platform / 首条请求](/docs/platform/first-request)
 - 想少碰终端：去 [工具 / CC-Switch](/docs/tools/cc-switch)
