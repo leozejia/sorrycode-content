@@ -14,6 +14,14 @@ section_order: 10
 
 对第一次接触这类工具的人来说，先把链路跑通最重要。不要先去研究配置文件，也不用先学一堆终端命令。
 
+> **你走哪条路？**
+>
+> **→ 一键安装（推荐）：** 复制命令 → 粘贴 → 填 API Key → 完成。适合绝大多数人。
+>
+> **→ 手动安装：** 自己装 Node.js、写配置文件。适合想控每一步的进阶用户。
+>
+> 下面默认按一键安装展开。
+
 <h2 id="what-is-claude-code">Claude Code 是什么</h2>
 
 - `Claude Code` 是一个面向代码工作的终端 runtime / agent
@@ -41,7 +49,7 @@ section_order: 10
 
 如果你也准备使用 Codex，建议另外创建一把 API Key 给 Codex。两把 key 仍然消耗同一份余额，但记录、分组和限额可以分开管理。
 
-<h2 id="one-click-install">一键安装</h2>
+<h2 id="one-click-install">⚡ 一键安装（推荐）</h2>
 
 这是默认主路径。安装器会把 `Claude Code` 接到 `{{ANTHROPIC_BASE_URL}}`，写好本地配置。安装完成后，在终端里进入项目目录运行 `claude` 就可以开始用。
 
@@ -122,7 +130,7 @@ Claude Code 跑起来以后，不用自己研究 `npx`、`Git` 或 `Homebrew`。
 请阅读 SorryCode 当前 Skills 入口：https://sorrycode.com/docs/skills/featured-skills.md?locale=zh。我的 Mac 默认什么环境都没有，请你先检查并准备必要环境，然后根据当前 Skills 文档里的分类、推荐顺序和我的使用目标，判断并安装适合我的 skills。不要使用固定旧清单；请读取当前文档后再决定。安装、查看或卸载前先告诉我你要做什么；安装后验证 Claude Code 能识别这些 skills；卸载前先用 npx skills list --global 确认准确名称，并报告成功、失败和下一步。
 ```
 
-<h2 id="manual-install">手动安装</h2>
+<h3 id="manual-install">手动安装（进阶）</h3>
 
 只有在你想自己控每一步时，才需要这一段。
 
@@ -172,7 +180,7 @@ npm install -g @anthropic-ai/claude-code@latest
 
 如果你走的是一键安装，通常不用先手动打请求。
 
-只有在这些场景下，再回头看 [Platform / 首条请求](/docs/platform/create-api-key)：
+只有在这些场景下，再回头看 [Platform / 首条请求](/docs/platform/first-request)：
 
 - 安装器最后的连通性检查失败了
 - 你想先确认 `API Key + Base URL + 网络` 这三层都通了
@@ -187,7 +195,7 @@ npm install -g @anthropic-ai/claude-code@latest
 - 原生 Windows 下找不到 `Git Bash`
   把 `CLAUDE_CODE_GIT_BASH_PATH` 写进 `~/.claude/settings.json`
 - `401 / 404 / 429`
-  去看 [排障 / 常见问题](/docs/platform/create-api-key)
+  去看 [排障 / 常见问题](/docs/troubleshoot/common-errors)
 - 下载慢或安装超时
   去看 [环境准备 / Node.js](/docs/environment/nodejs#network)
 - 不知道 API Key 去哪里建

@@ -14,6 +14,14 @@ If you want a model to read your project, edit code, and run commands locally, t
 
 For a first-time user, the main goal is to get the path working. Do not start with config files, and do not assume you need to learn a lot of terminal commands first.
 
+> **Which path?**
+>
+> **→ One-Click Install (Recommended):** Copy command → paste → enter API key → done. For most people.
+>
+> **→ Manual Install:** Set up Node.js yourself, write config files. For users who want control over each step.
+>
+> The default flow below follows the one-click path.
+
 <h2 id="what-is-claude-code">What Claude Code Is</h2>
 
 - `Claude Code` is a terminal runtime / agent built for code work
@@ -41,7 +49,7 @@ If you have not done this yet, start with [Platform / Create API Key](/docs/plat
 
 If you also plan to use Codex, create a separate API key for Codex. Both keys still use the same balance, but usage records, group switching, spending limits, and troubleshooting become clearer.
 
-<h2 id="one-click-install">One-Click Install</h2>
+<h2 id="one-click-install">⚡ One-Click Install (Recommended)</h2>
 
 This is the default path. The installer connects `Claude Code` to `{{ANTHROPIC_BASE_URL}}` and writes the local config. After install, enter your project folder in a terminal and run `claude`.
 
@@ -122,7 +130,7 @@ After Claude Code is running, you do not need to study `npx`, `Git`, or `Homebre
 Read the current SorryCode Skills entry first: https://sorrycode.com/docs/skills/featured-skills.md?locale=en. Assume my Mac has no development environment prepared. Check and prepare the required environment first, then decide which skills to install based on the current Skills docs, their categories, recommendation order, and my usage goals. Do not use an old fixed list. Before installing, listing, or removing skills, tell me what you plan to do. After installing, verify that Claude Code can recognize the installed skills. Before removing anything, run npx skills list --global to confirm the exact name. Report what succeeded, what failed, and the next step.
 ```
 
-<h2 id="manual-install">Manual Install</h2>
+<h3 id="manual-install">Manual Install (Advanced)</h3>
 
 Only use this path when you want control over every step.
 
@@ -172,7 +180,7 @@ One detail matters here:
 
 If you used one-click install, you usually do not need to send a manual request first.
 
-Go to [Platform / First Request](/docs/platform/create-api-key) only when:
+Go to [Platform / First Request](/docs/platform/first-request) only when:
 
 - the installer's final connectivity check failed
 - you want to verify `API Key + Base URL + network` directly
@@ -187,7 +195,7 @@ Go to [Platform / First Request](/docs/platform/create-api-key) only when:
 - native Windows cannot find `Git Bash`
   add `CLAUDE_CODE_GIT_BASH_PATH` into `~/.claude/settings.json`
 - `401 / 404 / 429`
-  go to [Troubleshoot / Common Questions](/docs/platform/create-api-key)
+  go to [Troubleshoot / Common Questions](/docs/troubleshoot/common-errors)
 - slow downloads or installer timeouts
   go to [Environment / Node.js](/docs/environment/nodejs#network)
 - not sure where to create the API key
