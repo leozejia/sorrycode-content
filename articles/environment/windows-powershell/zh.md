@@ -12,21 +12,23 @@ section_order: 40
 
 如果你是 Windows 用户，运行 SorryCode 一键安装时，默认打开 `PowerShell` 或 `Windows Terminal`。
 
-你不需要先学会命令行。只要知道：打开终端，复制文档里的整条命令，粘贴，按回车。
+你不需要先学会命令行。只要知道：在 SorryCode 控制台复制整条安装命令，打开终端，粘贴，按回车。
 
 <h2 id="open">怎么打开</h2>
 
 1. 按键盘上的 `Win` 键
 2. 输入 `PowerShell` 或 `Terminal`
 3. 打开 `Windows PowerShell` 或 `Windows Terminal`
-4. 粘贴 SorryCode 文档里的 `Windows` 一键安装命令
+4. 粘贴 SorryCode 控制台或文档里的 `Windows` 一键安装命令
 5. 按一次回车
 
 如果你不知道选哪个，优先打开 `Windows Terminal`。如果电脑里没有，就打开 `Windows PowerShell`。
 
 <h2 id="install">一键安装怎么粘贴</h2>
 
-在 `Runtime / Codex` 或 `Runtime / Claude Code` 页面里，找到 `Windows` 下面的命令，整条复制。
+优先在 `API 密钥` 页面点击 `接入工具`，选择 `Codex` 或 `Claude Code`，再选择 `Windows`，把弹窗里的命令整条复制。
+
+如果你暂时打不开控制台弹窗，也可以在 `Runtime / Codex` 或 `Runtime / Claude Code` 页面里，找到 `Windows` 下面的通用命令，整条复制。
 
 不要只复制一半，也不要自己拆成多行。
 

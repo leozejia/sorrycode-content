@@ -55,21 +55,18 @@ You primarily use Claude models → install Claude Code
 Not sure → install Codex, the simplest beginner entry
 ```
 
-**Install command:**
+**How to install:**
 
-Open a terminal (Mac: search "Terminal", Windows: search "PowerShell"), paste the command, and press enter:
+Go back to `https://sorrycode.com/keys`, find the key you just created, and click `Connect Tool`.
 
-```bash
-# macOS / Linux — Codex
-curl -fsSL https://sorrycode.com/install/codex.sh | bash
-```
+In the modal, choose `Codex` or `Claude Code`, then choose your operating system. The copied command already includes the current API key.
 
-```bash
-# macOS / Linux — Claude Code
-curl -fsSL https://sorrycode.com/install/claude-code.sh | bash
-```
+Then open the terminal on your own computer:
 
-After installation, follow the prompt to enter your API key. The workbench is now connected.
+- Mac: press `Command + Space`, type `Terminal`, then press Enter
+- Windows: press `Win`, type `PowerShell` or `Terminal`, then press Enter
+
+Paste the full command you copied and press Enter. When the installer finishes, the workbench is connected.
 
 If the install gets stuck, see the detailed guides for [Codex](/docs/runtime/codex) or [Claude Code](/docs/runtime/claude-code). Windows users: read [Windows PowerShell](/docs/environment/windows-powershell) first.
 

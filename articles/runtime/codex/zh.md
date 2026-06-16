@@ -16,7 +16,7 @@ section_order: 10
 
 > **你走哪条路？**
 >
-> **→ 一键安装（推荐）：** 复制命令 → 粘贴 → 填 API Key → 完成。适合绝大多数人。
+> **→ 一键安装（推荐）：** 在 API Key 页面点 `接入工具` → 复制命令 → 粘贴到本机终端 → 完成。适合绝大多数人。
 >
 > **→ 手动安装：** 自己装 Node.js、写配置文件。适合想控每一步的进阶用户。
 >
@@ -36,12 +36,12 @@ section_order: 10
 
 <h2 id="prepare-api-key">先准备 API Key</h2>
 
-一键安装会在流程里要求你输入 API Key，所以开始之前先做这一步：
+一键安装命令需要绑定你的 API Key，所以开始之前先做这一步：
 
 1. 登录 SorryCode 控制台
 2. 在控制台里找到 `API 密钥`
 3. 如果还没有，就创建一个新的 `sk-...`
-4. 把它先留在手边，安装时会马上用到
+4. 回到列表，准备点击这把 key 右侧的 `接入工具`
 
 快速入口是 `https://sorrycode.com/keys`，但更重要的是记住它在控制台里的位置。
 
@@ -51,23 +51,39 @@ section_order: 10
 
 <h2 id="one-click-install">⚡ 一键安装（推荐）</h2>
 
-这是默认主路径。安装器会把 `Codex` 接到 `{{API_BASE_URL}}`，写好本地配置。安装后建议用 `Codex App` 打开项目。
+这是默认主路径。控制台会用当前 API Key 生成一条安装命令。你把这条命令粘贴到自己电脑的终端里运行，安装器会把 `Codex` 接到 `{{API_BASE_URL}}`，写好本地配置。安装后建议用 `Codex App` 打开项目。
 
-### macOS / Linux
+### 第一步：在控制台复制命令
 
-一键安装会自动处理 Codex 主安装需要的依赖。macOS 会准备 `Node.js 22 LTS` 和 `Codex CLI`，不要求你先学会 Homebrew 或 Git。
+1. 打开 `https://sorrycode.com/keys`
+2. 找到给 Codex 准备的那把 API Key
+3. 点击右侧的 `接入工具`
+4. 选择 `Codex`
+5. 选择你的系统
+6. 点击 `复制`
 
-先打开终端：按住 `Command` + `空格`，输入 `Terminal`，按回车。
+弹窗里复制出来的是完整安装命令，已经带着当前 API Key。
 
-然后复制下面这整段命令，回到终端输入窗口，按 `Command` + `V` 粘贴，再按一次回车。
+### 第二步：粘贴到你电脑的终端
+
+- Mac：按住 `Command + 空格`，输入 `Terminal`，回车
+- Windows：按 `Win` 键，输入 `PowerShell` 或 `Terminal`，回车
+
+打开终端后，把刚复制的整条命令粘贴进去，再按一次回车。
+
+一键安装会自动处理 Codex 主安装需要的依赖。macOS 会准备 `Node.js 22 LTS` 和 `Codex CLI`，不要求你先学会 Homebrew 或 Git。Windows 会使用适合 Windows 的安装脚本。如果你不知道 PowerShell 是什么，先看 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)。
+
+### 备用：手动复制通用命令
+
+如果你暂时打不开 `接入工具` 弹窗，也可以用下面的通用命令。它不会自动带入你的 API Key，安装时会停下来让你粘贴 `sk-...`。
+
+macOS / Linux：
 
 ```bash
 curl -fsSL -o /tmp/sorrycode-codex.sh {{INSTALL_SH_URL}} && bash /tmp/sorrycode-codex.sh --base-url "{{API_BASE_URL}}" --source sorrycode-docs
 ```
 
-### Windows
-
-按 `Win` 键，输入 `PowerShell` 或 `Terminal`，打开后直接粘贴这一条。如果你不知道 PowerShell 是什么，先看 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)。
+Windows：
 
 ```powershell
 cmd /c "curl -fsSL -o %TEMP%\sorrycode-codex.bat {{INSTALL_BAT_URL}} && %TEMP%\sorrycode-codex.bat --base-url {{API_BASE_URL}} --source sorrycode-docs"
@@ -85,7 +101,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-codex.bat {{INSTALL_BAT_URL}} && %TEMP%\s
 
 </details>
 
-安装器会阻塞到你填完 `sk-...` 为止。
+如果你从 `接入工具` 复制命令，安装器通常不需要再问你 API Key。如果你用的是上面的通用命令，安装器会阻塞到你填完 `sk-...` 为止。
 
 如果最后看到“连通性检查失败”，不代表安装一定失败。更常见的原因是余额、权限或网络还没准备好。本地安装和配置写入只要完成了，下一步还是可以继续。
 

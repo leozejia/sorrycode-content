@@ -16,7 +16,7 @@ When you chat with AI in a browser, you type into a web page. Tools like `Codex`
 
 An `API Key` is the key on that channel. It proves that this is your SorryCode account using the model. It usually starts with `sk-...`.
 
-No matter whether you use Codex, Claude Code, CC-Switch, an image skill, or manual setup, this step is unavoidable. The current one-click installers also ask for the API key during the flow, so it is better to prepare it first inside the console.
+No matter whether you use Codex, Claude Code, CC-Switch, an image skill, or manual setup, this step is unavoidable. The console can now generate one-click install commands from this key, so create the key first.
 
 One SorryCode balance can have multiple API keys. As a beginner, do not force every tool to share the same key.
 
@@ -110,11 +110,24 @@ After creation, the console shows the full key. Copy the `sk-...` value.
 
 ![Copy the API key after creation](./key-created-copy.png)
 
-If you use the Codex or Claude Code one-click installer, the installer will stop and ask you to paste an API key. Paste the `sk-...` value there.
+If you use the Codex or Claude Code one-click installer, you usually do not need to copy the raw key by hand.
+
+The easier path is to return to the API key list, find this key, and click `Connect Tool`:
+
+![Connect Tool button on the right side of the API key list](./connect-tool-button.png)
+
+1. choose `Codex` or `Claude Code`
+2. choose your operating system
+3. copy the full command from the modal
+4. open the terminal on your own computer
+5. paste the command and press Enter
+
+That command already includes the current API key. Copy the raw `sk-...` value yourself only for manual setup or troubleshooting.
 
 If you already created a key, the API key list lets you:
 
 - copy the key
+- connect a tool
 - rename it
 - switch its group
 - set a spending limit
@@ -129,6 +142,7 @@ Do not force every tool into one key. Separate keys make later usage records muc
 - do not commit it into a repo
 - do not paste it into public chats
 - do not put it directly into long-lived shell history
+- commands copied from `Connect Tool` include the current key, so do not run them on shared computers, recorded screens, or public terminals
 - revoke and recreate it immediately if it leaks
 
 ## Next

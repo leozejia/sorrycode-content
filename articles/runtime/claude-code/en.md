@@ -16,7 +16,7 @@ For a first-time user, the main goal is to get the path working. Do not start wi
 
 > **Which path?**
 >
-> **→ One-Click Install (Recommended):** Copy command → paste → enter API key → done. For most people.
+> **→ One-Click Install (Recommended):** Click `Connect Tool` on the API key page → copy the command → paste it into your computer's terminal → done. For most people.
 >
 > **→ Manual Install:** Set up Node.js yourself, write config files. For users who want control over each step.
 >
@@ -36,12 +36,12 @@ Reference: [Claude Code official docs](https://code.claude.com/docs/en/overview)
 
 <h2 id="prepare-api-key">Prepare the API Key First</h2>
 
-The installer will ask for your API key during the flow, so do this first:
+The install command needs to be tied to your API key, so do this first:
 
 1. Sign in to the SorryCode console
 2. Find `API Keys` inside the console
 3. If you do not have one yet, create a new `sk-...`
-4. Keep it nearby, because the installer will ask for it right away
+4. Return to the list and prepare to click `Connect Tool` for that key
 
 The quick link is `https://sorrycode.com/keys`, but the more important thing is knowing where this page sits inside the console.
 
@@ -51,23 +51,39 @@ If you also plan to use Codex, create a separate API key for Codex. Both keys st
 
 <h2 id="one-click-install">⚡ One-Click Install (Recommended)</h2>
 
-This is the default path. The installer connects `Claude Code` to `{{ANTHROPIC_BASE_URL}}` and writes the local config. After install, enter your project folder in a terminal and run `claude`.
+This is the default path. The console generates an install command for the current API key. Paste that command into the terminal on your own computer, and the installer will connect `Claude Code` to `{{ANTHROPIC_BASE_URL}}` and write the local config. After install, enter your project folder in a terminal and run `claude`.
 
-### macOS / Linux
+### Step 1: Copy the Command in the Console
 
-The one-click installer handles the dependencies needed for the Claude Code setup path. On macOS, it prepares `Node.js 22 LTS` and `Claude Code`; you do not need to learn Homebrew or Git first.
+1. Open `https://sorrycode.com/keys`
+2. Find the API key you prepared for Claude Code
+3. Click `Connect Tool`
+4. Choose `Claude Code`
+5. Choose your operating system
+6. Click `Copy`
 
-Open Terminal first: press `Command` + `Space`, type `Terminal`, then press Enter.
+The copied command is complete and already includes the current API key.
 
-Copy the full command below, return to the Terminal input area, press `Command` + `V` to paste it, then press Enter once.
+### Step 2: Paste It into Your Computer's Terminal
+
+- Mac: press `Command + Space`, type `Terminal`, then press Enter
+- Windows: press `Win`, type `PowerShell` or `Terminal`, then press Enter
+
+After the terminal opens, paste the full command you copied and press Enter.
+
+The one-click installer handles the dependencies needed for the Claude Code setup path. On macOS, it prepares `Node.js 22 LTS` and `Claude Code`; you do not need to learn Homebrew or Git first. Windows uses the Windows-specific installer. If you are not sure what PowerShell is, read [Environment / Windows PowerShell](/docs/environment/windows-powershell) first.
+
+### Fallback: Copy a Generic Command Manually
+
+If you cannot open the `Connect Tool` modal, use the generic command below. It does not include your API key, so the installer will stop and ask you to paste the `sk-...` value.
+
+macOS / Linux:
 
 ```bash
 curl -fsSL -o /tmp/sorrycode-claude.sh {{INSTALL_CLAUDE_SH_URL}} && bash /tmp/sorrycode-claude.sh --base-url "{{ANTHROPIC_BASE_URL}}" --source sorrycode-docs
 ```
 
-### Windows
-
-Press `Win`, type `PowerShell` or `Terminal`, open it, and paste this. If you are not sure what PowerShell is, read [Environment / Windows PowerShell](/docs/environment/windows-powershell) first:
+Windows:
 
 ```powershell
 cmd /c "curl -fsSL -o %TEMP%\sorrycode-claude.bat {{INSTALL_CLAUDE_BAT_URL}} && %TEMP%\sorrycode-claude.bat --base-url {{ANTHROPIC_BASE_URL}} --source sorrycode-docs"
@@ -85,7 +101,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-claude.bat {{INSTALL_CLAUDE_BAT_URL}} && 
 
 </details>
 
-The installer blocks until you provide an `sk-...` key.
+If you copied the command from `Connect Tool`, the installer usually does not need to ask for the API key again. If you use the generic command above, the installer blocks until you provide an `sk-...` key.
 
 If the last step says the connectivity check failed, that does not always mean the install failed. Balance, permissions, or upstream network issues can still break the remote check even when the local install is already done.
 

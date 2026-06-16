@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-06-04",
+  "updatedAt": "2026-06-16",
   "articles": [
     {
       "type": "article",
@@ -13,7 +13,7 @@
       "title": "First Time Using SorryCode",
       "summary": "Create an API key, install a workbench, and run your first task — three steps to get started with SorryCode, under 10 minutes from signup to AI doing real work.",
       "order": 1,
-      "updatedAt": "2026-06-04",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/start/first-step/en.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"
@@ -28,7 +28,7 @@
       "title": "第一次使用 SorryCode",
       "summary": "创建 API Key、安装工作台、跑通第一个任务——三步完成 SorryCode 上手，10 分钟内让 AI 开始替你干活。",
       "order": 1,
-      "updatedAt": "2026-06-04",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/start/first-step/zh.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"
@@ -361,7 +361,7 @@
       "title": "Create API Key",
       "summary": "Understand what an API key is, then create separate sk-... keys for Codex, Claude Code, Skills, or other uses.",
       "order": 4,
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/platform/create-api-key/en.md",
       "assetBaseUrl": "articles/platform/create-api-key/",
       "route": "/docs/platform/create-api-key"
@@ -376,7 +376,7 @@
       "title": "创建 API Key",
       "summary": "先理解 API Key 是什么，再按 Codex、Claude Code 或 Skills 等用途分别创建 sk-... 密钥。",
       "order": 4,
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/platform/create-api-key/zh.md",
       "assetBaseUrl": "articles/platform/create-api-key/",
       "route": "/docs/platform/create-api-key"
@@ -451,7 +451,7 @@
       "title": "Codex",
       "summary": "Understand Codex first, prepare your API key, finish one-click install, and start using it right away.",
       "order": 1,
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/runtime/codex/en.md",
       "assetBaseUrl": "articles/runtime/codex/",
       "route": "/docs/runtime/codex"
@@ -466,7 +466,7 @@
       "title": "Codex",
       "summary": "先认识 Codex，再准备 API Key，完成一键安装，然后直接开始用。",
       "order": 1,
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/runtime/codex/zh.md",
       "assetBaseUrl": "articles/runtime/codex/",
       "route": "/docs/runtime/codex"
@@ -513,7 +513,7 @@
       "title": "Claude Code",
       "summary": "Understand Claude Code first, prepare your API key, finish one-click install, and start using it right away.",
       "order": 2,
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/runtime/claude-code/en.md",
       "assetBaseUrl": "articles/runtime/claude-code/",
       "route": "/docs/runtime/claude-code"
@@ -528,7 +528,7 @@
       "title": "Claude Code",
       "summary": "先认识 Claude Code，再准备 API Key，完成一键安装，然后直接开始用。",
       "order": 2,
-      "updatedAt": "2026-06-02",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/runtime/claude-code/zh.md",
       "assetBaseUrl": "articles/runtime/claude-code/",
       "route": "/docs/runtime/claude-code"
@@ -1387,7 +1387,7 @@
       "title": "Windows PowerShell",
       "summary": "The Windows terminal entry for SorryCode one-click install: how to open it, paste commands, and avoid shell or encoding mistakes.",
       "order": 2,
-      "updatedAt": "2026-05-11",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/environment/windows-powershell/en.md",
       "assetBaseUrl": "articles/environment/windows-powershell/",
       "route": "/docs/environment/windows-powershell"
@@ -1402,7 +1402,7 @@
       "title": "Windows PowerShell",
       "summary": "Windows 用户运行 SorryCode 一键安装时的终端入口：怎么打开、粘贴命令、避免混用 shell 和编码问题。",
       "order": 2,
-      "updatedAt": "2026-05-11",
+      "updatedAt": "2026-06-16",
       "markdownPath": "articles/environment/windows-powershell/zh.md",
       "assetBaseUrl": "articles/environment/windows-powershell/",
       "route": "/docs/environment/windows-powershell"

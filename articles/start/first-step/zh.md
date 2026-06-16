@@ -55,21 +55,18 @@ API Key 是你的钥匙。没有它，工具进不了 SorryCode。
 不确定 → 装 Codex，它是最简单的新手入口
 ```
 
-**安装命令：**
+**怎么安装：**
 
-打开终端（Mac 搜"Terminal"，Windows 搜"PowerShell"），复制粘贴，回车：
+回到 `https://sorrycode.com/keys`，找到你刚创建的那把 key，点右侧的 `接入工具`。
 
-```bash
-# macOS / Linux 装 Codex
-curl -fsSL https://sorrycode.com/install/codex.sh | bash
-```
+在弹窗里选择 `Codex` 或 `Claude Code`，再选择你的系统。复制出来的命令已经带着当前 API Key。
 
-```bash
-# macOS / Linux 装 Claude Code
-curl -fsSL https://sorrycode.com/install/claude-code.sh | bash
-```
+然后打开你电脑自己的终端：
 
-安装完按提示输入 API Key，工作台就接上了。
+- Mac：按 `Command + 空格`，输入 `Terminal`，回车
+- Windows：按 `Win`，输入 `PowerShell` 或 `Terminal`，回车
+
+把刚复制的整条命令粘贴进去，按回车。安装完成后，工作台就接上了。
 
 如果安装卡住了，看 [Codex](/docs/runtime/codex) 或 [Claude Code](/docs/runtime/claude-code) 的详细说明。Windows 用户先看 [Windows PowerShell](/docs/environment/windows-powershell)。
 

@@ -12,21 +12,23 @@ section_order: 40
 
 If you are on Windows, use `PowerShell` or `Windows Terminal` for SorryCode one-click install.
 
-You do not need to learn the command line first. Open the terminal, paste the full command from the docs, and press Enter.
+You do not need to learn the command line first. Copy the full install command from the SorryCode console, open the terminal, paste it, and press Enter.
 
 <h2 id="open">How to Open It</h2>
 
 1. Press the `Win` key
 2. Type `PowerShell` or `Terminal`
 3. Open `Windows PowerShell` or `Windows Terminal`
-4. Paste the `Windows` one-click install command from the SorryCode docs
+4. Paste the `Windows` one-click install command from the SorryCode console or docs
 5. Press Enter once
 
 If you are unsure, open `Windows Terminal` first. If it is not installed, open `Windows PowerShell`.
 
 <h2 id="install">How to Paste the Installer</h2>
 
-Go to `Runtime / Codex` or `Runtime / Claude Code`, find the command under `Windows`, and copy the whole command.
+Prefer the API key page first: click `Connect Tool`, choose `Codex` or `Claude Code`, choose `Windows`, then copy the full command from the modal.
+
+If you cannot open the console modal, go to `Runtime / Codex` or `Runtime / Claude Code`, find the generic command under `Windows`, and copy the whole command.
 
 Do not copy only half of it. Do not split it into multiple lines yourself.
 

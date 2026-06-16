@@ -16,7 +16,7 @@ section_order: 8
 
 `API Key` 是这条通道上的钥匙，用来证明这是你的 SorryCode 账号在使用模型。它通常长这样：`sk-...`。
 
-无论你后面走 Codex、Claude Code、CC-Switch、图片 Skill，还是手动请求，这一步都绕不开。现在的一键安装也会在流程里要求你输入 API Key，所以最好先在控制台把它准备好。
+无论你后面走 Codex、Claude Code、CC-Switch、图片 Skill，还是手动请求，这一步都绕不开。现在控制台可以直接用这把 key 生成一键安装命令，所以最好先把 key 建好。
 
 一份 SorryCode 余额可以对应多把 API Key。新手不要把所有工具都挤在同一把 key 里。
 
@@ -110,11 +110,24 @@ Claude Code
 
 ![创建完成后复制 API Key](./key-created-copy.png)
 
-如果你走 Codex 或 Claude Code 的一键安装，安装器会停下来让你粘贴 API Key。把刚复制的 `sk-...` 粘贴进去即可。
+如果你走 Codex 或 Claude Code 的一键安装，不一定要手动复制 key。
+
+更简单的方式是回到 API 密钥列表，找到这把 key，点击 `接入工具`：
+
+![API Key 列表右侧的接入工具按钮](./connect-tool-button.png)
+
+1. 选择 `Codex` 或 `Claude Code`
+2. 选择你的系统
+3. 复制弹窗里的整条命令
+4. 打开你电脑的终端
+5. 粘贴命令，按回车
+
+这条命令已经带着当前 API Key。只有你走手动安装或排障时，才需要自己把 `sk-...` 填进配置文件。
 
 如果你已经创建过 key，也可以在 API 密钥列表里：
 
 - 复制密钥
+- 接入工具
 - 修改名称
 - 切换分组
 - 设置额度限制
@@ -129,6 +142,7 @@ Claude Code
 - 不要提交到代码仓库
 - 不要发到公共群
 - 不要直接写进长期可见的 shell history
+- `接入工具` 复制出来的安装命令会带当前 key，不要在共享电脑、直播录屏或公共终端里运行
 - 泄露后立即废弃重建
 
 ## 下一步
