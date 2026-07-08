@@ -2,7 +2,7 @@
 title: Plugins 和 Skills 有什么区别
 slug: plugins-vs-skills
 order: 4
-summary: Plugins 给 agent 提供新工具，Skills 教 agent 怎么做事——两者适用场景、安装方式、调用语法完全不同。
+summary: Plugins 和 Skills 是两种不同的能力扩展方式，但不互斥——理解它们的区别，选择合适的使用方式。
 section: runtime
 section_title: Runtime
 section_order: 10
@@ -10,63 +10,56 @@ section_order: 10
 
 # Plugins 和 Skills 有什么区别
 
-如果你在 Codex 或 Claude Code 里看到 Plugins 和 Skills，可能会困惑它们是不是一回事。
+如果你在 Codex 或 Claude Code 里看到 Plugins 和 Skills，可能会困惑它们的关系。
 
 **简单回答：**
 
-- **Plugins** 是给 agent 提供新工具的扩展，比如操作浏览器、控制桌面、制作视频
-- **Skills** 是教 agent 怎么做事的手册，比如生成图片、排版文档、审查代码
-
-一个扩展能力边界，一个传授工作方法。
+- **Plugins** 是给 agent 提供**新工具**的扩展（如操作浏览器、控制桌面）
+- **Skills** 是教 agent **怎么做事**的工作流（如生成图片、排版文档）
+- **它们不互斥** - 某些能力可以同时有 Plugin 和 Skill 两种形态
 
 <h2 id="quick-comparison">快速对比</h2>
 
 | 维度 | Plugins | Skills |
 |------|---------|--------|
-| **本质** | 系统级能力扩展 | 工作流操作手册 |
-| **适用范围** | 主要是 Codex App | Codex 和 Claude Code 通用 |
-| **调用方式** | `@Chrome`、`@Computer` | 自然语言，如"请用 Kami..." |
-| **安装方式** | 修改配置文件 + 重启 | `npx skills install` |
-| **典型场景** | 操作浏览器、桌面、专用服务 | 内容创作、文档处理、代码审查 |
+| **本质** | 系统级工具扩展 | 工作流知识包 |
+| **提供什么** | 新的能力（如浏览器控制） | 做事的方法（如生成图片的流程） |
+| **调用方式** | `@PluginName`（如 `@Chrome`） | 自然语言（如"请用 Kami..."） |
+| **安装方式** | UI 可视化安装 或 配置文件 | `npx skills install` 或 让 agent 安装 |
+| **适用范围** | Codex App, Claude Code (CLI & Desktop) | Codex 和 Claude Code 通用 |
 
 <h2 id="what-are-plugins">Plugins 是什么</h2>
 
-Plugins 是 Codex 特有的外部能力扩展。它们让 agent 可以操作浏览器、控制桌面、或者连接专用服务。
+Plugins 是给 agent 提供新工具的扩展。
 
 **常见 Plugins：**
 
-- **@Chrome** - 操作真实 Chrome 浏览器，适合需要登录态的网站（X、GitHub、Gmail、Stripe）
-- **@Browser** - 测试本地网页，适合 localhost 调试、截图、表单流程验证
-- **@Computer** - 操作桌面系统，适合系统设置、权限检查、桌面应用
-- **@HyperFrames** - 制作 HTML 视频和动效
+- **@Chrome** - 操作真实 Chrome 浏览器（需要登录态的网站）
+- **@Computer** - 操作桌面系统（系统设置、权限检查）
+- **@Browser** - 测试本地网页（localhost 调试）
+- **Spreadsheets** - 创建和编辑电子表格
+- **Presentations** - 创建和编辑演示文稿
+- **Documents** - 创建和编辑文档
 
 **调用示例：**
 
 ```text
 @Chrome 打开 X，帮我读这条帖子
-@Browser 打开 http://localhost:3000，测试登录流程
 @Computer 打开系统设置，检查屏幕录制权限
-@HyperFrames 做一个 10 秒产品介绍视频
+@Browser 打开 http://localhost:3000，测试登录流程
 ```
-
-**技术特点：**
-
-- 需要在 `~/.codex/config.toml` 配置后重启 Codex App
-- Chrome 需要安装扩展和 native host
-- Computer Use 需要授予系统屏幕录制和辅助功能权限
-- 全局启用，runtime 启动时加载
 
 <h2 id="what-are-skills">Skills 是什么</h2>
 
-Skills 是可安装、可复用的工作流能力包。它们教 agent 如何处理特定类型的任务，但不改变 agent 的基础工具集。
+Skills 是教 agent 怎么做事的工作流知识包。
 
 **常见 Skills：**
 
-- **SorryCode Image2** - 生成图片、设计封面、制作配图
-- **Kami** - 把内容排版成一页纸
-- **Office Docs** - 编辑 Word、Excel、PowerPoint
-- **Waza** - 代码审查、提交前检查
-- **DBSkill** - 商业诊断、竞品分析
+- **SorryCode Image2** - 生成图片的流程和规范
+- **Kami** - 排版一页纸的方法
+- **Office Docs** - 处理 Word、Excel、PowerPoint 的工作流
+- **Waza** - 代码审查的步骤
+- **Ponytail** - 设计工作流（同时也有 Plugin 形态）
 
 **调用示例：**
 
@@ -76,69 +69,79 @@ Skills 是可安装、可复用的工作流能力包。它们教 agent 如何处
 请用 Waza 检查这次改动
 ```
 
-**技术特点：**
+<h2 id="key-difference">关键区别</h2>
 
-- 基于开放标准（open agent skills standard），Codex 和 Claude Code 都支持
-- 通过 `npx skills install` 安装到 `~/.agents/skills` 或项目 `.agents/skills`
-- Progressive disclosure：agent 先看 description，需要时才加载完整 SKILL.md
-- 可能包含脚本、模板、字体、示例文件
+### Plugins：提供工具
 
-<h2 id="when-to-use">什么时候用哪个</h2>
+Plugins 给 agent **新的能力**，就像给人类装上机械臂、给汽车加装雷达。
 
-### 用 Plugins 的场景
+**例子：**
+- 没有 Chrome Plugin：agent 无法操作真实浏览器
+- 装了 Chrome Plugin：agent 可以控制你的 Chrome，操作已登录的网站
 
-- 需要操作真实浏览器，而不是无头浏览器
-- 需要用到已登录的网站（X、GitHub、Gmail、Stripe、Google Cloud Console）
-- 需要操作桌面应用或系统设置
-- 需要多标签页协同、截图、表单自动化
-- 需要制作 HTML 视频或动效
+### Skills：提供方法
 
-### 用 Skills 的场景
+Skills 教 agent **怎么用工具**，就像教人类如何开车、如何做菜。
 
-- 需要可复用的业务工作流（设计、文档、代码审查）
-- 需要跨 runtime 通用的能力（Codex 和 Claude Code 都能用）
-- 团队协作需要统一工作标准
-- 反复要求 agent 做同一类事，希望它记住方法
-- 需要传授领域知识或操作规范
+**例子：**
+- 没有 Kami Skill：agent 不知道如何排版一页纸
+- 装了 Kami Skill：agent 知道一页纸的布局规则、字体选择、信息层级
 
-<h2 id="installation">安装方式对比</h2>
+### 它们可以共存
 
-### Plugins 安装
+某些能力可以同时有 Plugin 和 Skill：
 
-Plugins 主要在 Codex App 里配置。
+**例如 Ponytail：**
+- **Ponytail Plugin**：提供设计工具的底层能力
+- **Ponytail Skill**：教 agent 如何使用这些工具完成设计任务
 
-编辑配置文件：
+<h2 id="installation">如何安装</h2>
+
+### Codex App 安装 Plugins
+
+**方式 1：可视化界面（推荐）**
+
+1. 打开 Codex App
+2. 点击侧边栏的「插件」
+3. 浏览 Featured、Productivity 等分类
+4. 点击插件旁边的「Try in chat」或安装按钮
+5. 已安装的插件会显示在「已安装」区域
+
+**方式 2：配置文件（备用）**
+
+如果可视化界面不可用，可以手动编辑：
 
 ```text
 ~/.codex/config.toml
 ```
 
-加入这段：
+加入：
 
 ```toml
-[plugins."browser-use@openai-bundled"]
-enabled = true
-
 [plugins."chrome@openai-bundled"]
 enabled = true
 
 [plugins."computer-use@openai-bundled"]
 enabled = true
-
-[plugins."hyperframes@openai-curated"]
-enabled = true
 ```
 
-保存后完全退出并重启 Codex App。
+保存后重启 Codex App。
 
 **额外依赖：**
-
-- Chrome 需要安装 [Codex Chrome Extension](https://chromewebstore.google.com/detail/codex/hehggadaopoacecdllhhajmbjkdcmajg) 和 native host
+- Chrome Plugin 需要安装 [Codex Chrome Extension](https://chromewebstore.google.com/detail/codex/hehggadaopoacecdllhhajmbjkdcmajg)
 - Computer Use 需要授予 macOS 屏幕录制和辅助功能权限
 
-### Skills 安装
+### Claude Code Desktop 安装 Plugins (Beta)
 
-Skills 可以通过命令行安装，也可以让 agent 自己读文档安装。
+**注意：此功能目前处于 Beta 状态。**
+
+1. 打开 Claude Code Desktop
+2. 进入 Settings > Plugins & skills
+3. 在「PLUGIN MARKETPLACES」区域
+4. 添加 Git repository 作为插件源
+5. 插件会安装到 `/Library/Application Support/Claude/org-plugins`
+
+### 安装 Skills
 
 **命令行安装：**
 
@@ -152,10 +155,6 @@ npx skills install <skill-name>
 请帮我安装 SorryCode Image2 这个 skill
 ```
 
-Agent 会自动判断当前环境、检查依赖、执行安装。
-
-安装完成后，重启 Codex 或 Claude Code 即可使用。
-
 **卸载：**
 
 ```bash
@@ -166,99 +165,156 @@ npx skills remove --global <skill-name>
 
 | Runtime | Plugins | Skills |
 |---------|---------|--------|
-| Codex App | ✅ 支持 | ✅ 支持 |
-| Codex CLI | ⚠️ 部分支持 | ✅ 支持 |
-| Claude Code CLI | ❌ 不支持 | ✅ 支持 |
-| Claude Code Desktop | ❌ 不支持 | ✅ 支持 |
+| Codex App | ✅ 完整支持 | ✅ 完整支持 |
+| Codex CLI | ⚠️ 部分支持 | ✅ 完整支持 |
+| Claude Code CLI | ✅ 完整支持 | ✅ 完整支持 |
+| Claude Code Desktop | 🧪 Beta 支持 | ✅ 完整支持 |
 | Claude Desktop | ❌ 不支持 | ❌ 不支持 |
 
 **说明：**
 
-- Plugins 是 Codex 生态专属，主要在 Codex App 里使用
-- Skills 基于开放标准，跨 runtime 通用
+- Plugins 在 Codex App 和 Claude Code CLI 中支持最完善
+- Claude Code Desktop 的 Plugins 支持处于实验阶段
+- Skills 基于开放标准（open agent skills standard），跨 runtime 通用
 - Claude Desktop 只支持第三方推理网关，不支持 Plugins 和 Skills
+
+**Claude Code CLI 中使用 Plugins：**
+
+```bash
+# 查看可用的 plugin 命令
+/plugin
+
+# 管理 Claude Code plugins
+/plugin (plugins)
+
+# 激活待处理的 plugin 更改
+/reload-plugins
+```
+
+<h2 id="when-to-use">什么时候用哪个</h2>
+
+### 用 Plugins 的场景
+
+- 需要操作真实浏览器（而不是无头浏览器）
+- 需要用到已登录的网站（X、GitHub、Gmail）
+- 需要操作桌面应用或系统设置
+- 需要访问特定系统级能力
+
+### 用 Skills 的场景
+
+- 需要可复用的工作流（设计、文档、代码审查）
+- 需要跨 runtime 使用（Codex 和 Claude Code 都能用）
+- 希望团队统一工作标准
+- 反复做同一类任务，希望 agent 记住方法
+
+### 两者一起用
+
+它们不冲突，可以组合使用：
+
+```text
+示例工作流：
+1. 用 @Chrome 登录 Figma，导出设计资产
+2. 用 SorryCode Image2 Skill 生成品牌一致的配图
+3. 用 Office Docs Skill 把内容排版成文档
+4. 用 @Browser 预览最终效果
+```
 
 <h2 id="technical-difference">技术层面的区别</h2>
 
 ### Plugins
 
-- 配置在 `~/.codex/config.toml`
-- 全局启用，runtime 启动时加载
-- 需要额外权限（浏览器扩展权限、系统权限）
-- 调用语法是 `@PluginName`
-- 本质是系统级能力扩展
+- **安装位置**：系统级（Codex App）或组织级（Claude Code Desktop）
+- **启动时机**：全局启用，runtime 启动时加载
+- **权限需求**：可能需要系统权限（屏幕录制、辅助功能、浏览器扩展）
+- **调用语法**：`@PluginName`
+- **本质**：系统级能力扩展
 
 ### Skills
 
-- 安装到 `~/.agents/skills/` 或 `.agents/skills/`
-- 结构包含 `SKILL.md`、`description`、`references/`、`scripts/`、`assets/`
-- Progressive disclosure：agent 先看 description 判断是否需要，需要时才加载完整内容
-- 调用语法是自然语言
-- 本质是工作流操作手册
+- **安装位置**：`~/.agents/skills/` 或项目 `.agents/skills/`
+- **结构**：`SKILL.md`、`description`、`references/`、`scripts/`、`assets/`
+- **加载机制**：Progressive disclosure（先看 description，需要时才加载完整内容）
+- **调用语法**：自然语言或显式点名
+- **本质**：工作流知识包
 
-<h2 id="api-login">Codex App 通过 API 登录后也能用 Plugins 吗</h2>
+<h2 id="why-both">为什么需要两种机制</h2>
 
-**可以。**
+**Plugins：能力边界**
 
-现在 Codex App 通过 API 登录（比如接入 SorryCode Gateway）后，也可以正常使用 Plugins。
+有些事情 agent 做不了，不是因为它不知道怎么做，而是因为它**物理上没有这个能力**。
 
-配置方式和账号登录时一样：
+例如：
+- agent 无法操作你的 Chrome（除非装 Chrome Plugin）
+- agent 无法控制桌面（除非装 Computer Use Plugin）
 
-1. 编辑 `~/.codex/config.toml`
-2. 加入 Plugins 配置
-3. 重启 Codex App
+**Skills：知识边界**
 
-Plugins 是本地能力扩展，不依赖 Codex 官方账号。只要 Codex App 能正常运行，Plugins 就能用。
+有些事情 agent 能做，但**不知道你的工作流和标准**。
 
-<h2 id="can-they-work-together">Plugins 和 Skills 可以一起用吗</h2>
+例如：
+- agent 会生成图片，但不知道你的品牌规范
+- agent 会写代码，但不知道你的审查标准
 
-**可以。**
+**两者解决不同问题：**
 
-它们不冲突。
+| 问题类型 | 解决方案 |
+|---------|---------|
+| agent 做不了 | 装 Plugin 提供新能力 |
+| agent 不知道怎么做 | 装 Skill 提供工作流 |
+| agent 能做但不稳定 | 装 Skill 统一标准 |
 
-比如你可以：
+<h2 id="with-mcp">Plugins、Skills 和 MCP 的关系</h2>
 
-1. 用 `@Chrome` 登录 Salesforce，抓取客户数据
-2. 用 DBSkill 分析这些数据，生成诊断报告
-3. 用 Office Docs skill 把报告排版成 Word 文档
-4. 用 SorryCode Image2 生成报告封面
+三者定位不同但可以组合：
 
-Plugins 扩展能力边界，Skills 传授工作方法。两者组合可以完成更复杂的工作流。
+- **Plugins** - 系统级工具（浏览器、桌面、专用服务）
+- **Skills** - 工作流知识（如何完成任务）
+- **MCP** - 数据连接协议（读数据库、调 API）
 
-<h2 id="with-mcp">Plugins、Skills 和 MCP 是什么关系</h2>
+**组合示例：**
 
-三者定位不同：
+```text
+完整工作流：
+1. 通过 MCP 读取数据库中的客户数据
+2. 用 @Chrome Plugin 登录 CRM 系统
+3. 用 DBSkill 分析数据并生成报告
+4. 用 Office Docs Skill 排版成文档
+```
 
-- **MCP（Model Context Protocol）** - 工具和数据连接协议，让 agent 可以读数据库、调 API、访问外部系统
-- **Plugins** - Codex 特定的系统能力扩展，给 agent 提供浏览器、桌面、专用服务
-- **Skills** - 工作流能力包，教 agent 如何处理特定类型的任务
+<h2 id="common-questions">常见问题</h2>
 
-它们可以组合：
+### Codex App 通过 API 登录后能用 Plugins 吗？
 
-- 一个图片 skill 可以调用 MCP 连接的图片 API
-- 一个数据分析 skill 可以通过 MCP 读取数据库，再用 `@Browser` 展示可视化结果
-- 一个测试 skill 可以用 `@Chrome` 操作真实浏览器，再通过 MCP 记录测试结果
+**可以。** Plugins 是本地能力扩展，不依赖 Codex 官方账号。
+
+### 为什么有些能力既是 Plugin 又是 Skill？
+
+因为它们解决不同层次的问题：
+- **Plugin 层**：提供底层能力
+- **Skill 层**：提供工作流指导
+
+### Claude Code Desktop 的 Plugins 功能稳定吗？
+
+**目前是 Beta 状态。** 建议：
+- 生产环境优先使用 Skills
+- 实验性工作可以试用 Plugins (Beta)
+
+### 如何判断我需要 Plugin 还是 Skill？
+
+问自己：
+- agent 能不能做？→ 不能 → 需要 Plugin
+- agent 知不知道怎么做？→ 不知道 → 需要 Skill
+- agent 做得稳不稳定？→ 不稳定 → 需要 Skill
 
 <h2 id="next">接下来</h2>
 
-**如果你想用 Plugins：**
+**如果你想安装 Plugins：**
 
-- Codex App 用户可以直接配置 `~/.codex/config.toml`
-- Claude Code 用户暂时不支持 Plugins，可以考虑使用 Skills 或 MCP
+- Codex App 用户：打开侧边栏「插件」，可视化浏览和安装
+- Claude Code CLI 用户：使用 `/plugin` 命令管理插件
+- Claude Code Desktop 用户：Settings > Plugins & skills（Beta 功能）
 
-**如果你想用 Skills：**
+**如果你想安装 Skills：**
 
-- 先看 [Agent 基建 / Skills](/docs/agent-memory/remember-skills) 了解 Skills 标准
-- 再看 [Skills / 精选 Skills](/docs/skills/featured-skills) 找到适合你的 skill
-- 或者直接让 agent 读当前 Skills 列表，按你的目标推荐
-
-**如果你不确定：**
-
-问 agent：
-
-```text
-我想让你操作 Gmail，应该用 Plugin 还是 Skill？
-我想让你每次生成图片都遵循品牌规范，应该用 Plugin 还是 Skill？
-```
-
-Agent 会根据任务特点给出建议。
+- 看 [Skills / 精选 Skills](/docs/skills/featured-skills) 找合适的 skill
+- 或者看 [让 AI 记住工作方法](/docs/agent-memory/remember-skills) 了解如何制作自己的 skill
