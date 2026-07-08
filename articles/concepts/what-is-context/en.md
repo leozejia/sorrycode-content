@@ -88,7 +88,7 @@ Good for: what this project is, common commands, code style, brand guidelines, f
 
 How to implement: use config files like `AGENTS.md` or `CLAUDE.md`.
 
-This chapter won't expand on how to write config files. The [Agent Advanced](/docs/agent-infra/overview) section covers it in full.
+This chapter won't expand on how to write config files. The [Agent Advanced](/docs/agent-memory/overview) section covers it in full.
 
 **Desk (current task)**
 
@@ -172,6 +172,6 @@ You've learned how to manage AI's memory. But there's an even bigger question:
 
 Next chapter: [When to Trust AI and When Not To](/docs/concepts/calibration)
 
-For a deep dive on long-term context management: [Agent Advanced / How to Manage Long-Lived Context](/docs/agent-infra/context-management)
+For a deep dive on long-term context management: [Agent Advanced / How to Manage Long-Lived Context](/docs/agent-memory/context-management)
 
 For understanding how context affects cost: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)

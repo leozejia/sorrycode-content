@@ -1,14 +1,14 @@
 ---
-title: Skills
-slug: skills
-order: 7
-summary: Skills are installable, reusable capability packs for agents. They use SKILL.md, references, scripts, and assets to hand workflows to agents.
-section: agent-infra
-section_title: Agent Infrastructure
-section_order: 32
+title: Make AI Remember Work Methods
+slug: remember-skills
+order: 5
+summary: Turn repetitive workflows into Skills, making AI remember how to do images, documents, code review, and other tasks.
+section: agent-memory
+section_title: Make AI Remember
+section_order: 15
 ---
 
-# Skills
+# Make AI Remember Work Methods
 
 `Skills` are installable, reusable capability packs for agents.
 

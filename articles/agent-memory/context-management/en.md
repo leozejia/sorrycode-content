@@ -1,14 +1,14 @@
 ---
-title: How to Manage Long-Lived Context
+title: What to Do When Sessions Get Too Long
 slug: context-management
 order: 2
-summary: Long sessions, cache, context files, and handoffs are different things. Keep durable truth and clear historical debt.
-section: agent-infra
-section_title: Agent Infrastructure
-section_order: 32
+summary: Sessions getting longer and you don't know when to clear? Understand cache, handoff, and long-term context management.
+section: agent-memory
+section_title: Make AI Remember
+section_order: 15
 ---
 
-# How to Manage Long-Lived Context
+# What to Do When Sessions Get Too Long
 
 An agent can keep working in one session for a long time. That does not mean every old detail should stay there forever.
 
@@ -46,9 +46,9 @@ Chat is for movement. Files are for durable truth. Handoffs are for switching se
 
 If a piece of information will be reused, do not explain it again every time.
 
-For coding, put it in [AGENTS.md](/docs/agent-infra/project-rules) or [CLAUDE.md](/docs/agent-infra/project-rules).
+For coding, put it in [AGENTS.md](/docs/agent-memory/remember-rules) or [CLAUDE.md](/docs/agent-memory/remember-rules).
 
-For design, put it in [DESIGN.md](/docs/agent-infra/design-md).
+For design, put it in [DESIGN.md](/docs/agent-memory/remember-design).
 
 Good durable content includes:
 

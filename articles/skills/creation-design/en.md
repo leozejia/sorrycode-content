@@ -28,7 +28,7 @@ If this is your first time making a deck, design, image, one-pager, or cover, re
 | Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 | Make code-based decks with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
 | Make product videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
-| Keep one project aligned to the same visual rules over time | [Agent Infrastructure / DESIGN.md](/docs/agent-infra/design-md) |
+| Keep one project aligned to the same visual rules over time | [Agent Infrastructure / DESIGN.md](/docs/agent-memory/remember-design) |
 
 <h2 id="office-vs-design">How It Differs From Office Docs</h2>
 

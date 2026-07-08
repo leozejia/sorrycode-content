@@ -105,7 +105,7 @@ skill 的价值在这里：
 - 页面要更像咨询公司汇报
 - 封面要保留某个品牌色
 
-最轻量的做法是写一个 `DESIGN.md`。它可以记录品牌色、字体、参考案例、禁用风格、交付格式和验收标准。下一步看：[Agent 基建 / DESIGN.md](/docs/agent-infra/design-md)。
+最轻量的做法是写一个 `DESIGN.md`。它可以记录品牌色、字体、参考案例、禁用风格、交付格式和验收标准。下一步看：[Agent 基建 / DESIGN.md](/docs/agent-memory/remember-design)。
 
 如果这套流程已经反复使用，再考虑做成自己的 skill。下一次你只要点名这个 skill，agent 就能按你的方法开始。
 

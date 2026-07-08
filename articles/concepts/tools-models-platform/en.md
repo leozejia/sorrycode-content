@@ -145,7 +145,7 @@ There are tutorials online showing how to run GPT through Claude Code, or DeepSe
 | I primarily use Claude | [Runtime / Claude Code](/docs/runtime/claude-code) |
 | I use a Chinese model | Check the vendor's Agent client; setup logic is similar |
 | I want multi-model access through one entry | Use SorryCode as a unified API gateway, switch models as needed |
-| I'm already using it, want to manage it better | [Agent Advanced](/docs/agent-infra/overview) |
+| I'm already using it, want to manage it better | [Agent Advanced](/docs/agent-memory/overview) |
 
 <h2 id="remember">Remember One Thing</h2>
 

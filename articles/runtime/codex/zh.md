@@ -120,7 +120,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-codex.bat {{INSTALL_BAT_URL}} && %TEMP%\s
 
 如果你更想在可视化编辑器里看项目文件和改动，也可以继续看 [工具 / VS Code](/docs/tools/vscode)。
 
-如果你打开 Codex App 后发现插件入口是灰色的，或者 `/plugins` 找不到 Chrome、Computer Use、Browser、HyperFrames，继续看 [Codex App 插件配置](/docs/runtime/codex-plugins)。
+如果你打开 Codex App 后发现插件入口是灰色的，或者 `/plugins` 找不到 Chrome、Computer Use、Browser、HyperFrames，可以看 [Plugins 和 Skills 有什么区别](/docs/runtime/plugins-vs-skills) 了解如何配置插件。
 
 <h2 id="cli-fallback">备用：继续用终端</h2>
 

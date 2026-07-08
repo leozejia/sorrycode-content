@@ -126,7 +126,7 @@ More Skills: [What Are Skills](/docs/skills/featured-skills) and [Creation and D
 Follow your goal:
 
 - Learn AI concepts systematically: start with [Core Concepts](/docs/concepts/what-is-ai)
-- Go deeper with agent workflows: [Agent Infrastructure](/docs/agent-infra/overview)
+- Go deeper with agent workflows: [Agent Infrastructure](/docs/agent-memory/overview)
 - Understand where your money goes: [How AI Cost Works](/docs/platform/ai-cost-basics)
 - Hit an error: check the [Codex](/docs/runtime/codex) or [Claude Code](/docs/runtime/claude-code) guide
 

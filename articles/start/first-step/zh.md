@@ -126,7 +126,7 @@ Skill 是给工作台装的能力包。你需要什么能力，就装什么 Skil
 按你的目标走：
 
 - 想系统性理解 AI 怎么用：[核心概念](/docs/concepts/what-is-ai)从头读
-- 想把 AI 用得更深：[Agent 进阶](/docs/agent-infra/overview)学项目规则和上下文管理
+- 想把 AI 用得更深：[Agent 进阶](/docs/agent-memory/overview)学项目规则和上下文管理
 - 想知道钱花在哪了：[AI 成本怎么计算](/docs/platform/ai-cost-basics)
 - 遇到报错了：[Codex 常见问题](/docs/runtime/codex)或 [Claude Code 常见问题](/docs/runtime/claude-code)
 

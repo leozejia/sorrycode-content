@@ -105,7 +105,7 @@ If you keep asking for similar revisions, turn them into long-lived rules:
 - The deck should feel closer to a consulting report
 - Every cover should keep a specific brand color
 
-The lightest version is a `DESIGN.md`. It can store brand colors, fonts, references, banned styles, delivery formats, and acceptance criteria. Next: [Agent Infrastructure / DESIGN.md](/docs/agent-infra/design-md).
+The lightest version is a `DESIGN.md`. It can store brand colors, fonts, references, banned styles, delivery formats, and acceptance criteria. Next: [Agent Infrastructure / DESIGN.md](/docs/agent-memory/remember-design).
 
 If you use the same workflow repeatedly, consider turning it into your own skill. Next time, you can name that skill and let the agent start with your method.
 

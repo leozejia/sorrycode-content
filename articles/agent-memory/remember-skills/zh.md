@@ -1,14 +1,14 @@
 ---
-title: Skills
-slug: skills
-order: 7
-summary: Skills 是 agent 可安装、可复用的能力包。它用 SKILL.md、参考资料、脚本和资产把工作流交给 agent。
-section: agent-infra
-section_title: Agent 基建
-section_order: 32
+title: 让 AI 记住工作方法
+slug: remember-skills
+order: 5
+summary: 把重复的工作流做成 Skill，让 AI 记住怎么做图片、文档、代码审查等任务。
+section: agent-memory
+section_title: 让 AI 记住你的要求
+section_order: 15
 ---
 
-# Skills
+# 让 AI 记住工作方法
 
 `Skills` 是 agent 可安装、可复用的能力包。
 

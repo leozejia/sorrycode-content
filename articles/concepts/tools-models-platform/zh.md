@@ -144,7 +144,7 @@ OpenAI 有 Codex。Anthropic 有 Claude Code。Google 有 Gemini 的各种集成
 | 我主要用 Claude | [Runtime / Claude Code](/docs/runtime/claude-code) |
 | 我用国产模型 | 看对应厂商的 Agent 客户端，安装逻辑类似 |
 | 我想一次接入多个模型 | 用 SorryCode 做统一 API 入口，按需切换 |
-| 我已经在用了，想管得更好 | [Agent 进阶](/docs/agent-infra/overview) |
+| 我已经在用了，想管得更好 | [Agent 进阶](/docs/agent-memory/overview) |
 
 <h2 id="remember">记住一件事</h2>
 

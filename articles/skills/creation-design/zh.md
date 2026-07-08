@@ -28,7 +28,7 @@ group: creation-design
 | 快速生成有明确视觉风格的网页演示 | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 | 做可评论、可维护、可导出 HTML/PDF 的代码式 PPT | [工具 / Open Slide](/docs/tools/open-slide) |
 | 做产品短视频、发布动效或社媒 MP4 | [工具 / HyperFrames](/docs/tools/hyperframes) |
-| 想让一个项目长期保持同一套视觉规则 | [Agent 基建 / DESIGN.md](/docs/agent-infra/design-md) |
+| 想让一个项目长期保持同一套视觉规则 | [Agent 基建 / DESIGN.md](/docs/agent-memory/remember-design) |
 
 <h2 id="office-vs-design">它和办公文档的区别</h2>
 

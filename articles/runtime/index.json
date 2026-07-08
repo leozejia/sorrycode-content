@@ -5,15 +5,15 @@
     "en": "Runtime",
     "zh": "Runtime"
   },
-  "updatedAt": "2026-06-16",
+  "updatedAt": "2026-07-08",
   "navigation": {
     "style": "flat",
     "groups": []
   },
   "articles": [
     "codex",
-    "codex-plugins",
     "claude-code",
-    "claude-desktop"
+    "claude-desktop",
+    "plugins-vs-skills"
   ]
 }

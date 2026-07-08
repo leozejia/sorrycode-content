@@ -22,7 +22,7 @@ You need three things:
 
 1. `Claude Desktop` installed
 2. a SorryCode API key
-3. the SorryCode Gateway URL: `https://sorrycode.com`
+3. the SorryCode Gateway URL: `https://api.sorrycode.com`
 
 Claude Desktop download:
 
@@ -85,16 +85,16 @@ Then fill in:
 | Field | Value |
 | --- | --- |
 | `Credential kind` | `Static API key` |
-| `Gateway base URL` | `https://sorrycode.com` |
+| `Gateway base URL` | `https://api.sorrycode.com` |
 | `Gateway API key` | your SorryCode API key, the `sk-...` value |
 | `Gateway auth scheme` | `bearer` |
 
-![Claude Desktop Gateway configuration](./gateway-configuration.png)
+![Claude Desktop Gateway configuration](./gateway-configuration-new.png)
 
 Notes:
 
 - do not add extra spaces to `Gateway base URL`
-- use `https://sorrycode.com` here; do not add `/v1`, `/v1/messages`, or another path
+- use `https://api.sorrycode.com` here; do not add `/v1`, `/v1/messages`, or another path
 - paste the `sk-...` key you created in SorryCode
 - it is normal for the API key field to display dots instead of plain text
 - if you are unsure, click `Test connection` first
@@ -139,11 +139,42 @@ Fill in the same values:
 | Field | Value |
 | --- | --- |
 | `Credential kind` | `Static API key` |
-| `Gateway base URL` | `https://sorrycode.com` |
+| `Gateway base URL` | `https://api.sorrycode.com` |
 | `Gateway API key` | your SorryCode API key, the `sk-...` value |
 | `Gateway auth scheme` | `bearer` |
 
 Click `Apply Changes`, then restart Claude Desktop when prompted.
+
+<h2 id="workspace-restrictions">Important: Configure Workspace Restrictions</h2>
+
+After configuring the Gateway, you also need to set workspace restrictions, otherwise many features in Claude Desktop will be limited.
+
+Find `Workspace restrictions` in the left menu of the configuration window, then:
+
+![Claude Desktop Workspace restrictions](./workspace-restrictions.png)
+
+### Enable Web Search
+
+In `Allowed egress hosts`, click the `Allow all` button on the right.
+
+**If you do not enable this permission:**
+
+- Claude Desktop cannot use web search
+- Cannot access external APIs and services
+- Many features requiring network access will fail
+
+This is Claude Desktop's security mechanism. By default, it restricts the agent from accessing external networks. You need to manually allow it.
+
+### Add Workspace Folders
+
+If you need Claude Desktop to access local projects:
+
+1. In `Allowed workspace folders`, click `Add folder`
+2. Select your project directory
+
+Without adding folders, Claude Desktop cannot read or write local files.
+
+After configuration, click `Apply Changes` in the lower-right corner to save.
 
 <h2 id="verify">Verify It Works</h2>
 
@@ -162,6 +193,14 @@ If you want to check the working mode, ask:
 ```text
 Do not change any files yet. Just tell me what this interface can do.
 ```
+
+**Test web search:**
+
+```text
+Please search for today's news
+```
+
+If it can search normally, the `Allowed egress hosts` configuration is successful.
 
 For your first run, use low-risk checks. Do not start with file deletion, large refactors, or complex command execution.
 
@@ -219,6 +258,42 @@ If you are not sure which layer failed, read [Troubleshoot / Common Errors](/doc
 Different Claude Desktop views may have different capability boundaries. First use this page to get Gateway mode working.
 
 If your goal is to read a local project, edit code, and run commands, the steadier default path is still [Runtime / Claude Code](/docs/runtime/claude-code).
+
+<h2 id="limitations">Claude Desktop Usage Limitations</h2>
+
+Based on practical experience, Claude Desktop has some limitations compared to Claude Code CLI:
+
+### File Operation Limitations
+
+- Must manually add `Allowed workspace folders` to access local files
+- Does not support some advanced file operations (such as git worktree, complex file searches)
+- Multi-file editing experience is not as good as CLI
+
+### Network Limitations
+
+- External network access is disabled by default
+- Must configure `Allowed egress hosts` to use web search
+- Some skills or plugins requiring network access may not work
+
+### Terminal Capabilities
+
+- Does not support full terminal command execution
+- Cannot run shell scripts directly like Claude Code CLI
+- Debugging and testing efficiency is lower
+
+### Recommendations
+
+**If you mainly do code development, project maintenance, terminal operations:**
+
+Recommend using [Claude Code CLI](/docs/runtime/claude-code), the experience will be much better.
+
+**If you mainly do documents, conversations, simple file processing:**
+
+Claude Desktop Gateway mode is sufficient.
+
+**If you need full development capabilities:**
+
+Prioritize Claude Code CLI over Claude Desktop.
 
 <h2 id="next">Next Step</h2>
 

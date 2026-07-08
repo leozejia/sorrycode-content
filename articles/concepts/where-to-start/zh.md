@@ -113,7 +113,7 @@ B 路目标：装好工作台，跑通第一个任务。
 
 然后每次让 Agent 干活之前，先让它读这个文件。
 
-更多的管理方法，看 [Agent 进阶](/docs/agent-infra/overview)。
+更多的管理方法，看 [Agent 进阶](/docs/agent-memory/overview)。
 
 ```text
 C 路目标：建立你的第一个项目规则文件。
@@ -170,6 +170,6 @@ A 路：打开任何一个 AI 聊天网页。用你学到的"四要素"试一次
 
 B 路：去 [开始使用 / 第一次使用 SorryCode](/docs/start/first-step) ，创建 API Key，装工作台。
 
-C 路：去 [Agent 进阶](/docs/agent-infra/overview)，学习怎么建立项目规则。
+C 路：去 [Agent 进阶](/docs/agent-memory/overview)，学习怎么建立项目规则。
 
 如果你还不确定 SorryCode 适不适合你：[Platform / SorryCode 适合谁](/docs/platform/who-is-sorrycode-for)

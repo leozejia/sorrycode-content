@@ -115,7 +115,7 @@ npx skills remove --global skill-name
 - 想诊断商业问题、找对标或判断内容方向：[Skills / DBSkill](/docs/skills/dbskill)
 - 想让 AI 编程任务先想清楚再动手：[Skills / Waza](/docs/skills/waza)
 
-如果你想理解 `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills` 这些标准文件、协议和能力包，去 [Agent 基建](/docs/agent-infra/overview)。
+如果你想理解 `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills` 这些标准文件、协议和能力包，去 [Agent 基建](/docs/agent-memory/overview)。
 
 <h2 id="deeper">想多了解一点：Skills 为什么特殊</h2>
 

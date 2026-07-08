@@ -115,7 +115,7 @@ After your runtime works, choose by goal:
 - Diagnose business questions, benchmarks, or content direction: [Skills / DBSkill](/docs/skills/dbskill)
 - Make AI coding workflows steadier: [Skills / Waza](/docs/skills/waza)
 
-To understand `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills` as standards and capability mechanisms, go to [Agent Infrastructure](/docs/agent-infra/overview).
+To understand `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills` as standards and capability mechanisms, go to [Agent Infrastructure](/docs/agent-memory/overview).
 
 <h2 id="deeper">A Bit Deeper: Why Skills Are Special</h2>
 

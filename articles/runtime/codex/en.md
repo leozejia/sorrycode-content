@@ -120,7 +120,7 @@ Use this path:
 
 If you prefer viewing project files and changes inside a visual editor, continue with [Tools / VS Code](/docs/tools/vscode).
 
-If the Codex App plugin entry is grey, or `/plugins` cannot find Chrome, Computer Use, Browser, or HyperFrames, continue with [Codex App Plugin Setup](/docs/runtime/codex-plugins).
+If the Codex App plugin entry is grey, or `/plugins` cannot find Chrome, Computer Use, Browser, or HyperFrames, read [Plugins vs Skills - What's the Difference](/docs/runtime/plugins-vs-skills) to learn how to configure plugins.
 
 <h2 id="cli-fallback">Fallback: Use the Terminal</h2>
 

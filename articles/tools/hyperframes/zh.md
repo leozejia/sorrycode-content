@@ -17,7 +17,7 @@ source_url: https://github.com/heygen-com/hyperframes
 
 Codex App 插件只是入口之一。如果你在 CLI 里用 Codex 或 Claude Code，也可以使用 HyperFrames。
 
-如果你只是想先把 Codex App 里的 HyperFrames 插件启用，先看 [Runtime / Codex App 插件配置](/docs/runtime/codex-plugins)。那篇处理插件入口灰色、`/plugins` 找不到插件、`hyperframes@openai-curated` 写法这些配置问题。
+如果你只是想先把 Codex App 里的 HyperFrames 插件启用，先看 [Plugins 和 Skills 有什么区别](/docs/runtime/plugins-vs-skills)。那篇处理插件安装、配置和 `hyperframes@openai-curated` 写法这些问题。
 
 本页继续讲 HyperFrames 本身：什么时候适合用它，以及怎么初始化、预览和渲染视频项目。
 

@@ -113,7 +113,7 @@ In this file, write:
 
 Then, before every session, ask your Agent to read this file first.
 
-For more management techniques, see [Agent Advanced](/docs/agent-infra/overview).
+For more management techniques, see [Agent Advanced](/docs/agent-memory/overview).
 
 ```text
 Path C goal: create your first project rules file.
@@ -170,6 +170,6 @@ Path A: Open any AI chat webpage. Apply the "four elements" you learned. Try onc
 
 Path B: Go to [Getting Started / First Time Using SorryCode](/docs/start/first-step). Create an API key. Install a workbench.
 
-Path C: Go to [Agent Advanced](/docs/agent-infra/overview). Learn how to establish project rules.
+Path C: Go to [Agent Advanced](/docs/agent-memory/overview). Learn how to establish project rules.
 
 If you're still unsure whether SorryCode is right for you: [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for)

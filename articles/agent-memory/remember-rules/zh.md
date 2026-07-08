@@ -1,20 +1,20 @@
 ---
-title: 项目规则文件：AGENTS.md / CLAUDE.md
-slug: project-rules
+title: 让 AI 记住项目规则
+slug: remember-rules
 order: 3
-summary: Agent 每次进入项目都要知道的基本规则——项目是什么、怎么跑、哪些不能碰。Codex 读 AGENTS.md，Claude Code 读 CLAUDE.md，写法一样，维护规则一样。
-section: agent-infra
-section_title: Agent 进阶
-section_order: 32
+summary: 写一份 AGENTS.md 或 CLAUDE.md，让 AI 记住哪些文件不能改、用什么命令、遵守什么规则。
+section: agent-memory
+section_title: 让 AI 记住你的要求
+section_order: 15
 ---
 
-# 项目规则文件：AGENTS.md / CLAUDE.md
+# 让 AI 记住项目规则
 
 你已经跑通了几个任务。现在每次开新会话都要重新解释项目背景——目录在哪、用什么命令、哪些文件不能碰。这不是 Agent 笨，是你没有把规则写下来。
 
 解决方案很简单：在项目根目录放一个规则文件。Codex 读 `AGENTS.md`，Claude Code 读 `CLAUDE.md`。**两份文件的写法和维护规则完全一样**——只是文件名不同。
 
-如果你正在处理长会话、缓存和 handoff，先看[长期上下文怎么管理](/docs/agent-infra/context-management)。这页只讲规则文件本身怎么维护。
+如果你正在处理长会话、缓存和 handoff，先看[会话太长怎么办](/docs/agent-memory/context-management)。这页只讲规则文件本身怎么维护。
 
 <h2 id="where">放在哪里</h2>
 

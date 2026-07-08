@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "section": "agent-memory",
+  "title": {
+    "zh": "让 AI 记住你的要求",
+    "en": "Make AI Remember"
+  },
+  "updatedAt": "2026-07-08",
+  "navigation": {
+    "style": "flat",
+    "groups": []
+  },
+  "articles": [
+    "overview",
+    "context-management",
+    "remember-rules",
+    "remember-design",
+    "remember-skills"
+  ]
+}

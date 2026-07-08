@@ -1,20 +1,20 @@
 ---
-title: "Project Rules File: AGENTS.md / CLAUDE.md"
-slug: project-rules
+title: Make AI Remember Project Rules
+slug: remember-rules
 order: 3
-summary: Every project has ground rules the agent needs to know — what the project is, how to run it, what not to touch. Codex reads AGENTS.md, Claude Code reads CLAUDE.md. Same writing rules, same maintenance discipline.
-section: agent-infra
-section_title: Agent Infrastructure
-section_order: 32
+summary: Write an AGENTS.md or CLAUDE.md file to make AI remember which files not to change, what commands to use, and what rules to follow.
+section: agent-memory
+section_title: Make AI Remember
+section_order: 15
 ---
 
-# Project Rules File: AGENTS.md / CLAUDE.md
+# Make AI Remember Project Rules
 
 You have completed a few tasks. Now every new session starts with you re-explaining the project — where the files are, which commands to use, what not to touch. This is not the agent being stupid. It is you not writing the rules down.
 
 The fix is simple: put a rules file in the project root. Codex reads `AGENTS.md`. Claude Code reads `CLAUDE.md`. **The writing rules and maintenance discipline are identical** — only the filename differs.
 
-If you are dealing with long sessions, caching, and handoffs, start with [How to Manage Long-Lived Context](/docs/agent-infra/context-management). This page only explains how to maintain the rules file itself.
+If you are dealing with long sessions, caching, and handoffs, start with [What to Do When Sessions Get Too Long](/docs/agent-memory/context-management). This page only explains how to maintain the rules file itself.
 
 <h2 id="where">Where to Put It</h2>
 

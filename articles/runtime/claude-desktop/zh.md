@@ -22,7 +22,7 @@ section_order: 10
 
 1. 已安装 `Claude Desktop`
 2. SorryCode API Key
-3. SorryCode Gateway 地址：`https://sorrycode.com`
+3. SorryCode Gateway 地址：`https://api.sorrycode.com`
 
 Claude Desktop 官方下载入口：
 
@@ -85,16 +85,16 @@ Developer → Configure Third-Party Inference...
 | 配置项 | 填什么 |
 | --- | --- |
 | `Credential kind` | `Static API key` |
-| `Gateway base URL` | `https://sorrycode.com` |
+| `Gateway base URL` | `https://api.sorrycode.com` |
 | `Gateway API key` | 你的 SorryCode API Key，也就是 `sk-...` |
 | `Gateway auth scheme` | `bearer` |
 
-![Claude Desktop Gateway 配置窗口](./gateway-configuration.png)
+![Claude Desktop Gateway 配置窗口](./gateway-configuration-new.png)
 
 注意：
 
 - `Gateway base URL` 不要多加空格
-- 这里填 `https://sorrycode.com`，不要加 `/v1`、`/v1/messages` 或其他路径
+- 这里填 `https://api.sorrycode.com`，不要加 `/v1`、`/v1/messages` 或其他路径
 - `Gateway API key` 填你在 SorryCode 创建的 `sk-...`
 - API Key 输入框显示成圆点是正常的，不需要让它明文显示
 - 不确定是否填对时，可以先点 `Test connection`
@@ -139,11 +139,42 @@ Developer → Configure Third-Party Inference...
 | 配置项 | 填什么 |
 | --- | --- |
 | `Credential kind` | `Static API key` |
-| `Gateway base URL` | `https://sorrycode.com` |
+| `Gateway base URL` | `https://api.sorrycode.com` |
 | `Gateway API key` | 你的 SorryCode API Key，也就是 `sk-...` |
 | `Gateway auth scheme` | `bearer` |
 
 填完后点击 `Apply Changes`，再按提示重启 Claude Desktop。
+
+<h2 id="workspace-restrictions">重要：配置工作空间限制</h2>
+
+配置完 Gateway 后，还需要设置工作空间限制，否则 Claude Desktop 的很多功能会受限。
+
+在配置窗口左侧菜单找到 `Workspace restrictions`，然后：
+
+![Claude Desktop Workspace restrictions](./workspace-restrictions.png)
+
+### 启用 Web Search
+
+在 `Allowed egress hosts` 里，点击右侧的 `Allow all` 按钮。
+
+**如果不开启这个权限：**
+
+- Claude Desktop 无法使用 web search（网页搜索）
+- 无法访问外部 API 和服务
+- 很多需要联网的功能会失效
+
+这是 Claude Desktop 的安全机制。默认情况下，它会限制 agent 访问外部网络。你需要手动允许。
+
+### 添加工作文件夹
+
+如果你需要让 Claude Desktop 访问本地项目：
+
+1. 在 `Allowed workspace folders` 里点击 `Add folder`
+2. 选择你的项目目录
+
+不添加的话，Claude Desktop 无法读写本地文件。
+
+配置完成后，点击右下角 `Apply Changes` 保存。
 
 <h2 id="verify">怎么确认已经成功</h2>
 
@@ -162,6 +193,14 @@ Developer → Configure Third-Party Inference...
 ```text
 请先不要改任何文件，只告诉我现在这个界面能做什么。
 ```
+
+**测试 web search：**
+
+```text
+请搜索一下今天的新闻
+```
+
+如果能正常搜索，说明 `Allowed egress hosts` 配置成功。
 
 第一次使用时，建议先做低风险测试。不要一上来就让它删除文件、重构项目，或者执行复杂命令。
 
@@ -219,6 +258,42 @@ Help → Troubleshooting → Enable Developer Mode
 Claude Desktop 里不同页面的能力边界可能不完全一样。你先用这页教程跑通 Gateway 模式。
 
 如果你的目标是让模型读本地项目、改代码、执行命令，直接看 [Runtime / Claude Code](/docs/runtime/claude-code)。
+
+<h2 id="limitations">Claude Desktop 的使用限制</h2>
+
+根据实际使用经验，Claude Desktop 相比 Claude Code CLI 有一些限制：
+
+### 文件操作限制
+
+- 必须手动添加 `Allowed workspace folders` 才能访问本地文件
+- 不支持某些高级文件操作（比如 git worktree、复杂的文件搜索）
+- 多文件编辑的体验不如 CLI
+
+### 网络限制
+
+- 默认禁止访问外部网络
+- 必须配置 `Allowed egress hosts` 才能使用 web search
+- 某些需要联网的 skill 或 plugin 可能无法使用
+
+### 终端能力
+
+- 不支持完整的终端命令执行
+- 无法像 Claude Code CLI 那样直接运行 shell 脚本
+- 调试和测试的效率较低
+
+### 建议
+
+**如果你主要做代码开发、项目维护、终端操作：**
+
+推荐使用 [Claude Code CLI](/docs/runtime/claude-code)，体验会好很多。
+
+**如果你主要做文档、对话、简单的文件处理：**
+
+Claude Desktop Gateway 模式足够用。
+
+**如果你需要完整的开发能力：**
+
+优先选择 Claude Code CLI，而不是 Claude Desktop。
 
 <h2 id="next">下一步</h2>
 

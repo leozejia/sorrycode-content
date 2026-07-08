@@ -17,7 +17,7 @@ It is not a regular video generation model, and it is not a video editor. Think 
 
 The Codex App plugin is only one entry point. You can also use HyperFrames from the CLI with Codex or Claude Code.
 
-If you only want to enable the HyperFrames plugin inside Codex App, start with [Runtime / Codex App Plugin Setup](/docs/runtime/codex-plugins). That page covers grey plugin entries, missing `/plugins` entries, and the `hyperframes@openai-curated` config name.
+If you only want to enable the HyperFrames plugin inside Codex App, start with [Plugins vs Skills - What's the Difference](/docs/runtime/plugins-vs-skills). That page covers plugin installation, configuration, and the `hyperframes@openai-curated` config name.
 
 This page focuses on HyperFrames itself: when to use it, and how to initialize, preview, and render a video project.
 
