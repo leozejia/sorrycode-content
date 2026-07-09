@@ -14,7 +14,7 @@
     "codex",
     "claude-code",
     "claude-desktop",
-    "grok-build",
+    "grok-cli",
     "plugins-vs-skills"
   ]
 }
