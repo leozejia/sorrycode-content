@@ -5,7 +5,7 @@
     "en": "Runtime",
     "zh": "Runtime"
   },
-  "updatedAt": "2026-07-08",
+  "updatedAt": "2026-07-09",
   "navigation": {
     "style": "flat",
     "groups": []
@@ -14,6 +14,7 @@
     "codex",
     "claude-code",
     "claude-desktop",
+    "grok-build",
     "plugins-vs-skills"
   ]
 }

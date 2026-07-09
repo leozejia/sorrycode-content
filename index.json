@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-07-08",
+  "updatedAt": "2026-07-09",
   "articles": [
     {
       "type": "article",
@@ -530,6 +530,36 @@
       "markdownPath": "articles/runtime/claude-desktop/zh.md",
       "assetBaseUrl": "articles/runtime/claude-desktop/",
       "route": "/docs/runtime/claude-desktop"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Runtime",
+      "sectionOrder": 10,
+      "slug": "grok-build",
+      "locale": "en",
+      "title": "Grok Build",
+      "summary": "Install Grok Build and connect it to SorryCode with a custom model config.",
+      "order": 4,
+      "updatedAt": "2026-07-09",
+      "markdownPath": "articles/runtime/grok-build/en.md",
+      "assetBaseUrl": "articles/runtime/grok-build/",
+      "route": "/docs/runtime/grok-build"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Runtime",
+      "sectionOrder": 10,
+      "slug": "grok-build",
+      "locale": "zh",
+      "title": "Grok Build",
+      "summary": "安装 Grok Build，并用自定义模型配置接到 SorryCode。",
+      "order": 4,
+      "updatedAt": "2026-07-09",
+      "markdownPath": "articles/runtime/grok-build/zh.md",
+      "assetBaseUrl": "articles/runtime/grok-build/",
+      "route": "/docs/runtime/grok-build"
     },
     {
       "type": "article",
@@ -1262,7 +1292,7 @@
       "locale": "en",
       "title": "Plugins vs Skills - What's the Difference",
       "summary": "Plugins give agents new tools, Skills teach agents how to work—completely different use cases, installation methods, and calling syntax.",
-      "order": 4,
+      "order": 5,
       "updatedAt": "2026-07-08",
       "markdownPath": "articles/runtime/plugins-vs-skills/en.md",
       "assetBaseUrl": "articles/runtime/plugins-vs-skills/",
@@ -1277,7 +1307,7 @@
       "locale": "zh",
       "title": "Plugins 和 Skills 有什么区别",
       "summary": "Plugins 给 agent 提供新工具，Skills 教 agent 怎么做事——两者适用场景、安装方式、调用语法完全不同。",
-      "order": 4,
+      "order": 5,
       "updatedAt": "2026-07-08",
       "markdownPath": "articles/runtime/plugins-vs-skills/zh.md",
       "assetBaseUrl": "articles/runtime/plugins-vs-skills/",

@@ -1,7 +1,7 @@
 ---
 title: Plugins vs Skills - What's the Difference
 slug: plugins-vs-skills
-order: 4
+order: 5
 summary: Plugins and Skills are two different ways to extend capabilities, but not mutually exclusive—understand their differences and choose the right approach.
 section: runtime
 section_title: Runtime
