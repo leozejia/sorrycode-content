@@ -1,18 +1,18 @@
 ---
-title: Grok CLI
+title: Grok
 slug: grok-cli
 order: 4
-summary: Install Grok CLI and connect it to SorryCode with a custom model config.
+summary: Install Grok and connect it to SorryCode with a custom model config.
 section: runtime
 section_title: Runtime
 section_order: 10
 ---
 
-# Grok CLI
+# Grok
 
 If you want to use xAI's `grok` command as a local agent while sending requests through SorryCode, this is the shortest path.
 
-You can copy the one-click Grok CLI installer from `Connect Tool` in the SorryCode console. If your page has not refreshed to the new entry yet, use the manual setup below.
+You can copy the one-click Grok installer from `Connect Tool` in the SorryCode console. If your page has not refreshed to the new entry yet, use the manual setup below.
 
 <h2 id="prepare-api-key">Prepare Your API Key</h2>
 
@@ -25,7 +25,7 @@ Quick link: `https://sorrycode.com/keys`.
 
 If you have not created an API key before, start with [Platform / Create API Key](/docs/platform/create-api-key).
 
-<h2 id="install">Install Grok CLI</h2>
+<h2 id="install">Install Grok</h2>
 
 macOS / Linux / WSL:
 
@@ -90,7 +90,7 @@ grok
 
 Replace `sk-your-sorrycode-key` with your own SorryCode API key.
 
-<h2 id="start">Start Grok CLI</h2>
+<h2 id="start">Start Grok</h2>
 
 If `sorrycode-grok` is your default model, run:
 
@@ -98,7 +98,7 @@ If `sorrycode-grok` is your default model, run:
 grok
 ```
 
-If you keep multiple Grok CLI configs, specify this one explicitly:
+If you keep multiple Grok configs, specify this one explicitly:
 
 ```bash
 grok -m sorrycode-grok

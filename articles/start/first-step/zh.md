@@ -148,18 +148,18 @@ npx skills add linxiverse/sorrycode-image2 -g -y
 
 **任务跑通了？** 你已经比 90% 的人更会用了。
 
-<h2 id="step-4">第 4 步：装对应的 Skill</h2>
+<h2 id="step-4">第 4 步：按任务选择 Skill</h2>
 
-Skill 是给工作台装的能力包。你需要什么能力，就装什么 Skill。
+Skill 是给工作台装的能力包。不同 skill 的安装方式会随 Codex、Claude Code 和上游仓库变化；新手页不写固定命令，避免复制到过时地址。
 
-| 你想做什么 | 装哪个 | 命令 |
-| --- | --- | --- |
-| 处理 Word / Excel / PPT / PDF | 办公文档 | `npx skills add linxiverse/office-docs -g -y` |
-| 做一页纸、简历、作品集、长文 | Kami | `npx skills add tw93/kami -g -y` |
-| 生成图片、海报、封面 | Image2 | `npx skills add linxiverse/sorrycode-image2 -g -y` |
-| 做网页 PPT | 藏师傅 PPT | `npx skills add op7418/guizang-ppt-skill -g -y` |
+| 你想做什么 | 从这里开始 |
+| --- | --- |
+| 处理 Word / Excel / PPT / PDF | [办公文档](/docs/skills/office-docs) |
+| 做一页纸、简历、作品集、长文 | [Kami](/docs/skills/kami) |
+| 生成图片、海报、封面 | [SorryCode Image2](/docs/skills/sorrycode-image2) |
+| 做网页 PPT | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 
-**安装 Skill 后需要重启工作台。**
+进入对应页面后，按你正在用的工作台选择 Codex 或 Claude Code 的安装命令。安装 Skill 后需要重启工作台。
 
 更多 Skill 看 [Skills / 精选 Skills](/docs/skills/featured-skills)。
 

@@ -148,18 +148,18 @@ Use SorryCode Image2 to generate a Chinese podcast cover, theme is AI programmin
 
 **Task completed?** You're already ahead of 90% of users.
 
-<h2 id="step-4">Step 4: Install Relevant Skills</h2>
+<h2 id="step-4">Step 4: Choose Skills By Task</h2>
 
-Skills are capability packs for workbenches. Install skills for the capabilities you need.
+Skills are capability packs for workbenches. Install commands can change with Codex, Claude Code, and upstream repositories, so this starter page does not keep a fixed command list.
 
-| What You Want | Which Skill | Command |
-| --- | --- | --- |
-| Handle Word / Excel / PPT / PDF | Office Docs | `npx skills add linxiverse/office-docs -g -y` |
-| Make one-pagers, resumes, portfolios, long documents | Kami | `npx skills add tw93/kami -g -y` |
-| Generate images, posters, covers | Image2 | `npx skills add linxiverse/sorrycode-image2 -g -y` |
-| Make web-based slide decks | Guizang PPT | `npx skills add op7418/guizang-ppt-skill -g -y` |
+| What You Want | Start Here |
+| --- | --- |
+| Handle Word / Excel / PPT / PDF | [Office Docs](/docs/skills/office-docs) |
+| Make one-pagers, resumes, portfolios, long documents | [Kami](/docs/skills/kami) |
+| Generate images, posters, covers | [SorryCode Image2](/docs/skills/sorrycode-image2) |
+| Make web-based slide decks | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 
-**Restart the workbench after installing skills.**
+Open the matching page, then choose the install command for your workbench: Codex or Claude Code. Restart the workbench after installing skills.
 
 More skills at [Skills / Featured Skills](/docs/skills/featured-skills).
 

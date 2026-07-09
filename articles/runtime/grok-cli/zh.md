@@ -1,18 +1,18 @@
 ---
-title: Grok CLI
+title: Grok
 slug: grok-cli
 order: 4
-summary: 安装 Grok CLI，并用自定义模型配置接到 SorryCode。
+summary: 安装 Grok，并用自定义模型配置接到 SorryCode。
 section: runtime
 section_title: Runtime
 section_order: 10
 ---
 
-# Grok CLI
+# Grok
 
 如果你想用 xAI 的 `grok` 命令在本地跑 agent，同时让请求走 SorryCode，这页就是最短路径。
 
-你可以在 SorryCode 控制台的 `接入工具` 里复制 Grok CLI 一键安装命令；如果当前页面还没刷新到新入口，也可以按本文手动配置。
+你可以在 SorryCode 控制台的 `接入工具` 里复制 Grok 一键安装命令；如果当前页面还没刷新到新入口，也可以按本文手动配置。
 
 <h2 id="prepare-api-key">先准备 API Key</h2>
 
@@ -25,7 +25,7 @@ section_order: 10
 
 如果你还不知道怎么创建 API Key，先看 [Platform / 创建 API Key](/docs/platform/create-api-key)。
 
-<h2 id="install">安装 Grok CLI</h2>
+<h2 id="install">安装 Grok</h2>
 
 macOS / Linux / WSL：
 
@@ -98,7 +98,7 @@ grok
 grok
 ```
 
-如果你还保留了其他 Grok CLI 配置，也可以显式指定：
+如果你还保留了其他 Grok 配置，也可以显式指定：
 
 ```bash
 grok -m sorrycode-grok
