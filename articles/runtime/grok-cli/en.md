@@ -12,7 +12,7 @@ section_order: 10
 
 If you want to use xAI's `grok` command as a local agent while sending requests through SorryCode, this is the shortest path.
 
-The SorryCode console may not have a dedicated Grok CLI entry under `Connect Tool` yet. Use the manual path first: install the official CLI, write a custom model config, then start Grok CLI with a SorryCode API key.
+You can copy the one-click Grok CLI installer from `Connect Tool` in the SorryCode console. If your page has not refreshed to the new entry yet, use the manual setup below.
 
 <h2 id="prepare-api-key">Prepare Your API Key</h2>
 

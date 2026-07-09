@@ -12,7 +12,7 @@ section_order: 10
 
 如果你想用 xAI 的 `grok` 命令在本地跑 agent，同时让请求走 SorryCode，这页就是最短路径。
 
-当前 SorryCode 控制台的 `接入工具` 可能还没有 Grok CLI 专用入口。先按本文手动配置：安装官方 CLI，写入自定义模型配置，再用 SorryCode API Key 启动。
+你可以在 SorryCode 控制台的 `接入工具` 里复制 Grok CLI 一键安装命令；如果当前页面还没刷新到新入口，也可以按本文手动配置。
 
 <h2 id="prepare-api-key">先准备 API Key</h2>
 
