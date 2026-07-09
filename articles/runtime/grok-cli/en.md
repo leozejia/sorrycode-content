@@ -2,7 +2,7 @@
 title: Grok
 slug: grok-cli
 order: 4
-summary: Install Grok and connect it to SorryCode with a custom model config.
+summary: Understand Grok first, prepare your API key, finish one-click install, and start using it right away.
 section: runtime
 section_title: Runtime
 section_order: 10
@@ -10,22 +10,143 @@ section_order: 10
 
 # Grok
 
-If you want to use xAI's `grok` command as a local agent while sending requests through SorryCode, this is the shortest path.
+If you want to use Grok locally to read a project, edit code, and run commands while sending requests through SorryCode, this page is the shortest path.
 
-You can copy the one-click Grok installer from `Connect Tool` in the SorryCode console. If your page has not refreshed to the new entry yet, use the manual setup below.
+For a first-time user, the main goal is to get the path working. Do not start with config files, and do not assume you need to learn a lot of terminal commands first.
 
-<h2 id="prepare-api-key">Prepare Your API Key</h2>
+> **Which path?**
+>
+> **→ One-Click Install (Recommended):** Click `Connect Tool` on the API key page → copy the command → paste it into your computer's terminal → done. For most people.
+>
+> **→ Manual Install:** Install Grok yourself and write the config file. For users who want control over each step.
+>
+> The default flow below follows the one-click path.
 
-1. Log in to the SorryCode console
-2. Open `API Keys`
-3. Create a new `sk-...` key if you do not have one
-4. Make sure the key can use a Grok group
+<h2 id="what-is-grok">What Grok Is</h2>
 
-Quick link: `https://sorrycode.com/keys`.
+- `Grok` is a local terminal runtime / agent from xAI
+- it can work with you in the terminal, read projects, answer questions, and run local tasks
+- on SorryCode, you just point it at `{{API_BASE_URL}}` and give it your API key
 
-If you have not created an API key before, start with [Platform / Create API Key](/docs/platform/create-api-key).
+For a first setup, you do not need to understand `~/.grok/config.toml` or env vars up front. One-click install is enough.
 
-<h2 id="install">Install Grok</h2>
+Reference: [xAI Grok official installer](https://x.ai/cli/install.sh)
+
+> Beginner rule: `Grok` is a runtime, not a model. It is the default fit for Grok / xAI-compatible paths. Do not put GPT or Claude models into Grok casually; if you are unsure, read [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform).
+
+<h2 id="prepare-api-key">Prepare the API Key First</h2>
+
+The install command needs to be tied to your API key, so do this first:
+
+1. Sign in to the SorryCode console
+2. Find `API Keys` inside the console
+3. If you do not have one yet, create a new `sk-...`
+4. Make sure this key can use a Grok group
+5. Return to the list and prepare to click `Connect Tool` for that key
+
+The quick link is `https://sorrycode.com/keys`, but the more important thing is knowing where this page sits inside the console.
+
+If you have not done this yet, start with [Platform / Create API Key](/docs/platform/create-api-key).
+
+If you also plan to use Codex or Claude Code, create separate API keys for them. Multiple keys still use the same balance, but usage records, group switching, spending limits, and troubleshooting become clearer.
+
+<h2 id="one-click-install">⚡ One-Click Install (Recommended)</h2>
+
+This is the default path. The console generates an install command for the current API key. Paste that command into the terminal on your own computer, and the installer will connect `Grok` to `{{API_BASE_URL}}`, write the local config, and set the default model to `grok-4.5`. After install, reopen the terminal and run `grok`.
+
+### Step 1: Copy the Command in the Console
+
+1. Open `https://sorrycode.com/keys`
+2. Find the API key you prepared for Grok
+3. Click `Connect Tool`
+4. Choose `Grok`
+5. Choose your operating system
+6. Click `Copy`
+
+The copied command is complete and already includes the current API key.
+
+### Step 2: Paste It into Your Computer's Terminal
+
+- Mac: press `Command + Space`, type `Terminal`, then press Enter
+- Windows: press `Win`, type `PowerShell` or `Terminal`, then press Enter
+
+After the terminal opens, paste the full command you copied and press Enter.
+
+The one-click installer calls xAI's official installer, then writes `~/.grok/config.toml` and `SORRYCODE_API_KEY`. Windows uses the Windows-specific installer. If you are not sure what PowerShell is, read [Environment / Windows PowerShell](/docs/environment/windows-powershell) first.
+
+### Fallback: Copy a Generic Command Manually
+
+If you cannot open the `Connect Tool` modal, use the generic command below. It does not include your API key, so the installer will stop and ask you to paste the `sk-...` value.
+
+macOS / Linux:
+
+```bash
+curl -fsSL https://sorrycode.com/install/sorrycode-grok.sh | bash -s -- --base-url "{{API_BASE_URL}}" --source sorrycode-docs
+```
+
+Windows:
+
+```powershell
+cmd /c "curl -fsSL -o %TEMP%\sorrycode-grok.bat https://sorrycode.com/install/sorrycode-grok.bat && %TEMP%\sorrycode-grok.bat --base-url {{API_BASE_URL}} --source sorrycode-docs"
+```
+
+<details>
+<summary>What the installer does</summary>
+
+- checks whether `grok` is already installed
+- if not, calls xAI's official installer
+- backs up an existing `~/.grok/config.toml`
+- writes the SorryCode `~/.grok/config.toml`
+- sets the default model to `grok-4.5`
+- stores `SORRYCODE_API_KEY`
+- on Windows, uses `ExecutionPolicy Bypass` only for this install process and does not permanently loosen your PowerShell policy
+
+</details>
+
+If you copied the command from `Connect Tool`, the installer usually does not need to ask for the API key again. If you use the generic command above, the installer blocks until you provide an `sk-...` key.
+
+If the current terminal still cannot find `grok` after install, close it and open a new one. Many installers update the shell path for new sessions, so the old window may not see the command immediately.
+
+<h2 id="start-grok">How to Start After Install</h2>
+
+Enter the project folder you want to work on, then run:
+
+```bash
+grok
+```
+
+If you keep multiple Grok configs, specify the SorryCode path explicitly:
+
+```bash
+grok -m sorrycode-grok
+```
+
+If you prefer viewing project files and changes inside a visual editor, continue with [Tools / VS Code](/docs/tools/vscode).
+
+<h2 id="first-prompt">What to Say First</h2>
+
+Do not start with a huge refactor request. Use a safer first prompt:
+
+```text
+Look at this project structure first, then tell me which files I should read first.
+```
+
+Or:
+
+```text
+Do not change code yet. Explain what this project does and where the entry point is.
+```
+
+This confirms two things early:
+
+- the runtime opened the correct project folder
+- it can read the project and respond normally
+
+<h2 id="manual-install">Manual Install (Advanced)</h2>
+
+Only use this path when you want control over every step.
+
+1. Install Grok
 
 macOS / Linux / WSL:
 
@@ -39,9 +160,7 @@ Windows PowerShell:
 irm https://x.ai/cli/install.ps1 | iex
 ```
 
-After install, reopen your terminal and make sure the `grok` command is available.
-
-<h2 id="connect-sorrycode">Connect To SorryCode</h2>
+2. Write `~/.grok/config.toml`
 
 macOS / Linux / WSL:
 
@@ -50,16 +169,13 @@ mkdir -p ~/.grok
 cat > ~/.grok/config.toml <<'EOF'
 [model.sorrycode-grok]
 model = "grok-4.5"
-base_url = "https://api.sorrycode.com/v1"
+base_url = "{{API_BASE_URL}}"
 name = "SorryCode Grok"
 env_key = "SORRYCODE_API_KEY"
 
 [models]
 default = "sorrycode-grok"
 EOF
-
-export SORRYCODE_API_KEY="sk-your-sorrycode-key"
-grok
 ```
 
 Windows PowerShell:
@@ -70,7 +186,7 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.grok" | Out-Null
 $config = @'
 [model.sorrycode-grok]
 model = "grok-4.5"
-base_url = "https://api.sorrycode.com/v1"
+base_url = "{{API_BASE_URL}}"
 name = "SorryCode Grok"
 env_key = "SORRYCODE_API_KEY"
 
@@ -83,30 +199,47 @@ default = "sorrycode-grok"
   $config,
   [System.Text.UTF8Encoding]::new($false)
 )
+```
 
-$env:SORRYCODE_API_KEY = "sk-your-sorrycode-key"
+3. Set the API key
+
+macOS / Linux / WSL:
+
+```bash
+export SORRYCODE_API_KEY="your sk-..."
 grok
 ```
 
-Replace `sk-your-sorrycode-key` with your own SorryCode API key.
+Windows PowerShell:
 
-<h2 id="start">Start Grok</h2>
-
-If `sorrycode-grok` is your default model, run:
-
-```bash
+```powershell
+[System.Environment]::SetEnvironmentVariable("SORRYCODE_API_KEY", "your sk-...", "User")
+$env:SORRYCODE_API_KEY = "your sk-..."
 grok
 ```
 
-If you keep multiple Grok configs, specify this one explicitly:
+Two details matter here:
 
-```bash
-grok -m sorrycode-grok
-```
+- set `base_url` to `{{API_BASE_URL}}`, not the official xAI API URL
+- set `SORRYCODE_API_KEY` to your SorryCode `sk-...` key, not xAI account credentials
 
-<h2 id="notes">Notes</h2>
+<h2 id="first-request">First Request</h2>
 
-- Set `base_url` to `https://api.sorrycode.com/v1`, not the official xAI API URL.
-- Set `SORRYCODE_API_KEY` to your SorryCode `sk-...` key, not xAI account credentials.
-- Keep `model` as `grok-4.5`.
-- Do not use the xAI browser login path for SorryCode. SorryCode uses API keys and custom model config.
+If you used one-click install, you usually do not need to send a manual request first.
+
+Go to [Platform / First Request](/docs/platform/first-request) only when:
+
+- `grok` cannot respond normally after install
+- you want to verify `API Key + Base URL + network` directly
+- you are following the manual path
+
+<h2 id="common-issues">Common Issues</h2>
+
+- cannot find `grok`
+  close the terminal, open a new one, then run `grok`
+- `401 / 404 / 429`
+  go to [Troubleshoot / Common Questions](/docs/troubleshoot/common-errors)
+- not sure where to create the API key
+  go to [Platform / Create API Key](/docs/platform/create-api-key)
+- not sure how to choose between Grok, Codex, and Claude Code
+  go to [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
