@@ -2,7 +2,7 @@
 title: SorryCode Image2
 slug: sorrycode-image2
 order: 2
-summary: Generate or edit covers, posters, illustrations, and content assets with SorryCode Images API; supports gpt-image-2 and enabled Gemini image models.
+summary: Generate or edit images with gpt-image-2 while saving prompts, responses, diagnostics, and image files for reproducible project workflows.
 section: skills
 section_title: Skills
 section_order: 15
@@ -14,25 +14,24 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 
 # SorryCode Image2
 
-`SorryCode Image2` is the skill for image generation and simple edits. It wraps the image request, API key check, and output saving flow, so you do not need to learn HTTP before your first image.
+If you only need a quick image, ask for it directly in `Codex App`. You do not need to install a Skill first. See [Platform / Generate Images](/docs/platform/image-request) for the two available paths.
 
-Use it for covers, posters, article images, product visual drafts, 2D game assets, or a first restyle of an existing image.
+`SorryCode Image2` is for image tasks that need fixed outputs and a reproducible process. It checks the API key, calls the image endpoint, and saves the prompt, response, diagnostics, and image files inside the project.
 
-<h2 id="what-is-it">What It Solves</h2>
+The only supported model is `gpt-image-2`.
 
-First-time image generation or editing usually gets stuck on three things:
+<h2 id="when-to-use">When to Use It</h2>
 
-- whether to call the generation or edit endpoint
-- where to put the API key
-- where the result should be saved and how to continue editing it
+Install it when you need to:
 
-`SorryCode Image2` checks `SORRYCODE_API_KEY` first. If it is missing, it stops and guides you to create one. If the key exists, it calls SorryCode Images API. When you ask it to generate a new image, it uses `/v1/images/generations`; when you provide a local image path and ask it to edit that image, it uses `/v1/images/edits`. The skill saves the prompt, response records, and image output in your project.
+- edit an existing local image
+- choose an exact size and output folder
+- save `prompt.txt`, `response.json`, or `events.ndjson`
+- repeat the same image workflow inside a project
 
-Current default: start with `gpt-image-2` for common 1K / 2K images. Enabled Gemini image models can also be used through the same skill, but for a first run we recommend the default image model and `1024x1024`.
+For a first image or a quick revision, a normal Codex App conversation is simpler.
 
-<h2 id="one-click-install">One-Click Install</h2>
-
-First make sure `Codex` or `Claude Code` is installed.
+<h2 id="one-click-install">Install</h2>
 
 ### Codex
 
@@ -46,105 +45,88 @@ npx skills add linxiverse/sorrycode-image2 -a codex -g -y
 npx skills add linxiverse/sorrycode-image2 -a claude-code -g -y
 ```
 
-If you have not installed a runtime yet, start here:
+If you still need a workbench, start here:
 
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
 
-If you no longer need it, run `npx skills list --global` to confirm the name, then remove it with `npx skills remove --global sorrycode-image2`.
+Before uninstalling, run `npx skills list --global` to confirm the name, then use `npx skills remove --global sorrycode-image2`.
 
-<h2 id="api-key">Let Your Computer Remember the Image API Key</h2>
+<h2 id="api-key">Set the Image API Key</h2>
 
-`SorryCode Image2` needs an API key before it can generate or edit images. Think of it as the key for image tasks.
+The Skill reads `SORRYCODE_API_KEY`. If you do not have an API key, go to [Platform / Create API Key](/docs/platform/create-api-key).
 
-If you do not have an API key yet, go to [Platform / Create API Key](/docs/platform/create-api-key).
-
-After you get the `sk-...` value, you can ask Codex or Claude Code to help set it up:
+You can give this instruction to Codex or Claude Code:
 
 ```text
-Help me set my SorryCode image API key so it works in future sessions. My key is: sk-.... If this is Windows, use a user-level PowerShell setting. If this is macOS, write it to my zsh config. Before changing anything, tell me which file or setting you will update.
+Help me set my SorryCode image API key so it works in future sessions. My key is: sk-.... On Windows, use a user-level PowerShell setting. On macOS, write it to my zsh configuration. Tell me what you will change before making the change.
 ```
 
-If you prefer doing it yourself, use one of these commands.
-
-### Windows PowerShell, persistent
+Windows PowerShell:
 
 ```powershell
 [Environment]::SetEnvironmentVariable("SORRYCODE_API_KEY", "your sk-...", "User")
 ```
 
-After setting it, close PowerShell and reopen Codex App or your terminal.
-
-### macOS / Linux, persistent
+macOS / Linux:
 
 ```bash
 echo "export SORRYCODE_API_KEY='your sk-...'" >> ~/.zshrc
 source ~/.zshrc
 ```
 
-Technical note: this sets `SORRYCODE_API_KEY`. It is only for SorryCode Image2 and does not change your Codex model configuration.
+This variable is only for SorryCode Image2. It does not change the Codex model configuration.
 
 <h2 id="first-prompt">First Prompt</h2>
 
-After installation, open Codex or Claude Code in your project and say:
+Generate an image:
 
 ```text
-Use SorryCode Image2 to generate a clean warm Chinese podcast cover about AI coding for beginners. Check the API key first; if it is missing, tell me how to set it. If it succeeds, save the image and response to outputs/images/first-cover/.
+Use SorryCode Image2 to generate a clean warm podcast cover about AI coding for beginners. Use gpt-image-2 and save it to outputs/images/first-cover/.
 ```
 
-Another example:
+Edit an image:
 
 ```text
-Generate a 2D pixel-art game character wearing a blue jacket and small backpack, transparent background. Save it to outputs/images/game-character/.
+Use SorryCode Image2 to edit ./input/product.png. Keep the core interface shape, simplify the background, and soften the lighting. Save it to outputs/images/product-hero/.
 ```
 
-If you already have an image, you can also say:
+Choose a size:
 
 ```text
-Use SorryCode Image2 to edit ./input/product.png into a cleaner website hero visual. Keep the core UI shape, make the background calmer, and use softer lighting. Save it to outputs/images/product-hero/.
+Use SorryCode Image2 to generate a website hero image at 1536x1024 and save it to outputs/images/website-hero/.
 ```
 
-If you want a specific ratio or resolution, say it directly:
-
-```text
-Use SorryCode Image2 to generate a website hero landscape image with size 1536x1024.
-```
-
-`gpt-image-2` can use common sizes such as `1024x1024`, `1536x1024`, `1024x1536`, `2048x2048`, and `2048x1152`. For the first successful run, use `1024x1024`; 4K images are not the default recommendation yet.
+Common sizes include `1024x1024`, `1536x1024`, and `1024x1536`. Use `1024x1024` for the first run.
 
 <h2 id="what-it-saves">What It Saves</h2>
 
-The recommended default folder is:
+The recommended output location is:
 
 ```text
 outputs/images/your-task-name/
 ```
 
-It should contain at least:
+The folder normally contains:
 
 - `prompt.txt`
+- `request.json`
 - `response.json` or `events.ndjson`
-- the image file, or a note with the image URL
+- the generated or edited image file
 
 <h2 id="common-issues">Common Issues</h2>
 
-- Missing `SORRYCODE_API_KEY`
-  Create an API key from [Platform / Create API Key](/docs/platform/create-api-key), then let your computer remember it using the steps above
-- `401`
-  The API key is wrong or not sent as `Authorization: Bearer ...`
-- `400`
-  This usually means the image or parameters do not meet the requirements: the image is too small, the format is unsupported, the image is broken, or the model, prompt, or size is wrong. Follow the returned `message`; for image editing, first try a PNG / JPEG / WebP image that opens normally.
-- `524`
-  Usually means image generation waited too long. Reduce the size, shorten the prompt, or retry with the recommended parameters in [Platform / Image Request](/docs/platform/image-request#common-issues).
-- `502`
-  Does not always mean the platform is unavailable. Retry with recommended parameters; if it keeps failing, lower the resolution.
-- `503 No available compatible accounts`
-  The current API key cannot use this image model right now. Check the model name and key; if it still fails, contact SorryCode support.
-- Slow generation
-  Image generation is usually slower than text. If streaming events keep arriving, keep waiting
+- Missing `SORRYCODE_API_KEY`: create an API key, then reopen the workbench or terminal
+- `401`: the API key is wrong or was not set correctly
+- `400`: check the input image, prompt, size, and model; the model must be `gpt-image-2`
+- `524`: reduce the image size, shorten the prompt, or retry later
+- `503 No available compatible accounts`: the current API key cannot use the image model right now; check access or retry later
+
+<h2 id="more-aigc">More AIGC Workflows</h2>
+
+SorryCode Image2 only handles generation and editing with `gpt-image-2`. For additional AIGC models, asset production, or dedicated visual asset workflows, use [SorryAssets](https://sorryassets.com).
 
 <h2 id="next">Next Step</h2>
 
-For a guided task, go to [Village / Generate Your First Image](/docs/skills/sorrycode-image2).
-
-For HTTP details, see [Platform / Image Request](/docs/platform/image-request).
+- Return to the two image paths: [Platform / Generate Images](/docs/platform/image-request)
+- View the source: [linxiverse/sorrycode-image2](https://github.com/linxiverse/sorrycode-image2)

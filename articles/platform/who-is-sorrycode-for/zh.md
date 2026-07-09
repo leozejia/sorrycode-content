@@ -2,7 +2,7 @@
 title: SorryCode 适合谁
 slug: who-is-sorrycode-for
 order: 1
-summary: 如果你想用一份余额体验 Codex、Claude Code、Gemini、图片和 Skills，而不是先订阅多个产品，先看这页。
+summary: 如果你想用一份余额体验 Codex、Claude Code、图片生成和 Skills，而不是先订阅多个产品，先看这页。
 section: platform
 section_title: Platform
 section_order: 8
@@ -12,7 +12,7 @@ section_order: 8
 
 SorryCode 不是另一个聊天网页。
 
-它更像一个 AI 工具额度入口：你创建 API Key，把 `Codex`、`Claude Code`、Gemini 路径、图片接口和 Skills 接进来，用一份余额体验多个模型和工具。
+它更像一个 AI 工具额度入口：你创建 API Key，把 `Codex`、`Claude Code`、图片生成和 Skills 接进来，用一份余额体验多个工具。
 
 如果你还不确定自己该订阅哪个 AI 产品，先用 SorryCode 试一圈，通常比一上来买多个月费更轻。
 
@@ -32,7 +32,7 @@ SorryCode 不是另一个聊天网页。
 
 - Codex 能不能帮你读项目
 - Claude Code 是什么体验
-- Gemini 或图片模型能做什么
+- 在 Codex App 中生成图片是什么体验
 - Skills 能不能帮你做文档、PPT、图片
 
 这种情况下，不一定要先订阅一个完整月。
@@ -99,7 +99,7 @@ SorryCode 不是要替代所有订阅。
 
 - GPT 路径：优先看 [Runtime / Codex](/docs/runtime/codex)
 - Claude 路径：优先看 [Runtime / Claude Code](/docs/runtime/claude-code)
-- 图片：看 [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
+- 图片：先看 [Platform / 生成图片](/docs/platform/image-request)
 - 办公文档：看 [Skills / 办公文档](/docs/skills/office-docs)
 
 ### 更适合试错

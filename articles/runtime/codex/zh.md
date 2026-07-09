@@ -173,6 +173,18 @@ codex -m gpt-5.5
 - 它已经进到了对的项目目录
 - 它能正常读项目并给你回应
 
+<h2 id="generate-images">直接在 Codex App 中生成图片</h2>
+
+接入完成后，不需要先安装图片 Skill。直接在 Codex App 对话中说：
+
+```text
+帮我生成一张中文播客封面，主题是 AI 编程，新手友好，暖色调，干净排版。
+```
+
+生成后可以继续用自然语言调整构图、比例、颜色和文字区域。
+
+需要编辑本地图片、固定输出目录或保存 prompt 和诊断文件时，再使用 [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)。完整分流见 [Platform / 生成图片](/docs/platform/image-request)。
+
 <h2 id="install-skills-with-agent">下一步：把 Skills 交给 Codex 管理</h2>
 
 Codex 跑起来以后，不用自己研究 `npx`、`Git` 或 `Homebrew`。把下面这段话复制给 Codex，让它读取当前 SorryCode Skills 文档，帮你准备环境，并按你的目标安装、查看或卸载需要的 skills：

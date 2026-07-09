@@ -173,6 +173,18 @@ This confirms two things early:
 - the runtime opened the correct project folder
 - it can read the project and respond normally
 
+<h2 id="generate-images">Generate Images Directly in Codex App</h2>
+
+After setup, you do not need to install an image Skill first. Say this directly in Codex App:
+
+```text
+Generate a clean warm podcast cover about AI coding for beginners. Keep the layout simple and leave enough room for a title.
+```
+
+Continue the conversation to adjust composition, aspect ratio, colors, or title space.
+
+Use [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) only when you need to edit a local image, choose a fixed output folder, or save prompts and diagnostics. See [Platform / Generate Images](/docs/platform/image-request) for the full split.
+
 <h2 id="install-skills-with-agent">Next: Let Codex Manage Skills</h2>
 
 After Codex is running, you do not need to study `npx`, `Git`, or `Homebrew` yourself. Paste this into Codex and let it read the current SorryCode Skills docs, prepare the environment, and install, list, or remove the skills you need:

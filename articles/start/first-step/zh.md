@@ -134,32 +134,28 @@ SorryCode 支持两个主流工作台：
 
 **如果你想生成图片：**
 
-先装图片 Skill：
-
-```bash
-npx skills add linxiverse/sorrycode-image2 -g -y
-```
-
-然后重启工作台，说：
+在 Codex App 中直接说：
 
 ```text
-请用 SorryCode Image2 生成一张中文播客封面，主题是 AI 编程，新手友好，暖色调，干净排版。先检查 API Key，如果没设置就告诉我怎么设置。
+帮我生成一张中文播客封面，主题是 AI 编程，新手友好，暖色调，干净排版。
 ```
+
+需要编辑本地图片、指定输出目录或保存生成诊断时，再看 [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)。
 
 **任务跑通了？** 你已经比 90% 的人更会用了。
 
-<h2 id="step-4">第 4 步：按任务选择 Skill</h2>
+<h2 id="step-4">第 4 步：按任务继续扩展</h2>
 
-Skill 是给工作台装的能力包。不同 skill 的安装方式会随 Codex、Claude Code 和上游仓库变化；新手页不写固定命令，避免复制到过时地址。
+有些任务直接在 Codex App 中对话就能完成，有些任务需要 Skill。不同 Skill 的安装方式会随 Codex、Claude Code 和上游仓库变化；新手页不写固定命令，避免复制到过时地址。
 
 | 你想做什么 | 从这里开始 |
 | --- | --- |
 | 处理 Word / Excel / PPT / PDF | [办公文档](/docs/skills/office-docs) |
 | 做一页纸、简历、作品集、长文 | [Kami](/docs/skills/kami) |
-| 生成图片、海报、封面 | [SorryCode Image2](/docs/skills/sorrycode-image2) |
+| 生成图片、海报、封面 | [生成图片](/docs/platform/image-request) |
 | 做网页 PPT | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 
-进入对应页面后，按你正在用的工作台选择 Codex 或 Claude Code 的安装命令。安装 Skill 后需要重启工作台。
+进入对应页面后，按页面给出的默认方式开始。只有需要 Skill 时，才按你正在用的工作台选择安装命令；安装后需要重启工作台。
 
 更多 Skill 看 [Skills / 精选 Skills](/docs/skills/featured-skills)。
 

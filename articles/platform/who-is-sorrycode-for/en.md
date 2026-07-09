@@ -2,7 +2,7 @@
 title: Who SorryCode Is For
 slug: who-is-sorrycode-for
 order: 1
-summary: Use one balance and separate API keys to try Codex, Claude Code, Gemini paths, images, and Skills before committing to multiple subscriptions.
+summary: Use one balance and separate API keys to try Codex, Claude Code, image generation, and Skills before committing to multiple subscriptions.
 section: platform
 section_title: Platform
 section_order: 8
@@ -12,7 +12,7 @@ section_order: 8
 
 SorryCode is not another chat web app.
 
-It is an AI tool balance and API entry point. You create API keys, connect tools such as `Codex`, `Claude Code`, Gemini paths, image APIs, and Skills, then use one balance across them.
+It is an AI tool balance and API entry point. You create API keys, connect tools such as `Codex`, `Claude Code`, image generation, and Skills, then use one balance across them.
 
 If you are not sure which AI product to subscribe to, try the workflow through SorryCode first.
 
@@ -32,7 +32,7 @@ You want to try:
 
 - whether Codex can read a project
 - what Claude Code feels like
-- what Gemini or image models can do
+- what image generation inside Codex App feels like
 - whether Skills help with documents, slides, images, or workflows
 
 You do not need to subscribe to a full month before learning the answer.
@@ -99,7 +99,7 @@ Choose by task:
 
 - GPT path: start with [Runtime / Codex](/docs/runtime/codex)
 - Claude path: start with [Runtime / Claude Code](/docs/runtime/claude-code)
-- Images: read [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
+- Images: start with [Platform / Generate Images](/docs/platform/image-request)
 - Office files: read [Skills / Office Docs](/docs/skills/office-docs)
 
 ### Easier experimentation

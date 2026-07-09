@@ -134,32 +134,28 @@ Help me write a personal introduction draft in this folder. Ask me 5 necessary q
 
 **If you want to generate images:**
 
-First install the image skill:
-
-```bash
-npx skills add linxiverse/sorrycode-image2 -g -y
-```
-
-Then restart the workbench and say:
+Say this directly in Codex App:
 
 ```text
-Use SorryCode Image2 to generate a Chinese podcast cover, theme is AI programming, beginner-friendly, warm colors, clean layout. Check API Key first, if not set tell me how to set it.
+Generate a clean warm podcast cover about AI coding for beginners. Keep the layout simple and leave enough room for a title.
 ```
+
+Use [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) only when you need to edit a local image, choose an output folder, or save generation diagnostics.
 
 **Task completed?** You're already ahead of 90% of users.
 
-<h2 id="step-4">Step 4: Choose Skills By Task</h2>
+<h2 id="step-4">Step 4: Expand by Task</h2>
 
-Skills are capability packs for workbenches. Install commands can change with Codex, Claude Code, and upstream repositories, so this starter page does not keep a fixed command list.
+Some tasks work directly in a Codex App conversation, while others need a Skill. Skill install commands can change with Codex, Claude Code, and upstream repositories, so this starter page does not keep a fixed command list.
 
 | What You Want | Start Here |
 | --- | --- |
 | Handle Word / Excel / PPT / PDF | [Office Docs](/docs/skills/office-docs) |
 | Make one-pagers, resumes, portfolios, long documents | [Kami](/docs/skills/kami) |
-| Generate images, posters, covers | [SorryCode Image2](/docs/skills/sorrycode-image2) |
+| Generate images, posters, covers | [Generate Images](/docs/platform/image-request) |
 | Make web-based slide decks | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 
-Open the matching page, then choose the install command for your workbench: Codex or Claude Code. Restart the workbench after installing skills.
+Open the matching page and follow its default path. Only choose a Codex or Claude Code install command when the task actually needs a Skill. Restart the workbench after installing skills.
 
 More skills at [Skills / Featured Skills](/docs/skills/featured-skills).
 
