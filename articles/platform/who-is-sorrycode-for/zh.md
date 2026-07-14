@@ -99,7 +99,9 @@ SorryCode 不是要替代所有订阅。
 
 - GPT 路径：优先看 [Runtime / Codex](/docs/runtime/codex)
 - Claude 路径：优先看 [Runtime / Claude Code](/docs/runtime/claude-code)
-- 图片：先看 [Platform / 生成图片](/docs/platform/image-request)
+- OpenAI 图片：先看 [模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)
+- Grok 图片和视频：看 [Grok 图片生成](/docs/runtime/grok-image) 与
+  [Grok 视频生成](/docs/runtime/grok-video)
 - 办公文档：看 [Skills / 办公文档](/docs/skills/office-docs)
 
 ### 更适合试错

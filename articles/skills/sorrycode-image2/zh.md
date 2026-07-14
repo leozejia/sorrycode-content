@@ -14,7 +14,9 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 
 # SorryCode Image2
 
-如果只是想快速生成一张图片，先在 `Codex App` 里直接说出需求，不需要安装 Skill。完整分流见 [Platform / 生成图片](/docs/platform/image-request)。
+如果只是想快速生成一张图片，先在 `Codex App` 里直接说出需求，不需要安装 Skill。
+自然语言生图、Images API 和本 Skill 的完整分流见
+[模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)。
 
 `SorryCode Image2` 适合需要固定输出和可复现过程的图片任务。它会检查 API Key，调用图片接口，并把 prompt、响应、诊断和图片文件保存到项目中。
 
@@ -128,5 +130,5 @@ SorryCode Image2 只负责 `gpt-image-2` 的生成和编辑。需要更多 AIGC 
 
 <h2 id="next">下一步</h2>
 
-- 返回两种图片方式：[Platform / 生成图片](/docs/platform/image-request)
+- 返回 OpenAI 图片能力总览：[模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)
 - 查看源码：[linxiverse/sorrycode-image2](https://github.com/linxiverse/sorrycode-image2)

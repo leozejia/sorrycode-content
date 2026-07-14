@@ -4,8 +4,11 @@ slug: codex
 order: 1
 summary: 先认识 Codex，再准备 API Key，完成一键安装，然后直接开始用。
 section: runtime
-section_title: Runtime
+section_title: 模型与工作台
 section_order: 10
+group: openai
+group_title: OpenAI
+group_order: 10
 ---
 
 # Codex
@@ -183,7 +186,9 @@ codex -m gpt-5.5
 
 生成后可以继续用自然语言调整构图、比例、颜色和文字区域。
 
-需要编辑本地图片、固定输出目录或保存 prompt 和诊断文件时，再使用 [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)。完整分流见 [Platform / 生成图片](/docs/platform/image-request)。
+需要了解 Codex 自然语言生图、显式 Images API 和本地图片工作流的完整分流，见
+[模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)。需要编辑本地图片、固定输出目录
+或保存 prompt 和诊断文件时，再使用 [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)。
 
 <h2 id="install-skills-with-agent">下一步：把 Skills 交给 Codex 管理</h2>
 

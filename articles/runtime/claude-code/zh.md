@@ -1,11 +1,14 @@
 ---
 title: Claude Code
 slug: claude-code
-order: 2
+order: 1
 summary: 先认识 Claude Code，再准备 API Key，完成一键安装，然后直接开始用。
 section: runtime
-section_title: Runtime
+section_title: 模型与工作台
 section_order: 10
+group: anthropic
+group_title: Anthropic
+group_order: 20
 ---
 
 # Claude Code

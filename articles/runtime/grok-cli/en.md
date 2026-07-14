@@ -1,11 +1,14 @@
 ---
 title: Grok
 slug: grok-cli
-order: 4
+order: 1
 summary: Understand Grok first, prepare your API key, finish one-click install, and start using it right away.
 section: runtime
-section_title: Runtime
+section_title: Models & Runtimes
 section_order: 10
+group: xai
+group_title: xAI
+group_order: 30
 ---
 
 # Grok
@@ -223,6 +226,17 @@ Two details matter here:
 - set `base_url` to `{{API_BASE_URL}}`, not the official xAI API URL
 - set `SORRYCODE_API_KEY` to your SorryCode `sk-...` key, not xAI account credentials
 
+<h2 id="media">Where to Call Images and Video</h2>
+
+The custom `base_url` in `~/.grok/config.toml` covers text, Responses, and search. Grok CLI's built-in image and image-to-video tools use a separate media client and do not inherit that address.
+
+That means:
+
+- keep using Grok CLI for text and search;
+- use the REST API in [Grok Image Generation](/docs/runtime/grok-image) for images;
+- use the REST API in [Grok Video Generation](/docs/runtime/grok-video) for text-to-video, image-to-video, and polling;
+- do not give a SorryCode key to Grok CLI's built-in media tools, or the official xAI endpoint will reject it as invalid.
+
 <h2 id="first-request">First Request</h2>
 
 If you used one-click install, you usually do not need to send a manual request first.
@@ -243,3 +257,6 @@ Go to [Platform / First Request](/docs/platform/first-request) only when:
   go to [Platform / Create API Key](/docs/platform/create-api-key)
 - not sure how to choose between Grok, Codex, and Claude Code
   go to [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
+- built-in image or video tools report `Incorrect API key provided`
+  the text configuration is still valid; use [Grok Image Generation](/docs/runtime/grok-image) or
+  [Grok Video Generation](/docs/runtime/grok-video)

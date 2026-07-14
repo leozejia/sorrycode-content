@@ -1,11 +1,14 @@
 ---
 title: Claude Code
 slug: claude-code
-order: 2
+order: 1
 summary: Understand Claude Code first, prepare your API key, finish one-click install, and start using it right away.
 section: runtime
-section_title: Runtime
+section_title: Models & Runtimes
 section_order: 10
+group: anthropic
+group_title: Anthropic
+group_order: 20
 ---
 
 # Claude Code

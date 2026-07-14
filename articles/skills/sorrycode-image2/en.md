@@ -14,7 +14,7 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 
 # SorryCode Image2
 
-If you only need a quick image, ask for it directly in `Codex App`. You do not need to install a Skill first. See [Platform / Generate Images](/docs/platform/image-request) for the two available paths.
+If you only need a quick image, ask for it directly in `Codex App`. You do not need to install a Skill first. See [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2) for the full split between natural-language generation, the Images API, and this Skill.
 
 `SorryCode Image2` is for image tasks that need fixed outputs and a reproducible process. It checks the API key, calls the image endpoint, and saves the prompt, response, diagnostics, and image files inside the project.
 
@@ -128,5 +128,5 @@ SorryCode Image2 only handles generation and editing with `gpt-image-2`. For add
 
 <h2 id="next">Next Step</h2>
 
-- Return to the two image paths: [Platform / Generate Images](/docs/platform/image-request)
+- Return to the OpenAI image overview: [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2)
 - View the source: [linxiverse/sorrycode-image2](https://github.com/linxiverse/sorrycode-image2)

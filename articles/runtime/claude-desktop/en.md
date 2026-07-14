@@ -1,11 +1,14 @@
 ---
 title: Claude Desktop
 slug: claude-desktop
-order: 3
+order: 2
 summary: Enable the third-party inference gateway in Claude Desktop and connect requests to SorryCode.
 section: runtime
-section_title: Runtime
+section_title: Models & Runtimes
 section_order: 10
+group: anthropic
+group_title: Anthropic
+group_order: 20
 ---
 
 # Claude Desktop

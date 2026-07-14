@@ -1,11 +1,14 @@
 ---
 title: Plugins vs Skills - What's the Difference
 slug: plugins-vs-skills
-order: 5
-summary: Plugins and Skills are two different ways to extend capabilities, but not mutually exclusive—understand their differences and choose the right approach.
+order: 1
+summary: Plugins give agents new tools, while Skills teach agents how to work. They have different use cases, installation methods, and calling syntax.
 section: runtime
-section_title: Runtime
+section_title: Models & Runtimes
 section_order: 10
+group: general
+group_title: General
+group_order: 40
 ---
 
 # Plugins vs Skills - What's the Difference

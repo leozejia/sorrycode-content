@@ -152,7 +152,7 @@ Some tasks work directly in a Codex App conversation, while others need a Skill.
 | --- | --- |
 | Handle Word / Excel / PPT / PDF | [Office Docs](/docs/skills/office-docs) |
 | Make one-pagers, resumes, portfolios, long documents | [Kami](/docs/skills/kami) |
-| Generate images, posters, covers | [Generate Images](/docs/platform/image-request) |
+| Generate images, posters, covers | [GPT Image 2](/docs/runtime/gpt-image-2) |
 | Make web-based slide decks | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 
 Open the matching page and follow its default path. Only choose a Codex or Claude Code install command when the task actually needs a Skill. Restart the workbench after installing skills.

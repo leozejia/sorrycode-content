@@ -1,11 +1,14 @@
 ---
 title: Grok
 slug: grok-cli
-order: 4
+order: 1
 summary: 先认识 Grok，再准备 API Key，完成一键安装，然后直接开始用。
 section: runtime
-section_title: Runtime
+section_title: 模型与工作台
 section_order: 10
+group: xai
+group_title: xAI
+group_order: 30
 ---
 
 # Grok
@@ -223,6 +226,18 @@ grok
 - `base_url` 填 `{{API_BASE_URL}}`，不是 xAI 官方 API 地址
 - `SORRYCODE_API_KEY` 填 SorryCode 的 `sk-...`，不要填 xAI 账号凭据
 
+<h2 id="media">图片和视频从哪里调用</h2>
+
+当前 `~/.grok/config.toml` 里的自定义 `base_url` 负责文字、Responses 和搜索路径。
+Grok CLI 内置的图片、图生视频工具使用独立媒体客户端，不继承这个地址。
+
+因此：
+
+- 文字对话和搜索继续在 Grok CLI 中使用；
+- 图片生成使用 [Grok 图片生成](/docs/runtime/grok-image) 的 REST API；
+- 文生视频、图生视频和轮询使用 [Grok 视频生成](/docs/runtime/grok-video) 的 REST API；
+- 不要把 SorryCode Key 交给 Grok CLI 内置媒体工具，否则会收到 xAI 官方的 Key 无效错误。
+
 <h2 id="first-request">首条请求</h2>
 
 如果你走的是一键安装，通常不用先手动打请求。
@@ -243,3 +258,6 @@ grok
   去看 [Platform / 创建 API Key](/docs/platform/create-api-key)
 - 不确定 Grok、Codex、Claude Code 应该怎么选
   去看 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)
+- 内置图片或视频工具提示 `Incorrect API key provided`
+  这不是文字配置失效；改用 [Grok 图片生成](/docs/runtime/grok-image) 或
+  [Grok 视频生成](/docs/runtime/grok-video)

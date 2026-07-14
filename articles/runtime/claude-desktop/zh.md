@@ -1,11 +1,14 @@
 ---
 title: Claude Desktop
 slug: claude-desktop
-order: 3
+order: 2
 summary: 在 Claude Desktop 里启用第三方推理网关，把模型请求接到 SorryCode。
 section: runtime
-section_title: Runtime
+section_title: 模型与工作台
 section_order: 10
+group: anthropic
+group_title: Anthropic
+group_order: 20
 ---
 
 # Claude Desktop

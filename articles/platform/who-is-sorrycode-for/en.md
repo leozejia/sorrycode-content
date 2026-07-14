@@ -99,7 +99,9 @@ Choose by task:
 
 - GPT path: start with [Runtime / Codex](/docs/runtime/codex)
 - Claude path: start with [Runtime / Claude Code](/docs/runtime/claude-code)
-- Images: start with [Platform / Generate Images](/docs/platform/image-request)
+- OpenAI images: start with [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2)
+- Grok images and video: see [Grok Image Generation](/docs/runtime/grok-image) and
+  [Grok Video Generation](/docs/runtime/grok-video)
 - Office files: read [Skills / Office Docs](/docs/skills/office-docs)
 
 ### Easier experimentation

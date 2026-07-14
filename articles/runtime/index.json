@@ -2,19 +2,43 @@
   "version": 1,
   "section": "runtime",
   "title": {
-    "en": "Runtime",
-    "zh": "Runtime"
+    "en": "Models & Runtimes",
+    "zh": "模型与工作台"
   },
-  "updatedAt": "2026-07-10",
+  "updatedAt": "2026-07-14",
   "navigation": {
-    "style": "flat",
-    "groups": []
+    "style": "curated-shelf",
+    "groups": [
+      {
+        "id": "openai",
+        "title": { "en": "OpenAI", "zh": "OpenAI" },
+        "items": ["codex", "gpt-image-2"]
+      },
+      {
+        "id": "anthropic",
+        "title": { "en": "Anthropic", "zh": "Anthropic" },
+        "items": ["claude-code", "claude-desktop"]
+      },
+      {
+        "id": "xai",
+        "title": { "en": "xAI", "zh": "xAI" },
+        "items": ["grok-cli", "grok-image", "grok-video"]
+      },
+      {
+        "id": "general",
+        "title": { "en": "General", "zh": "通用" },
+        "items": ["plugins-vs-skills"]
+      }
+    ]
   },
   "articles": [
     "codex",
+    "gpt-image-2",
     "claude-code",
     "claude-desktop",
     "grok-cli",
+    "grok-image",
+    "grok-video",
     "plugins-vs-skills"
   ]
 }

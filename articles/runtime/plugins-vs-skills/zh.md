@@ -1,11 +1,14 @@
 ---
 title: Plugins 和 Skills 有什么区别
 slug: plugins-vs-skills
-order: 5
-summary: Plugins 和 Skills 是两种不同的能力扩展方式，但不互斥——理解它们的区别，选择合适的使用方式。
+order: 1
+summary: Plugins 给 agent 提供新工具，Skills 教 agent 怎么做事。两者的适用场景、安装方式和调用语法不同。
 section: runtime
-section_title: Runtime
+section_title: 模型与工作台
 section_order: 10
+group: general
+group_title: 通用
+group_order: 40
 ---
 
 # Plugins 和 Skills 有什么区别

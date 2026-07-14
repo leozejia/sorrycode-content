@@ -152,7 +152,7 @@ SorryCode 支持两个主流工作台：
 | --- | --- |
 | 处理 Word / Excel / PPT / PDF | [办公文档](/docs/skills/office-docs) |
 | 做一页纸、简历、作品集、长文 | [Kami](/docs/skills/kami) |
-| 生成图片、海报、封面 | [生成图片](/docs/platform/image-request) |
+| 生成图片、海报、封面 | [GPT Image 2](/docs/runtime/gpt-image-2) |
 | 做网页 PPT | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 
 进入对应页面后，按页面给出的默认方式开始。只有需要 Skill 时，才按你正在用的工作台选择安装命令；安装后需要重启工作台。

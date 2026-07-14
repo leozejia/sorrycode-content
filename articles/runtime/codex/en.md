@@ -4,8 +4,11 @@ slug: codex
 order: 1
 summary: Understand Codex first, prepare your API key, finish one-click install, and start using it right away.
 section: runtime
-section_title: Runtime
+section_title: Models & Runtimes
 section_order: 10
+group: openai
+group_title: OpenAI
+group_order: 10
 ---
 
 # Codex
@@ -183,7 +186,7 @@ Generate a clean warm podcast cover about AI coding for beginners. Keep the layo
 
 Continue the conversation to adjust composition, aspect ratio, colors, or title space.
 
-Use [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) only when you need to edit a local image, choose a fixed output folder, or save prompts and diagnostics. See [Platform / Generate Images](/docs/platform/image-request) for the full split.
+See [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2) for the full split between natural-language image generation in Codex, the explicit Images API, and local image workflows. Use [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) when you need to edit a local image, choose a fixed output folder, or save prompts and diagnostics.
 
 <h2 id="install-skills-with-agent">Next: Let Codex Manage Skills</h2>
 
