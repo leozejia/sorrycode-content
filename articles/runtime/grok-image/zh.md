@@ -23,7 +23,9 @@ Grok 分组的 SorryCode API Key。
 
 1. 在 `https://sorrycode.com/keys` 创建或选择一把 API Key。
 2. 确认这把 Key 使用 Grok 分组。
-3. 把 Key 保存到 `SORRYCODE_API_KEY` 环境变量。
+3. 复制这把 Grok Key，稍后直接替换请求头里的占位值。
+
+这把 Key 可以和 Grok CLI 使用同一个 Grok 分组，但不要使用给 `SorryCode Image2` 准备的 Image2 Key。本页不要求设置环境变量。
 
 如果你还没有 Key，先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
@@ -74,9 +76,11 @@ $json = @'
 
 发送请求并保存响应：
 
+把 `sk-replace-with-grok-group-key` 替换成你的 Grok 分组 Key。
+
 ```bash
 curl -sS https://sorrycode.com/v1/images/generations \
-  -H "Authorization: Bearer $SORRYCODE_API_KEY" \
+  -H "Authorization: Bearer sk-replace-with-grok-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json" \
   -o response.json
@@ -86,7 +90,7 @@ Windows PowerShell：
 
 ```powershell
 curl.exe -sS https://sorrycode.com/v1/images/generations `
-  -H "Authorization: Bearer $env:SORRYCODE_API_KEY" `
+  -H "Authorization: Bearer sk-replace-with-grok-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json" `
   -o response.json

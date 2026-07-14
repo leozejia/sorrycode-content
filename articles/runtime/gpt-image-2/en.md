@@ -47,6 +47,8 @@ The developer endpoint is:
 POST https://sorrycode.com/v1/images/generations
 ```
 
+Create or select an Image2 key assigned to an image group that supports `gpt-image-2`. Do not use a Grok-group key. The API example on this page puts the key directly in the request and does not require an environment variable.
+
 Create `request.json` first. macOS / Linux:
 
 ```bash
@@ -87,9 +89,11 @@ $json = @'
 
 Send the request:
 
+Replace `sk-replace-with-image2-group-key` with your Image2 key.
+
 ```bash
 curl -N https://sorrycode.com/v1/images/generations \
-  -H "Authorization: Bearer $SORRYCODE_API_KEY" \
+  -H "Authorization: Bearer sk-replace-with-image2-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json"
 ```
@@ -98,7 +102,7 @@ On Windows PowerShell, use `curl.exe`:
 
 ```powershell
 curl.exe -N https://sorrycode.com/v1/images/generations `
-  -H "Authorization: Bearer $env:SORRYCODE_API_KEY" `
+  -H "Authorization: Bearer sk-replace-with-image2-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json"
 ```
@@ -117,7 +121,7 @@ Image generation can take much longer than text. Keep `stream: true` and `partia
 Give this instruction to Codex or Claude Code:
 
 ```text
-Install SorryCode Image2, then use gpt-image-2 to generate a 1024x1024 image and save it to outputs/images/first-run/. Check SORRYCODE_API_KEY before running.
+Install SorryCode Image2 and configure the Image2 key as shown on the Skill page. Then use gpt-image-2 to generate a 1024x1024 image and save it to outputs/images/first-run/.
 ```
 
 <h2 id="errors">Common Issues</h2>

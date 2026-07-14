@@ -30,13 +30,13 @@ section_order: 1
 
 `{{API_BASE_URL}}/chat/completions`
 
+选择一把已经分配到 OpenAI-compatible 分组的 Key，并把下面的占位值替换成完整的 `sk-...`。这页只做一次性验证，不要求先设置环境变量。
+
 ### macOS / Linux
 
 ```bash
-export OPENAI_API_KEY='你的 sk-...'
-
 curl {{API_BASE_URL}}/chat/completions \
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "Authorization: Bearer sk-replace-with-openai-group-key" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "gpt-5.4",
@@ -49,10 +49,6 @@ curl {{API_BASE_URL}}/chat/completions \
 ### Windows PowerShell
 
 ```powershell
-if (-not $env:OPENAI_API_KEY) {
-  throw "OPENAI_API_KEY is not set."
-}
-
 $body = @{
   model = "gpt-5.4"
   messages = @(
@@ -71,7 +67,7 @@ $payloadFile = Join-Path $PWD "chat_payload.json"
 )
 
 curl.exe "{{API_BASE_URL}}/chat/completions" `
-  -H "Authorization: Bearer $env:OPENAI_API_KEY" `
+  -H "Authorization: Bearer sk-replace-with-openai-group-key" `
   -H "Content-Type: application/json; charset=utf-8" `
   --data-binary "@$payloadFile"
 ```
@@ -82,13 +78,13 @@ curl.exe "{{API_BASE_URL}}/chat/completions" `
 
 `{{ANTHROPIC_BASE_URL}}/v1/messages`
 
+选择一把已经分配到 Anthropic-compatible 分组的 Key，并替换下面的占位值。不要拿 Grok 或 Image2 Key 来做这条验证。
+
 ### macOS / Linux
 
 ```bash
-export SORRYCODE_API_KEY='你的 sk-...'
-
 curl {{ANTHROPIC_BASE_URL}}/v1/messages \
-  -H "x-api-key: $SORRYCODE_API_KEY" \
+  -H "x-api-key: sk-replace-with-anthropic-group-key" \
   -H "anthropic-version: 2023-06-01" \
   -H "Content-Type: application/json" \
   -d '{
@@ -103,10 +99,6 @@ curl {{ANTHROPIC_BASE_URL}}/v1/messages \
 ### Windows PowerShell
 
 ```powershell
-if (-not $env:SORRYCODE_API_KEY) {
-  throw "SORRYCODE_API_KEY is not set."
-}
-
 $body = @{
   model = "claude-sonnet-4-5"
   max_tokens = 16
@@ -126,7 +118,7 @@ $payloadFile = Join-Path $PWD "messages_payload.json"
 )
 
 curl.exe "{{ANTHROPIC_BASE_URL}}/v1/messages" `
-  -H "x-api-key: $env:SORRYCODE_API_KEY" `
+  -H "x-api-key: sk-replace-with-anthropic-group-key" `
   -H "anthropic-version: 2023-06-01" `
   -H "Content-Type: application/json; charset=utf-8" `
   --data-binary "@$payloadFile"

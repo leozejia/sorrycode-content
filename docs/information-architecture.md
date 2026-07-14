@@ -130,6 +130,19 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 `模型与工作台 / GPT Image 2`。更多素材生产和视觉资产工作流仍可指向 `sorryassets.com`，
 但不在 SorryCode 文档里展开其私有模型、价格或接口。
 
+## API Key 表达规则
+
+公开文档先讲“选择哪一把分组 Key”，再讲工具如何使用它：
+
+- Codex、Claude Code、Grok、Image2 等不同用途默认使用不同 Key，共享的是账户余额，不是 Key 本身。
+- Grok CLI、Grok 图片和 Grok 视频使用 Grok 分组 Key。
+- GPT Image 2 API 和 `SorryCode Image2` 使用支持 `gpt-image-2` 的 Image2 Key。
+- REST API 示例直接在请求头中提供可替换的分组 Key 占位值，不要求用户先设置通用环境变量。
+- runtime 一键安装器负责保存当前工具选择的 Key。公开页面不要求用户手动同步安装器内部的变量名。
+- 只有具体 Skill 确实依赖环境变量时，才在该 Skill 页面公开变量名。当前 `SORRYCODE_API_KEY` 只属于 `SorryCode Image2` 的配置 contract。
+
+不要把一个通用变量名写成 SorryCode 全局 Key，也不要暗示不同分组的 `sk-...` 可以互换。
+
 ## 公开内容更新顺序
 
 如果只改公开正文、标题、摘要、导航分组和页面 contract：

@@ -21,7 +21,7 @@ group_order: 30
 >
 > **→ 一键安装（推荐）：** 在 API Key 页面点 `接入工具` → 复制命令 → 粘贴到本机终端 → 完成。适合绝大多数人。
 >
-> **→ 手动安装：** 自己安装 Grok、写配置文件。适合想控每一步的进阶用户。
+> **→ 通用安装命令：** 仍然使用 SorryCode 安装器，但在运行时手动粘贴 Grok 分组 Key。适合暂时打不开 `接入工具` 的用户。
 >
 > 下面默认按一键安装展开。
 
@@ -31,7 +31,7 @@ group_order: 30
 - 它可以在终端里和你协作，读取项目、回答问题，也可以执行本地任务
 - 在 SorryCode 里，你要做的是把它接到 `{{API_BASE_URL}}`，再填入你自己的 API Key
 
-第一次接入时，不需要先理解 `~/.grok/config.toml` 或环境变量。先走一键安装就够了。
+第一次接入时，不需要先理解 `~/.grok/config.toml` 的内部字段。先走一键安装就够了。
 
 参考：[xAI Grok 官方安装器](https://x.ai/cli/install.sh)
 
@@ -51,7 +51,7 @@ group_order: 30
 
 如果你还没做这一步，可以先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
-如果你也准备使用 Codex 或 Claude Code，建议另外创建一把 API Key 给它们。多把 key 仍然消耗同一份余额，但记录、分组和限额可以分开管理。
+如果你也准备使用 Codex、Claude Code 或 SorryCode Image2，请分别创建对应用途的 API Key。多把 Key 仍然消耗同一份余额，但每把 Key 应该选择与用途匹配的分组。
 
 <h2 id="one-click-install">⚡ 一键安装（推荐）</h2>
 
@@ -75,7 +75,7 @@ group_order: 30
 
 打开终端后，把刚复制的整条命令粘贴进去，再按一次回车。
 
-一键安装会调用 xAI 官方安装器安装 Grok，然后写入 `~/.grok/config.toml` 和 `SORRYCODE_API_KEY`。Windows 会使用适合 Windows 的安装脚本。如果你不知道 PowerShell 是什么，先看 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)。
+一键安装会调用 xAI 官方安装器安装 Grok，然后写入 `~/.grok/config.toml`，并单独保存当前选择的 Grok 分组 Key。它不会覆盖 SorryCode Image2 使用的 Image2 Key。Windows 会使用适合 Windows 的安装脚本。如果你不知道 PowerShell 是什么，先看 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)。
 
 ### 备用：手动复制通用命令
 
@@ -101,7 +101,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-grok.bat https://sorrycode.com/install/so
 - 备份已有的 `~/.grok/config.toml`
 - 写入 SorryCode 的 `~/.grok/config.toml`
 - 把默认模型设为 `grok-4.5`
-- 写入 `SORRYCODE_API_KEY`
+- 单独保存当前选择的 Grok 分组 Key，不覆盖其他工具的 Key
 - Windows 只对这次安装进程使用 `ExecutionPolicy Bypass`，不会永久修改你的 PowerShell 策略
 
 </details>
@@ -145,86 +145,11 @@ grok -m sorrycode-grok
 - 它已经进到了对的项目目录
 - 它能正常读项目并给你回应
 
-<h2 id="manual-install">手动安装（进阶）</h2>
+<h2 id="manual-install">需要手动控制时</h2>
 
-只有在你想自己控每一步时，才需要这一段。
+公开接入不要求你手动同步配置字段或环境变量。需要自己控制安装步骤时，可以先运行 xAI 官方安装器，再运行上面的 SorryCode 通用安装命令。SorryCode 安装器会检测已有的 `grok`，只补齐网关配置和当前选择的 Grok 分组 Key。
 
-1. 安装 Grok
-
-macOS / Linux / WSL：
-
-```bash
-curl -fsSL https://x.ai/cli/install.sh | bash
-```
-
-Windows PowerShell：
-
-```powershell
-irm https://x.ai/cli/install.ps1 | iex
-```
-
-2. 写入 `~/.grok/config.toml`
-
-macOS / Linux / WSL：
-
-```bash
-mkdir -p ~/.grok
-cat > ~/.grok/config.toml <<'EOF'
-[model.sorrycode-grok]
-model = "grok-4.5"
-base_url = "{{API_BASE_URL}}"
-name = "SorryCode Grok"
-env_key = "SORRYCODE_API_KEY"
-
-[models]
-default = "sorrycode-grok"
-EOF
-```
-
-Windows PowerShell：
-
-```powershell
-New-Item -ItemType Directory -Force "$env:USERPROFILE\.grok" | Out-Null
-
-$config = @'
-[model.sorrycode-grok]
-model = "grok-4.5"
-base_url = "{{API_BASE_URL}}"
-name = "SorryCode Grok"
-env_key = "SORRYCODE_API_KEY"
-
-[models]
-default = "sorrycode-grok"
-'@
-
-[System.IO.File]::WriteAllText(
-  "$env:USERPROFILE\.grok\config.toml",
-  $config,
-  [System.Text.UTF8Encoding]::new($false)
-)
-```
-
-3. 设置 API Key
-
-macOS / Linux / WSL：
-
-```bash
-export SORRYCODE_API_KEY="你的 sk-..."
-grok
-```
-
-Windows PowerShell：
-
-```powershell
-[System.Environment]::SetEnvironmentVariable("SORRYCODE_API_KEY", "你的 sk-...", "User")
-$env:SORRYCODE_API_KEY = "你的 sk-..."
-grok
-```
-
-这里有两个细节要记住：
-
-- `base_url` 填 `{{API_BASE_URL}}`，不是 xAI 官方 API 地址
-- `SORRYCODE_API_KEY` 填 SorryCode 的 `sk-...`，不要填 xAI 账号凭据
+如果配置损坏，回到 API Key 页面，用这把 Grok Key 重新生成安装命令。不要从 Codex、Claude Code 或 SorryCode Image2 的配置中复制 Key 来修补 Grok。
 
 <h2 id="media">图片和视频从哪里调用</h2>
 

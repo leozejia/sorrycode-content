@@ -24,6 +24,10 @@ Grok 视频是异步 API。第一次请求只负责创建任务并返回 `reques
 > Grok CLI 的内置 `image_to_video` 当前不会继承 SorryCode 自定义模型的 `base_url`。
 > 使用 SorryCode Key 时，请走本页 REST API。
 
+<h2 id="prepare">开始前准备</h2>
+
+在 `https://sorrycode.com/keys` 创建或选择一把 Grok 分组 Key。提交任务和轮询结果必须使用同一把 Grok Key。不要使用给 `SorryCode Image2` 准备的 Image2 Key，也不需要设置环境变量。
+
 <h2 id="models">选择模型</h2>
 
 | 任务 | 模型 |
@@ -75,9 +79,11 @@ $json = @'
 
 发送请求并保存任务响应：
 
+把 `sk-replace-with-grok-group-key` 替换成你的 Grok 分组 Key。
+
 ```bash
 curl -sS https://sorrycode.com/v1/videos/generations \
-  -H "Authorization: Bearer $SORRYCODE_API_KEY" \
+  -H "Authorization: Bearer sk-replace-with-grok-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json" \
   -o video-request.json
@@ -87,7 +93,7 @@ Windows PowerShell：
 
 ```powershell
 curl.exe -sS https://sorrycode.com/v1/videos/generations `
-  -H "Authorization: Bearer $env:SORRYCODE_API_KEY" `
+  -H "Authorization: Bearer sk-replace-with-grok-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json" `
   -o video-request.json
@@ -134,10 +140,12 @@ macOS / Linux：
 
 ```bash
 REQUEST_ID=$(jq -r '.request_id' video-request.json)
+STATUS="pending"
+TERMINAL=0
 
-while true; do
+for attempt in $(seq 1 60); do
   RESULT=$(curl -sS \
-    -H "Authorization: Bearer $SORRYCODE_API_KEY" \
+    -H "Authorization: Bearer sk-replace-with-grok-group-key" \
     "https://sorrycode.com/v1/videos/$REQUEST_ID")
 
   STATUS=$(printf '%s' "$RESULT" | jq -r '.status')
@@ -146,30 +154,50 @@ while true; do
   case "$STATUS" in
     done)
       printf '%s' "$RESULT" | jq -r '.video.url'
+      TERMINAL=1
       break
       ;;
     failed|expired)
       printf '%s' "$RESULT" | jq .
+      TERMINAL=1
       break
       ;;
   esac
 
   sleep 5
 done
+
+if [ "$TERMINAL" -eq 0 ]; then
+  printf '轮询 60 次后仍未完成，请稍后继续查询同一个 request_id。\n' >&2
+fi
 ```
 
 Windows PowerShell：
 
 ```powershell
 $requestId = (Get-Content "video-request.json" -Raw | ConvertFrom-Json).request_id
+$result = $null
 
-do {
-  Start-Sleep -Seconds 5
+for ($attempt = 1; $attempt -le 60; $attempt++) {
   $result = curl.exe -sS `
-    -H "Authorization: Bearer $env:SORRYCODE_API_KEY" `
+    -H "Authorization: Bearer sk-replace-with-grok-group-key" `
     "https://sorrycode.com/v1/videos/$requestId" | ConvertFrom-Json
   $result.status
-} while ($result.status -eq "pending")
+
+  if ($result.status -in @("done", "failed", "expired")) {
+    break
+  }
+
+  if ($result.status -ne "pending") {
+    throw "Unexpected video status: $($result.status)"
+  }
+
+  Start-Sleep -Seconds 5
+}
+
+if ($null -eq $result -or $result.status -notin @("done", "failed", "expired")) {
+  throw "Polling did not finish after 60 attempts. Continue later with the same request_id."
+}
 
 if ($result.status -eq "done") {
   $result.video.url

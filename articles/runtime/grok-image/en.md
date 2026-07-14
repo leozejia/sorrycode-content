@@ -21,7 +21,9 @@ Use Grok image generation through the REST API. You do not need an official xAI 
 
 1. Create or select an API key at `https://sorrycode.com/keys`.
 2. Make sure the key uses a Grok group.
-3. Store the key in the `SORRYCODE_API_KEY` environment variable.
+3. Copy that Grok key and replace the request-header placeholder later.
+
+This can be the same Grok-group key used by Grok CLI. Do not use the Image2 key created for `SorryCode Image2`. This page does not require an environment variable.
 
 If you do not have a key yet, read [Getting Started / Create API Key](/docs/start/create-api-key).
 
@@ -72,9 +74,11 @@ $json = @'
 
 Send the request and save the response:
 
+Replace `sk-replace-with-grok-group-key` with your Grok-group key.
+
 ```bash
 curl -sS https://sorrycode.com/v1/images/generations \
-  -H "Authorization: Bearer $SORRYCODE_API_KEY" \
+  -H "Authorization: Bearer sk-replace-with-grok-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json" \
   -o response.json
@@ -84,7 +88,7 @@ Windows PowerShell:
 
 ```powershell
 curl.exe -sS https://sorrycode.com/v1/images/generations `
-  -H "Authorization: Bearer $env:SORRYCODE_API_KEY" `
+  -H "Authorization: Bearer sk-replace-with-grok-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json" `
   -o response.json

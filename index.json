@@ -361,7 +361,7 @@
       "title": "Create API Key",
       "summary": "Understand what an API key is, then create separate sk-... keys for Codex, Claude Code, Skills, or other uses.",
       "order": 3,
-      "updatedAt": "2026-06-16",
+      "updatedAt": "2026-07-14",
       "markdownPath": "articles/start/create-api-key/en.md",
       "assetBaseUrl": "articles/start/create-api-key/",
       "route": "/docs/start/create-api-key"
@@ -376,7 +376,7 @@
       "title": "创建 API Key",
       "summary": "先理解 API Key 是什么，再按 Codex、Claude Code 或 Skills 等用途分别创建 sk-... 密钥。",
       "order": 3,
-      "updatedAt": "2026-06-16",
+      "updatedAt": "2026-07-14",
       "markdownPath": "articles/start/create-api-key/zh.md",
       "assetBaseUrl": "articles/start/create-api-key/",
       "route": "/docs/start/create-api-key"
@@ -391,7 +391,7 @@
       "title": "First Request",
       "summary": "Use one minimal request to validate the API key, Base URL, and network path. This page is a manual-path and troubleshooting reference, not the default beginner entry.",
       "order": 4,
-      "updatedAt": "2026-06-11",
+      "updatedAt": "2026-07-14",
       "markdownPath": "articles/start/first-request/en.md",
       "assetBaseUrl": "articles/start/first-request/",
       "route": "/docs/start/first-request"
@@ -406,7 +406,7 @@
       "title": "首条请求",
       "summary": "用一条最小请求验证 API Key、Base URL 和网络链路都正常工作。",
       "order": 4,
-      "updatedAt": "2026-06-11",
+      "updatedAt": "2026-07-14",
       "markdownPath": "articles/start/first-request/zh.md",
       "assetBaseUrl": "articles/start/first-request/",
       "route": "/docs/start/first-request"

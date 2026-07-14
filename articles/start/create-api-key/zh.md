@@ -16,16 +16,18 @@ section_order: 1
 
 `API Key` 是这条通道上的钥匙，用来证明这是你的 SorryCode 账号在使用模型。它通常长这样：`sk-...`。
 
-无论你后面走 Codex、Claude Code、CC-Switch、图片 Skill，还是手动请求，这一步都绕不开。现在控制台可以直接用这把 key 生成一键安装命令，所以最好先把 key 建好。
+无论你后面走 Codex、Claude Code、Grok、图片 Skill，还是手动请求，这一步都绕不开。现在控制台可以直接用这把 key 生成一键安装命令，所以最好先把 key 建好。
 
 一份 SorryCode 余额可以对应多把 API Key。新手不要把所有工具都挤在同一把 key 里。
 
-如果你同时想用 Codex 和 Claude Code，建议创建两把：
+Key 要按用途和分组配对。推荐这样分开：
 
-```text
-Codex 用一把
-Claude Code 用一把
-```
+| Key 名称 | 选择的分组 | 用在哪里 |
+| --- | --- | --- |
+| `Codex` | 支持 Codex / OpenAI-compatible 的分组 | Codex |
+| `Claude Code` | 支持 Anthropic-compatible 的分组 | Claude Code |
+| `Grok` | Grok 分组 | Grok CLI、Grok 图片和 Grok 视频 |
+| `Image2` | 支持 `gpt-image-2` 的图片分组 | GPT Image 2 API、SorryCode Image2 Skill |
 
 余额仍然是同一份。分开创建，是为了之后看使用记录、切换分组、设置限额和排查问题更省心。
 
@@ -34,7 +36,7 @@ Claude Code 用一把
 1. 打开 `https://sorrycode.com/login` 登录 SorryCode 控制台
 2. 在左侧菜单找到 `API 密钥`
 3. 点击创建密钥
-4. 名称写清楚用途，例如 `Codex`、`Claude Code`、`Image Skill`
+4. 名称写清楚用途，例如 `Codex`、`Claude Code`、`Grok`、`Image2`
 5. 选择分组
 6. 创建后复制密钥，并安全保存
 
@@ -55,7 +57,8 @@ Claude Code 用一把
 ```text
 Codex
 Claude Code
-图片 Skill
+Grok
+Image2
 测试请求
 ```
 
@@ -83,7 +86,9 @@ Claude Code
 一份余额，可以有多把 API Key。
 ```
 
-你可以给不同工具分别创建 key。比如 Codex 一把，Claude Code 一把，图片 Skill 一把。它们消耗的是同一份余额，但记录、分组和限额可以分开管理。
+你可以给不同工具分别创建 key。比如 Codex 一把，Claude Code 一把，Grok 一把，Image2 一把。它们消耗的是同一份余额，但记录、分组和限额可以分开管理。
+
+不要因为它们都以 `sk-...` 开头，就把同一把 Key 填到所有工具里。Grok Key 应该留给 Grok 分组；Image2 Key 应该留给支持 `gpt-image-2` 的图片分组。分组不匹配时，可能出现权限错误、模型不可用或错误的路由。
 
 如果你走的是一键安装，安装器会帮你写入大部分配置，你通常不需要先理解 `Base URL`。
 
@@ -110,13 +115,13 @@ Claude Code
 
 ![创建完成后复制 API Key](./key-created-copy.png)
 
-如果你走 Codex 或 Claude Code 的一键安装，不一定要手动复制 key。
+如果你走 Codex、Claude Code 或 Grok 的一键安装，不一定要手动复制 Key。
 
 更简单的方式是回到 API 密钥列表，找到这把 key，点击 `接入工具`：
 
 ![API Key 列表右侧的接入工具按钮](./connect-tool-button.png)
 
-1. 选择 `Codex` 或 `Claude Code`
+1. 选择与这把 Key 对应的工具，例如 `Codex`、`Claude Code` 或 `Grok`
 2. 选择你的系统
 3. 复制弹窗里的整条命令
 4. 打开你电脑的终端
@@ -133,7 +138,7 @@ Claude Code
 - 设置额度限制
 - 禁用或删除不再使用的 key
 
-不要把不同工具混在一把 key 里硬撑。分开创建，后面看记录会轻松很多。
+不要把不同工具混在一把 key 里硬撑。分开创建，后面看记录会轻松很多。`SorryCode Image2` 不走这里的一键安装入口，它会在自己的 Skill 页面说明如何保存 Image2 Key。
 
 ![API Key 列表里可以切换分组](./key-group-switch.png)
 

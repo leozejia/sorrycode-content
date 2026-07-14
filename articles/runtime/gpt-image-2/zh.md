@@ -47,6 +47,8 @@ group_order: 10
 POST https://sorrycode.com/v1/images/generations
 ```
 
+先创建或选择一把分配到 `gpt-image-2` 图片分组的 Image2 Key。不要使用 Grok 分组 Key。本页的 API 示例直接填写 Key，不要求设置环境变量。
+
 先创建 `request.json`。macOS / Linux：
 
 ```bash
@@ -87,9 +89,11 @@ $json = @'
 
 发送请求：
 
+把 `sk-replace-with-image2-group-key` 替换成你的 Image2 Key。
+
 ```bash
 curl -N https://sorrycode.com/v1/images/generations \
-  -H "Authorization: Bearer $SORRYCODE_API_KEY" \
+  -H "Authorization: Bearer sk-replace-with-image2-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json"
 ```
@@ -98,7 +102,7 @@ Windows PowerShell 使用 `curl.exe`：
 
 ```powershell
 curl.exe -N https://sorrycode.com/v1/images/generations `
-  -H "Authorization: Bearer $env:SORRYCODE_API_KEY" `
+  -H "Authorization: Bearer sk-replace-with-image2-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json"
 ```
@@ -118,7 +122,7 @@ curl.exe -N https://sorrycode.com/v1/images/generations `
 你可以把这句话交给 Codex 或 Claude Code：
 
 ```text
-请安装 SorryCode Image2，然后用 gpt-image-2 生成一张 1024x1024 的图片，保存到 outputs/images/first-run/。运行前先检查 SORRYCODE_API_KEY。
+请安装 SorryCode Image2，然后按 Skill 页面配置 Image2 Key。再用 gpt-image-2 生成一张 1024x1024 的图片，保存到 outputs/images/first-run/。
 ```
 
 <h2 id="errors">常见问题</h2>

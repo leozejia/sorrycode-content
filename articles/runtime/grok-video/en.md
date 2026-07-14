@@ -23,6 +23,10 @@ This page covers the three paths verified on SorryCode production:
 
 > Grok CLI's built-in `image_to_video` tool currently does not inherit the custom `base_url` from a SorryCode model. When using a SorryCode key, use the REST API on this page.
 
+<h2 id="prepare">Before You Start</h2>
+
+Create or select a Grok-group key at `https://sorrycode.com/keys`. Use the same Grok key to submit the job and poll the result. Do not use the Image2 key created for `SorryCode Image2`, and do not set an environment variable for this page.
+
 <h2 id="models">Choose a Model</h2>
 
 | Task | Model |
@@ -74,9 +78,11 @@ $json = @'
 
 Send the request and save the job response:
 
+Replace `sk-replace-with-grok-group-key` with your Grok-group key.
+
 ```bash
 curl -sS https://sorrycode.com/v1/videos/generations \
-  -H "Authorization: Bearer $SORRYCODE_API_KEY" \
+  -H "Authorization: Bearer sk-replace-with-grok-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json" \
   -o video-request.json
@@ -86,7 +92,7 @@ Windows PowerShell:
 
 ```powershell
 curl.exe -sS https://sorrycode.com/v1/videos/generations `
-  -H "Authorization: Bearer $env:SORRYCODE_API_KEY" `
+  -H "Authorization: Bearer sk-replace-with-grok-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json" `
   -o video-request.json
@@ -132,10 +138,12 @@ macOS / Linux:
 
 ```bash
 REQUEST_ID=$(jq -r '.request_id' video-request.json)
+STATUS="pending"
+TERMINAL=0
 
-while true; do
+for attempt in $(seq 1 60); do
   RESULT=$(curl -sS \
-    -H "Authorization: Bearer $SORRYCODE_API_KEY" \
+    -H "Authorization: Bearer sk-replace-with-grok-group-key" \
     "https://sorrycode.com/v1/videos/$REQUEST_ID")
 
   STATUS=$(printf '%s' "$RESULT" | jq -r '.status')
@@ -144,30 +152,50 @@ while true; do
   case "$STATUS" in
     done)
       printf '%s' "$RESULT" | jq -r '.video.url'
+      TERMINAL=1
       break
       ;;
     failed|expired)
       printf '%s' "$RESULT" | jq .
+      TERMINAL=1
       break
       ;;
   esac
 
   sleep 5
 done
+
+if [ "$TERMINAL" -eq 0 ]; then
+  printf 'Polling did not finish after 60 attempts. Continue later with the same request_id.\n' >&2
+fi
 ```
 
 Windows PowerShell:
 
 ```powershell
 $requestId = (Get-Content "video-request.json" -Raw | ConvertFrom-Json).request_id
+$result = $null
 
-do {
-  Start-Sleep -Seconds 5
+for ($attempt = 1; $attempt -le 60; $attempt++) {
   $result = curl.exe -sS `
-    -H "Authorization: Bearer $env:SORRYCODE_API_KEY" `
+    -H "Authorization: Bearer sk-replace-with-grok-group-key" `
     "https://sorrycode.com/v1/videos/$requestId" | ConvertFrom-Json
   $result.status
-} while ($result.status -eq "pending")
+
+  if ($result.status -in @("done", "failed", "expired")) {
+    break
+  }
+
+  if ($result.status -ne "pending") {
+    throw "Unexpected video status: $($result.status)"
+  }
+
+  Start-Sleep -Seconds 5
+}
+
+if ($null -eq $result -or $result.status -notin @("done", "failed", "expired")) {
+  throw "Polling did not finish after 60 attempts. Continue later with the same request_id."
+}
 
 if ($result.status -eq "done") {
   $result.video.url

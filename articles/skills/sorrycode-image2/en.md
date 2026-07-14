@@ -54,7 +54,9 @@ Before uninstalling, run `npx skills list --global` to confirm the name, then us
 
 <h2 id="api-key">Set the Image API Key</h2>
 
-The Skill reads `SORRYCODE_API_KEY`. If you do not have an API key, go to [Getting Started / Create API Key](/docs/start/create-api-key).
+First, use [Getting Started / Create API Key](/docs/start/create-api-key) to create a dedicated Image2 key and assign it to an image group that supports `gpt-image-2`. Do not use a Grok-group key.
+
+The Skill reads `SORRYCODE_API_KEY`. This is the configuration name used by `SorryCode Image2`, not a shared key for every SorryCode tool. Public REST API examples ask you to enter the matching group key directly. Only this Skill requires this environment variable.
 
 You can give this instruction to Codex or Claude Code:
 
@@ -75,7 +77,7 @@ echo "export SORRYCODE_API_KEY='your sk-...'" >> ~/.zshrc
 source ~/.zshrc
 ```
 
-This variable is only for SorryCode Image2. It does not change the Codex model configuration.
+This variable is only for SorryCode Image2. It does not change the Codex or Grok model configuration.
 
 <h2 id="first-prompt">First Prompt</h2>
 
@@ -116,8 +118,9 @@ The folder normally contains:
 
 <h2 id="common-issues">Common Issues</h2>
 
-- Missing `SORRYCODE_API_KEY`: create an API key, then reopen the workbench or terminal
-- `401`: the API key is wrong or was not set correctly
+- Missing `SORRYCODE_API_KEY`: create an Image2 key, then reopen the workbench or terminal
+- `401`: the Image2 key is wrong or was not set correctly
+- `403`: confirm that this key uses an image group with `gpt-image-2` access, not a Grok group
 - `400`: check the input image, prompt, size, and model; the model must be `gpt-image-2`
 - `524`: reduce the image size, shorten the prompt, or retry later
 - `503 No available compatible accounts`: the current API key cannot use the image model right now; check access or retry later
