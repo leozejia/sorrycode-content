@@ -216,6 +216,6 @@ Now you know why AI is different. But you probably have a follow-up question:
 
 The answer is in the next chapter: [Agent: From Chat to Work](/docs/concepts/what-is-agent)
 
-If you want to understand how these changes affect cost: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
+If you want to understand how these changes affect cost: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)
 
 If you want to start using an Agent right now: [Runtime / Codex](/docs/runtime/codex)

@@ -96,7 +96,7 @@ AI 的三个核心特点：
 
 很多时候 AI 没回几个字，但它读了大量的背景材料、历史对话、工具结果。那些也要算。
 
-更详细的解释，去看 [AI 成本怎么计算](/docs/platform/ai-cost-basics)。
+更详细的解释，去看 [AI 成本怎么计算](/docs/start/ai-cost-basics)。
 
 <h2 id="memory">它没有真正的记忆</h2>
 
@@ -220,6 +220,6 @@ AI 不神秘。
 
 答案在下一章：[为什么现在的 AI 不一样了](/docs/concepts/why-now)
 
-如果你想先理解成本：看 [Platform / AI 成本怎么计算](/docs/platform/ai-cost-basics)
+如果你想先理解成本：看 [开始使用 / AI 成本怎么计算](/docs/start/ai-cost-basics)
 
 如果你已经知道 AI 是什么，想直接开始用：看 [开始使用 / 第一次使用 SorryCode](/docs/start/first-step)

@@ -1,11 +1,11 @@
 ---
 title: How AI Cost Works
 slug: ai-cost-basics
-order: 2
+order: 5
 summary: Do not judge cost by visible reply length. Understand input, output, cache, and group multipliers before comparing model cost.
-section: platform
-section_title: Platform
-section_order: 8
+section: start
+section_title: Getting Started
+section_order: 1
 ---
 
 # How AI Cost Works
@@ -250,8 +250,8 @@ The multiplier is a price multiplier, not a speed multiplier.
 
 ## Next
 
-- Unsure whether SorryCode fits you: [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for)
-- Unsure how tools and models differ: [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
-- Ready to start: [Platform / Create API Key](/docs/platform/create-api-key)
+- Unsure whether SorryCode fits you: [Getting Started / Who SorryCode Is For](/docs/start/who-is-sorrycode-for)
+- Unsure how tools and models differ: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
+- Ready to start: [Getting Started / Create API Key](/docs/start/create-api-key)
 - GPT path: [Runtime / Codex](/docs/runtime/codex)
 - Claude path: [Runtime / Claude Code](/docs/runtime/claude-code)

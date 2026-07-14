@@ -35,7 +35,7 @@ group_order: 20
 
 参考：[Claude Code 官方文档](https://code.claude.com/docs/en/overview)
 
-> 小白先记住：`Claude Code` 是 runtime，不是模型。它默认适合 Claude / Anthropic-compatible 路径。不要为了追新 GPT 模型就把 `gpt-5.4` 直接塞进 Claude Code；缓存命中和 API 消耗可能很不划算。先看 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)。
+> 小白先记住：`Claude Code` 是 runtime，不是模型。它默认适合 Claude / Anthropic-compatible 路径。不要为了追新 GPT 模型就把 `gpt-5.4` 直接塞进 Claude Code；缓存命中和 API 消耗可能很不划算。先看 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)。
 
 <h2 id="prepare-api-key">先准备 API Key</h2>
 
@@ -48,7 +48,7 @@ group_order: 20
 
 快速入口是 `https://sorrycode.com/keys`，但更重要的是记住它在控制台里的位置。
 
-如果你还没做这一步，可以先看 [Platform / 创建 API Key](/docs/platform/create-api-key)。
+如果你还没做这一步，可以先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
 如果你也准备使用 Codex，建议另外创建一把 API Key 给 Codex。两把 key 仍然消耗同一份余额，但记录、分组和限额可以分开管理。
 
@@ -199,7 +199,7 @@ npm install -g @anthropic-ai/claude-code@latest
 
 如果你走的是一键安装，通常不用先手动打请求。
 
-只有在这些场景下，再回头看 [Platform / 首条请求](/docs/platform/first-request)：
+只有在这些场景下，再回头看 [开始使用 / 首条请求](/docs/start/first-request)：
 
 - 安装器最后的连通性检查失败了
 - 你想先确认 `API Key + Base URL + 网络` 这三层都通了
@@ -218,4 +218,4 @@ npm install -g @anthropic-ai/claude-code@latest
 - 下载慢或安装超时
   去看 [环境准备 / Node.js](/docs/environment/nodejs#network)
 - 不知道 API Key 去哪里建
-  去看 [Platform / 创建 API Key](/docs/platform/create-api-key)
+  去看 [开始使用 / 创建 API Key](/docs/start/create-api-key)

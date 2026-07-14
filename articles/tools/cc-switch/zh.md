@@ -37,7 +37,7 @@ section_order: 28
 ## 怎么接入 SorryCode
 
 1. 登录 SorryCode
-2. 去 [Platform / 创建 API Key](/docs/platform/create-api-key)
+2. 去 [开始使用 / 创建 API Key](/docs/start/create-api-key)
 3. 在 key 列表页点击「导入到 CCS」
 4. 或手动新建配置
 5. 填入你当前 runtime 所需的地址和密钥

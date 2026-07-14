@@ -1,11 +1,11 @@
 ---
 title: 首条请求
 slug: first-request
-order: 3
+order: 4
 summary: 用一条最小请求验证 API Key、Base URL 和网络链路都正常工作。
-section: platform
-section_title: Platform
-section_order: 8
+section: start
+section_title: 开始使用
+section_order: 1
 ---
 
 # 首条请求

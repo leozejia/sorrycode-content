@@ -1,11 +1,11 @@
 ---
 title: Create API Key
 slug: create-api-key
-order: 4
+order: 3
 summary: Understand what an API key is, then create separate sk-... keys for Codex, Claude Code, Skills, or other uses.
-section: platform
-section_title: Platform
-section_order: 8
+section: start
+section_title: Getting Started
+section_order: 1
 ---
 
 # Create API Key
@@ -147,10 +147,10 @@ Do not force every tool into one key. Separate keys make later usage records muc
 
 ## Next
 
-- Unsure whether SorryCode fits you: [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for)
-- Want to understand AI cost: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
+- Unsure whether SorryCode fits you: [Getting Started / Who SorryCode Is For](/docs/start/who-is-sorrycode-for)
+- Want to understand AI cost: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)
 - Want to start with Codex: [Runtime / Codex](/docs/runtime/codex)
 - Want to start with Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
-- Unsure how runtimes and models relate: [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
-- Want a minimal validation first: [Platform / First Request](/docs/platform/create-api-key)
+- Unsure how runtimes and models relate: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
+- Want a minimal validation first: [Getting Started / First Request](/docs/start/create-api-key)
 - Want less terminal work: [Tools / CC-Switch](/docs/tools/cc-switch)

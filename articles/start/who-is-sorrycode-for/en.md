@@ -1,11 +1,11 @@
 ---
 title: Who SorryCode Is For
 slug: who-is-sorrycode-for
-order: 1
+order: 2
 summary: Use one balance and separate API keys to try Codex, Claude Code, image generation, and Skills before committing to multiple subscriptions.
-section: platform
-section_title: Platform
-section_order: 8
+section: start
+section_title: Getting Started
+section_order: 1
 ---
 
 # Who SorryCode Is For
@@ -120,8 +120,8 @@ You do not need to write API requests on day one. Create the key you need, then 
 
 ## Next
 
-- Unsure where AI cost comes from: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
-- Unsure how tools and models differ: [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
-- Ready to start: [Platform / Create API Key](/docs/platform/create-api-key)
+- Unsure where AI cost comes from: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)
+- Unsure how tools and models differ: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
+- Ready to start: [Getting Started / Create API Key](/docs/start/create-api-key)
 - GPT path: [Runtime / Codex](/docs/runtime/codex)
 - Claude path: [Runtime / Claude Code](/docs/runtime/claude-code)

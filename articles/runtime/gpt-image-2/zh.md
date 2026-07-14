@@ -133,4 +133,4 @@ curl.exe -N https://sorrycode.com/v1/images/generations `
 
 - 还没接入 Codex：[模型与工作台 / Codex](/docs/runtime/codex)
 - 需要可复现工作流：[Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
-- 还没有 API Key：[Platform / 创建 API Key](/docs/platform/create-api-key)
+- 还没有 API Key：[开始使用 / 创建 API Key](/docs/start/create-api-key)

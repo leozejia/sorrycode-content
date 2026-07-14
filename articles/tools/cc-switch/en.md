@@ -37,7 +37,7 @@ CC-Switch is useful for consolidating:
 ## How to connect SorryCode
 
 1. Sign in to SorryCode
-2. Go to [Platform / Create API Key](/docs/platform/create-api-key)
+2. Go to [Getting Started / Create API Key](/docs/start/create-api-key)
 3. Click the CCS import action from the key list
 4. Or create the config manually
 5. Fill in the address and key required by your runtime

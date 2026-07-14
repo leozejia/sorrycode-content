@@ -194,6 +194,6 @@ if ($result.status -eq "done") {
 
 - 先生成一张输入图片：[模型与工作台 / Grok 图片生成](/docs/runtime/grok-image)
 - 使用 Grok 文字和搜索：[模型与工作台 / Grok](/docs/runtime/grok-cli)
-- 创建 API Key：[Platform / 创建 API Key](/docs/platform/create-api-key)
+- 创建 API Key：[开始使用 / 创建 API Key](/docs/start/create-api-key)
 
 上游能力参考：[xAI Image-to-Video](https://docs.x.ai/developers/model-capabilities/video/image-to-video)

@@ -35,7 +35,7 @@ For a first setup, you do not need to understand `config.toml`, `auth.json`, or 
 
 Reference: [OpenAI Codex official repository](https://github.com/openai/codex)
 
-> Beginner rule: `Codex` is a runtime, not a model. It is the default fit for GPT / OpenAI-compatible paths. Do not put Claude models into Codex casually; if you are unsure, read [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform).
+> Beginner rule: `Codex` is a runtime, not a model. It is the default fit for GPT / OpenAI-compatible paths. Do not put Claude models into Codex casually; if you are unsure, read [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform).
 
 <h2 id="prepare-api-key">Prepare the API Key First</h2>
 
@@ -48,7 +48,7 @@ The install command needs to be tied to your API key, so do this first:
 
 The quick link is `https://sorrycode.com/keys`, but the more important thing is knowing where this page sits inside the console.
 
-If you have not done this yet, start with [Platform / Create API Key](/docs/platform/create-api-key).
+If you have not done this yet, start with [Getting Started / Create API Key](/docs/start/create-api-key).
 
 If you also plan to use Claude Code, create a separate API key for Claude Code. Both keys still use the same balance, but usage records, group switching, spending limits, and troubleshooting become clearer.
 
@@ -155,7 +155,7 @@ If Codex has not yet built in the newest released model name, start it with an e
 codex -m gpt-5.5
 ```
 
-`gpt-5.5` is only an example. Use the models currently available in [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform) and your console.
+`gpt-5.5` is only an example. Use the models currently available in [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform) and your console.
 
 <h2 id="first-prompt">What to Say First</h2>
 
@@ -236,7 +236,7 @@ requires_openai_auth = true
 
 If you used one-click install, you usually do not need to send a manual request first.
 
-Go to [Platform / First Request](/docs/platform/first-request) only when:
+Go to [Getting Started / First Request](/docs/start/first-request) only when:
 
 - the installer's final connectivity check failed
 - you want to verify `API Key + Base URL + network` directly
@@ -253,4 +253,4 @@ Go to [Platform / First Request](/docs/platform/first-request) only when:
 - slow downloads or installer timeouts
   go to [Environment / Node.js](/docs/environment/nodejs#network)
 - not sure where to create the API key
-  go to [Platform / Create API Key](/docs/platform/create-api-key)
+  go to [Getting Started / Create API Key](/docs/start/create-api-key)

@@ -56,7 +56,7 @@ npx skills add linxiverse/sorrycode-image2 -a claude-code -g -y
 
 <h2 id="api-key">设置图片 API Key</h2>
 
-Skill 读取 `SORRYCODE_API_KEY`。如果还没有 API Key，先去 [Platform / 创建 API Key](/docs/platform/create-api-key)。
+Skill 读取 `SORRYCODE_API_KEY`。如果还没有 API Key，先去 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
 你可以把下面这句话交给 Codex 或 Claude Code：
 

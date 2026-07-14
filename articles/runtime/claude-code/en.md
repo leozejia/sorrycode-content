@@ -35,7 +35,7 @@ For a first setup, you do not need to understand `settings.json` or env vars up 
 
 Reference: [Claude Code official docs](https://code.claude.com/docs/en/overview)
 
-> Beginner rule: `Claude Code` is a runtime, not a model. It is the default fit for Claude / Anthropic-compatible paths. Do not put `gpt-5.4` into Claude Code just to chase a new GPT model; cache hit rate and API usage can become inefficient. Read [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform).
+> Beginner rule: `Claude Code` is a runtime, not a model. It is the default fit for Claude / Anthropic-compatible paths. Do not put `gpt-5.4` into Claude Code just to chase a new GPT model; cache hit rate and API usage can become inefficient. Read [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform).
 
 <h2 id="prepare-api-key">Prepare the API Key First</h2>
 
@@ -48,7 +48,7 @@ The install command needs to be tied to your API key, so do this first:
 
 The quick link is `https://sorrycode.com/keys`, but the more important thing is knowing where this page sits inside the console.
 
-If you have not done this yet, start with [Platform / Create API Key](/docs/platform/create-api-key).
+If you have not done this yet, start with [Getting Started / Create API Key](/docs/start/create-api-key).
 
 If you also plan to use Codex, create a separate API key for Codex. Both keys still use the same balance, but usage records, group switching, spending limits, and troubleshooting become clearer.
 
@@ -199,7 +199,7 @@ One detail matters here:
 
 If you used one-click install, you usually do not need to send a manual request first.
 
-Go to [Platform / First Request](/docs/platform/first-request) only when:
+Go to [Getting Started / First Request](/docs/start/first-request) only when:
 
 - the installer's final connectivity check failed
 - you want to verify `API Key + Base URL + network` directly
@@ -218,4 +218,4 @@ Go to [Platform / First Request](/docs/platform/first-request) only when:
 - slow downloads or installer timeouts
   go to [Environment / Node.js](/docs/environment/nodejs#network)
 - not sure where to create the API key
-  go to [Platform / Create API Key](/docs/platform/create-api-key)
+  go to [Getting Started / Create API Key](/docs/start/create-api-key)

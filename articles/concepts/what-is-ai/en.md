@@ -94,7 +94,7 @@ The words you see ≠ the words AI processed
 
 AI often produces a short reply after reading a mountain of background material, conversation history, and tool outputs. Those all count.
 
-For a deeper explanation, see [How AI Cost Works](/docs/platform/ai-cost-basics).
+For a deeper explanation, see [How AI Cost Works](/docs/start/ai-cost-basics).
 
 <h2 id="memory">It Has No Real Memory</h2>
 
@@ -219,6 +219,6 @@ Now you know what AI is. But you probably have one more question:
 
 The answer is in the next chapter: [Why AI Is Different Now](/docs/concepts/why-now)
 
-If you want to understand costs first: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
+If you want to understand costs first: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)
 
 If you already know what AI is and want to start using it: [Getting Started / First Time Using SorryCode](/docs/start/first-step)

@@ -54,7 +54,7 @@ Before uninstalling, run `npx skills list --global` to confirm the name, then us
 
 <h2 id="api-key">Set the Image API Key</h2>
 
-The Skill reads `SORRYCODE_API_KEY`. If you do not have an API key, go to [Platform / Create API Key](/docs/platform/create-api-key).
+The Skill reads `SORRYCODE_API_KEY`. If you do not have an API key, go to [Getting Started / Create API Key](/docs/start/create-api-key).
 
 You can give this instruction to Codex or Claude Code:
 

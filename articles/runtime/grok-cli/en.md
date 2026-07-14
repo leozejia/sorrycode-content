@@ -35,7 +35,7 @@ For a first setup, you do not need to understand `~/.grok/config.toml` or env va
 
 Reference: [xAI Grok official installer](https://x.ai/cli/install.sh)
 
-> Beginner rule: `Grok` is a runtime, not a model. It is the default fit for Grok / xAI-compatible paths. Do not put GPT or Claude models into Grok casually; if you are unsure, read [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform).
+> Beginner rule: `Grok` is a runtime, not a model. It is the default fit for Grok / xAI-compatible paths. Do not put GPT or Claude models into Grok casually; if you are unsure, read [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform).
 
 <h2 id="prepare-api-key">Prepare the API Key First</h2>
 
@@ -49,7 +49,7 @@ The install command needs to be tied to your API key, so do this first:
 
 The quick link is `https://sorrycode.com/keys`, but the more important thing is knowing where this page sits inside the console.
 
-If you have not done this yet, start with [Platform / Create API Key](/docs/platform/create-api-key).
+If you have not done this yet, start with [Getting Started / Create API Key](/docs/start/create-api-key).
 
 If you also plan to use Codex or Claude Code, create separate API keys for them. Multiple keys still use the same balance, but usage records, group switching, spending limits, and troubleshooting become clearer.
 
@@ -241,7 +241,7 @@ That means:
 
 If you used one-click install, you usually do not need to send a manual request first.
 
-Go to [Platform / First Request](/docs/platform/first-request) only when:
+Go to [Getting Started / First Request](/docs/start/first-request) only when:
 
 - `grok` cannot respond normally after install
 - you want to verify `API Key + Base URL + network` directly
@@ -254,9 +254,9 @@ Go to [Platform / First Request](/docs/platform/first-request) only when:
 - `401 / 404 / 429`
   go to [Troubleshoot / Common Questions](/docs/troubleshoot/common-errors)
 - not sure where to create the API key
-  go to [Platform / Create API Key](/docs/platform/create-api-key)
+  go to [Getting Started / Create API Key](/docs/start/create-api-key)
 - not sure how to choose between Grok, Codex, and Claude Code
-  go to [Platform / Tools Are Not Models](/docs/concepts/tools-models-platform)
+  go to [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - built-in image or video tools report `Incorrect API key provided`
   the text configuration is still valid; use [Grok Image Generation](/docs/runtime/grok-image) or
   [Grok Video Generation](/docs/runtime/grok-video)

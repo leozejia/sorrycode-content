@@ -1,11 +1,11 @@
 ---
 title: SorryCode 适合谁
 slug: who-is-sorrycode-for
-order: 1
+order: 2
 summary: 如果你想用一份余额体验 Codex、Claude Code、图片生成和 Skills，而不是先订阅多个产品，先看这页。
-section: platform
-section_title: Platform
-section_order: 8
+section: start
+section_title: 开始使用
+section_order: 1
 ---
 
 # SorryCode 适合谁
@@ -122,8 +122,8 @@ API Key = 让工具使用你 SorryCode 余额的钥匙
 
 ## 下一步
 
-- 不知道 AI 钱花在哪里：看 [Platform / AI 成本怎么计算](/docs/platform/ai-cost-basics)
-- 不知道工具和模型怎么分：看 [Platform / 工具不是模型](/docs/concepts/tools-models-platform)
-- 已经决定开始：看 [Platform / 创建 API Key](/docs/platform/create-api-key)
+- 不知道 AI 钱花在哪里：看 [开始使用 / AI 成本怎么计算](/docs/start/ai-cost-basics)
+- 不知道工具和模型怎么分：看 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)
+- 已经决定开始：看 [开始使用 / 创建 API Key](/docs/start/create-api-key)
 - 想直接走 GPT 路径：看 [Runtime / Codex](/docs/runtime/codex)
 - 想直接走 Claude 路径：看 [Runtime / Claude Code](/docs/runtime/claude-code)

@@ -37,7 +37,7 @@ API Key 在 SorryCode 控制台创建：
 
 创建后你会得到一个 `sk-...` 开头的 Key。后面填配置时会用到。
 
-如果你还不知道怎么创建 API Key，先看 [Platform / 创建 API Key](/docs/platform/create-api-key)。
+如果你还不知道怎么创建 API Key，先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
 <h2 id="macos">macOS 配置步骤</h2>
 
@@ -254,7 +254,7 @@ Help → Troubleshooting → Enable Developer Mode
 3. SorryCode 账号是否有可用余额或权限
 4. 当前网络是否能访问 SorryCode
 
-如果你不确定是哪一层出问题，可以先看 [排障 / 常见问题](/docs/platform/create-api-key)。
+如果你不确定是哪一层出问题，可以先看 [排障 / 常见问题](/docs/start/create-api-key)。
 
 ### Code 页面不能按预期工作
 

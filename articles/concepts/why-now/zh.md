@@ -215,6 +215,6 @@ AI 变了，不是因为某一个模型变聪明了。
 
 答案在下一章：[Agent：从聊天到干活](/docs/concepts/what-is-agent)
 
-如果你想理解这些变化对成本有什么影响：看 [Platform / AI 成本怎么计算](/docs/platform/ai-cost-basics)
+如果你想理解这些变化对成本有什么影响：看 [开始使用 / AI 成本怎么计算](/docs/start/ai-cost-basics)
 
 如果你想直接开始用 Agent：看 [Runtime / Codex](/docs/runtime/codex)

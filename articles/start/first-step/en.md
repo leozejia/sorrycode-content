@@ -24,7 +24,7 @@ The mental model:
 one balance + separate API keys by tool + multiple AI tool entries
 ```
 
-Not sure if this fits you? [Who SorryCode Is For](/docs/platform/who-is-sorrycode-for). Want to understand costs? [How AI Cost Works](/docs/platform/ai-cost-basics).
+Not sure if this fits you? [Who SorryCode Is For](/docs/start/who-is-sorrycode-for). Want to understand costs? [How AI Cost Works](/docs/start/ai-cost-basics).
 
 <h2 id="step-1">Step 1: Create an API Key</h2>
 
@@ -41,7 +41,7 @@ An API Key is your access card. Without it, tools cannot reach SorryCode.
 
 Recommend creating separate keys for Codex and Claude Code. Balance is shared, but records are separate for easier management and troubleshooting.
 
-If you hit issues during creation, see [Create API Key](/docs/platform/create-api-key) for detailed instructions.
+If you hit issues during creation, see [Create API Key](/docs/start/create-api-key) for detailed instructions.
 
 <h2 id="step-2">Step 2: Choose and Install a Workbench</h2>
 
@@ -211,7 +211,7 @@ Follow your goal:
 
 - [Core Concepts / What AI Actually Is](/docs/concepts/what-is-ai) - Understand AI from scratch
 - [Make AI Remember](/docs/agent-memory/overview) - Long-term context management
-- [How AI Cost Works](/docs/platform/ai-cost-basics) - Understand billing
+- [How AI Cost Works](/docs/start/ai-cost-basics) - Understand billing
 
 ### Hit Issues
 

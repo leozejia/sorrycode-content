@@ -132,4 +132,4 @@ Install SorryCode Image2, then use gpt-image-2 to generate a 1024x1024 image and
 
 - Set up Codex: [Models & Runtimes / Codex](/docs/runtime/codex)
 - Use a reproducible workflow: [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
-- Create an API key: [Platform / Create API Key](/docs/platform/create-api-key)
+- Create an API key: [Getting Started / Create API Key](/docs/start/create-api-key)

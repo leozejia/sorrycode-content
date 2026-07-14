@@ -172,4 +172,4 @@ Path B: Go to [Getting Started / First Time Using SorryCode](/docs/start/first-s
 
 Path C: Go to [Agent Advanced](/docs/agent-memory/overview). Learn how to establish project rules.
 
-If you're still unsure whether SorryCode is right for you: [Platform / Who SorryCode Is For](/docs/platform/who-is-sorrycode-for)
+If you're still unsure whether SorryCode is right for you: [Getting Started / Who SorryCode Is For](/docs/start/who-is-sorrycode-for)

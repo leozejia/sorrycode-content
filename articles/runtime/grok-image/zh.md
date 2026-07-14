@@ -25,7 +25,7 @@ Grok 分组的 SorryCode API Key。
 2. 确认这把 Key 使用 Grok 分组。
 3. 把 Key 保存到 `SORRYCODE_API_KEY` 环境变量。
 
-如果你还没有 Key，先看 [Platform / 创建 API Key](/docs/platform/create-api-key)。
+如果你还没有 Key，先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
 <h2 id="models">选择模型</h2>
 
@@ -133,6 +133,6 @@ SorryCode 的 Grok 一键安装会配置文字对话、Responses 和搜索所需
 
 - 使用 Grok 文字和搜索：[模型与工作台 / Grok](/docs/runtime/grok-cli)
 - 生成或动画化视频：[模型与工作台 / Grok 视频生成](/docs/runtime/grok-video)
-- 创建 API Key：[Platform / 创建 API Key](/docs/platform/create-api-key)
+- 创建 API Key：[开始使用 / 创建 API Key](/docs/start/create-api-key)
 
 上游能力参考：[xAI Image Generation](https://docs.x.ai/developers/model-capabilities/images/generation)

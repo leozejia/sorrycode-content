@@ -143,7 +143,7 @@ If it's outdated or wrong → clear it.
 
 <h2 id="cost">Context Also Affects Cost</h2>
 
-Remember what [How AI Cost Works](/docs/platform/ai-cost-basics) covered?
+Remember what [How AI Cost Works](/docs/start/ai-cost-basics) covered?
 
 AI consumption breaks down into three categories: input (what it reads), output (what it generates), cache (what it reuses).
 
@@ -174,4 +174,4 @@ Next chapter: [When to Trust AI and When Not To](/docs/concepts/calibration)
 
 For a deep dive on long-term context management: [Agent Advanced / How to Manage Long-Lived Context](/docs/agent-memory/context-management)
 
-For understanding how context affects cost: [Platform / How AI Cost Works](/docs/platform/ai-cost-basics)
+For understanding how context affects cost: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)

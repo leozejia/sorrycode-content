@@ -37,7 +37,7 @@ Create your API key in the SorryCode console:
 
 After creating the key, you will get an `sk-...` value. Keep it nearby for the configuration step.
 
-If you have not created an API key yet, read [Platform / Create API Key](/docs/platform/create-api-key) first.
+If you have not created an API key yet, read [Getting Started / Create API Key](/docs/start/create-api-key) first.
 
 <h2 id="macos">macOS Setup</h2>
 
@@ -254,7 +254,7 @@ Check these first:
 3. does the SorryCode account have available balance or permission?
 4. can your current network reach SorryCode?
 
-If you are not sure which layer failed, read [Troubleshoot / Common Errors](/docs/platform/create-api-key).
+If you are not sure which layer failed, read [Troubleshoot / Common Errors](/docs/start/create-api-key).
 
 ### Code View Does Not Behave As Expected
 

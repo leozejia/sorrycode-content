@@ -192,6 +192,6 @@ Keep waiting while the status is `pending`. Read `video.url` when it becomes `do
 
 - Generate a source image: [Models & Runtimes / Grok Image Generation](/docs/runtime/grok-image)
 - Use Grok for text and search: [Models & Runtimes / Grok](/docs/runtime/grok-cli)
-- Create an API key: [Platform / Create API Key](/docs/platform/create-api-key)
+- Create an API key: [Getting Started / Create API Key](/docs/start/create-api-key)
 
 Upstream capability reference: [xAI Image-to-Video](https://docs.x.ai/developers/model-capabilities/video/image-to-video)

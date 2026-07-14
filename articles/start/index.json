@@ -5,12 +5,16 @@
     "en": "Getting Started",
     "zh": "开始使用"
   },
-  "updatedAt": "2026-07-10",
+  "updatedAt": "2026-07-14",
   "navigation": {
     "style": "flat",
     "groups": []
   },
   "articles": [
-    "first-step"
+    "first-step",
+    "who-is-sorrycode-for",
+    "create-api-key",
+    "first-request",
+    "ai-cost-basics"
   ]
 }

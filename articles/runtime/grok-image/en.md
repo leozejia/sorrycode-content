@@ -23,7 +23,7 @@ Use Grok image generation through the REST API. You do not need an official xAI 
 2. Make sure the key uses a Grok group.
 3. Store the key in the `SORRYCODE_API_KEY` environment variable.
 
-If you do not have a key yet, read [Platform / Create API Key](/docs/platform/create-api-key).
+If you do not have a key yet, read [Getting Started / Create API Key](/docs/start/create-api-key).
 
 <h2 id="models">Choose a Model</h2>
 
@@ -130,6 +130,6 @@ Reinstalling Grok does not change this boundary. Use
 
 - Use Grok for text and search: [Models & Runtimes / Grok](/docs/runtime/grok-cli)
 - Generate or animate video: [Models & Runtimes / Grok Video Generation](/docs/runtime/grok-video)
-- Create an API key: [Platform / Create API Key](/docs/platform/create-api-key)
+- Create an API key: [Getting Started / Create API Key](/docs/start/create-api-key)
 
 Upstream capability reference: [xAI Image Generation](https://docs.x.ai/developers/model-capabilities/images/generation)
