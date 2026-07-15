@@ -110,13 +110,23 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 `articles/runtime/` 的公开展示名是“模型与工作台 / Models & Runtimes”，URL 继续保持
 `/docs/runtime/*`。导航按供应商生态组织：
 
-- OpenAI：Codex、GPT Image 2；
-- Anthropic：Claude Code、Claude Desktop；
+- OpenAI：Codex、GPT-5.6 Sol、GPT Image 2；
+- Anthropic：Claude Code、Claude Fable 5、Claude Desktop；
 - xAI：Grok、Grok 图片生成、Grok 视频生成；
 - 通用：Plugins 与 Skills。
 
 不要创建没有实际文章的空供应商分组。新增供应商页面时，先确认用户入口、模型、
 接口和生产验证，再加入导航。
+
+模型使用页只承接当前模型的选择、参数、提示方法和验证边界，不重复 runtime 的安装步骤：
+
+- `GPT-5.6 Sol 怎么用`：解释模型定位、reasoning effort、精简提示词、工具调用和长上下文边界；
+- `Claude Fable 5 怎么用`：解释模型定位、effort、长程任务、自治边界、子 Agent 和旧规则迁移；
+- 安装、API Key 和 Base URL 继续由 `Codex`、`Claude Code` 和 `首条请求` 页面负责。
+
+`Agent 基建 / 强模型的项目规则怎么写` 负责审计 `AGENTS.md`、`CLAUDE.md` 和常驻 Skills。
+它不重复基础规则文件和 Skills 教程，只讲强模型下哪些规则应保留、哪些规则需要用同一组
+代表性任务逐批删减。
 
 图片能力按供应商页面维护，不在“开始使用”中另建图片总览：
 

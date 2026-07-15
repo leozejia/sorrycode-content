@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-07-14",
+  "updatedAt": "2026-07-15",
   "articles": [
     {
       "type": "article",
@@ -446,6 +446,36 @@
       "section": "runtime",
       "sectionTitle": "Models & Runtimes",
       "sectionOrder": 10,
+      "slug": "gpt-5-6-sol",
+      "locale": "en",
+      "title": "How to Use GPT-5.6 Sol",
+      "summary": "Use GPT-5.6 Sol for complex professional work, choose reasoning effort intentionally, and validate leaner prompts on representative tasks.",
+      "order": 2,
+      "updatedAt": "2026-07-15",
+      "markdownPath": "articles/runtime/gpt-5-6-sol/en.md",
+      "assetBaseUrl": "articles/runtime/gpt-5-6-sol/",
+      "route": "/docs/runtime/gpt-5-6-sol"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "模型与工作台",
+      "sectionOrder": 10,
+      "slug": "gpt-5-6-sol",
+      "locale": "zh",
+      "title": "GPT-5.6 Sol 怎么用",
+      "summary": "用 GPT-5.6 Sol 处理复杂专业任务，正确选择 reasoning effort，并用代表性任务验证精简提示词的效果。",
+      "order": 2,
+      "updatedAt": "2026-07-15",
+      "markdownPath": "articles/runtime/gpt-5-6-sol/zh.md",
+      "assetBaseUrl": "articles/runtime/gpt-5-6-sol/",
+      "route": "/docs/runtime/gpt-5-6-sol"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Models & Runtimes",
+      "sectionOrder": 10,
       "slug": "claude-code",
       "locale": "en",
       "title": "Claude Code",
@@ -470,6 +500,36 @@
       "markdownPath": "articles/runtime/claude-code/zh.md",
       "assetBaseUrl": "articles/runtime/claude-code/",
       "route": "/docs/runtime/claude-code"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Models & Runtimes",
+      "sectionOrder": 10,
+      "slug": "claude-fable-5",
+      "locale": "en",
+      "title": "How to Use Claude Fable 5",
+      "summary": "Use Claude Fable 5 for difficult long-running work, choose effort intentionally, and review prompts and Skills written for older models.",
+      "order": 2,
+      "updatedAt": "2026-07-15",
+      "markdownPath": "articles/runtime/claude-fable-5/en.md",
+      "assetBaseUrl": "articles/runtime/claude-fable-5/",
+      "route": "/docs/runtime/claude-fable-5"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "模型与工作台",
+      "sectionOrder": 10,
+      "slug": "claude-fable-5",
+      "locale": "zh",
+      "title": "Claude Fable 5 怎么用",
+      "summary": "用 Claude Fable 5 处理长程复杂任务，正确选择 effort，并重新审查为旧模型编写的提示词和 Skills。",
+      "order": 2,
+      "updatedAt": "2026-07-15",
+      "markdownPath": "articles/runtime/claude-fable-5/zh.md",
+      "assetBaseUrl": "articles/runtime/claude-fable-5/",
+      "route": "/docs/runtime/claude-fable-5"
     },
     {
       "type": "article",
@@ -1522,6 +1582,36 @@
       "markdownPath": "articles/agent-memory/remember-skills/zh.md",
       "assetBaseUrl": "articles/agent-memory/remember-skills/",
       "route": "/docs/agent-memory/remember-skills"
+    },
+    {
+      "type": "article",
+      "section": "agent-memory",
+      "sectionTitle": "Make AI Remember",
+      "sectionOrder": 15,
+      "slug": "strong-model-project-rules",
+      "locale": "en",
+      "title": "How to Write Project Rules for Strong Models",
+      "summary": "Audit AGENTS.md, CLAUDE.md, and always-on Skills. Keep project facts, permissions, and verification while testing the removal of older-model constraints.",
+      "order": 6,
+      "updatedAt": "2026-07-15",
+      "markdownPath": "articles/agent-memory/strong-model-project-rules/en.md",
+      "assetBaseUrl": "articles/agent-memory/strong-model-project-rules/",
+      "route": "/docs/agent-memory/strong-model-project-rules"
+    },
+    {
+      "type": "article",
+      "section": "agent-memory",
+      "sectionTitle": "让 AI 记住你的要求",
+      "sectionOrder": 15,
+      "slug": "strong-model-project-rules",
+      "locale": "zh",
+      "title": "强模型的项目规则怎么写",
+      "summary": "审计 AGENTS.md、CLAUDE.md 和常驻 Skills，保留项目事实、权限与验证，逐批删除为旧模型留下的重复约束。",
+      "order": 6,
+      "updatedAt": "2026-07-15",
+      "markdownPath": "articles/agent-memory/strong-model-project-rules/zh.md",
+      "assetBaseUrl": "articles/agent-memory/strong-model-project-rules/",
+      "route": "/docs/agent-memory/strong-model-project-rules"
     }
   ]
 }

@@ -5,19 +5,19 @@
     "en": "Models & Runtimes",
     "zh": "模型与工作台"
   },
-  "updatedAt": "2026-07-14",
+  "updatedAt": "2026-07-15",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
       {
         "id": "openai",
         "title": { "en": "OpenAI", "zh": "OpenAI" },
-        "items": ["codex", "gpt-image-2"]
+        "items": ["codex", "gpt-5-6-sol", "gpt-image-2"]
       },
       {
         "id": "anthropic",
         "title": { "en": "Anthropic", "zh": "Anthropic" },
-        "items": ["claude-code", "claude-desktop"]
+        "items": ["claude-code", "claude-fable-5", "claude-desktop"]
       },
       {
         "id": "xai",
@@ -33,8 +33,10 @@
   },
   "articles": [
     "codex",
+    "gpt-5-6-sol",
     "gpt-image-2",
     "claude-code",
+    "claude-fable-5",
     "claude-desktop",
     "grok-cli",
     "grok-image",
