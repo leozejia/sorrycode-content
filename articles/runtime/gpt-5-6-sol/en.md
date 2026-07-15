@@ -62,29 +62,30 @@ Finish the work that is already in scope before reporting the result. Label unve
 
 <h2 id="reasoning-effort">Choose a Reasoning Effort</h2>
 
-GPT-5.6 supports `none`, `low`, `medium`, `high`, `xhigh`, and `max`.
+When you use GPT-5.6 Sol in Codex, the common choices are `low`, `medium`, `high`, `xhigh`, `max`, and `ultra`. Some interfaces label `low` and `xhigh` as Light and Extra High.
 
 | Level | Good fit |
 | --- | --- |
-| `none` | A latency baseline for work that does not need reasoning or tools |
 | `low` | Latency-sensitive work with clear boundaries |
 | `medium` | Balanced default starting point |
 | `high` / `xhigh` | More reasoning produces a measured quality gain |
 | `max` | The hardest quality-first work where latency and cost are acceptable |
+| `ultra` | Max reasoning depth plus parallel subagent work for divisible tasks |
 
 When migrating from an older model, preserve the current effort as a baseline, then compare the same level with one level lower. GPT-5.6 can keep or improve quality at a lower effort because it uses tokens more efficiently.
 
-<h2 id="max-pro-ultra">Max, Pro, and Ultra Are Different Controls</h2>
+<h2 id="max-ultra">Choose Between Max and Ultra</h2>
 
-| Name | What it controls |
+| Level | What it controls |
 | --- | --- |
-| `max` | Reasoning effort for one GPT-5.6 instance |
-| Pro mode | More model work from the same GPT-5.6 model, enabled with `reasoning.mode: "pro"` in the API |
-| Ultra | A multi-agent setting in Codex that coordinates four agents by default |
+| `max` | Gives the selected model more time to reason about one task |
+| `ultra` | Uses Max reasoning depth and adds proactive subagent collaboration |
 
-Ultra is not a `reasoning.effort` level, and it is not a model called `gpt-5.6-sol-ultra`. The OpenAI API provides a multi-agent beta for building Ultra-like experiences. Whether Ultra appears directly depends on the current client and account.
+Ultra is best understood as the multi-agent upgrade to Max. A single agent does not reason more deeply than Max. The additional capability comes from splitting suitable work and running subagents in parallel. Use Ultra for a large task with meaningful independent workstreams. Use Max when the problem cannot be divided effectively.
 
-Do not ask the prompt to "use Pro" or "think harder." Choose the runtime mode in product settings or API parameters. Keep the prompt focused on the goal, context, constraints, evidence, and output format.
+Ultra is not a separate model called `gpt-5.6-sol-ultra`. The OpenAI API provides a multi-agent beta for building Ultra-like experiences. Codex users should follow the choices currently shown in their model picker.
+
+Do not ask the prompt to "think harder." Choose the level in the Codex model picker. Keep the prompt focused on the goal, context, constraints, evidence, and output format.
 
 <h2 id="lean-prompts">Test Leaner Prompts With a Baseline</h2>
 
