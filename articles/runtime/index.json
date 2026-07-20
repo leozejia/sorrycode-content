@@ -5,7 +5,7 @@
     "en": "Models & Runtimes",
     "zh": "模型与工作台"
   },
-  "updatedAt": "2026-07-15",
+  "updatedAt": "2026-07-20",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
@@ -18,6 +18,11 @@
         "id": "anthropic",
         "title": { "en": "Anthropic", "zh": "Anthropic" },
         "items": ["claude-code", "claude-fable-5", "claude-desktop"]
+      },
+      {
+        "id": "kimi",
+        "title": { "en": "Kimi", "zh": "Kimi" },
+        "items": ["kimi-code"]
       },
       {
         "id": "xai",
@@ -38,6 +43,7 @@
     "claude-code",
     "claude-fable-5",
     "claude-desktop",
+    "kimi-code",
     "grok-cli",
     "grok-image",
     "grok-video",

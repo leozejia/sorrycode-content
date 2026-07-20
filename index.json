@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-07-15",
+  "updatedAt": "2026-07-20",
   "articles": [
     {
       "type": "article",
@@ -560,6 +560,36 @@
       "markdownPath": "articles/runtime/claude-desktop/zh.md",
       "assetBaseUrl": "articles/runtime/claude-desktop/",
       "route": "/docs/runtime/claude-desktop"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Models & Runtimes",
+      "sectionOrder": 10,
+      "slug": "kimi-code",
+      "locale": "en",
+      "title": "Kimi Code",
+      "summary": "Configure Kimi Code with a SorryCode Kimi-group API key and use K3 or another Kimi model available to that key.",
+      "order": 1,
+      "updatedAt": "2026-07-20",
+      "markdownPath": "articles/runtime/kimi-code/en.md",
+      "assetBaseUrl": "articles/runtime/kimi-code/",
+      "route": "/docs/runtime/kimi-code"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "模型与工作台",
+      "sectionOrder": 10,
+      "slug": "kimi-code",
+      "locale": "zh",
+      "title": "Kimi Code",
+      "summary": "为 Kimi Code 配置 SorryCode Kimi 分组 Key，使用 K3 或分组内的其他 Kimi 模型。",
+      "order": 1,
+      "updatedAt": "2026-07-20",
+      "markdownPath": "articles/runtime/kimi-code/zh.md",
+      "assetBaseUrl": "articles/runtime/kimi-code/",
+      "route": "/docs/runtime/kimi-code"
     },
     {
       "type": "article",
