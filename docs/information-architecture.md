@@ -133,6 +133,9 @@ WorkBuddy 首批只维护三条经过当前桌面版验证的路径：
 公开主路径；`~/.workbuddy/models.json` 只作为本地存储事实和排障入口，不作为默认配置
 教程。
 
+WorkBuddy 的证据等级、版本漂移点、验证矩阵和后续选题门槛统一见
+`docs/workbuddy-content-strategy.md`，不要在总 IA 重复维护专题细节。
+
 模型使用页只承接当前模型的选择、参数、提示方法和验证边界，不重复 runtime 的安装步骤：
 
 - `GPT-5.6 Sol 怎么用`：解释模型定位、reasoning effort、精简提示词、工具调用和长上下文边界；

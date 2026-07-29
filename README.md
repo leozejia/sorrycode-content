@@ -66,6 +66,7 @@ For major content restructuring, read these first:
 2. `docs/information-architecture.md`
 3. If adding covers or article screenshots, read `docs/public-article-assets.md`
 4. Any relevant topic strategy, such as `docs/presentation-skills-strategy.md`
+5. For WorkBuddy content, read `docs/workbuddy-content-strategy.md`
 
 If a public name, slug, directory path, category, or route is conceptually wrong, restructure it with a hard cut. Do not keep old paths just for compatibility.
 
