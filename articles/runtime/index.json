@@ -5,7 +5,7 @@
     "en": "Models & Runtimes",
     "zh": "模型与工作台"
   },
-  "updatedAt": "2026-07-20",
+  "updatedAt": "2026-07-29",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
@@ -23,6 +23,11 @@
         "id": "kimi",
         "title": { "en": "Kimi", "zh": "Kimi" },
         "items": ["kimi-code"]
+      },
+      {
+        "id": "tencent",
+        "title": { "en": "Tencent", "zh": "Tencent" },
+        "items": ["workbuddy", "workbuddy-sorrycode", "workbuddy-permissions"]
       },
       {
         "id": "xai",
@@ -44,6 +49,9 @@
     "claude-fable-5",
     "claude-desktop",
     "kimi-code",
+    "workbuddy",
+    "workbuddy-sorrycode",
+    "workbuddy-permissions",
     "grok-cli",
     "grok-image",
     "grok-video",

@@ -1,6 +1,6 @@
 # SorryCode Content IA
 
-更新时间：2026-07-14
+更新时间：2026-07-29
 
 这份文档定义 `sorrycode-content` 的内容维护边界。它是内容团队内部文档，不进入线上 docs。
 
@@ -113,11 +113,25 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 - OpenAI：Codex、GPT-5.6 Sol、GPT Image 2；
 - Anthropic：Claude Code、Claude Fable 5、Claude Desktop；
 - Kimi：Kimi Code；
+- Tencent：WorkBuddy 快速开始、WorkBuddy 接入 SorryCode、WorkBuddy 的权限与工作空间；
 - xAI：Grok、Grok 图片生成、Grok 视频生成；
 - 通用：Plugins 与 Skills。
 
 不要创建没有实际文章的空供应商分组。新增供应商页面时，先确认用户入口、模型、
 接口和生产验证，再加入导航。
+
+WorkBuddy 首批只维护三条经过当前桌面版验证的路径：
+
+- `WorkBuddy 快速开始`：下载安装、选择工作空间、完成第一个低风险文件任务，并负责
+  系列分流；
+- `WorkBuddy 接入 SorryCode`：使用 WorkBuddy 的 `自定义 / Custom` 图形界面配置
+  OpenAI-compatible endpoint、专用 API Key、准确模型 ID 和能力开关；
+- `WorkBuddy 的权限与工作空间`：解释默认权限、完全访问、工作空间隔离和文件备份边界。
+
+不要把 WorkBuddy 官方完整手册搬进 SorryCode。Skills、微信助理、MCP、知识库和各类办公
+案例只有在 SorryCode 路径完成实测、且已有稳定用户问题时才新增页面。UI 是自定义模型的
+公开主路径；`~/.workbuddy/models.json` 只作为本地存储事实和排障入口，不作为默认配置
+教程。
 
 模型使用页只承接当前模型的选择、参数、提示方法和验证边界，不重复 runtime 的安装步骤：
 
