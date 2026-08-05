@@ -1,70 +1,63 @@
 ---
-title: CC-Switch
+title: Switch SorryCode Models in Codex
 slug: cc-switch
 order: 1
-summary: An advanced config-switching tool for graphical endpoint, API key, and multi-runtime configuration management.
+summary: Use CC Switch to add non-GPT models from a SorryCode group to the Codex App model picker.
 section: tools
 section_title: Tools
 section_order: 28
 ---
 
-# CC-Switch
+# Switch SorryCode Models in Codex
 
-If one-click install already works and you later need to switch endpoints, API keys, or runtime configs often, then CC-Switch is worth looking at.
+Codex App shows its bundled GPT models by default. Other models available through the current SorryCode group, such as DeepSeek, do not automatically appear in the model picker. SorryCode recommends CC Switch for managing this model catalog.
 
-It is not the runtime itself. It is the local tool that manages endpoint switching, API keys, and config state for you.
+This guide uses one path: import SorryCode, fetch the models available to the current key in CC Switch, then restart Codex App.
 
-Reference: [CC-Switch project repository](https://github.com/farion1231/cc-switch)
+<h2 id="install">Install CC Switch</h2>
 
-## Who this fits
+Download CC Switch only from its [official repository](https://github.com/farion1231/cc-switch) or [GitHub Releases](https://github.com/farion1231/cc-switch/releases).
 
-This path is better if:
+On macOS, you can also use Homebrew:
 
-- you want graphical config management
-- you switch between multiple endpoints
-- you do not want to remember where env vars live
-- you want to get online first and understand runtime details later
+```bash
+brew install --cask cc-switch
+```
 
-## What you get from it
+If CC Switch is already installed, update it first.
 
-CC-Switch is useful for consolidating:
+<h2 id="import">Import from SorryCode</h2>
 
-- endpoint configuration
-- API key configuration
-- multi-site switching
-- local runtime config management
+1. Open the [SorryCode API Key page](https://sorrycode.com/keys)
+2. Find the key you want to use with Codex
+3. Click `Import to CCS`
+4. Allow the system to open CC Switch and confirm the import
 
-## How to connect SorryCode
+The import link contains the current key. Do not forward it, capture it in screenshots, or share it publicly.
 
-1. Sign in to SorryCode
-2. Go to [Getting Started / Create API Key](/docs/start/create-api-key)
-3. Click the CCS import action from the key list
-4. Or create the config manually
-5. Fill in the address and key required by your runtime
+<h2 id="models">Add Models from the Current Group</h2>
 
-For OpenAI-compatible flows, the typical values are:
+Open `CC Switch → Codex → SorryCode → Edit` and use these settings:
 
-- Base URL: `{{API_BASE_URL}}`
-- API Key: your `sk-...`
+| Field | Value |
+| --- | --- |
+| API endpoint | `https://sorrycode.com` |
+| Upstream format | `Responses (native)` |
+| Default model | `deepseek-v4-flash` |
 
-For Claude Code flows, CC-Switch usually maps to the Claude-side config template instead.
+Expand the advanced options and click `Fetch Models` in the model mapping section. The current key group determines which models appear. To use DeepSeek, keep these entries:
 
-## When it is better than manual setup
+```text
+deepseek-v4-flash
+deepseek-v4-pro
+```
 
-Prefer CC-Switch when:
+Save the provider, then enable SorryCode from the Codex provider list.
 
-- you do not want to manage `export / setx`
-- you switch between multiple providers often
-- you want to keep endpoint setup separate from runtime launch details
+SorryCode already supports the Responses protocol used by Codex. This setup does not need CC Switch local routing, and CC Switch does not need to remain running in the background.
 
-## How it relates to one-click install
+<h2 id="restart">Restart Codex App</h2>
 
-Beginners should start with one-click install by default.
+Codex loads the model catalog at startup. Quit Codex App completely, reopen it, and start a new conversation. The model picker should now include `DeepSeek V4 Flash` and `DeepSeek V4 Pro`.
 
-CC-Switch is not a required prerequisite. It is an advanced config-switching tool for users who already know which endpoints, API keys, or runtime configs they need to manage.
-
-## Next
-
-- Want Codex: [Runtime / Codex](/docs/runtime/codex)
-- Want Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
-- Want the shared prerequisite page: [Environment / Node.js](/docs/environment/nodejs)
+If they are missing, check that SorryCode is active, the model mapping was saved, and Codex App was fully restarted. If `Fetch Models` does not return DeepSeek, check the SorryCode group assigned to that key.

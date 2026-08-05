@@ -1,8 +1,8 @@
 ---
-title: WorkBuddy 快速开始
+title: WorkBuddy
 slug: workbuddy
 order: 1
-summary: 安装 WorkBuddy，接入 SorryCode，选择安全的工作空间，并完成第一个本地文件任务。
+summary: 安装 WorkBuddy，接入 SorryCode 自定义模型，并在默认权限下完成第一个本地文件任务。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -11,88 +11,80 @@ group_title: Tencent
 group_order: 27
 ---
 
-# WorkBuddy 快速开始
+# WorkBuddy
 
-WorkBuddy 是一个桌面 AI 工作台。你可以把文件、资料和任务交给它，让它规划步骤、调用工具，并把结果保存成实际文件。
-
-如果你想让 WorkBuddy 的模型请求走 SorryCode，最短路径是：
-
-1. 安装并登录 WorkBuddy
-2. 在 WorkBuddy 里添加一个 SorryCode 自定义模型
-3. 为第一次任务选择一个独立的测试文件夹
-4. 保持默认权限，先完成一个低风险文件任务
-
-这页负责把整条路线跑通。具体模型字段见 [WorkBuddy 接入 SorryCode](/docs/runtime/workbuddy-sorrycode)，文件权限见 [WorkBuddy 的权限与工作空间](/docs/runtime/workbuddy-permissions)。
+WorkBuddy 是一个桌面 Agent，可以读取资料、调用工具并把结果写入本地文件。下面的步骤会把它接到 SorryCode，并用一个空文件夹验证模型和文件写入。
 
 <h2 id="install">安装 WorkBuddy</h2>
 
-从 WorkBuddy 官网下载与你电脑匹配的桌面版：
+从 [WorkBuddy 官网](https://www.workbuddy.cn/) 下载 macOS 或 Windows 版本，安装后按界面提示登录。不要从非官方站点下载安装包。
 
-<https://www.workbuddy.cn/>
+<h2 id="prepare-key">准备 WorkBuddy Key</h2>
 
-当前桌面版支持 macOS 和 Windows。安装后打开 WorkBuddy，按界面提示完成登录。
+在 [SorryCode API Key 页面](https://sorrycode.com/keys) 为 WorkBuddy 单独创建一把 Key，并选择支持目标模型的分组。不同工具应使用各自分组的 Key，余额仍然共用。
 
-如果点击登录没有反应，先确认电脑已经设置默认浏览器，再完全退出 WorkBuddy 后重新打开。不要从非官方站点下载安装包。
+WorkBuddy 需要准确的模型 ID。模型名称以当前 Key 请求 `/v1/models` 返回的 `id` 为准，不要根据展示名称猜测。
 
-<h2 id="connect-sorrycode">接入 SorryCode</h2>
+```bash
+curl https://sorrycode.com/v1/models -H "Authorization: Bearer <WORKBUDDY_API_KEY>"
+```
 
-WorkBuddy 自带模型，也支持 OpenAI 兼容的自定义 API。SorryCode 使用后一条路径。
+Windows PowerShell 使用 `curl.exe`：
 
-打开：
+```powershell
+curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <WORKBUDDY_API_KEY>"
+```
+
+<h2 id="connect">添加 SorryCode 自定义模型</h2>
+
+在 WorkBuddy 中打开：
 
 ```text
 左下角账户菜单 → 设置 → 模型 → 添加模型 → 自定义 / Custom
 ```
 
-接着按 [WorkBuddy 接入 SorryCode](/docs/runtime/workbuddy-sorrycode) 填写接口地址、API Key 和模型名称。保存后，新增模型会出现在聊天界面的“自定义模型”分组中。
+按下面填写：
 
-<h2 id="workspace">准备第一个工作空间</h2>
+| 配置项 | 设置 |
+| --- | --- |
+| 提供商 | `自定义 / Custom` |
+| 接口地址 | `https://sorrycode.com/v1/chat/completions` |
+| API Key | WorkBuddy 专用 SorryCode Key |
+| 模型名称 | `/v1/models` 返回的准确模型 ID |
+| 工具调用 | 开启 |
+| 图片输入 | 仅在模型和分组支持图片时开启 |
+| 思考模式 | 仅在模型支持推理模式时开启 |
+| 自定义协议 | 关闭 |
+| 输入 / 输出 | 保持提供商默认值 |
 
-不要用桌面根目录、下载目录、整个用户目录或重要项目作为第一次测试的工作空间。
+这里需要填写完整的 `/v1/chat/completions` 地址。保存后，新模型会出现在“自定义模型”分组中。
 
-新建一个空文件夹，例如：
+<h2 id="verify">完成第一个文件任务</h2>
+
+新建一个空文件夹，例如 `WorkBuddy-Test`，在“新建任务”中把它设为工作空间，并保持“默认权限”。选择刚添加的模型，然后输入：
 
 ```text
-WorkBuddy-Test
+请在当前工作空间创建 hello-workbuddy.md，写入今天的日期和一句“SorryCode 连接测试完成”。不要修改其他文件。完成后告诉我保存路径。
 ```
 
-回到“新建任务”，点击输入框下方的“选择工作空间”，选择这个文件夹。工作空间决定 WorkBuddy 这次任务主要读取和保存哪些文件。
+收到正常回复，并在测试文件夹中找到 `hello-workbuddy.md`，说明模型连接、工具调用和工作空间写入已经可用。
 
-权限保持“默认权限”。遇到超出工作空间或高风险操作时，WorkBuddy 会停下来请求确认。
+<h2 id="permissions">文件权限</h2>
 
-<h2 id="first-task">完成第一个任务</h2>
+- 第一次使用只选择空测试目录，不要选择桌面、下载目录、个人主目录或生产项目
+- 保持默认权限，涉及删除、覆盖、批量移动或执行脚本时先查看操作内容
+- 重要文件使用副本，让 WorkBuddy 写入新文件，不覆盖唯一原件
+- API Key 只保存在模型设置中，不要放进提示词、项目文件或截图
+- 不要在包含客户资料、财务资料或凭证的目录中开启完全访问
 
-先从一个容易检查的 Markdown 文件开始：
+<h2 id="common-issues">常见问题</h2>
 
-```text
-请在当前工作空间创建 hello-workbuddy.md，写入今天的日期、三条使用 WorkBuddy 的注意事项，以及一句“SorryCode 连接测试完成”。完成后告诉我文件保存在哪里。不要修改其他文件。
-```
+| 现象 | 检查什么 |
+| --- | --- |
+| `401` 或 Key 无效 | Key 是否完整、仍然启用，并属于 WorkBuddy 使用的分组 |
+| `404` 或 model not found | 接口是否包含 `/v1/chat/completions`，模型名是否为 `/v1/models` 返回的准确 ID |
+| 能聊天但不能创建文件 | “工具调用”是否开启，模型是否支持 OpenAI-compatible tool calls |
+| 图片无法识别 | 模型、分组和“图片输入”是否同时支持图片 |
+| `429` 或余额不足 | SorryCode 余额、Key 限额和请求频率 |
 
-任务结束后检查三件事：
-
-- WorkBuddy 给出了正常回复
-- `hello-workbuddy.md` 出现在刚才选择的文件夹中
-- 文件内容符合要求，且没有改动其他文件
-
-这一步同时验证了模型连接、工具调用和工作空间写入。只会聊天但没有创建文件时，去看 [WorkBuddy 接入 SorryCode / 常见问题](/docs/runtime/workbuddy-sorrycode#common-issues)。
-
-<h2 id="next">下一步做什么</h2>
-
-第一次任务成功后，可以逐步增加复杂度：
-
-- 把一份会议记录整理成 Markdown 或 Word 初稿
-- 读取一小份表格并输出字段说明
-- 为几份测试文件生成重命名预览，确认后再执行
-- 根据公开资料生成报告提纲，再逐段补充来源
-
-每次先用副本或测试目录。涉及批量重命名、覆盖、删除、运行脚本或访问外部服务时，先要求 WorkBuddy 展示计划和影响范围。
-
-<h2 id="boundaries">使用边界</h2>
-
-- WorkBuddy 是工作台，模型质量和可用能力取决于你选择的模型
-- 自定义模型费用由对应的 SorryCode API Key 产生，不消耗 WorkBuddy 自带模型额度
-- 电脑关机或 WorkBuddy 未运行时，本地任务不会继续执行
-- 默认权限能降低误操作风险，但不能替代文件备份
-- 不要把 API Key 粘贴到任务对话、截图、文档或项目文件里
-
-上游参考：[WorkBuddy 官网](https://www.workbuddy.cn/) 和 [WorkBuddy 官方文档](https://www.workbuddy.cn/docs/workbuddy/FirstTask)。
+更多共性错误见 [常见错误](/docs/troubleshoot/common-errors)。上游参考：[WorkBuddy 第一个任务](https://www.workbuddy.cn/docs/workbuddy/FirstTask)、[模型配置](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Model) 和 [权限模式](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Permission-Modes)。

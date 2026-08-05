@@ -98,7 +98,7 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 
 `开始使用` 作为第一章，文章保持分工，不合并成一篇长文：
 
-- `第一次使用 SorryCode`：给默认上手路线和目标分流；
+- `第一次使用 SorryCode`：只做 Agent 工具分流，不重复各工具的安装和首次任务；
 - `SorryCode 适合谁`：回答用户定位、余额制价值、订阅制取舍；
 - `创建 API Key`：完成实际配置；
 - `首条请求`：提供手动验证和排障入口；
@@ -113,28 +113,16 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 - OpenAI：Codex、GPT-5.6 Sol、GPT Image 2；
 - Anthropic：Claude Code、Claude Fable 5、Claude Desktop；
 - Kimi：Kimi Code；
-- Tencent：WorkBuddy 快速开始、WorkBuddy 接入 SorryCode、WorkBuddy 的权限与工作空间；
+- Tencent：WorkBuddy；
 - xAI：Grok、Grok 图片生成、Grok 视频生成；
 - 通用：Plugins 与 Skills。
 
 不要创建没有实际文章的空供应商分组。新增供应商页面时，先确认用户入口、模型、
 接口和生产验证，再加入导航。
 
-WorkBuddy 首批只维护三条经过当前桌面版验证的路径：
-
-- `WorkBuddy 快速开始`：下载安装、选择工作空间、完成第一个低风险文件任务，并负责
-  系列分流；
-- `WorkBuddy 接入 SorryCode`：使用 WorkBuddy 的 `自定义 / Custom` 图形界面配置
-  OpenAI-compatible endpoint、专用 API Key、准确模型 ID 和能力开关；
-- `WorkBuddy 的权限与工作空间`：解释默认权限、完全访问、工作空间隔离和文件备份边界。
-
-不要把 WorkBuddy 官方完整手册搬进 SorryCode。Skills、微信助理、MCP、知识库和各类办公
-案例只有在 SorryCode 路径完成实测、且已有稳定用户问题时才新增页面。UI 是自定义模型的
-公开主路径；`~/.workbuddy/models.json` 只作为本地存储事实和排障入口，不作为默认配置
-教程。
-
-WorkBuddy 的证据等级、版本漂移点、验证矩阵和后续选题门槛统一见
-`docs/workbuddy-content-strategy.md`，不要在总 IA 重复维护专题细节。
+WorkBuddy 只维护一篇闭环页面，包含下载安装、SorryCode 自定义模型配置、第一个文件任务和
+必要的权限边界。不要为通用安全常识、单个菜单或尚未形成稳定用户问题的功能单独建页。
+UI 是自定义模型的公开配置路径，不公开讲解本地配置文件格式。
 
 模型使用页只承接当前模型的选择、参数、提示方法和验证边界，不重复 runtime 的安装步骤：
 

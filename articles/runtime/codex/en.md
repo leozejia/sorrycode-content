@@ -125,6 +125,8 @@ If you prefer viewing project files and changes inside a visual editor, continue
 
 If the Codex App plugin entry is grey, or `/plugins` cannot find Chrome, Computer Use, Browser, or HyperFrames, read [Plugins vs Skills - What's the Difference](/docs/runtime/plugins-vs-skills) to learn how to configure plugins.
 
+Non-GPT models such as DeepSeek from the same SorryCode group do not automatically appear in the Codex App model picker. To use them, follow [Switch SorryCode Models in Codex](/docs/tools/cc-switch).
+
 <h2 id="cli-fallback">Fallback: Use the Terminal</h2>
 
 If you do not use `Codex App`, you can enter the project folder in a terminal yourself, then run Codex commands.

@@ -1,70 +1,63 @@
 ---
-title: CC-Switch
+title: 在 Codex 中切换 SorryCode 模型
 slug: cc-switch
 order: 1
-summary: 进阶配置切换工具。适合需要图形化管理 endpoint、API Key 和多 runtime 配置的人。
+summary: 用 CC Switch 把 SorryCode 分组中的非 GPT 模型加入 Codex App 模型选择器。
 section: tools
 section_title: 工具
 section_order: 28
 ---
 
-# CC-Switch
+# 在 Codex 中切换 SorryCode 模型
 
-如果你已经跑通过一键安装，但后续需要频繁切换 endpoint、API Key 或不同 runtime 配置，可以再看 CC-Switch。
+Codex App 默认只展示内置 GPT 模型。即使当前 SorryCode 分组还提供 DeepSeek 等模型，它们也不会自动出现在模型选择器中。SorryCode 推荐用 CC Switch 管理这份模型目录。
 
-它不是 runtime 本身，而是帮你管理本地 endpoint、API Key 和配置切换的工具。
+这篇只讲一条路径：导入 SorryCode，在 CC Switch 中获取当前分组模型，然后重启 Codex App。
 
-参考：[CC-Switch 项目地址](https://github.com/farion1231/cc-switch)
+<h2 id="install">安装 CC Switch</h2>
 
-## 适合谁
+只从 [CC Switch 官方仓库](https://github.com/farion1231/cc-switch) 或 [GitHub Releases](https://github.com/farion1231/cc-switch/releases) 下载。
 
-这条路径更适合下面几种人：
+macOS 也可以使用 Homebrew：
 
-- 你想图形化管理配置
-- 你会切换多个站点
-- 你不想记环境变量写在哪里
-- 你想先把链路跑通，再慢慢理解 runtime 细节
+```bash
+brew install --cask cc-switch
+```
 
-## 你能得到什么
+已有 CC Switch 时，先更新到最新版。
 
-通过 CC-Switch，你通常可以把这些事情集中处理：
+<h2 id="import">从 SorryCode 导入</h2>
 
-- endpoint 配置
-- API Key 配置
-- 多站点切换
-- 不同 runtime 的本地配置管理
+1. 打开 [SorryCode API Key 页面](https://sorrycode.com/keys)
+2. 找到要给 Codex 使用的 Key
+3. 点击 `导入到 CCS`
+4. 系统询问是否打开 CC Switch 时，确认打开并完成导入
 
-## 怎么接入 SorryCode
+导入链接包含当前 Key，不要转发、截图或公开分享。
 
-1. 登录 SorryCode
-2. 去 [开始使用 / 创建 API Key](/docs/start/create-api-key)
-3. 在 key 列表页点击「导入到 CCS」
-4. 或手动新建配置
-5. 填入你当前 runtime 所需的地址和密钥
+<h2 id="models">加入当前分组的模型</h2>
 
-如果你走 OpenAI-compatible 路径，通常会用到：
+打开 `CC Switch → Codex → SorryCode → 编辑`，按下面配置：
 
-- Base URL：`{{API_BASE_URL}}`
-- API Key：你的 `sk-...`
+| 配置项 | 设置 |
+| --- | --- |
+| API 请求地址 | `https://sorrycode.com` |
+| 上游格式 | `Responses（原生）` |
+| 默认模型 | `deepseek-v4-flash` |
 
-如果你走 Claude Code 路径，通常会改由 Claude 相关配置模板导入。
+展开高级选项，在“模型映射”区域点击 `获取模型列表`。当前 Key 所属分组决定这里能看到哪些模型。需要使用 DeepSeek 时，保留：
 
-## 什么时候它比手动配置更合适
+```text
+deepseek-v4-flash
+deepseek-v4-pro
+```
 
-优先选 CC-Switch 的场景：
+保存后，在 Codex 供应商列表中启用 SorryCode。
 
-- 你不想自己维护 `export / setx`
-- 你要频繁切换不同站点
-- 你不想把接入细节和 runtime 启动过程绑死在一起
+SorryCode 已支持 Codex 使用的 Responses 协议，这条路径不需要开启 CC Switch 路由接管，也不要求 CC Switch 长期在后台运行。
 
-## 和一键安装是什么关系
+<h2 id="restart">重启 Codex App</h2>
 
-小白默认先走一键安装。
+模型目录在 Codex 启动时加载。完全退出 Codex App，再重新打开并新建会话。模型选择器中应出现 `DeepSeek V4 Flash` 和 `DeepSeek V4 Pro`。
 
-CC-Switch 不是必经前置，而是进阶配置切换工具：当你已经知道自己要切换哪些 endpoint、API Key 或 runtime 配置时，再用它集中管理。
-
-## 下一步
-
-- 要看 Codex：去 [Runtime / Codex](/docs/runtime/codex)
-- 要看 Claude Code：去 [Runtime / Claude Code](/docs/runtime/claude-code)
-- 要补共享前置：去 [环境准备 / Node.js](/docs/environment/nodejs)
+如果没有出现，回到 CC Switch 检查三项：SorryCode 是否正在使用、模型映射是否已经保存、Codex App 是否完全退出后重启。`获取模型列表` 看不到 DeepSeek 时，应检查这把 Key 选择的 SorryCode 分组。

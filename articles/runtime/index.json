@@ -5,7 +5,7 @@
     "en": "Models & Runtimes",
     "zh": "模型与工作台"
   },
-  "updatedAt": "2026-07-29",
+  "updatedAt": "2026-08-05",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
@@ -27,7 +27,7 @@
       {
         "id": "tencent",
         "title": { "en": "Tencent", "zh": "Tencent" },
-        "items": ["workbuddy", "workbuddy-sorrycode", "workbuddy-permissions"]
+        "items": ["workbuddy"]
       },
       {
         "id": "xai",
@@ -50,8 +50,6 @@
     "claude-desktop",
     "kimi-code",
     "workbuddy",
-    "workbuddy-sorrycode",
-    "workbuddy-permissions",
     "grok-cli",
     "grok-image",
     "grok-video",
