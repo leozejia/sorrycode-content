@@ -2,7 +2,7 @@
 title: 第一次使用 SorryCode
 slug: first-step
 order: 1
-summary: 选择要用的 Agent 工具，再创建对应分组的 API Key，并进入该工具的接入指南。
+summary: 选择要用的 Agent 工具，确认 API Key 和分组兼容，再进入该工具的接入指南。
 section: start
 section_title: 开始使用
 section_order: 1
@@ -24,11 +24,11 @@ SorryCode 为 Codex、Claude Code、WorkBuddy 等 Agent 工具提供模型 API�
 
 不确定选哪个时，先用 Codex。
 
-<h2 id="prepare-key">创建对应分组的 API Key</h2>
+<h2 id="prepare-key">准备兼容的 API Key</h2>
 
-登录 [SorryCode 控制台](https://sorrycode.com)，确认余额可用，然后为刚才选择的工具创建一把 API Key。不同工具应使用各自分组的 Key，余额仍然共用。
+登录 [SorryCode 控制台](https://sorrycode.com)，确认余额可用，并检查现有 API Key 所属分组是否支持目标模型和工具使用的协议。符合条件的 Key 可以直接复用，不必为每个工具单独创建；需要分开统计用量、设置限额或轮换凭证时，再按用途新建 Key。
 
-创建方法和分组原则见 [创建 API Key](/docs/start/create-api-key)。不要把同一把 Key 同时填进多个不同分组的工具。
+创建方法和分组原则见 [创建 API Key](/docs/start/create-api-key)。不要把 Key 填入不兼容的协议，或填入所属分组未开放的模型。
 
 <h2 id="continue">进入对应指南</h2>
 

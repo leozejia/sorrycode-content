@@ -17,9 +17,9 @@ Codex App does not list every model in the current SorryCode group by default. I
 
 OpenCodex runs a local proxy and writes available models into the catalog shared by Codex. It does not modify the Codex App binary.
 
-<h2 id="prepare">Prepare a Codex Group Key</h2>
+<h2 id="prepare">Prepare a Compatible API Key</h2>
 
-Create a separate key for Codex on the [API Key page](https://sorrycode.com/keys), then choose a group that contains the models you need.
+On the [API Key page](https://sorrycode.com/keys), choose a key whose group contains the models you need and supports the OpenAI-compatible Responses endpoint used here. You can reuse an existing compatible key; creating a separate key for Codex is optional for usage tracking, spending limits, or credential rotation.
 
 The key group determines the model list. "All models" on this page means every model returned for the current group, not models from other groups.
 
@@ -48,7 +48,7 @@ Open `Providers` in the OpenCodex dashboard, choose `Add provider`, then choose 
 | Provider ID | `sorrycode` |
 | Adapter | `openai-responses` |
 | Base URL | `https://sorrycode.com` |
-| API Key | The Codex group key you just created |
+| API Key | A compatible SorryCode key with access to the target models |
 | Responses Path | `/v1/responses` |
 | Live Model Discovery | On |
 

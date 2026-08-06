@@ -2,7 +2,7 @@
 title: Kimi Code
 slug: kimi-code
 order: 1
-summary: Configure Kimi Code with a SorryCode Kimi-group API key and use K3 or another Kimi model available to that key.
+summary: Configure Kimi Code with a SorryCode API key that can access Kimi models, then use K3 or another available model.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -19,18 +19,18 @@ This page configures the model provider used by Kimi Code. The API key comes fro
 
 Reference: [Kimi Code getting started](https://www.kimi.com/code/docs/en/kimi-code-cli/guides/getting-started.html)
 
-<h2 id="prepare-api-key">Prepare a Kimi-Group API Key</h2>
+<h2 id="prepare-api-key">Prepare a Usable API Key</h2>
 
 1. Open `https://sorrycode.com/keys`
-2. Create a new API key
-3. Select a group that supports Kimi
-4. Keep this key separate from keys used for Codex, Claude Code, Grok, or Image2
+2. Create or select an API key
+3. Confirm that its group supports Kimi and the model you need
+4. Keep a separate key only when you want independent usage records, spending limits, or credential rotation
 
 Query the models available to this key before editing the Kimi Code config:
 
 ```bash
 curl https://sorrycode.com/v1/models \
-  -H "Authorization: Bearer <your Kimi-group API key>"
+  -H "Authorization: Bearer <your Kimi API key>"
 ```
 
 The `model` field used later must match an ID returned by this endpoint. Common IDs currently include `k3`, `kimi-for-coding`, and `kimi-for-coding-highspeed`, but the response for your key is the source of truth.
@@ -62,7 +62,7 @@ The config file is stored at:
 - macOS / Linux: `~/.kimi-code/config.toml`
 - Windows: `%USERPROFILE%\.kimi-code\config.toml`
 
-If the file already contains other providers, merge the following block instead of replacing the whole file. Set `api_key` to the Kimi-group key you created:
+If the file already contains other providers, merge the following block instead of replacing the whole file. Set `api_key` to the key that can access the Kimi model:
 
 ```toml
 default_model = "sorrycode/kimi"
@@ -70,7 +70,7 @@ default_model = "sorrycode/kimi"
 [providers.sorrycode-kimi]
 type = "kimi"
 base_url = "https://sorrycode.com/v1"
-api_key = "<your Kimi-group API key>"
+api_key = "<your Kimi API key>"
 
 [models."sorrycode/kimi"]
 provider = "sorrycode-kimi"

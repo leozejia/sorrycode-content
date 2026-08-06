@@ -54,7 +54,7 @@ Before uninstalling, run `npx skills list --global` to confirm the name, then us
 
 <h2 id="api-key">Set the Image API Key</h2>
 
-First, use [Getting Started / Create API Key](/docs/start/create-api-key) to create a dedicated Image2 key and assign it to an image group that supports `gpt-image-2`. Do not use a Grok-group key.
+First, use [Getting Started / Create API Key](/docs/start/create-api-key) to create or select a key assigned to an image group that supports `gpt-image-2`. Create a separate Image2 key only when you want its usage, limits, or credential rotation managed independently.
 
 The Skill reads `SORRYCODE_API_KEY`. This is the configuration name used by `SorryCode Image2`, not a shared key for every SorryCode tool. Public REST API examples ask you to enter the matching group key directly. Only this Skill requires this environment variable.
 

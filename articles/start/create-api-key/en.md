@@ -2,7 +2,7 @@
 title: Create API Key
 slug: create-api-key
 order: 3
-summary: Understand what an API key is, then create separate sk-... keys for Codex, Claude Code, Skills, or other uses.
+summary: Understand what an API key is, then prepare sk-... keys that match your protocol and group access.
 section: start
 section_title: Getting Started
 section_order: 1
@@ -18,9 +18,9 @@ An `API Key` is the key on that channel. It proves that this is your SorryCode a
 
 No matter whether you use Codex, Claude Code, Grok, an image skill, or manual setup, this step is unavoidable. The console can now generate one-click install commands from this key, so create the key first.
 
-One SorryCode balance can have multiple API keys. As a beginner, do not force every tool to share the same key.
+One SorryCode balance can have multiple API keys. Reuse one key across tools when their protocol and group access are compatible; create more keys when separate management is useful.
 
-Match each key to one purpose and one group. A practical setup is:
+Match each key to the protocol, models, and group access the tool needs. When you want separate usage records, spending limits, or credential rotation, create keys by purpose. A practical setup is:
 
 | Key name | Selected group | Used for |
 | --- | --- | --- |
@@ -88,7 +88,7 @@ one balance can have multiple API keys.
 
 You can create separate keys for separate tools. For example: one for Codex, one for Claude Code, one for Grok, and one for Image2. They use the same balance, but management and troubleshooting become much clearer.
 
-Do not treat every `sk-...` value as interchangeable. Keep the Grok key assigned to a Grok group. Keep the Image2 key assigned to an image group that supports `gpt-image-2`. A mismatched group can cause access errors, unavailable models, or incorrect routing.
+Do not treat every `sk-...` value as interchangeable. Check whether the key's group exposes the model and protocol the tool needs. Reuse a key when they are compatible; a mismatch can cause access errors, unavailable models, or incorrect routing.
 
 If you use one-click install, the installer writes most config for you. You usually do not need to understand `Base URL` first.
 
@@ -121,7 +121,7 @@ The easier path is to return to the API key list, find this key, and click `Conn
 
 ![Connect Tool button on the right side of the API key list](./connect-tool-button.png)
 
-1. choose the tool that matches this key, such as `Codex`, `Claude Code`, or `Grok`
+1. choose the tool you want to connect, such as `Codex`, `Claude Code`, or `Grok`
 2. choose your operating system
 3. copy the full command from the modal
 4. open the terminal on your own computer
@@ -138,7 +138,7 @@ If you already created a key, the API key list lets you:
 - set a spending limit
 - disable or delete keys you no longer use
 
-Do not force every tool into one key. Separate keys make later usage records much easier to understand. `SorryCode Image2` does not use this one-click installer entry. Its Skill page explains how to store the Image2 key.
+Compatible tools can share one key. Separate keys are useful when you want clearer usage records, limits, or troubleshooting. `SorryCode Image2` does not use this one-click installer entry. Its Skill page explains how to store the Image2 key.
 
 ![You can switch groups from the API key list](./key-group-switch.png)
 

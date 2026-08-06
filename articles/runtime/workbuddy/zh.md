@@ -19,9 +19,9 @@ WorkBuddy 是一个桌面 Agent，可以读取资料、调用工具并把结果�
 
 从 [WorkBuddy 官网](https://www.workbuddy.cn/) 下载 macOS 或 Windows 版本，安装后按界面提示登录。不要从非官方站点下载安装包。
 
-<h2 id="prepare-key">准备 WorkBuddy Key</h2>
+<h2 id="prepare-key">准备 API Key</h2>
 
-在 [SorryCode API Key 页面](https://sorrycode.com/keys) 为 WorkBuddy 单独创建一把 Key，并选择支持目标模型的分组。不同工具应使用各自分组的 Key，余额仍然共用。
+WorkBuddy 使用 OpenAI-compatible 的 `/v1/chat/completions` 接口。在 [SorryCode API Key 页面](https://sorrycode.com/keys) 选择一把所属分组支持目标模型和这个接口的 Key。已有符合条件的 Key 可以直接复用，不必为 WorkBuddy 单独创建；如果你想分开统计用量、设置限额或轮换凭证，再按用途新建一把 Key。
 
 WorkBuddy 需要准确的模型 ID。模型名称以当前 Key 请求 `/v1/models` 返回的 `id` 为准，不要根据展示名称猜测。
 
@@ -49,7 +49,7 @@ curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <WORKBUDDY_AP
 | --- | --- |
 | 提供商 | `自定义 / Custom` |
 | 接口地址 | `https://sorrycode.com/v1/chat/completions` |
-| API Key | WorkBuddy 专用 SorryCode Key |
+| API Key | 可访问目标模型和 OpenAI-compatible 接口的 SorryCode Key |
 | 模型名称 | `/v1/models` 返回的准确模型 ID |
 | 工具调用 | 开启 |
 | 图片输入 | 仅在模型和分组支持图片时开启 |
@@ -89,7 +89,7 @@ Expert 不是新的模型，也不会绕过文件权限。它仍然使用当前�
 
 | 现象 | 检查什么 |
 | --- | --- |
-| `401` 或 Key 无效 | Key 是否完整、仍然启用，并属于 WorkBuddy 使用的分组 |
+| `401` 或 Key 无效 | Key 是否完整、仍然启用，并且所属分组支持当前模型 |
 | `404` 或 model not found | 接口是否包含 `/v1/chat/completions`，模型名是否为 `/v1/models` 返回的准确 ID |
 | 能聊天但不能创建文件 | “工具调用”是否开启，模型是否支持 OpenAI-compatible tool calls |
 | 图片无法识别 | 模型、分组和“图片输入”是否同时支持图片 |

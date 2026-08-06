@@ -51,7 +51,7 @@ The quick link is `https://sorrycode.com/keys`, but the more important thing is 
 
 If you have not done this yet, start with [Getting Started / Create API Key](/docs/start/create-api-key).
 
-If you also plan to use Codex, Claude Code, or SorryCode Image2, create a separate API key for each purpose. Multiple keys still use the same balance, but each key should use the group that matches its purpose.
+If you also plan to use Codex, Claude Code, or SorryCode Image2, first check whether an existing key matches the protocol and group each tool needs. Reuse it when compatible; create separate keys when you want usage, limits, or credential rotation managed independently. Every key must use a group that matches its actual purpose.
 
 <h2 id="one-click-install">⚡ One-Click Install (Recommended)</h2>
 

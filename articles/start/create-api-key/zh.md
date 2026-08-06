@@ -2,7 +2,7 @@
 title: 创建 API Key
 slug: create-api-key
 order: 3
-summary: 先理解 API Key 是什么，再按 Codex、Claude Code 或 Skills 等用途分别创建 sk-... 密钥。
+summary: 先理解 API Key 是什么，再按协议和分组权限准备 sk-... 密钥。
 section: start
 section_title: 开始使用
 section_order: 1
@@ -18,9 +18,9 @@ section_order: 1
 
 无论你后面走 Codex、Claude Code、Grok、图片 Skill，还是手动请求，这一步都绕不开。现在控制台可以直接用这把 key 生成一键安装命令，所以最好先把 key 建好。
 
-一份 SorryCode 余额可以对应多把 API Key。新手不要把所有工具都挤在同一把 key 里。
+一份 SorryCode 余额可以对应多把 API Key。只要协议和分组权限兼容，同一把 Key 可以在多个工具中复用；需要分开管理时再创建多把 Key。
 
-Key 要按用途和分组配对。推荐这样分开：
+Key 要和工具使用的协议、目标模型及其分组权限匹配。需要分开统计、设置限额或轮换凭证时，可以按用途创建多把 Key。常见的管理方式是：
 
 | Key 名称 | 选择的分组 | 用在哪里 |
 | --- | --- | --- |
@@ -88,7 +88,7 @@ Image2
 
 你可以给不同工具分别创建 key。比如 Codex 一把，Claude Code 一把，Grok 一把，Image2 一把。它们消耗的是同一份余额，但记录、分组和限额可以分开管理。
 
-不要因为它们都以 `sk-...` 开头，就把同一把 Key 填到所有工具里。Grok Key 应该留给 Grok 分组；Image2 Key 应该留给支持 `gpt-image-2` 的图片分组。分组不匹配时，可能出现权限错误、模型不可用或错误的路由。
+不要因为它们都以 `sk-...` 开头，就认为所有 Key 都可以互换。先检查 Key 所属分组是否开放目标模型和工具需要的协议；兼容时可以复用，不兼容时可能出现权限错误、模型不可用或错误的路由。
 
 如果你走的是一键安装，安装器会帮你写入大部分配置，你通常不需要先理解 `Base URL`。
 
@@ -121,7 +121,7 @@ Image2
 
 ![API Key 列表右侧的接入工具按钮](./connect-tool-button.png)
 
-1. 选择与这把 Key 对应的工具，例如 `Codex`、`Claude Code` 或 `Grok`
+1. 选择要接入的工具，例如 `Codex`、`Claude Code` 或 `Grok`
 2. 选择你的系统
 3. 复制弹窗里的整条命令
 4. 打开你电脑的终端
@@ -138,7 +138,7 @@ Image2
 - 设置额度限制
 - 禁用或删除不再使用的 key
 
-不要把不同工具混在一把 key 里硬撑。分开创建，后面看记录会轻松很多。`SorryCode Image2` 不走这里的一键安装入口，它会在自己的 Skill 页面说明如何保存 Image2 Key。
+兼容的工具可以共用一把 Key；如果你希望记录、限额和排障彼此隔离，可以分开创建。`SorryCode Image2` 不走这里的一键安装入口，它会在自己的 Skill 页面说明如何保存 Image2 Key。
 
 ![API Key 列表里可以切换分组](./key-group-switch.png)
 

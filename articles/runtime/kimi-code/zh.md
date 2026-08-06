@@ -2,7 +2,7 @@
 title: Kimi Code
 slug: kimi-code
 order: 1
-summary: 为 Kimi Code 配置 SorryCode Kimi 分组 Key，使用 K3 或分组内的其他 Kimi 模型。
+summary: 为 Kimi Code 配置可访问 Kimi 模型的 SorryCode API Key，使用 K3 或分组内的其他 Kimi 模型。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -19,18 +19,18 @@ Kimi Code 是一个运行在终端里的 coding agent，可以读项目、改文
 
 参考：[Kimi Code 官方入门文档](https://www.kimi.com/code/docs/kimi-code-cli/guides/getting-started.html)
 
-<h2 id="prepare-api-key">准备 Kimi 分组 Key</h2>
+<h2 id="prepare-api-key">准备可用的 API Key</h2>
 
 1. 打开 `https://sorrycode.com/keys`
-2. 创建一把新的 API Key
-3. 为这把 Key 选择支持 Kimi 的分组
-4. 单独保存这把 Key，不要和 Codex、Claude Code、Grok 或 Image2 的 Key 混用
+2. 创建或选择一把 API Key
+3. 确认这把 Key 所属分组支持 Kimi 和你要用的模型
+4. 只有在需要分开统计用量、设置限额或轮换凭证时，才单独保存一把 Key
 
 可以先查询这把 Key 实际开放的模型：
 
 ```bash
 curl https://sorrycode.com/v1/models \
-  -H "Authorization: Bearer <你的 Kimi 分组 API Key>"
+  -H "Authorization: Bearer <你的 Kimi API Key>"
 ```
 
 后面的 `model` 必须使用返回结果里的准确 ID。当前常见 ID 包括 `k3`、`kimi-for-coding` 和 `kimi-for-coding-highspeed`，实际可用范围以这把 Key 的返回结果为准。
@@ -62,7 +62,7 @@ kimi --version
 - macOS / Linux：`~/.kimi-code/config.toml`
 - Windows：`%USERPROFILE%\.kimi-code\config.toml`
 
-如果文件里已经有其他 provider，把下面内容合并进去，不要覆盖原有配置。`api_key` 填刚才创建的 Kimi 分组 Key：
+如果文件里已经有其他 provider，把下面内容合并进去，不要覆盖原有配置。`api_key` 填这把可访问 Kimi 模型的 API Key：
 
 ```toml
 default_model = "sorrycode/kimi"
@@ -70,7 +70,7 @@ default_model = "sorrycode/kimi"
 [providers.sorrycode-kimi]
 type = "kimi"
 base_url = "https://sorrycode.com/v1"
-api_key = "<你的 Kimi 分组 API Key>"
+api_key = "<你的 Kimi API Key>"
 
 [models."sorrycode/kimi"]
 provider = "sorrycode-kimi"

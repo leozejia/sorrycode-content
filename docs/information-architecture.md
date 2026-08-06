@@ -134,17 +134,16 @@ Expert 是角色与协作机制，不是权限来源。各产品的安装和配�
 
 ## API Key 表达规则
 
-公开文档先讲“选择哪一把分组 Key”，再讲工具如何使用它：
+公开文档先讲协议和分组权限，再讲工具如何使用 Key：
 
-- Codex、Claude Code、Kimi Code、Grok、Image2 等不同用途默认使用不同 Key，共享的是账户余额，不是 Key 本身。
-- Kimi Code 使用 Kimi 分组 Key，并把凭证写入自己的 `config.toml` provider 配置。
-- Grok CLI、Grok 图片和 Grok 视频使用 Grok 分组 Key。
-- GPT Image 2 API 和 `SorryCode Image2` 使用支持 `gpt-image-2` 的 Image2 Key。
+- 能否复用一把 Key，取决于它所属分组是否开放目标模型，以及该工具使用的协议和接口是否兼容；不是按工具名称强制一对一分配。
+- 兼容的工具可以共用一把 Key。按工具或用途分开创建 Key，是为了更清晰地统计用量、设置限额、排查问题或轮换凭证。
+- Kimi Code、Grok CLI、Grok 图片、Grok 视频和 GPT Image 2 仍要分别说明所需的模型、协议和分组权限；不要把“需要匹配分组”写成“必须创建专用 Key”。
 - REST API 示例直接在请求头中提供可替换的分组 Key 占位值，不要求用户先设置通用环境变量。
 - runtime 一键安装器负责保存当前工具选择的 Key。公开页面不要求用户手动同步安装器内部的变量名。
 - 只有具体 Skill 确实依赖环境变量时，才在该 Skill 页面公开变量名。当前 `SORRYCODE_API_KEY` 只属于 `SorryCode Image2` 的配置 contract。
 
-不要把一个通用变量名写成 SorryCode 全局 Key，也不要暗示不同分组的 `sk-...` 可以互换。
+不要把一个通用变量名写成 SorryCode 全局 Key，也不要仅凭 `sk-...` 判断不同分组的 Key 可以互换。
 
 ## 内容更新顺序
 

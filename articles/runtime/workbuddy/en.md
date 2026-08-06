@@ -19,9 +19,9 @@ WorkBuddy is a desktop agent that can read source material, call tools, and writ
 
 Download the macOS or Windows app from the [WorkBuddy website](https://www.workbuddy.cn/), then install it and follow the sign-in flow. Do not download installers from unofficial websites.
 
-<h2 id="prepare-key">Prepare a WorkBuddy Key</h2>
+<h2 id="prepare-key">Prepare an API Key</h2>
 
-Create a dedicated key for WorkBuddy on the [SorryCode API Key page](https://sorrycode.com/keys), and select a group that supports the model you intend to use. Use separate keys for different tool groups; they still draw from the same account balance.
+WorkBuddy uses the OpenAI-compatible `/v1/chat/completions` endpoint. On the [SorryCode API Key page](https://sorrycode.com/keys), choose a key whose group exposes both the model you need and this endpoint. You can reuse an existing compatible key; creating a separate key for WorkBuddy is optional for usage tracking, spending limits, or credential rotation.
 
 WorkBuddy needs an exact model ID. Use an `id` returned by `/v1/models` for the current key instead of guessing from a display name.
 
@@ -49,7 +49,7 @@ Use these values:
 | --- | --- |
 | Provider | `Custom` |
 | Endpoint | `https://sorrycode.com/v1/chat/completions` |
-| API Key | the dedicated SorryCode key for WorkBuddy |
+| API Key | a SorryCode key whose group exposes the target model and OpenAI-compatible endpoint |
 | Model Name | an exact model ID returned by `/v1/models` |
 | Tool Calling | enabled |
 | Image Input | enable only when the model and group support images |
@@ -89,7 +89,7 @@ See [How Agent Capabilities Are Extended](/docs/runtime/agent-capabilities) for 
 
 | Symptom | What to check |
 | --- | --- |
-| `401` or invalid key | the key is complete, still enabled, and assigned to the WorkBuddy group |
+| `401` or invalid key | the key is complete, still enabled, and its group supports the current model |
 | `404` or model not found | the endpoint includes `/v1/chat/completions` and the model is an exact `/v1/models` ID |
 | Chat works but no file is created | Tool Calling is enabled and the model supports OpenAI-compatible tool calls |
 | Images are not understood | the model, group, and Image Input setting all support images |

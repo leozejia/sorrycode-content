@@ -2,7 +2,7 @@
 title: First Time Using SorryCode
 slug: first-step
 order: 1
-summary: Choose an agent tool, create an API key for its model group, and continue with that tool's setup guide.
+summary: Choose an agent tool, confirm API key and group compatibility, and continue with that tool's setup guide.
 section: start
 section_title: Getting Started
 section_order: 1
@@ -24,11 +24,11 @@ SorryCode provides model APIs for agent tools such as Codex, Claude Code, and Wo
 
 If you are unsure, start with Codex.
 
-<h2 id="prepare-key">Create an API Key for the Right Group</h2>
+<h2 id="prepare-key">Prepare a Compatible API Key</h2>
 
-Sign in to the [SorryCode console](https://sorrycode.com), confirm that your balance is available, and create an API key for the tool you selected. Use separate keys for different tool groups; they still draw from the same account balance.
+Sign in to the [SorryCode console](https://sorrycode.com), confirm that your balance is available, and check whether an existing API key's group exposes the model and protocol your tool needs. You can reuse a compatible key; a separate key for each tool is optional for usage tracking, spending limits, or credential rotation.
 
-See [Create API Key](/docs/start/create-api-key) for the steps and group rules. Do not reuse one key across tools that require different groups.
+See [Create API Key](/docs/start/create-api-key) for the steps and group rules. Do not use a key with an incompatible protocol or a group that does not expose the model you need.
 
 <h2 id="continue">Continue with the Tool Guide</h2>
 

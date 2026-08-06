@@ -56,7 +56,7 @@ npx skills add linxiverse/sorrycode-image2 -a claude-code -g -y
 
 <h2 id="api-key">设置图片 API Key</h2>
 
-先在 [开始使用 / 创建 API Key](/docs/start/create-api-key) 创建一把专门给 Image2 使用的 Key，并把它分配到支持 `gpt-image-2` 的图片分组。不要使用 Grok 分组 Key。
+先在 [开始使用 / 创建 API Key](/docs/start/create-api-key) 创建或选择一把分配到支持 `gpt-image-2` 的图片分组的 Key。只有在需要把 Image2 的用量、限额或凭证轮换单独管理时，才专门创建一把 Key。
 
 Skill 读取 `SORRYCODE_API_KEY`。这是 `SorryCode Image2` 自己约定的配置名，不代表所有 SorryCode 工具都共用这把 Key。公开 REST API 示例会直接让你填写对应分组 Key；只有本 Skill 需要设置这个环境变量。
 

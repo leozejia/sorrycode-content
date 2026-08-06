@@ -17,9 +17,9 @@ Codex App 默认不会列出当前 SorryCode 分组中的所有模型。已经�
 
 OpenCodex 在本机运行代理，并把可用模型写入 Codex 共用的模型目录。它不会修改 Codex App 程序本身。
 
-<h2 id="prepare">准备一把 Codex 分组 Key</h2>
+<h2 id="prepare">准备兼容的 API Key</h2>
 
-在 [API Key 页面](https://sorrycode.com/keys) 单独创建一把给 Codex 使用的 Key，并选择包含目标模型的分组。
+在 [API Key 页面](https://sorrycode.com/keys) 选择一把所属分组包含目标模型、并支持本页 OpenAI-compatible Responses 接口的 Key。已有符合条件的 Key 可以直接复用，不必为 Codex 单独创建；需要分开统计用量、设置限额或轮换凭证时，再按用途新建一把 Key。
 
 模型范围由这把 Key 的分组决定。页面里看到的“全部模型”，指当前分组返回的全部模型，不包括其他分组。
 
@@ -48,7 +48,7 @@ ocx gui
 | Provider ID | `sorrycode` |
 | Adapter | `openai-responses` |
 | Base URL | `https://sorrycode.com` |
-| API Key | 刚才创建的 Codex 分组 Key |
+| API Key | 可访问目标模型的兼容 SorryCode Key |
 | Responses Path | `/v1/responses` |
 | Live Model Discovery | 开启 |
 

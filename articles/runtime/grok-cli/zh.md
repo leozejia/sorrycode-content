@@ -51,7 +51,7 @@ group_order: 30
 
 如果你还没做这一步，可以先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
-如果你也准备使用 Codex、Claude Code 或 SorryCode Image2，请分别创建对应用途的 API Key。多把 Key 仍然消耗同一份余额，但每把 Key 应该选择与用途匹配的分组。
+如果你也准备使用 Codex、Claude Code 或 SorryCode Image2，先检查现有 Key 是否属于这些工具需要的协议和分组。兼容时可以复用；想把用量、限额或凭证轮换分开管理时，再按用途创建多把 Key。每把 Key 都必须选择与实际用途匹配的分组。
 
 <h2 id="one-click-install">⚡ 一键安装（推荐）</h2>
 
