@@ -1,6 +1,6 @@
 # SorryCode Content IA
 
-更新时间：2026-07-29
+更新时间：2026-08-06
 
 这份文档定义 `sorrycode-content` 的内容维护边界。它是内容团队内部文档，不进入线上 docs。
 
@@ -110,7 +110,7 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 `articles/runtime/` 的公开展示名是“模型与工作台 / Models & Runtimes”，URL 继续保持
 `/docs/runtime/*`。导航按供应商生态组织：
 
-- OpenAI：Codex、GPT-5.6 Sol、GPT Image 2；
+- OpenAI：Codex、在 Codex 中使用 SorryCode 多模型、GPT-5.6 Sol、GPT Image 2；
 - Anthropic：Claude Code、Claude Fable 5、Claude Desktop；
 - Kimi：Kimi Code；
 - Tencent：WorkBuddy；
@@ -119,6 +119,12 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 
 不要创建没有实际文章的空供应商分组。新增供应商页面时，先确认用户入口、模型、
 接口和生产验证，再加入导航。
+
+Codex 相关页面按下面分工：
+
+- `Codex` 负责安装、API Key、Base URL 和第一次使用；
+- `在 Codex 中使用 SorryCode 多模型` 负责用 OpenCodex 把当前 Key 分组的模型同步到 Codex App 模型选择器，并说明后台服务、目录刷新和恢复原生 Codex；
+- 多模型页只推荐 OpenCodex，不公开陈列备选工具；同一时间只能由一个工具管理 Codex 本地配置和模型目录。
 
 WorkBuddy 只维护一篇闭环页面，包含下载安装、SorryCode 自定义模型配置、第一个文件任务和
 必要的权限边界。不要为通用安全常识、单个菜单或尚未形成稳定用户问题的功能单独建页。

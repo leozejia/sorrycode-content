@@ -16,15 +16,11 @@ docs/
 articles/
   runtime/
     index.json
-    codex-plugins/
+    codex-multi-model/
       zh.md
       en.md
-      cover.png
   tools/
     index.json
-    cc-switch/
-      zh.md
-      en.md
     codex-history/
       zh.md
       en.md

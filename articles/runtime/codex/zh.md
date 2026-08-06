@@ -125,7 +125,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-codex.bat {{INSTALL_BAT_URL}} && %TEMP%\s
 
 如果你打开 Codex App 后发现插件入口是灰色的，或者 `/plugins` 找不到 Chrome、Computer Use、Browser、HyperFrames，可以看 [Plugins 和 Skills 有什么区别](/docs/runtime/plugins-vs-skills) 了解如何配置插件。
 
-同一 SorryCode 分组中的 DeepSeek 等非 GPT 模型不会自动出现在 Codex App 模型选择器中。需要切换这些模型时，按 [在 Codex 中切换 SorryCode 模型](/docs/tools/cc-switch) 配置。
+同一 SorryCode 分组中的 DeepSeek 等非 GPT 模型不会自动出现在 Codex App 模型选择器中。需要在 App 里直接选择这些模型时，按 [在 Codex 中使用 SorryCode 多模型](/docs/runtime/codex-multi-model) 配置。
 
 <h2 id="cli-fallback">备用：继续用终端</h2>
 

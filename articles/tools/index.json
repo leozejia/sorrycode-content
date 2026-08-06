@@ -5,7 +5,7 @@
     "zh": "工具",
     "en": "Tools"
   },
-  "updatedAt": "2026-08-05",
+  "updatedAt": "2026-08-06",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
@@ -17,12 +17,11 @@
         },
         "items": [
           "vscode",
-          "cc-switch",
           "codex-history"
         ],
         "description": {
-          "zh": "让 Codex 和本地工作台更顺手：打开项目、切换配置、找回历史会话。",
-          "en": "Make Codex and the local workspace smoother: open projects, switch configs, and recover historical sessions."
+          "zh": "让 Codex 和本地工作台更顺手：打开项目、查看改动、找回历史会话。",
+          "en": "Make Codex and the local workspace smoother: open projects, inspect changes, and recover historical sessions."
         }
       },
       {
@@ -59,7 +58,6 @@
   },
   "articles": [
     "vscode",
-    "cc-switch",
     "codex-history",
     "mole",
     "open-design",

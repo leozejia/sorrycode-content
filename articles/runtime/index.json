@@ -5,14 +5,14 @@
     "en": "Models & Runtimes",
     "zh": "模型与工作台"
   },
-  "updatedAt": "2026-08-05",
+  "updatedAt": "2026-08-06",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
       {
         "id": "openai",
         "title": { "en": "OpenAI", "zh": "OpenAI" },
-        "items": ["codex", "gpt-5-6-sol", "gpt-image-2"]
+        "items": ["codex", "codex-multi-model", "gpt-5-6-sol", "gpt-image-2"]
       },
       {
         "id": "anthropic",
@@ -43,6 +43,7 @@
   },
   "articles": [
     "codex",
+    "codex-multi-model",
     "gpt-5-6-sol",
     "gpt-image-2",
     "claude-code",

@@ -158,4 +158,4 @@ Do not force every tool into one key. Separate keys make later usage records muc
 - Want to start with Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
 - Unsure how runtimes and models relate: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - Want a minimal validation first: [Getting Started / First Request](/docs/start/first-request)
-- Want to switch to other models from the same group in Codex: [Tools / Switch SorryCode Models in Codex](/docs/tools/cc-switch)
+- Want to use other models from the same group in Codex App: [Models & Runtimes / Use Multiple SorryCode Models in Codex](/docs/runtime/codex-multi-model)
