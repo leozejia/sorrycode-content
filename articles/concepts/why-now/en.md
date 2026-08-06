@@ -2,7 +2,7 @@
 title: Why AI Is Different Now
 slug: why-now
 order: 2
-summary: You tried AI in 2023 and found it underwhelming. But three breakthroughs — context windows, tool use, and reasoning — have combined to turn AI from an "advisor" into a "worker." This isn't marketing. It's engineering.
+summary: You tried AI a few years ago and found it underwhelming. Context, tool use, and reasoning have since combined to move AI from answering questions toward participating in real work.
 section: concepts
 section_title: Core Concepts
 section_order: 5
@@ -15,12 +15,12 @@ You probably have a question, and it's a fair one:
 ```text
 I tried AI back in 2023.
 It was interesting for a few minutes, but not that useful.
-Why is everyone in 2025 saying AI can actually do things now?
+Why are so many people saying AI can actually do things now?
 ```
 
 You're not alone. Most people's first AI experience was the 2023 ChatGPT web version. That version really did feel more like a fun chat toy — it could write poems, tell stories, answer simple questions, but you wouldn't seriously expect it to get work done.
 
-Two years later, what changed?
+A few years later, what changed?
 
 <h2 id="not-just-better">It's Not Just "Got Smarter"</h2>
 
@@ -28,7 +28,7 @@ The easiest mistake is to think of AI progress as "the models keep getting smart
 
 ```text
 The issue isn't that AI's IQ went up.
-The issue is that from 2023 to 2025, AI gained three new capabilities:
+The issue is that AI gained three new capabilities between the early chat models and today's systems:
 1. It can read more at once — enough to read an entire book
 2. It has hands now — not just generating text, but operating software
 3. It can think before speaking — from one-shot Q&A to multi-step reasoning
@@ -44,13 +44,13 @@ Taken together, they're a qualitative leap.
 
 You feed it a piece of material, it performs one operation, then stops and waits. You feed it the next piece. Each cycle starts from scratch.
 
-2025 AI is like an assembly line.
+Today's AI is more like an assembly line.
 
 You put raw material in at one end. It moves through every station on its own — reading files, analyzing data, calling tools, producing output, checking quality. You don't need to supervise every step. You only need to inspect the final result.
 
 ```text
 Single machine → Assembly line
-That's the fundamental difference between 2023 AI and 2025 AI.
+That's the core difference between early chat AI and today's Agents.
 ```
 
 This change didn't come from any single model getting smarter. It came from three foundational capabilities stacking together.
@@ -59,7 +59,7 @@ This change didn't come from any single model getting smarter. It came from thre
 
 The context window is, simply put, how much content AI can "see" at once.
 
-In 2023, GPT-4 had an 8K token context window. A complete system prompt + your question + the AI's response might fill it up. Anything beyond that got cut off.
+Early, commonly used GPT-4 versions had an 8K token context window. A complete system prompt + your question + the AI's response might fill it up. Anything beyond that got cut off.
 
 What's 8K tokens? Roughly 6,000 English words, or the length of a short article.
 
@@ -69,14 +69,14 @@ Want it to understand your entire project? Not possible.
 Want it to remember a full conversation history? Won't fit.
 ```
 
-In 2025, mainstream models have context windows of 200K tokens and beyond.
+Today, context limits vary from tens of thousands to hundreds of thousands of tokens, with some models offering more.
 
-What's 200K tokens? It can read an entire novel in one pass. Or all the code in a mid-sized project. Or five years of your company's product documentation.
+A large context window can hold an entire novel or a substantial bundle of project material. But fitting it in does not mean AI will understand every detail.
 
 ```text
-2025: AI can read an entire book at once.
-Give it a project, it can comprehend it fully.
-Talk to it all day, it won't "forget" what you said at the beginning.
+Today: AI can see much more material at once.
+You can give it a book or a bundle of project files and ask it to work from them.
+With enough material, it can still miss details or lose track of earlier information.
 ```
 
 But this capability comes with a cost.
@@ -87,11 +87,11 @@ That's why later we have [How to Manage AI's Memory](/docs/concepts/what-is-cont
 
 <h2 id="tools">Breakthrough 2: Tool Use — AI Grew Hands</h2>
 
-2023 AI could only do one thing: you input text, it outputs text.
+Early mainstream chat products mostly did one thing: you entered text and they returned text.
 
 It couldn't read your files. It couldn't run programs. It couldn't query databases. It couldn't open a browser. It was a brain in a jar.
 
-2025 AI has "tool use" capabilities.
+Today's Agents have "tool use" capabilities.
 
 It can now:
 
@@ -128,7 +128,7 @@ It's not that it can't solve it. It's that it "thinks while speaking" — it wri
 
 Like someone asked to answer a complex question impromptu — they start speaking before their thoughts are fully formed.
 
-In 2024-2025, AI learned a new skill: **think first, then speak.**
+In recent years, reasoning models gave AI another way to work: **think first, then speak.**
 
 These are called "reasoning models." They internally explore multiple approaches and answers, then output the best one.
 
@@ -137,7 +137,7 @@ These are called "reasoning models." They internally explore multiple approaches
 | How it works | Think while speaking | Think first, then speak |
 | Speed | Fast | Slow |
 | Best for | Daily chat, translation, summarization, writing | Math, logic, coding, complex analysis, multi-step decisions |
-| What you see | Direct answer | Shows "thinking..." then answer |
+| What you see | Usually a direct answer | Some products show "thinking..." before the answer |
 
 ```text
 Reasoning models aren't "smarter."
@@ -148,7 +148,7 @@ This distinction matters because not every task needs a reasoning model.
 
 Translating text, writing a social post, summarizing an article — use a standard model. It's faster and cheaper.
 
-Analyzing financial statements, finding bugs in code, multi-step logical deduction — use a reasoning model. It gives more reliable results.
+For financial analysis, debugging, or multi-step logical deduction, a reasoning model is usually a better fit, but its result still needs verification.
 
 Later, [When to Trust AI and When Not To](/docs/concepts/calibration) covers how to decide which to use.
 
@@ -170,11 +170,11 @@ You ask 2023 AI to analyze sales data:
 - **No tools**: You have to manually copy-paste data to it
 - **No reasoning**: Its analysis may be superficial
 
-You ask 2025 Agent to do the same:
+You ask a current Agent to do the same:
 
-- **Large context**: It reads all months of sales reports in one pass
+- **Large context**: It can hold more months of sales reports in one pass
 - **Has tools**: It runs statistical scripts, generates charts, creates report files
-- **Can reason**: It doesn't just describe data — it spots anomalies, forms hypotheses, suggests next steps
+- **Can reason**: It can help spot anomalies, form hypotheses, and suggest next steps
 
 ```text
 Three capabilities combined don't produce "three times better."
@@ -188,15 +188,15 @@ You don't need to study how context windows expanded. You don't need to understa
 You only need to know one thing:
 
 ```text
-2023 AI could only chat with you.
-2025 AI can do work for you.
+Early chat AI mainly answered questions.
+Today's Agents can participate in real work.
 ```
 
 The difference between these two isn't "better." It's **usable versus not usable.**
 
-In 2023, you tried AI and thought "interesting, but no practical use" — that judgment was correct. AI at the time had no practical use.
+If you tried AI earlier and thought "interesting, but not very useful," that reaction was understandable. Many products at the time struggled to complete real workflows reliably.
 
-The 2025 judgment needs to be made fresh.
+It is worth making that judgment again now.
 
 Not because your earlier judgment was wrong. Because AI gained capabilities it didn't have before.
 

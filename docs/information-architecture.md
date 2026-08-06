@@ -30,33 +30,16 @@ sorrycode                     产品站、renderer、proxy、cache、安全校�
 | 栏目 | 回答的问题 | 写法 |
 | --- | --- | --- |
 | 开始使用 | SorryCode 适合谁，如何创建 Key、验证链路和理解成本 | 第一章，先给默认路径，再提供必要的平台参考 |
-| 模型与工作台 | 不同供应商生态的工作台、模型和媒体能力怎么用 | 按 OpenAI / Anthropic / Kimi / xAI 分组，执行路径必须闭环 |
+| 模型与工作台 | 不同供应商生态的工作台、模型和媒体能力怎么用 | 按供应商生态分组，执行路径必须闭环 |
 | Skills | 装好 runtime 后，给 agent 增加什么能力 | 能力选择、安装、触发、边界 |
-| 新手村 | 今天想完成一个具体成果，怎么走 | 任务路线，少选择，给默认路径 |
 | 工具 | 独立工具链或工作台怎么用 | 初始化、使用、适用边界 |
 | Agent 基建 | 长期上下文、AGENTS.md、CLAUDE.md、DESIGN.md、MCP、Skills 这些长期标准是什么 | 原理、标准、可长期引用 |
 | 环境准备 | 多个路径共用的稳定前置 | 少量共享准备 |
 | 排障 | 共性错误怎么分型和修复 | 错误现象、原因、下一步 |
 
-交叉是正常的。比如做 PPT 会经过 `新手村`、`Skills`、`工具` 和 `办公文档`。治理目标不是消灭交叉，而是避免同一段解释在多个页面重复。
+交叉是正常的。比如做 PPT 会经过 `Skills`、`工具` 和 `办公文档`。治理目标不是消灭交叉，而是避免同一段解释在多个页面重复。
 
 ## 页面职责
-
-### 新手村
-
-`新手村` 是任务教程。它回答“我第一次想拿到一个结果，默认怎么做”。
-
-页面应该保留：
-
-- 任务目标
-- 准备物品
-- 通关步骤
-- 复制这句话
-- 通关标志
-- 卡关怎么办
-- 下一关
-
-新手村不负责完整比较所有工具。它只给默认路径，并链接到 Skills 或 Tools 的选择页。
 
 ### Skills
 
@@ -107,18 +90,10 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 `工具不是模型` 继续放在核心概念，回答工作台、模型、API Key、Base URL 的关系。
 安装页和首条请求页只负责执行路径，不再承担商业定位或成本科普。
 
-`articles/runtime/` 的公开展示名是“模型与工作台 / Models & Runtimes”，URL 继续保持
-`/docs/runtime/*`。导航按供应商生态组织：
-
-- OpenAI：Codex、在 Codex 中使用 SorryCode 多模型、GPT-5.6 Sol、GPT Image 2；
-- Anthropic：Claude Code、Claude Fable 5、Claude Desktop；
-- Kimi：Kimi Code；
-- Tencent：WorkBuddy；
-- xAI：Grok、Grok 图片生成、Grok 视频生成；
-- 通用：Plugins 与 Skills。
-
-不要创建没有实际文章的空供应商分组。新增供应商页面时，先确认用户入口、模型、
-接口和生产验证，再加入导航。
+`articles/runtime/` 的公开展示名是“模型与工作台 / Models & Runtimes”，URL 保持
+`/docs/runtime/*`。导航按供应商生态组织，当前文章和分组以 `articles/runtime/index.json`
+为准。不要创建没有文章的空供应商分组。新增供应商页面前，先确认用户入口、模型、
+接口和生产验证。
 
 Codex 相关页面按下面分工：
 
@@ -127,8 +102,13 @@ Codex 相关页面按下面分工：
 - 多模型页只推荐 OpenCodex，不公开陈列备选工具；同一时间只能由一个工具管理 Codex 本地配置和模型目录。
 
 WorkBuddy 只维护一篇闭环页面，包含下载安装、SorryCode 自定义模型配置、第一个文件任务和
-必要的权限边界。不要为通用安全常识、单个菜单或尚未形成稳定用户问题的功能单独建页。
+Expert / Expert Team 入口及必要的权限边界。不要为通用安全常识、单个菜单或尚未形成稳定用户问题的功能单独建页。
 UI 是自定义模型的公开配置路径，不公开讲解本地配置文件格式。
+
+`Agent 能力是怎么扩展的` 负责解释 Runtime、Expert / Agent、Skill、MCP / Tool / Connector
+和 Plugin 的层级关系。Plugin 是特定 runtime 的打包与分发单元，不是 Tool 的同义词；
+Expert 是角色与协作机制，不是权限来源。各产品的安装和配置步骤留在对应 runtime 页面，
+通用概念页不维护跨产品兼容性表。
 
 模型使用页只承接当前模型的选择、参数、提示方法和验证边界，不重复 runtime 的安装步骤：
 
@@ -166,39 +146,15 @@ UI 是自定义模型的公开配置路径，不公开讲解本地配置文件�
 
 不要把一个通用变量名写成 SorryCode 全局 Key，也不要暗示不同分组的 `sk-...` 可以互换。
 
-## 公开内容更新顺序
+## 内容更新顺序
 
-如果只改公开正文、标题、摘要、导航分组和页面 contract：
-
-1. 先更新本仓库 `docs/` 下的内部治理文档。
-2. 再更新 `articles/` 正文。
-3. 再更新 `articles/<section>/index.json` 和根 `index.json`。
-
-只有当改动影响 `sorrycode` 的 renderer、内容代理、缓存、安全校验或内容源读取规则时，才需要同步改 `sorrycode/docs/architecture/`。
+涉及栏目、页面定位或配置口径时，先更新本仓库 `docs/` 下的内部决议，再改中英文公开正文，最后同步 section index 和根 `index.json`。只有改动影响 renderer、内容代理、缓存、安全校验或内容源读取规则时，才需要同步修改 `sorrycode` 的架构文档。
 
 ## 命名、路径和 IA 改造策略
 
-后续文档 IA 改造默认硬切。硬切不只针对 URL，也包括公开标题、slug、目录路径、栏目归属、导航分组和页面定位。
+名称、slug、目录、栏目、导航分组或页面定位不准确时，默认硬切。删除旧路径，不保留兼容入口、重定向或隐藏保底页，站内链接和索引在同一批改完。
 
-- 发现名称不准确，就改名称。
-- 发现 slug 或目录路径不准确，就改 slug 和目录路径。
-- 发现栏目归属不准确，就移动到正确栏目或分组。
-- 改 slug 就删除旧 slug，不保留旧 URL。
-- 不为旧 article 做兼容入口、站内重定向或隐藏保底页。
-- 站内链接必须一次性更新干净。
-- 根 `index.json` 和 section index 不允许继续引用旧路径。
-- 长期结构正确性优先于短期链接连续性。不要因为旧路径已经存在，就继续保留不准确的名称、slug、目录或栏目归属。
-
-这条规则的目的，是避免内容仓库为了历史命名、临时分类和早期理解长期背兼容包袱。公开文档不是不可变 API，IA 应该服务当前理解和长期维护边界。
-
-每次硬切都必须同时处理：
-
-- `articles/<section>/<slug>/` 实际目录
-- Markdown frontmatter 里的 `slug`、`title`、`summary`、`section` 和分组字段
-- 根 `index.json` 里的 `slug`、`markdownPath`、`assetBaseUrl`、`route`、`title` 和 `summary`
-- `articles/<section>/index.json` 里的 `articles` 和 `navigation.groups[].items`
-- 全仓站内链接，例如 `/docs/<section>/<slug>`
-- 必要的内部治理文档，例如本文件或专题策略文档
+公开文档不是不可变 API，长期结构正确性优先于旧链接连续性。具体执行顺序和检查项见 `docs/operator-restructuring-guide.md`。
 
 ## 收录原则
 

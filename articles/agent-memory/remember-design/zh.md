@@ -2,7 +2,7 @@
 title: 让 AI 记住你的设计风格
 slug: remember-design
 order: 4
-summary: 写一份 DESIGN.md，让 AI 每次生成图片、PPT、网页时都遵守你的品牌色、字体和视觉风格。
+summary: 用 DESIGN.md 保存项目的品牌色、字体和视觉约束，并明确让 Agent 在设计任务中读取它。
 section: agent-memory
 section_title: 让 AI 记住你的要求
 section_order: 15
@@ -10,99 +10,41 @@ section_order: 15
 
 # 让 AI 记住你的设计风格
 
-## 你是不是遇到这些问题
+设计任务经常要重复说明品牌色、字体、版式和禁用风格。把这些稳定要求写进 `DESIGN.md`，不同会话和工具就能读取同一份设计约束。
 
-- ❌ 让 AI 生成 10 张图，每张风格都不一样
-- ❌ 做 PPT、海报、网页，每次都要重新说"用我们的品牌色"
-- ❌ AI 生成的设计看起来像"AI 默认模板"
-- ❌ 换一个 agent 或新开会话，之前的设计要求全忘了
-
-**解决方案很简单：写一个叫 DESIGN.md 的文件。**
-
-把它放在你的工作文件夹里，AI 每次生成设计前都会先读它，自动遵守你的设计要求。
-
-## 5 秒速览
-
-```text
-问题：AI 不记得我的设计要求
-方案：写一个 DESIGN.md 文件
-位置：工作文件夹（和你的其他文件放一起）
-效果：AI 每次自动读取，保持风格一致
-```
-
-<h2 id="comparison">有 DESIGN.md vs 没有 DESIGN.md</h2>
-
-### 没有 DESIGN.md
-
-```text
-你：请生成一张产品海报
-AI：（生成了渐变背景 + 未来感字体 + 荧光色）
-你：不对，我们品牌是克制的，用墨蓝色
-AI：（重新生成，风格还是不对）
-你：算了，我自己改...
-```
-
-### 有 DESIGN.md
-
-```text
-你：请先读 DESIGN.md，再生成产品海报
-AI：已读取设计规范。将使用墨蓝色主色调、克制排版、留白充足的风格。
-你：（一次就对了）
-```
+`DESIGN.md` 不是所有 Agent 都会自动识别的通用协议。需要在项目规则、Skill 说明或当前任务中明确要求 Agent 读取它。
 
 <h2 id="what-is-it">DESIGN.md 是什么</h2>
 
-DESIGN.md 是一个文本文件，里面写着你的设计要求：
+`DESIGN.md` 是一个写给 Agent 读取的文本文件，可以包括：
 
 - 品牌应该是什么气质
 - 用什么颜色、字体、字号
 - 按钮、卡片、表单长什么样
-- 哪些设计坚决不能用
+- 哪些设计不能使用
 
-**它不是给人看的设计规范**（那是 Figma 或 Design System）。  
-**它是给 AI 看的设计要求**（用自然语言写，AI 能读懂）。
+它可以补充 Figma 或现有设计系统，但不能代替原始设计稿、组件库和人工验收。
 
 <h2 id="where">放在哪里</h2>
 
-最简单的方式：放在你的工作文件夹里。
+把文件放在相关素材和输出目录所在的工作文件夹中：
 
 ```text
 我的工作文件夹/
-  DESIGN.md          ← 就是这个文件
-  assets/            ← 你的素材
-  outputs/           ← AI 生成的结果
-  其他文件...
+  DESIGN.md
+  assets/
+  outputs/
 ```
-
-**不需要"项目"概念。** 就算你的文件散落在桌面、下载文件夹，也可以：
-
-1. 新建一个文件夹
-2. 把常用素材扔进去
-3. 在里面写一个 DESIGN.md
-4. 告诉 AI："进入这个文件夹，读 DESIGN.md，开始做图"
 
 <h2 id="who-reads-it">谁会读取它</h2>
 
-读取者通常是：
+可以读取它的通常包括：
 
-- 设计类 skills（SorryCode Image2、Kami、Magazine Web PPT）
-- Codex、Claude Code 这类 agent runtime
+- 明确支持该文件的设计类 Skills
+- Codex、Claude Code 这类能读取项目文件的 Agent
 - Open Design 这类设计工作台
-- 能读取文件并生成 UI、图片、PPT 或文档的 agent
 
-它不是某个模型专属，也不是 SorryCode 私有格式。它的价值在于让不同 agent 读取同一份设计要求。
-
-<h2 id="problem">它解决什么问题</h2>
-
-设计任务最容易出现的问题不是"agent 不会做图"，而是风格不稳定：
-
-- 每次都要重新解释品牌色、字体和风格
-- agent 记不住哪些设计不能用
-- 页面、海报、PPT、图片风格各做各的
-- 同一个项目换一个 agent 后，视觉规则丢失
-- 输出看起来像默认模板，没有项目自己的气质
-
-DESIGN.md 把这些要求写成可读取的文件，减少口头反复解释。
+能读取文件不代表会主动寻找 `DESIGN.md`。使用前仍要确认当前工具或 Skill 的说明。
 
 <h2 id="what-to-write">应该写什么</h2>
 
@@ -110,11 +52,11 @@ DESIGN.md 把这些要求写成可读取的文件，减少口头反复解释。
 
 - **项目气质：** 这个项目应该给人什么感觉，避免什么误读
 - **品牌原则：** 要传达什么，不要传达什么
-- **设计 tokens：** 颜色、字体、字号、圆角、间距、阴影
+- **设计参数：** 颜色、字体、字号、圆角、间距、阴影
 - **组件规范：** 按钮、卡片、表单、导航、弹窗的样式
 - **布局原则：** 栅格、响应式、页面密度、留白和信息层级
 - **交互状态：** hover、focus、loading、empty、error、success
-- **Do / Don't：** 明确推荐和禁止的视觉做法
+- **推荐和禁止事项：** 明确可用和不可用的视觉做法
 - **素材位置：** Logo、产品截图、品牌图、图标放在哪里
 
 <h2 id="avoid">不应该写什么</h2>
@@ -164,59 +106,17 @@ DESIGN.md 把这些要求写成可读取的文件，减少口头反复解释。
 - 不要把中文标题做成乱码或不可编辑图片
 ```
 
-<h2 id="advanced">进阶结构</h2>
-
-长期项目可以扩成这个结构：
-
-```md
-# DESIGN.md
-
-## Product Context
-
-## Brand Principles
-
-## Design Tokens
-
-### Colors
-
-### Typography
-
-### Spacing
-
-### Radius and Shadow
-
-## Components
-
-### Buttons
-
-### Cards
-
-### Forms
-
-### Navigation
-
-## Layout
-
-## Interaction States
-
-## Accessibility
-
-## Assets
-
-## Do
-
-## Don't
-```
-
 <h2 id="how-to-use">怎么让 AI 使用</h2>
 
-把 DESIGN.md 放进工作文件夹后，可以直接说：
+把 `DESIGN.md` 放进工作文件夹后，在任务中明确要求读取：
 
 ```text
 请先读取 DESIGN.md，再用 Kami 把这份内容做成一页纸。开始前告诉我你会遵守哪些设计约束。
 ```
 
-或者：
+项目长期使用时，可以在 `AGENTS.md`、`CLAUDE.md` 或对应工具的项目规则中引用它。具体规则文件以当前 Agent 的官方说明为准。
+
+图片任务也可以直接说：
 
 ```text
 请先读取 DESIGN.md，再用 SorryCode Image2 生成一张产品海报。保持项目既有视觉风格，输出到 outputs/images/poster/。
@@ -224,27 +124,13 @@ DESIGN.md 把这些要求写成可读取的文件，减少口头反复解释。
 
 <h2 id="relationship">它和 skill 的关系</h2>
 
-Skill 负责告诉 AI 某类任务怎么做，比如如何生成图片、如何排版文档、如何做网页 PPT。
-
-DESIGN.md 负责告诉 AI 这个项目应该长什么样。
-
-两者一起用时分工很清楚：skill 给流程，DESIGN.md 给风格边界。
+Skill 提供任务流程，`DESIGN.md` 保存当前项目的视觉约束。只有 Skill 或任务明确读取了该文件，这些约束才会进入当前上下文。
 
 <h2 id="not-perfect">DESIGN.md 不是万能的</h2>
 
-需要理解：
-
-- AI 不是设计师，**它会误读、会理解偏差、会优先级错乱**
-- DESIGN.md 只是"每次读一遍"，不是"永久记住"
-- 如果你的要求很复杂，AI 可能只记住一部分
-
-所以：
-
-- ✅ 把核心视觉规则写清楚
-- ✅ 用 Do / Don't 明确边界
-- ✅ 重要任务前，明确提醒 AI："先读 DESIGN.md"
-- ❌ 不要指望 AI 完美还原 Figma 设计稿
-- ❌ 不要把临时想法写进 DESIGN.md
+- Agent 可能漏读、误解或忽略部分规则，重要产物仍需检查
+- 复杂设计不要只靠自然语言描述，继续提供原始素材、截图或组件规范
+- 规则变化后及时更新文件，删除过期截图和要求
 
 <h2 id="references">参考</h2>
 
@@ -253,11 +139,6 @@ DESIGN.md 负责告诉 AI 这个项目应该长什么样。
 
 <h2 id="next">接下来</h2>
 
-**如果你想用 DESIGN.md 生成图片、PPT、网页：**
-
-- 先看 [Skills / 精选 Skills](/docs/skills/featured-skills) 找合适的 skill
-- 或者看 [Tools / Open Design](/docs/tools/open-design) 了解完整设计工作台
-
-**如果你想让 AI 记住项目的开发规则：**
-
-- 看 [让 AI 记住项目规则](/docs/agent-memory/remember-rules)
+- 选择设计类能力：[Skills / 创作与设计](/docs/skills/creation-design)
+- 了解设计工作台：[Tools / Open Design](/docs/tools/open-design)
+- 保存开发规则：[让 AI 记住项目规则](/docs/agent-memory/remember-rules)

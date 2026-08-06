@@ -156,17 +156,11 @@ Developer → Configure Third-Party Inference...
 
 ![Claude Desktop Workspace restrictions](./workspace-restrictions.png)
 
-### 启用 Web Search
+### 按需允许联网
 
-在 `Allowed egress hosts` 里，点击右侧的 `Allow all` 按钮。
+`Allowed egress hosts` 控制 Claude Desktop 可以访问哪些外部地址。优先只添加任务需要的域名，不要把 `Allow all` 当成默认设置。
 
-**如果不开启这个权限：**
-
-- Claude Desktop 无法使用 web search（网页搜索）
-- 无法访问外部 API 和服务
-- 很多需要联网的功能会失效
-
-这是 Claude Desktop 的安全机制。默认情况下，它会限制 agent 访问外部网络。你需要手动允许。
+只有在明确需要访问大量不同站点、理解开放范围，并能接受相应风险时，才使用 `Allow all`。不允许外网不会影响基础对话，但网页搜索、外部 API 和需要联网的工具会受限。
 
 ### 添加工作文件夹
 
@@ -254,7 +248,7 @@ Help → Troubleshooting → Enable Developer Mode
 3. SorryCode 账号是否有可用余额或权限
 4. 当前网络是否能访问 SorryCode
 
-如果你不确定是哪一层出问题，可以先看 [排障 / 常见问题](/docs/start/create-api-key)。
+如果你不确定是哪一层出问题，可以先看 [排障 / 常见问题](/docs/troubleshoot/common-errors)。
 
 ### Code 页面不能按预期工作
 

@@ -25,11 +25,12 @@ Protocol differences matter too:
 
 ## 404 Not Found
 
-The most common causes are:
+Check the full request URL first. Different APIs handle `/v1` differently, so do not add or remove it everywhere:
 
-- `/v1` is missing from the Base URL
-- the route is wrong
-- you mixed an OpenAI-compatible path with an Anthropic-compatible path
+- Compare the Base URL and path with the current runtime or API guide
+- Check whether the client appended `/v1` twice
+- Check whether OpenAI-compatible and Anthropic-compatible paths were mixed
+- Confirm that the current key group exposes the requested model and endpoint
 
 ## 429 / quota problems
 

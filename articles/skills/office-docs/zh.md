@@ -13,53 +13,55 @@ group_order: 10
 
 # 办公文档
 
-这是给已有办公文件准备的一组 skills。
-
-你不用先理解 `.docx`、`.xlsx`、`.pptx`、`.pdf` 的技术差异。先确认手里有没有现成文件：
-
-```text
-我是不是已经有一个 Word、Excel、PowerPoint 或 PDF 文件，需要 agent 帮我读、改、整理或导出？
-```
+这组 Skills 用来处理已有的 Word、Excel、PowerPoint 和 PDF 文件。想从零制作一份成品材料，去看[创作与设计](/docs/skills/creation-design)。
 
 <h2 id="choose">怎么选</h2>
 
-| 你要做什么 | 优先看 |
+| 文件 | 适合的任务 | Skill |
 | --- | --- |
-| 改 Word、整理报告、处理批注和修订 | [DOCX](/docs/skills/docx) |
-| 整理 Excel、清洗表格、公式和图表 | [XLSX](/docs/skills/xlsx) |
-| 修改已有 PPT、套用公司模板、输出原生 PowerPoint | [PPTX](/docs/skills/pptx) |
-| 读取 PDF、提取表格、拆分合并、填表 | [PDF](/docs/skills/pdf) |
+| Word `.docx` | 编辑正文、保留格式、处理批注和修订 | `docx` |
+| Excel `.xlsx` / `.csv` | 清洗数据、公式、图表和报表 | `xlsx` |
+| PowerPoint `.pptx` | 修改已有幻灯片、套公司模板 | `pptx` |
+| PDF | 提取文字和表格、拆分、合并或填表 | `pdf` |
 
-如果你不是在处理已有文件，而是想从零做一份能发给别人看的材料，去 [Skills / 创作与设计](/docs/skills/creation-design)。那里更适合图片、海报、一页纸、简历、报告、作品集和网页 PPT。
+<h2 id="install">安装</h2>
 
-<h2 id="office-vs-design">办公文档和创作设计的区别</h2>
+先安装 [Codex](/docs/runtime/codex) 或 [Claude Code](/docs/runtime/claude-code)，再按文件类型运行一条命令：
 
-`DOCX / XLSX / PPTX / PDF` 更适合处理已有文件：你把文件路径给 agent，告诉它要改哪里、提取什么、保留什么格式。
+| Skill | Codex | Claude Code |
+| --- | --- | --- |
+| DOCX | `npx skills add anthropics/skills -s docx -a codex -g -y --full-depth` | `npx skills add anthropics/skills -s docx -a claude-code -g -y --full-depth` |
+| XLSX | `npx skills add anthropics/skills -s xlsx -a codex -g -y --full-depth` | `npx skills add anthropics/skills -s xlsx -a claude-code -g -y --full-depth` |
+| PPTX | `npx skills add anthropics/skills -s pptx -a codex -g -y --full-depth` | `npx skills add anthropics/skills -s pptx -a claude-code -g -y --full-depth` |
+| PDF | `npx skills add anthropics/skills -s pdf -a codex -g -y --full-depth` | `npx skills add anthropics/skills -s pdf -a claude-code -g -y --full-depth` |
 
-`Kami / 藏师傅的 PPT Skill / SorryCode Image2` 更适合从零做成品：你给主题、受众、素材和风格，让 agent 直接做出一份可以展示或继续修改的材料。
+卸载前先运行 `npx skills list --global` 确认名称，再运行 `npx skills remove --global skill-name`。
 
-<h2 id="first-prompt">第一句话可以怎么说</h2>
+<h2 id="first-prompt">第一句话</h2>
 
-如果你有现成文件：
+把文件放进工作目录，并把真实路径告诉 Agent：
 
 ```text
-请先读取这个文件，不要立刻改。告诉我它的结构、有什么问题、你建议怎么处理：./材料.docx
+请使用 DOCX Skill 读取 ./材料.docx，先不要修改。告诉我文档结构、批注和修订情况，再给出修改建议。
 ```
-
-如果你要从零生成：
 
 ```text
-我想做一份面向客户的产品介绍。先问我必要问题，再建议应该用 Kami、藏师傅的 PPT Skill 还是 SorryCode Image2。
+请使用 XLSX Skill 读取 ./数据.xlsx，先说明有哪些工作表和字段，再检查公式、空值和重复数据。
 ```
 
-<h2 id="install-note">安装说明</h2>
+```text
+请使用 PPTX Skill 读取 ./汇报.pptx，保留公司模板，先给出页面结构和修改计划。
+```
 
-如果你要处理已有 `Word / Excel / PowerPoint / PDF` 文件，需要先安装对应的 Office skill。没有安装时，agent 可能只能做普通文本理解，不能稳定保留原生格式、批注、公式、图表或 PDF 操作。
+```text
+请使用 PDF Skill 读取 ./资料.pdf，告诉我目录结构、主要内容和可以提取的表格，先不要改文件。
+```
 
-默认顺序是：
+<h2 id="check">处理后检查</h2>
 
-1. 先安装 [Codex](/docs/runtime/codex) 或 [Claude Code](/docs/runtime/claude-code)
-2. 再按任务安装 [DOCX](/docs/skills/docx)、[XLSX](/docs/skills/xlsx)、[PPTX](/docs/skills/pptx) 或 [PDF](/docs/skills/pdf)
-3. 把文件路径和目标交给 agent
+- Word 和 PowerPoint 要检查原有格式、批注、修订和模板是否保留
+- Excel 要复核公式、数字、工作表和图表引用
+- 扫描版 PDF 可能需要 OCR，表格提取后要检查数字是否错位
+- 法律、财务、合同和重要经营数据必须由人复核
 
-如果你是从零生成一份好看的成品材料，可以先看 [Kami](/docs/skills/kami)、[藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) 或 [SorryCode Image2](/docs/skills/sorrycode-image2)。
+Skill 来源：[Anthropic Skills](https://github.com/anthropics/skills)。

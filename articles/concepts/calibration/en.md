@@ -61,11 +61,12 @@ You're the quality inspector. AI is the operator. You glance at its output and k
 
 AI gives you an answer in an unfamiliar field. It sounds supremely confident. It cites data. It gives specific advice.
 
-Don't take it at face value. Do at least one thing:
+Don't take it at face value. Find the original source, official documentation, or underlying data. Confirm that the source exists and actually supports the conclusion.
 
 ```text
-Ask another AI the same question.
-Where two AIs contradict each other — that's where you can't trust either directly.
+Another AI can help you find a different angle,
+but it is not independent evidence.
+Two AIs can agree and still make the same mistake.
 ```
 
 Or an even simpler method: ask AI to argue against its own conclusion.
@@ -75,17 +76,17 @@ Or an even simpler method: ask AI to argue against its own conclusion.
 If this approach were to fail, what would be the most likely reason?"
 ```
 
-If AI can produce a reasonable counterargument, its analysis has some depth. If it hedges or dodges — its earlier conclusion was likely just "continuing" a nice-sounding answer, not actually analyzing.
+A counterargument can expose omissions, but it cannot prove the original conclusion. Return to primary sources and real data before deciding.
 
 **Rule 3: Never use confidence to judge correctness**
 
-Say it again: AI's confidence has nothing to do with its correctness.
+Say it again: AI's tone is not reliable evidence that an answer is correct.
 
 This doesn't mean AI is unreliable or unusable. It means you must treat it differently from how you treat humans.
 
 ```text
 With humans: hesitant tone → probably uncertain → ask more
-With AI: tone is meaningless → check facts and logic → verify yourself
+With AI: tone is not evidence → check facts and logic → verify yourself
 ```
 
 <h2 id="spot-failure">How to Spot When AI Is Making Things Up</h2>
@@ -96,13 +97,13 @@ A few signals. When you see them, be suspicious.
 
 AI says "According to Q3 2023 data on industrial valve shipments in South China, year-over-year growth was 12.7%."
 
-If you didn't give it this data — it's fabricating. AI can't query databases. It can only continue text. When a number is too specific and unsourced, it's probably made up.
+If the claim has no source, verify the number. Unless it is connected to the relevant data source, AI cannot confirm that the figure came from a real database. An overly specific, unsourced number may be fabricated.
 
 **Signal 2: Dodging the core question**
 
 You ask "Between approach A and approach B, which fits our scenario better?" AI responds with a long paragraph, but on closer inspection — it never actually compares them. It says nice things about both.
 
-That's avoidance. It doesn't know how to choose, but it won't say "I don't know."
+That's avoidance. It doesn't know how to choose, but it may not say "I don't know."
 
 **Signal 3: Logical gaps**
 
@@ -112,9 +113,9 @@ For example: "Because costs are rising, we should lower prices." This cause and 
 
 **Signal 4: The answer changes when you rephrase**
 
-This is the most effective detection method.
+This is a useful warning sign.
 
-Take the same question. Ask it again from a different angle. If AI's answer becomes inconsistent — it probably fabricated a plausible-sounding answer the first time.
+Ask the same question from a different angle. If the answer changes, the result is unstable and you should inspect the sources and calculation. It does not prove that the first answer was fabricated.
 
 <h2 id="reasoning-vs-standard">When to Use Reasoning Models</h2>
 
@@ -126,11 +127,12 @@ The calibration rule extends here:
 Standard model: best for tasks where you can tell at a glance whether the output is right.
                 Examples: translation, summarization, polishing, draft writing.
 
-Reasoning model: best for tasks where you care whether the answer is genuinely correct.
+Reasoning model: best for tasks that require multi-step deduction, complex logic,
+                 and additional checking.
                  Examples: math, code logic, complex analysis, multi-step reasoning.
 ```
 
-For everyday writing and conversation, the reasoning model's slowness and cost aren't worth it. But when you need rigorous logic, those extra seconds and tokens are money well spent.
+For everyday writing and conversation, a reasoning model's extra time and cost may not be worthwhile. For rigorous logic, that extra work often is. Reasoning models still make mistakes and do not replace external verification.
 
 <h2 id="emotional">Admit This: AI Will Intimidate You</h2>
 
@@ -152,7 +154,7 @@ More knowledgeable than you ≠ better judgment than you.
 More articulate than you ≠ better thinking than you.
 ```
 
-You've done your job for ten years. Your industry understanding, your instinct for people, your nose for risk — AI doesn't have these. And won't.
+You've done your job for ten years. Your industry understanding, your instinct for people, and your sense of risk come from real experience. AI cannot have that experience for you.
 
 AI is your tool. You are the one using the tool.
 
@@ -177,10 +179,10 @@ The more you use it, the sharper your judgment gets.
 <h2 id="remember">Remember One Thing</h2>
 
 ```text
-AI will never tell you when it doesn't know.
+AI may not tell you when it doesn't know.
 You have to learn to spot when it's making things up.
-Confidence does not equal correctness —
-for AI, these two things are completely unrelated.
+Confidence does not equal correctness.
+Tone cannot replace verification.
 ```
 
 <h2 id="next">Next Step</h2>

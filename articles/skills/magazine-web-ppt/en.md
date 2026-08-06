@@ -39,13 +39,13 @@ Use it for:
 - web decks that should look complete and be ready to present
 - deck images or platform covers that follow the same visual system
 
-If you only need to edit an existing `.pptx`, start with [PPTX](/docs/skills/pptx). If you need a maintainable React deck, start with [Tools / Open Slide](/docs/tools/open-slide).
+If you only need to edit an existing `.pptx`, start with [Office Docs](/docs/skills/office-docs). If you need a maintainable React deck, start with [Tools / Open Slide](/docs/tools/open-slide).
 
 <h2 id="presentation-route">How It Fits With Other PPT Paths</h2>
 
 | Need | Start with |
 | --- | --- |
-| Edit an existing PowerPoint file, use a company template, deliver `.pptx` | [PPTX](/docs/skills/pptx) |
+| Edit an existing PowerPoint file, use a company template, deliver `.pptx` | [Office Docs](/docs/skills/office-docs) |
 | Quickly make a web deck with a strong visual system | `Guizang PPT Skill` |
 | Turn writing, reports, resumes, or portfolios into paper-like artifacts | [Kami](/docs/skills/kami) |
 | Build a code-based deck with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |

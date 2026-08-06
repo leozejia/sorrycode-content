@@ -25,11 +25,12 @@ section_order: 50
 
 ## 404 Not Found
 
-最常见原因：
+优先检查请求使用的完整地址。不同接口对 `/v1` 的要求不同，不要统一补上或删除：
 
-- Base URL 漏了 `/v1`
-- 路径拼接错了
-- 你把 OpenAI-compatible 路径和 Anthropic-compatible 路径混用了
+- 对照当前 Runtime 或 API 文档中的 Base URL 和路径
+- 检查客户端是否重复拼接了 `/v1`
+- 检查是否混用了 OpenAI-compatible 和 Anthropic-compatible 路径
+- 确认当前 Key 的分组确实开放了请求中的模型和接口
 
 ## 429 / 配额不足
 

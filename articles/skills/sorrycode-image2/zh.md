@@ -60,11 +60,7 @@ npx skills add linxiverse/sorrycode-image2 -a claude-code -g -y
 
 Skill 读取 `SORRYCODE_API_KEY`。这是 `SorryCode Image2` 自己约定的配置名，不代表所有 SorryCode 工具都共用这把 Key。公开 REST API 示例会直接让你填写对应分组 Key；只有本 Skill 需要设置这个环境变量。
 
-你可以把下面这句话交给 Codex 或 Claude Code：
-
-```text
-请帮我把 SorryCode 图片 API Key 设置成长期可用。我的 key 是：sk-...。如果当前系统是 Windows，请用用户级 PowerShell 设置；如果是 macOS，请写入 zsh 配置。设置前先告诉我会改哪里。
-```
+在本机终端运行下面对应系统的命令。不要把真实 Key 发进 Agent 对话、写入项目文件或放进截图。
 
 Windows PowerShell：
 

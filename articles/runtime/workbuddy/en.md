@@ -69,6 +69,14 @@ Create hello-workbuddy.md in the current workspace. Include today's date and the
 
 The setup is working when WorkBuddy returns a normal response and `hello-workbuddy.md` appears in the test folder. This verifies the model connection, tool call, and workspace write path.
 
+<h2 id="experts">Expert and Expert Team</h2>
+
+A WorkBuddy Expert combines a role, method, and tools for a defined class of problems. Expert Team is for complex work that needs several specialist roles: a lead divides the task and integrates the results.
+
+An Expert is not a new model and does not bypass file permissions. It still uses the current model and works through configured Skills, MCP servers, or tools. Complete the regular file task above first. Choose an Expert when you need a stable specialist role, and use Expert Team when the task genuinely requires collaboration.
+
+See [How Agent Capabilities Are Extended](/docs/runtime/agent-capabilities) for how these mechanisms relate. Refer to the [Expert Center](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Expert-Center) for WorkBuddy-specific setup.
+
 <h2 id="permissions">File Permissions</h2>
 
 - Use an empty test folder first, not the Desktop, Downloads folder, home directory, or a production project

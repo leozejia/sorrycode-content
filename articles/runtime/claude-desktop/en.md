@@ -156,17 +156,11 @@ Find `Workspace restrictions` in the left menu of the configuration window, then
 
 ![Claude Desktop Workspace restrictions](./workspace-restrictions.png)
 
-### Enable Web Search
+### Allow Network Access When Needed
 
-In `Allowed egress hosts`, click the `Allow all` button on the right.
+`Allowed egress hosts` controls which external addresses Claude Desktop can reach. Add only the domains required for the task. Do not use `Allow all` as the default setting.
 
-**If you do not enable this permission:**
-
-- Claude Desktop cannot use web search
-- Cannot access external APIs and services
-- Many features requiring network access will fail
-
-This is Claude Desktop's security mechanism. By default, it restricts the agent from accessing external networks. You need to manually allow it.
+Use `Allow all` only when the task requires many different sites, you understand the wider access, and you accept the risk. Blocking outbound access does not prevent basic conversations, but it limits web search, external APIs, and network-dependent tools.
 
 ### Add Workspace Folders
 
@@ -254,7 +248,7 @@ Check these first:
 3. does the SorryCode account have available balance or permission?
 4. can your current network reach SorryCode?
 
-If you are not sure which layer failed, read [Troubleshoot / Common Errors](/docs/start/create-api-key).
+If you are not sure which layer failed, read [Troubleshoot / Common Errors](/docs/troubleshoot/common-errors).
 
 ### Code View Does Not Behave As Expected
 

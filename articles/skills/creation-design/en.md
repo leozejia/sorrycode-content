@@ -17,7 +17,7 @@ This skill group is for finished artifacts.
 
 If you want the agent to make an image, a polished document, or a presentation deck instead of only giving you text in chat, start here.
 
-If this is your first time making a deck, design, image, one-pager, or cover, read [How to Use Design Skills](/docs/skills/design-workflow) first. These deliverables usually take a few rounds of judgment and revision: start with an editable draft, then use specific feedback to move it closer to what you need.
+These artifacts usually need a few revisions. Start with an editable draft, then point out specific problems with quality, context, or personal preference.
 
 <h2 id="choose">How to Choose</h2>
 
@@ -42,13 +42,33 @@ PPT is not one tool category. It is a delivery format. Start with what you actua
 
 | What you really need | Start with |
 | --- | --- |
-| Edit an existing PowerPoint file, use a company template, deliver `.pptx` | [PPTX](/docs/skills/pptx) |
+| Edit an existing PowerPoint file, use a company template, deliver `.pptx` | [Office Docs](/docs/skills/office-docs) |
 | Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 | Turn writing, reports, resumes, or portfolios into paper-like artifacts | [Kami](/docs/skills/kami) |
 | Build a code-based deck with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
 | Build presentation videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
 
-If this is your first sharing deck, start with [Village / Make a Sharing Deck](/docs/skills/magazine-web-ppt). It gives you a default path instead of a full tool comparison.
+For a first sharing deck, start with [Guizang PPT Skill](/docs/skills/magazine-web-ppt).
+
+<h2 id="iterate">How to Revise a Draft</h2>
+
+| Problem | What to say |
+| --- | --- |
+| Text is too small, contrast is weak, images are blurry, or layout overflows | Name the page and problem, then ask the agent to fix it |
+| The draft does not fit a presentation, customer handout, or brand | Add the audience, setting, brand, and delivery constraints |
+| You want a calmer style, more impact, or a closer match to a reference | Give a direction or reference and limit the change to the relevant parts |
+
+If you cannot yet explain what feels wrong, ask the agent to review first:
+
+```text
+Do not edit yet. Review this draft and group the problems into quality, context, and personal preference. List only the three most important problems in each group, then ask which group I want to fix first.
+```
+
+For a local revision, name the pages and what must stay:
+
+```text
+Do not rebuild the full deck. Only revise slides 3 through 6. Improve projector readability, keep the current structure, and reduce decoration. List the slides you changed when done.
+```
 
 <h2 id="first-prompt">First Prompt</h2>
 

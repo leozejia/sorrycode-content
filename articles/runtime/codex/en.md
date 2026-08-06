@@ -123,7 +123,7 @@ Use this path:
 
 If you prefer viewing project files and changes inside a visual editor, continue with [Tools / VS Code](/docs/tools/vscode).
 
-If the Codex App plugin entry is grey, or `/plugins` cannot find Chrome, Computer Use, Browser, or HyperFrames, read [Plugins vs Skills - What's the Difference](/docs/runtime/plugins-vs-skills) to learn how to configure plugins.
+Install or enable Codex App Plugins from the Plugins entry in the sidebar. See [How Agent Capabilities Are Extended](/docs/runtime/agent-capabilities) for how Plugins, Skills, and MCP relate.
 
 Non-GPT models such as DeepSeek from the same SorryCode group do not automatically appear in the Codex App model picker. To select them directly in the App, follow [Use Multiple SorryCode Models in Codex](/docs/runtime/codex-multi-model).
 

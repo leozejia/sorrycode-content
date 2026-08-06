@@ -1,29 +1,16 @@
 # 运营重构手册
 
-更新时间：2026-05-13
+更新时间：2026-08-06
 
 这份文档给直接维护 `sorrycode-content` 的运营同学使用。它是内部治理文档，不进入线上 docs。
 
 ## 先读什么
 
-开始重构前，按这个顺序读：
-
-1. `README.md`
-   了解仓库结构、公开内容 contract、根 `index.json` 和 section index 的格式。
-2. `docs/information-architecture.md`
-   了解栏目职责、页面职责、硬切策略和收录原则。
-3. `docs/public-article-assets.md`
-   如果要添加封面、截图或正文插图，先了解公开图片资源的使用边界。
-4. 相关专题策略文档
-   例如重构 PPT / slides 内容时读 `docs/presentation-skills-strategy.md`。
-5. 要改的公开页面
-   同时读中文和英文版本，例如 `articles/skills/design-workflow/zh.md` 和 `articles/skills/design-workflow/en.md`。
-6. 相关 section index
-   例如改 Skills，就读 `articles/skills/index.json`。
+开始重构前，先读 `README.md` 和 `docs/information-architecture.md`，再读要改的中英文页面及对应 section index。涉及图片或专项路线时，再读对应的资源规范或专题策略。
 
 ## 重构前先判断
 
-不要先改字。先判断这次问题属于哪一类：
+先判断问题类型，再改正文：
 
 | 问题 | 应该怎么处理 |
 | --- | --- |
@@ -33,8 +20,6 @@
 | 多个页面重复解释同一件事 | 留一个主页面，其他页面只链接过去 |
 | 某个 skill 被写成整个任务域 | 先做路线图，再写单个 skill |
 | 上游能力变化 | 只更新站内长期稳定层，不搬运完整 README |
-
-如果名称、slug、目录路径、栏目、分组或页面定位表达不正确，默认硬切，不保留旧路径，也不做兼容页。
 
 ## 硬切清单
 
@@ -47,7 +32,7 @@
 - 站内所有 `/docs/<section>/<slug>` 链接
 - 相关内部策略文档
 
-不要只改 Markdown 正文。线上导航和接口主要看 `index.json` 和 section index。
+线上导航和接口主要读取 `index.json` 和 section index，不要只改 Markdown 正文。硬切原则由 `docs/information-architecture.md` 定义。
 
 ## 写公开页的基本口径
 
@@ -60,35 +45,6 @@
 - 不暴露内部账号池、供应商、私有路由、凭证、日志或生成诊断。
 - 强主观产物要写成“可修改初稿 + 具体反馈 + 逐步迭代”的方法，不写成情绪化立场。
 - 截图和插图只做辅助说明，不能替代文字步骤、命令、参数和错误处理。
-
-## 写单个 skill 页面
-
-单个 skill 页只讲这个 skill：
-
-- 它是什么
-- 适合什么
-- 不适合什么
-- 怎么安装
-- 怎么触发
-- 第一话怎么说
-- 常见问题
-- 上游参考
-
-不要把单个 skill 写成整个任务域。比如 PPT 不是一个 skill，PPT 是交付形态；具体 skill 只是其中一条路线。
-
-## 写路线图页面
-
-当一个任务有多条路线时，先写路线图。
-
-路线图应该回答：
-
-- 用户真正要交付什么
-- 默认入口是什么
-- 哪些情况应该换路线
-- 新手默认路径是什么
-- 更专业的工具在哪里继续读
-
-路线图不要复制每个工具页的详细安装步骤。它负责分流，不负责替每个页面展开。
 
 ## 提交前校验
 

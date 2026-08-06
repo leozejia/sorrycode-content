@@ -109,9 +109,8 @@ npx skills remove --global skill-name
 
 已经装好 runtime 后，可以按目标选：
 
-- 第一次做 PPT、设计、图片、一页纸或封面：[Skills / 设计类 Skills 怎么用](/docs/skills/design-workflow)
+- 第一次做图片、设计、一页纸、简历、报告或网页 PPT：[Skills / 创作与设计](/docs/skills/creation-design)
 - 想处理 Word / Excel / PPT / PDF：[Skills / 办公文档](/docs/skills/office-docs)
-- 想生成图片、做一页纸、简历、报告或网页 PPT：[Skills / 创作与设计](/docs/skills/creation-design)
 - 想诊断商业问题、找对标或判断内容方向：[Skills / DBSkill](/docs/skills/dbskill)
 - 想让 AI 编程任务先想清楚再动手：[Skills / Waza](/docs/skills/waza)
 

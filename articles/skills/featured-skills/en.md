@@ -109,9 +109,8 @@ If you have not installed a runtime yet, start here:
 
 After your runtime works, choose by goal:
 
-- First deck, design, image, one-pager, or cover: [Skills / How to Use Design Skills](/docs/skills/design-workflow)
+- First image, design, one-pager, resume, report, or web deck: [Skills / Creation and Design](/docs/skills/creation-design)
 - Work with Word / Excel / PowerPoint / PDF: [Skills / Office Docs](/docs/skills/office-docs)
-- Generate images, one-pagers, resumes, reports, or web-style decks: [Skills / Creation and Design](/docs/skills/creation-design)
 - Diagnose business questions, benchmarks, or content direction: [Skills / DBSkill](/docs/skills/dbskill)
 - Make AI coding workflows steadier: [Skills / Waza](/docs/skills/waza)
 

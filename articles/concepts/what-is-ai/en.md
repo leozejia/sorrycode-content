@@ -2,7 +2,7 @@
 title: What AI Actually Is
 slug: what-is-ai
 order: 1
-summary: A single metaphor explains it all: AI is not magic, not a database, not a search engine. It's an intern who has read every book in the world but has a terrible memory. Understand this, and you understand the foundation of every AI tool.
+summary: A single metaphor explains it all: AI is not magic, not a database, not a search engine. Think of it as a widely read intern with a terrible memory. Understand this, and you understand the foundation of every AI tool.
 section: concepts
 section_title: Core Concepts
 section_order: 5
@@ -42,7 +42,7 @@ That's it.
 
 So why does it sometimes seem intelligent?
 
-Because when it makes those predictions, it's not just looking at the last few words. It's cross-referencing everything it has ever read — every book, article, conversation, code file, and webpage it was trained on. It has learned the patterns of how humans organize language.
+Because when it makes those predictions, it uses the current context and language patterns learned during training from large amounts of books, articles, conversations, code, and webpages.
 
 So when you ask "how do I negotiate a raise," the answer it gives isn't based on personal experience. It's because it has read countless articles on that topic and learned what humans typically say in that situation.
 
@@ -61,19 +61,21 @@ AI is like an intern who has read every book in the world.
 
 This single metaphor explains every puzzle you'll encounter.
 
-**Incredibly well-read**: They've read every introductory textbook, every industry document. Ask about any field and they can engage.
+It is only a metaphor. It does not mean AI has literally read every book or knows everything.
+
+**Incredibly well-read**: They've encountered many introductory textbooks and industry documents. Ask about many fields and they can engage.
 
 **No common sense**: They don't know why your company stopped ordering from that supplier. They don't know your manager is in a bad mood this week. They don't know the last proposal was already rejected. None of that was in the books.
 
-**Terrible memory**: Every time you talk to them, you need to re-tell them what you said last time. They don't "remember" your conversation — they re-read the transcript you provide at the start of each exchange.
+**Terrible memory**: Each time you talk to them, they need to see the relevant history again. They do not "remember" a conversation the way a person does.
 
-**Never admits when they don't know**: Ask anything and they'll give you an answer. Some answers are things they truly know. Some are extrapolations from vaguely similar material. Some are two unrelated things stitched together — and they can't tell the difference.
+**May answer even when uncertain**: Some answers reflect learned knowledge. Some extrapolate from similar material. Some stitch unrelated things together. Tone alone cannot tell you which kind you received.
 
 ```text
 Three fundamental facts about AI:
 1. It has read a lot, but knows nothing about your specific situation
-2. It has no real memory — every conversation starts fresh
-3. It never says "I don't know" — it continues text, it doesn't verify facts
+2. It does not remember like a person: each answer depends on the context provided
+3. It may not say "I don't know": generating an answer is not verifying it
 ```
 
 <h2 id="token">What's a "Token" — Why Word Counts Don't Match</h2>
@@ -102,7 +104,7 @@ This is the most counterintuitive thing about AI.
 
 You've been talking for half an hour and it remembers what you said at the start. You think it has "learned" about you.
 
-But it hasn't remembered *you*. What actually happened: before each reply, **the system re-feeds your entire conversation history back to the model.**
+But it hasn't remembered *you*. Before each reply, the product usually **provides some or all of the conversation history to the model again.**
 
 Like working with an intern who has a terrible memory. Every time you say "let's continue," their assistant spreads out all their meeting notes in front of them. They scan everything, then respond.
 
@@ -133,9 +135,9 @@ Remember, AI's essence is "continue the text." It was trained to be an extremely
 But when you ask "what did I eat for lunch yesterday," that information isn't in its training data. What does it do? It still continues — because that's what it does. It might fabricate "you probably had noodles or rice," because that's a plausible continuation of "what did someone eat for lunch."
 
 ```text
-AI doesn't say "I don't know."
-It just continues — sometimes with facts, sometimes with fabrications.
-It can't tell the difference.
+AI may not volunteer "I don't know."
+It generates content that may be factual or fabricated.
+Its tone does not prove the content was verified.
 ```
 
 This is why you need to verify: in domains you know well, review its output critically. In domains you don't know, cross-check with other sources.
@@ -153,7 +155,7 @@ These are two different ways of working.
 | Standard model | Think while speaking — you ask, it answers directly | Daily conversation, translation, summarization, simple writing |
 | Reasoning model | Think first, then speak — internally explores possibilities, picks the best answer | Math, logic, coding, complex analysis |
 
-Reasoning models aren't "smarter." They're "slower but more careful."
+Reasoning models are usually slower and better suited to complex multi-step work, but their results still need verification.
 
 Like with employees: some are quick, answering as you speak — great for everyday communication. Others need to work things out on paper before responding — better for tasks that need careful thinking.
 
@@ -206,8 +208,8 @@ Understand this one sentence, and you won't be scared by headlines about "AI rep
 
 ```text
 AI is not mysterious.
-It's an intern who has read every book in the world —
-knowledgeable, forgetful, and never admits when they don't know.
+Think of it as an intern who has read a great many books:
+knowledgeable, forgetful, and sometimes willing to answer while uncertain.
 How you treat it is not awe. It's management.
 ```
 

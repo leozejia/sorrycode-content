@@ -58,11 +58,7 @@ First, use [Getting Started / Create API Key](/docs/start/create-api-key) to cre
 
 The Skill reads `SORRYCODE_API_KEY`. This is the configuration name used by `SorryCode Image2`, not a shared key for every SorryCode tool. Public REST API examples ask you to enter the matching group key directly. Only this Skill requires this environment variable.
 
-You can give this instruction to Codex or Claude Code:
-
-```text
-Help me set my SorryCode image API key so it works in future sessions. My key is: sk-.... On Windows, use a user-level PowerShell setting. On macOS, write it to my zsh configuration. Tell me what you will change before making the change.
-```
+Run the command for your system in a local terminal. Do not send the real key in an agent conversation, save it in project files, or include it in screenshots.
 
 Windows PowerShell:
 

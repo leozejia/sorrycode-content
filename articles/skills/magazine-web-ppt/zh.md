@@ -39,13 +39,13 @@ source_url: https://github.com/op7418/guizang-ppt-skill
 - 想要网页翻页、视觉完整、可直接展示的 HTML deck
 - 需要围绕同一视觉系统生成 PPT 配图或平台封面
 
-如果你只需要改已有 `.pptx`，先看 [PPTX](/docs/skills/pptx)。如果你要做可维护 React deck，先看 [工具 / Open Slide](/docs/tools/open-slide)。
+如果你只需要改已有 `.pptx`，先看[办公文档](/docs/skills/office-docs)。如果你要做可维护的 React deck，先看[工具 / Open Slide](/docs/tools/open-slide)。
 
 <h2 id="presentation-route">和其他 PPT 能力怎么选</h2>
 
 | 需求 | 优先看 |
 | --- | --- |
-| 修改已有 PowerPoint、套公司模板、最终交付 `.pptx` | [PPTX](/docs/skills/pptx) |
+| 修改已有 PowerPoint、套公司模板、最终交付 `.pptx` | [办公文档](/docs/skills/office-docs) |
 | 快速生成有明确视觉风格的网页演示 | `藏师傅的 PPT Skill` |
 | 把文章、报告、简历或作品集整理成纸面风材料 | [Kami](/docs/skills/kami) |
 | 做可维护、可评论、可导出 HTML/PDF 的代码式 deck | [工具 / Open Slide](/docs/tools/open-slide) |

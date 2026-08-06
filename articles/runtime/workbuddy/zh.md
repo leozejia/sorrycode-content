@@ -69,6 +69,14 @@ curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <WORKBUDDY_AP
 
 收到正常回复，并在测试文件夹中找到 `hello-workbuddy.md`，说明模型连接、工具调用和工作空间写入已经可用。
 
+<h2 id="experts">Expert 和 Expert Team</h2>
+
+WorkBuddy 的 Expert 会把角色、方法和工具组合起来，处理一类明确的问题。Expert Team 适合需要多个专业角色协作的复杂任务，由负责人拆分任务并汇总结果。
+
+Expert 不是新的模型，也不会绕过文件权限。它仍然使用当前模型，并通过已配置的 Skills、MCP 或工具工作。第一次使用时先完成上面的普通文件任务；需要固定专业角色时再选择 Expert，需要多人协作时再选择 Expert Team。
+
+这些机制的关系见 [Agent 能力是怎么扩展的](/docs/runtime/agent-capabilities)。WorkBuddy 的具体设置以 [Expert 中心](https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Expert-Center) 为准。
+
 <h2 id="permissions">文件权限</h2>
 
 - 第一次使用只选择空测试目录，不要选择桌面、下载目录、个人主目录或生产项目

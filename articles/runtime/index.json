@@ -37,7 +37,7 @@
       {
         "id": "general",
         "title": { "en": "General", "zh": "通用" },
-        "items": ["plugins-vs-skills"]
+        "items": ["agent-capabilities"]
       }
     ]
   },
@@ -54,6 +54,6 @@
     "grok-cli",
     "grok-image",
     "grok-video",
-    "plugins-vs-skills"
+    "agent-capabilities"
   ]
 }

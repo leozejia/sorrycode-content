@@ -25,7 +25,7 @@ Use it for:
 - browser presentation mode and HTML/PDF export
 - users comfortable with a project folder and a local dev server
 
-If you are making your first deck, start with [Guizang PPT Skill](/docs/skills/magazine-web-ppt). If you must edit an existing `.pptx`, start with [PPTX](/docs/skills/pptx).
+If you are making your first deck, start with [Guizang PPT Skill](/docs/skills/magazine-web-ppt). If you must edit an existing `.pptx`, start with [Office Docs](/docs/skills/office-docs).
 
 <h2 id="how-it-works">How It Works</h2>
 
@@ -62,7 +62,7 @@ Read this Open Slide project and turn the outline below into a 10-page deck. Pro
 
 | Need | Start with |
 | --- | --- |
-| Edit an existing PowerPoint file | [PPTX](/docs/skills/pptx) |
+| Edit an existing PowerPoint file | [Office Docs](/docs/skills/office-docs) |
 | Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 | Make a polished artifact or paper-style slides from scratch | [Kami](/docs/skills/kami) |
 | Build a code-based deck with comments and HTML/PDF export | `Open Slide` |

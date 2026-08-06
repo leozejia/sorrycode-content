@@ -5,7 +5,7 @@
     "en": "Skills",
     "zh": "Skills"
   },
-  "updatedAt": "2026-07-14",
+  "updatedAt": "2026-08-06",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
@@ -26,11 +26,7 @@
           "zh": "办公文档"
         },
         "items": [
-          "office-docs",
-          "docx",
-          "xlsx",
-          "pptx",
-          "pdf"
+          "office-docs"
         ]
       },
       {
@@ -40,7 +36,6 @@
           "zh": "创作与设计"
         },
         "items": [
-          "design-workflow",
           "creation-design",
           "sorrycode-image2",
           "kami",
@@ -62,12 +57,7 @@
   },
   "articles": [
     "featured-skills",
-    "design-workflow",
     "office-docs",
-    "docx",
-    "xlsx",
-    "pptx",
-    "pdf",
     "creation-design",
     "sorrycode-image2",
     "kami",

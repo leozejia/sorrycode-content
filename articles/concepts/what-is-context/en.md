@@ -42,13 +42,13 @@ Context = everything AI can see before it responds to you.
 
 This desk isn't infinite.
 
-Every AI model has a "context window" — the maximum amount it can see at once. In 2025, mainstream models have context windows around 200K tokens, roughly the length of a short novel.
+Every AI model has a "context window," the maximum amount it can see at once. Limits vary widely by model and workspace and continue to change, so check the current model documentation and the limit shown in your workspace.
 
 Sounds huge? It fills up fast.
 
 A project with dozens of code files, a two-hour conversation history, several rounds of tool output — these add up quickly and can max out the window.
 
-When context nears the limit, the system must "truncate" — throw out the earliest messages, keeping only the most recent.
+When context nears the limit, the system may drop older content or summarize it before providing only part of the history to the model.
 
 Like a desk where new papers keep piling up. Old ones get pushed off. Eventually, AI "forgets" the important things you said at the start.
 
@@ -147,7 +147,7 @@ Remember what [How AI Cost Works](/docs/start/ai-cost-basics) covered?
 
 AI consumption breaks down into three categories: input (what it reads), output (what it generates), cache (what it reuses).
 
-Context directly determines input volume. Every time AI responds, it re-reads your entire conversation history. The longer the conversation, the higher the cost per reply.
+Context directly affects input volume. Before each reply, the product may provide some or all of the conversation history, summaries, and files again. In general, longer conversations cost more per reply.
 
 ```text
 Dirty context doesn't just degrade AI performance.
