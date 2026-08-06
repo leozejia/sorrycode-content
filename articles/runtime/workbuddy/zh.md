@@ -15,6 +15,10 @@ group_order: 27
 
 WorkBuddy 是一个桌面 Agent，可以读取资料、调用工具并把结果写入本地文件。下面的步骤会把它接到 SorryCode，并用一个空文件夹验证模型和文件写入。
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="install">安装 WorkBuddy</h2>
 
 从 [WorkBuddy 官网](https://www.workbuddy.cn/) 下载 macOS 或 Windows 版本，安装后按界面提示登录。不要从非官方站点下载安装包。
@@ -58,6 +62,12 @@ curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <WORKBUDDY_AP
 | 输入 / 输出 | 保持提供商默认值 |
 
 这里需要填写完整的 `/v1/chat/completions` 地址。保存后，新模型会出现在“自定义模型”分组中。
+
+<h2 id="add-more-models">添加更多模型</h2>
+
+WorkBuddy 不会自动导入当前 Key 返回的全部模型。要使用同一分组里的多个模型，先通过 `/v1/models` 查到准确 ID，再为每个模型重复一次“添加模型”。接口地址和 API Key 可以保持不变，只需填写对应的模型 ID。保存后，这些模型会一起出现在“自定义模型”分组中。
+
+这不代表 WorkBuddy 可以使用 SorryCode 的所有模型。自定义模型目前需要兼容 OpenAI Chat Completions；图片生成、视频生成等非聊天模型不能作为 WorkBuddy 主模型。文件操作等 Agent 任务还要求模型支持工具调用，图片输入和思考模式也只能在模型明确支持时开启。
 
 <h2 id="verify">完成第一个文件任务</h2>
 

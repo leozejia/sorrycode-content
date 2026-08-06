@@ -19,6 +19,10 @@ This page configures the model provider used by Kimi Code. The API key comes fro
 
 Reference: [Kimi Code getting started](https://www.kimi.com/code/docs/en/kimi-code-cli/guides/getting-started.html)
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="prepare-api-key">Prepare a Usable API Key</h2>
 
 1. Open `https://sorrycode.com/keys`

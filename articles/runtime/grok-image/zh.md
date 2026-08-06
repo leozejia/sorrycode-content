@@ -19,6 +19,10 @@ Grok 分组的 SorryCode API Key。
 > Grok CLI 的内置图片工具目前不会继承 SorryCode 自定义模型的 `base_url`。不要把
 > SorryCode Key 填进内置图片工具；请使用本页的 API 请求。
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="prepare">开始前准备</h2>
 
 1. 在 `https://sorrycode.com/keys` 创建或选择一把 API Key。

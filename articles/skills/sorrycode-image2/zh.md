@@ -22,6 +22,10 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 
 当前只支持 `gpt-image-2`。
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="when-to-use">什么时候使用</h2>
 
 这些情况适合安装：

@@ -25,6 +25,10 @@ group_order: 30
 >
 > 下面默认按一键安装展开。
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="what-is-grok">Grok 是什么</h2>
 
 - `Grok` 是 xAI 提供的本地命令行 runtime / agent

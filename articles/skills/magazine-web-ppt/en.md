@@ -20,6 +20,10 @@ Use it when you want an agent to create a single-file horizontal HTML deck with 
 
 Reference: [guizang-ppt-skill repository](https://github.com/op7418/guizang-ppt-skill)
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="what-is-it">What It Is</h2>
 
 - a design-oriented skill for presentation work

@@ -20,6 +20,10 @@ source_url: https://github.com/op7418/guizang-ppt-skill
 
 参考：[guizang-ppt-skill 官方仓库](https://github.com/op7418/guizang-ppt-skill)
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="what-is-it">它是什么</h2>
 
 - 一个面向演示表达的设计型 skill

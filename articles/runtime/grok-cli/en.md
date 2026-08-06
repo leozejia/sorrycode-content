@@ -25,6 +25,10 @@ For a first-time user, the main goal is to get the path working. Do not start wi
 >
 > The default flow below follows the one-click path.
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="what-is-grok">What Grok Is</h2>
 
 - `Grok` is a local terminal runtime / agent from xAI

@@ -20,6 +20,10 @@ Use it when you are working on a product, content account, service, or business 
 
 It is closer to a set of business diagnostic tools than a normal writing assistant. Its value is not writing more text for you. Its value is helping you avoid spending effort on the wrong question.
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="what-is-it">What It Is</h2>
 
 `DBSkill` is a collection of skills for business diagnosis, benchmark analysis, content diagnosis, hook and title work, execution diagnosis, concept deconstruction, and agent workspace migration.

@@ -23,6 +23,10 @@ group_order: 10
 
 For a first run, ask for the image directly in Codex App.
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="codex">Generate Directly in Codex</h2>
 
 After completing [Codex setup](/docs/runtime/codex), say:

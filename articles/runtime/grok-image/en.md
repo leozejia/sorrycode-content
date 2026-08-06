@@ -17,6 +17,10 @@ Use Grok image generation through the REST API. You do not need an official xAI 
 
 > Grok CLI's built-in image tools currently do not inherit the custom `base_url` from a SorryCode model. Do not put a SorryCode key into those built-in media tools. Use the API request on this page.
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="prepare">Before You Start</h2>
 
 1. Create or select an API key at `https://sorrycode.com/keys`.

@@ -24,6 +24,10 @@ Grok 视频是异步 API。第一次请求只负责创建任务并返回 `reques
 > Grok CLI 的内置 `image_to_video` 当前不会继承 SorryCode 自定义模型的 `base_url`。
 > 使用 SorryCode Key 时，请走本页 REST API。
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="prepare">开始前准备</h2>
 
 在 `https://sorrycode.com/keys` 创建或选择一把 Grok 分组 Key。提交任务和轮询结果必须使用同一把 Grok Key。不要使用给 `SorryCode Image2` 准备的 Image2 Key，也不需要设置环境变量。

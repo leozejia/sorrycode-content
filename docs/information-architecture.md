@@ -145,6 +145,30 @@ Expert 是角色与协作机制，不是权限来源。各产品的安装和配�
 
 不要把一个通用变量名写成 SorryCode 全局 Key，也不要仅凭 `sk-...` 判断不同分组的 Key 可以互换。
 
+## 执行型教程的 Agent 提示
+
+安装、终端命令、配置文件、API 接入和首次验证等执行型教程，在导语之后、第一个二级标题之前放一次统一的 Agent 提示。概念、模型介绍、成本说明和路线选择页不放。
+
+GUI 教程只能承诺 Agent 完成可以安全执行的步骤，并列出需要用户手动确认的操作。手动步骤必须继续保留，用于核对、排障和 Agent 无法执行时的备用路径。
+
+站点当前提供“复制 Markdown”，没有单独的“复制链接”按钮。公开正文可以提示用户发送本页链接，但不要把它写成站内按钮。
+
+中文固定文案：
+
+```markdown
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+```
+
+英文固定文案：
+
+```markdown
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+```
+
 ## 内容更新顺序
 
 涉及栏目、页面定位或配置口径时，先更新本仓库 `docs/` 下的内部决议，再改中英文公开正文，最后同步 section index 和根 `index.json`。只有改动影响 renderer、内容代理、缓存、安全校验或内容源读取规则时，才需要同步修改 `sorrycode` 的架构文档。

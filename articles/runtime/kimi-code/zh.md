@@ -19,6 +19,10 @@ Kimi Code 是一个运行在终端里的 coding agent，可以读项目、改文
 
 参考：[Kimi Code 官方入门文档](https://www.kimi.com/code/docs/kimi-code-cli/guides/getting-started.html)
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="prepare-api-key">准备可用的 API Key</h2>
 
 1. 打开 `https://sorrycode.com/keys`

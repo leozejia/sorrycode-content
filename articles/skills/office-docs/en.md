@@ -15,6 +15,10 @@ group_order: 10
 
 These Skills work with existing Word, Excel, PowerPoint, and PDF files. To create a new polished artifact, see [Creation and Design](/docs/skills/creation-design).
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="choose">How to Choose</h2>
 
 | File | Good for | Skill |

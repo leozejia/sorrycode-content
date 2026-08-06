@@ -18,6 +18,10 @@ If you do not want flat output that looks like ordinary markdown and you want so
 
 It works well for first-time users because it does not ask you to learn design jargon first. You describe the result you want, and it applies a stable paper-like design language for you.
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="what-is-kami">What Kami Is</h2>
 
 - `Kami` is a design-focused skill for finished documents

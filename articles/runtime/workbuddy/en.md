@@ -15,6 +15,10 @@ group_order: 27
 
 WorkBuddy is a desktop agent that can read source material, call tools, and write results to local files. The steps below connect it to SorryCode and verify the model and file-writing path in an empty folder.
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="install">Install WorkBuddy</h2>
 
 Download the macOS or Windows app from the [WorkBuddy website](https://www.workbuddy.cn/), then install it and follow the sign-in flow. Do not download installers from unofficial websites.
@@ -58,6 +62,12 @@ Use these values:
 | Input / Output | keep the provider defaults |
 
 The endpoint must include the complete `/v1/chat/completions` path. After saving, the model appears in the `Custom Models` group.
+
+<h2 id="add-more-models">Add More Models</h2>
+
+WorkBuddy does not automatically import every model returned for the current key. To use several models from the same group, get their exact IDs from `/v1/models`, then repeat `Add Model` for each one. The endpoint and API key can stay the same; only the model ID needs to change. After saving, the models appear together under `Custom Models`.
+
+This does not mean WorkBuddy can use every model on SorryCode. Custom models currently need an OpenAI-compatible Chat Completions interface. Image-generation, video-generation, and other non-chat models cannot be used as the WorkBuddy primary model. Agent tasks such as file operations also require tool-call support, while Image Input and Thinking Mode should only be enabled when the model supports them.
 
 <h2 id="verify">Complete the First File Task</h2>
 

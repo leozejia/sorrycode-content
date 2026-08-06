@@ -20,6 +20,10 @@ If you only need a quick image, ask for it directly in `Codex App`. You do not n
 
 The only supported model is `gpt-image-2`.
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="when-to-use">When to Use It</h2>
 
 Install it when you need to:

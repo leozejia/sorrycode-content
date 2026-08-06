@@ -15,6 +15,10 @@ group_order: 10
 
 这组 Skills 用来处理已有的 Word、Excel、PowerPoint 和 PDF 文件。想从零制作一份成品材料，去看[创作与设计](/docs/skills/creation-design)。
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="choose">怎么选</h2>
 
 | 文件 | 适合的任务 | Skill |

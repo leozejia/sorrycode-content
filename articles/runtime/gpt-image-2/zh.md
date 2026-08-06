@@ -23,6 +23,10 @@ group_order: 10
 
 第一次使用时，优先在 Codex App 里直接说需求。
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="codex">在 Codex 中直接生成</h2>
 
 完成 [Codex 接入](/docs/runtime/codex) 后，直接说：

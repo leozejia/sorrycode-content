@@ -17,6 +17,10 @@ Codex App 默认不会列出当前 SorryCode 分组中的所有模型。已经�
 
 OpenCodex 在本机运行代理，并把可用模型写入 Codex 共用的模型目录。它不会修改 Codex App 程序本身。
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="prepare">准备兼容的 API Key</h2>
 
 在 [API Key 页面](https://sorrycode.com/keys) 选择一把所属分组包含目标模型、并支持本页 OpenAI-compatible Responses 接口的 Key。已有符合条件的 Key 可以直接复用，不必为 Codex 单独创建；需要分开统计用量、设置限额或轮换凭证时，再按用途新建一把 Key。

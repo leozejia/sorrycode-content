@@ -23,6 +23,10 @@ This page covers the three paths verified on SorryCode production:
 
 > Grok CLI's built-in `image_to_video` tool currently does not inherit the custom `base_url` from a SorryCode model. When using a SorryCode key, use the REST API on this page.
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="prepare">Before You Start</h2>
 
 Create or select a Grok-group key at `https://sorrycode.com/keys`. Use the same Grok key to submit the job and poll the result. Do not use the Image2 key created for `SorryCode Image2`, and do not set an environment variable for this page.

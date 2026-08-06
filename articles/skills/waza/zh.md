@@ -18,6 +18,10 @@ source_url: https://github.com/tw93/Waza
 
 如果 `Kami` 帮你把材料做成成品，`SorryCode Image2` 帮你生成图片，`Waza` 解决的是更底层的问题：你怎么和 agent 一起把任务推进下去。
 
+> **交给 Agent 配置**
+>
+> 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
+
 <h2 id="what-is-waza">Waza 是什么</h2>
 
 用了 AI 之后，很多人会更快，但也更容易跳过思考、排查和检查。

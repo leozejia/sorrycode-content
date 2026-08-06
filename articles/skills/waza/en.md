@@ -18,6 +18,10 @@ source_url: https://github.com/tw93/Waza
 
 If `Kami` helps you ship finished documents and `SorryCode Image2` helps you generate images, `Waza` helps with the deeper question: how do you work with an agent without letting the task drift?
 
+> **Let Your Agent Configure It**
+>
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+
 <h2 id="what-is-waza">What Waza Is</h2>
 
 AI can make you faster, but speed does not automatically make the work steadier.
