@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-08-06",
+  "updatedAt": "2026-08-07",
   "articles": [
     {
       "type": "article",
@@ -448,14 +448,13 @@
       "sectionOrder": 10,
       "slug": "codex-multi-model",
       "locale": "en",
-      "title": "Use Multiple SorryCode Models in Codex",
-      "summary": "Use OpenCodex to add models from the current SorryCode key group to the Codex App model picker.",
+      "title": "Switch SorryCode Models in Codex CLI and App",
+      "summary": "Use one SorryCode group key to switch to DeepSeek and other models in Codex CLI or App.",
       "order": 2,
-      "updatedAt": "2026-08-06",
+      "updatedAt": "2026-08-07",
       "markdownPath": "articles/runtime/codex-multi-model/en.md",
       "assetBaseUrl": "articles/runtime/codex-multi-model/",
-      "route": "/docs/runtime/codex-multi-model",
-      "sourceUrl": "https://github.com/lidge-jun/opencodex"
+      "route": "/docs/runtime/codex-multi-model"
     },
     {
       "type": "article",
@@ -464,14 +463,13 @@
       "sectionOrder": 10,
       "slug": "codex-multi-model",
       "locale": "zh",
-      "title": "在 Codex 中使用 SorryCode 多模型",
-      "summary": "使用 OpenCodex，把当前 SorryCode Key 分组中的模型加入 Codex App 模型选择器。",
+      "title": "在 Codex CLI 和 App 中切换 SorryCode 模型",
+      "summary": "使用同一把 SorryCode 分组 Key，在 Codex CLI 或 App 中切换 DeepSeek 等模型。",
       "order": 2,
-      "updatedAt": "2026-08-06",
+      "updatedAt": "2026-08-07",
       "markdownPath": "articles/runtime/codex-multi-model/zh.md",
       "assetBaseUrl": "articles/runtime/codex-multi-model/",
-      "route": "/docs/runtime/codex-multi-model",
-      "sourceUrl": "https://github.com/lidge-jun/opencodex"
+      "route": "/docs/runtime/codex-multi-model"
     },
     {
       "type": "article",

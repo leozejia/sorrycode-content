@@ -1,8 +1,8 @@
 ---
-title: Use Multiple SorryCode Models in Codex
+title: Switch SorryCode Models in Codex CLI and App
 slug: codex-multi-model
 order: 2
-summary: Use OpenCodex to add models from the current SorryCode key group to the Codex App model picker.
+summary: Use one SorryCode group key to switch to DeepSeek and other models in Codex CLI or App.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -11,91 +11,104 @@ group_title: OpenAI
 group_order: 10
 ---
 
-# Use Multiple SorryCode Models in Codex
+# Switch SorryCode Models in Codex CLI and App
 
-Codex App does not list every model in the current SorryCode group by default. If [Codex](/docs/runtime/codex) is already connected and you want to select models such as DeepSeek directly in the model picker, use OpenCodex.
+After you finish the [Codex setup](/docs/runtime/codex), Codex CLI and App share `~/.codex/config.toml` and continue to use the same `sorrycode` provider and group key. Switching models does not require another install, sign-in, or provider.
 
-OpenCodex runs a local proxy and writes available models into the catalog shared by Codex. It does not modify the Codex App binary.
+CLI can select a model for each launch. Codex App cannot currently display and switch to DeepSeek reliably in its interface, so you need to change the default model in the config and restart the App.
 
 > **Let Your Agent Configure It**
 >
 > Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
 
-<h2 id="prepare">Prepare a Compatible API Key</h2>
+<h2 id="prepare">Confirm the Key and Model ID</h2>
 
-On the [API Key page](https://sorrycode.com/keys), choose a key whose group contains the models you need and supports the OpenAI-compatible Responses endpoint used here. You can reuse an existing compatible key; creating a separate key for Codex is optional for usage tracking, spending limits, or credential rotation.
+Open the [API Key page](https://sorrycode.com/keys) and confirm that the key's group contains the model you want. You can keep using an existing compatible key. Create another key only when you need separate usage records, spending limits, or credential rotation.
 
-The key group determines the model list. "All models" on this page means every model returned for the current group, not models from other groups.
-
-Paste this key directly into OpenCodex. No environment variable is required.
-
-<h2 id="install">Install OpenCodex</h2>
-
-Quit Codex App first, then run these commands in a terminal:
-
-```bash
-npm install -g @bitkyc08/opencodex
-ocx --version
-ocx gui
-```
-
-`ocx gui` starts the local proxy and opens its dashboard. OpenCodex listens on `127.0.0.1:10100` by default.
-
-If `npm` is missing, read [Environment / Node.js](/docs/environment/nodejs) first.
-
-<h2 id="provider">Add SorryCode</h2>
-
-Open `Providers` in the OpenCodex dashboard, choose `Add provider`, then choose a custom endpoint. Use these settings:
-
-| Field | Value |
-| --- | --- |
-| Provider ID | `sorrycode` |
-| Adapter | `openai-responses` |
-| Base URL | `https://sorrycode.com` |
-| API Key | A compatible SorryCode key with access to the target models |
-| Responses Path | `/v1/responses` |
-| Live Model Discovery | On |
-
-After saving, open `Models`. Keep the SorryCode group set to `All on` instead of creating a short model allowlist. OpenCodex will fetch the models visible to the current key and publish them to Codex as `sorrycode/model-name`.
-
-For example, if the current group includes DeepSeek, the model picker will show:
+Use the exact model ID shown for the current group. For example, if the group exposes these models, use these names in the commands below. A model appearing in the group means that the key can route to it; stable Codex use still depends on compatibility with Responses, streaming, and tool calls.
 
 ```text
-sorrycode/deepseek-v4-flash
-sorrycode/deepseek-v4-pro
+deepseek-v4-flash
+deepseek-v4-pro
 ```
 
-<h2 id="service">Keep Codex App Ready</h2>
+<h2 id="cli">Switch Models in Codex CLI</h2>
 
-Codex App requests now pass through the local OpenCodex process. Install its background service so it starts at login and restarts after a crash:
+Pass the model with `-m` when starting Codex:
 
 ```bash
-ocx service install
-ocx sync --restart-codex
-ocx service status
+codex -m deepseek-v4-flash
 ```
 
-On Windows, open PowerShell as Administrator when installing the background service. After the sync completes, reopen Codex App and select a `sorrycode/...` model from the model picker.
-
-Only one tool should manage the Codex configuration and model catalog at a time. Disable any other provider manager before enabling OpenCodex.
-
-<h2 id="troubleshoot">Models Are Missing</h2>
-
-- OpenCodex cannot see the target model: check the SorryCode group assigned to this key
-- OpenCodex sees it but Codex App does not: run `ocx sync --restart-codex`
-- Codex reports a local connection error: run `ocx service status` and follow the repair action
-- More diagnostics are needed: run `ocx doctor`
-
-To restore the native Codex configuration without removing OpenCodex, run:
+Run `/status` inside the session to confirm the active model and provider. The same option works for non-interactive tasks:
 
 ```bash
-ocx restore
+codex exec -m deepseek-v4-flash "Review the current changes"
 ```
 
-To remove the background service and restore native Codex, run:
+If a model is present in the built-in Codex model catalog, you can also enter `/model` and choose it from the list. `/model` only shows catalog entries; it does not accept an arbitrary model ID. DeepSeek is not currently in the built-in Codex catalog, so use `-m` directly.
+
+If you use the same model often, create an official Codex profile at `~/.codex/deepseek.config.toml`:
+
+```toml
+model = "deepseek-v4-flash"
+```
+
+Start Codex with that profile:
 
 ```bash
-ocx service uninstall
+codex --profile deepseek
 ```
 
-Upstream references: [OpenCodex repository](https://github.com/lidge-jun/opencodex), [installation guide](https://opencodex.me/getting-started/installation/), and [Codex App model picker guide](https://opencodex.me/guides/codex-app-models/).
+The profile only overrides the model. Provider and authentication settings still come from the global `sorrycode` configuration.
+
+<h2 id="app">Switch Models in Codex App</h2>
+
+As of August 2026, the Codex App model picker may filter out third-party models. Even when DeepSeek is available to the current key, the picker may show only GPT models or label the active model as `Custom`.
+
+To use DeepSeek in a new task, follow the steps below. The screenshots use the Chinese macOS interface. On other systems, open the App settings and continue from the `Configuration` page.
+
+1. Choose `ChatGPT` > `Settings` from the macOS menu bar
+
+   ![Open ChatGPT settings from the macOS menu bar](./codex-app-open-settings.png)
+
+2. Open `Configuration` in the left sidebar
+
+   ![Select Configuration in the settings sidebar](./codex-app-configuration-nav.png)
+
+3. Click `Open config.toml`
+
+   ![Open config.toml from the Configuration page](./codex-app-open-config.png)
+
+4. Find the top-level `model` and `model_provider` settings
+5. Record the current `model` value, change only that value, and keep `model_provider = "sorrycode"`
+6. Save the file, quit the App completely, and reopen it. On macOS, use `Command-Q` instead of closing the window
+7. Start a new task instead of testing the change in an existing task
+
+The relevant settings should look like this after switching to DeepSeek:
+
+```toml
+model_provider = "sorrycode"
+model = "deepseek-v4-flash"
+```
+
+If these settings already exist, edit them in place instead of adding duplicates. Both settings must remain at the top level and must not be placed inside `[model_providers.sorrycode]`.
+
+To switch back to GPT, restore the `model` value you recorded, quit the App completely, and reopen it. Do not copy another user's GPT model ID because available models can differ by group and version.
+
+Codex App currently uses one global default model at a time. It cannot place DeepSeek and GPT together in the picker for per-task switching. The App reads its model catalog at startup, so closing a window does not reload the config. Existing tasks may also retain their previous model or runtime settings.
+
+If the App shows `Custom`, do not ask the model to identify itself. Check the actual model ID for the request in your SorryCode usage records.
+
+Do not change `model_provider`, `model_providers.sorrycode`, authentication files, `CODEX_HOME`, or session directories when switching models. Those settings do not control model selection and may move the App to another provider or session data directory.
+
+<h2 id="troubleshoot">A Model Does Not Work</h2>
+
+- CLI says the model does not exist: make sure the model ID exactly matches the name provided by the group, then check the key group
+- App still uses the previous model: quit the App completely, use `Command-Q` on macOS, then reopen it and start a new task
+- App shows `Custom`: this label can appear for custom models in the current version; verify the actual model ID in your SorryCode usage records
+- Text starts streaming but tool calls fail: switch to a verified model and send the model ID and error to SorryCode
+- The active provider is not `sorrycode`: rerun the official installer instead of adding another provider manually
+- Behavior changes after switching: start a new task and test again without modifying or migrating old tasks
+
+References: [Codex configuration](https://developers.openai.com/codex/config-reference/), [DeepSeek's Codex integration guide](https://api-docs.deepseek.com/quick_start/agent_integrations/codex/), and [the Codex App custom-model issue](https://github.com/openai/codex/issues/19694).

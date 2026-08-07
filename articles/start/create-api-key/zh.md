@@ -158,4 +158,4 @@ Image2
 - 想直接开始用 Claude Code：去 [Runtime / Claude Code](/docs/runtime/claude-code)
 - 不清楚工具和模型关系：去 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)
 - 想先做最小验证：去 [开始使用 / 首条请求](/docs/start/first-request)
-- 想在 Codex App 中使用同一分组的其他模型：去 [模型与工作台 / 在 Codex 中使用 SorryCode 多模型](/docs/runtime/codex-multi-model)
+- 想在 Codex 中使用同一分组的其他模型：去[模型与工作台 / 在 Codex CLI 和 App 中切换 SorryCode 模型](/docs/runtime/codex-multi-model)

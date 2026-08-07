@@ -125,7 +125,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-codex.bat {{INSTALL_BAT_URL}} && %TEMP%\s
 
 Codex App 的 Plugin 从侧边栏插件入口安装或启用。Plugin、Skill 和 MCP 的关系见 [Agent 能力是怎么扩展的](/docs/runtime/agent-capabilities)。
 
-同一 SorryCode 分组中的 DeepSeek 等非 GPT 模型不会自动出现在 Codex App 模型选择器中。需要在 App 里直接选择这些模型时，按 [在 Codex 中使用 SorryCode 多模型](/docs/runtime/codex-multi-model) 配置。
+同一 SorryCode 分组中的 DeepSeek 等模型，可以在 Codex CLI 中显式指定，也可以设为 Codex App 的默认模型。具体操作和 App 当前的限制见[在 Codex CLI 和 App 中切换 SorryCode 模型](/docs/runtime/codex-multi-model)。
 
 <h2 id="cli-fallback">备用：继续用终端</h2>
 

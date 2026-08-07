@@ -1,8 +1,8 @@
 ---
-title: 在 Codex 中使用 SorryCode 多模型
+title: 在 Codex CLI 和 App 中切换 SorryCode 模型
 slug: codex-multi-model
 order: 2
-summary: 使用 OpenCodex，把当前 SorryCode Key 分组中的模型加入 Codex App 模型选择器。
+summary: 使用同一把 SorryCode 分组 Key，在 Codex CLI 或 App 中切换 DeepSeek 等模型。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -11,91 +11,104 @@ group_title: OpenAI
 group_order: 10
 ---
 
-# 在 Codex 中使用 SorryCode 多模型
+# 在 Codex CLI 和 App 中切换 SorryCode 模型
 
-Codex App 默认不会列出当前 SorryCode 分组中的所有模型。已经按 [Codex](/docs/runtime/codex) 完成接入，但还想在模型选择器里直接使用 DeepSeek 等模型时，使用 OpenCodex。
+完成 [Codex 接入](/docs/runtime/codex) 后，Codex CLI 和 App 会共用 `~/.codex/config.toml`，继续使用同一个 `sorrycode` provider 和同一把分组 Key。切换模型时，不需要重新安装、登录或添加第二个 provider。
 
-OpenCodex 在本机运行代理，并把可用模型写入 Codex 共用的模型目录。它不会修改 Codex App 程序本身。
+CLI 可以为每次启动单独指定模型。Codex App 当前无法在界面中可靠地显示和切换 DeepSeek，需要修改配置中的默认模型并重启 App。
 
 > **交给 Agent 配置**
 >
 > 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
 
-<h2 id="prepare">准备兼容的 API Key</h2>
+<h2 id="prepare">确认 Key 和模型 ID</h2>
 
-在 [API Key 页面](https://sorrycode.com/keys) 选择一把所属分组包含目标模型、并支持本页 OpenAI-compatible Responses 接口的 Key。已有符合条件的 Key 可以直接复用，不必为 Codex 单独创建；需要分开统计用量、设置限额或轮换凭证时，再按用途新建一把 Key。
+打开 [API Key 页面](https://sorrycode.com/keys)，确认当前 Key 所属分组包含目标模型。已有符合条件的 Key 可以继续使用；只有需要分开统计用量、设置限额或轮换凭证时，才需要新建一把 Key。
 
-模型范围由这把 Key 的分组决定。页面里看到的“全部模型”，指当前分组返回的全部模型，不包括其他分组。
-
-这把 Key 直接填入 OpenCodex，不需要设置环境变量。
-
-<h2 id="install">安装 OpenCodex</h2>
-
-先关闭 Codex App，再在终端运行：
-
-```bash
-npm install -g @bitkyc08/opencodex
-ocx --version
-ocx gui
-```
-
-`ocx gui` 会启动本机代理并打开管理页面。OpenCodex 默认监听 `127.0.0.1:10100`。
-
-如果找不到 `npm`，先看 [环境准备 / Node.js](/docs/environment/nodejs)。
-
-<h2 id="provider">添加 SorryCode</h2>
-
-在 OpenCodex 管理页面打开 `Providers`，选择 `Add provider`，再选择自定义端点。使用下面的设置：
-
-| 配置项 | 设置 |
-| --- | --- |
-| Provider ID | `sorrycode` |
-| Adapter | `openai-responses` |
-| Base URL | `https://sorrycode.com` |
-| API Key | 可访问目标模型的兼容 SorryCode Key |
-| Responses Path | `/v1/responses` |
-| Live Model Discovery | 开启 |
-
-保存后打开 `Models`。保持 SorryCode 分组为 `All on`，不要设置只允许少数模型的列表。这样 OpenCodex 会从 SorryCode 获取当前 Key 可见的模型，并在 Codex 中显示为 `sorrycode/模型名`。
-
-例如当前分组包含 DeepSeek 时，模型选择器里会看到：
+模型 ID 以当前分组显示的名称为准。比如分组开放了下面两个模型，后续命令就直接使用这些名称。模型出现在分组中，只表示 Key 可以路由到它；在 Codex 中能否稳定使用，还取决于模型对 Responses、流式输出和工具调用的兼容性。
 
 ```text
-sorrycode/deepseek-v4-flash
-sorrycode/deepseek-v4-pro
+deepseek-v4-flash
+deepseek-v4-pro
 ```
 
-<h2 id="service">让 Codex App 随时可用</h2>
+<h2 id="cli">在 Codex CLI 中切换</h2>
 
-Codex App 的请求会经过本机 OpenCodex。安装后台服务后，它会随登录启动，并在异常退出后自动重启：
+启动 Codex 时使用 `-m` 指定模型：
 
 ```bash
-ocx service install
-ocx sync --restart-codex
-ocx service status
+codex -m deepseek-v4-flash
 ```
 
-Windows 安装后台服务时需要使用管理员权限打开 PowerShell。同步完成后，重新打开 Codex App，在模型选择器中选择 `sorrycode/...` 模型即可。
-
-同一时间只让一个工具管理 Codex 配置和模型目录。此前使用过其他 Provider 管理器时，先停用它，再启用 OpenCodex。
-
-<h2 id="troubleshoot">没有看到模型怎么办</h2>
-
-- OpenCodex 看不到目标模型：检查这把 Key 选择的 SorryCode 分组
-- OpenCodex 已经看到，Codex App 还没有：运行 `ocx sync --restart-codex`
-- Codex 报本机连接失败：运行 `ocx service status`，再按提示修复服务
-- 需要进一步诊断：运行 `ocx doctor`
-
-想暂时恢复原生 Codex 配置，可以运行：
+进入会话后运行 `/status`，可以确认当前模型和 provider。非交互任务也可以指定模型：
 
 ```bash
-ocx restore
+codex exec -m deepseek-v4-flash "检查当前代码变更"
 ```
 
-要同时移除后台服务并恢复原生 Codex，运行：
+如果模型已经出现在 Codex 内置模型目录中，也可以在会话里输入 `/model`，再从列表中选择。`/model` 只显示当前目录中的模型，不能用来输入任意模型 ID。DeepSeek 当前不在 Codex 内置模型目录中，所以请直接使用 `-m`。
+
+经常使用同一个模型时，可以创建 Codex 官方 profile。新建 `~/.codex/deepseek.config.toml`：
+
+```toml
+model = "deepseek-v4-flash"
+```
+
+以后使用下面的命令启动：
 
 ```bash
-ocx service uninstall
+codex --profile deepseek
 ```
 
-上游参考：[OpenCodex 官方仓库](https://github.com/lidge-jun/opencodex)、[安装文档](https://opencodex.me/getting-started/installation/)、[Codex App 模型选择器](https://opencodex.me/guides/codex-app-models/)。
+这个 profile 只覆盖模型。provider 和认证仍然继承全局的 `sorrycode` 配置。
+
+<h2 id="app">在 Codex App 中切换</h2>
+
+截至 2026 年 8 月，Codex App 的模型选择器可能会过滤第三方模型。即使 DeepSeek 已经可以通过当前 Key 使用，选择器也可能只显示 GPT 模型，或者把当前模型显示为 `Custom`。
+
+新任务需要使用 DeepSeek 时，按下面的步骤修改默认模型。截图使用 macOS 中文界面；其他系统从 App 设置进入`配置`页面后，修改方法相同。
+
+1. 在 macOS 菜单栏选择 `ChatGPT` > `设置`
+
+   ![从 macOS 菜单栏打开 ChatGPT 设置](./codex-app-open-settings.png)
+
+2. 在设置窗口左侧打开`配置`
+
+   ![在设置窗口左侧选择配置](./codex-app-configuration-nav.png)
+
+3. 点击`打开 config.toml`
+
+   ![在配置页打开 config.toml](./codex-app-open-config.png)
+
+4. 找到顶层的 `model` 和 `model_provider`
+5. 记下原来的 `model` 值，只把它改成目标模型，保持 `model_provider = "sorrycode"`
+6. 保存文件后完全退出 App，再重新打开。macOS 使用 `Command-Q`，不能只关闭窗口
+7. 新建任务，不要用已经打开的旧任务验证切换结果
+
+切换到 DeepSeek 后，相关配置应当类似下面这样：
+
+```toml
+model_provider = "sorrycode"
+model = "deepseek-v4-flash"
+```
+
+如果文件里已经有这两项，请修改原来的值，不要重复添加。`model` 和 `model_provider` 必须是顶层配置，不能写进 `[model_providers.sorrycode]` 配置段。
+
+想切回 GPT 时，把 `model` 恢复为切换前记下的值，再完全退出并重开 App。不要照抄其他用户的 GPT 模型 ID，不同分组和版本提供的模型可能不同。
+
+Codex App 当前一次使用一个全局默认模型，不能把 DeepSeek 和 GPT 同时放进模型选择器后按任务切换。模型目录在 App 启动时读取，只关闭窗口不会刷新配置。已经打开的任务也可能保留原来的模型或运行配置。
+
+App 显示 `Custom` 时，不要通过询问模型身份来判断是否切换成功。到 SorryCode 用量记录中查看这次请求的实际模型 ID。
+
+切换模型时不要修改 `model_provider`、`model_providers.sorrycode`、认证文件、`CODEX_HOME` 或会话目录。这些配置与模型选择无关，修改后可能让 App 进入另一套 provider 或会话数据目录。
+
+<h2 id="troubleshoot">模型不能使用</h2>
+
+- CLI 提示模型不存在：确认模型 ID 与分组提供的名称完全一致，并检查 Key 所属分组
+- App 仍然使用原模型：确认已经完全退出 App，macOS 需要按 `Command-Q`，重开后再新建任务
+- App 显示 `Custom`：这是当前版本使用自定义模型时可能出现的名称，到 SorryCode 用量记录核对实际模型 ID
+- 可以开始回复，但工具调用失败：换回已验证模型，并把模型 ID 和错误信息提交给 SorryCode
+- provider 不是 `sorrycode`：重新运行官方一键安装器，不要手工新增第二个 provider
+- 切换后行为和旧任务不一致：新建任务再验证，不要修改或迁移历史任务
+
+参考：[Codex 配置说明](https://developers.openai.com/codex/config-reference/)、[DeepSeek 的 Codex 接入说明](https://api-docs.deepseek.com/quick_start/agent_integrations/codex/)、[Codex App 自定义模型问题](https://github.com/openai/codex/issues/19694)。

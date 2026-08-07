@@ -1,6 +1,6 @@
 # SorryCode Content IA
 
-更新时间：2026-08-06
+更新时间：2026-08-07
 
 这份文档定义 `sorrycode-content` 的内容维护边界。它是内容团队内部文档，不进入线上 docs。
 
@@ -98,8 +98,8 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 Codex 相关页面按下面分工：
 
 - `Codex` 负责安装、API Key、Base URL 和第一次使用；
-- `在 Codex 中使用 SorryCode 多模型` 负责用 OpenCodex 把当前 Key 分组的模型同步到 Codex App 模型选择器，并说明后台服务、目录刷新和恢复原生 Codex；
-- 多模型页只推荐 OpenCodex，不公开陈列备选工具；同一时间只能由一个工具管理 Codex 本地配置和模型目录。
+- `在 Codex CLI 和 App 中切换 SorryCode 模型` 负责说明 CLI 显式模型、官方 profile，以及 App 修改顶层默认模型并重启的当前操作方式；
+- 多模型页只写 Codex 原生使用路径。provider 始终保持 `sorrycode`，不承载旧方案迁移说明。App 需要明确模型选择器的限制、完整退出要求、恢复 GPT 的方法和用量记录验证方式。
 
 WorkBuddy 只维护一篇闭环页面，包含下载安装、SorryCode 自定义模型配置、第一个文件任务和
 Expert / Expert Team 入口及必要的权限边界。不要为通用安全常识、单个菜单或尚未形成稳定用户问题的功能单独建页。

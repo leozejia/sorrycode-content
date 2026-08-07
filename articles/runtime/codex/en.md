@@ -125,7 +125,7 @@ If you prefer viewing project files and changes inside a visual editor, continue
 
 Install or enable Codex App Plugins from the Plugins entry in the sidebar. See [How Agent Capabilities Are Extended](/docs/runtime/agent-capabilities) for how Plugins, Skills, and MCP relate.
 
-Non-GPT models such as DeepSeek from the same SorryCode group do not automatically appear in the Codex App model picker. To select them directly in the App, follow [Use Multiple SorryCode Models in Codex](/docs/runtime/codex-multi-model).
+DeepSeek and other models in the same SorryCode group can be selected in Codex CLI or set as the default model in Codex App. See [Switch SorryCode Models in Codex CLI and App](/docs/runtime/codex-multi-model) for the steps and current App limitations.
 
 <h2 id="cli-fallback">Fallback: Use the Terminal</h2>
 

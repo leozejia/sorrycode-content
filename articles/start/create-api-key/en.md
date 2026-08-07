@@ -158,4 +158,4 @@ Compatible tools can share one key. Separate keys are useful when you want clear
 - Want to start with Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
 - Unsure how runtimes and models relate: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - Want a minimal validation first: [Getting Started / First Request](/docs/start/first-request)
-- Want to use other models from the same group in Codex App: [Models & Runtimes / Use Multiple SorryCode Models in Codex](/docs/runtime/codex-multi-model)
+- Want to use other models from the same group in Codex: [Models & Runtimes / Switch SorryCode Models in Codex CLI and App](/docs/runtime/codex-multi-model)
