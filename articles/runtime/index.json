@@ -20,9 +20,9 @@
         "items": ["claude-code", "claude-fable-5", "claude-desktop"]
       },
       {
-        "id": "deepseek",
-        "title": { "en": "DeepSeek", "zh": "DeepSeek" },
-        "items": ["pi-deepseek"]
+        "id": "pi",
+        "title": { "en": "Pi Agent", "zh": "Pi Agent" },
+        "items": ["pi-agent"]
       },
       {
         "id": "kimi",
@@ -54,7 +54,7 @@
     "claude-code",
     "claude-fable-5",
     "claude-desktop",
-    "pi-deepseek",
+    "pi-agent",
     "kimi-code",
     "workbuddy",
     "grok-cli",

@@ -91,9 +91,8 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 安装页和首条请求页只负责执行路径，不再承担商业定位或成本科普。
 
 `articles/runtime/` 的公开展示名是“模型与工作台 / Models & Runtimes”，URL 保持
-`/docs/runtime/*`。导航按供应商生态组织，当前文章和分组以 `articles/runtime/index.json`
-为准。不要创建没有文章的空供应商分组。新增供应商页面前，先确认用户入口、模型、
-接口和生产验证。
+`/docs/runtime/*`。导航按供应商生态或独立工作台组织，当前文章和分组以 `articles/runtime/index.json`
+为准。不要创建没有文章的空分组。新增页面前，先确认用户入口、模型、接口和生产验证。
 
 Codex 相关页面按下面分工：
 
@@ -105,8 +104,9 @@ WorkBuddy 只维护一篇闭环页面，包含下载安装、SorryCode 自定义
 Expert / Expert Team 入口及必要的权限边界。不要为通用安全常识、单个菜单或尚未形成稳定用户问题的功能单独建页。
 UI 是自定义模型的公开配置路径，不公开讲解本地配置文件格式。
 
-`Pi + DeepSeek` 独立放在 DeepSeek 生态下，官方项目固定为 `pi.dev` / `earendil-works/pi`。
-页面只维护 Pi 安装、SorryCode 自定义 provider、DeepSeek 模型选择和首次工具调用验证，不扩展成通用 Pi 教程。
+`Pi Agent` 作为独立工作台维护，官方项目固定为 `pi.dev` / `earendil-works/pi`，不归入任何模型供应商。
+页面只维护 Pi 安装、SorryCode 自定义 provider、Responses 兼容模型选择和首次工具调用验证。
+DeepSeek 可以作为经过验证的推荐示例，但不能写成 Pi 的模型归属或使用限制。
 
 `Agent 能力是怎么扩展的` 负责解释 Runtime、Expert / Agent、Skill、MCP / Tool / Connector
 和 Plugin 的层级关系。Plugin 是特定 runtime 的打包与分发单元，不是 Tool 的同义词；

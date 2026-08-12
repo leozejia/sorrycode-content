@@ -1,19 +1,19 @@
 ---
-title: Pi + DeepSeek
-slug: pi-deepseek
+title: Pi Agent
+slug: pi-agent
 order: 1
-summary: 安装 Pi Coding Agent，接入 SorryCode DeepSeek 分组，并完成文本和文件工具验证。
+summary: 安装 Pi Agent，接入 SorryCode 中支持 Responses 的模型，并完成文本和文件工具验证。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
-group: deepseek
-group_title: DeepSeek
+group: pi
+group_title: Pi Agent
 group_order: 23
 ---
 
-# Pi + DeepSeek
+# Pi Agent
 
-Pi 是 [earendil-works/pi](https://github.com/earendil-works/pi) 提供的终端 Coding Agent，可以读项目、改文件和执行命令。这页把 Pi 接到 SorryCode，并使用分组内的 DeepSeek 模型完成第一次 Agent 任务。
+Pi 是 [earendil-works/pi](https://github.com/earendil-works/pi) 提供的终端 Coding Agent，可以读项目、改文件和执行命令。Pi 不绑定某个模型。这页把 Pi 接到 SorryCode，并使用当前 API Key 开放的 Responses 兼容模型完成第一次 Agent 任务。
 
 这里说的是 [pi.dev](https://pi.dev/) 对应的 Pi，不是其他同名项目。
 
@@ -23,22 +23,22 @@ Pi 是 [earendil-works/pi](https://github.com/earendil-works/pi) 提供的终端
 
 <h2 id="prepare-key">准备 API Key</h2>
 
-Pi 通过 SorryCode 的 OpenAI-compatible Responses API 调用 DeepSeek。在 [SorryCode API Key 页面](https://sorrycode.com/keys) 选择一把所属分组支持 DeepSeek 的 Key。已有符合条件的 Key 可以直接复用；只有需要分开统计用量、设置限额或轮换凭证时，才需要新建一把。
+Pi 通过 SorryCode 的 OpenAI-compatible Responses API 调用模型。在 [SorryCode API Key 页面](https://sorrycode.com/keys) 选择一把所属分组提供 Responses 兼容模型的 Key。已有符合条件的 Key 可以直接复用；只有需要分开统计用量、设置限额或轮换凭证时，才需要新建一把。
 
 先查询这把 Key 实际开放的模型：
 
 ```bash
 curl https://sorrycode.com/v1/models \
-  -H "Authorization: Bearer <你的 DeepSeek API Key>"
+  -H "Authorization: Bearer <你的 SorryCode API Key>"
 ```
 
 Windows PowerShell 使用 `curl.exe`：
 
 ```powershell
-curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <你的 DeepSeek API Key>"
+curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <你的 SorryCode API Key>"
 ```
 
-后续配置必须使用返回结果里的准确模型 ID。当前经过验证的 ID 是 `deepseek-v4-flash` 和 `deepseek-v4-pro`，实际可用范围以这把 Key 的返回结果为准。
+后续配置必须使用返回结果里的准确模型 ID，并确认所选模型支持 Responses API。本页推荐并验证了 `deepseek-v4-flash`，但 Pi 不限于 DeepSeek。其他 Responses 兼容模型也可以使用，实际可用范围以这把 Key 的返回结果为准。
 
 <h2 id="install">安装 Pi</h2>
 
@@ -95,11 +95,6 @@ notepad "$HOME\.pi\agent\models.json"
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash via SorryCode",
           "reasoning": true
-        },
-        {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro via SorryCode",
-          "reasoning": true
         }
       ]
     }
@@ -107,7 +102,7 @@ notepad "$HOME\.pi\agent\models.json"
 }
 ```
 
-如果当前 Key 只返回其中一个模型，只保留对应条目。
+要使用其他 Responses 兼容模型，把 `id` 换成 `/v1/models` 返回的准确模型 ID，并按需修改 `name`。`models` 可以包含多个模型条目。只有模型本身支持推理时才设置 `"reasoning": true`，否则改为 `false`。
 
 <h2 id="login">保存 API Key</h2>
 
@@ -117,13 +112,13 @@ notepad "$HOME\.pi\agent\models.json"
 pi
 ```
 
-进入界面后输入 `/login`，选择 `sorrycode`，再粘贴这把 DeepSeek 分组 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
+进入界面后输入 `/login`，选择 `sorrycode`，再粘贴刚才选定的 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
 
-然后输入 `/model`，选择 `sorrycode/deepseek-v4-flash`。要使用其他模型时，选择当前 Key 实际开放的对应 ID。
+然后输入 `/model`，选择刚才配置的模型。使用本页推荐配置时，选择 `sorrycode/deepseek-v4-flash`。
 
 <h2 id="verify">验证文本和工具调用</h2>
 
-先验证最小文本响应：
+先用本页推荐的 `deepseek-v4-flash` 验证最小文本响应。使用其他模型时，把命令中的模型 ID 换成对应值：
 
 ```bash
 pi --provider sorrycode --model deepseek-v4-flash --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
@@ -143,12 +138,12 @@ pi --provider sorrycode --model deepseek-v4-flash --no-session -p "Create pi-che
 
 - `pi` 命令不存在：关闭并重新打开终端，再检查 npm 全局命令目录是否在 `PATH` 中
 - `/login` 中没有 `sorrycode`：先保存 `models.json`，再重新启动 Pi
-- `/model` 中没有 DeepSeek：检查 JSON 格式、认证状态和 Key 所属分组
-- `401`：Key 不完整、已失效，或保存的不是当前 DeepSeek 分组 Key
+- `/model` 中没有目标模型：检查 JSON 格式、认证状态、模型条目和 Key 所属分组
+- `401`：Key 不完整、已失效，或保存的不是当前所选分组的 Key
 - `404` 或 model not found：重新查询 `/v1/models`，使用返回结果中的准确 ID
 - 能回复但不能创建文件：确认使用经过验证的模型，并检查当前任务是否允许 `write` 工具
 - Windows 阻止 `pi.ps1`：阅读 [Windows PowerShell](/docs/environment/windows-powershell)
 
-本页验证基线为 Pi `0.84.1`、`deepseek-v4-flash`，最小文本和 `write` 工具调用均已通过。
+本页推荐并验证了 Pi `0.84.1` 与 `deepseek-v4-flash` 的组合，最小文本和 `write` 工具调用均已通过。Pi 也可以使用 SorryCode 中其他支持 Responses API 的模型。
 
 参考：[Pi 官网](https://pi.dev/)、[Pi 官方仓库](https://github.com/earendil-works/pi)、[Pi 自定义模型文档](https://pi.dev/docs/latest/models)。
