@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-08-07",
+  "updatedAt": "2026-08-12",
   "articles": [
     {
       "type": "article",
@@ -590,6 +590,36 @@
       "markdownPath": "articles/runtime/claude-desktop/zh.md",
       "assetBaseUrl": "articles/runtime/claude-desktop/",
       "route": "/docs/runtime/claude-desktop"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Models & Runtimes",
+      "sectionOrder": 10,
+      "slug": "pi-deepseek",
+      "locale": "en",
+      "title": "Pi + DeepSeek",
+      "summary": "Install Pi Coding Agent, connect it to a SorryCode DeepSeek group, and verify both text and file tools.",
+      "order": 1,
+      "updatedAt": "2026-08-12",
+      "markdownPath": "articles/runtime/pi-deepseek/en.md",
+      "assetBaseUrl": "articles/runtime/pi-deepseek/",
+      "route": "/docs/runtime/pi-deepseek"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "模型与工作台",
+      "sectionOrder": 10,
+      "slug": "pi-deepseek",
+      "locale": "zh",
+      "title": "Pi + DeepSeek",
+      "summary": "安装 Pi Coding Agent，接入 SorryCode DeepSeek 分组，并完成文本和文件工具验证。",
+      "order": 1,
+      "updatedAt": "2026-08-12",
+      "markdownPath": "articles/runtime/pi-deepseek/zh.md",
+      "assetBaseUrl": "articles/runtime/pi-deepseek/",
+      "route": "/docs/runtime/pi-deepseek"
     },
     {
       "type": "article",
