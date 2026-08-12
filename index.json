@@ -11,9 +11,9 @@
       "slug": "first-step",
       "locale": "en",
       "title": "First Time Using SorryCode",
-      "summary": "Choose an agent tool, create an API key for its model group, and continue with that tool's setup guide.",
+      "summary": "Choose an agent workspace, then confirm model, protocol, and API key group compatibility.",
       "order": 1,
-      "updatedAt": "2026-08-05",
+      "updatedAt": "2026-08-12",
       "markdownPath": "articles/start/first-step/en.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"
@@ -26,9 +26,9 @@
       "slug": "first-step",
       "locale": "zh",
       "title": "第一次使用 SorryCode",
-      "summary": "选择要用的 Agent 工具，再创建对应分组的 API Key，并进入该工具的接入指南。",
+      "summary": "先选适合的 Agent 工作台，再确认模型、协议和 API Key 分组兼容。",
       "order": 1,
-      "updatedAt": "2026-08-05",
+      "updatedAt": "2026-08-12",
       "markdownPath": "articles/start/first-step/zh.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"
