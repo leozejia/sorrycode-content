@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-08-12",
+  "updatedAt": "2026-08-13",
   "articles": [
     {
       "type": "article",
@@ -13,7 +13,7 @@
       "title": "First Time Using SorryCode",
       "summary": "Choose an agent workspace, then confirm model, protocol, and API key group compatibility.",
       "order": 1,
-      "updatedAt": "2026-08-12",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/start/first-step/en.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"
@@ -28,7 +28,7 @@
       "title": "第一次使用 SorryCode",
       "summary": "先选适合的 Agent 工作台，再确认模型、协议和 API Key 分组兼容。",
       "order": 1,
-      "updatedAt": "2026-08-12",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/start/first-step/zh.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"
@@ -361,7 +361,7 @@
       "title": "Create API Key",
       "summary": "Understand what an API key is, then create separate sk-... keys for Codex, Claude Code, Skills, or other uses.",
       "order": 3,
-      "updatedAt": "2026-08-06",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/start/create-api-key/en.md",
       "assetBaseUrl": "articles/start/create-api-key/",
       "route": "/docs/start/create-api-key"
@@ -376,7 +376,7 @@
       "title": "创建 API Key",
       "summary": "先理解 API Key 是什么，再按 Codex、Claude Code 或 Skills 等用途分别创建 sk-... 密钥。",
       "order": 3,
-      "updatedAt": "2026-08-06",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/start/create-api-key/zh.md",
       "assetBaseUrl": "articles/start/create-api-key/",
       "route": "/docs/start/create-api-key"
@@ -686,30 +686,30 @@
       "section": "runtime",
       "sectionTitle": "Models & Runtimes",
       "sectionOrder": 10,
-      "slug": "grok-cli",
+      "slug": "grok-build",
       "locale": "en",
-      "title": "Grok",
-      "summary": "Understand Grok first, prepare your API key, finish one-click install, and start using it right away.",
+      "title": "Grok Build",
+      "summary": "Set up xAI's terminal coding agent, Grok Build, and use Grok models through SorryCode.",
       "order": 1,
-      "updatedAt": "2026-07-14",
-      "markdownPath": "articles/runtime/grok-cli/en.md",
-      "assetBaseUrl": "articles/runtime/grok-cli/",
-      "route": "/docs/runtime/grok-cli"
+      "updatedAt": "2026-08-13",
+      "markdownPath": "articles/runtime/grok-build/en.md",
+      "assetBaseUrl": "articles/runtime/grok-build/",
+      "route": "/docs/runtime/grok-build"
     },
     {
       "type": "article",
       "section": "runtime",
       "sectionTitle": "模型与工作台",
       "sectionOrder": 10,
-      "slug": "grok-cli",
+      "slug": "grok-build",
       "locale": "zh",
-      "title": "Grok",
-      "summary": "先认识 Grok，再准备 API Key，完成一键安装，然后直接开始用。",
+      "title": "Grok Build",
+      "summary": "认识 xAI 的终端 Coding Agent Grok Build，完成一键安装后通过 SorryCode 使用 Grok 模型。",
       "order": 1,
-      "updatedAt": "2026-07-14",
-      "markdownPath": "articles/runtime/grok-cli/zh.md",
-      "assetBaseUrl": "articles/runtime/grok-cli/",
-      "route": "/docs/runtime/grok-cli"
+      "updatedAt": "2026-08-13",
+      "markdownPath": "articles/runtime/grok-build/zh.md",
+      "assetBaseUrl": "articles/runtime/grok-build/",
+      "route": "/docs/runtime/grok-build"
     },
     {
       "type": "article",
@@ -751,7 +751,7 @@
       "title": "Grok Image Generation",
       "summary": "Use a SorryCode API key with Grok Imagine image models, then read the temporary image URL from the response.",
       "order": 2,
-      "updatedAt": "2026-07-14",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/runtime/grok-image/en.md",
       "assetBaseUrl": "articles/runtime/grok-image/",
       "route": "/docs/runtime/grok-image"
@@ -766,7 +766,7 @@
       "title": "Grok 图片生成",
       "summary": "使用 SorryCode API Key 调用 Grok Imagine 图片模型，生成图片并读取返回的临时 URL。",
       "order": 2,
-      "updatedAt": "2026-07-14",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/runtime/grok-image/zh.md",
       "assetBaseUrl": "articles/runtime/grok-image/",
       "route": "/docs/runtime/grok-image"
@@ -781,7 +781,7 @@
       "title": "Grok Video Generation",
       "summary": "Submit Grok text-to-video or image-to-video jobs through SorryCode, then poll the request_id until the job is done, failed, or expired.",
       "order": 3,
-      "updatedAt": "2026-07-14",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/runtime/grok-video/en.md",
       "assetBaseUrl": "articles/runtime/grok-video/",
       "route": "/docs/runtime/grok-video"
@@ -796,7 +796,7 @@
       "title": "Grok 视频生成",
       "summary": "通过 SorryCode 提交 Grok 文生视频或图生视频任务，并使用 request_id 轮询到完成、失败或过期。",
       "order": 3,
-      "updatedAt": "2026-07-14",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/runtime/grok-video/zh.md",
       "assetBaseUrl": "articles/runtime/grok-video/",
       "route": "/docs/runtime/grok-video"

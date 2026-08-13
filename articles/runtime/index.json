@@ -5,7 +5,7 @@
     "en": "Models & Runtimes",
     "zh": "模型与工作台"
   },
-  "updatedAt": "2026-08-12",
+  "updatedAt": "2026-08-13",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
@@ -37,7 +37,7 @@
       {
         "id": "xai",
         "title": { "en": "xAI", "zh": "xAI" },
-        "items": ["grok-cli", "grok-image", "grok-video"]
+        "items": ["grok-build", "grok-image", "grok-video"]
       },
       {
         "id": "general",
@@ -57,7 +57,7 @@
     "pi-agent",
     "kimi-code",
     "workbuddy",
-    "grok-cli",
+    "grok-build",
     "grok-image",
     "grok-video",
     "agent-capabilities"

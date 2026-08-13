@@ -16,7 +16,7 @@ group_order: 30
 Grok 图片生成通过标准 REST API 使用，不需要 xAI 官方 API Key。你需要的是一把可以使用
 Grok 分组的 SorryCode API Key。
 
-> Grok CLI 的内置图片工具目前不会继承 SorryCode 自定义模型的 `base_url`。不要把
+> Grok Build 的内置图片工具目前不会继承 SorryCode 自定义模型的 `base_url`。不要把
 > SorryCode Key 填进内置图片工具；请使用本页的 API 请求。
 
 > **交给 Agent 配置**
@@ -29,7 +29,7 @@ Grok 分组的 SorryCode API Key。
 2. 确认这把 Key 使用 Grok 分组。
 3. 复制这把 Grok Key，稍后直接替换请求头里的占位值。
 
-这把 Key 可以和 Grok CLI 使用同一个 Grok 分组，但不要使用给 `SorryCode Image2` 准备的 Image2 Key。本页不要求设置环境变量。
+这把 Key 可以和 Grok Build 使用同一个 Grok 分组，但不要使用给 `SorryCode Image2` 准备的 Image2 Key。本页不要求设置环境变量。
 
 如果你还没有 Key，先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
@@ -115,10 +115,10 @@ curl.exe -sS https://sorrycode.com/v1/images/generations `
 
 图片地址可能是临时地址。需要长期保留时，请在成功后及时下载到自己的项目或存储。
 
-<h2 id="cli-boundary">为什么 Grok CLI 里会报 API Key 无效</h2>
+<h2 id="cli-boundary">为什么 Grok Build 里会报 API Key 无效</h2>
 
 SorryCode 的 Grok 一键安装会配置文字对话、Responses 和搜索所需的自定义模型地址。
-当前 Grok CLI 的内置图片客户端使用另一条媒体连接，不读取这个自定义地址。
+当前 Grok Build 的内置图片客户端使用另一条媒体连接，不读取这个自定义地址。
 
 因此会出现这种现象：
 
@@ -139,7 +139,7 @@ SorryCode 的 Grok 一键安装会配置文字对话、Responses 和搜索所需
 
 <h2 id="next">下一步</h2>
 
-- 使用 Grok 文字和搜索：[模型与工作台 / Grok](/docs/runtime/grok-cli)
+- 使用 Grok Build 进行文字对话和搜索：[模型与工作台 / Grok Build](/docs/runtime/grok-build)
 - 生成或动画化视频：[模型与工作台 / Grok 视频生成](/docs/runtime/grok-video)
 - 创建 API Key：[开始使用 / 创建 API Key](/docs/start/create-api-key)
 

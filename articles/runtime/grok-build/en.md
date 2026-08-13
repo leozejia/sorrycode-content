@@ -1,8 +1,8 @@
 ---
-title: Grok
-slug: grok-cli
+title: Grok Build
+slug: grok-build
 order: 1
-summary: Understand Grok first, prepare your API key, finish one-click install, and start using it right away.
+summary: Set up xAI's terminal coding agent, Grok Build, and use Grok models through SorryCode.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -11,9 +11,9 @@ group_title: xAI
 group_order: 30
 ---
 
-# Grok
+# Grok Build
 
-If you want to use Grok locally to read a project, edit code, and run commands while sending requests through SorryCode, this page is the shortest path.
+If you want to use Grok Build locally to read a project, edit code, and run commands while sending requests through SorryCode, this page is the shortest path.
 
 For a first-time user, the main goal is to get the path working. Do not start with config files, and do not assume you need to learn a lot of terminal commands first.
 
@@ -29,17 +29,18 @@ For a first-time user, the main goal is to get the path working. Do not start wi
 >
 > Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
 
-<h2 id="what-is-grok">What Grok Is</h2>
+<h2 id="what-is-grok-build">What Grok Build Is</h2>
 
-- `Grok` is a local terminal runtime / agent from xAI
+- `Grok Build` is xAI's terminal coding agent
 - it can work with you in the terminal, read projects, answer questions, and run local tasks
 - on SorryCode, you just point it at `{{API_BASE_URL}}` and give it your API key
+- the product is named `Grok Build`, while the command you run is `grok`
 
 For a first setup, you do not need to understand the internal fields in `~/.grok/config.toml`. One-click install is enough.
 
-Reference: [xAI Grok official installer](https://x.ai/cli/install.sh)
+Reference: [xAI Grok Build official installer](https://x.ai/cli/install.sh)
 
-> Beginner rule: `Grok` is a runtime, not a model. It is the default fit for Grok / xAI-compatible paths. Do not put GPT or Claude models into Grok casually; if you are unsure, read [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform).
+> Beginner rule: `Grok Build` is the workspace, `Grok` is the model and group brand, and `grok` is the command. Do not put GPT or Claude models into Grok Build casually; if you are unsure, read [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform).
 
 <h2 id="prepare-api-key">Prepare the API Key First</h2>
 
@@ -59,14 +60,14 @@ If you also plan to use Codex, Claude Code, or SorryCode Image2, first check whe
 
 <h2 id="one-click-install">⚡ One-Click Install (Recommended)</h2>
 
-This is the default path. The console generates an install command for the current API key. Paste that command into the terminal on your own computer, and the installer will connect `Grok` to `{{API_BASE_URL}}`, write the local config, and set the default model to `grok-4.5`. After install, reopen the terminal and run `grok`.
+This is the default path. The console generates an install command for the current API key. Paste that command into the terminal on your own computer, and the installer will connect Grok Build to `{{API_BASE_URL}}`, write the local config, and set the default model to `grok-4.5`. After install, reopen the terminal and run `grok`.
 
 ### Step 1: Copy the Command in the Console
 
 1. Open `https://sorrycode.com/keys`
 2. Find the API key you prepared for Grok
 3. Click `Connect Tool`
-4. Choose `Grok`
+4. Choose `Grok Build`
 5. Choose your operating system
 6. Click `Copy`
 
@@ -122,7 +123,7 @@ Enter the project folder you want to work on, then run:
 grok
 ```
 
-If you keep multiple Grok configs, specify the SorryCode path explicitly:
+If you keep multiple Grok Build configs, specify the SorryCode path explicitly:
 
 ```bash
 grok -m sorrycode-grok
@@ -153,18 +154,18 @@ This confirms two things early:
 
 Public setup does not require you to synchronize config fields or environment variables by hand. When you need control over the install steps, run xAI's official installer first, then run the generic SorryCode installer command above. The SorryCode installer detects an existing `grok` command and only adds the gateway config and the selected Grok-group key.
 
-If the config is damaged, return to the API key page and generate a new install command from the Grok key. Do not copy a key from Codex, Claude Code, or SorryCode Image2 to repair Grok.
+If the config is damaged, return to the API key page and generate a new install command from the Grok key. Do not copy a key from Codex, Claude Code, or SorryCode Image2 to repair Grok Build.
 
 <h2 id="media">Where to Call Images and Video</h2>
 
-The custom `base_url` in `~/.grok/config.toml` covers text, Responses, and search. Grok CLI's built-in image and image-to-video tools use a separate media client and do not inherit that address.
+The custom `base_url` in `~/.grok/config.toml` covers text, Responses, and search. Grok Build's built-in image and image-to-video tools use a separate media client and do not inherit that address.
 
 That means:
 
-- keep using Grok CLI for text and search;
+- keep using Grok Build for text and search;
 - use the REST API in [Grok Image Generation](/docs/runtime/grok-image) for images;
 - use the REST API in [Grok Video Generation](/docs/runtime/grok-video) for text-to-video, image-to-video, and polling;
-- do not give a SorryCode key to Grok CLI's built-in media tools, or the official xAI endpoint will reject it as invalid.
+- do not give a SorryCode key to Grok Build's built-in media tools, or the official xAI endpoint will reject it as invalid.
 
 <h2 id="first-request">First Request</h2>
 
@@ -184,7 +185,7 @@ Go to [Getting Started / First Request](/docs/start/first-request) only when:
   go to [Troubleshoot / Common Questions](/docs/troubleshoot/common-errors)
 - not sure where to create the API key
   go to [Getting Started / Create API Key](/docs/start/create-api-key)
-- not sure how to choose between Grok, Codex, and Claude Code
+- not sure how to choose between Grok Build, Codex, and Claude Code
   go to [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - built-in image or video tools report `Incorrect API key provided`
   the text configuration is still valid; use [Grok Image Generation](/docs/runtime/grok-image) or

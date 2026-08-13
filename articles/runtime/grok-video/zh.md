@@ -21,7 +21,7 @@ Grok 视频是异步 API。第一次请求只负责创建任务并返回 `reques
 - 图生视频；
 - 根据 `request_id` 轮询结果。
 
-> Grok CLI 的内置 `image_to_video` 当前不会继承 SorryCode 自定义模型的 `base_url`。
+> Grok Build 的内置 `image_to_video` 当前不会继承 SorryCode 自定义模型的 `base_url`。
 > 使用 SorryCode Key 时，请走本页 REST API。
 
 > **交给 Agent 配置**
@@ -225,7 +225,7 @@ if ($result.status -eq "done") {
 <h2 id="next">下一步</h2>
 
 - 先生成一张输入图片：[模型与工作台 / Grok 图片生成](/docs/runtime/grok-image)
-- 使用 Grok 文字和搜索：[模型与工作台 / Grok](/docs/runtime/grok-cli)
+- 使用 Grok Build 进行文字对话和搜索：[模型与工作台 / Grok Build](/docs/runtime/grok-build)
 - 创建 API Key：[开始使用 / 创建 API Key](/docs/start/create-api-key)
 
 上游能力参考：[xAI Image-to-Video](https://docs.x.ai/developers/model-capabilities/video/image-to-video)

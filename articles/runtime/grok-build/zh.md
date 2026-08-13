@@ -1,8 +1,8 @@
 ---
-title: Grok
-slug: grok-cli
+title: Grok Build
+slug: grok-build
 order: 1
-summary: 先认识 Grok，再准备 API Key，完成一键安装，然后直接开始用。
+summary: 认识 xAI 的终端 Coding Agent Grok Build，完成一键安装后通过 SorryCode 使用 Grok 模型。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -11,9 +11,9 @@ group_title: xAI
 group_order: 30
 ---
 
-# Grok
+# Grok Build
 
-如果你想在本地用 Grok 帮你读项目、改代码、执行命令，同时让请求走 SorryCode，这页就是最短路径。
+如果你想在本地用 Grok Build 帮你读项目、改代码、执行命令，同时让请求走 SorryCode，这页就是最短路径。
 
 对第一次接触这类工具的人来说，先把链路跑通最重要。不要先去研究配置文件，也不用先学一堆终端命令。
 
@@ -29,17 +29,18 @@ group_order: 30
 >
 > 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
 
-<h2 id="what-is-grok">Grok 是什么</h2>
+<h2 id="what-is-grok-build">Grok Build 是什么</h2>
 
-- `Grok` 是 xAI 提供的本地命令行 runtime / agent
+- `Grok Build` 是 xAI 提供的终端 Coding Agent
 - 它可以在终端里和你协作，读取项目、回答问题，也可以执行本地任务
 - 在 SorryCode 里，你要做的是把它接到 `{{API_BASE_URL}}`，再填入你自己的 API Key
+- 产品名是 `Grok Build`，安装后的启动命令是 `grok`
 
 第一次接入时，不需要先理解 `~/.grok/config.toml` 的内部字段。先走一键安装就够了。
 
-参考：[xAI Grok 官方安装器](https://x.ai/cli/install.sh)
+参考：[xAI Grok Build 官方安装器](https://x.ai/cli/install.sh)
 
-> 小白先记住：`Grok` 是 runtime，不是模型。它默认适合 Grok / xAI-compatible 路径。不要把 GPT 或 Claude 模型随手塞进 Grok；如果你不确定，先看 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)。
+> 小白先记住：`Grok Build` 是工作台，`Grok` 是模型和分组品牌，`grok` 是启动命令。不要把 GPT 或 Claude 模型随手塞进 Grok Build；如果你不确定，先看 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)。
 
 <h2 id="prepare-api-key">先准备 API Key</h2>
 
@@ -59,14 +60,14 @@ group_order: 30
 
 <h2 id="one-click-install">⚡ 一键安装（推荐）</h2>
 
-这是默认主路径。控制台会用当前 API Key 生成一条安装命令。你把这条命令粘贴到自己电脑的终端里运行，安装器会把 `Grok` 接到 `{{API_BASE_URL}}`，写好本地配置，并把默认模型设为 `grok-4.5`。安装完成后，重新打开终端运行 `grok` 就可以开始用。
+这是默认主路径。控制台会用当前 API Key 生成一条安装命令。你把这条命令粘贴到自己电脑的终端里运行，安装器会把 Grok Build 接到 `{{API_BASE_URL}}`，写好本地配置，并把默认模型设为 `grok-4.5`。安装完成后，重新打开终端运行 `grok` 就可以开始用。
 
 ### 第一步：在控制台复制命令
 
 1. 打开 `https://sorrycode.com/keys`
 2. 找到给 Grok 准备的那把 API Key
 3. 点击右侧的 `接入工具`
-4. 选择 `Grok`
+4. 选择 `Grok Build`
 5. 选择你的系统
 6. 点击 `复制`
 
@@ -79,7 +80,7 @@ group_order: 30
 
 打开终端后，把刚复制的整条命令粘贴进去，再按一次回车。
 
-一键安装会调用 xAI 官方安装器安装 Grok，然后写入 `~/.grok/config.toml`，并单独保存当前选择的 Grok 分组 Key。它不会覆盖 SorryCode Image2 使用的 Image2 Key。Windows 会使用适合 Windows 的安装脚本。如果你不知道 PowerShell 是什么，先看 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)。
+一键安装会调用 xAI 官方安装器安装 Grok Build，然后写入 `~/.grok/config.toml`，并单独保存当前选择的 Grok 分组 Key。它不会覆盖 SorryCode Image2 使用的 Image2 Key。Windows 会使用适合 Windows 的安装脚本。如果你不知道 PowerShell 是什么，先看 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)。
 
 ### 备用：手动复制通用命令
 
@@ -101,7 +102,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-grok.bat https://sorrycode.com/install/so
 <summary>安装器会做什么</summary>
 
 - 检查本机是否已有 `grok`
-- 如果没有，调用 xAI 官方安装器安装 Grok
+- 如果没有，调用 xAI 官方安装器安装 Grok Build
 - 备份已有的 `~/.grok/config.toml`
 - 写入 SorryCode 的 `~/.grok/config.toml`
 - 把默认模型设为 `grok-4.5`
@@ -122,7 +123,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-grok.bat https://sorrycode.com/install/so
 grok
 ```
 
-如果你保留了多个 Grok 配置，也可以显式指定 SorryCode 这一路：
+如果你保留了多个 Grok Build 配置，也可以显式指定 SorryCode 这一路：
 
 ```bash
 grok -m sorrycode-grok
@@ -153,19 +154,19 @@ grok -m sorrycode-grok
 
 公开接入不要求你手动同步配置字段或环境变量。需要自己控制安装步骤时，可以先运行 xAI 官方安装器，再运行上面的 SorryCode 通用安装命令。SorryCode 安装器会检测已有的 `grok`，只补齐网关配置和当前选择的 Grok 分组 Key。
 
-如果配置损坏，回到 API Key 页面，用这把 Grok Key 重新生成安装命令。不要从 Codex、Claude Code 或 SorryCode Image2 的配置中复制 Key 来修补 Grok。
+如果配置损坏，回到 API Key 页面，用这把 Grok Key 重新生成安装命令。不要从 Codex、Claude Code 或 SorryCode Image2 的配置中复制 Key 来修补 Grok Build。
 
 <h2 id="media">图片和视频从哪里调用</h2>
 
 当前 `~/.grok/config.toml` 里的自定义 `base_url` 负责文字、Responses 和搜索路径。
-Grok CLI 内置的图片、图生视频工具使用独立媒体客户端，不继承这个地址。
+Grok Build 内置的图片、图生视频工具使用独立媒体客户端，不继承这个地址。
 
 因此：
 
-- 文字对话和搜索继续在 Grok CLI 中使用；
+- 文字对话和搜索继续在 Grok Build 中使用；
 - 图片生成使用 [Grok 图片生成](/docs/runtime/grok-image) 的 REST API；
 - 文生视频、图生视频和轮询使用 [Grok 视频生成](/docs/runtime/grok-video) 的 REST API；
-- 不要把 SorryCode Key 交给 Grok CLI 内置媒体工具，否则会收到 xAI 官方的 Key 无效错误。
+- 不要把 SorryCode Key 交给 Grok Build 内置媒体工具，否则会收到 xAI 官方的 Key 无效错误。
 
 <h2 id="first-request">首条请求</h2>
 
@@ -185,7 +186,7 @@ Grok CLI 内置的图片、图生视频工具使用独立媒体客户端，不�
   去看 [排障 / 常见问题](/docs/troubleshoot/common-errors)
 - 不知道 API Key 去哪里建
   去看 [开始使用 / 创建 API Key](/docs/start/create-api-key)
-- 不确定 Grok、Codex、Claude Code 应该怎么选
+- 不确定 Grok Build、Codex、Claude Code 应该怎么选
   去看 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)
 - 内置图片或视频工具提示 `Incorrect API key provided`
   这不是文字配置失效；改用 [Grok 图片生成](/docs/runtime/grok-image) 或

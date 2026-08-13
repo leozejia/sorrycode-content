@@ -20,7 +20,7 @@ section_order: 1
 | **Pi Agent** | 轻量、灵活的终端 Agent，可以自行配置 Responses 兼容模型 | [Pi Agent](/docs/runtime/pi-agent) |
 | **Claude Code** | 适合代码、终端任务和长时间自主执行 | [Claude Code](/docs/runtime/claude-code) |
 | **WorkBuddy** | 在桌面界面处理文档、表格和本地文件 | [WorkBuddy](/docs/runtime/workbuddy) |
-| **Grok CLI** | 使用 Grok 模型和 xAI 生态能力 | [Grok CLI](/docs/runtime/grok-cli) |
+| **Grok Build** | 使用 Grok 模型和 xAI 生态能力 | [Grok Build](/docs/runtime/grok-build) |
 | **Kimi Code** | 使用 Kimi 模型完成代码和长上下文任务 | [Kimi Code](/docs/runtime/kimi-code) |
 
 不确定时先用 Codex。想要更轻量的终端 Agent，或者希望自行配置 Responses 兼容模型，可以选择 Pi Agent。

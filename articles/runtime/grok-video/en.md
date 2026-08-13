@@ -21,7 +21,7 @@ This page covers the three paths verified on SorryCode production:
 - image-to-video generation;
 - polling a result by `request_id`.
 
-> Grok CLI's built-in `image_to_video` tool currently does not inherit the custom `base_url` from a SorryCode model. When using a SorryCode key, use the REST API on this page.
+> Grok Build's built-in `image_to_video` tool currently does not inherit the custom `base_url` from a SorryCode model. When using a SorryCode key, use the REST API on this page.
 
 > **Let Your Agent Configure It**
 >
@@ -223,7 +223,7 @@ Keep waiting while the status is `pending`. Read `video.url` when it becomes `do
 <h2 id="next">Next Step</h2>
 
 - Generate a source image: [Models & Runtimes / Grok Image Generation](/docs/runtime/grok-image)
-- Use Grok for text and search: [Models & Runtimes / Grok](/docs/runtime/grok-cli)
+- Use Grok Build for text and search: [Models & Runtimes / Grok Build](/docs/runtime/grok-build)
 - Create an API key: [Getting Started / Create API Key](/docs/start/create-api-key)
 
 Upstream capability reference: [xAI Image-to-Video](https://docs.x.ai/developers/model-capabilities/video/image-to-video)

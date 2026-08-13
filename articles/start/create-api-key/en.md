@@ -26,7 +26,7 @@ Match each key to the protocol, models, and group access the tool needs. When yo
 | --- | --- | --- |
 | `Codex` | A group that supports Codex / OpenAI-compatible traffic | Codex |
 | `Claude Code` | A group that supports Anthropic-compatible traffic | Claude Code |
-| `Grok` | A Grok group | Grok CLI, Grok images, and Grok video |
+| `Grok` | A Grok group | Grok Build, Grok images, and Grok video |
 | `Image2` | An image group that supports `gpt-image-2` | GPT Image 2 API and the SorryCode Image2 Skill |
 
 This does not split your balance. The balance is still shared. Separate keys make usage records, group switching, spending limits, and troubleshooting much clearer.
@@ -115,13 +115,13 @@ After creation, the console shows the full key. Copy the `sk-...` value.
 
 ![Copy the API key after creation](./key-created-copy.png)
 
-If you use the Codex, Claude Code, or Grok one-click installer, you usually do not need to copy the raw key by hand.
+If you use the Codex, Claude Code, or Grok Build one-click installer, you usually do not need to copy the raw key by hand.
 
 The easier path is to return to the API key list, find this key, and click `Connect Tool`:
 
 ![Connect Tool button on the right side of the API key list](./connect-tool-button.png)
 
-1. choose the tool you want to connect, such as `Codex`, `Claude Code`, or `Grok`
+1. choose the tool you want to connect, such as `Codex`, `Claude Code`, or `Grok Build`
 2. choose your operating system
 3. copy the full command from the modal
 4. open the terminal on your own computer

@@ -15,7 +15,7 @@ group_order: 30
 
 Use Grok image generation through the REST API. You do not need an official xAI API key. You need a SorryCode API key assigned to a Grok group.
 
-> Grok CLI's built-in image tools currently do not inherit the custom `base_url` from a SorryCode model. Do not put a SorryCode key into those built-in media tools. Use the API request on this page.
+> Grok Build's built-in image tools currently do not inherit the custom `base_url` from a SorryCode model. Do not put a SorryCode key into those built-in media tools. Use the API request on this page.
 
 > **Let Your Agent Configure It**
 >
@@ -27,7 +27,7 @@ Use Grok image generation through the REST API. You do not need an official xAI 
 2. Make sure the key uses a Grok group.
 3. Copy that Grok key and replace the request-header placeholder later.
 
-This can be the same Grok-group key used by Grok CLI. Do not use the Image2 key created for `SorryCode Image2`. This page does not require an environment variable.
+This can be the same Grok-group key used by Grok Build. Do not use the Image2 key created for `SorryCode Image2`. This page does not require an environment variable.
 
 If you do not have a key yet, read [Getting Started / Create API Key](/docs/start/create-api-key).
 
@@ -113,9 +113,9 @@ A successful response returns the image URL at `data[0].url`:
 
 The image URL may be temporary. Download the image to your own project or storage soon after a successful request.
 
-<h2 id="cli-boundary">Why Grok CLI Can Report an Invalid API Key</h2>
+<h2 id="cli-boundary">Why Grok Build Can Report an Invalid API Key</h2>
 
-SorryCode's Grok installer configures the custom model address used for text, Responses, and search. Grok CLI's built-in image client currently uses a separate media connection and does not read that custom address.
+SorryCode's Grok installer configures the custom model address used for text, Responses, and search. Grok Build's built-in image client currently uses a separate media connection and does not read that custom address.
 
 This creates a confusing split:
 
@@ -136,7 +136,7 @@ Reinstalling Grok does not change this boundary. Use
 
 <h2 id="next">Next Step</h2>
 
-- Use Grok for text and search: [Models & Runtimes / Grok](/docs/runtime/grok-cli)
+- Use Grok Build for text and search: [Models & Runtimes / Grok Build](/docs/runtime/grok-build)
 - Generate or animate video: [Models & Runtimes / Grok Video Generation](/docs/runtime/grok-video)
 - Create an API key: [Getting Started / Create API Key](/docs/start/create-api-key)
 

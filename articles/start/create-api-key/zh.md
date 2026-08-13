@@ -26,7 +26,7 @@ Key 要和工具使用的协议、目标模型及其分组权限匹配。需要�
 | --- | --- | --- |
 | `Codex` | 支持 Codex / OpenAI-compatible 的分组 | Codex |
 | `Claude Code` | 支持 Anthropic-compatible 的分组 | Claude Code |
-| `Grok` | Grok 分组 | Grok CLI、Grok 图片和 Grok 视频 |
+| `Grok` | Grok 分组 | Grok Build、Grok 图片和 Grok 视频 |
 | `Image2` | 支持 `gpt-image-2` 的图片分组 | GPT Image 2 API、SorryCode Image2 Skill |
 
 余额仍然是同一份。分开创建，是为了之后看使用记录、切换分组、设置限额和排查问题更省心。
@@ -115,13 +115,13 @@ Image2
 
 ![创建完成后复制 API Key](./key-created-copy.png)
 
-如果你走 Codex、Claude Code 或 Grok 的一键安装，不一定要手动复制 Key。
+如果你走 Codex、Claude Code 或 Grok Build 的一键安装，不一定要手动复制 Key。
 
 更简单的方式是回到 API 密钥列表，找到这把 key，点击 `接入工具`：
 
 ![API Key 列表右侧的接入工具按钮](./connect-tool-button.png)
 
-1. 选择要接入的工具，例如 `Codex`、`Claude Code` 或 `Grok`
+1. 选择要接入的工具，例如 `Codex`、`Claude Code` 或 `Grok Build`
 2. 选择你的系统
 3. 复制弹窗里的整条命令
 4. 打开你电脑的终端

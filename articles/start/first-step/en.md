@@ -20,7 +20,7 @@ Start by choosing the agent workspace that fits how you work, then follow its gu
 | **Pi Agent** | A lightweight, flexible terminal agent with configurable Responses-compatible models | [Pi Agent](/docs/runtime/pi-agent) |
 | **Claude Code** | Code, terminal tasks, and long-running autonomous work | [Claude Code](/docs/runtime/claude-code) |
 | **WorkBuddy** | Documents, spreadsheets, and local files in a desktop app | [WorkBuddy](/docs/runtime/workbuddy) |
-| **Grok CLI** | Grok models and xAI capabilities | [Grok CLI](/docs/runtime/grok-cli) |
+| **Grok Build** | Grok models and xAI capabilities | [Grok Build](/docs/runtime/grok-build) |
 | **Kimi Code** | Coding and long-context tasks with Kimi models | [Kimi Code](/docs/runtime/kimi-code) |
 
 If you are unsure, start with Codex. Choose Pi Agent when you want a lighter terminal agent or want to configure a Responses-compatible model yourself.
