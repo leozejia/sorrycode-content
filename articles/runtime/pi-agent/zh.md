@@ -38,7 +38,7 @@ Windows PowerShell 使用 `curl.exe`：
 curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <你的 SorryCode API Key>"
 ```
 
-后续配置必须使用返回结果里的准确模型 ID，并确认所选模型支持 Responses API。本页推荐并验证了 `deepseek-v4-flash`，但 Pi 不限于 DeepSeek。其他 Responses 兼容模型也可以使用，实际可用范围以这把 Key 的返回结果为准。
+后续配置必须使用返回结果里的准确模型 ID，并确认所选模型支持 Responses API。本页示例同时加入 `deepseek-v4-flash` 和 `deepseek-v4-pro`，其中 `deepseek-v4-flash` 已完成实际验证。Pi 不限于 DeepSeek，其他 Responses 兼容模型也可以使用，实际可用范围以这把 Key 的返回结果为准。
 
 <h2 id="install">安装 Pi</h2>
 
@@ -95,6 +95,11 @@ notepad "$HOME\.pi\agent\models.json"
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash via SorryCode",
           "reasoning": true
+        },
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro via SorryCode",
+          "reasoning": true
         }
       ]
     }
@@ -114,7 +119,7 @@ pi
 
 进入界面后输入 `/login`，选择 `sorrycode`，再粘贴刚才选定的 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
 
-然后输入 `/model`，选择刚才配置的模型。使用本页推荐配置时，选择 `sorrycode/deepseek-v4-flash`。
+然后输入 `/model`，选择刚才配置的模型。使用本页示例配置时，可以选择 `sorrycode/deepseek-v4-flash` 或 `sorrycode/deepseek-v4-pro`。
 
 <h2 id="verify">验证文本和工具调用</h2>
 

@@ -38,7 +38,7 @@ Use `curl.exe` in Windows PowerShell:
 curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <PASTE YOUR SORRYCODE API KEY HERE>"
 ```
 
-The configuration must use an exact model ID from the response, and the selected model must support the Responses API. This guide recommends and verifies `deepseek-v4-flash`, but Pi is not limited to DeepSeek. Other Responses-compatible models work as well. Availability still depends on the selected key group.
+The configuration must use an exact model ID from the response, and the selected model must support the Responses API. This example includes both `deepseek-v4-flash` and `deepseek-v4-pro`; `deepseek-v4-flash` is the model verified for this guide. Pi is not limited to DeepSeek. Other Responses-compatible models work as well. Availability still depends on the selected key group.
 
 <h2 id="install">Install Pi</h2>
 
@@ -95,6 +95,11 @@ If the file already contains other providers, merge `sorrycode` into the existin
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash via SorryCode",
           "reasoning": true
+        },
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro via SorryCode",
+          "reasoning": true
         }
       ]
     }
@@ -114,7 +119,7 @@ pi
 
 Enter `/login`, select `sorrycode`, and paste the key you selected earlier. Pi stores it in its own authentication file. You do not need an environment variable, and the key should not be added to `models.json`.
 
-Enter `/model` and select the model you configured. With the recommended configuration on this page, select `sorrycode/deepseek-v4-flash`.
+Enter `/model` and select the model you configured. With the example configuration on this page, select either `sorrycode/deepseek-v4-flash` or `sorrycode/deepseek-v4-pro`.
 
 <h2 id="verify">Verify Text and Tool Calls</h2>
 
