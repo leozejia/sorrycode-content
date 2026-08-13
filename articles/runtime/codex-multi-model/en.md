@@ -13,7 +13,7 @@ group_order: 10
 
 # Switch SorryCode Models in Codex CLI and App
 
-After you finish the [Codex setup](/docs/runtime/codex), Codex CLI and App share `~/.codex/config.toml` and continue to use the same `sorrycode` provider and group key. Switching models does not require another install, sign-in, or provider.
+After you finish the [Codex setup](/docs/runtime/codex), Codex CLI and App share `~/.codex/config.toml` and the provider and authentication settings already on your machine. To switch models within the current API key group, change only the model ID. Do not change `model_provider`, reinstall Codex, or sign in again.
 
 CLI can select a model for each launch. Codex App cannot currently display and switch to DeepSeek reliably in its interface, so you need to change the default model in the config and restart the App.
 
@@ -60,7 +60,7 @@ Start Codex with that profile:
 codex --profile deepseek
 ```
 
-The profile only overrides the model. Provider and authentication settings still come from the global `sorrycode` configuration.
+The profile only overrides the model. Provider and authentication settings still come from your current global configuration. Do not change the existing provider just to switch models, regardless of its name.
 
 <h2 id="app">Switch Models in Codex App</h2>
 
@@ -80,19 +80,18 @@ To use DeepSeek in a new task, follow the steps below. The screenshots use the C
 
    ![Open config.toml from the Configuration page](./codex-app-open-config.png)
 
-4. Find the top-level `model` and `model_provider` settings
-5. Record the current `model` value, change only that value, and keep `model_provider = "sorrycode"`
+4. Find the top-level `model` setting
+5. Record the current `model` value and change only that setting. If `model_provider` is also present, leave its existing value unchanged
 6. Save the file, quit the App completely, and reopen it. On macOS, use `Command-Q` instead of closing the window
 7. Start a new task instead of testing the change in an existing task
 
 The relevant settings should look like this after switching to DeepSeek:
 
 ```toml
-model_provider = "sorrycode"
 model = "deepseek-v4-flash"
 ```
 
-If these settings already exist, edit them in place instead of adding duplicates. Both settings must remain at the top level and must not be placed inside `[model_providers.sorrycode]`.
+If `model` already exists, edit it in place instead of adding a duplicate. If it is absent, add it at the top level. Do not add, remove, or change `model_provider`. Do not place `model` inside any `[model_providers.*]` section.
 
 To switch back to GPT, restore the `model` value you recorded, quit the App completely, and reopen it. Do not copy another user's GPT model ID because available models can differ by group and version.
 
@@ -100,7 +99,7 @@ Codex App currently uses one global default model at a time. It cannot place Dee
 
 If the App shows `Custom`, do not ask the model to identify itself. Check the actual model ID for the request in your SorryCode usage records.
 
-Do not change `model_provider`, `model_providers.sorrycode`, authentication files, `CODEX_HOME`, or session directories when switching models. Those settings do not control model selection and may move the App to another provider or session data directory.
+Change only `model` when switching models. Codex sessions carry provider information. If an existing user replaces their original `model_provider` with `sorrycode`, all sessions under the original provider disappear from the current list and appear to have been erased. This does not mean the session data was deleted; restoring the original `model_provider` value should make those sessions visible again. Do not copy a provider value from this guide or another user, and do not change provider sections, authentication files, `CODEX_HOME`, or session directories.
 
 <h2 id="troubleshoot">A Model Does Not Work</h2>
 
@@ -108,7 +107,7 @@ Do not change `model_provider`, `model_providers.sorrycode`, authentication file
 - App still uses the previous model: quit the App completely, use `Command-Q` on macOS, then reopen it and start a new task
 - App shows `Custom`: this label can appear for custom models in the current version; verify the actual model ID in your SorryCode usage records
 - Text starts streaming but tool calls fail: switch to a verified model and send the model ID and error to SorryCode
-- The active provider is not `sorrycode`: rerun the official installer instead of adding another provider manually
+- All previous sessions disappear after switching: check whether `model_provider` was changed and restore its exact previous value before rerunning any installer
 - Behavior changes after switching: start a new task and test again without modifying or migrating old tasks
 
 References: [Codex configuration](https://developers.openai.com/codex/config-reference/), [DeepSeek's Codex integration guide](https://api-docs.deepseek.com/quick_start/agent_integrations/codex/), and [the Codex App custom-model issue](https://github.com/openai/codex/issues/19694).

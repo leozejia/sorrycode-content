@@ -13,7 +13,7 @@ group_order: 10
 
 # 在 Codex CLI 和 App 中切换 SorryCode 模型
 
-完成 [Codex 接入](/docs/runtime/codex) 后，Codex CLI 和 App 会共用 `~/.codex/config.toml`，继续使用同一个 `sorrycode` provider 和同一把分组 Key。切换模型时，不需要重新安装、登录或添加第二个 provider。
+完成 [Codex 接入](/docs/runtime/codex) 后，Codex CLI 和 App 会共用 `~/.codex/config.toml` 以及当前已有的 provider 和认证配置。在当前 API Key 分组内切换模型时，只需要改模型 ID。不要修改 `model_provider`，也不需要重新安装或登录。
 
 CLI 可以为每次启动单独指定模型。Codex App 当前无法在界面中可靠地显示和切换 DeepSeek，需要修改配置中的默认模型并重启 App。
 
@@ -60,7 +60,7 @@ model = "deepseek-v4-flash"
 codex --profile deepseek
 ```
 
-这个 profile 只覆盖模型。provider 和认证仍然继承全局的 `sorrycode` 配置。
+这个 profile 只覆盖模型。provider 和认证会继承当前的全局配置，无论现有 provider 叫什么，都不要为了切换模型修改它。
 
 <h2 id="app">在 Codex App 中切换</h2>
 
@@ -80,19 +80,18 @@ codex --profile deepseek
 
    ![在配置页打开 config.toml](./codex-app-open-config.png)
 
-4. 找到顶层的 `model` 和 `model_provider`
-5. 记下原来的 `model` 值，只把它改成目标模型，保持 `model_provider = "sorrycode"`
+4. 找到顶层的 `model`
+5. 记下原来的 `model` 值，只把这一项改成目标模型。如果同时看到 `model_provider`，保持它原来的值
 6. 保存文件后完全退出 App，再重新打开。macOS 使用 `Command-Q`，不能只关闭窗口
 7. 新建任务，不要用已经打开的旧任务验证切换结果
 
 切换到 DeepSeek 后，相关配置应当类似下面这样：
 
 ```toml
-model_provider = "sorrycode"
 model = "deepseek-v4-flash"
 ```
 
-如果文件里已经有这两项，请修改原来的值，不要重复添加。`model` 和 `model_provider` 必须是顶层配置，不能写进 `[model_providers.sorrycode]` 配置段。
+如果文件里已经有 `model`，请修改原来的值，不要重复添加；如果没有，就在顶层新增这一项。不要新增、删除或修改 `model_provider`。`model` 不能写进任何 `[model_providers.*]` 配置段。
 
 想切回 GPT 时，把 `model` 恢复为切换前记下的值，再完全退出并重开 App。不要照抄其他用户的 GPT 模型 ID，不同分组和版本提供的模型可能不同。
 
@@ -100,7 +99,7 @@ Codex App 当前一次使用一个全局默认模型，不能把 DeepSeek 和 GP
 
 App 显示 `Custom` 时，不要通过询问模型身份来判断是否切换成功。到 SorryCode 用量记录中查看这次请求的实际模型 ID。
 
-切换模型时不要修改 `model_provider`、`model_providers.sorrycode`、认证文件、`CODEX_HOME` 或会话目录。这些配置与模型选择无关，修改后可能让 App 进入另一套 provider 或会话数据目录。
+切换模型时只改 `model`。Codex 的历史会话带有 provider 信息，老用户如果把原来的 `model_provider` 改成 `sorrycode`，原 provider 下的旧会话会全部从当前列表中消失，看起来像被清空。这不代表会话数据已被删除，恢复 `model_provider` 原值后应会重新出现。不要照抄本文或其他用户的 provider 值，也不要修改 provider 配置段、认证文件、`CODEX_HOME` 或会话目录。
 
 <h2 id="troubleshoot">模型不能使用</h2>
 
@@ -108,7 +107,7 @@ App 显示 `Custom` 时，不要通过询问模型身份来判断是否切换成
 - App 仍然使用原模型：确认已经完全退出 App，macOS 需要按 `Command-Q`，重开后再新建任务
 - App 显示 `Custom`：这是当前版本使用自定义模型时可能出现的名称，到 SorryCode 用量记录核对实际模型 ID
 - 可以开始回复，但工具调用失败：换回已验证模型，并把模型 ID 和错误信息提交给 SorryCode
-- provider 不是 `sorrycode`：重新运行官方一键安装器，不要手工新增第二个 provider
+- 切换后旧会话全部不见：检查是否误改了 `model_provider`，把它恢复为修改前的原值；不要先重跑安装器
 - 切换后行为和旧任务不一致：新建任务再验证，不要修改或迁移历史任务
 
 参考：[Codex 配置说明](https://developers.openai.com/codex/config-reference/)、[DeepSeek 的 Codex 接入说明](https://api-docs.deepseek.com/quick_start/agent_integrations/codex/)、[Codex App 自定义模型问题](https://github.com/openai/codex/issues/19694)。

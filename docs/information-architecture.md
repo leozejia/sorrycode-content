@@ -98,7 +98,7 @@ Codex 相关页面按下面分工：
 
 - `Codex` 负责安装、API Key、Base URL 和第一次使用；
 - `在 Codex CLI 和 App 中切换 SorryCode 模型` 负责说明 CLI 显式模型、官方 profile，以及 App 修改顶层默认模型并重启的当前操作方式；
-- 多模型页只写 Codex 原生使用路径。provider 始终保持 `sorrycode`，不承载旧方案迁移说明。App 需要明确模型选择器的限制、完整退出要求、恢复 GPT 的方法和用量记录验证方式。
+- 多模型页只写 Codex 原生使用路径。切换时只改顶层 `model`，保留用户现有的 `model_provider` 原值，不承载旧方案迁移说明。App 需要明确模型选择器的限制、完整退出要求、恢复 GPT 的方法和用量记录验证方式。
 
 WorkBuddy 只维护一篇闭环页面，包含下载安装、SorryCode 自定义模型配置、第一个文件任务和
 Expert / Expert Team 入口及必要的权限边界。不要为通用安全常识、单个菜单或尚未形成稳定用户问题的功能单独建页。

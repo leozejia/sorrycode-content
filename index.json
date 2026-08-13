@@ -451,7 +451,7 @@
       "title": "Switch SorryCode Models in Codex CLI and App",
       "summary": "Use one SorryCode group key to switch to DeepSeek and other models in Codex CLI or App.",
       "order": 2,
-      "updatedAt": "2026-08-07",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/runtime/codex-multi-model/en.md",
       "assetBaseUrl": "articles/runtime/codex-multi-model/",
       "route": "/docs/runtime/codex-multi-model"
@@ -466,7 +466,7 @@
       "title": "在 Codex CLI 和 App 中切换 SorryCode 模型",
       "summary": "使用同一把 SorryCode 分组 Key，在 Codex CLI 或 App 中切换 DeepSeek 等模型。",
       "order": 2,
-      "updatedAt": "2026-08-07",
+      "updatedAt": "2026-08-13",
       "markdownPath": "articles/runtime/codex-multi-model/zh.md",
       "assetBaseUrl": "articles/runtime/codex-multi-model/",
       "route": "/docs/runtime/codex-multi-model"
