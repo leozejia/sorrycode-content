@@ -99,7 +99,16 @@ notepad "$HOME\.pi\agent\models.json"
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek V4 Pro via SorryCode",
-          "reasoning": true
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": "high",
+            "high": "high",
+            "xhigh": "high",
+            "max": "max"
+          }
         }
       ]
     }
@@ -108,6 +117,8 @@ notepad "$HOME\.pi\agent\models.json"
 ```
 
 要使用其他 Responses 兼容模型，把 `id` 换成 `/v1/models` 返回的准确模型 ID，并按需修改 `name`。`models` 可以包含多个模型条目。只有模型本身支持推理时才设置 `"reasoning": true`，否则改为 `false`。
+
+Pi 对自定义模型默认只显示到 `high`。`deepseek-v4-pro` 的 `thinkingLevelMap` 按模型当前官方规则配置：`low` 保持 `low`，`medium`、`high` 和 `xhigh` 实际使用 `high`，`max` 保持 `max`。`xhigh` 与 `max` 必须显式写入映射，才会出现在 Pi 的思考深度选项中。其他模型不要直接复用这份映射，应以对应模型的官方能力为准。
 
 <h2 id="login">保存 API Key</h2>
 
@@ -119,7 +130,7 @@ pi
 
 进入界面后输入 `/login`，选择 `sorrycode`，再粘贴刚才选定的 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
 
-然后输入 `/model`，选择刚才配置的模型。使用本页示例配置时，可以选择 `sorrycode/deepseek-v4-flash` 或 `sorrycode/deepseek-v4-pro`。
+然后输入 `/model`，选择刚才配置的模型。使用本页示例配置时，可以选择 `sorrycode/deepseek-v4-flash` 或 `sorrycode/deepseek-v4-pro`。选择 Pro 后，可以在 `/settings` 中把默认思考深度设为 `max`。
 
 <h2 id="verify">验证文本和工具调用</h2>
 

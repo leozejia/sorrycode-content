@@ -99,7 +99,16 @@ If the file already contains other providers, merge `sorrycode` into the existin
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek V4 Pro via SorryCode",
-          "reasoning": true
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": "high",
+            "high": "high",
+            "xhigh": "high",
+            "max": "max"
+          }
         }
       ]
     }
@@ -108,6 +117,8 @@ If the file already contains other providers, merge `sorrycode` into the existin
 ```
 
 To use another Responses-compatible model, replace `id` with an exact model ID returned by `/v1/models` and update `name` if needed. The `models` array can contain multiple entries. Set `"reasoning": true` only when the selected model supports reasoning; otherwise set it to `false`.
+
+Pi only exposes thinking levels through `high` by default for a custom model. The `thinkingLevelMap` for `deepseek-v4-pro` follows the model's current official rules: `low` remains `low`; `medium`, `high`, and `xhigh` use `high`; and `max` remains `max`. Pi only shows the extended `xhigh` and `max` choices when they are declared explicitly. Do not copy this map to another model unless its official documentation defines the same behavior.
 
 <h2 id="login">Save the API Key</h2>
 
@@ -119,7 +130,7 @@ pi
 
 Enter `/login`, select `sorrycode`, and paste the key you selected earlier. Pi stores it in its own authentication file. You do not need an environment variable, and the key should not be added to `models.json`.
 
-Enter `/model` and select the model you configured. With the example configuration on this page, select either `sorrycode/deepseek-v4-flash` or `sorrycode/deepseek-v4-pro`.
+Enter `/model` and select the model you configured. With the example configuration on this page, select either `sorrycode/deepseek-v4-flash` or `sorrycode/deepseek-v4-pro`. After selecting Pro, you can set the default thinking level to `max` in `/settings`.
 
 <h2 id="verify">Verify Text and Tool Calls</h2>
 
