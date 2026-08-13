@@ -94,11 +94,17 @@ If the file already contains other providers, merge `sorrycode` into the existin
         {
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash via SorryCode",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": ["text"],
           "reasoning": true
         },
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek V4 Pro via SorryCode",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": ["text"],
           "reasoning": true,
           "thinkingLevelMap": {
             "off": null,
@@ -117,6 +123,8 @@ If the file already contains other providers, merge `sorrycode` into the existin
 ```
 
 To use another Responses-compatible model, replace `id` with an exact model ID returned by `/v1/models` and update `name` if needed. The `models` array can contain multiple entries. Set `"reasoning": true` only when the selected model supports reasoning; otherwise set it to `false`.
+
+DeepSeek's official Pi configuration gives both V4 Pro and V4 Flash a 1,000,000-token context window and a 384,000-token maximum output. Pi uses `contextWindow` to calculate context usage and automatic compaction, while `maxTokens` limits a single response. Both fields must be set explicitly. Without them, Pi falls back to 128,000 and 16,384.
 
 Pi only exposes thinking levels through `high` by default for a custom model. The `thinkingLevelMap` for `deepseek-v4-pro` follows the model's current official rules: `low` remains `low`; `medium`, `high`, and `xhigh` use `high`; and `max` remains `max`. Pi only shows the extended `xhigh` and `max` choices when they are declared explicitly. Do not copy this map to another model unless its official documentation defines the same behavior.
 
@@ -162,4 +170,4 @@ When the task finishes, confirm that `pi-check.txt` exists and contains `PI_TOOL
 
 This page recommends and verifies Pi `0.84.1` with `deepseek-v4-flash`. Both the minimal text request and the `write` tool call passed. Pi can also use other Responses-compatible models available through SorryCode.
 
-References: [Pi website](https://pi.dev/), [Pi repository](https://github.com/earendil-works/pi), and [Pi custom models](https://pi.dev/docs/latest/models).
+References: [Pi website](https://pi.dev/), [Pi repository](https://github.com/earendil-works/pi), [Pi custom models](https://pi.dev/docs/latest/models), and [DeepSeek with Pi Mono](https://api-docs.deepseek.com/quick_start/agent_integrations/pi_mono).

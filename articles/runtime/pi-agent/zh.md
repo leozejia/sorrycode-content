@@ -94,11 +94,17 @@ notepad "$HOME\.pi\agent\models.json"
         {
           "id": "deepseek-v4-flash",
           "name": "DeepSeek V4 Flash via SorryCode",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": ["text"],
           "reasoning": true
         },
         {
           "id": "deepseek-v4-pro",
           "name": "DeepSeek V4 Pro via SorryCode",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": ["text"],
           "reasoning": true,
           "thinkingLevelMap": {
             "off": null,
@@ -117,6 +123,8 @@ notepad "$HOME\.pi\agent\models.json"
 ```
 
 要使用其他 Responses 兼容模型，把 `id` 换成 `/v1/models` 返回的准确模型 ID，并按需修改 `name`。`models` 可以包含多个模型条目。只有模型本身支持推理时才设置 `"reasoning": true`，否则改为 `false`。
+
+DeepSeek 官方给 Pi 的 V4 Pro 和 V4 Flash 配置都是 1,000,000 token 上下文与 384,000 token 最大输出。`contextWindow` 用于 Pi 的上下文占用和自动压缩判断，`maxTokens` 是单次响应的最大输出。两项都要显式填写；省略时 Pi 会使用 128,000 和 16,384 的默认值。
 
 Pi 对自定义模型默认只显示到 `high`。`deepseek-v4-pro` 的 `thinkingLevelMap` 按模型当前官方规则配置：`low` 保持 `low`，`medium`、`high` 和 `xhigh` 实际使用 `high`，`max` 保持 `max`。`xhigh` 与 `max` 必须显式写入映射，才会出现在 Pi 的思考深度选项中。其他模型不要直接复用这份映射，应以对应模型的官方能力为准。
 
@@ -162,4 +170,4 @@ pi --provider sorrycode --model deepseek-v4-flash --no-session -p "Create pi-che
 
 本页推荐并验证了 Pi `0.84.1` 与 `deepseek-v4-flash` 的组合，最小文本和 `write` 工具调用均已通过。Pi 也可以使用 SorryCode 中其他支持 Responses API 的模型。
 
-参考：[Pi 官网](https://pi.dev/)、[Pi 官方仓库](https://github.com/earendil-works/pi)、[Pi 自定义模型文档](https://pi.dev/docs/latest/models)。
+参考：[Pi 官网](https://pi.dev/)、[Pi 官方仓库](https://github.com/earendil-works/pi)、[Pi 自定义模型文档](https://pi.dev/docs/latest/models)、[DeepSeek 接入 Pi Mono](https://api-docs.deepseek.com/zh-cn/quick_start/agent_integrations/pi_mono)。
