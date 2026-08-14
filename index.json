@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-08-13",
+  "updatedAt": "2026-08-14",
   "articles": [
     {
       "type": "article",
@@ -448,10 +448,10 @@
       "sectionOrder": 10,
       "slug": "codex-multi-model",
       "locale": "en",
-      "title": "Switch SorryCode Models in Codex CLI and App",
-      "summary": "Use one SorryCode group key to switch to DeepSeek and other models in Codex CLI or App.",
+      "title": "Use Other Models in Codex",
+      "summary": "Use DeepSeek and other models in Codex CLI or App through SorryCode's OpenAI-compatible API.",
       "order": 2,
-      "updatedAt": "2026-08-13",
+      "updatedAt": "2026-08-14",
       "markdownPath": "articles/runtime/codex-multi-model/en.md",
       "assetBaseUrl": "articles/runtime/codex-multi-model/",
       "route": "/docs/runtime/codex-multi-model"
@@ -463,10 +463,10 @@
       "sectionOrder": 10,
       "slug": "codex-multi-model",
       "locale": "zh",
-      "title": "在 Codex CLI 和 App 中切换 SorryCode 模型",
-      "summary": "使用同一把 SorryCode 分组 Key，在 Codex CLI 或 App 中切换 DeepSeek 等模型。",
+      "title": "在 Codex 中使用其他模型",
+      "summary": "通过 SorryCode 的 OpenAI 兼容接口，在 Codex CLI 或 App 中使用 DeepSeek 等模型。",
       "order": 2,
-      "updatedAt": "2026-08-13",
+      "updatedAt": "2026-08-14",
       "markdownPath": "articles/runtime/codex-multi-model/zh.md",
       "assetBaseUrl": "articles/runtime/codex-multi-model/",
       "route": "/docs/runtime/codex-multi-model"

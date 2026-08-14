@@ -1,8 +1,8 @@
 ---
-title: 在 Codex CLI 和 App 中切换 SorryCode 模型
+title: 在 Codex 中使用其他模型
 slug: codex-multi-model
 order: 2
-summary: 使用同一把 SorryCode 分组 Key，在 Codex CLI 或 App 中切换 DeepSeek 等模型。
+summary: 通过 SorryCode 的 OpenAI 兼容接口，在 Codex CLI 或 App 中使用 DeepSeek 等模型。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -11,7 +11,7 @@ group_title: OpenAI
 group_order: 10
 ---
 
-# 在 Codex CLI 和 App 中切换 SorryCode 模型
+# 在 Codex 中使用其他模型
 
 完成 [Codex 接入](/docs/runtime/codex) 后，Codex CLI 和 App 会共用 `~/.codex/config.toml` 以及当前已有的 provider 和认证配置。在当前 API Key 分组内切换模型时，只需要改模型 ID。不要修改 `model_provider`，也不需要重新安装或登录。
 

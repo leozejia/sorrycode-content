@@ -1,8 +1,8 @@
 ---
-title: Switch SorryCode Models in Codex CLI and App
+title: Use Other Models in Codex
 slug: codex-multi-model
 order: 2
-summary: Use one SorryCode group key to switch to DeepSeek and other models in Codex CLI or App.
+summary: Use DeepSeek and other models in Codex CLI or App through SorryCode's OpenAI-compatible API.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -11,7 +11,7 @@ group_title: OpenAI
 group_order: 10
 ---
 
-# Switch SorryCode Models in Codex CLI and App
+# Use Other Models in Codex
 
 After you finish the [Codex setup](/docs/runtime/codex), Codex CLI and App share `~/.codex/config.toml` and the provider and authentication settings already on your machine. To switch models within the current API key group, change only the model ID. Do not change `model_provider`, reinstall Codex, or sign in again.
 
