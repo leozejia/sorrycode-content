@@ -1,8 +1,8 @@
 ---
-title: Codex
+title: ChatGPT / Codex
 slug: codex
 order: 1
-summary: 先认识 Codex，再准备 API Key，完成一键安装，然后直接开始用。
+summary: 先认识 ChatGPT / Codex，再准备 API Key，完成一键安装，然后直接开始用。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -11,9 +11,9 @@ group_title: OpenAI
 group_order: 10
 ---
 
-# Codex
+# ChatGPT / Codex
 
-如果你想在本地直接让模型帮你读项目、改代码、执行命令，这页就是最短路径。
+如果你想在 ChatGPT 桌面 App 或 Codex CLI 中让模型帮你读项目、改代码、执行命令，这页就是最短路径。
 
 对第一次接触这类工具的人来说，先把链路跑通最重要。不要先去研究配置文件，也不用先学一堆终端命令。
 
@@ -125,7 +125,7 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-codex.bat {{INSTALL_BAT_URL}} && %TEMP%\s
 
 Codex App 的 Plugin 从侧边栏插件入口安装或启用。Plugin、Skill 和 MCP 的关系见 [Agent 能力是怎么扩展的](/docs/runtime/agent-capabilities)。
 
-同一 SorryCode 分组中的 DeepSeek 等模型，可以在 Codex CLI 中显式指定，也可以设为 Codex App 的默认模型。具体操作和 App 当前的限制见[在 Codex 中使用其他模型](/docs/runtime/codex-multi-model)。
+Grok、DeepSeek 等第三方模型也可以在 ChatGPT / Codex 中使用。切换前先选择包含目标模型的分组 Key，再按[在 ChatGPT / Codex 中使用其他模型](/docs/runtime/codex-multi-model)修改模型。
 
 <h2 id="cli-fallback">备用：继续用终端</h2>
 

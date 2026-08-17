@@ -90,14 +90,15 @@ You primarily use a specific Chinese model → check if its vendor has an Agent 
 
 Why this pairing? Each workbench is designed and optimized first and foremost for its "home" model. Context organization, caching strategy, prompt formatting — all tuned for that model.
 
-Cross-combinations can work. But they might not be cost-effective.
+A third-party combination depends on the workbench protocol and the model's verified connection. Brand names alone do not answer the question.
 
 ```text
-Codex + Claude can work.
-But context reuse, cache hits, consumption control —
-these may not be as good as the native pairing.
-Beginners: take the default path first. Experiment later.
+Grok is not part of the GPT family,
+but grok-4.6 can return text and streaming responses
+through SorryCode Responses in ChatGPT / Codex.
 ```
+
+Beginners can still start with the default pairing. Check the verified setup page before adding a third-party model.
 
 <h2 id="convergence">Everyone Is Building Agents</h2>
 

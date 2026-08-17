@@ -186,4 +186,4 @@ If this layer is ready, go back to:
 
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
-- [Models & Runtimes / Use Other Models in Codex](/docs/runtime/codex-multi-model)
+- [Models & Runtimes / Use Other Models in ChatGPT / Codex](/docs/runtime/codex-multi-model)

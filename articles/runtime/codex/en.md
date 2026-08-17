@@ -1,8 +1,8 @@
 ---
-title: Codex
+title: ChatGPT / Codex
 slug: codex
 order: 1
-summary: Understand Codex first, prepare your API key, finish one-click install, and start using it right away.
+summary: Set up ChatGPT / Codex with a SorryCode API key, then start in the desktop app or Codex CLI.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -11,9 +11,9 @@ group_title: OpenAI
 group_order: 10
 ---
 
-# Codex
+# ChatGPT / Codex
 
-If you want a model to read your project, edit code, and run commands locally, this page is the shortest path.
+If you want a model to read projects, edit code, and run commands in the ChatGPT desktop app or Codex CLI, this page is the shortest path.
 
 For a first-time user, the main goal is to get the path working. Do not start with config files, and do not assume you need to learn a lot of terminal commands first.
 
@@ -125,7 +125,7 @@ If you prefer viewing project files and changes inside a visual editor, continue
 
 Install or enable Codex App Plugins from the Plugins entry in the sidebar. See [How Agent Capabilities Are Extended](/docs/runtime/agent-capabilities) for how Plugins, Skills, and MCP relate.
 
-DeepSeek and other models in the same SorryCode group can be selected in Codex CLI or set as the default model in Codex App. See [Use Other Models in Codex](/docs/runtime/codex-multi-model) for the steps and current App limitations.
+Grok, DeepSeek, and other third-party models can also run in ChatGPT / Codex. Choose a key whose group contains the target model, then follow [Use Other Models in ChatGPT / Codex](/docs/runtime/codex-multi-model).
 
 <h2 id="cli-fallback">Fallback: Use the Terminal</h2>
 

@@ -94,11 +94,16 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 `/docs/runtime/*`。导航按供应商生态或独立工作台组织，当前文章和分组以 `articles/runtime/index.json`
 为准。不要创建没有文章的空分组。新增页面前，先确认用户入口、模型、接口和生产验证。
 
-Codex 相关页面按下面分工：
+ChatGPT / Codex 相关页面按下面分工，现有 `codex` slug 保持不变：
 
-- `Codex` 负责安装、API Key、Base URL 和第一次使用；
-- `在 Codex 中使用其他模型` 负责说明 CLI 显式模型、官方 profile，以及 App 修改顶层默认模型并重启的当前操作方式；
-- 多模型页只写 Codex 原生使用路径。切换时只改顶层 `model`，保留用户现有的 `model_provider` 原值，不承载旧方案迁移说明。App 需要明确模型选择器的限制、完整退出要求、恢复 GPT 的方法和用量记录验证方式。
+- `ChatGPT / Codex` 负责安装、API Key、Base URL 和第一次使用；
+- `在 ChatGPT / Codex 中使用其他模型` 负责说明 CLI 显式模型、官方 profile，以及 App 修改顶层默认模型并重启的当前操作方式；
+- 多模型页只写 ChatGPT / Codex 原生使用路径。切换时保留用户现有的 `model_provider`，按目标模型选择匹配分组的 Key，再修改顶层 `model`。页面不承载旧方案迁移说明。App 需要明确模型选择器的限制、完整退出要求、恢复 GPT 的方法和用量记录验证方式；
+- Grok 放在多模型页，作为经过 Responses 连通验证的第三方模型，不把 Grok 归入 GPT 系列，也不另建 Grok 文字模型页。
+
+`DeepSeek Harness` 使用独立的 `DSH` 页面，归入 DeepSeek 分组。页面只维护官方 Web UI 启动、自定义 OpenAI-compatible provider、SorryCode Key、`openai-responses` 协议、模型选择和首条连通验证。DSH 仍处于开发者预览期，不把具体配置文件结构或当前 RC 版本细节写成长期契约。
+
+跨工作台的模型组合只验证请求能通过约定协议稳定返回。提示理解、工具选择和输出质量属于模型与工作台自身行为，不作为 SorryCode 接入阻塞，也不为此维护本地补丁或组合穷举表。
 
 WorkBuddy 只维护一篇闭环页面，包含下载安装、SorryCode 自定义模型配置、第一个文件任务和
 Expert / Expert Team 入口及必要的权限边界。不要为通用安全常识、单个菜单或尚未形成稳定用户问题的功能单独建页。

@@ -131,6 +131,8 @@ grok -m sorrycode-grok
 
 如果你更想在可视化编辑器里看项目文件和改动，也可以继续看 [工具 / VS Code](/docs/tools/vscode)。
 
+如果你更习惯 ChatGPT 桌面 App 或 Codex CLI，不需要再安装一个工作台。直接看[在 ChatGPT / Codex 中使用其他模型](/docs/runtime/codex-multi-model)，用 Grok 分组 Key 选择 `grok-4.6`。
+
 <h2 id="first-prompt">第一句可以说什么</h2>
 
 第一次不要上来就让它大改项目，先让它看清楚项目入口：

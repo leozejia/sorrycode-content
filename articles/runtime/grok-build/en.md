@@ -131,6 +131,8 @@ grok -m sorrycode-grok
 
 If you prefer viewing project files and changes inside a visual editor, continue with [Tools / VS Code](/docs/tools/vscode).
 
+If you prefer the ChatGPT desktop app or Codex CLI, you do not need another workbench. Follow [Use Other Models in ChatGPT / Codex](/docs/runtime/codex-multi-model) and select `grok-4.6` with a matching Grok-group key.
+
 <h2 id="first-prompt">What to Say First</h2>
 
 Do not start with a huge refactor request. Use a safer first prompt:

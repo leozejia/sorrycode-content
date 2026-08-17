@@ -189,4 +189,4 @@ npm config set registry https://registry.npmjs.org
 
 - [Runtime / Codex](/docs/runtime/codex)
 - [Runtime / Claude Code](/docs/runtime/claude-code)
-- [模型与工作台 / 在 Codex 中使用其他模型](/docs/runtime/codex-multi-model)
+- [模型与工作台 / 在 ChatGPT / Codex 中使用其他模型](/docs/runtime/codex-multi-model)

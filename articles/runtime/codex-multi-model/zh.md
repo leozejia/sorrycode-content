@@ -1,8 +1,8 @@
 ---
-title: 在 Codex 中使用其他模型
+title: 在 ChatGPT / Codex 中使用其他模型
 slug: codex-multi-model
 order: 2
-summary: 通过 SorryCode 的 OpenAI 兼容接口，在 Codex CLI 或 App 中使用 DeepSeek 等模型。
+summary: 通过 SorryCode 的 Responses 接口，在 ChatGPT 桌面 App 或 Codex CLI 中使用 Grok、DeepSeek 等第三方模型。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -11,62 +11,84 @@ group_title: OpenAI
 group_order: 10
 ---
 
-# 在 Codex 中使用其他模型
+# 在 ChatGPT / Codex 中使用其他模型
 
-完成 [Codex 接入](/docs/runtime/codex) 后，Codex CLI 和 App 会共用 `~/.codex/config.toml` 以及当前已有的 provider 和认证配置。在当前 API Key 分组内切换模型时，只需要改模型 ID。不要修改 `model_provider`，也不需要重新安装或登录。
+ChatGPT 桌面 App 与 Codex CLI 共用 `~/.codex/config.toml`。Codex 官方允许接入支持 Responses 或 Chat Completions 的其他模型和提供方，其中 Chat Completions 已进入弃用阶段，因此 SorryCode 的第三方模型优先走 Responses。
 
-CLI 可以为每次启动单独指定模型。Codex App 当前无法在界面中可靠地显示和切换 DeepSeek，需要修改配置中的默认模型并重启 App。
+Grok 不属于 GPT 系列，但可以在同一个 ChatGPT / Codex 工作台中使用。`grok-4.6` 已于 2026 年 8 月 17 日通过 SorryCode 的非流式和流式 Responses 连通验证。
 
 > **交给 Agent 配置**
 >
 > 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
 
-<h2 id="prepare">确认 Key 和模型 ID</h2>
+<h2 id="prepare">先选对 Key 和模型</h2>
 
-打开 [API Key 页面](https://sorrycode.com/keys)，确认当前 Key 所属分组包含目标模型。已有符合条件的 Key 可以继续使用；只有需要分开统计用量、设置限额或轮换凭证时，才需要新建一把 Key。
+打开 [API Key 页面](https://sorrycode.com/keys)，选择一把所属分组包含目标模型的 Key。模型和 Key 必须匹配：
 
-模型 ID 以当前分组显示的名称为准。比如分组开放了下面两个模型，后续命令就直接使用这些名称。模型出现在分组中，只表示 Key 可以路由到它；在 Codex 中能否稳定使用，还取决于模型对 Responses、流式输出和工具调用的兼容性。
+- 使用 `grok-4.6` 时，选择包含该模型的 Grok 分组 Key
+- 使用 DeepSeek 时，选择包含目标 DeepSeek 模型的分组 Key
+- 不要拿 Image2 Key 调用 Grok，也不要仅凭 Key 都以 `sk-` 开头就认为可以互换
+
+如果当前 ChatGPT / Codex 已经接入 SorryCode，但保存的是另一分组的 Key，请在目标 Key 右侧点击`接入工具`，选择 `Codex` 和当前系统，再运行生成的命令。安装器会保存这把 Key，不需要设置公开环境变量。以后切回另一分组时，用对应 Key 重新生成一次接入命令即可。
+
+模型 ID 以当前 Key 的分组为准。可以先查询：
+
+```bash
+curl https://sorrycode.com/v1/models \
+  -H "Authorization: Bearer <你的 SorryCode API Key>"
+```
+
+Windows PowerShell 使用：
+
+```powershell
+curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <你的 SorryCode API Key>"
+```
+
+本页当前示例：
 
 ```text
+grok-4.6
 deepseek-v4-flash
 deepseek-v4-pro
 ```
 
-<h2 id="cli">在 Codex CLI 中切换</h2>
+模型出现在列表中，表示这把 Key 可以路由到它。本文验证的是接入和响应链路，不承诺不同模型在提示理解、工具选择或输出风格上完全一致。
 
-启动 Codex 时使用 `-m` 指定模型：
+<h2 id="cli">在 Codex CLI 中使用 Grok</h2>
+
+启动时直接指定模型：
 
 ```bash
-codex -m deepseek-v4-flash
+codex -m grok-4.6
 ```
 
 进入会话后运行 `/status`，可以确认当前模型和 provider。非交互任务也可以指定模型：
 
 ```bash
-codex exec -m deepseek-v4-flash "检查当前代码变更"
+codex exec -m grok-4.6 "只读检查当前项目，并告诉我入口文件"
 ```
 
-如果模型已经出现在 Codex 内置模型目录中，也可以在会话里输入 `/model`，再从列表中选择。`/model` 只显示当前目录中的模型，不能用来输入任意模型 ID。DeepSeek 当前不在 Codex 内置模型目录中，所以请直接使用 `-m`。
+`/model` 只显示 Codex 当前内置目录中的模型，不能输入任意模型 ID。如果选择器里没有 Grok，继续使用 `-m grok-4.6` 即可。
 
-经常使用同一个模型时，可以创建 Codex 官方 profile。新建 `~/.codex/deepseek.config.toml`：
+经常使用 Grok 时，可以新建 `~/.codex/grok.config.toml`：
 
 ```toml
-model = "deepseek-v4-flash"
+model = "grok-4.6"
 ```
 
-以后使用下面的命令启动：
+以后运行：
 
 ```bash
-codex --profile deepseek
+codex --profile grok
 ```
 
-这个 profile 只覆盖模型。provider 和认证会继承当前的全局配置，无论现有 provider 叫什么，都不要为了切换模型修改它。
+这个 profile 只覆盖模型。保留现有 `model_provider`，不要从其他用户的配置中复制 provider 名称。
 
-<h2 id="app">在 Codex App 中切换</h2>
+使用 DeepSeek 时，命令和 profile 的规则相同，只需要把模型 ID 换成当前 Key 实际开放的名称。
 
-截至 2026 年 8 月，Codex App 的模型选择器可能会过滤第三方模型。即使 DeepSeek 已经可以通过当前 Key 使用，选择器也可能只显示 GPT 模型，或者把当前模型显示为 `Custom`。
+<h2 id="app">在 ChatGPT App 中使用 Grok</h2>
 
-新任务需要使用 DeepSeek 时，按下面的步骤修改默认模型。截图使用 macOS 中文界面；其他系统从 App 设置进入`配置`页面后，修改方法相同。
+ChatGPT App 的模型选择器可能过滤第三方模型。即使 `grok-4.6` 已经可以通过当前 Key 使用，选择器也可能只显示 GPT 模型，或者把当前模型显示为 `Custom`。
 
 1. 在 macOS 菜单栏选择 `ChatGPT` > `设置`
 
@@ -81,33 +103,38 @@ codex --profile deepseek
    ![在配置页打开 config.toml](./codex-app-open-config.png)
 
 4. 找到顶层的 `model`
-5. 记下原来的 `model` 值，只把这一项改成目标模型。如果同时看到 `model_provider`，保持它原来的值
-6. 保存文件后完全退出 App，再重新打开。macOS 使用 `Command-Q`，不能只关闭窗口
-7. 新建任务，不要用已经打开的旧任务验证切换结果
+5. 记下原来的值，只把这一项改为 `grok-4.6`
+6. 如果同时看到 `model_provider`，保持原值
+7. 保存后完全退出 App，macOS 使用 `Command-Q`
+8. 重新打开 App，并新建任务验证
 
-切换到 DeepSeek 后，相关配置应当类似下面这样：
+相关配置应当类似：
 
 ```toml
-model = "deepseek-v4-flash"
+model = "grok-4.6"
 ```
 
-如果文件里已经有 `model`，请修改原来的值，不要重复添加；如果没有，就在顶层新增这一项。不要新增、删除或修改 `model_provider`。`model` 不能写进任何 `[model_providers.*]` 配置段。
+如果文件里已经有 `model`，请修改原值，不要重复添加。`model` 必须放在顶层，不能写进 `[model_providers.*]` 配置段。
 
-想切回 GPT 时，把 `model` 恢复为切换前记下的值，再完全退出并重开 App。不要照抄其他用户的 GPT 模型 ID，不同分组和版本提供的模型可能不同。
+切回 GPT 或其他模型时，先确认 ChatGPT / Codex 当前保存的是对应分组的 Key，再恢复原来的 `model`，完全退出并重开 App。已经打开的旧任务可能保留原模型，因此要用新任务验证。
 
-Codex App 当前一次使用一个全局默认模型，不能把 DeepSeek 和 GPT 同时放进模型选择器后按任务切换。模型目录在 App 启动时读取，只关闭窗口不会刷新配置。已经打开的任务也可能保留原来的模型或运行配置。
+App 显示 `Custom` 时，不要询问模型身份。到 SorryCode 用量记录中查看这次请求的实际模型 ID。
 
-App 显示 `Custom` 时，不要通过询问模型身份来判断是否切换成功。到 SorryCode 用量记录中查看这次请求的实际模型 ID。
+<h2 id="related">Grok 的其他能力</h2>
 
-切换模型时只改 `model`。Codex 的历史会话带有 provider 信息，老用户如果把原来的 `model_provider` 改成 `sorrycode`，原 provider 下的旧会话会全部从当前列表中消失，看起来像被清空。这不代表会话数据已被删除，恢复 `model_provider` 原值后应会重新出现。不要照抄本文或其他用户的 provider 值，也不要修改 provider 配置段、认证文件、`CODEX_HOME` 或会话目录。
+本页只讲 Grok 文字模型在 ChatGPT / Codex 中的使用。其他入口分别维护：
+
+- xAI 自己的终端工作台：[Grok Build](/docs/runtime/grok-build)
+- 图片接口：[Grok 图片生成](/docs/runtime/grok-image)
+- 视频和异步轮询：[Grok 视频生成](/docs/runtime/grok-video)
 
 <h2 id="troubleshoot">模型不能使用</h2>
 
-- CLI 提示模型不存在：确认模型 ID 与分组提供的名称完全一致，并检查 Key 所属分组
-- App 仍然使用原模型：确认已经完全退出 App，macOS 需要按 `Command-Q`，重开后再新建任务
-- App 显示 `Custom`：这是当前版本使用自定义模型时可能出现的名称，到 SorryCode 用量记录核对实际模型 ID
-- 可以开始回复，但工具调用失败：换回已验证模型，并把模型 ID 和错误信息提交给 SorryCode
-- 切换后旧会话全部不见：检查是否误改了 `model_provider`，把它恢复为修改前的原值；不要先重跑安装器
-- 切换后行为和旧任务不一致：新建任务再验证，不要修改或迁移历史任务
+- `401`：确认 ChatGPT / Codex 当前保存的是目标分组的完整 Key
+- `404` 或模型不存在：重新查询 `/v1/models`，使用返回结果中的准确 ID
+- CLI 找不到模型：直接使用 `-m`，不要依赖 `/model` 列表
+- App 仍使用原模型：完全退出 App，重开后新建任务
+- App 显示 `Custom`：到 SorryCode 用量记录核对实际模型
+- 切换后旧会话看不到：检查是否误改了 `model_provider`，恢复修改前的原值
 
-参考：[Codex 配置说明](https://developers.openai.com/codex/config-reference/)、[DeepSeek 的 Codex 接入说明](https://api-docs.deepseek.com/quick_start/agent_integrations/codex/)、[Codex App 自定义模型问题](https://github.com/openai/codex/issues/19694)。
+参考：[OpenAI Codex 的其他模型说明](https://learn.chatgpt.com/docs/models#other-models)与 [Codex 配置说明](https://learn.chatgpt.com/docs/config-file/config-reference)。
