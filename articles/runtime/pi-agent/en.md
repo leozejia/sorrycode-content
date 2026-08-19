@@ -2,7 +2,7 @@
 title: Pi Agent
 slug: pi-agent
 order: 1
-summary: Install Pi Agent, connect it to a Responses-compatible SorryCode model, and verify both text and file tools.
+summary: Install Pi Agent and configure multiple SorryCode API keys for GPT, Gemini, Grok, DeepSeek, GLM, Kimi, Qwen, and other Responses models, then verify text and file tools.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -13,7 +13,7 @@ group_order: 23
 
 # Pi Agent
 
-Pi is a terminal coding agent from [earendil-works/pi](https://github.com/earendil-works/pi). It can read projects, edit files, and run commands. Pi is not tied to a specific model. This guide connects Pi to SorryCode and completes a first agent task with a Responses-compatible model available to your API key.
+Pi is a terminal coding agent from [earendil-works/pi](https://github.com/earendil-works/pi). It can read projects, edit files, and run commands. Pi is not tied to a specific model, and it does not have to use only one model. You can configure multiple keys, multiple providers, and multiple models in one file, including GPT, Gemini, Grok, and Chinese models such as DeepSeek, GLM, Kimi, and Qwen.
 
 This guide covers the Pi project hosted at [pi.dev](https://pi.dev/), not another project with the same name.
 
@@ -21,11 +21,11 @@ This guide covers the Pi project hosted at [pi.dev](https://pi.dev/), not anothe
 >
 > Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
 
-<h2 id="prepare-key">Prepare an API Key</h2>
+<h2 id="prepare-key">Prepare API Keys</h2>
 
-Pi calls models through SorryCode's OpenAI-compatible Responses API. On the [SorryCode API Key page](https://sorrycode.com/keys), choose a key whose group exposes a Responses-compatible model. You can reuse an existing compatible key. Create another key only when you need separate usage records, spending limits, or credential rotation.
+Pi calls models through SorryCode's OpenAI-compatible Responses API. On the [SorryCode API Key page](https://sorrycode.com/keys), prepare a key for each model group you want, such as GPT, Gemini, Grok, or a Chinese model group.
 
-First, list the models available to this key:
+Different keys belong to different groups and expose different models. First, list the models available to each key:
 
 ```bash
 curl https://sorrycode.com/v1/models \
@@ -38,11 +38,13 @@ Use `curl.exe` in Windows PowerShell:
 curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <PASTE YOUR SORRYCODE API KEY HERE>"
 ```
 
-Prefer an exact model ID from the response when you configure Pi. The list is the main source of truth for the selected key group, but it may not expose every routable alias. If you know a model should support Responses but it is missing from the list, verify it with a minimal `/v1/responses` request before adding it to `models.json`. Do not guess model names from web pages or tutorials.
+Follow three rules when configuring models:
 
-Different keys on the same account can belong to different groups and expose different models. Pi stores API keys per provider, so logging into the same provider again overwrites the old key. If you use several groups at once, such as GPT, Gemini, Grok, and DeepSeek, create a separate provider for each group, for example `sorrycode-gpt`, `sorrycode-cn`, and `sorrycode-grok`.
+- Use the exact model ID returned by `/v1/models`.
+- The list is the main source of truth for the selected key group, but it may not expose every routable alias. If a model should support Responses but is missing, verify it with a minimal `/v1/responses` request before adding it to `models.json`.
+- Give each key its own provider name. Pi stores API keys per provider, so logging into the same provider again overwrites the old key.
 
-This example includes both `deepseek-v4-flash` and `deepseek-v4-pro`; `deepseek-v4-flash` is the model verified for this guide. Pi is not limited to DeepSeek. Other Responses-compatible models work as well. Availability ultimately depends on what that key can successfully call.
+For example, if the Gemini group returns `gemini-3.7-flash`, use the Gemini-group key for `gemini-3.7-flash`. If the Grok group returns `grok-4.6`, use the Grok-group key for `grok-4.6`.
 
 <h2 id="install">Install Pi</h2>
 
@@ -65,7 +67,7 @@ The same npm command works on macOS, Linux, and Windows. Confirm the install:
 pi --version
 ```
 
-<h2 id="configure">Configure the SorryCode Provider</h2>
+<h2 id="configure">Configure Multiple Models in models.json</h2>
 
 Pi reads custom models from:
 
@@ -86,49 +88,7 @@ New-Item -ItemType Directory -Force "$HOME\.pi\agent" | Out-Null
 notepad "$HOME\.pi\agent\models.json"
 ```
 
-If the file already contains other providers, merge `sorrycode` into the existing `providers` object instead of replacing the file:
-
-```json
-{
-  "providers": {
-    "sorrycode": {
-      "baseUrl": "https://sorrycode.com/v1",
-      "api": "openai-responses",
-      "models": [
-        {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek V4 Flash via SorryCode",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": ["text"],
-          "reasoning": true
-        },
-        {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro via SorryCode",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": ["text"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "off": null,
-            "minimal": null,
-            "low": "low",
-            "medium": "high",
-            "high": "high",
-            "xhigh": "high",
-            "max": "max"
-          }
-        }
-      ]
-    }
-  }
-}
-```
-
-To use another Responses-compatible model, replace `id` with an exact model ID returned by `/v1/models` and update `name` if needed. The `models` array can contain multiple entries. Set `"reasoning": true` only when the selected model supports reasoning; otherwise set it to `false`.
-
-For multiple keys, do not put every key into the same `sorrycode` provider. Create one provider per key. `baseUrl` and `api` can stay the same; `models` should only contain the models that key can call:
+If the file already contains other providers, merge the example below into the existing `providers` object instead of replacing it. The following example shows multiple keys, multiple providers, and multiple models:
 
 ```json
 {
@@ -154,6 +114,46 @@ For multiple keys, do not put every key into the same `sorrycode` provider. Crea
         }
       ]
     },
+    "sorrycode-gemini": {
+      "baseUrl": "https://sorrycode.com/v1",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "gemini-3.7-flash",
+          "name": "Gemini 3.7 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "input": ["text", "image"],
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        }
+      ]
+    },
+    "sorrycode-grok": {
+      "baseUrl": "https://sorrycode.com/v1",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "grok-4.6",
+          "name": "Grok 4.6",
+          "contextWindow": 500000,
+          "maxTokens": 500000,
+          "input": ["text", "image"],
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "low": "low",
+            "medium": "medium",
+            "high": "high"
+          }
+        }
+      ]
+    },
     "sorrycode-cn": {
       "baseUrl": "https://sorrycode.com/v1",
       "api": "openai-responses",
@@ -164,7 +164,54 @@ For multiple keys, do not put every key into the same `sorrycode` provider. Crea
           "contextWindow": 1000000,
           "maxTokens": 384000,
           "input": ["text"],
-          "reasoning": true
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        },
+        {
+          "id": "glm-5.2",
+          "name": "GLM-5.2",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "input": ["text"],
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "low": "high",
+            "medium": "high",
+            "high": "high",
+            "max": "max"
+          }
+        },
+        {
+          "id": "kimi-k3",
+          "name": "Kimi K3",
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "input": ["text", "image"],
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "low": "low",
+            "high": "high",
+            "max": "max"
+          }
+        },
+        {
+          "id": "qwen3.8-max",
+          "name": "Qwen3.8 Max",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "input": ["text", "image"],
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "low": "low",
+            "medium": "medium",
+            "xhigh": "xhigh"
+          }
         }
       ]
     }
@@ -172,23 +219,20 @@ For multiple keys, do not put every key into the same `sorrycode` provider. Crea
 }
 ```
 
-Provider names are local identifiers, such as `sorrycode-gpt`, `sorrycode-cn`, or `sorrycode-grok`. Save each key separately with `/login <provider>` so keys do not overwrite each other.
+Provider names are local identifiers, such as `sorrycode-gpt`, `sorrycode-gemini`, `sorrycode-grok`, and `sorrycode-cn`. One account can have multiple keys; give each key its own provider. The `models` array under `sorrycode-cn` can contain multiple Chinese models, but only when the key's group actually returns those models.
 
-DeepSeek's official Pi configuration gives both V4 Pro and V4 Flash a 1,000,000-token context window and a 384,000-token maximum output. Pi uses `contextWindow` to calculate context usage and automatic compaction, while `maxTokens` limits a single response. Both fields must be set explicitly. Without them, Pi falls back to 128,000 and 16,384.
+Field reference:
 
-Pi only exposes thinking levels through `high` by default for a custom model. The `thinkingLevelMap` for `deepseek-v4-pro` follows the model's current official rules: `low` remains `low`; `medium`, `high`, and `xhigh` use `high`; and `max` remains `max`. Pi only shows the extended `xhigh` and `max` choices when they are declared explicitly. Do not copy this map to another model unless its official documentation defines the same behavior.
+- `id`: the exact model ID sent to the API, taken from that key's `/v1/models`.
+- `contextWindow`: Pi uses this for context accounting and automatic compaction. Defaults to 128,000 when omitted.
+- `maxTokens`: maximum output tokens for one response. Defaults to 16,384 when omitted.
+- `input`: `["text"]` for text-only models; `["text", "image"]` for multimodal models.
+- `reasoning`: set to `true` when the model supports reasoning.
+- `thinkingLevelMap`: controls which thinking levels appear in Pi. `xhigh` and `max` only appear when they are explicitly mapped.
 
-After configuration, verify the supported thinking levels with a minimal request instead of trusting the map alone. If upstream returns `400` with a message like `level "xhigh" not supported`, that level is currently unavailable even when Pi displays it.
+Without a `thinkingLevelMap`, Pi exposes levels only through `high` by default. Do not copy another model's map; follow that model's official reasoning support.
 
-In an interactive session, press `Shift+Tab` to cycle thinking levels or use `/settings` to set the default. You can also start Pi with a pinned level:
-
-```bash
-pi --provider <provider> --model <model>:<level>
-```
-
-For example: `pi --provider sorrycode-gpt --model gpt-5.6-sol:max`.
-
-<h2 id="login">Save the API Key</h2>
+<h2 id="login">Save an API Key for Each Provider</h2>
 
 Start Pi:
 
@@ -196,25 +240,34 @@ Start Pi:
 pi
 ```
 
-Enter `/login <provider>`, for example `/login sorrycode` or `/login sorrycode-cn`, and paste the key for that provider. Pi stores it in its own authentication file. You do not need an environment variable, and the key should not be added to `models.json`. With multiple keys, log in once per provider name and do not reuse one provider name for different keys.
+Log in once per provider:
 
-Enter `/model` and select the model you configured. With the example configuration on this page, select either `sorrycode/deepseek-v4-flash` or `sorrycode/deepseek-v4-pro`. After selecting Pro, you can set the default thinking level to `max` in `/settings`.
+```text
+/login sorrycode-gpt
+/login sorrycode-gemini
+/login sorrycode-grok
+/login sorrycode-cn
+```
+
+Paste the key for that group with each command. Pi stores credentials in its own authentication file. You do not need an environment variable, and keys should not be added to `models.json`.
+
+Then use `/model` to select a provider and model, such as `sorrycode-gemini/gemini-3.7-flash`.
 
 Confirm the configuration and auth before starting work:
 
 ```bash
 pi --list-models
-pi auth check --provider sorrycode-cn --model deepseek-v4-flash --json
+pi auth check --provider sorrycode-gemini --model gemini-3.7-flash --json
 ```
 
-`--list-models` shows the models you configured. `auth check` should return `ready` when the provider has a usable key.
+`--list-models` shows all configured models. `auth check` should return `ready` when that provider has a usable key.
 
 <h2 id="verify">Verify Text and Tool Calls</h2>
 
-Start with the recommended `deepseek-v4-flash` model. When using another model, replace the model ID in the command:
+Use any available model for a minimal text request. This example uses `gemini-3.7-flash`:
 
 ```bash
-pi --provider sorrycode --model deepseek-v4-flash --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
+pi --provider sorrycode-gemini --model gemini-3.7-flash --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
 ```
 
 After Pi prints `PI_SORRYCODE_OK`, verify the file tool in an empty test directory:
@@ -222,15 +275,31 @@ After Pi prints `PI_SORRYCODE_OK`, verify the file tool in an empty test directo
 ```bash
 mkdir pi-sorrycode-test
 cd pi-sorrycode-test
-pi --provider sorrycode --model deepseek-v4-flash --no-session -p "Create pi-check.txt containing PI_TOOL_OK and a final newline. Do not modify other files."
+pi --provider sorrycode-gemini --model gemini-3.7-flash --no-session -p "Create pi-check.txt containing PI_TOOL_OK and a final newline. Do not modify other files."
 ```
 
-When the task finishes, confirm that `pi-check.txt` exists and contains `PI_TOOL_OK`. This verifies both the model connection and agent tool calls.
+When the task finishes, confirm that `pi-check.txt` exists and contains `PI_TOOL_OK`. This verifies the model connection and Pi's tool-calling path.
+
+<h2 id="thinking">Set the Thinking Level</h2>
+
+In an interactive session, press `Shift+Tab` to cycle thinking levels or use `/settings` to set the default. You can also start Pi with a pinned level:
+
+```bash
+pi --provider <provider> --model <model>:<level>
+```
+
+For example:
+
+```bash
+pi --provider sorrycode-gemini --model gemini-3.7-flash:max
+```
+
+Verify whether a thinking level actually works with a minimal request instead of trusting the map alone. If upstream returns `400` with a message like `level "xhigh" not supported`, that level is currently unavailable even when Pi displays it.
 
 <h2 id="common-issues">Common Issues</h2>
 
 - `pi` is not found: close and reopen the terminal, then confirm that npm's global command directory is on `PATH`
-- `sorrycode` is missing from `/login`: save `models.json`, then restart Pi
+- A provider is missing from `/login`: save `models.json`, then restart Pi
 - The target model is missing from `/model`: check the JSON syntax, authentication status, model entry, and key group
 - `401`: the key is incomplete, expired, or does not match the selected group
 - `404` or model not found: query `/v1/models` again and use an exact ID from the response
@@ -242,6 +311,4 @@ When the task finishes, confirm that `pi-check.txt` exists and contains `PI_TOOL
 - A model ID is missing from `/v1/models`: do not copy it blindly; run a minimal `/v1/responses` request and add it only if that request succeeds
 - Models from another key are missing: do not overwrite one provider with another key; create a separate provider for that key group
 
-This page recommends and verifies Pi `0.84.1` with `deepseek-v4-flash`. Both the minimal text request and the `write` tool call passed. Pi can also use other Responses-compatible models available through SorryCode.
-
-References: [Pi website](https://pi.dev/), [Pi repository](https://github.com/earendil-works/pi), [Pi custom models](https://pi.dev/docs/latest/models), and [DeepSeek with Pi Mono](https://api-docs.deepseek.com/quick_start/agent_integrations/pi_mono).
+References: [Pi website](https://pi.dev/), [Pi repository](https://github.com/earendil-works/pi), and [Pi custom models](https://pi.dev/docs/latest/models).
