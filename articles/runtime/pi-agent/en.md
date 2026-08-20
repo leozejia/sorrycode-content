@@ -2,7 +2,7 @@
 title: Pi Agent
 slug: pi-agent
 order: 1
-summary: Install Pi Agent and configure multiple SorryCode API keys for GPT, Gemini, Grok, DeepSeek, GLM, Kimi, Qwen, and other Responses models, then verify text and file tools.
+summary: Install Pi Agent, connect it to a Responses-compatible SorryCode model, and verify both text and file tools.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -40,8 +40,8 @@ curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <PASTE YOUR S
 
 Follow three rules when configuring models:
 
-- Use the exact model ID returned by `/v1/models`.
-- The list is the main source of truth for the selected key group, but it may not expose every routable alias. If a model should support Responses but is missing, verify it with a minimal `/v1/responses` request before adding it to `models.json`.
+- Add only exact model IDs returned by `/v1/models` to the normal model catalog.
+- Treat routable aliases that are absent from the list as diagnostics only. Do not add them to `models.json`, and never configure both an alias and the canonical ID for the same model.
 - Give each key its own provider name. Pi stores API keys per provider, so logging into the same provider again overwrites the old key.
 
 For example, if the Gemini group returns `gemini-3.7-flash`, use the Gemini-group key for `gemini-3.7-flash`. If the Grok group returns `grok-4.6`, use the Grok-group key for `grok-4.6`.
@@ -88,7 +88,7 @@ New-Item -ItemType Directory -Force "$HOME\.pi\agent" | Out-Null
 notepad "$HOME\.pi\agent\models.json"
 ```
 
-If the file already contains other providers, merge the example below into the existing `providers` object instead of replacing it. The following example shows multiple keys, multiple providers, and multiple models:
+If the file already contains other providers, merge the example below into the existing `providers` object instead of replacing it. The two verified models below demonstrate the multi-key structure; they are not a complete model catalog to copy:
 
 ```json
 {
@@ -105,51 +105,13 @@ If the file already contains other providers, merge the example below into the e
           "input": ["text", "image"],
           "reasoning": true,
           "thinkingLevelMap": {
+            "off": "none",
+            "minimal": null,
             "low": "low",
             "medium": "medium",
             "high": "high",
             "xhigh": "xhigh",
             "max": "max"
-          }
-        }
-      ]
-    },
-    "sorrycode-gemini": {
-      "baseUrl": "https://sorrycode.com/v1",
-      "api": "openai-responses",
-      "models": [
-        {
-          "id": "gemini-3.7-flash",
-          "name": "Gemini 3.7 Flash",
-          "contextWindow": 1048576,
-          "maxTokens": 65536,
-          "input": ["text", "image"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "low",
-            "medium": "medium",
-            "high": "high",
-            "xhigh": "xhigh",
-            "max": "max"
-          }
-        }
-      ]
-    },
-    "sorrycode-grok": {
-      "baseUrl": "https://sorrycode.com/v1",
-      "api": "openai-responses",
-      "models": [
-        {
-          "id": "grok-4.6",
-          "name": "Grok 4.6",
-          "contextWindow": 500000,
-          "maxTokens": 500000,
-          "input": ["text", "image"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "low",
-            "medium": "medium",
-            "high": "high"
           }
         }
       ]
@@ -166,51 +128,13 @@ If the file already contains other providers, merge the example below into the e
           "input": ["text"],
           "reasoning": true,
           "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
             "low": "low",
             "medium": "medium",
             "high": "high",
             "xhigh": "xhigh",
             "max": "max"
-          }
-        },
-        {
-          "id": "glm-5.2",
-          "name": "GLM-5.2",
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "input": ["text"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "high",
-            "medium": "high",
-            "high": "high",
-            "max": "max"
-          }
-        },
-        {
-          "id": "kimi-k3",
-          "name": "Kimi K3",
-          "contextWindow": 1048576,
-          "maxTokens": 131072,
-          "input": ["text", "image"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "low",
-            "high": "high",
-            "max": "max"
-          }
-        },
-        {
-          "id": "qwen3.8-max",
-          "name": "Qwen3.8 Max",
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "input": ["text", "image"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "low",
-            "medium": "medium",
-            "xhigh": "xhigh"
           }
         }
       ]
@@ -219,7 +143,7 @@ If the file already contains other providers, merge the example below into the e
 }
 ```
 
-Provider names are local identifiers, such as `sorrycode-gpt`, `sorrycode-gemini`, `sorrycode-grok`, and `sorrycode-cn`. One account can have multiple keys; give each key its own provider. The `models` array under `sorrycode-cn` can contain multiple Chinese models, but only when the key's group actually returns those models.
+Provider names are local identifiers. Give each key its own provider. Multiple models returned for the same key group can share that provider's `models` array. Add another provider for a different key group instead of overwriting an existing key.
 
 Field reference:
 
@@ -228,9 +152,9 @@ Field reference:
 - `maxTokens`: maximum output tokens for one response. Defaults to 16,384 when omitted.
 - `input`: `["text"]` for text-only models; `["text", "image"]` for multimodal models.
 - `reasoning`: set to `true` when the model supports reasoning.
-- `thinkingLevelMap`: controls which thinking levels appear in Pi. `xhigh` and `max` only appear when they are explicitly mapped.
+- `thinkingLevelMap`: controls which thinking levels appear in Pi. A string marks a supported level and its wire value; `null` hides an unsupported level. `xhigh` and `max` only appear when explicitly mapped.
 
-Without a `thinkingLevelMap`, Pi exposes levels only through `high` by default. Do not copy another model's map; follow that model's official reasoning support.
+Model IDs, capabilities, and thinking levels change over time. Keep only models you need and have verified with the current key; do not copy a full catalog from another runtime or an old configuration.
 
 <h2 id="login">Save an API Key for Each Provider</h2>
 
@@ -244,30 +168,28 @@ Log in once per provider:
 
 ```text
 /login sorrycode-gpt
-/login sorrycode-gemini
-/login sorrycode-grok
 /login sorrycode-cn
 ```
 
-Paste the key for that group with each command. Pi stores credentials in its own authentication file. You do not need an environment variable, and keys should not be added to `models.json`.
+The example lists only the two providers shown above. Run `/login` once for every provider you actually configure, then paste the key for that group. Pi stores credentials in its own authentication file. You do not need an environment variable, and keys should not be added to `models.json`.
 
-Then use `/model` to select a provider and model, such as `sorrycode-gemini/gemini-3.7-flash`.
+Then use `/model` to select a provider and model, such as `sorrycode-gpt/gpt-5.6-sol`.
 
 Confirm the configuration and auth before starting work:
 
 ```bash
 pi --list-models
-pi auth check --provider sorrycode-gemini --model gemini-3.7-flash --json
+pi auth check --provider sorrycode-gpt --model gpt-5.6-sol --json
 ```
 
 `--list-models` shows all configured models. `auth check` should return `ready` when that provider has a usable key.
 
 <h2 id="verify">Verify Text and Tool Calls</h2>
 
-Use any available model for a minimal text request. This example uses `gemini-3.7-flash`:
+Use any available model for a minimal text request. This example uses `gpt-5.6-sol`:
 
 ```bash
-pi --provider sorrycode-gemini --model gemini-3.7-flash --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
+pi --provider sorrycode-gpt --model gpt-5.6-sol --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
 ```
 
 After Pi prints `PI_SORRYCODE_OK`, verify the file tool in an empty test directory:
@@ -275,7 +197,7 @@ After Pi prints `PI_SORRYCODE_OK`, verify the file tool in an empty test directo
 ```bash
 mkdir pi-sorrycode-test
 cd pi-sorrycode-test
-pi --provider sorrycode-gemini --model gemini-3.7-flash --no-session -p "Create pi-check.txt containing PI_TOOL_OK and a final newline. Do not modify other files."
+pi --provider sorrycode-gpt --model gpt-5.6-sol --no-session -p "Create pi-check.txt containing PI_TOOL_OK and a final newline. Do not modify other files."
 ```
 
 When the task finishes, confirm that `pi-check.txt` exists and contains `PI_TOOL_OK`. This verifies the model connection and Pi's tool-calling path.
@@ -285,13 +207,13 @@ When the task finishes, confirm that `pi-check.txt` exists and contains `PI_TOOL
 In an interactive session, press `Shift+Tab` to cycle thinking levels or use `/settings` to set the default. You can also start Pi with a pinned level:
 
 ```bash
-pi --provider <provider> --model <model>:<level>
+pi --provider <provider> --model <model> --thinking <level>
 ```
 
 For example:
 
 ```bash
-pi --provider sorrycode-gemini --model gemini-3.7-flash:max
+pi --provider sorrycode-gpt --model gpt-5.6-sol --thinking max
 ```
 
 Verify whether a thinking level actually works with a minimal request instead of trusting the map alone. If upstream returns `400` with a message like `level "xhigh" not supported`, that level is currently unavailable even when Pi displays it.
@@ -308,7 +230,7 @@ Verify whether a thinking level actually works with a minimal request instead of
 - `/v1/responses` returns `502`: the model may be listed but the upstream group is temporarily unavailable; retry or check SorryCode status before changing Pi config
 - `400` with `level "..." not supported`: the upstream model does not support that thinking level; use a supported level or set that entry to `null` in `thinkingLevelMap`
 - A model is in `models.json` but missing from `/model`: confirm the provider is logged in with `pi auth check --provider <provider> --model <model> --json`
-- A model ID is missing from `/v1/models`: do not copy it blindly; run a minimal `/v1/responses` request and add it only if that request succeeds
+- A model ID is missing from `/v1/models`: do not add it to the normal catalog; a minimal `/v1/responses` request can diagnose routing, but success does not mean you should also persist the alias
 - Models from another key are missing: do not overwrite one provider with another key; create a separate provider for that key group
 
 References: [Pi website](https://pi.dev/), [Pi repository](https://github.com/earendil-works/pi), and [Pi custom models](https://pi.dev/docs/latest/models).

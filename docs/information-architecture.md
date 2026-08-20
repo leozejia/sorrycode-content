@@ -150,6 +150,9 @@ Expert 是角色与协作机制，不是权限来源。各产品的安装和配�
 - REST API 示例直接在请求头中提供可替换的分组 Key 占位值，不要求用户先设置通用环境变量。
 - runtime 一键安装器负责保存当前工具选择的 Key。公开页面不要求用户手动同步安装器内部的变量名。
 - 只有具体 Skill 确实依赖环境变量时，才在该 Skill 页面公开变量名。当前 `SORRYCODE_API_KEY` 只属于 `SorryCode Image2` 的配置 contract。
+- runtime 的模型目录默认只保存 `/v1/models` 返回的准确模型 ID。未返回但可路由的别名只用于诊断；同一模型的别名与规范 ID 不得同时写入配置。
+- runtime 按 provider route 保存凭据时，每把独立 Key 使用唯一的本地 Provider ID。同一 Key 分组开放的多个模型可以共用该 route；切换分组时新增 route，不覆盖已有 Key。
+- 公开 runtime 页面只保留足以说明配置结构的最小已验证示例，不复制持续变化的完整模型目录。模型 ID、能力和思考档位以当前分组与实际请求验证为准。
 
 不要把一个通用变量名写成 SorryCode 全局 Key，也不要仅凭 `sk-...` 判断不同分组的 Key 可以互换。
 

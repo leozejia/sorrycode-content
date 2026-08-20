@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-08-17",
+  "updatedAt": "2026-08-20",
   "articles": [
     {
       "type": "article",
@@ -601,7 +601,7 @@
       "title": "DSH",
       "summary": "Start the DeepSeek Harness Web UI, connect a custom Responses provider to SorryCode, and send the first model request.",
       "order": 1,
-      "updatedAt": "2026-08-17",
+      "updatedAt": "2026-08-20",
       "markdownPath": "articles/runtime/dsh/en.md",
       "assetBaseUrl": "articles/runtime/dsh/",
       "route": "/docs/runtime/dsh"
@@ -614,9 +614,9 @@
       "slug": "dsh",
       "locale": "zh",
       "title": "DSH",
-      "summary": "启动 DeepSeek Harness Web UI，通过自定义 Responses provider 接入 SorryCode，并完成首条模型请求。",
+      "summary": "启动 DeepSeek Harness Web UI，通过自定义 Responses 提供方接入 SorryCode，并完成首条模型请求。",
       "order": 1,
-      "updatedAt": "2026-08-17",
+      "updatedAt": "2026-08-20",
       "markdownPath": "articles/runtime/dsh/zh.md",
       "assetBaseUrl": "articles/runtime/dsh/",
       "route": "/docs/runtime/dsh"
@@ -631,7 +631,7 @@
       "title": "Pi Agent",
       "summary": "Install Pi Agent, connect it to a Responses-compatible SorryCode model, and verify both text and file tools.",
       "order": 1,
-      "updatedAt": "2026-08-12",
+      "updatedAt": "2026-08-20",
       "markdownPath": "articles/runtime/pi-agent/en.md",
       "assetBaseUrl": "articles/runtime/pi-agent/",
       "route": "/docs/runtime/pi-agent"
@@ -646,7 +646,7 @@
       "title": "Pi Agent",
       "summary": "安装 Pi Agent，接入 SorryCode 中支持 Responses 的模型，并完成文本和文件工具验证。",
       "order": 1,
-      "updatedAt": "2026-08-12",
+      "updatedAt": "2026-08-20",
       "markdownPath": "articles/runtime/pi-agent/zh.md",
       "assetBaseUrl": "articles/runtime/pi-agent/",
       "route": "/docs/runtime/pi-agent"

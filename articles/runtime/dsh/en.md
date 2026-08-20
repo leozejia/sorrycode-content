@@ -34,7 +34,7 @@ npm --version
 
 If either command is missing, read [Node.js](/docs/environment/nodejs) first.
 
-Open the [API Key page](https://sorrycode.com/keys) and choose a key whose group contains the target model. This guide uses `grok-4.6`, so select a Grok-group key that lists this model. Use a key from the matching group when you choose another model.
+Open the [API Key page](https://sorrycode.com/keys) and choose a key whose group contains the target model. This guide uses `grok-4.6`, so select a Grok-group key that lists this model. One key group can expose multiple models; prepare another group key only when the target model belongs to a different group.
 
 <h2 id="start">Start the DSH Web UI</h2>
 
@@ -58,15 +58,17 @@ Open `Settings` > `Models` in the DSH Web UI, then choose `Add Custom Provider`.
 
 | Field | Value |
 | --- | --- |
-| Provider ID | `sorrycode` |
-| Display name | `SorryCode` |
+| Provider ID | `sorrycode-grok` |
+| Display name | `SorryCode Grok` |
 | Base URL | `https://sorrycode.com/v1` |
 | API protocol | `openai-responses` |
 | API key | The SorryCode key for the target group |
 
-Use a lowercase Provider ID. DSH records it in model defaults and saved sessions, so do not rename it casually after saving. Add another Provider ID when you need a different protocol.
+Use a lowercase Provider ID. DSH records it in model defaults and saved sessions, so do not rename it casually after saving. Give every independent key a unique Provider ID and a display name that identifies its group. Models returned for the same key group can share one provider; add another provider for a different key group instead of overwriting an existing key. A different protocol also requires another Provider ID.
 
 Click `Get Available Models`. DSH queries `/models` with the Base URL and key shown in the form. Select `grok-4.6` from the result, then save the provider. If model discovery fails after you have confirmed the key and Base URL, you can enter the exact model ID manually.
+
+Model discovery mainly confirms which model IDs the current key can use. It does not prove that image input, context capacity, or thinking levels are configured. Complete the text-only connection check below first. For images or custom thinking levels, follow the current [DSH model configuration guide](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/providers.md) and verify each capability with a minimal request instead of inferring it from the model name.
 
 DSH stores the key in its credential file and only returns a redacted descriptor to the settings page. Public setup does not require an environment variable. Do not put the key in a regular settings field or a chat message.
 
@@ -74,7 +76,7 @@ DSH stores the key in its credential file and only returns a redacted descriptor
 
 After saving the provider:
 
-1. Select `sorrycode / grok-4.6` in the model picker
+1. Select `sorrycode-grok / grok-4.6` in the model picker
 2. Click `Choose workspace`
 3. Add and select the project directory where you started DSH
 4. Start a new session
@@ -95,10 +97,12 @@ A model response confirms the `DSH + SorryCode key + openai-responses + grok-4.6
 
 The custom provider is not tied to Grok. For another Responses model:
 
-1. choose a SorryCode key whose group contains that model
-2. keep the Base URL as `https://sorrycode.com/v1`
-3. keep the API protocol as `openai-responses`
-4. choose an exact model ID returned by `Get Available Models`
+1. check whether the current key group contains the target model
+2. add models from the same group to the existing provider
+3. create another Provider ID with the matching key for a different group instead of overwriting the existing provider
+4. keep the Base URL as `https://sorrycode.com/v1`
+5. keep the API protocol as `openai-responses`
+6. choose an exact model ID returned by `Get Available Models`
 
 One provider route uses one API protocol. If you later need Chat Completions, add another Provider ID instead of mixing both protocols in one route.
 
@@ -109,6 +113,8 @@ One provider route uses one API protocol. If you later need Chat Completions, ad
 - `401`: check that the key is complete, valid, and assigned to the target model group
 - model discovery returns `401 / 403`: check the Base URL and key before adding unknown models manually
 - `grok-4.6` is absent: refresh the model list and confirm that the current key group includes it
+- a previous model disappears after switching groups: do not overwrite an existing provider with another group's key; add a new Provider ID
+- an image is rejected before sending: model discovery confirmed only the ID; configure image capability with the current model guide and start a new session
 - the composer is unavailable: select both a workspace and a model
 - fields change after an update: DSH is still in developer preview, so follow the current official interface
 

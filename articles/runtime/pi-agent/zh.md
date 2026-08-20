@@ -2,7 +2,7 @@
 title: Pi Agent
 slug: pi-agent
 order: 1
-summary: 安装 Pi Agent，用多把 SorryCode API Key 配置 GPT、Gemini、Grok、DeepSeek、GLM、Kimi、Qwen 等 Responses 模型，并完成文本和文件工具验证。
+summary: 安装 Pi Agent，接入 SorryCode 中支持 Responses 的模型，并完成文本和文件工具验证。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -40,8 +40,8 @@ curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <你的 Sorry
 
 配置时遵循三个原则：
 
-- 优先使用 `/v1/models` 返回的准确模型 ID。
-- 列表是当前 Key 分组的主要依据，但不保证列出所有可路由的模型别名。如果某个模型应该支持 Responses 但列表里没有，先用最小 `/v1/responses` 请求验证，成功后再写进 `models.json`。
+- 只把 `/v1/models` 返回的准确模型 ID 写入常规模型目录。
+- 未返回但可路由的别名只用于诊断，不写入 `models.json`。同一模型的别名和规范 ID 不得同时配置。
 - 每把 Key 单独使用一个 provider 名。Pi 的 `/login` 按 provider 保存 Key，重复登录同一个 provider 会覆盖旧 Key。
 
 例如 Gemini 分组返回 `gemini-3.7-flash`，就用 Gemini 分组的 Key 配 `gemini-3.7-flash`；Grok 分组返回 `grok-4.6`，就用 Grok 分组的 Key 配 `grok-4.6`。
@@ -88,7 +88,7 @@ New-Item -ItemType Directory -Force "$HOME\.pi\agent" | Out-Null
 notepad "$HOME\.pi\agent\models.json"
 ```
 
-如果文件里已有其他 provider，把下面的内容合并到 `providers` 中，不要覆盖原有配置。下面是一个多 Key、多 provider、多模型的完整示例：
+如果文件里已有其他 provider，把下面的内容合并到 `providers` 中，不要覆盖原有配置。下面只用两个已验证模型说明多 Key 结构，不是需要照抄的完整模型目录：
 
 ```json
 {
@@ -105,51 +105,13 @@ notepad "$HOME\.pi\agent\models.json"
           "input": ["text", "image"],
           "reasoning": true,
           "thinkingLevelMap": {
+            "off": "none",
+            "minimal": null,
             "low": "low",
             "medium": "medium",
             "high": "high",
             "xhigh": "xhigh",
             "max": "max"
-          }
-        }
-      ]
-    },
-    "sorrycode-gemini": {
-      "baseUrl": "https://sorrycode.com/v1",
-      "api": "openai-responses",
-      "models": [
-        {
-          "id": "gemini-3.7-flash",
-          "name": "Gemini 3.7 Flash",
-          "contextWindow": 1048576,
-          "maxTokens": 65536,
-          "input": ["text", "image"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "low",
-            "medium": "medium",
-            "high": "high",
-            "xhigh": "xhigh",
-            "max": "max"
-          }
-        }
-      ]
-    },
-    "sorrycode-grok": {
-      "baseUrl": "https://sorrycode.com/v1",
-      "api": "openai-responses",
-      "models": [
-        {
-          "id": "grok-4.6",
-          "name": "Grok 4.6",
-          "contextWindow": 500000,
-          "maxTokens": 500000,
-          "input": ["text", "image"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "low",
-            "medium": "medium",
-            "high": "high"
           }
         }
       ]
@@ -166,51 +128,13 @@ notepad "$HOME\.pi\agent\models.json"
           "input": ["text"],
           "reasoning": true,
           "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
             "low": "low",
             "medium": "medium",
             "high": "high",
             "xhigh": "xhigh",
             "max": "max"
-          }
-        },
-        {
-          "id": "glm-5.2",
-          "name": "GLM-5.2",
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "input": ["text"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "high",
-            "medium": "high",
-            "high": "high",
-            "max": "max"
-          }
-        },
-        {
-          "id": "kimi-k3",
-          "name": "Kimi K3",
-          "contextWindow": 1048576,
-          "maxTokens": 131072,
-          "input": ["text", "image"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "low",
-            "high": "high",
-            "max": "max"
-          }
-        },
-        {
-          "id": "qwen3.8-max",
-          "name": "Qwen3.8 Max",
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "input": ["text", "image"],
-          "reasoning": true,
-          "thinkingLevelMap": {
-            "low": "low",
-            "medium": "medium",
-            "xhigh": "xhigh"
           }
         }
       ]
@@ -219,7 +143,7 @@ notepad "$HOME\.pi\agent\models.json"
 }
 ```
 
-provider 名只是本地标识，例如 `sorrycode-gpt`、`sorrycode-gemini`、`sorrycode-grok`、`sorrycode-cn`。同一个账号可以用多把 Key；每把 Key 对应一个 provider。`sorrycode-cn` 的 `models` 数组可以放多个国产模型，但前提是这把 Key 的分组确实返回这些模型。
+provider 名只是本地标识。每把 Key 对应一个 provider；同一 Key 分组返回的多个模型可以放进该 provider 的 `models` 数组。需要其他分组时，按同样结构新增 provider，不要覆盖已有 Key。
 
 字段说明：
 
@@ -228,9 +152,9 @@ provider 名只是本地标识，例如 `sorrycode-gpt`、`sorrycode-gemini`、`
 - `maxTokens`：单次响应最大输出。省略时 Pi 使用 16,384。
 - `input`：`["text"]` 只支持文本，`["text", "image"]` 支持文本和图片。
 - `reasoning`：模型支持推理时设为 `true`。
-- `thinkingLevelMap`：控制 Pi 会话里显示哪些思考档位。`xhigh` 和 `max` 必须显式写入映射才会显示。
+- `thinkingLevelMap`：控制 Pi 显示哪些思考档位。字符串表示支持并发送该值，`null` 表示隐藏不支持的档位；`xhigh` 和 `max` 必须显式写入才会显示。
 
-如果某模型没有 `thinkingLevelMap`，Pi 默认只显示到 `high`。不要照抄其他模型的映射；以对应模型官方支持的思考档位为准。
+模型 ID、能力和思考档位都会变化。只保留实际需要且已经用当前 Key 验证过的模型，不要把其他平台或旧配置的完整目录直接复制进来。
 
 <h2 id="login">为每个 provider 保存 API Key</h2>
 
@@ -244,30 +168,28 @@ pi
 
 ```text
 /login sorrycode-gpt
-/login sorrycode-gemini
-/login sorrycode-grok
 /login sorrycode-cn
 ```
 
-每个命令粘贴该分组对应的 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
+示例只列出上面的两个 provider。实际使用时，为每个已配置 provider 执行一次 `/login`，并粘贴对应分组的 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
 
-然后输入 `/model`，选择 provider 和模型，例如 `sorrycode-gemini/gemini-3.7-flash`。
+然后输入 `/model`，选择 provider 和模型，例如 `sorrycode-gpt/gpt-5.6-sol`。
 
 要确认配置和认证都正确，先运行：
 
 ```bash
 pi --list-models
-pi auth check --provider sorrycode-gemini --model gemini-3.7-flash --json
+pi auth check --provider sorrycode-gpt --model gpt-5.6-sol --json
 ```
 
 `--list-models` 能看到你配置的所有模型；`auth check` 返回 `ready` 表示该 provider 已保存可用 Key。
 
 <h2 id="verify">验证文本和工具调用</h2>
 
-用你当前能用的任意模型验证最小文本响应。下面以 `gemini-3.7-flash` 为例：
+用你当前能用的任意模型验证最小文本响应。下面以 `gpt-5.6-sol` 为例：
 
 ```bash
-pi --provider sorrycode-gemini --model gemini-3.7-flash --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
+pi --provider sorrycode-gpt --model gpt-5.6-sol --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
 ```
 
 看到 `PI_SORRYCODE_OK` 后，在一个空测试目录中验证文件工具：
@@ -275,7 +197,7 @@ pi --provider sorrycode-gemini --model gemini-3.7-flash --no-tools --no-session 
 ```bash
 mkdir pi-sorrycode-test
 cd pi-sorrycode-test
-pi --provider sorrycode-gemini --model gemini-3.7-flash --no-session -p "Create pi-check.txt containing PI_TOOL_OK and a final newline. Do not modify other files."
+pi --provider sorrycode-gpt --model gpt-5.6-sol --no-session -p "Create pi-check.txt containing PI_TOOL_OK and a final newline. Do not modify other files."
 ```
 
 任务结束后找到 `pi-check.txt`，并确认内容是 `PI_TOOL_OK`。这说明该模型和 Pi 的工具调用链路都已可用。
@@ -285,13 +207,13 @@ pi --provider sorrycode-gemini --model gemini-3.7-flash --no-session -p "Create 
 在会话内按 `Shift+Tab` 循环思考深度，或用 `/settings` 设置默认思考深度。也可以直接启动：
 
 ```bash
-pi --provider <provider> --model <model>:<level>
+pi --provider <provider> --model <model> --thinking <level>
 ```
 
 例如：
 
 ```bash
-pi --provider sorrycode-gemini --model gemini-3.7-flash:max
+pi --provider sorrycode-gpt --model gpt-5.6-sol --thinking max
 ```
 
 思考档位是否真的可用，要用最小请求实际验证，不要只看映射里写了什么。如果上游返回 `400`（例如 `level "xhigh" not supported`），说明该档位当前不可用；即使 Pi 里显示了它，请求也会失败。
@@ -308,7 +230,7 @@ pi --provider sorrycode-gemini --model gemini-3.7-flash:max
 - `/v1/responses` 返回 `502`：模型可能被列出但上游分组暂时不可用；先重试或查询 SorryCode 状态，不要只改 Pi 配置
 - `400` 且提示 `level "..." not supported`：上游不支持当前思考档位，先改用支持档位，或把 `thinkingLevelMap` 中对应值设为 `null`
 - 模型在 `models.json` 里但 `/model` 看不到：先确认该 provider 已登录，运行 `pi auth check --provider <provider> --model <model> --json`
-- 模型 ID 不在 `/v1/models` 里：不要直接照抄，先跑最小 `/v1/responses` 请求验证，成功后再加入配置
+- 模型 ID 不在 `/v1/models` 里：不要加入常规模型目录；如需排障，可以单独发送最小 `/v1/responses` 请求，但成功也不代表应该同时保存该别名
 - 不同 Key 的模型看不到：不要在同一 provider 下覆盖 Key，给每组模型单独建 provider
 
 参考：[Pi 官网](https://pi.dev/)、[Pi 官方仓库](https://github.com/earendil-works/pi)、[Pi 自定义模型文档](https://pi.dev/docs/latest/models)。
