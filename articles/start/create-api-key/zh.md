@@ -16,7 +16,7 @@ section_order: 1
 
 `API Key` 是这条通道上的钥匙，用来证明这是你的 SorryCode 账号在使用模型。它通常长这样：`sk-...`。
 
-无论你后面走 Codex、Claude Code、Grok、图片 Skill，还是手动请求，这一步都绕不开。现在控制台可以直接用这把 key 生成一键安装命令，所以最好先把 key 建好。
+无论你后面走 Codex、Claude Code、OpenCode、Grok、图片 Skill，还是手动请求，这一步都绕不开。现在控制台可以直接用这把 key 生成安装命令或配置，所以最好先把 key 建好。
 
 一份 SorryCode 余额可以对应多把 API Key。只要协议和分组权限兼容，同一把 Key 可以在多个工具中复用；需要分开管理时再创建多把 Key。
 
@@ -26,6 +26,7 @@ Key 要和工具使用的协议、目标模型及其分组权限匹配。需要�
 | --- | --- | --- |
 | `Codex` | 支持 Codex / OpenAI-compatible 的分组 | Codex |
 | `Claude Code` | 支持 Anthropic-compatible 的分组 | Claude Code |
+| `OpenCode` | 目标模型对应的分组 | OpenCode |
 | `Grok` | Grok 分组 | Grok Build、Grok 图片和 Grok 视频 |
 | `Image2` | 支持 `gpt-image-2` 的图片分组 | GPT Image 2 API、SorryCode Image2 Skill |
 
@@ -115,19 +116,17 @@ Image2
 
 ![创建完成后复制 API Key](./key-created-copy.png)
 
-如果你走 Codex、Claude Code 或 Grok Build 的一键安装，不一定要手动复制 Key。
+如果你使用控制台的接入工具，通常不需要手动把 Key 填进命令或配置。Codex、Claude Code 和 Grok Build 会生成安装命令，OpenCode CLI 会生成 `opencode.json` 配置；使用 OpenCode Desktop 时，也可以复制这把 Key 后在可视化表单中填写。
 
 更简单的方式是回到 API 密钥列表，找到这把 key，点击 `接入工具`：
 
 ![API Key 列表右侧的接入工具按钮](./connect-tool-button.png)
 
-1. 选择要接入的工具，例如 `Codex`、`Claude Code` 或 `Grok Build`
-2. 选择你的系统
-3. 复制弹窗里的整条命令
-4. 打开你电脑的终端
-5. 粘贴命令，按回车
+1. 选择要接入的工具，例如 `Codex`、`Claude Code`、`OpenCode` 或 `Grok Build`
+2. 安装命令按系统选择并复制；OpenCode CLI 复制生成配置，OpenCode Desktop 按对应指南填写
+3. 按对应工作台指南完成安装或保存配置
 
-这条命令已经带着当前 API Key。只有你走手动安装或排障时，才需要自己把 `sk-...` 填进配置文件。
+生成的命令或配置已经带着当前 API Key。只有你走手动安装或排障时，才需要自己处理 `sk-...`。
 
 如果你已经创建过 key，也可以在 API 密钥列表里：
 
@@ -147,7 +146,7 @@ Image2
 - 不要提交到代码仓库
 - 不要发到公共群
 - 不要直接写进长期可见的 shell history
-- `接入工具` 复制出来的安装命令会带当前 key，不要在共享电脑、直播录屏或公共终端里运行
+- `接入工具` 复制出来的安装命令或配置会带当前 key，不要在共享电脑、直播录屏或公共终端里展示
 - 泄露后立即废弃重建
 
 ## 下一步
@@ -156,6 +155,7 @@ Image2
 - 想理解 AI 成本：去 [开始使用 / AI 成本怎么计算](/docs/start/ai-cost-basics)
 - 想直接开始用 Codex：去 [Runtime / Codex](/docs/runtime/codex)
 - 想直接开始用 Claude Code：去 [Runtime / Claude Code](/docs/runtime/claude-code)
+- 想在开源终端 Agent 中使用多家模型：去 [模型与工作台 / OpenCode](/docs/runtime/opencode)
 - 不清楚工具和模型关系：去 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)
 - 想先做最小验证：去 [开始使用 / 首条请求](/docs/start/first-request)
 - 想在 ChatGPT / Codex 中使用其他模型：去[模型与工作台 / 在 ChatGPT / Codex 中使用其他模型](/docs/runtime/codex-multi-model)

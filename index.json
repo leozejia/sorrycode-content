@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-08-20",
+  "updatedAt": "2026-08-26",
   "articles": [
     {
       "type": "article",
@@ -13,7 +13,7 @@
       "title": "First Time Using SorryCode",
       "summary": "Choose an agent workspace, then confirm model, protocol, and API key group compatibility.",
       "order": 1,
-      "updatedAt": "2026-08-17",
+      "updatedAt": "2026-08-26",
       "markdownPath": "articles/start/first-step/en.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"
@@ -28,7 +28,7 @@
       "title": "第一次使用 SorryCode",
       "summary": "先选适合的 Agent 工作台，再确认模型、协议和 API Key 分组兼容。",
       "order": 1,
-      "updatedAt": "2026-08-17",
+      "updatedAt": "2026-08-26",
       "markdownPath": "articles/start/first-step/zh.md",
       "assetBaseUrl": "articles/start/first-step/",
       "route": "/docs/start/first-step"
@@ -359,9 +359,9 @@
       "slug": "create-api-key",
       "locale": "en",
       "title": "Create API Key",
-      "summary": "Understand what an API key is, then create separate sk-... keys for Codex, Claude Code, Skills, or other uses.",
+      "summary": "Understand what an API key is, then prepare sk-... keys that match your protocol and group access.",
       "order": 3,
-      "updatedAt": "2026-08-17",
+      "updatedAt": "2026-08-26",
       "markdownPath": "articles/start/create-api-key/en.md",
       "assetBaseUrl": "articles/start/create-api-key/",
       "route": "/docs/start/create-api-key"
@@ -374,9 +374,9 @@
       "slug": "create-api-key",
       "locale": "zh",
       "title": "创建 API Key",
-      "summary": "先理解 API Key 是什么，再按 Codex、Claude Code 或 Skills 等用途分别创建 sk-... 密钥。",
+      "summary": "先理解 API Key 是什么，再按协议和分组权限准备 sk-... 密钥。",
       "order": 3,
-      "updatedAt": "2026-08-17",
+      "updatedAt": "2026-08-26",
       "markdownPath": "articles/start/create-api-key/zh.md",
       "assetBaseUrl": "articles/start/create-api-key/",
       "route": "/docs/start/create-api-key"
@@ -590,6 +590,36 @@
       "markdownPath": "articles/runtime/claude-desktop/zh.md",
       "assetBaseUrl": "articles/runtime/claude-desktop/",
       "route": "/docs/runtime/claude-desktop"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Models & Runtimes",
+      "sectionOrder": 10,
+      "slug": "opencode",
+      "locale": "en",
+      "title": "OpenCode",
+      "summary": "Add SorryCode as a custom provider in OpenCode Desktop, select a matching key and model, and verify the connection.",
+      "order": 1,
+      "updatedAt": "2026-08-26",
+      "markdownPath": "articles/runtime/opencode/en.md",
+      "assetBaseUrl": "articles/runtime/opencode/",
+      "route": "/docs/runtime/opencode"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "模型与工作台",
+      "sectionOrder": 10,
+      "slug": "opencode",
+      "locale": "zh",
+      "title": "OpenCode",
+      "summary": "在 OpenCode Desktop 中添加 SorryCode 自定义提供商，选择匹配分组的 Key 和模型并完成验证。",
+      "order": 1,
+      "updatedAt": "2026-08-26",
+      "markdownPath": "articles/runtime/opencode/zh.md",
+      "assetBaseUrl": "articles/runtime/opencode/",
+      "route": "/docs/runtime/opencode"
     },
     {
       "type": "article",

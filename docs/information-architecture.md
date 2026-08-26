@@ -1,6 +1,6 @@
 # SorryCode Content IA
 
-更新时间：2026-08-13
+更新时间：2026-08-26
 
 这份文档定义 `sorrycode-content` 的内容维护边界。它是内容团队内部文档，不进入线上 docs。
 
@@ -112,6 +112,12 @@ UI 是自定义模型的公开配置路径，不公开讲解本地配置文件�
 `Pi Agent` 作为独立工作台维护，官方项目固定为 `pi.dev` / `earendil-works/pi`，不归入任何模型供应商。
 页面只维护 Pi 安装、SorryCode 自定义 provider、Responses 兼容模型选择和首次工具调用验证。
 DeepSeek 可以作为经过验证的推荐示例，但不能写成 Pi 的模型归属或使用限制。
+
+`OpenCode` 作为独立的多模型工作台维护，不归入 OpenAI、Anthropic、Google 或 xAI 分组。
+页面以 Desktop 的 `设置 -> 提供商 -> 自定义提供商` 为默认路径，只维护官方下载、字段填写、
+匹配分组的 Key、少量模型示例和首次连通验证。API Key 页的 `接入工具 -> OpenCode` 生成配置
+只作为 CLI 和高级用户的备用路径。不在公开页面复制完整模型目录，也不另建通用 API Key
+环境变量方案。每个 provider 只绑定一把分组 Key；跨分组模型必须拆成不同 provider。
 
 `Agent 能力是怎么扩展的` 负责解释 Runtime、Expert / Agent、Skill、MCP / Tool / Connector
 和 Plugin 的层级关系。Plugin 是特定 runtime 的打包与分发单元，不是 Tool 的同义词；

@@ -17,14 +17,15 @@ section_order: 1
 | 工作台 | 适合什么 | 接入指南 |
 | --- | --- | --- |
 | **ChatGPT / Codex** | 默认选择。适合代码、文件和本机任务，也有可视化 App | [ChatGPT / Codex](/docs/runtime/codex) |
+| **Claude Code** | 适合代码、终端任务和长时间自主执行 | [Claude Code](/docs/runtime/claude-code) |
+| **OpenCode** | 开源、多模型的 Agent，有桌面客户端和终端版 | [OpenCode](/docs/runtime/opencode) |
 | **DSH** | DeepSeek 开源的 Web Agent，可以配置 Responses 兼容模型 | [DSH](/docs/runtime/dsh) |
 | **Pi Agent** | 轻量、灵活的终端 Agent，可以自行配置 Responses 兼容模型 | [Pi Agent](/docs/runtime/pi-agent) |
-| **Claude Code** | 适合代码、终端任务和长时间自主执行 | [Claude Code](/docs/runtime/claude-code) |
+| **Kimi Code** | 使用 Kimi 模型完成代码和长上下文任务 | [Kimi Code](/docs/runtime/kimi-code) |
 | **WorkBuddy** | 在桌面界面处理文档、表格和本地文件 | [WorkBuddy](/docs/runtime/workbuddy) |
 | **Grok Build** | 使用 Grok 模型和 xAI 生态能力 | [Grok Build](/docs/runtime/grok-build) |
-| **Kimi Code** | 使用 Kimi 模型完成代码和长上下文任务 | [Kimi Code](/docs/runtime/kimi-code) |
 
-不确定时先用 ChatGPT / Codex。想使用 Web UI 自行配置 Responses 模型，可以选择 DSH；想要更轻量的终端 Agent，可以选择 Pi Agent。
+不确定时先用 ChatGPT / Codex。想使用 Web UI 自行配置 Responses 模型，可以选择 DSH；想在开源工作台里使用多家模型，可以选择 OpenCode。
 
 <h2 id="prepare-key">准备兼容的 API Key</h2>
 

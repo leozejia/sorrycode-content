@@ -16,7 +16,7 @@ When you chat with AI in a browser, you type into a web page. Tools like `Codex`
 
 An `API Key` is the key on that channel. It proves that this is your SorryCode account using the model. It usually starts with `sk-...`.
 
-No matter whether you use Codex, Claude Code, Grok, an image skill, or manual setup, this step is unavoidable. The console can now generate one-click install commands from this key, so create the key first.
+No matter whether you use Codex, Claude Code, OpenCode, Grok, an image skill, or manual setup, this step is unavoidable. The console can generate install commands or configuration from this key, so create the key first.
 
 One SorryCode balance can have multiple API keys. Reuse one key across tools when their protocol and group access are compatible; create more keys when separate management is useful.
 
@@ -26,6 +26,7 @@ Match each key to the protocol, models, and group access the tool needs. When yo
 | --- | --- | --- |
 | `Codex` | A group that supports Codex / OpenAI-compatible traffic | Codex |
 | `Claude Code` | A group that supports Anthropic-compatible traffic | Claude Code |
+| `OpenCode` | The group for the target model | OpenCode |
 | `Grok` | A Grok group | Grok Build, Grok images, and Grok video |
 | `Image2` | An image group that supports `gpt-image-2` | GPT Image 2 API and the SorryCode Image2 Skill |
 
@@ -115,19 +116,17 @@ After creation, the console shows the full key. Copy the `sk-...` value.
 
 ![Copy the API key after creation](./key-created-copy.png)
 
-If you use the Codex, Claude Code, or Grok Build one-click installer, you usually do not need to copy the raw key by hand.
+When you use `Connect Tool`, you usually do not need to place the key into a command or configuration by hand. Codex, Claude Code, and Grok Build generate install commands. OpenCode CLI generates an `opencode.json` configuration; for OpenCode Desktop, you can copy the key and use the visual form instead.
 
 The easier path is to return to the API key list, find this key, and click `Connect Tool`:
 
 ![Connect Tool button on the right side of the API key list](./connect-tool-button.png)
 
-1. choose the tool you want to connect, such as `Codex`, `Claude Code`, or `Grok Build`
-2. choose your operating system
-3. copy the full command from the modal
-4. open the terminal on your own computer
-5. paste the command and press Enter
+1. choose the tool you want to connect, such as `Codex`, `Claude Code`, `OpenCode`, or `Grok Build`
+2. for an installer, choose your operating system and copy the command; for OpenCode CLI, copy the generated configuration; for OpenCode Desktop, follow its visual setup guide
+3. follow that workspace's guide to run the installer or save the configuration
 
-That command already includes the current API key. Copy the raw `sk-...` value yourself only for manual setup or troubleshooting.
+The generated command or configuration already includes the current API key. Handle the raw `sk-...` value yourself only for manual setup or troubleshooting.
 
 If you already created a key, the API key list lets you:
 
@@ -147,7 +146,7 @@ Compatible tools can share one key. Separate keys are useful when you want clear
 - do not commit it into a repo
 - do not paste it into public chats
 - do not put it directly into long-lived shell history
-- commands copied from `Connect Tool` include the current key, so do not run them on shared computers, recorded screens, or public terminals
+- commands and configurations copied from `Connect Tool` include the current key, so do not show them on shared computers, recorded screens, or public terminals
 - revoke and recreate it immediately if it leaks
 
 ## Next
@@ -156,6 +155,7 @@ Compatible tools can share one key. Separate keys are useful when you want clear
 - Want to understand AI cost: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)
 - Want to start with Codex: [Runtime / Codex](/docs/runtime/codex)
 - Want to start with Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
+- Want an open-source terminal agent that can use multiple model providers: [Models & Runtimes / OpenCode](/docs/runtime/opencode)
 - Unsure how runtimes and models relate: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - Want a minimal validation first: [Getting Started / First Request](/docs/start/first-request)
 - Want to use other models in ChatGPT / Codex: [Models & Runtimes / Use Other Models in ChatGPT / Codex](/docs/runtime/codex-multi-model)

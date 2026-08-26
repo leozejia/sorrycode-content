@@ -17,14 +17,15 @@ Start by choosing the agent workspace that fits how you work, then follow its gu
 | Workspace | Good for | Setup guide |
 | --- | --- | --- |
 | **ChatGPT / Codex** | The default choice for code, files, and local tasks, with a visual app | [ChatGPT / Codex](/docs/runtime/codex) |
+| **Claude Code** | Code, terminal tasks, and long-running autonomous work | [Claude Code](/docs/runtime/claude-code) |
+| **OpenCode** | An open-source, multi-model agent with both desktop and terminal apps | [OpenCode](/docs/runtime/opencode) |
 | **DSH** | DeepSeek's open-source Web agent with configurable Responses models | [DSH](/docs/runtime/dsh) |
 | **Pi Agent** | A lightweight, flexible terminal agent with configurable Responses-compatible models | [Pi Agent](/docs/runtime/pi-agent) |
-| **Claude Code** | Code, terminal tasks, and long-running autonomous work | [Claude Code](/docs/runtime/claude-code) |
+| **Kimi Code** | Coding and long-context tasks with Kimi models | [Kimi Code](/docs/runtime/kimi-code) |
 | **WorkBuddy** | Documents, spreadsheets, and local files in a desktop app | [WorkBuddy](/docs/runtime/workbuddy) |
 | **Grok Build** | Grok models and xAI capabilities | [Grok Build](/docs/runtime/grok-build) |
-| **Kimi Code** | Coding and long-context tasks with Kimi models | [Kimi Code](/docs/runtime/kimi-code) |
 
-If you are unsure, start with ChatGPT / Codex. Choose DSH for a Web UI with configurable Responses models, or Pi Agent for a lighter terminal agent.
+If you are unsure, start with ChatGPT / Codex. Choose DSH for a Web UI with configurable Responses models, or OpenCode for an open-source workspace that can use models from multiple providers.
 
 <h2 id="prepare-key">Prepare a Compatible API Key</h2>
 
