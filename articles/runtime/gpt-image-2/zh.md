@@ -2,7 +2,7 @@
 title: GPT Image 2
 slug: gpt-image-2
 order: 2
-summary: 在 Codex 中直接用自然语言生图，或通过 SorryCode Images API 和 SorryCode Image2 Skill 使用 gpt-image-2。
+summary: 在 Codex 中直接生图，或复用同一把 Codex Key，通过 Images API 和 SorryCode Image2 使用 gpt-image-2-all 与 gpt-image-2。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -13,7 +13,7 @@ group_order: 10
 
 # GPT Image 2
 
-`gpt-image-2` 是 SorryCode 当前主推的 OpenAI 图片模型。你可以按任务复杂度选择三种入口：
+SorryCode 当前提供 `gpt-image-2-all` 和 `gpt-image-2`。标准尺寸默认使用 `gpt-image-2-all`，2K 和 4K 尺寸使用 `gpt-image-2`。你可以按任务选择三种入口：
 
 | 需求 | 推荐入口 |
 | --- | --- |
@@ -48,17 +48,17 @@ group_order: 10
 开发者入口是：
 
 ```text
-POST https://sorrycode.com/v1/images/generations
+POST https://api.sorrycode.com/v1/images/generations
 ```
 
-先创建或选择一把分配到 `gpt-image-2` 图片分组的 Image2 Key。不要使用 Grok 分组 Key。本页的 API 示例直接填写 Key，不要求设置环境变量。
+这里使用已经接入 Codex 的同一把 Key，不需要创建图片专用 Key。手动调用 API 时仍要把这把 Codex Key 放进 `Authorization` 请求头，但不需要设置环境变量。
 
 先创建 `request.json`。macOS / Linux：
 
 ```bash
 cat > request.json <<'JSON'
 {
-  "model": "gpt-image-2",
+  "model": "gpt-image-2-all",
   "prompt": "A small red paper boat floating on a calm lake",
   "size": "1024x1024",
   "n": 1,
@@ -74,7 +74,7 @@ Windows PowerShell：
 ```powershell
 $json = @'
 {
-  "model": "gpt-image-2",
+  "model": "gpt-image-2-all",
   "prompt": "A small red paper boat floating on a calm lake",
   "size": "1024x1024",
   "n": 1,
@@ -93,11 +93,11 @@ $json = @'
 
 发送请求：
 
-把 `sk-replace-with-image2-group-key` 替换成你的 Image2 Key。
+把 `sk-replace-with-codex-key` 替换成已经接入 Codex 的同一把 Key。
 
 ```bash
-curl -N https://sorrycode.com/v1/images/generations \
-  -H "Authorization: Bearer sk-replace-with-image2-group-key" \
+curl -N https://api.sorrycode.com/v1/images/generations \
+  -H "Authorization: Bearer sk-replace-with-codex-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json"
 ```
@@ -105,8 +105,8 @@ curl -N https://sorrycode.com/v1/images/generations \
 Windows PowerShell 使用 `curl.exe`：
 
 ```powershell
-curl.exe -N https://sorrycode.com/v1/images/generations `
-  -H "Authorization: Bearer sk-replace-with-image2-group-key" `
+curl.exe -N https://api.sorrycode.com/v1/images/generations `
+  -H "Authorization: Bearer sk-replace-with-codex-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json"
 ```
@@ -116,7 +116,7 @@ curl.exe -N https://sorrycode.com/v1/images/generations `
 
 <h2 id="skill">使用 SorryCode Image2 Skill</h2>
 
-[SorryCode Image2](/docs/skills/sorrycode-image2) 只使用 `gpt-image-2`，适合：
+[SorryCode Image2](/docs/skills/sorrycode-image2) 会自动复用当前 SorryCode Codex Key，并按尺寸在 `gpt-image-2-all` 和 `gpt-image-2` 之间选择，适合：
 
 - 编辑本地 PNG、JPEG 或 WebP；
 - 固定输出目录和尺寸；
@@ -126,15 +126,15 @@ curl.exe -N https://sorrycode.com/v1/images/generations `
 你可以把这句话交给 Codex 或 Claude Code：
 
 ```text
-请安装 SorryCode Image2，然后按 Skill 页面配置 Image2 Key。再用 gpt-image-2 生成一张 1024x1024 的图片，保存到 outputs/images/first-run/。
+请安装 SorryCode Image2，自动复用当前 SorryCode Codex Key，生成一张 1024x1024 的图片，保存到 outputs/images/first-run/。
 ```
 
 <h2 id="errors">常见问题</h2>
 
 - `401`：API Key 缺失、错误或没有作为 Bearer Token 发送。
-- `403`：当前 API Key 所属分组没有开放图片能力。
+- `403`：当前 Codex Key 所属分组没有开放图片能力。
 - `400`：检查模型、prompt、尺寸和图片输入格式。
-- `503 No available compatible accounts`：当前分组暂时没有可用的兼容图片账号。
+- `503 No available compatible accounts`：当前 Codex 分组暂时没有可用的兼容图片账号。
 - 请求长时间没有结果：保留流式参数，缩短 prompt 或先用 `1024x1024` 重试。
 
 <h2 id="next">下一步</h2>

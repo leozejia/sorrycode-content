@@ -142,7 +142,7 @@ Expert 是角色与协作机制，不是权限来源。各产品的安装和配�
 - `Grok 视频生成` 只讲文生视频、图生视频和异步轮询；未采用的 edit / extension
   不进入公开文档。
 
-`SorryCode Image2` Skill 保持独立，只负责 `gpt-image-2` 的可复现执行流程，并链接回
+`SorryCode Image2` Skill 保持独立，只负责 `gpt-image-2-all` 和 `gpt-image-2` 的可复现执行流程，并链接回
 `模型与工作台 / GPT Image 2`。更多素材生产和视觉资产工作流仍可指向 `sorryassets.com`，
 但不在 SorryCode 文档里展开其私有模型、价格或接口。
 
@@ -155,7 +155,7 @@ Expert 是角色与协作机制，不是权限来源。各产品的安装和配�
 - Kimi Code、Grok Build、Grok 图片、Grok 视频和 GPT Image 2 仍要分别说明所需的模型、协议和分组权限；不要把“需要匹配分组”写成“必须创建专用 Key”。
 - REST API 示例直接在请求头中提供可替换的分组 Key 占位值，不要求用户先设置通用环境变量。
 - runtime 一键安装器负责保存当前工具选择的 Key。公开页面不要求用户手动同步安装器内部的变量名。
-- 只有具体 Skill 确实依赖环境变量时，才在该 Skill 页面公开变量名。当前 `SORRYCODE_API_KEY` 只属于 `SorryCode Image2` 的配置 contract。
+- 只有具体 Skill 确实依赖环境变量时，才在该 Skill 页面公开变量名。`SorryCode Image2` 自动读取当前 SorryCode Codex provider 使用的 Key，不再要求或公开独立环境变量。
 - runtime 的模型目录默认只保存 `/v1/models` 返回的准确模型 ID。未返回但可路由的别名只用于诊断；同一模型的别名与规范 ID 不得同时写入配置。
 - runtime 按 provider route 保存凭据时，每把独立 Key 使用唯一的本地 Provider ID。同一 Key 分组开放的多个模型可以共用该 route；切换分组时新增 route，不覆盖已有 Key。
 - 公开 runtime 页面只保留足以说明配置结构的最小已验证示例，不复制持续变化的完整模型目录。模型 ID、能力和思考档位以当前分组与实际请求验证为准。

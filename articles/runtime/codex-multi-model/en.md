@@ -27,7 +27,7 @@ Open the [API Key page](https://sorrycode.com/keys) and choose a key whose group
 
 - for `grok-4.6`, use a Grok-group key that lists this model
 - for DeepSeek, use a key whose group lists the target DeepSeek model
-- do not use an Image2 key for Grok, and do not assume keys are interchangeable because they all start with `sk-`
+- SorryCode Image2 reuses the Codex key, while Grok still uses a Grok-group key; do not assume keys are interchangeable because they all start with `sk-`
 
 If ChatGPT / Codex already uses SorryCode with a key from another group, click `Connect Tool` beside the target key, select `Codex` and your operating system, then run the generated command. The installer saves that key without requiring a public environment variable. To return to another group later, generate the connection command from that group's key again.
 

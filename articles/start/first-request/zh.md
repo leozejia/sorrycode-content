@@ -78,7 +78,7 @@ curl.exe "{{API_BASE_URL}}/chat/completions" `
 
 `{{ANTHROPIC_BASE_URL}}/v1/messages`
 
-选择一把已经分配到 Anthropic-compatible 分组的 Key，并替换下面的占位值。不要拿 Grok 或 Image2 Key 来做这条验证。
+选择一把已经分配到 Anthropic-compatible 分组的 Key，并替换下面的占位值。不要拿 Grok 或 Codex Key 来做这条验证。
 
 ### macOS / Linux
 

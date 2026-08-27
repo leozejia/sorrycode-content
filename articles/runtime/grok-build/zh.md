@@ -56,7 +56,7 @@ group_order: 30
 
 如果你还没做这一步，可以先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
-如果你也准备使用 Codex、Claude Code 或 SorryCode Image2，先检查现有 Key 是否属于这些工具需要的协议和分组。兼容时可以复用；想把用量、限额或凭证轮换分开管理时，再按用途创建多把 Key。每把 Key 都必须选择与实际用途匹配的分组。
+如果你也准备使用 Codex 或 Claude Code，先检查现有 Key 是否属于这些工具需要的协议和分组。SorryCode Image2 会复用 Codex Key，Grok Build 仍使用 Grok 分组 Key。每把 Key 都必须选择与实际用途匹配的分组。
 
 <h2 id="one-click-install">⚡ 一键安装（推荐）</h2>
 
@@ -80,7 +80,7 @@ group_order: 30
 
 打开终端后，把刚复制的整条命令粘贴进去，再按一次回车。
 
-一键安装会调用 xAI 官方安装器安装 Grok Build，然后写入 `~/.grok/config.toml`，并单独保存当前选择的 Grok 分组 Key。它不会覆盖 SorryCode Image2 使用的 Image2 Key。Windows 会使用适合 Windows 的安装脚本。如果你不知道 PowerShell 是什么，先看 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)。
+一键安装会调用 xAI 官方安装器安装 Grok Build，然后写入 `~/.grok/config.toml`，并单独保存当前选择的 Grok 分组 Key。它不会覆盖 Codex Key。Windows 会使用适合 Windows 的安装脚本。如果你不知道 PowerShell 是什么，先看 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)。
 
 ### 备用：手动复制通用命令
 
@@ -156,7 +156,7 @@ grok -m sorrycode-grok
 
 公开接入不要求你手动同步配置字段或环境变量。需要自己控制安装步骤时，可以先运行 xAI 官方安装器，再运行上面的 SorryCode 通用安装命令。SorryCode 安装器会检测已有的 `grok`，只补齐网关配置和当前选择的 Grok 分组 Key。
 
-如果配置损坏，回到 API Key 页面，用这把 Grok Key 重新生成安装命令。不要从 Codex、Claude Code 或 SorryCode Image2 的配置中复制 Key 来修补 Grok Build。
+如果配置损坏，回到 API Key 页面，用这把 Grok Key 重新生成安装命令。不要从 Codex 或 Claude Code 的配置中复制 Key 来修补 Grok Build。
 
 <h2 id="media">图片和视频从哪里调用</h2>
 

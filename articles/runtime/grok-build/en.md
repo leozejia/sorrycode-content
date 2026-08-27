@@ -56,7 +56,7 @@ The quick link is `https://sorrycode.com/keys`, but the more important thing is 
 
 If you have not done this yet, start with [Getting Started / Create API Key](/docs/start/create-api-key).
 
-If you also plan to use Codex, Claude Code, or SorryCode Image2, first check whether an existing key matches the protocol and group each tool needs. Reuse it when compatible; create separate keys when you want usage, limits, or credential rotation managed independently. Every key must use a group that matches its actual purpose.
+If you also plan to use Codex or Claude Code, first check whether an existing key matches the protocol and group each tool needs. SorryCode Image2 reuses the Codex key, while Grok Build still uses a Grok-group key. Every key must use a group that matches its actual purpose.
 
 <h2 id="one-click-install">⚡ One-Click Install (Recommended)</h2>
 
@@ -80,7 +80,7 @@ The copied command is complete and already includes the current API key.
 
 After the terminal opens, paste the full command you copied and press Enter.
 
-The one-click installer calls xAI's official installer, writes `~/.grok/config.toml`, and stores the selected Grok-group key separately. It does not overwrite the Image2 key used by SorryCode Image2. Windows uses the Windows-specific installer. If you are not sure what PowerShell is, read [Environment / Windows PowerShell](/docs/environment/windows-powershell) first.
+The one-click installer calls xAI's official installer, writes `~/.grok/config.toml`, and stores the selected Grok-group key separately. It does not overwrite the Codex key. Windows uses the Windows-specific installer. If you are not sure what PowerShell is, read [Environment / Windows PowerShell](/docs/environment/windows-powershell) first.
 
 ### Fallback: Copy a Generic Command Manually
 
@@ -156,7 +156,7 @@ This confirms two things early:
 
 Public setup does not require you to synchronize config fields or environment variables by hand. When you need control over the install steps, run xAI's official installer first, then run the generic SorryCode installer command above. The SorryCode installer detects an existing `grok` command and only adds the gateway config and the selected Grok-group key.
 
-If the config is damaged, return to the API key page and generate a new install command from the Grok key. Do not copy a key from Codex, Claude Code, or SorryCode Image2 to repair Grok Build.
+If the config is damaged, return to the API key page and generate a new install command from the Grok key. Do not copy a key from Codex or Claude Code to repair Grok Build.
 
 <h2 id="media">Where to Call Images and Video</h2>
 

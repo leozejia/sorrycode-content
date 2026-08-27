@@ -2,7 +2,7 @@
 title: SorryCode Image2
 slug: sorrycode-image2
 order: 2
-summary: Generate or edit images with gpt-image-2 while saving prompts, responses, diagnostics, and image files for reproducible project workflows.
+summary: Reuse the current SorryCode Codex key to generate or edit images with gpt-image-2-all or gpt-image-2 and save reproducible project files.
 section: skills
 section_title: Skills
 section_order: 15
@@ -16,9 +16,9 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 
 If you only need a quick image, ask for it directly in `Codex App`. You do not need to install a Skill first. See [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2) for the full split between natural-language generation, the Images API, and this Skill.
 
-`SorryCode Image2` is for image tasks that need fixed outputs and a reproducible process. It checks the API key, calls the image endpoint, and saves the prompt, response, diagnostics, and image files inside the project.
+`SorryCode Image2` is for image tasks that need fixed outputs and a reproducible process. The agent finds the current SorryCode Codex key, calls the image endpoint, and saves the prompt, response, diagnostics, and image files inside the project.
 
-The only supported model is `gpt-image-2`.
+Standard sizes use `gpt-image-2-all` by default. 2K and 4K sizes use `gpt-image-2`.
 
 > **Let Your Agent Configure It**
 >
@@ -56,35 +56,22 @@ If you still need a workbench, start here:
 
 Before uninstalling, run `npx skills list --global` to confirm the name, then use `npx skills remove --global sorrycode-image2`.
 
-<h2 id="api-key">Set the Image API Key</h2>
+<h2 id="api-key">Reuse the Codex Key</h2>
 
-First, use [Getting Started / Create API Key](/docs/start/create-api-key) to create or select a key assigned to an image group that supports `gpt-image-2`. Create a separate Image2 key only when you want its usage, limits, or credential rotation managed independently.
+Complete [Models & Runtimes / Codex](/docs/runtime/codex) setup first. The Skill confirms the active SorryCode provider in the current Codex configuration and reads the key it already uses. You do not need a separate image key or a Skill-specific environment variable.
 
-The Skill reads `SORRYCODE_API_KEY`. This is the configuration name used by `SorryCode Image2`, not a shared key for every SorryCode tool. Public REST API examples ask you to enter the matching group key directly. Only this Skill requires this environment variable.
+When you use the Skill from Claude Code, complete the SorryCode Codex setup on the same machine first. The agent reads that Codex configuration instead of creating another credential setup.
 
-Run the command for your system in a local terminal. Do not send the real key in an agent conversation, save it in project files, or include it in screenshots.
+If the agent cannot find the key, return to `https://sorrycode.com/keys`, select the key you use for Codex, choose `Connect Tool`, and run the Codex connection command again. Do not paste the key into an agent conversation, save it in project files, or include it in screenshots.
 
-Windows PowerShell:
-
-```powershell
-[Environment]::SetEnvironmentVariable("SORRYCODE_API_KEY", "your sk-...", "User")
-```
-
-macOS / Linux:
-
-```bash
-echo "export SORRYCODE_API_KEY='your sk-...'" >> ~/.zshrc
-source ~/.zshrc
-```
-
-This variable is only for SorryCode Image2. It does not change the Codex or Grok model configuration.
+Image requests always use the direct `https://api.sorrycode.com/v1` ingress.
 
 <h2 id="first-prompt">First Prompt</h2>
 
 Generate an image:
 
 ```text
-Use SorryCode Image2 to generate a clean warm podcast cover about AI coding for beginners. Use gpt-image-2 and save it to outputs/images/first-cover/.
+Use SorryCode Image2 to generate a clean warm podcast cover about AI coding for beginners and save it to outputs/images/first-cover/.
 ```
 
 Edit an image:
@@ -118,16 +105,16 @@ The folder normally contains:
 
 <h2 id="common-issues">Common Issues</h2>
 
-- Missing `SORRYCODE_API_KEY`: create an Image2 key, then reopen the workbench or terminal
-- `401`: the Image2 key is wrong or was not set correctly
-- `403`: confirm that this key uses an image group with `gpt-image-2` access, not a Grok group
-- `400`: check the input image, prompt, size, and model; the model must be `gpt-image-2`
-- `524`: reduce the image size, shorten the prompt, or retry later
-- `503 No available compatible accounts`: the current API key cannot use the image model right now; check access or retry later
+- Key not found: run `Connect Tool > Codex` again from the API Key page, then rerun the Skill
+- `401`: the current Codex key is no longer valid; reconnect Codex
+- `403`: image generation is not enabled for the current Codex key's group
+- `400`: check the input image, prompt, size, and model
+- Request interrupted or timed out: do not immediately send another paid request; check the diagnostics and the previous request state first
+- `503 No available compatible accounts`: the current Codex group has no compatible image account available right now
 
 <h2 id="more-aigc">More AIGC Workflows</h2>
 
-SorryCode Image2 only handles generation and editing with `gpt-image-2`. For additional AIGC models, asset production, or dedicated visual asset workflows, use [SorryAssets](https://sorryassets.com).
+SorryCode Image2 handles generation and editing with `gpt-image-2-all` and `gpt-image-2`. For additional AIGC models, asset production, or dedicated visual asset workflows, use [SorryAssets](https://sorryassets.com).
 
 <h2 id="next">Next Step</h2>
 

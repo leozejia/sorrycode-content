@@ -24,11 +24,10 @@ Match each key to the protocol, models, and group access the tool needs. When yo
 
 | Key name | Selected group | Used for |
 | --- | --- | --- |
-| `Codex` | A group that supports Codex / OpenAI-compatible traffic | Codex |
+| `Codex` | A group that supports Codex / OpenAI-compatible traffic and image generation | Codex, the GPT Image 2 API, and the SorryCode Image2 Skill |
 | `Claude Code` | A group that supports Anthropic-compatible traffic | Claude Code |
 | `OpenCode` | The group for the target model | OpenCode |
 | `Grok` | A Grok group | Grok Build, Grok images, and Grok video |
-| `Image2` | An image group that supports `gpt-image-2` | GPT Image 2 API and the SorryCode Image2 Skill |
 
 This does not split your balance. The balance is still shared. Separate keys make usage records, group switching, spending limits, and troubleshooting much clearer.
 
@@ -37,7 +36,7 @@ This does not split your balance. The balance is still shared. Separate keys mak
 1. Open `https://sorrycode.com/login` and sign in to the SorryCode console
 2. Find `API Keys` in the left menu
 3. Create a new key
-4. Name it by use, such as `Codex`, `Claude Code`, `Grok`, or `Image2`
+4. Name it by use, such as `Codex`, `Claude Code`, or `Grok`
 5. Select a group
 6. Copy the key and store it safely
 
@@ -59,7 +58,6 @@ The name is only for you. Use the tool or purpose:
 Codex
 Claude Code
 Grok
-Image2
 Test Request
 ```
 
@@ -87,7 +85,7 @@ Then remember one more line:
 one balance can have multiple API keys.
 ```
 
-You can create separate keys for separate tools. For example: one for Codex, one for Claude Code, one for Grok, and one for Image2. They use the same balance, but management and troubleshooting become much clearer.
+You can create separate keys for separate tools, such as one for Codex, one for Claude Code, and one for Grok. SorryCode Image2 and the GPT Image 2 API reuse the Codex key instead of introducing another image key. They still use the same balance, while records, groups, and limits remain organized around the main tools.
 
 Do not treat every `sk-...` value as interchangeable. Check whether the key's group exposes the model and protocol the tool needs. Reuse a key when they are compatible; a mismatch can cause access errors, unavailable models, or incorrect routing.
 
@@ -137,7 +135,7 @@ If you already created a key, the API key list lets you:
 - set a spending limit
 - disable or delete keys you no longer use
 
-Compatible tools can share one key. Separate keys are useful when you want clearer usage records, limits, or troubleshooting. `SorryCode Image2` does not use this one-click installer entry. Its Skill page explains how to store the Image2 key.
+Compatible tools can share one key. Separate keys are useful when you want clearer usage records, limits, or troubleshooting. `SorryCode Image2` finds and reuses the current Codex key automatically, without another image key or environment variable.
 
 ![You can switch groups from the API key list](./key-group-switch.png)
 

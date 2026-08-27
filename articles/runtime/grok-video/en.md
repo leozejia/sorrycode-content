@@ -29,7 +29,7 @@ This page covers the three paths verified on SorryCode production:
 
 <h2 id="prepare">Before You Start</h2>
 
-Create or select a Grok-group key at `https://sorrycode.com/keys`. Use the same Grok key to submit the job and poll the result. Do not use the Image2 key created for `SorryCode Image2`, and do not set an environment variable for this page.
+Create or select a Grok-group key at `https://sorrycode.com/keys`. Use the same Grok key to submit the job and poll the result. The Codex key reused by SorryCode Image2 cannot be used for Grok video. This page does not require an environment variable.
 
 <h2 id="models">Choose a Model</h2>
 
@@ -45,7 +45,7 @@ Video usage is priced by output duration and resolution. For a first test, use a
 Submission endpoint:
 
 ```text
-POST https://sorrycode.com/v1/videos/generations
+POST https://api.sorrycode.com/v1/videos/generations
 ```
 
 Create `request.json` on macOS / Linux:
@@ -85,7 +85,7 @@ Send the request and save the job response:
 Replace `sk-replace-with-grok-group-key` with your Grok-group key.
 
 ```bash
-curl -sS https://sorrycode.com/v1/videos/generations \
+curl -sS https://api.sorrycode.com/v1/videos/generations \
   -H "Authorization: Bearer sk-replace-with-grok-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json" \
@@ -95,7 +95,7 @@ curl -sS https://sorrycode.com/v1/videos/generations \
 Windows PowerShell:
 
 ```powershell
-curl.exe -sS https://sorrycode.com/v1/videos/generations `
+curl.exe -sS https://api.sorrycode.com/v1/videos/generations `
   -H "Authorization: Bearer sk-replace-with-grok-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json" `
@@ -135,7 +135,7 @@ Save this body as UTF-8 without BOM in `request.json`, then submit it with the s
 Status endpoint:
 
 ```text
-GET https://sorrycode.com/v1/videos/{request_id}
+GET https://api.sorrycode.com/v1/videos/{request_id}
 ```
 
 macOS / Linux:
@@ -148,7 +148,7 @@ TERMINAL=0
 for attempt in $(seq 1 60); do
   RESULT=$(curl -sS \
     -H "Authorization: Bearer sk-replace-with-grok-group-key" \
-    "https://sorrycode.com/v1/videos/$REQUEST_ID")
+    "https://api.sorrycode.com/v1/videos/$REQUEST_ID")
 
   STATUS=$(printf '%s' "$RESULT" | jq -r '.status')
   printf 'status=%s\n' "$STATUS"
@@ -183,7 +183,7 @@ $result = $null
 for ($attempt = 1; $attempt -le 60; $attempt++) {
   $result = curl.exe -sS `
     -H "Authorization: Bearer sk-replace-with-grok-group-key" `
-    "https://sorrycode.com/v1/videos/$requestId" | ConvertFrom-Json
+    "https://api.sorrycode.com/v1/videos/$requestId" | ConvertFrom-Json
   $result.status
 
   if ($result.status -in @("done", "failed", "expired")) {

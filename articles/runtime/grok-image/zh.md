@@ -29,7 +29,7 @@ Grok 分组的 SorryCode API Key。
 2. 确认这把 Key 使用 Grok 分组。
 3. 复制这把 Grok Key，稍后直接替换请求头里的占位值。
 
-这把 Key 可以和 Grok Build 使用同一个 Grok 分组，但不要使用给 `SorryCode Image2` 准备的 Image2 Key。本页不要求设置环境变量。
+这把 Key 可以和 Grok Build 使用同一个 Grok 分组。SorryCode Image2 复用 Codex Key，不能用来调用 Grok 图片。本页不要求设置环境变量。
 
 如果你还没有 Key，先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
@@ -47,7 +47,7 @@ Grok 分组的 SorryCode API Key。
 接口：
 
 ```text
-POST https://sorrycode.com/v1/images/generations
+POST https://api.sorrycode.com/v1/images/generations
 ```
 
 macOS / Linux 先创建 `request.json`：
@@ -83,7 +83,7 @@ $json = @'
 把 `sk-replace-with-grok-group-key` 替换成你的 Grok 分组 Key。
 
 ```bash
-curl -sS https://sorrycode.com/v1/images/generations \
+curl -sS https://api.sorrycode.com/v1/images/generations \
   -H "Authorization: Bearer sk-replace-with-grok-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json" \
@@ -93,7 +93,7 @@ curl -sS https://sorrycode.com/v1/images/generations \
 Windows PowerShell：
 
 ```powershell
-curl.exe -sS https://sorrycode.com/v1/images/generations `
+curl.exe -sS https://api.sorrycode.com/v1/images/generations `
   -H "Authorization: Bearer sk-replace-with-grok-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json" `
@@ -127,7 +127,7 @@ SorryCode 的 Grok 一键安装会配置文字对话、Responses 和搜索所需
 - xAI 官方入口不认识 SorryCode Key，于是返回 `Incorrect API key provided`。
 
 这不是重新安装 Grok 可以解决的问题。当前正确入口就是本页的
-`https://sorrycode.com/v1/images/generations`。
+`https://api.sorrycode.com/v1/images/generations`。
 
 <h2 id="errors">常见问题</h2>
 

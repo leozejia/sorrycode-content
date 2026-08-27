@@ -27,7 +27,7 @@ Use Grok image generation through the REST API. You do not need an official xAI 
 2. Make sure the key uses a Grok group.
 3. Copy that Grok key and replace the request-header placeholder later.
 
-This can be the same Grok-group key used by Grok Build. Do not use the Image2 key created for `SorryCode Image2`. This page does not require an environment variable.
+This can be the same Grok-group key used by Grok Build. SorryCode Image2 reuses the Codex key, which cannot be used for Grok images. This page does not require an environment variable.
 
 If you do not have a key yet, read [Getting Started / Create API Key](/docs/start/create-api-key).
 
@@ -45,7 +45,7 @@ For a first test, use `grok-imagine-image`, then switch to the quality model whe
 Endpoint:
 
 ```text
-POST https://sorrycode.com/v1/images/generations
+POST https://api.sorrycode.com/v1/images/generations
 ```
 
 Create `request.json` on macOS / Linux:
@@ -81,7 +81,7 @@ Send the request and save the response:
 Replace `sk-replace-with-grok-group-key` with your Grok-group key.
 
 ```bash
-curl -sS https://sorrycode.com/v1/images/generations \
+curl -sS https://api.sorrycode.com/v1/images/generations \
   -H "Authorization: Bearer sk-replace-with-grok-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json" \
@@ -91,7 +91,7 @@ curl -sS https://sorrycode.com/v1/images/generations \
 Windows PowerShell:
 
 ```powershell
-curl.exe -sS https://sorrycode.com/v1/images/generations `
+curl.exe -sS https://api.sorrycode.com/v1/images/generations `
   -H "Authorization: Bearer sk-replace-with-grok-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json" `
@@ -124,7 +124,7 @@ This creates a confusing split:
 - the official endpoint does not recognize the SorryCode key and returns `Incorrect API key provided`.
 
 Reinstalling Grok does not change this boundary. Use
-`https://sorrycode.com/v1/images/generations` instead.
+`https://api.sorrycode.com/v1/images/generations` instead.
 
 <h2 id="errors">Common Issues</h2>
 

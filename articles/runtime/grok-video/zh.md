@@ -30,7 +30,7 @@ Grok 视频是异步 API。第一次请求只负责创建任务并返回 `reques
 
 <h2 id="prepare">开始前准备</h2>
 
-在 `https://sorrycode.com/keys` 创建或选择一把 Grok 分组 Key。提交任务和轮询结果必须使用同一把 Grok Key。不要使用给 `SorryCode Image2` 准备的 Image2 Key，也不需要设置环境变量。
+在 `https://sorrycode.com/keys` 创建或选择一把 Grok 分组 Key。提交任务和轮询结果必须使用同一把 Grok Key。SorryCode Image2 复用的 Codex Key 不能用于 Grok 视频，本页也不需要设置环境变量。
 
 <h2 id="models">选择模型</h2>
 
@@ -46,7 +46,7 @@ Grok 视频是异步 API。第一次请求只负责创建任务并返回 `reques
 提交接口：
 
 ```text
-POST https://sorrycode.com/v1/videos/generations
+POST https://api.sorrycode.com/v1/videos/generations
 ```
 
 macOS / Linux 先创建 `request.json`：
@@ -86,7 +86,7 @@ $json = @'
 把 `sk-replace-with-grok-group-key` 替换成你的 Grok 分组 Key。
 
 ```bash
-curl -sS https://sorrycode.com/v1/videos/generations \
+curl -sS https://api.sorrycode.com/v1/videos/generations \
   -H "Authorization: Bearer sk-replace-with-grok-group-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json" \
@@ -96,7 +96,7 @@ curl -sS https://sorrycode.com/v1/videos/generations \
 Windows PowerShell：
 
 ```powershell
-curl.exe -sS https://sorrycode.com/v1/videos/generations `
+curl.exe -sS https://api.sorrycode.com/v1/videos/generations `
   -H "Authorization: Bearer sk-replace-with-grok-group-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json" `
@@ -137,7 +137,7 @@ curl.exe -sS https://sorrycode.com/v1/videos/generations `
 状态接口：
 
 ```text
-GET https://sorrycode.com/v1/videos/{request_id}
+GET https://api.sorrycode.com/v1/videos/{request_id}
 ```
 
 macOS / Linux：
@@ -150,7 +150,7 @@ TERMINAL=0
 for attempt in $(seq 1 60); do
   RESULT=$(curl -sS \
     -H "Authorization: Bearer sk-replace-with-grok-group-key" \
-    "https://sorrycode.com/v1/videos/$REQUEST_ID")
+    "https://api.sorrycode.com/v1/videos/$REQUEST_ID")
 
   STATUS=$(printf '%s' "$RESULT" | jq -r '.status')
   printf 'status=%s\n' "$STATUS"
@@ -185,7 +185,7 @@ $result = $null
 for ($attempt = 1; $attempt -le 60; $attempt++) {
   $result = curl.exe -sS `
     -H "Authorization: Bearer sk-replace-with-grok-group-key" `
-    "https://sorrycode.com/v1/videos/$requestId" | ConvertFrom-Json
+    "https://api.sorrycode.com/v1/videos/$requestId" | ConvertFrom-Json
   $result.status
 
   if ($result.status -in @("done", "failed", "expired")) {

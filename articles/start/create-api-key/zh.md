@@ -24,11 +24,10 @@ Key 要和工具使用的协议、目标模型及其分组权限匹配。需要�
 
 | Key 名称 | 选择的分组 | 用在哪里 |
 | --- | --- | --- |
-| `Codex` | 支持 Codex / OpenAI-compatible 的分组 | Codex |
+| `Codex` | 支持 Codex / OpenAI-compatible 和图片能力的分组 | Codex、GPT Image 2 API、SorryCode Image2 Skill |
 | `Claude Code` | 支持 Anthropic-compatible 的分组 | Claude Code |
 | `OpenCode` | 目标模型对应的分组 | OpenCode |
 | `Grok` | Grok 分组 | Grok Build、Grok 图片和 Grok 视频 |
-| `Image2` | 支持 `gpt-image-2` 的图片分组 | GPT Image 2 API、SorryCode Image2 Skill |
 
 余额仍然是同一份。分开创建，是为了之后看使用记录、切换分组、设置限额和排查问题更省心。
 
@@ -37,7 +36,7 @@ Key 要和工具使用的协议、目标模型及其分组权限匹配。需要�
 1. 打开 `https://sorrycode.com/login` 登录 SorryCode 控制台
 2. 在左侧菜单找到 `API 密钥`
 3. 点击创建密钥
-4. 名称写清楚用途，例如 `Codex`、`Claude Code`、`Grok`、`Image2`
+4. 名称写清楚用途，例如 `Codex`、`Claude Code` 或 `Grok`
 5. 选择分组
 6. 创建后复制密钥，并安全保存
 
@@ -59,7 +58,6 @@ Key 要和工具使用的协议、目标模型及其分组权限匹配。需要�
 Codex
 Claude Code
 Grok
-Image2
 测试请求
 ```
 
@@ -87,7 +85,7 @@ Image2
 一份余额，可以有多把 API Key。
 ```
 
-你可以给不同工具分别创建 key。比如 Codex 一把，Claude Code 一把，Grok 一把，Image2 一把。它们消耗的是同一份余额，但记录、分组和限额可以分开管理。
+你可以给不同工具分别创建 Key。比如 Codex 一把、Claude Code 一把、Grok 一把。SorryCode Image2 和 GPT Image 2 API 直接复用 Codex Key，不再单独创建图片 Key。它们消耗的是同一份余额，但记录、分组和限额仍可按主要工具管理。
 
 不要因为它们都以 `sk-...` 开头，就认为所有 Key 都可以互换。先检查 Key 所属分组是否开放目标模型和工具需要的协议；兼容时可以复用，不兼容时可能出现权限错误、模型不可用或错误的路由。
 
@@ -137,7 +135,7 @@ Image2
 - 设置额度限制
 - 禁用或删除不再使用的 key
 
-兼容的工具可以共用一把 Key；如果你希望记录、限额和排障彼此隔离，可以分开创建。`SorryCode Image2` 不走这里的一键安装入口，它会在自己的 Skill 页面说明如何保存 Image2 Key。
+兼容的工具可以共用一把 Key；如果你希望记录、限额和排障彼此隔离，可以分开创建。`SorryCode Image2` 会自动查找并复用当前 Codex Key，不需要额外保存图片 Key 或设置环境变量。
 
 ![API Key 列表里可以切换分组](./key-group-switch.png)
 

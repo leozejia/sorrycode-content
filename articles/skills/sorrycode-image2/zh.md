@@ -2,7 +2,7 @@
 title: SorryCode Image2
 slug: sorrycode-image2
 order: 2
-summary: 使用 gpt-image-2 生成或编辑图片，并保存 prompt、响应、诊断和图片文件。适合需要固定输出和可复现工作流的进阶任务。
+summary: 自动复用当前 SorryCode Codex Key，通过 gpt-image-2-all 或 gpt-image-2 生成和编辑图片，并保存可复现的项目文件。
 section: skills
 section_title: Skills
 section_order: 15
@@ -18,9 +18,9 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 自然语言生图、Images API 和本 Skill 的完整分流见
 [模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)。
 
-`SorryCode Image2` 适合需要固定输出和可复现过程的图片任务。它会检查 API Key，调用图片接口，并把 prompt、响应、诊断和图片文件保存到项目中。
+`SorryCode Image2` 适合需要固定输出和可复现过程的图片任务。Agent 会自动查找当前 SorryCode Codex Key，调用图片接口，并把 prompt、响应、诊断和图片文件保存到项目中。
 
-当前只支持 `gpt-image-2`。
+标准尺寸默认使用 `gpt-image-2-all`，2K 和 4K 尺寸默认使用 `gpt-image-2`。
 
 > **交给 Agent 配置**
 >
@@ -58,35 +58,22 @@ npx skills add linxiverse/sorrycode-image2 -a claude-code -g -y
 
 卸载前先运行 `npx skills list --global` 确认名称，再执行 `npx skills remove --global sorrycode-image2`。
 
-<h2 id="api-key">设置图片 API Key</h2>
+<h2 id="api-key">复用 Codex Key</h2>
 
-先在 [开始使用 / 创建 API Key](/docs/start/create-api-key) 创建或选择一把分配到支持 `gpt-image-2` 的图片分组的 Key。只有在需要把 Image2 的用量、限额或凭证轮换单独管理时，才专门创建一把 Key。
+先按 [模型与工作台 / Codex](/docs/runtime/codex) 完成 SorryCode Codex 接入。Skill 会从当前 Codex 配置中确认活动的 SorryCode provider，并自动读取它正在使用的 Key。你不需要创建图片专用 Key，也不需要设置环境变量。
 
-Skill 读取 `SORRYCODE_API_KEY`。这是 `SorryCode Image2` 自己约定的配置名，不代表所有 SorryCode 工具都共用这把 Key。公开 REST API 示例会直接让你填写对应分组 Key；只有本 Skill 需要设置这个环境变量。
+在 Claude Code 中使用这个 Skill 时，同一台机器也要先完成 SorryCode Codex 接入。Agent 仍会读取这份 Codex 配置，不会建立第二套凭据。
 
-在本机终端运行下面对应系统的命令。不要把真实 Key 发进 Agent 对话、写入项目文件或放进截图。
+如果 Agent 找不到 Key，请回到 `https://sorrycode.com/keys`，选择准备给 Codex 使用的 Key，点击「接入工具」，再执行一次 Codex 接入命令。不要把真实 Key 发进 Agent 对话、写入项目文件或放进截图。
 
-Windows PowerShell：
-
-```powershell
-[Environment]::SetEnvironmentVariable("SORRYCODE_API_KEY", "你的 sk-...", "User")
-```
-
-macOS / Linux：
-
-```bash
-echo "export SORRYCODE_API_KEY='你的 sk-...'" >> ~/.zshrc
-source ~/.zshrc
-```
-
-这个变量只供 SorryCode Image2 使用，不会修改 Codex 或 Grok 的模型配置。
+图片请求固定发送到 `https://api.sorrycode.com/v1`。
 
 <h2 id="first-prompt">第一句可以说什么</h2>
 
 生成图片：
 
 ```text
-请用 SorryCode Image2 生成一张中文播客封面，主题是 AI 编程，新手友好，暖色调，干净排版。使用 gpt-image-2，保存到 outputs/images/first-cover/。
+请用 SorryCode Image2 生成一张中文播客封面，主题是 AI 编程，新手友好，暖色调，干净排版。保存到 outputs/images/first-cover/。
 ```
 
 编辑图片：
@@ -120,16 +107,16 @@ outputs/images/你的任务名/
 
 <h2 id="common-issues">常见问题</h2>
 
-- 缺少 `SORRYCODE_API_KEY`：先创建 Image2 Key，再重新打开工作台或终端
-- `401`：Image2 Key 不正确或没有正确设置
-- `403`：确认这把 Key 使用支持 `gpt-image-2` 的图片分组，而不是 Grok 分组
-- `400`：检查输入图片、prompt、尺寸和模型；当前模型必须是 `gpt-image-2`
-- `524`：降低图片尺寸、缩短 prompt，或稍后重试
-- `503 No available compatible accounts`：当前 API Key 暂时无法使用图片模型，请检查权限或稍后重试
+- 找不到 Key：在 API Key 页面重新执行「接入工具 / Codex」，然后再次运行 Skill
+- `401`：当前 Codex Key 已失效，请重新接入 Codex
+- `403`：当前 Codex Key 所属分组没有开放图片能力
+- `400`：检查输入图片、prompt、尺寸和模型
+- 请求中断或超时：不要立即重复发送付费请求，先查看诊断文件并确认上一条请求的状态
+- `503 No available compatible accounts`：当前 Codex 分组暂时没有可用的图片账号，请稍后重试
 
 <h2 id="more-aigc">更多 AIGC 需求</h2>
 
-SorryCode Image2 只负责 `gpt-image-2` 的生成和编辑。需要更多 AIGC 模型、素材生产或专门的视觉资产工作流时，请使用 [SorryAssets](https://sorryassets.com)。
+SorryCode Image2 负责 `gpt-image-2-all` 和 `gpt-image-2` 的生成与编辑。需要更多 AIGC 模型、素材生产或专门的视觉资产工作流时，请使用 [SorryAssets](https://sorryassets.com)。
 
 <h2 id="next">下一步</h2>
 

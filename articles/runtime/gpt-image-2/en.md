@@ -2,7 +2,7 @@
 title: GPT Image 2
 slug: gpt-image-2
 order: 2
-summary: Generate images with natural language in Codex, or use gpt-image-2 through the SorryCode Images API and SorryCode Image2 Skill.
+summary: Generate images in Codex, or reuse the same Codex key with gpt-image-2-all and gpt-image-2 through the Images API and SorryCode Image2.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -13,7 +13,7 @@ group_order: 10
 
 # GPT Image 2
 
-`gpt-image-2` is the main OpenAI image model on SorryCode. Choose the entry point that matches your task:
+SorryCode provides `gpt-image-2-all` and `gpt-image-2`. Standard sizes use `gpt-image-2-all` by default, while 2K and 4K sizes use `gpt-image-2`. Choose the entry point that matches your task:
 
 | Need | Recommended entry |
 | --- | --- |
@@ -48,17 +48,17 @@ You do not need to write model parameters for this path. Codex handles the image
 The developer endpoint is:
 
 ```text
-POST https://sorrycode.com/v1/images/generations
+POST https://api.sorrycode.com/v1/images/generations
 ```
 
-Create or select an Image2 key assigned to an image group that supports `gpt-image-2`. Do not use a Grok-group key. The API example on this page puts the key directly in the request and does not require an environment variable.
+Use the same key already connected to Codex. You do not need a separate image key. A raw API request still places that Codex key in the `Authorization` header, but it does not require an environment variable.
 
 Create `request.json` first. macOS / Linux:
 
 ```bash
 cat > request.json <<'JSON'
 {
-  "model": "gpt-image-2",
+  "model": "gpt-image-2-all",
   "prompt": "A small red paper boat floating on a calm lake",
   "size": "1024x1024",
   "n": 1,
@@ -74,7 +74,7 @@ Windows PowerShell:
 ```powershell
 $json = @'
 {
-  "model": "gpt-image-2",
+  "model": "gpt-image-2-all",
   "prompt": "A small red paper boat floating on a calm lake",
   "size": "1024x1024",
   "n": 1,
@@ -93,11 +93,11 @@ $json = @'
 
 Send the request:
 
-Replace `sk-replace-with-image2-group-key` with your Image2 key.
+Replace `sk-replace-with-codex-key` with the same key already connected to Codex.
 
 ```bash
-curl -N https://sorrycode.com/v1/images/generations \
-  -H "Authorization: Bearer sk-replace-with-image2-group-key" \
+curl -N https://api.sorrycode.com/v1/images/generations \
+  -H "Authorization: Bearer sk-replace-with-codex-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json"
 ```
@@ -105,8 +105,8 @@ curl -N https://sorrycode.com/v1/images/generations \
 On Windows PowerShell, use `curl.exe`:
 
 ```powershell
-curl.exe -N https://sorrycode.com/v1/images/generations `
-  -H "Authorization: Bearer sk-replace-with-image2-group-key" `
+curl.exe -N https://api.sorrycode.com/v1/images/generations `
+  -H "Authorization: Bearer sk-replace-with-codex-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json"
 ```
@@ -115,7 +115,7 @@ Image generation can take much longer than text. Keep `stream: true` and `partia
 
 <h2 id="skill">Use the SorryCode Image2 Skill</h2>
 
-[SorryCode Image2](/docs/skills/sorrycode-image2) uses only `gpt-image-2`. It is the better path when you need to:
+[SorryCode Image2](/docs/skills/sorrycode-image2) automatically reuses the current SorryCode Codex key and selects `gpt-image-2-all` or `gpt-image-2` by size. It is the better path when you need to:
 
 - edit a local PNG, JPEG, or WebP file;
 - choose an exact output folder and size;
@@ -125,15 +125,15 @@ Image generation can take much longer than text. Keep `stream: true` and `partia
 Give this instruction to Codex or Claude Code:
 
 ```text
-Install SorryCode Image2 and configure the Image2 key as shown on the Skill page. Then use gpt-image-2 to generate a 1024x1024 image and save it to outputs/images/first-run/.
+Install SorryCode Image2, reuse the current SorryCode Codex key automatically, and generate a 1024x1024 image in outputs/images/first-run/.
 ```
 
 <h2 id="errors">Common Issues</h2>
 
 - `401`: the API key is missing, wrong, or not sent as a Bearer token.
-- `403`: image generation is not enabled for the API key's group.
+- `403`: image generation is not enabled for the current Codex key's group.
 - `400`: check the model, prompt, size, and image input format.
-- `503 No available compatible accounts`: the group has no compatible image account available right now.
+- `503 No available compatible accounts`: the current Codex group has no compatible image account available right now.
 - No result for a long time: keep streaming enabled, shorten the prompt, or retry at `1024x1024`.
 
 <h2 id="next">Next Step</h2>

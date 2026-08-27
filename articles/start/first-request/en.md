@@ -78,7 +78,7 @@ Request URL:
 
 `{{ANTHROPIC_BASE_URL}}/v1/messages`
 
-Choose a key assigned to an Anthropic-compatible group and replace the placeholder below. Do not use a Grok or Image2 key for this check.
+Choose a key assigned to an Anthropic-compatible group and replace the placeholder below. Do not use a Grok or Codex key for this check.
 
 ### macOS / Linux
 

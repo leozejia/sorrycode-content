@@ -27,7 +27,7 @@ Grok 不属于 GPT 系列，但可以在同一个 ChatGPT / Codex 工作台中�
 
 - 使用 `grok-4.6` 时，选择包含该模型的 Grok 分组 Key
 - 使用 DeepSeek 时，选择包含目标 DeepSeek 模型的分组 Key
-- 不要拿 Image2 Key 调用 Grok，也不要仅凭 Key 都以 `sk-` 开头就认为可以互换
+- SorryCode Image2 复用 Codex Key；Grok 仍使用 Grok 分组 Key，不要仅凭 Key 都以 `sk-` 开头就认为可以互换
 
 如果当前 ChatGPT / Codex 已经接入 SorryCode，但保存的是另一分组的 Key，请在目标 Key 右侧点击`接入工具`，选择 `Codex` 和当前系统，再运行生成的命令。安装器会保存这把 Key，不需要设置公开环境变量。以后切回另一分组时，用对应 Key 重新生成一次接入命令即可。
 
