@@ -178,17 +178,17 @@ This confirms two things early:
 - the runtime opened the correct project folder
 - it can read the project and respond normally
 
-<h2 id="generate-images">Generate Images Directly in Codex App</h2>
+<h2 id="generate-images">Generate Images in Codex App</h2>
 
-After setup, you do not need to install an image Skill first. Say this directly in Codex App:
+Codex can generate an image directly only when the current session exposes an image-generation tool. That tool may be unavailable with a custom SorryCode provider, and prompting cannot restore a missing tool.
+
+For a reliable path, install [SorryCode Image2](/docs/skills/sorrycode-image2), then say this in Codex App:
 
 ```text
-Generate a clean warm podcast cover about AI coding for beginners. Keep the layout simple and leave enough room for a title.
+Use SorryCode Image2 to generate a clean warm podcast cover about AI coding for beginners. Keep the layout simple and leave enough room for a title.
 ```
 
-Continue the conversation to adjust composition, aspect ratio, colors, or title space.
-
-See [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2) for the full split between natural-language image generation in Codex, the explicit Images API, and local image workflows. Use [Skills / SorryCode Image2](/docs/skills/sorrycode-image2) when you need to edit a local image, choose a fixed output folder, or save prompts and diagnostics.
+The Skill switches compatible models when a retry is safe and verifies that an image was actually saved. Continue the conversation to adjust composition, aspect ratio, colors, or title space. Developers can also call the Images API directly. See [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2) for both paths.
 
 <h2 id="install-skills-with-agent">Next: Let Codex Manage Skills</h2>
 

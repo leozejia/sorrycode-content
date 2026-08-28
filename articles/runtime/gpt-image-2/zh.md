@@ -2,7 +2,7 @@
 title: GPT Image 2
 slug: gpt-image-2
 order: 2
-summary: 在 Codex 中直接生图，或复用同一把 Codex Key，通过 Images API 和 SorryCode Image2 使用 gpt-image-2-all 与 gpt-image-2。
+summary: 通过 SorryCode Image2 或 Images API 使用 gpt-image-2-all 与 gpt-image-2；Codex 内置生图以当前会话实际提供的工具为准。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -17,19 +17,19 @@ SorryCode 当前提供 `gpt-image-2-all` 和 `gpt-image-2`。标准尺寸默认�
 
 | 需求 | 推荐入口 |
 | --- | --- |
-| 快速生成、继续用自然语言修改 | Codex App 对话 |
+| 在 Agent 中稳定生成和修改 | SorryCode Image2 Skill |
 | 自己开发程序或接入工作流 | Images API |
-| 编辑本地图片、固定输出目录、保存诊断 | SorryCode Image2 Skill |
+| 当前 Codex 会话已提供图片生成工具 | Codex App 对话 |
 
-第一次使用时，优先在 Codex App 里直接说需求。
+第一次使用时，优先安装 SorryCode Image2。
 
 > **交给 Agent 配置**
 >
 > 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
 
-<h2 id="codex">在 Codex 中直接生成</h2>
+<h2 id="codex">Codex 内置生图</h2>
 
-完成 [Codex 接入](/docs/runtime/codex) 后，直接说：
+如果当前 Codex 会话已经提供图片生成工具，可以直接说：
 
 ```text
 帮我生成一张中文播客封面，主题是 AI 编程，新手友好，暖色调，干净排版。
@@ -41,7 +41,8 @@ SorryCode 当前提供 `gpt-image-2-all` 和 `gpt-image-2`。标准尺寸默认�
 把标题区域留得更宽一些，减少装饰元素，改成横版。
 ```
 
-这条路径不需要你手写模型参数。Codex 会在当前对话中完成图片调用和迭代。
+这条路径不需要手写模型参数。不过，自定义 provider 下不一定会提供该工具。若 Codex 只加载了
+生图说明，却没有可调用的图片工具，换提示词也不会解决，请改用本页的 SorryCode Image2 Skill。
 
 <h2 id="api">通过 Images API 生成</h2>
 
@@ -116,7 +117,8 @@ curl.exe -N https://api.sorrycode.com/v1/images/generations `
 
 <h2 id="skill">使用 SorryCode Image2 Skill</h2>
 
-[SorryCode Image2](/docs/skills/sorrycode-image2) 会自动复用当前 SorryCode Codex Key，并按尺寸在 `gpt-image-2-all` 和 `gpt-image-2` 之间选择，适合：
+[SorryCode Image2](/docs/skills/sorrycode-image2) 会自动复用当前 SorryCode Codex Key。标准尺寸
+先尝试 `gpt-image-2-all`，明确失败且可以安全重试时再尝试 `gpt-image-2`，适合：
 
 - 编辑本地 PNG、JPEG 或 WebP；
 - 固定输出目录和尺寸；

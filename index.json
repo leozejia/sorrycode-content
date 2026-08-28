@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-08-26",
+  "updatedAt": "2026-08-28",
   "articles": [
     {
       "type": "article",
@@ -421,7 +421,7 @@
       "title": "ChatGPT / Codex",
       "summary": "Set up ChatGPT / Codex with a SorryCode API key, then start in the desktop app or Codex CLI.",
       "order": 1,
-      "updatedAt": "2026-08-17",
+      "updatedAt": "2026-08-28",
       "markdownPath": "articles/runtime/codex/en.md",
       "assetBaseUrl": "articles/runtime/codex/",
       "route": "/docs/runtime/codex"
@@ -436,7 +436,7 @@
       "title": "ChatGPT / Codex",
       "summary": "先认识 ChatGPT / Codex，再准备 API Key，完成一键安装，然后直接开始用。",
       "order": 1,
-      "updatedAt": "2026-08-17",
+      "updatedAt": "2026-08-28",
       "markdownPath": "articles/runtime/codex/zh.md",
       "assetBaseUrl": "articles/runtime/codex/",
       "route": "/docs/runtime/codex"
@@ -779,9 +779,9 @@
       "slug": "gpt-image-2",
       "locale": "en",
       "title": "GPT Image 2",
-      "summary": "Generate images with natural language in Codex, or use gpt-image-2 through the SorryCode Images API and SorryCode Image2 Skill.",
+      "summary": "Use gpt-image-2-all and gpt-image-2 through SorryCode Image2 or the Images API; built-in Codex generation depends on the tools exposed in the current session.",
       "order": 2,
-      "updatedAt": "2026-07-14",
+      "updatedAt": "2026-08-28",
       "markdownPath": "articles/runtime/gpt-image-2/en.md",
       "assetBaseUrl": "articles/runtime/gpt-image-2/",
       "route": "/docs/runtime/gpt-image-2"
@@ -794,9 +794,9 @@
       "slug": "gpt-image-2",
       "locale": "zh",
       "title": "GPT Image 2",
-      "summary": "在 Codex 中直接用自然语言生图，或通过 SorryCode Images API 和 SorryCode Image2 Skill 使用 gpt-image-2。",
+      "summary": "通过 SorryCode Image2 或 Images API 使用 gpt-image-2-all 与 gpt-image-2；Codex 内置生图以当前会话实际提供的工具为准。",
       "order": 2,
-      "updatedAt": "2026-07-14",
+      "updatedAt": "2026-08-28",
       "markdownPath": "articles/runtime/gpt-image-2/zh.md",
       "assetBaseUrl": "articles/runtime/gpt-image-2/",
       "route": "/docs/runtime/gpt-image-2"
@@ -1025,7 +1025,7 @@
       "title": "SorryCode Image2",
       "summary": "Generate or edit images with gpt-image-2 while saving prompts, responses, diagnostics, and image files for reproducible project workflows.",
       "order": 2,
-      "updatedAt": "2026-07-14",
+      "updatedAt": "2026-08-28",
       "markdownPath": "articles/skills/sorrycode-image2/en.md",
       "assetBaseUrl": "articles/skills/sorrycode-image2/",
       "route": "/docs/skills/sorrycode-image2",
@@ -1041,7 +1041,7 @@
       "title": "SorryCode Image2",
       "summary": "使用 gpt-image-2 生成或编辑图片，并保存 prompt、响应、诊断和图片文件。适合需要固定输出和可复现工作流的进阶任务。",
       "order": 2,
-      "updatedAt": "2026-07-14",
+      "updatedAt": "2026-08-28",
       "markdownPath": "articles/skills/sorrycode-image2/zh.md",
       "assetBaseUrl": "articles/skills/sorrycode-image2/",
       "route": "/docs/skills/sorrycode-image2",

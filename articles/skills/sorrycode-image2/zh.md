@@ -14,13 +14,13 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 
 # SorryCode Image2
 
-如果只是想快速生成一张图片，先在 `Codex App` 里直接说出需求，不需要安装 Skill。
-自然语言生图、Images API 和本 Skill 的完整分流见
+Codex 内置图片工具是否可用，取决于当前会话实际提供的工具。使用 SorryCode 自定义
+provider 时，稳定做法是安装本 Skill。Images API 和 Codex 内置生图的区别见
 [模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)。
 
 `SorryCode Image2` 适合需要固定输出和可复现过程的图片任务。Agent 会自动查找当前 SorryCode Codex Key，调用图片接口，并把 prompt、响应、诊断和图片文件保存到项目中。
 
-标准尺寸默认使用 `gpt-image-2-all`，2K 和 4K 尺寸默认使用 `gpt-image-2`。
+标准尺寸先尝试 `gpt-image-2-all`，明确失败且可以安全重试时再尝试 `gpt-image-2`。2K 和 4K 尺寸使用 `gpt-image-2`。
 
 > **交给 Agent 配置**
 >
@@ -35,7 +35,7 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 - 保存 `prompt.txt`、`response.json` 或 `events.ndjson`
 - 在项目里重复执行同一套图片流程
 
-如果只是第一次生图或快速改一版，直接在 Codex App 中对话更简单。
+当前 Codex 会话明确提供内置图片工具时，也可以直接在对话中生图。
 
 <h2 id="one-click-install">安装</h2>
 

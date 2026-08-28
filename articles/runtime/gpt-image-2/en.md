@@ -2,7 +2,7 @@
 title: GPT Image 2
 slug: gpt-image-2
 order: 2
-summary: Generate images in Codex, or reuse the same Codex key with gpt-image-2-all and gpt-image-2 through the Images API and SorryCode Image2.
+summary: Use gpt-image-2-all and gpt-image-2 through SorryCode Image2 or the Images API; built-in Codex generation depends on the tools exposed in the current session.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -17,19 +17,19 @@ SorryCode provides `gpt-image-2-all` and `gpt-image-2`. Standard sizes use `gpt-
 
 | Need | Recommended entry |
 | --- | --- |
-| Generate quickly and revise with natural language | Codex App conversation |
+| Generate and revise reliably in an agent | SorryCode Image2 Skill |
 | Build your own integration or workflow | Images API |
-| Edit local images, fix output folders, save diagnostics | SorryCode Image2 Skill |
+| The current Codex session already exposes image generation | Codex App conversation |
 
-For a first run, ask for the image directly in Codex App.
+For a first run, install SorryCode Image2.
 
 > **Let Your Agent Configure It**
 >
 > Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
 
-<h2 id="codex">Generate Directly in Codex</h2>
+<h2 id="codex">Built-in Image Generation in Codex</h2>
 
-After completing [Codex setup](/docs/runtime/codex), say:
+If the current Codex session exposes an image-generation tool, say:
 
 ```text
 Generate a clean warm podcast cover about AI coding for beginners. Leave enough room for a title.
@@ -41,7 +41,7 @@ Then give a concrete revision:
 Make the title area wider, remove some decoration, and change it to a landscape layout.
 ```
 
-You do not need to write model parameters for this path. Codex handles the image call inside the conversation.
+You do not need to write model parameters for this path. A custom provider may not expose the required tool, however. If Codex loads image instructions but has no callable image tool, changing the prompt will not fix it. Use SorryCode Image2 below.
 
 <h2 id="api">Generate through the Images API</h2>
 
@@ -115,7 +115,7 @@ Image generation can take much longer than text. Keep `stream: true` and `partia
 
 <h2 id="skill">Use the SorryCode Image2 Skill</h2>
 
-[SorryCode Image2](/docs/skills/sorrycode-image2) automatically reuses the current SorryCode Codex key and selects `gpt-image-2-all` or `gpt-image-2` by size. It is the better path when you need to:
+[SorryCode Image2](/docs/skills/sorrycode-image2) automatically reuses the current SorryCode Codex key. For standard sizes, it tries `gpt-image-2-all` first and then `gpt-image-2` when the first result is an explicit failure and retrying is safe. Use it when you need to:
 
 - edit a local PNG, JPEG, or WebP file;
 - choose an exact output folder and size;

@@ -14,11 +14,11 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 
 # SorryCode Image2
 
-If you only need a quick image, ask for it directly in `Codex App`. You do not need to install a Skill first. See [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2) for the full split between natural-language generation, the Images API, and this Skill.
+Built-in image generation in Codex depends on the tools exposed by the current session. With a custom SorryCode provider, installing this Skill is the reliable path. See [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2) for the difference between this Skill, the Images API, and built-in Codex generation.
 
 `SorryCode Image2` is for image tasks that need fixed outputs and a reproducible process. The agent finds the current SorryCode Codex key, calls the image endpoint, and saves the prompt, response, diagnostics, and image files inside the project.
 
-Standard sizes use `gpt-image-2-all` by default. 2K and 4K sizes use `gpt-image-2`.
+For standard sizes, the Skill tries `gpt-image-2-all` first and then `gpt-image-2` when the first result is an explicit failure and retrying is safe. 2K and 4K sizes use `gpt-image-2`.
 
 > **Let Your Agent Configure It**
 >
@@ -33,7 +33,7 @@ Install it when you need to:
 - save `prompt.txt`, `response.json`, or `events.ndjson`
 - repeat the same image workflow inside a project
 
-For a first image or a quick revision, a normal Codex App conversation is simpler.
+You can also generate directly in Codex when the current session explicitly exposes a built-in image tool.
 
 <h2 id="one-click-install">Install</h2>
 
