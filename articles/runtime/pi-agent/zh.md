@@ -2,7 +2,7 @@
 title: Pi Agent
 slug: pi-agent
 order: 1
-summary: 安装 Pi Agent，接入 SorryCode 中支持 Responses 的模型，并完成文本和文件工具验证。
+summary: 安装 Pi Agent，通过 Responses 或 Anthropic Messages 接入 SorryCode 模型，并完成文本和文件工具验证。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -13,7 +13,7 @@ group_order: 23
 
 # Pi Agent
 
-Pi 是 [earendil-works/pi](https://github.com/earendil-works/pi) 提供的终端 Coding Agent，可以读项目、改文件和执行命令。Pi 不绑定某个模型，也不只支持一个模型。你可以在同一份配置里接入多把 Key、多个 provider、多个模型，比如 GPT、Gemini、Grok，以及 DeepSeek、GLM、Kimi、Qwen 等国产模型。
+Pi 是 [earendil-works/pi](https://github.com/earendil-works/pi) 提供的终端 Coding Agent，可以读项目、改文件和执行命令。Pi 不绑定某个模型，也不只支持一个模型。你可以在同一份配置里接入多把 Key、多个 provider、多个模型，比如 GPT、Claude、Gemini、Grok，以及 DeepSeek、GLM、Kimi、Qwen 等国产模型。
 
 这里说的是 [pi.dev](https://pi.dev/) 对应的 Pi，不是其他同名项目。
 
@@ -23,7 +23,7 @@ Pi 是 [earendil-works/pi](https://github.com/earendil-works/pi) 提供的终端
 
 <h2 id="prepare-key">准备 API Key</h2>
 
-Pi 通过 SorryCode 的 OpenAI-compatible Responses API 调用模型。在 [SorryCode API Key 页面](https://sorrycode.com/keys) 为每个模型分组准备 Key，例如 GPT 分组、Gemini 分组、Grok 分组、国产模型分组。
+Pi 可以通过 SorryCode 的 Responses API 或 Anthropic Messages API 调用模型。在 [SorryCode API Key 页面](https://sorrycode.com/keys) 为每个模型分组准备 Key，例如 GPT、Claude、Gemini、Grok 或国产模型分组。
 
 不同 Key 属于不同分组，看到的模型也不同。先查询每把 Key 实际开放的模型：
 
@@ -44,7 +44,7 @@ curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <你的 Sorry
 - 未返回但可路由的别名只用于诊断，不写入 `models.json`。同一模型的别名和规范 ID 不得同时配置。
 - 每把 Key 单独使用一个 provider 名。Pi 的 `/login` 按 provider 保存 Key，重复登录同一个 provider 会覆盖旧 Key。
 
-例如 Gemini 分组返回 `gemini-3.7-flash`，就用 Gemini 分组的 Key 配 `gemini-3.7-flash`；Grok 分组返回 `grok-4.6`，就用 Grok 分组的 Key 配 `grok-4.6`。
+例如 Claude 分组返回 `claude-opus-5` 和 `claude-opus-4-6`，就用 Claude 分组的 Key 配这两个模型；Grok 分组返回 `grok-4.6`，就用 Grok 分组的 Key 配 `grok-4.6`。
 
 <h2 id="install">安装 Pi</h2>
 
@@ -116,6 +116,28 @@ notepad "$HOME\.pi\agent\models.json"
         }
       ]
     },
+    "sorrycode-claude": {
+      "baseUrl": "https://sorrycode.com",
+      "api": "anthropic-messages",
+      "models": [
+        {
+          "id": "claude-opus-5",
+          "name": "Claude Opus 5",
+          "contextWindow": 200000,
+          "maxTokens": 16384,
+          "input": ["text"],
+          "reasoning": false
+        },
+        {
+          "id": "claude-opus-4-6",
+          "name": "Claude Opus 4.6",
+          "contextWindow": 200000,
+          "maxTokens": 16384,
+          "input": ["text"],
+          "reasoning": false
+        }
+      ]
+    },
     "sorrycode-cn": {
       "baseUrl": "https://sorrycode.com/v1",
       "api": "openai-responses",
@@ -168,31 +190,32 @@ pi
 
 ```text
 /login sorrycode-gpt
+/login sorrycode-claude
 /login sorrycode-cn
 ```
 
-示例只列出上面的两个 provider。实际使用时，为每个已配置 provider 执行一次 `/login`，并粘贴对应分组的 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
+示例只列出上面的三个 provider。实际使用时，为每个已配置 provider 执行一次 `/login`，并粘贴对应分组的 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
 
-然后输入 `/model`，选择 provider 和模型，例如 `sorrycode-gpt/gpt-5.6-sol`。
+然后输入 `/model`，选择 provider 和模型，例如 `sorrycode-claude/claude-opus-5`。
 
 要确认配置和认证都正确，先运行：
 
 ```bash
 pi --list-models
-pi auth check --provider sorrycode-gpt --model gpt-5.6-sol --json
+pi auth check --provider sorrycode-claude --model claude-opus-5 --json
 ```
 
 `--list-models` 能看到你配置的所有模型；`auth check` 返回 `ready` 表示该 provider 已保存可用 Key。
 
 <h2 id="verify">验证文本和工具调用</h2>
 
-用你当前能用的任意模型验证最小文本响应。下面以 `gpt-5.6-sol` 为例：
+用你当前能用的任意模型验证最小文本响应。下面以 `claude-opus-5` 为例：
 
 ```bash
-pi --provider sorrycode-gpt --model gpt-5.6-sol --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
+pi --provider sorrycode-claude --model claude-opus-5 --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
 ```
 
-看到 `PI_SORRYCODE_OK` 后，在一个空测试目录中验证文件工具：
+看到 `PI_SORRYCODE_OK` 后，可以用当前支持工具调用的模型在空测试目录中验证文件工具。下面继续使用 GPT 示例：
 
 ```bash
 mkdir pi-sorrycode-test

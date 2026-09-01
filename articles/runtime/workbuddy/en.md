@@ -2,7 +2,7 @@
 title: WorkBuddy
 slug: workbuddy
 order: 1
-summary: Install WorkBuddy, connect a SorryCode custom model, and complete a first local file task with Default Permission.
+summary: Install WorkBuddy, connect a SorryCode custom chat model such as Claude Opus, and complete a first local file task with Default Permission.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -62,6 +62,17 @@ Use these values:
 | Input / Output | keep the provider defaults |
 
 The endpoint must include the complete `/v1/chat/completions` path. After saving, the model appears in the `Custom Models` group.
+
+<h2 id="claude-opus">Use Claude Opus</h2>
+
+WorkBuddy can use `claude-opus-5` and `claude-opus-4-6` through the same custom-model flow. First confirm that both IDs appear in `/v1/models` for the Claude-group key, then add the two models separately:
+
+- use `https://sorrycode.com/v1/chat/completions` for both endpoints
+- use the same Claude-group key for both entries
+- enter `claude-opus-5` and `claude-opus-4-6` as separate model names
+- enable Tool Calling and disable Custom Protocol
+
+Save each model separately. Both will then appear under `Custom Models`. This guide covers only the settings required for text and tool calls. Image Input and Thinking Mode need separate verification against the current WorkBuddy version and model-group capabilities.
 
 <h2 id="add-more-models">Add More Models</h2>
 

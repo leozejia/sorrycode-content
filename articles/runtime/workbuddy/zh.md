@@ -2,7 +2,7 @@
 title: WorkBuddy
 slug: workbuddy
 order: 1
-summary: 安装 WorkBuddy，接入 SorryCode 自定义模型，并在默认权限下完成第一个本地文件任务。
+summary: 安装 WorkBuddy，接入包括 Claude Opus 在内的 SorryCode 自定义聊天模型，并在默认权限下完成第一个本地文件任务。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -62,6 +62,17 @@ curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <WORKBUDDY_AP
 | 输入 / 输出 | 保持提供商默认值 |
 
 这里需要填写完整的 `/v1/chat/completions` 地址。保存后，新模型会出现在“自定义模型”分组中。
+
+<h2 id="claude-opus">使用 Claude Opus</h2>
+
+WorkBuddy 可以通过同一套自定义模型配置使用 `claude-opus-5` 和 `claude-opus-4-6`。先确认 Claude 分组 Key 的 `/v1/models` 返回这两个 ID，再分别添加两个模型：
+
+- 接口地址都使用 `https://sorrycode.com/v1/chat/completions`
+- API Key 都使用同一把 Claude 分组 Key
+- 模型名称分别填写 `claude-opus-5` 和 `claude-opus-4-6`
+- “工具调用”开启，“自定义协议”关闭
+
+两个模型需要分别保存，之后会同时出现在“自定义模型”分组中。本页只说明文本和工具调用所需的配置，图片输入和思考模式需要按当前 WorkBuddy 版本与分组能力另行验证。
 
 <h2 id="add-more-models">添加更多模型</h2>
 

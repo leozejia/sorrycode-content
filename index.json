@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-08-28",
+  "updatedAt": "2026-09-01",
   "articles": [
     {
       "type": "article",
@@ -629,9 +629,9 @@
       "slug": "dsh",
       "locale": "en",
       "title": "DSH",
-      "summary": "Start the DeepSeek Harness Web UI, connect a custom Responses provider to SorryCode, and send the first model request.",
+      "summary": "Start the DeepSeek Harness Web UI, connect SorryCode models through Responses or Anthropic Messages, and send the first request.",
       "order": 1,
-      "updatedAt": "2026-08-20",
+      "updatedAt": "2026-09-01",
       "markdownPath": "articles/runtime/dsh/en.md",
       "assetBaseUrl": "articles/runtime/dsh/",
       "route": "/docs/runtime/dsh"
@@ -644,9 +644,9 @@
       "slug": "dsh",
       "locale": "zh",
       "title": "DSH",
-      "summary": "启动 DeepSeek Harness Web UI，通过自定义 Responses 提供方接入 SorryCode，并完成首条模型请求。",
+      "summary": "启动 DeepSeek Harness Web UI，通过 Responses 或 Anthropic Messages 接入 SorryCode 模型，并完成首条请求。",
       "order": 1,
-      "updatedAt": "2026-08-20",
+      "updatedAt": "2026-09-01",
       "markdownPath": "articles/runtime/dsh/zh.md",
       "assetBaseUrl": "articles/runtime/dsh/",
       "route": "/docs/runtime/dsh"
@@ -659,9 +659,9 @@
       "slug": "pi-agent",
       "locale": "en",
       "title": "Pi Agent",
-      "summary": "Install Pi Agent, connect it to a Responses-compatible SorryCode model, and verify both text and file tools.",
+      "summary": "Install Pi Agent, connect SorryCode models through Responses or Anthropic Messages, and verify text and file tools.",
       "order": 1,
-      "updatedAt": "2026-08-20",
+      "updatedAt": "2026-09-01",
       "markdownPath": "articles/runtime/pi-agent/en.md",
       "assetBaseUrl": "articles/runtime/pi-agent/",
       "route": "/docs/runtime/pi-agent"
@@ -674,9 +674,9 @@
       "slug": "pi-agent",
       "locale": "zh",
       "title": "Pi Agent",
-      "summary": "安装 Pi Agent，接入 SorryCode 中支持 Responses 的模型，并完成文本和文件工具验证。",
+      "summary": "安装 Pi Agent，通过 Responses 或 Anthropic Messages 接入 SorryCode 模型，并完成文本和文件工具验证。",
       "order": 1,
-      "updatedAt": "2026-08-20",
+      "updatedAt": "2026-09-01",
       "markdownPath": "articles/runtime/pi-agent/zh.md",
       "assetBaseUrl": "articles/runtime/pi-agent/",
       "route": "/docs/runtime/pi-agent"
@@ -704,9 +704,9 @@
       "slug": "workbuddy",
       "locale": "en",
       "title": "WorkBuddy",
-      "summary": "Install WorkBuddy, connect a SorryCode custom model, and complete a first local file task with Default Permission.",
+      "summary": "Install WorkBuddy, connect a SorryCode custom chat model such as Claude Opus, and complete a first local file task with Default Permission.",
       "order": 1,
-      "updatedAt": "2026-08-05",
+      "updatedAt": "2026-09-01",
       "markdownPath": "articles/runtime/workbuddy/en.md",
       "assetBaseUrl": "articles/runtime/workbuddy/",
       "route": "/docs/runtime/workbuddy"
@@ -719,9 +719,9 @@
       "slug": "workbuddy",
       "locale": "zh",
       "title": "WorkBuddy",
-      "summary": "安装 WorkBuddy，接入 SorryCode 自定义模型，并在默认权限下完成第一个本地文件任务。",
+      "summary": "安装 WorkBuddy，接入包括 Claude Opus 在内的 SorryCode 自定义聊天模型，并在默认权限下完成第一个本地文件任务。",
       "order": 1,
-      "updatedAt": "2026-08-05",
+      "updatedAt": "2026-09-01",
       "markdownPath": "articles/runtime/workbuddy/zh.md",
       "assetBaseUrl": "articles/runtime/workbuddy/",
       "route": "/docs/runtime/workbuddy"

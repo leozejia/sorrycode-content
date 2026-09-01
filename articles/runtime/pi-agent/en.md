@@ -2,7 +2,7 @@
 title: Pi Agent
 slug: pi-agent
 order: 1
-summary: Install Pi Agent, connect it to a Responses-compatible SorryCode model, and verify both text and file tools.
+summary: Install Pi Agent, connect SorryCode models through Responses or Anthropic Messages, and verify text and file tools.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -13,7 +13,7 @@ group_order: 23
 
 # Pi Agent
 
-Pi is a terminal coding agent from [earendil-works/pi](https://github.com/earendil-works/pi). It can read projects, edit files, and run commands. Pi is not tied to a specific model, and it does not have to use only one model. You can configure multiple keys, multiple providers, and multiple models in one file, including GPT, Gemini, Grok, and Chinese models such as DeepSeek, GLM, Kimi, and Qwen.
+Pi is a terminal coding agent from [earendil-works/pi](https://github.com/earendil-works/pi). It can read projects, edit files, and run commands. Pi is not tied to a specific model, and it does not have to use only one model. You can configure multiple keys, multiple providers, and multiple models in one file, including GPT, Claude, Gemini, Grok, and Chinese models such as DeepSeek, GLM, Kimi, and Qwen.
 
 This guide covers the Pi project hosted at [pi.dev](https://pi.dev/), not another project with the same name.
 
@@ -23,7 +23,7 @@ This guide covers the Pi project hosted at [pi.dev](https://pi.dev/), not anothe
 
 <h2 id="prepare-key">Prepare API Keys</h2>
 
-Pi calls models through SorryCode's OpenAI-compatible Responses API. On the [SorryCode API Key page](https://sorrycode.com/keys), prepare a key for each model group you want, such as GPT, Gemini, Grok, or a Chinese model group.
+Pi can call models through SorryCode's Responses API or Anthropic Messages API. On the [SorryCode API Key page](https://sorrycode.com/keys), prepare a key for each model group you want, such as GPT, Claude, Gemini, Grok, or a Chinese model group.
 
 Different keys belong to different groups and expose different models. First, list the models available to each key:
 
@@ -44,7 +44,7 @@ Follow three rules when configuring models:
 - Treat routable aliases that are absent from the list as diagnostics only. Do not add them to `models.json`, and never configure both an alias and the canonical ID for the same model.
 - Give each key its own provider name. Pi stores API keys per provider, so logging into the same provider again overwrites the old key.
 
-For example, if the Gemini group returns `gemini-3.7-flash`, use the Gemini-group key for `gemini-3.7-flash`. If the Grok group returns `grok-4.6`, use the Grok-group key for `grok-4.6`.
+For example, if the Claude group returns `claude-opus-5` and `claude-opus-4-6`, configure both with the Claude-group key. If the Grok group returns `grok-4.6`, use the Grok-group key for `grok-4.6`.
 
 <h2 id="install">Install Pi</h2>
 
@@ -116,6 +116,28 @@ If the file already contains other providers, merge the example below into the e
         }
       ]
     },
+    "sorrycode-claude": {
+      "baseUrl": "https://sorrycode.com",
+      "api": "anthropic-messages",
+      "models": [
+        {
+          "id": "claude-opus-5",
+          "name": "Claude Opus 5",
+          "contextWindow": 200000,
+          "maxTokens": 16384,
+          "input": ["text"],
+          "reasoning": false
+        },
+        {
+          "id": "claude-opus-4-6",
+          "name": "Claude Opus 4.6",
+          "contextWindow": 200000,
+          "maxTokens": 16384,
+          "input": ["text"],
+          "reasoning": false
+        }
+      ]
+    },
     "sorrycode-cn": {
       "baseUrl": "https://sorrycode.com/v1",
       "api": "openai-responses",
@@ -168,31 +190,32 @@ Log in once per provider:
 
 ```text
 /login sorrycode-gpt
+/login sorrycode-claude
 /login sorrycode-cn
 ```
 
-The example lists only the two providers shown above. Run `/login` once for every provider you actually configure, then paste the key for that group. Pi stores credentials in its own authentication file. You do not need an environment variable, and keys should not be added to `models.json`.
+The example lists only the three providers shown above. Run `/login` once for every provider you actually configure, then paste the key for that group. Pi stores credentials in its own authentication file. You do not need an environment variable, and keys should not be added to `models.json`.
 
-Then use `/model` to select a provider and model, such as `sorrycode-gpt/gpt-5.6-sol`.
+Then use `/model` to select a provider and model, such as `sorrycode-claude/claude-opus-5`.
 
 Confirm the configuration and auth before starting work:
 
 ```bash
 pi --list-models
-pi auth check --provider sorrycode-gpt --model gpt-5.6-sol --json
+pi auth check --provider sorrycode-claude --model claude-opus-5 --json
 ```
 
 `--list-models` shows all configured models. `auth check` should return `ready` when that provider has a usable key.
 
 <h2 id="verify">Verify Text and Tool Calls</h2>
 
-Use any available model for a minimal text request. This example uses `gpt-5.6-sol`:
+Use any available model for a minimal text request. This example uses `claude-opus-5`:
 
 ```bash
-pi --provider sorrycode-gpt --model gpt-5.6-sol --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
+pi --provider sorrycode-claude --model claude-opus-5 --no-tools --no-session -p "Reply with PI_SORRYCODE_OK only."
 ```
 
-After Pi prints `PI_SORRYCODE_OK`, verify the file tool in an empty test directory:
+After Pi prints `PI_SORRYCODE_OK`, use a model that supports tool calls to verify the file tool in an empty test directory. The example below continues with GPT:
 
 ```bash
 mkdir pi-sorrycode-test

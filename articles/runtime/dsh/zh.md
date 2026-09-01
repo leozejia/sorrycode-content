@@ -2,7 +2,7 @@
 title: DSH
 slug: dsh
 order: 1
-summary: 启动 DeepSeek Harness Web UI，通过自定义 Responses 提供方接入 SorryCode，并完成首条模型请求。
+summary: 启动 DeepSeek Harness Web UI，通过 Responses 或 Anthropic Messages 接入 SorryCode 模型，并完成首条请求。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -15,7 +15,7 @@ group_order: 22
 
 DSH 是 DeepSeek 开源的 Agent Harness，全名是 DeepSeek Harness。它提供 Web UI，可以选择工作目录、管理模型，并让 Agent 读取文件、执行命令和完成任务。
 
-DSH 不只支持 DeepSeek 模型。它可以添加自定义 OpenAI 兼容提供方，因此也能通过 SorryCode 使用 `grok-4.6` 等 Responses 模型。
+DSH 不只支持 DeepSeek 模型。它可以添加自定义提供方，通过 SorryCode 使用 Responses 模型，也可以使用 `claude-opus-5`、`claude-opus-4-6` 等 Claude 模型。
 
 DSH 目前仍处于开发者预览阶段，界面和配置可能出现不兼容变更。本页只维护官方 Web UI 的公开配置路径，不要求用户手动维护内部配置文件。
 
@@ -34,7 +34,7 @@ npm --version
 
 如果命令不存在，先阅读 [Node.js](/docs/environment/nodejs)。
 
-然后打开 [API Key 页面](https://sorrycode.com/keys)，选择一把所属分组包含目标模型的 Key。本文用 `grok-4.6` 演示，因此需要选择包含该模型的 Grok 分组 Key。同一 Key 分组可以开放多个模型；目标模型属于其他分组时，再准备对应分组的 Key。
+然后打开 [API Key 页面](https://sorrycode.com/keys)，选择一把所属分组包含目标模型的 Key。使用 `grok-4.6` 时选择 Grok 分组 Key；使用 `claude-opus-5` 或 `claude-opus-4-6` 时选择 Claude 分组 Key。同一 Key 分组可以开放多个模型，目标模型属于其他分组时再准备对应分组的 Key。
 
 <h2 id="start">启动 DSH Web UI</h2>
 
@@ -54,7 +54,7 @@ http://127.0.0.1:3080
 
 <h2 id="configure">添加 SorryCode 提供方</h2>
 
-在 DSH Web UI 中打开 `设置` > `模型`，选择 `添加自定义提供方`。按下面填写：
+在 DSH Web UI 中打开 `设置` > `模型`，选择 `添加自定义提供方`。Responses 模型按下面填写：
 
 | 字段 | 值 |
 | --- | --- |
@@ -64,9 +64,19 @@ http://127.0.0.1:3080
 | API 协议 | `openai-responses` |
 | API 密钥 | 当前目标分组的 SorryCode Key |
 
-Provider ID 需要使用小写，并且会写入会话和模型记录。每把独立 Key 使用唯一的 Provider ID，并在显示名称中标明分组；同一 Key 分组返回的多个模型可以放在同一提供方下，目标模型属于其他分组时新增提供方，不要覆盖已有 Key。需要另一个协议时也应新增 Provider ID。
+Claude 模型使用单独的提供方：
 
-点击 `获取可用模型`，DSH 会使用当前基础 URL 和 Key 查询 `/models`。从返回结果中选择 `grok-4.6`，再保存提供方。如果模型发现失败，但 Key 和基础 URL 已确认正确，也可以手动添加准确的模型 ID。
+| 字段 | 值 |
+| --- | --- |
+| Provider ID | `sorrycode-claude` |
+| 显示名称 | `SorryCode Claude` |
+| 基础 URL | `https://sorrycode.com` |
+| API 协议 | `anthropic-messages` |
+| API 密钥 | 包含目标 Claude 模型的 SorryCode Key |
+
+Provider ID 需要使用小写，并且会写入会话和模型记录。每把独立 Key 使用唯一的 Provider ID，并在显示名称中标明分组。同一 Key 分组返回的多个模型可以放在同一提供方下；目标模型属于其他分组或使用另一个协议时，新增提供方，不要覆盖已有 Key。
+
+点击 `获取可用模型`，DSH 会使用当前基础 URL 和 Key 查询模型目录。从返回结果中选择目标模型，再保存提供方。如果模型发现失败，但 Key 和基础 URL 已确认正确，也可以手动添加准确的模型 ID。
 
 模型发现主要确认当前 Key 可以使用哪些模型 ID，不代表图片输入、上下文容量和思考档位已经配置。先用纯文本完成下方连通验证；需要图片或自定义思考档位时，按 DSH 当前[模型配置指南](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/providers.zh.md)补充能力，并分别发送最小请求验证，不要根据模型名称推断。
 
@@ -76,7 +86,7 @@ DSH 会把密钥存入自己的凭据文件，设置页面只读取脱敏后的�
 
 保存提供方后：
 
-1. 在模型选择器中选择 `sorrycode-grok / grok-4.6`
+1. 在模型选择器中选择刚添加的 SorryCode 提供方和模型
 2. 点击 `选择工作区`
 3. 添加并选中启动 DSH 时所在的项目目录
 4. 新建会话
@@ -91,20 +101,11 @@ DSH 会把密钥存入自己的凭据文件，设置页面只读取脱敏后的�
 Reply with exactly DSH_SORRYCODE_OK. Do not modify files.
 ```
 
-收到模型回复，就说明 `DSH + SorryCode Key + openai-responses + grok-4.6` 这条链路已经连通。模型的具体提示理解、工具选择和输出风格由模型及 DSH 自身负责，不属于 SorryCode 的接入承诺。
+收到模型回复，就说明 `DSH + SorryCode Key + 当前协议 + 目标模型` 这条链路已经连通。模型的具体提示理解、工具选择和输出风格由模型及 DSH 自身负责，不属于 SorryCode 的接入承诺。
 
 <h2 id="other-models">使用其他模型</h2>
 
-DSH 的自定义提供方不绑定 Grok。要使用其他 Responses 模型：
-
-1. 先确认当前 Key 分组是否包含目标模型
-2. 同一分组的模型可以加入现有提供方
-3. 其他分组使用对应 Key 新建 Provider ID，不覆盖现有提供方
-4. 保持基础 URL 为 `https://sorrycode.com/v1`
-5. 保持 API 协议为 `openai-responses`
-6. 从 `获取可用模型` 的结果中选择准确模型 ID
-
-一个提供方 route 只能使用一种 API 协议。如果以后必须使用 Chat Completions，请新建另一个 Provider ID，不要把两种协议混在同一路由中。
+同一 Key 分组、同一协议的其他模型可以加入现有提供方。其他分组或协议使用对应 Key 新建 Provider ID，不要覆盖已有提供方，并始终使用 `获取可用模型` 返回的准确模型 ID。Chat Completions 也应单独建立提供方。
 
 <h2 id="common-issues">常见问题</h2>
 
@@ -112,7 +113,7 @@ DSH 的自定义提供方不绑定 Grok。要使用其他 Responses 模型：
 - Web UI 打不开：确认启动 DSH 的终端仍在运行，并使用终端打印的实际地址
 - `401`：检查 Key 是否完整、有效，并且属于目标模型分组
 - 获取模型返回 `401 / 403`：检查 Base URL 和 Key，不要先手动增加未知模型
-- 找不到 `grok-4.6`：重新查询模型，确认当前 Key 所属分组包含该模型
+- 找不到目标模型：重新查询模型，确认当前 Key 所属分组包含该模型
 - 切换模型后旧模型消失：不要用另一分组的 Key 覆盖现有提供方，为新分组新增 Provider ID
 - 图片在发送前被拒绝：模型发现只确认了 ID；按当前模型配置指南补充图片能力并开启新会话
 - 输入框不可用：先选择工作区和模型
