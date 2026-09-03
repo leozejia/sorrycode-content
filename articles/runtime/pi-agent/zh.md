@@ -2,7 +2,7 @@
 title: Pi Agent
 slug: pi-agent
 order: 1
-summary: 安装 Pi Agent，通过 Responses 或 Anthropic Messages 接入 SorryCode 模型，并完成文本和文件工具验证。
+summary: 安装 Pi Agent，通过 Responses 或 Anthropic Messages 接入 SorryCode 模型（包括 Gemini 3.7 Flash），并完成文本和文件工具验证。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -23,7 +23,7 @@ Pi 是 [earendil-works/pi](https://github.com/earendil-works/pi) 提供的终端
 
 <h2 id="prepare-key">准备 API Key</h2>
 
-Pi 可以通过 SorryCode 的 Responses API 或 Anthropic Messages API 调用模型。在 [SorryCode API Key 页面](https://sorrycode.com/keys) 为每个模型分组准备 Key，例如 GPT、Claude、Gemini、Grok 或国产模型分组。
+Pi 可以通过 SorryCode 的 Responses API 或 Anthropic Messages API 调用模型。在 [SorryCode API Key 页面](https://sorrycode.com/keys) 为每个模型分组准备 Key，例如 GPT、Claude、Gemini、Grok 或国产模型分组。下面的 Gemini 示例使用 Gemini 分组 Key。
 
 不同 Key 属于不同分组，看到的模型也不同。先查询每把 Key 实际开放的模型：
 
@@ -44,7 +44,7 @@ curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <你的 Sorry
 - 未返回但可路由的别名只用于诊断，不写入 `models.json`。同一模型的别名和规范 ID 不得同时配置。
 - 每把 Key 单独使用一个 provider 名。Pi 的 `/login` 按 provider 保存 Key，重复登录同一个 provider 会覆盖旧 Key。
 
-例如 Claude 分组返回 `claude-opus-5` 和 `claude-opus-4-6`，就用 Claude 分组的 Key 配这两个模型；Grok 分组返回 `grok-4.6`，就用 Grok 分组的 Key 配 `grok-4.6`。
+例如 Claude 分组返回 `claude-opus-5` 和 `claude-opus-4-6`，就用 Claude 分组的 Key 配这两个模型；Grok 分组返回 `grok-4.6`，就用 Grok 分组的 Key 配 `grok-4.6`。Gemini 分组返回 `gemini-3.7-flash` 时，就用 Gemini 分组的 Key 配这个模型。只有同一把 Key 的 `/v1/models` 返回 `gemini-3.8-flash` 后，才加入 3.8 条目。
 
 <h2 id="install">安装 Pi</h2>
 
@@ -88,7 +88,7 @@ New-Item -ItemType Directory -Force "$HOME\.pi\agent" | Out-Null
 notepad "$HOME\.pi\agent\models.json"
 ```
 
-如果文件里已有其他 provider，把下面的内容合并到 `providers` 中，不要覆盖原有配置。下面只用两个已验证模型说明多 Key 结构，不是需要照抄的完整模型目录：
+如果文件里已有其他 provider，把下面的内容合并到 `providers` 中，不要覆盖原有配置。下面的 provider 条目只用于说明多 Key 结构，不是需要照抄的完整模型目录：
 
 ```json
 {
@@ -113,6 +113,17 @@ notepad "$HOME\.pi\agent\models.json"
             "xhigh": "xhigh",
             "max": "max"
           }
+        }
+      ]
+    },
+    "sorrycode-gemini": {
+      "baseUrl": "https://sorrycode.com/v1",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "gemini-3.7-flash",
+          "name": "Gemini 3.7 Flash via SorryCode",
+          "input": ["text"]
         }
       ]
     },
@@ -165,6 +176,18 @@ notepad "$HOME\.pi\agent\models.json"
 }
 ```
 
+等 Gemini 分组完成同步，并且这把 Key 的 `/v1/models` 已经返回 `gemini-3.8-flash` 后，把下面这个对象追加到同一个 `sorrycode-gemini.models` 数组中：
+
+```json
+{
+  "id": "gemini-3.8-flash",
+  "name": "Gemini 3.8 Flash via SorryCode",
+  "input": ["text"]
+}
+```
+
+在模型出现在列表前不要加入 3.8 条目。如果当前模型元数据表明 Gemini 支持图片或推理，再按照返回的能力更新 `input` 和思考相关字段。
+
 provider 名只是本地标识。每把 Key 对应一个 provider；同一 Key 分组返回的多个模型可以放进该 provider 的 `models` 数组。需要其他分组时，按同样结构新增 provider，不要覆盖已有 Key。
 
 字段说明：
@@ -190,13 +213,14 @@ pi
 
 ```text
 /login sorrycode-gpt
+/login sorrycode-gemini
 /login sorrycode-claude
 /login sorrycode-cn
 ```
 
-示例只列出上面的三个 provider。实际使用时，为每个已配置 provider 执行一次 `/login`，并粘贴对应分组的 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
+示例列出上面的 provider。实际使用时，为每个已配置 provider 执行一次 `/login`，并粘贴对应分组的 Key。Pi 会把凭证保存到自己的认证文件中，不需要设置环境变量，也不要把 Key 写进 `models.json`。
 
-然后输入 `/model`，选择 provider 和模型，例如 `sorrycode-claude/claude-opus-5`。
+然后输入 `/model`，选择 provider 和模型，例如 `sorrycode-gemini/gemini-3.7-flash`。
 
 要确认配置和认证都正确，先运行：
 

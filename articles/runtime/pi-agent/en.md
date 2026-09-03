@@ -2,7 +2,7 @@
 title: Pi Agent
 slug: pi-agent
 order: 1
-summary: Install Pi Agent, connect SorryCode models through Responses or Anthropic Messages, and verify text and file tools.
+summary: Install Pi Agent, connect SorryCode models such as Gemini 3.7 Flash through Responses or Anthropic Messages, and verify text and file tools.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -23,7 +23,7 @@ This guide covers the Pi project hosted at [pi.dev](https://pi.dev/), not anothe
 
 <h2 id="prepare-key">Prepare API Keys</h2>
 
-Pi can call models through SorryCode's Responses API or Anthropic Messages API. On the [SorryCode API Key page](https://sorrycode.com/keys), prepare a key for each model group you want, such as GPT, Claude, Gemini, Grok, or a Chinese model group.
+Pi can call models through SorryCode's Responses API or Anthropic Messages API. On the [SorryCode API Key page](https://sorrycode.com/keys), prepare a key for each model group you want, such as GPT, Claude, Gemini, Grok, or a Chinese model group. For the Gemini examples below, use a Gemini-group key.
 
 Different keys belong to different groups and expose different models. First, list the models available to each key:
 
@@ -44,7 +44,7 @@ Follow three rules when configuring models:
 - Treat routable aliases that are absent from the list as diagnostics only. Do not add them to `models.json`, and never configure both an alias and the canonical ID for the same model.
 - Give each key its own provider name. Pi stores API keys per provider, so logging into the same provider again overwrites the old key.
 
-For example, if the Claude group returns `claude-opus-5` and `claude-opus-4-6`, configure both with the Claude-group key. If the Grok group returns `grok-4.6`, use the Grok-group key for `grok-4.6`.
+For example, if the Claude group returns `claude-opus-5` and `claude-opus-4-6`, configure both with the Claude-group key. If the Grok group returns `grok-4.6`, use the Grok-group key for `grok-4.6`. If the Gemini group returns `gemini-3.7-flash`, use the Gemini-group key for that model. Add `gemini-3.8-flash` only after the same key's `/v1/models` response includes it.
 
 <h2 id="install">Install Pi</h2>
 
@@ -88,7 +88,7 @@ New-Item -ItemType Directory -Force "$HOME\.pi\agent" | Out-Null
 notepad "$HOME\.pi\agent\models.json"
 ```
 
-If the file already contains other providers, merge the example below into the existing `providers` object instead of replacing it. The two verified models below demonstrate the multi-key structure; they are not a complete model catalog to copy:
+If the file already contains other providers, merge the example below into the existing `providers` object instead of replacing it. The provider entries below demonstrate the multi-key structure; they are not a complete model catalog to copy:
 
 ```json
 {
@@ -113,6 +113,17 @@ If the file already contains other providers, merge the example below into the e
             "xhigh": "xhigh",
             "max": "max"
           }
+        }
+      ]
+    },
+    "sorrycode-gemini": {
+      "baseUrl": "https://sorrycode.com/v1",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "gemini-3.7-flash",
+          "name": "Gemini 3.7 Flash via SorryCode",
+          "input": ["text"]
         }
       ]
     },
@@ -165,6 +176,18 @@ If the file already contains other providers, merge the example below into the e
 }
 ```
 
+After the Gemini group has been synchronized and its `/v1/models` response lists `gemini-3.8-flash`, append this object to the same `sorrycode-gemini.models` array:
+
+```json
+{
+  "id": "gemini-3.8-flash",
+  "name": "Gemini 3.8 Flash via SorryCode",
+  "input": ["text"]
+}
+```
+
+Do not add the 3.8 entry before the model is listed. If the current model metadata says that Gemini supports images or reasoning, update `input` and the thinking fields to match that response before using those capabilities.
+
 Provider names are local identifiers. Give each key its own provider. Multiple models returned for the same key group can share that provider's `models` array. Add another provider for a different key group instead of overwriting an existing key.
 
 Field reference:
@@ -190,13 +213,14 @@ Log in once per provider:
 
 ```text
 /login sorrycode-gpt
+/login sorrycode-gemini
 /login sorrycode-claude
 /login sorrycode-cn
 ```
 
-The example lists only the three providers shown above. Run `/login` once for every provider you actually configure, then paste the key for that group. Pi stores credentials in its own authentication file. You do not need an environment variable, and keys should not be added to `models.json`.
+The example lists the providers shown above. Run `/login` once for every provider you actually configure, then paste the key for that group. Pi stores credentials in its own authentication file. You do not need an environment variable, and keys should not be added to `models.json`.
 
-Then use `/model` to select a provider and model, such as `sorrycode-claude/claude-opus-5`.
+Then use `/model` to select a provider and model, such as `sorrycode-gemini/gemini-3.7-flash`.
 
 Confirm the configuration and auth before starting work:
 

@@ -2,7 +2,7 @@
 title: WorkBuddy
 slug: workbuddy
 order: 1
-summary: Install WorkBuddy, connect a SorryCode custom chat model such as Claude Opus, and complete a first local file task with Default Permission.
+summary: Install WorkBuddy, connect a SorryCode custom chat model such as Gemini 3.7 Flash or Claude Opus, and complete a first local file task with Default Permission.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -25,7 +25,7 @@ Download the macOS or Windows app from the [WorkBuddy website](https://www.workb
 
 <h2 id="prepare-key">Prepare an API Key</h2>
 
-WorkBuddy uses the OpenAI-compatible `/v1/chat/completions` endpoint. On the [SorryCode API Key page](https://sorrycode.com/keys), choose a key whose group exposes both the model you need and this endpoint. You can reuse an existing compatible key; creating a separate key for WorkBuddy is optional for usage tracking, spending limits, or credential rotation.
+WorkBuddy uses the OpenAI-compatible `/v1/chat/completions` endpoint. On the [SorryCode API Key page](https://sorrycode.com/keys), choose a key whose group exposes both the model you need and this endpoint. Use a Gemini-group key for the Gemini examples below. You can reuse an existing compatible key; creating a separate key for WorkBuddy is optional for usage tracking, spending limits, or credential rotation.
 
 WorkBuddy needs an exact model ID. Use an `id` returned by `/v1/models` for the current key instead of guessing from a display name.
 
@@ -73,6 +73,18 @@ WorkBuddy can use `claude-opus-5` and `claude-opus-4-6` through the same custom-
 - enable Tool Calling and disable Custom Protocol
 
 Save each model separately. Both will then appear under `Custom Models`. This guide covers only the settings required for text and tool calls. Image Input and Thinking Mode need separate verification against the current WorkBuddy version and model-group capabilities.
+
+<h2 id="gemini-flash">Use Gemini Flash</h2>
+
+For `gemini-3.7-flash`, use a Gemini-group key and add a custom model with these values:
+
+- endpoint: `https://sorrycode.com/v1/chat/completions`
+- API key: the Gemini-group SorryCode key
+- model name: `gemini-3.7-flash`
+- Tool Calling: enable only when the current model and group support it
+- Custom Protocol: disabled
+
+The same Gemini-group key can be used for `gemini-3.8-flash` after the model has been synchronized to the account. First confirm that `/v1/models` returns the exact ID, then add a separate custom model with the same endpoint and key. Until it appears in that response, do not save the 3.8 entry as an active model.
 
 <h2 id="add-more-models">Add More Models</h2>
 
