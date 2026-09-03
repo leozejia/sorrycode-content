@@ -2,7 +2,7 @@
 title: Pi Agent
 slug: pi-agent
 order: 1
-summary: Install Pi Agent, connect SorryCode models such as Gemini 3.7 Flash through Responses or Anthropic Messages, and verify text and file tools.
+summary: Install Pi Agent, connect SorryCode models such as Gemini 3.7 Flash and Gemini 3.8 Flash through Responses or Anthropic Messages, and verify text and file tools.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -44,7 +44,7 @@ Follow three rules when configuring models:
 - Treat routable aliases that are absent from the list as diagnostics only. Do not add them to `models.json`, and never configure both an alias and the canonical ID for the same model.
 - Give each key its own provider name. Pi stores API keys per provider, so logging into the same provider again overwrites the old key.
 
-For example, if the Claude group returns `claude-opus-5` and `claude-opus-4-6`, configure both with the Claude-group key. If the Grok group returns `grok-4.6`, use the Grok-group key for `grok-4.6`. If the Gemini group returns `gemini-3.7-flash`, use the Gemini-group key for that model. Add `gemini-3.8-flash` only after the same key's `/v1/models` response includes it.
+For example, if the Claude group returns `claude-opus-5` and `claude-opus-4-6`, configure both with the Claude-group key. If the Grok group returns `grok-4.6`, use the Grok-group key for `grok-4.6`. Use the Gemini-group key for `gemini-3.7-flash` and `gemini-3.8-flash`.
 
 <h2 id="install">Install Pi</h2>
 
@@ -124,6 +124,11 @@ If the file already contains other providers, merge the example below into the e
           "id": "gemini-3.7-flash",
           "name": "Gemini 3.7 Flash via SorryCode",
           "input": ["text"]
+        },
+        {
+          "id": "gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash via SorryCode",
+          "input": ["text"]
         }
       ]
     },
@@ -175,18 +180,6 @@ If the file already contains other providers, merge the example below into the e
   }
 }
 ```
-
-After the Gemini group has been synchronized and its `/v1/models` response lists `gemini-3.8-flash`, append this object to the same `sorrycode-gemini.models` array:
-
-```json
-{
-  "id": "gemini-3.8-flash",
-  "name": "Gemini 3.8 Flash via SorryCode",
-  "input": ["text"]
-}
-```
-
-Do not add the 3.8 entry before the model is listed. If the current model metadata says that Gemini supports images or reasoning, update `input` and the thinking fields to match that response before using those capabilities.
 
 Provider names are local identifiers. Give each key its own provider. Multiple models returned for the same key group can share that provider's `models` array. Add another provider for a different key group instead of overwriting an existing key.
 

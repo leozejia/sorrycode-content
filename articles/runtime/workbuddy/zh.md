@@ -2,7 +2,7 @@
 title: WorkBuddy
 slug: workbuddy
 order: 1
-summary: 安装 WorkBuddy，接入包括 Gemini 3.7 Flash 和 Claude Opus 在内的 SorryCode 自定义聊天模型，并在默认权限下完成第一个本地文件任务。
+summary: 安装 WorkBuddy，接入包括 Gemini 3.7 Flash、Gemini 3.8 Flash 和 Claude Opus 在内的 SorryCode 自定义聊天模型，并在默认权限下完成第一个本地文件任务。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -76,15 +76,15 @@ WorkBuddy 可以通过同一套自定义模型配置使用 `claude-opus-5` 和 `
 
 <h2 id="gemini-flash">使用 Gemini Flash</h2>
 
-使用 `gemini-3.7-flash` 时，选择 Gemini 分组 Key，并按下面填写自定义模型：
+使用 `gemini-3.7-flash` 和 `gemini-3.8-flash` 时，选择 Gemini 分组 Key，分别添加两个自定义模型：
 
 - 接口地址：`https://sorrycode.com/v1/chat/completions`
 - API Key：Gemini 分组的 SorryCode Key
-- 模型名称：`gemini-3.7-flash`
+- 模型名称：分别填写 `gemini-3.7-flash` 和 `gemini-3.8-flash`
 - “工具调用”：只有当前模型和分组支持时才开启
 - “自定义协议”：关闭
 
-账号完成模型同步后，同一把 Gemini 分组 Key 也可以用于 `gemini-3.8-flash`。先确认 `/v1/models` 返回准确的模型 ID，再用相同的接口地址和 Key 单独添加一个自定义模型。在该响应列出 3.8 之前，不要把它保存为可用模型。
+两个模型分别保存，接口地址和 Gemini 分组 Key 保持不变，保存后会一起出现在“自定义模型”分组中。
 
 <h2 id="add-more-models">添加更多模型</h2>
 

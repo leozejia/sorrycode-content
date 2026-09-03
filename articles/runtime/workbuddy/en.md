@@ -2,7 +2,7 @@
 title: WorkBuddy
 slug: workbuddy
 order: 1
-summary: Install WorkBuddy, connect a SorryCode custom chat model such as Gemini 3.7 Flash or Claude Opus, and complete a first local file task with Default Permission.
+summary: Install WorkBuddy, connect a SorryCode custom chat model such as Gemini 3.7 Flash, Gemini 3.8 Flash, or Claude Opus, and complete a first local file task with Default Permission.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -76,15 +76,15 @@ Save each model separately. Both will then appear under `Custom Models`. This gu
 
 <h2 id="gemini-flash">Use Gemini Flash</h2>
 
-For `gemini-3.7-flash`, use a Gemini-group key and add a custom model with these values:
+For `gemini-3.7-flash` and `gemini-3.8-flash`, use the Gemini-group key and add the two custom models separately with these values:
 
 - endpoint: `https://sorrycode.com/v1/chat/completions`
 - API key: the Gemini-group SorryCode key
-- model name: `gemini-3.7-flash`
+- model names: `gemini-3.7-flash` and `gemini-3.8-flash`
 - Tool Calling: enable only when the current model and group support it
 - Custom Protocol: disabled
 
-The same Gemini-group key can be used for `gemini-3.8-flash` after the model has been synchronized to the account. First confirm that `/v1/models` returns the exact ID, then add a separate custom model with the same endpoint and key. Until it appears in that response, do not save the 3.8 entry as an active model.
+Save the two models separately. Both use `https://sorrycode.com/v1/chat/completions` and the same Gemini-group key, then appear under `Custom Models`.
 
 <h2 id="add-more-models">Add More Models</h2>
 

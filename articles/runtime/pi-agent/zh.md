@@ -2,7 +2,7 @@
 title: Pi Agent
 slug: pi-agent
 order: 1
-summary: 安装 Pi Agent，通过 Responses 或 Anthropic Messages 接入 SorryCode 模型（包括 Gemini 3.7 Flash），并完成文本和文件工具验证。
+summary: 安装 Pi Agent，通过 Responses 或 Anthropic Messages 接入 SorryCode 模型（包括 Gemini 3.7 Flash 和 Gemini 3.8 Flash），并完成文本和文件工具验证。
 section: runtime
 section_title: 模型与工作台
 section_order: 10
@@ -44,7 +44,7 @@ curl.exe https://sorrycode.com/v1/models -H "Authorization: Bearer <你的 Sorry
 - 未返回但可路由的别名只用于诊断，不写入 `models.json`。同一模型的别名和规范 ID 不得同时配置。
 - 每把 Key 单独使用一个 provider 名。Pi 的 `/login` 按 provider 保存 Key，重复登录同一个 provider 会覆盖旧 Key。
 
-例如 Claude 分组返回 `claude-opus-5` 和 `claude-opus-4-6`，就用 Claude 分组的 Key 配这两个模型；Grok 分组返回 `grok-4.6`，就用 Grok 分组的 Key 配 `grok-4.6`。Gemini 分组返回 `gemini-3.7-flash` 时，就用 Gemini 分组的 Key 配这个模型。只有同一把 Key 的 `/v1/models` 返回 `gemini-3.8-flash` 后，才加入 3.8 条目。
+例如 Claude 分组返回 `claude-opus-5` 和 `claude-opus-4-6`，就用 Claude 分组的 Key 配这两个模型；Grok 分组返回 `grok-4.6`，就用 Grok 分组的 Key 配 `grok-4.6`。`gemini-3.7-flash` 和 `gemini-3.8-flash` 都使用 Gemini 分组的 Key。
 
 <h2 id="install">安装 Pi</h2>
 
@@ -124,6 +124,11 @@ notepad "$HOME\.pi\agent\models.json"
           "id": "gemini-3.7-flash",
           "name": "Gemini 3.7 Flash via SorryCode",
           "input": ["text"]
+        },
+        {
+          "id": "gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash via SorryCode",
+          "input": ["text"]
         }
       ]
     },
@@ -175,18 +180,6 @@ notepad "$HOME\.pi\agent\models.json"
   }
 }
 ```
-
-等 Gemini 分组完成同步，并且这把 Key 的 `/v1/models` 已经返回 `gemini-3.8-flash` 后，把下面这个对象追加到同一个 `sorrycode-gemini.models` 数组中：
-
-```json
-{
-  "id": "gemini-3.8-flash",
-  "name": "Gemini 3.8 Flash via SorryCode",
-  "input": ["text"]
-}
-```
-
-在模型出现在列表前不要加入 3.8 条目。如果当前模型元数据表明 Gemini 支持图片或推理，再按照返回的能力更新 `input` 和思考相关字段。
 
 provider 名只是本地标识。每把 Key 对应一个 provider；同一 Key 分组返回的多个模型可以放进该 provider 的 `models` 数组。需要其他分组时，按同样结构新增 provider，不要覆盖已有 Key。
 
