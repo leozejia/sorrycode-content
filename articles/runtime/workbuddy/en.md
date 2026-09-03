@@ -51,6 +51,22 @@ Fill in these fields:
 | Thinking Mode | enable only when the model supports reasoning |
 | Custom Protocol | disabled |
 
+**Filled-in example:** The example below uses a Gemini-group key. Replace `API Key` with your own Gemini-group key, and use the model ID returned by `/v1/models` for that key. The other fields can stay as shown.
+
+```text
+Add Custom Model
+Provider       Custom
+Endpoint       https://sorrycode.com/v1/chat/completions
+API Key        <your Gemini-group key>
+Model Name     gemini-3.7-flash
+Tool Calling   enabled
+Image Input    disabled unless you have confirmed image support
+Thinking Mode  enabled, effort high
+Custom Protocol disabled
+```
+
+This is a UI filling example, not an importable WorkBuddy config file. For Claude, replace the API key with a Claude-group key and use a model ID returned by `/v1/models` for that key.
+
 For several models in one group, repeat only the model name. For example, a Gemini-group key can add `gemini-3.7-flash` and `gemini-3.8-flash`, while a Claude-group key can add `claude-opus-5` and `claude-opus-4-6`. Use only IDs returned for the current key. Gemini thinking uses `high`; enable Claude thinking only after the current WorkBuddy version and group have been verified.
 
 <h2 id="verify">Complete the first file task</h2>

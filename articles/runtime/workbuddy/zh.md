@@ -51,6 +51,22 @@ curl https://sorrycode.com/v1/models \
 | 思考模式 | 仅在模型支持 reasoning 时开启 |
 | 自定义协议 | 关闭 |
 
+**填写示例：**下面以 Gemini 分组为例。`API Key` 换成你自己的 Gemini 分组 Key，模型 ID 以这把 Key 请求 `/v1/models` 的返回结果为准；其他字段照着填写即可。
+
+```text
+添加自定义模型
+提供商      自定义 / Custom
+接口地址    https://sorrycode.com/v1/chat/completions
+API Key     <你的 Gemini 分组 Key>
+模型名称    gemini-3.7-flash
+工具调用    开启
+图片输入    关闭，除非你已确认该模型支持图片
+思考模式    开启，档位 high
+自定义协议  关闭
+```
+
+这是一份界面填写示意，不是 WorkBuddy 可以导入的配置文件。使用 Claude 时，把 API Key 换成 Claude 分组 Key，把模型名称换成该 Key 的 `/v1/models` 返回值。
+
 同一分组的多个模型只需重复添加模型名称。比如 Gemini 分组可以添加 `gemini-3.7-flash` 和 `gemini-3.8-flash`，Claude 分组可以添加 `claude-opus-5` 和 `claude-opus-4-6`。模型是否可用只看当前 Key 的 `/v1/models` 返回结果，不要按展示名称猜 ID。Gemini 的思考档位使用 `high`，Claude 的思考模式等当前 WorkBuddy 版本和分组验证后再开启。
 
 <h2 id="verify">完成第一次文件任务</h2>
