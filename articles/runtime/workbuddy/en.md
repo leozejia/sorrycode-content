@@ -29,6 +29,8 @@ WorkBuddy uses the OpenAI-compatible `/v1/chat/completions` endpoint. On the [So
 
 WorkBuddy needs an exact model ID. Use an `id` returned by `/v1/models` for the current key instead of guessing from a display name.
 
+A model ID and its display name are different. Keep the original `/v1/models` ID for requests, such as `gemini-3.7-flash`; when WorkBuddy allows a separate display name, use `Gemini 3.7 Flash via SorryCode` and `Gemini 3.8 Flash via SorryCode`.
+
 ```bash
 curl https://sorrycode.com/v1/models -H "Authorization: Bearer <WORKBUDDY_API_KEY>"
 ```
@@ -85,6 +87,16 @@ For `gemini-3.7-flash` and `gemini-3.8-flash`, use the Gemini-group key and add 
 - Custom Protocol: disabled
 
 Save the two models separately. Both use `https://sorrycode.com/v1/chat/completions` and the same Gemini-group key, then appear under `Custom Models`.
+
+Gemini 3.7 Flash and Gemini 3.8 Flash use thinking by default. Set the local default reasoning effort to `high`, which is Gemini's highest native level. Do not enter `max`. If the account does not return `gemini-3.8-flash` yet, you can save the custom-model entry first, but wait for model synchronization before making the first call and confirm the exact ID again with `/v1/models`.
+
+<h2 id="thinking">Thinking Mode Settings</h2>
+
+Set thinking levels according to each model's native capability. Do not treat `max` as a universal value:
+
+- `gpt-5.6-sol`, `deepseek-v4-flash`, `deepseek-v4-pro`, `glm-5.3`, and `glm-5.3-flash`: enable thinking and use `high` by default; choose `max` manually only for tasks that need deeper reasoning.
+- `gemini-3.7-flash` and `gemini-3.8-flash`: enable thinking, turn off `Allow Disabling Reasoning`, and use `high` by default. Gemini has no native `max` level.
+- Claude Opus: enable thinking only after adaptive thinking is verified for the current group and WorkBuddy version; keep it disabled until then.
 
 <h2 id="add-more-models">Add More Models</h2>
 

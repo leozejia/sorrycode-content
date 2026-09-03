@@ -29,6 +29,8 @@ WorkBuddy 使用 OpenAI-compatible 的 `/v1/chat/completions` 接口。在 [Sorr
 
 WorkBuddy 需要准确的模型 ID。模型名称以当前 Key 请求 `/v1/models` 返回的 `id` 为准，不要根据展示名称猜测。
 
+模型 ID 与界面展示名不是一回事。请求时保持 `/v1/models` 返回的原始 ID，例如 `gemini-3.7-flash`；如果界面允许单独设置展示名，建议写成 `Gemini 3.7 Flash via SorryCode` 和 `Gemini 3.8 Flash via SorryCode`。
+
 ```bash
 curl https://sorrycode.com/v1/models -H "Authorization: Bearer <WORKBUDDY_API_KEY>"
 ```
@@ -85,6 +87,16 @@ WorkBuddy 可以通过同一套自定义模型配置使用 `claude-opus-5` 和 `
 - “自定义协议”：关闭
 
 两个模型分别保存，接口地址和 Gemini 分组 Key 保持不变，保存后会一起出现在“自定义模型”分组中。
+
+Gemini 3.7 Flash 和 Gemini 3.8 Flash 都默认开启思考模式。本地默认思考深度设为 `high`，这是 Gemini 的最高原生档位；不要填写 `max`。如果账号还没有返回 `gemini-3.8-flash`，可以先保存这个自定义模型条目，但首次调用要等模型同步完成，并再次用 `/v1/models` 确认准确的模型 ID。
+
+<h2 id="thinking">思考模式设置</h2>
+
+思考档位要按模型的原生能力设置，不要把 `max` 当成所有模型的通用值：
+
+- `gpt-5.6-sol`、`deepseek-v4-flash`、`deepseek-v4-pro`、`glm-5.3` 和 `glm-5.3-flash`：开启思考模式，默认使用 `high`；确实需要更深推理时再手动选择 `max`。
+- `gemini-3.7-flash` 和 `gemini-3.8-flash`：开启思考模式，取消“允许关闭思考”，默认使用 `high`。Gemini 没有原生 `max` 档位。
+- Claude Opus：只有当前分组和 WorkBuddy 版本已经验证 adaptive thinking 时才开启；未验证时保持关闭。
 
 <h2 id="add-more-models">添加更多模型</h2>
 
