@@ -96,7 +96,7 @@ Skills capture that working method.
 - `MCP`: tool and data connection protocol
 - `Skills`: workflow capability packs
 
-They can work together. An image skill can read `DESIGN.md`, then call an image API or an MCP tool.
+They can work together. An image task can read `DESIGN.md`, then call an image API or an MCP tool.
 
 <h2 id="where-next">Next</h2>
 

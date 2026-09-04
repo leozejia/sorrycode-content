@@ -27,7 +27,7 @@ Use Grok image generation through the REST API. You do not need an official xAI 
 2. Make sure the key uses a Grok group.
 3. Copy that Grok key and replace the request-header placeholder later.
 
-This can be the same Grok-group key used by Grok Build. SorryCode Image2 reuses the Codex key, which cannot be used for Grok images. This page does not require an environment variable.
+This can be the same Grok-group key used by Grok Build. GPT Image 2 uses an OpenAI / Codex-group key, which cannot be used for Grok images. This page does not require an environment variable.
 
 If you do not have a key yet, read [Getting Started / Create API Key](/docs/start/create-api-key).
 

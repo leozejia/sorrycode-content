@@ -2,7 +2,7 @@
 title: Skills 是什么
 slug: featured-skills
 order: 1
-summary: Skill 是给 agent 读的操作说明书。装好 Codex 或 Claude Code 后，用 Skills 让 agent 稳定完成图片、排版、PPT、读项目和工程流程。
+summary: Skill 是给 agent 读的操作说明书。装好 Codex 或 Claude Code 后，用 Skills 让 agent 稳定完成排版、PPT、读项目和工程流程；图片生成请读取 GPT Image 2 文档。
 section: skills
 section_title: Skills
 section_order: 15
@@ -13,10 +13,6 @@ section_order: 15
 Skill 是给 agent 读的操作说明书。
 
 你不用把每一步都学会。装好 `Codex` 或 `Claude Code`，再装上合适的 skill，然后直接对 agent 说：
-
-```text
-请用 SorryCode Image2 帮我生成一张封面。
-```
 
 ```text
 请用 Kami 把这份内容做成一页纸。
@@ -45,10 +41,6 @@ Skill 把这些经验变成可复用的能力包。你装一次，以后就可�
 <h2 id="trigger">怎么稳定触发</h2>
 
 最不容易触发错的办法，是直接说 skill 名。
-
-```text
-请用 SorryCode Image2 编辑 ./input/product.png，把它改成官网 hero 风格，保存到 outputs/images/product-hero/。
-```
 
 ```text
 请用 Kami 把 notes.md 排版成一份正式的一页纸 PDF。
@@ -109,7 +101,8 @@ npx skills remove --global skill-name
 
 已经装好 runtime 后，可以按目标选：
 
-- 第一次做图片、设计、一页纸、简历、报告或网页 PPT：[Skills / 创作与设计](/docs/skills/creation-design)
+- 第一次生成图片：[模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)
+- 第一次做一页纸、简历、报告或网页 PPT：[Skills / 创作与设计](/docs/skills/creation-design)
 - 想处理 Word / Excel / PPT / PDF：[Skills / 办公文档](/docs/skills/office-docs)
 - 想诊断商业问题、找对标或判断内容方向：[Skills / DBSkill](/docs/skills/dbskill)
 - 想让 AI 编程任务先想清楚再动手：[Skills / Waza](/docs/skills/waza)

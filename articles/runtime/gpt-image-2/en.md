@@ -2,7 +2,7 @@
 title: GPT Image 2
 slug: gpt-image-2
 order: 2
-summary: Use gpt-image-2-all and gpt-image-2 through SorryCode Image2 or the Images API; built-in Codex generation depends on the tools exposed in the current session.
+summary: Use gpt-image-2 through the SorryCode Images API for generation, editing, and streaming; built-in Codex generation depends on the tools exposed in the current session.
 section: runtime
 section_title: Models & Runtimes
 section_order: 10
@@ -13,52 +13,44 @@ group_order: 10
 
 # GPT Image 2
 
-SorryCode provides `gpt-image-2-all` and `gpt-image-2`. Standard sizes use `gpt-image-2-all` by default, while 2K and 4K sizes use `gpt-image-2`. Choose the entry point that matches your task:
-
-| Need | Recommended entry |
-| --- | --- |
-| Generate and revise reliably in an agent | SorryCode Image2 Skill |
-| Build your own integration or workflow | Images API |
-| The current Codex session already exposes image generation | Codex App conversation |
-
-For a first run, install SorryCode Image2.
+SorryCode exposes `gpt-image-2` through an OpenAI-compatible Images API. An agent can read this page and execute the request in a Codex task, or you can call the endpoint from your own program.
 
 > **Let Your Agent Configure It**
 >
-> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to complete the configuration and verification steps it can safely perform, then list anything that still needs your confirmation. If the agent can read web pages, you can send this page URL instead. Do not paste your API key into the conversation.
+> Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to read this page, use the SorryCode API key already configured in the current environment, call the image endpoint, save the result, and verify that the file is complete. Do not paste an API key into the conversation or write it into a project file. If no usable key is configured, ask the agent to direct you to the API Key page to choose a group with image access and complete the connection.
 
 <h2 id="codex">Built-in Image Generation in Codex</h2>
 
 If the current Codex session exposes an image-generation tool, say:
 
 ```text
-Generate a clean warm podcast cover about AI coding for beginners. Leave enough room for a title.
+Generate a clean warm podcast cover about AI coding for beginners. Leave a clear area for the title.
 ```
 
-Then give a concrete revision:
+This path uses Codex's Responses image tool and does not require manual request parameters. A custom provider may not expose that tool. When it is unavailable, use the Images API below. Changing the prompt cannot add a missing tool.
 
-```text
-Make the title area wider, remove some decoration, and change it to a landscape layout.
-```
+<h2 id="prepare">Before You Start</h2>
 
-You do not need to write model parameters for this path. A custom provider may not expose the required tool, however. If Codex loads image instructions but has no callable image tool, changing the prompt will not fix it. Use SorryCode Image2 below.
+1. Create or select an API key at `https://sorrycode.com/keys`.
+2. Confirm that its group allows image generation and can route `gpt-image-2`.
+3. For a manual request, put the key in the `Authorization: Bearer ...` header. GPT Image 2 does not need a separate image key or a general-purpose environment variable.
 
-<h2 id="api">Generate through the Images API</h2>
+When you use Codex's connection flow, the installer saves the selected key. Keys from different groups are not interchangeable just because they share the `sk-` prefix.
 
-The developer endpoint is:
+<h2 id="generate">Generate Through the Images API</h2>
+
+Endpoint:
 
 ```text
 POST https://api.sorrycode.com/v1/images/generations
 ```
-
-Use the same key already connected to Codex. You do not need a separate image key. A raw API request still places that Codex key in the `Authorization` header, but it does not require an environment variable.
 
 Create `request.json` first. macOS / Linux:
 
 ```bash
 cat > request.json <<'JSON'
 {
-  "model": "gpt-image-2-all",
+  "model": "gpt-image-2",
   "prompt": "A small red paper boat floating on a calm lake",
   "size": "1024x1024",
   "n": 1,
@@ -74,7 +66,7 @@ Windows PowerShell:
 ```powershell
 $json = @'
 {
-  "model": "gpt-image-2-all",
+  "model": "gpt-image-2",
   "prompt": "A small red paper boat floating on a calm lake",
   "size": "1024x1024",
   "n": 1,
@@ -91,13 +83,11 @@ $json = @'
 )
 ```
 
-Send the request:
-
-Replace `sk-replace-with-codex-key` with the same key already connected to Codex.
+Send the request and replace the placeholder with your API key:
 
 ```bash
 curl -N https://api.sorrycode.com/v1/images/generations \
-  -H "Authorization: Bearer sk-replace-with-codex-key" \
+  -H "Authorization: Bearer sk-replace-with-sorrycode-key" \
   -H "Content-Type: application/json" \
   --data-binary "@request.json"
 ```
@@ -106,38 +96,61 @@ On Windows PowerShell, use `curl.exe`:
 
 ```powershell
 curl.exe -N https://api.sorrycode.com/v1/images/generations `
-  -H "Authorization: Bearer sk-replace-with-codex-key" `
+  -H "Authorization: Bearer sk-replace-with-sorrycode-key" `
   -H "Content-Type: application/json" `
   --data-binary "@request.json"
 ```
 
-Image generation can take much longer than text. Keep `stream: true` and `partial_images: 2` so the client receives progress events before the completion event. Use the Skill below when you want the output image and diagnostics saved automatically.
+Image generation can take longer than text. Keep `stream: true` and `partial_images: 2` so the client receives progress events before the completion event. Save only the final image from the completion event.
 
-<h2 id="skill">Use the SorryCode Image2 Skill</h2>
+<h2 id="edit">Edit an Existing Image</h2>
 
-[SorryCode Image2](/docs/skills/sorrycode-image2) automatically reuses the current SorryCode Codex key. For standard sizes, it tries `gpt-image-2-all` first and then `gpt-image-2` when the first result is an explicit failure and retrying is safe. Use it when you need to:
-
-- edit a local PNG, JPEG, or WebP file;
-- choose an exact output folder and size;
-- save the prompt, request, response, and streaming events;
-- repeat the same image task inside a project.
-
-Give this instruction to Codex or Claude Code:
+Endpoint:
 
 ```text
-Install SorryCode Image2, reuse the current SorryCode Codex key automatically, and generate a 1024x1024 image in outputs/images/first-run/.
+POST https://api.sorrycode.com/v1/images/edits
 ```
+
+Use `multipart/form-data`. The input can be PNG, JPEG, or WebP:
+
+```bash
+curl https://api.sorrycode.com/v1/images/edits \
+  -H "Authorization: Bearer sk-replace-with-sorrycode-key" \
+  -F "model=gpt-image-2" \
+  -F "prompt=Turn this into a watercolor illustration" \
+  -F "image=@input.png" \
+  -F "size=1024x1024"
+```
+
+<h2 id="save">Save the Returned Image</h2>
+
+- `response_format: b64_json` returns Base64 data. Decode `data[0].b64_json` and write it to `.png` or the actual format returned by the API.
+- `response_format: url` returns `data[0].url`. Temporary URLs may expire, so download the file promptly.
+- Partial images in a stream are previews. Save the final image after the completion event.
+
+An agent can decode, download, and write the file, but it should confirm that the target file exists and can be read before reporting success. After an interrupted or timed-out request, check the previous request state before sending another paid request.
+
+<h2 id="agent">Let an Agent Execute It</h2>
+
+Give the agent this page or its Markdown, then specify the task and output path:
+
+```text
+Read the GPT Image 2 integration guide. Use the SorryCode API key already configured in the current environment, call the Images API to generate a 1024x1024 image, save it to outputs/images/first-run/, and verify that the file can be read before reporting success. Do not ask me to paste an API key or write it into a file.
+```
+
+If the agent has no HTTP or file tool, it can provide the request but cannot perform the generation. Run the Curl example from this page instead.
 
 <h2 id="errors">Common Issues</h2>
 
 - `401`: the API key is missing, wrong, or not sent as a Bearer token.
-- `403`: image generation is not enabled for the current Codex key's group.
+- `403`: image generation is not enabled for the current key's group.
 - `400`: check the model, prompt, size, and image input format.
-- `503 No available compatible accounts`: the current Codex group has no compatible image account available right now.
-- No result for a long time: keep streaming enabled, shorten the prompt, or retry at `1024x1024`.
+- `503 No available compatible accounts`: the current group has no compatible image account available right now.
+- No result for a long time: keep streaming enabled and validate the path first with `1024x1024`; after a timeout, check the previous request state before retrying.
 
 <h2 id="next">Next Step</h2>
 
 - Set up Codex: [Models & Runtimes / Codex](/docs/runtime/codex)
-- Use a reproducible workflow: [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
+- Generate Grok images: [Models & Runtimes / Grok Image Generation](/docs/runtime/grok-image)
+- Generate Grok videos: [Models & Runtimes / Grok Video Generation](/docs/runtime/grok-video)
 - Create an API key: [Getting Started / Create API Key](/docs/start/create-api-key)

@@ -15,10 +15,10 @@ section_order: 5
 - AI 是一个读过很多书但记性不好的实习生
 - 三个底层突破让它从"聊天玩具"变成了"生产工具"
 - Agent 不是更聪明的聊天机器人，是能操作你电脑的"员工"
-- Prompt 不是咒语，是工作指令——说清楚四件事就行
-- 管好上下文比写好 Prompt 更重要——墙上、桌上、垃圾桶
-- AI 自信不等于正确——你懂的领域你审，不懂的交叉验证
-- 模型是大脑、工作台是身体、平台是后勤——选工作台比选模型重要
+- Prompt 不是咒语，是工作指令，说清楚四件事就行
+- 管好上下文比写好 Prompt 更重要，墙上、桌上、垃圾桶
+- AI 自信不等于正确，你懂的领域你审，不懂的交叉验证
+- 模型是大脑、工作台是身体、平台是后勤，选工作台比选模型重要
 
 现在最后一个问题：**我第一步到底做什么？**
 
@@ -36,7 +36,7 @@ C. 我想系统性地把 AI 用起来，当日常工具
 
 **你不需要装任何东西。**
 
-打开任何一个 AI 聊天网页——ChatGPT、Claude、Kimi、豆包，随便哪个。把你在 [跟 AI 说话，不是念咒](/docs/concepts/what-is-prompt) 里学到的东西用一遍：
+打开任何一个 AI 聊天网页，ChatGPT、Claude、Kimi、豆包，随便哪个。把你在 [跟 AI 说话，不是念咒](/docs/concepts/what-is-prompt) 里学到的东西用一遍：
 
 1. 想一个你工作里的小任务（写一封邮件、总结一段文字、翻译一个文档）
 2. 写清楚：要什么、不要什么、什么算做完、有什么背景
@@ -74,7 +74,7 @@ Skill 是给 Agent 的能力包。你想做什么，就装对应的 Skill：
 | 你想做什么 | 装哪个 Skill |
 | --- | --- |
 | 处理 Word / Excel / PPT / PDF | [办公文档](/docs/skills/office-docs) |
-| 生成图片、海报、封面 | [SorryCode Image2](/docs/skills/sorrycode-image2) |
+| 生成图片、海报、封面 | [GPT Image 2](/docs/runtime/gpt-image-2) |
 | 做一页纸、简历、作品集 | [Kami](/docs/skills/kami) |
 | 做网页 PPT | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 

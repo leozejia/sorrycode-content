@@ -29,7 +29,7 @@ This page covers the three paths verified on SorryCode production:
 
 <h2 id="prepare">Before You Start</h2>
 
-Create or select a Grok-group key at `https://sorrycode.com/keys`. Use the same Grok key to submit the job and poll the result. The Codex key reused by SorryCode Image2 cannot be used for Grok video. This page does not require an environment variable.
+Create or select a Grok-group key at `https://sorrycode.com/keys`. Use the same Grok key to submit the job and poll the result. The OpenAI / Codex-group key used by GPT Image 2 cannot be used for Grok video. This page does not require an environment variable.
 
 <h2 id="models">Choose a Model</h2>
 

@@ -182,13 +182,13 @@ This confirms two things early:
 
 Codex can generate an image directly only when the current session exposes an image-generation tool. That tool may be unavailable with a custom SorryCode provider, and prompting cannot restore a missing tool.
 
-For a reliable path, install [SorryCode Image2](/docs/skills/sorrycode-image2), then say this in Codex App:
+For a reliable path, read the [GPT Image 2](/docs/runtime/gpt-image-2) guide, then say this in Codex App:
 
 ```text
-Use SorryCode Image2 to generate a clean warm podcast cover about AI coding for beginners. Keep the layout simple and leave enough room for a title.
+Read the GPT Image 2 guide, generate a clean warm podcast cover about AI coding for beginners, keep the layout simple, and leave enough room for a title.
 ```
 
-The Skill switches compatible models when a retry is safe and verifies that an image was actually saved. Continue the conversation to adjust composition, aspect ratio, colors, or title space. Developers can also call the Images API directly. See [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2) for both paths.
+The agent follows the guide to call the Images API, save the result, and verify the image file. Continue the conversation to adjust composition, aspect ratio, colors, or title space.
 
 <h2 id="install-skills-with-agent">Next: Let Codex Manage Skills</h2>
 

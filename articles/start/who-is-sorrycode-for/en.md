@@ -2,7 +2,7 @@
 title: Who SorryCode Is For
 slug: who-is-sorrycode-for
 order: 2
-summary: Use one balance and separate API keys to try Codex, Claude Code, image generation, and Skills before committing to multiple subscriptions.
+summary: Use one balance and separate API keys to try Codex, Claude Code, GPT Image 2, and other Skills before committing to multiple subscriptions.
 section: start
 section_title: Getting Started
 section_order: 1
@@ -91,7 +91,7 @@ You do not need a separate monthly subscription for every platform you want to t
 
 Create separate `sk-...` keys by use.
 
-For example, one for Codex, one for Claude Code, and one for an image skill. They consume the same balance, but usage records, groups, limits, and troubleshooting stay clearer.
+For example, one for Codex, one for Claude Code, and one for GPT Image 2. They consume the same balance, but usage records, groups, limits, and troubleshooting stay clearer.
 
 ### Multiple entries
 

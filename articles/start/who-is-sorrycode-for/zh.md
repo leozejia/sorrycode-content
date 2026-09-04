@@ -2,7 +2,7 @@
 title: SorryCode 适合谁
 slug: who-is-sorrycode-for
 order: 2
-summary: 如果你想用一份余额体验 Codex、Claude Code、图片生成和 Skills，而不是先订阅多个产品，先看这页。
+summary: 如果你想用一份余额体验 Codex、Claude Code、GPT Image 2 和其他 Skills，而不是先订阅多个产品，先看这页。
 section: start
 section_title: 开始使用
 section_order: 1
@@ -91,7 +91,7 @@ SorryCode 不是要替代所有订阅。
 
 你可以按用途创建多个 `sk-...`。
 
-比如 Codex 一把，Claude Code 一把，图片 Skill 一把。它们消耗同一份余额，但使用记录、分组、限额和排障会分得更清楚。
+比如 Codex 一把，Claude Code 一把，GPT Image 2 一把。它们消耗同一份余额，但使用记录、分组、限额和排障会分得更清楚。
 
 ### 多个入口
 

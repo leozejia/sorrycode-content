@@ -2,7 +2,7 @@
 title: What Are Skills
 slug: featured-skills
 order: 1
-summary: A skill is an instruction manual for the agent. After installing Codex or Claude Code, use skills to make image work, document design, slides, project reading, and engineering workflows more reliable.
+summary: A skill is an instruction manual for the agent. After installing Codex or Claude Code, use skills for document design, slides, project reading, and engineering workflows; read the GPT Image 2 guide for image generation.
 section: skills
 section_title: Skills
 section_order: 15
@@ -13,10 +13,6 @@ section_order: 15
 A skill is an instruction manual for the agent.
 
 You do not need to learn every step yourself. Install `Codex` or `Claude Code`, install the right skill, then tell the agent what you want:
-
-```text
-Use SorryCode Image2 to generate a cover.
-```
 
 ```text
 Use Kami to turn this content into a one-pager.
@@ -45,10 +41,6 @@ A skill turns that experience into a reusable capability pack. Install it once, 
 <h2 id="trigger">How to Trigger Skills Reliably</h2>
 
 The most reliable way is to name the skill directly.
-
-```text
-Use SorryCode Image2 to edit ./input/product.png into a website hero visual and save it to outputs/images/product-hero/.
-```
 
 ```text
 Use Kami to typeset notes.md into a polished one-page PDF.
@@ -109,7 +101,8 @@ If you have not installed a runtime yet, start here:
 
 After your runtime works, choose by goal:
 
-- First image, design, one-pager, resume, report, or web deck: [Skills / Creation and Design](/docs/skills/creation-design)
+- First image: [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2)
+- First one-pager, resume, report, or web deck: [Skills / Creation and Design](/docs/skills/creation-design)
 - Work with Word / Excel / PowerPoint / PDF: [Skills / Office Docs](/docs/skills/office-docs)
 - Diagnose business questions, benchmarks, or content direction: [Skills / DBSkill](/docs/skills/dbskill)
 - Make AI coding workflows steadier: [Skills / Waza](/docs/skills/waza)

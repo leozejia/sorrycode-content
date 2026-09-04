@@ -119,7 +119,7 @@ section_order: 15
 图片任务也可以直接说：
 
 ```text
-请先读取 DESIGN.md，再用 SorryCode Image2 生成一张产品海报。保持项目既有视觉风格，输出到 outputs/images/poster/。
+请先读取 DESIGN.md，再读取 [GPT Image 2](/docs/runtime/gpt-image-2) 文档，生成一张产品海报。保持项目既有视觉风格，输出到 outputs/images/poster/。
 ```
 
 <h2 id="relationship">它和 skill 的关系</h2>

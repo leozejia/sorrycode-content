@@ -43,7 +43,7 @@ It is useful if you are:
 
 If you only want image generation, document layout, or web-style presentation decks, start here instead:
 
-- [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
+- [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2)
 - [Skills / Kami](/docs/skills/kami)
 - [Skills / Guizang PPT Skill](/docs/skills/magazine-web-ppt)
 
@@ -118,9 +118,9 @@ Do not try to learn everything on day one. Start with `dbs` and let the agent ro
 - `DBSkill`: diagnose business questions, content direction, and execution blocks
 - `Waza`: make AI coding workflows steadier
 - `Kami`: turn material into polished documents, resumes, portfolios, and slides
-- `SorryCode Image2`: generate images, covers, posters, and illustrations
+- `GPT Image 2`: generate images, covers, posters, and illustrations
 
-A natural workflow is: use `DBSkill` to decide direction, then use `Kami`, `Guizang PPT Skill`, or `SorryCode Image2` to make the final artifact.
+A natural workflow is: use `DBSkill` to decide direction, then use `GPT Image 2`, `Kami`, or `Guizang PPT Skill` to make the final artifact.
 
 <h2 id="common-issues">Common Issues</h2>
 

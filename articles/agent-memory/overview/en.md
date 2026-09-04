@@ -116,8 +116,8 @@ See [Make AI Remember Work Methods](/docs/agent-memory/remember-skills)
            ↓ invokes
 ┌─────────────────────────────────────────┐
 │      Skill Memory (Work Methods)         │
-│   SorryCode Image2: "How to generate     │
-│                      images"             │
+│   GPT Image 2 guide: "How to call the    │
+│                      image API"          │
 │   Waza: "How to review code"             │
 │   → Triggered when needed                │
 └─────────────────────────────────────────┘

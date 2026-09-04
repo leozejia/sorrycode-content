@@ -16,7 +16,7 @@ section_order: 1
 
 `API Key` 是这条通道上的钥匙，用来证明这是你的 SorryCode 账号在使用模型。它通常长这样：`sk-...`。
 
-无论你后面走 Codex、Claude Code、OpenCode、Grok、图片 Skill，还是手动请求，这一步都绕不开。现在控制台可以直接用这把 key 生成安装命令或配置，所以最好先把 key 建好。
+无论你后面走 Codex、Claude Code、OpenCode、Grok、GPT Image 2，还是手动请求，这一步都绕不开。现在控制台可以直接用这把 key 生成安装命令或配置，所以最好先把 key 建好。
 
 一份 SorryCode 余额可以对应多把 API Key。只要协议和分组权限兼容，同一把 Key 可以在多个工具中复用；需要分开管理时再创建多把 Key。
 
@@ -24,7 +24,7 @@ Key 要和工具使用的协议、目标模型及其分组权限匹配。需要�
 
 | Key 名称 | 选择的分组 | 用在哪里 |
 | --- | --- | --- |
-| `Codex` | 支持 Codex / OpenAI-compatible 和图片能力的分组 | Codex、GPT Image 2 API、SorryCode Image2 Skill |
+| `Codex` | 支持 Codex / OpenAI-compatible 和图片能力的分组 | Codex、GPT Image 2 API |
 | `Claude Code` | 支持 Anthropic-compatible 的分组 | Claude Code |
 | `OpenCode` | 目标模型对应的分组 | OpenCode |
 | `Grok` | Grok 分组 | Grok Build、Grok 图片和 Grok 视频 |
@@ -85,7 +85,7 @@ Grok
 一份余额，可以有多把 API Key。
 ```
 
-你可以给不同工具分别创建 Key。比如 Codex 一把、Claude Code 一把、Grok 一把。SorryCode Image2 和 GPT Image 2 API 直接复用 Codex Key，不再单独创建图片 Key。它们消耗的是同一份余额，但记录、分组和限额仍可按主要工具管理。
+你可以给不同工具分别创建 Key。比如 Codex 一把、Claude Code 一把、Grok 一把。GPT Image 2 API 直接复用支持图片能力的 OpenAI / Codex 分组 Key，不再单独创建图片 Key。它消耗的是同一份余额，但记录、分组和限额仍可按主要工具管理。
 
 不要因为它们都以 `sk-...` 开头，就认为所有 Key 都可以互换。先检查 Key 所属分组是否开放目标模型和工具需要的协议；兼容时可以复用，不兼容时可能出现权限错误、模型不可用或错误的路由。
 
@@ -135,7 +135,7 @@ Grok
 - 设置额度限制
 - 禁用或删除不再使用的 key
 
-兼容的工具可以共用一把 Key；如果你希望记录、限额和排障彼此隔离，可以分开创建。`SorryCode Image2` 会自动查找并复用当前 Codex Key，不需要额外保存图片 Key 或设置环境变量。
+兼容的工具可以共用一把 Key；如果你希望记录、限额和排障彼此隔离，可以分开创建。GPT Image 2 API 不需要额外保存图片 Key 或设置通用环境变量。
 
 ![API Key 列表里可以切换分组](./key-group-switch.png)
 

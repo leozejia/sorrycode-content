@@ -43,7 +43,7 @@ source_url: https://github.com/dontbesilent2025/dbskill
 
 如果你只是想生成图片、排版文档或做网页 PPT，先看：
 
-- [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
+- [模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)
 - [Skills / Kami](/docs/skills/kami)
 - [Skills / 藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt)
 
@@ -118,9 +118,9 @@ npx skills add dontbesilent2025/dbskill -a claude-code -g -y
 - `DBSkill`：判断商业问题、内容方向和行动卡点
 - `Waza`：让 AI 编程任务先想清楚再动手
 - `Kami`：把内容做成成品文档、简历、作品集、PPT
-- `SorryCode Image2`：生成图片、封面、海报、插图
+- `GPT Image 2`：生成图片、封面、海报、插图
 
-一个自然组合是：先用 `DBSkill` 判断方向，再用 `Kami`、`藏师傅的 PPT Skill` 或 `SorryCode Image2` 做成品。
+一个自然组合是：先用 `DBSkill` 判断方向，再用 `GPT Image 2`、`Kami`、`藏师傅的 PPT Skill` 做成品。
 
 <h2 id="common-issues">常见问题</h2>
 

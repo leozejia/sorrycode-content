@@ -16,7 +16,7 @@ When you chat with AI in a browser, you type into a web page. Tools like `Codex`
 
 An `API Key` is the key on that channel. It proves that this is your SorryCode account using the model. It usually starts with `sk-...`.
 
-No matter whether you use Codex, Claude Code, OpenCode, Grok, an image skill, or manual setup, this step is unavoidable. The console can generate install commands or configuration from this key, so create the key first.
+No matter whether you use Codex, Claude Code, OpenCode, Grok, GPT Image 2, or manual setup, this step is unavoidable. The console can generate install commands or configuration from this key, so create the key first.
 
 One SorryCode balance can have multiple API keys. Reuse one key across tools when their protocol and group access are compatible; create more keys when separate management is useful.
 
@@ -24,7 +24,7 @@ Match each key to the protocol, models, and group access the tool needs. When yo
 
 | Key name | Selected group | Used for |
 | --- | --- | --- |
-| `Codex` | A group that supports Codex / OpenAI-compatible traffic and image generation | Codex, the GPT Image 2 API, and the SorryCode Image2 Skill |
+| `Codex` | A group that supports Codex / OpenAI-compatible traffic and image generation | Codex and the GPT Image 2 API |
 | `Claude Code` | A group that supports Anthropic-compatible traffic | Claude Code |
 | `OpenCode` | The group for the target model | OpenCode |
 | `Grok` | A Grok group | Grok Build, Grok images, and Grok video |
@@ -85,7 +85,7 @@ Then remember one more line:
 one balance can have multiple API keys.
 ```
 
-You can create separate keys for separate tools, such as one for Codex, one for Claude Code, and one for Grok. SorryCode Image2 and the GPT Image 2 API reuse the Codex key instead of introducing another image key. They still use the same balance, while records, groups, and limits remain organized around the main tools.
+You can create separate keys for separate tools, such as one for Codex, one for Claude Code, and one for Grok. The GPT Image 2 API reuses an OpenAI / Codex-group key instead of introducing another image key. It still uses the same balance, while records, groups, and limits remain organized around the main tools.
 
 Do not treat every `sk-...` value as interchangeable. Check whether the key's group exposes the model and protocol the tool needs. Reuse a key when they are compatible; a mismatch can cause access errors, unavailable models, or incorrect routing.
 
@@ -135,7 +135,7 @@ If you already created a key, the API key list lets you:
 - set a spending limit
 - disable or delete keys you no longer use
 
-Compatible tools can share one key. Separate keys are useful when you want clearer usage records, limits, or troubleshooting. `SorryCode Image2` finds and reuses the current Codex key automatically, without another image key or environment variable.
+Compatible tools can share one key. Separate keys are useful when you want clearer usage records, limits, or troubleshooting. The GPT Image 2 API does not need another image key or a general-purpose environment variable.
 
 ![You can switch groups from the API key list](./key-group-switch.png)
 

@@ -119,7 +119,7 @@ For long-term use, reference it from `AGENTS.md`, `CLAUDE.md`, or the project in
 For an image task, you can say:
 
 ```text
-Read DESIGN.md first, then use SorryCode Image2 to generate a product poster. Keep the existing project style and save to outputs/images/poster/.
+Read DESIGN.md first, then read the [GPT Image 2](/docs/runtime/gpt-image-2) guide to generate a product poster. Keep the existing project style and save to outputs/images/poster/.
 ```
 
 <h2 id="relationship">How It Relates to Skills</h2>

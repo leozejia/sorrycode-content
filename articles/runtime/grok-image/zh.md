@@ -29,7 +29,7 @@ Grok 分组的 SorryCode API Key。
 2. 确认这把 Key 使用 Grok 分组。
 3. 复制这把 Grok Key，稍后直接替换请求头里的占位值。
 
-这把 Key 可以和 Grok Build 使用同一个 Grok 分组。SorryCode Image2 复用 Codex Key，不能用来调用 Grok 图片。本页不要求设置环境变量。
+这把 Key 可以和 Grok Build 使用同一个 Grok 分组。GPT Image 2 使用 OpenAI / Codex 分组 Key，不能用来调用 Grok 图片。本页不要求设置环境变量。
 
 如果你还没有 Key，先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 

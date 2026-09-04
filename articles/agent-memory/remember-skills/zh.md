@@ -96,7 +96,7 @@ Skill 把这些经验写下来，让同类任务更稳定。
 - `MCP`：工具和数据连接协议
 - `Skills`：某类任务的工作流能力包
 
-它们可以组合。比如一个图片 skill 可以读取 `DESIGN.md`，再调用图片 API 或 MCP 工具。
+它们可以组合。比如图片任务可以读取 `DESIGN.md`，再调用图片 API 或 MCP 工具。
 
 <h2 id="where-next">下一步</h2>
 

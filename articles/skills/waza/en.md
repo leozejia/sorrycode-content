@@ -16,7 +16,7 @@ source_url: https://github.com/tw93/Waza
 
 `Waza` is not one tool. It is a full pack of engineering habits.
 
-If `Kami` helps you ship finished documents and `SorryCode Image2` helps you generate images, `Waza` helps with the deeper question: how do you work with an agent without letting the task drift?
+If `Kami` helps you ship finished documents and `GPT Image 2` helps you generate images, `Waza` helps with the deeper question: how do you work with an agent without letting the task drift?
 
 > **Let Your Agent Configure It**
 >
@@ -128,10 +128,10 @@ I want to use Waza to move through this task more steadily. Decide whether I sho
 <h2 id="relationship">How It Relates to Other Skills</h2>
 
 - `Kami`: finished documents, resumes, portfolios, and slide decks
-- `SorryCode Image2`: images, covers, posters, and illustrations
+- `GPT Image 2`: images, covers, posters, and illustrations
 - `Waza`: engineering workflow and task quality
 
-They do not replace each other. A natural path is to use `Waza` to think clearly first, then use `Kami` or `SorryCode Image2` to produce the final artifact.
+They do not replace each other. A natural path is to use `Waza` to think clearly first, then use `GPT Image 2` or `Kami` to produce the final artifact.
 
 <h2 id="common-issues">Common Issues</h2>
 

@@ -74,7 +74,7 @@ A Skill is a capability pack for your Agent. Install the one matching your task:
 | What you want to do | Which Skill to install |
 | --- | --- |
 | Process Word / Excel / PPT / PDF | [Office Docs](/docs/skills/office-docs) |
-| Generate images, posters, covers | [SorryCode Image2](/docs/skills/sorrycode-image2) |
+| Generate images, posters, covers | [GPT Image 2](/docs/runtime/gpt-image-2) |
 | Create one-pagers, resumes, portfolios | [Kami](/docs/skills/kami) |
 | Make web-based slide decks | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 

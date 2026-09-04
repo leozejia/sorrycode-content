@@ -5,7 +5,7 @@
     "en": "Skills",
     "zh": "Skills"
   },
-  "updatedAt": "2026-08-06",
+  "updatedAt": "2026-09-04",
   "navigation": {
     "style": "curated-shelf",
     "groups": [
@@ -37,7 +37,6 @@
         },
         "items": [
           "creation-design",
-          "sorrycode-image2",
           "kami",
           "magazine-web-ppt"
         ]
@@ -59,7 +58,6 @@
     "featured-skills",
     "office-docs",
     "creation-design",
-    "sorrycode-image2",
     "kami",
     "magazine-web-ppt",
     "waza",

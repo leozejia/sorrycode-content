@@ -23,7 +23,7 @@ group: creation-design
 
 | 你要做什么 | 优先看 |
 | --- | --- |
-| 生成封面、海报、插图、产品视觉或 2D 游戏素材 | [SorryCode Image2](/docs/skills/sorrycode-image2) |
+| 生成封面、海报、插图、产品视觉或 2D 游戏素材 | [GPT Image 2](/docs/runtime/gpt-image-2) |
 | 做一页纸、简历、报告、白皮书、作品集或纸面风幻灯片 | [Kami](/docs/skills/kami) |
 | 快速生成有明确视觉风格的网页演示 | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 | 做可评论、可维护、可导出 HTML/PDF 的代码式 PPT | [工具 / Open Slide](/docs/tools/open-slide) |
@@ -75,13 +75,13 @@ PPT 不是一种单一工具，而是一种交付形态。先看最终要交付�
 如果你还不知道该用哪个 skill，可以直接问 agent：
 
 ```text
-我想做一个可以发给别人的成品材料。请先判断我应该用 SorryCode Image2、Kami、藏师傅的 PPT Skill、PPTX、Open Slide 还是 HyperFrames，再问我必要问题。
+我想做一个可以发给别人的成品材料。请先判断我应该用 GPT Image 2、Kami、藏师傅的 PPT Skill、PPTX、Open Slide 还是 HyperFrames，再问我必要问题。
 ```
 
 如果你已经知道要做图片：
 
 ```text
-请用 SorryCode Image2 生成一张公众号封面，主题是 AI 编程入门，中文标题清晰，保存到 outputs/images/cover/。
+请读取 GPT Image 2 文档，生成一张公众号封面，主题是 AI 编程入门，中文标题清晰，保存到 outputs/images/cover/。
 ```
 
 如果你要做一页纸：
@@ -94,11 +94,6 @@ PPT 不是一种单一工具，而是一种交付形态。先看最终要交付�
 
 先安装 [Codex](/docs/runtime/codex) 或 [Claude Code](/docs/runtime/claude-code)，再按任务安装对应 skill。
 
-如果你只是第一次尝试，建议顺序是：
-
-1. 先装 [SorryCode Image2](/docs/skills/sorrycode-image2)，生成第一张图
-2. 再装 [Kami](/docs/skills/kami)，做一份一页纸
-3. 需要演讲展示时，再看 [演示 / PPT 交付路线](#presentation-route)
-4. 需要代码式 PPT 或视频工具链时，再看 [Open Slide](/docs/tools/open-slide) 和 [HyperFrames](/docs/tools/hyperframes)
+如果你只是第一次尝试，图片生成先看 [GPT Image 2](/docs/runtime/gpt-image-2)，需要文档成品时再装 [Kami](/docs/skills/kami)。需要演讲展示时，再看 [演示 / PPT 交付路线](#presentation-route)；需要代码式 PPT 或视频工具链时，再看 [Open Slide](/docs/tools/open-slide) 和 [HyperFrames](/docs/tools/hyperframes)。
 
 如果你想研究完整设计工作台，而不是只安装一个 skill，可以看 [工具 / Open Design](/docs/tools/open-design)。

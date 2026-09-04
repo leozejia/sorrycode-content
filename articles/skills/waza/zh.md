@@ -16,7 +16,7 @@ source_url: https://github.com/tw93/Waza
 
 `Waza` 不是某一个工具，而是一整套工程习惯包。
 
-如果 `Kami` 帮你把材料做成成品，`SorryCode Image2` 帮你生成图片，`Waza` 解决的是更底层的问题：你怎么和 agent 一起把任务推进下去。
+如果 `Kami` 帮你把材料做成成品，`GPT Image 2` 帮你生成图片，`Waza` 解决的是更底层的问题：你怎么和 agent 一起把任务推进下去。
 
 > **交给 Agent 配置**
 >
@@ -128,10 +128,10 @@ npx skills add tw93/Waza -a claude-code -g -y
 <h2 id="relationship">和其他 Skills 的关系</h2>
 
 - `Kami`：把内容做成成品文档、简历、作品集、PPT
-- `SorryCode Image2`：生成图片、封面、海报、插图
+- `GPT Image 2`：生成图片、封面、海报、插图
 - `Waza`：帮你建立工程协作流程，让任务先想清楚再推进
 
-它们不是互相替代的关系。更自然的组合是：先用 `Waza` 想清楚，再用 `Kami` 或 `SorryCode Image2` 做成品。
+它们不是互相替代的关系。更自然的组合是：先用 `Waza` 想清楚，再用 `GPT Image 2` 或 `Kami` 做成品。
 
 <h2 id="common-issues">常见问题</h2>
 

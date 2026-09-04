@@ -56,7 +56,7 @@ group_order: 30
 
 如果你还没做这一步，可以先看 [开始使用 / 创建 API Key](/docs/start/create-api-key)。
 
-如果你也准备使用 Codex 或 Claude Code，先检查现有 Key 是否属于这些工具需要的协议和分组。SorryCode Image2 会复用 Codex Key，Grok Build 仍使用 Grok 分组 Key。每把 Key 都必须选择与实际用途匹配的分组。
+如果你也准备使用 Codex 或 Claude Code，先检查现有 Key 是否属于这些工具需要的协议和分组。GPT Image 2 使用 OpenAI / Codex 分组 Key，Grok Build 仍使用 Grok 分组 Key。每把 Key 都必须选择与实际用途匹配的分组。
 
 <h2 id="one-click-install">⚡ 一键安装（推荐）</h2>
 

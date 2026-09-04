@@ -30,7 +30,7 @@ Grok 视频是异步 API。第一次请求只负责创建任务并返回 `reques
 
 <h2 id="prepare">开始前准备</h2>
 
-在 `https://sorrycode.com/keys` 创建或选择一把 Grok 分组 Key。提交任务和轮询结果必须使用同一把 Grok Key。SorryCode Image2 复用的 Codex Key 不能用于 Grok 视频，本页也不需要设置环境变量。
+在 `https://sorrycode.com/keys` 创建或选择一把 Grok 分组 Key。提交任务和轮询结果必须使用同一把 Grok Key。GPT Image 2 使用的 OpenAI / Codex 分组 Key 不能用于 Grok 视频，本页也不需要设置环境变量。
 
 <h2 id="models">选择模型</h2>
 

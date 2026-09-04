@@ -56,7 +56,7 @@ The quick link is `https://sorrycode.com/keys`, but the more important thing is 
 
 If you have not done this yet, start with [Getting Started / Create API Key](/docs/start/create-api-key).
 
-If you also plan to use Codex or Claude Code, first check whether an existing key matches the protocol and group each tool needs. SorryCode Image2 reuses the Codex key, while Grok Build still uses a Grok-group key. Every key must use a group that matches its actual purpose.
+If you also plan to use Codex or Claude Code, first check whether an existing key matches the protocol and group each tool needs. GPT Image 2 uses an OpenAI / Codex-group key, while Grok Build still uses a Grok-group key. Every key must use a group that matches its actual purpose.
 
 <h2 id="one-click-install">⚡ One-Click Install (Recommended)</h2>
 
