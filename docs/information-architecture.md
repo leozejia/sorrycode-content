@@ -136,7 +136,7 @@ Expert 是角色与协作机制，不是权限来源。各产品的安装和配�
 
 图片能力按供应商页面维护，不在“开始使用”中另建图片总览：
 
-- `GPT Image 2` 同时承接 Codex 自然语言生图和显式 Images API。Agent 直接读取这篇页面，按其中的接口和保存约定执行；不再为同一条图片能力维护独立 Skill 页面；
+- `GPT Image 2` 和 `GPT Image 2.5` 分别维护各自的模型与参数边界，同时承接 Codex 自然语言生图和显式 Images API。Agent 直接读取对应页面，按其中的接口和保存约定执行；不再为同一条图片能力维护独立 Skill 页面；
 - `Grok 图片生成` 只讲经过生产验证的 xAI-compatible Images API；
 - `Grok 视频生成` 只讲文生视频、图生视频和异步轮询；未采用的 edit / extension
   不进入公开文档。

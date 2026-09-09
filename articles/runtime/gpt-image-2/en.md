@@ -15,6 +15,8 @@ group_order: 10
 
 SorryCode exposes `gpt-image-2` through an OpenAI-compatible Images API. An agent can read this page and execute the request in a Codex task, or you can call the endpoint from your own program.
 
+For GPT Image 2.5, read [GPT Image 2.5](/docs/runtime/gpt-image-2-5). Its API uses `gpt-image-2.5-flare` or `gpt-image-2.5-sunburst`; the examples on this page remain specific to `gpt-image-2`.
+
 > **Let Your Agent Configure It**
 >
 > Click `Copy Markdown` in the upper-right and send the content to the agent you are using. Ask it to read this page, use the SorryCode API key already configured in the current environment, call the image endpoint, save the result, and verify that the file is complete. Do not paste an API key into the conversation or write it into a project file. If no usable key is configured, ask the agent to direct you to the API Key page to choose a group with image access and complete the connection.
@@ -153,4 +155,5 @@ If the agent has no HTTP or file tool, it can provide the request but cannot per
 - Set up Codex: [Models & Runtimes / Codex](/docs/runtime/codex)
 - Generate Grok images: [Models & Runtimes / Grok Image Generation](/docs/runtime/grok-image)
 - Generate Grok videos: [Models & Runtimes / Grok Video Generation](/docs/runtime/grok-video)
+- Use GPT Image 2.5: [Models & Runtimes / GPT Image 2.5](/docs/runtime/gpt-image-2-5)
 - Create an API key: [Getting Started / Create API Key](/docs/start/create-api-key)
