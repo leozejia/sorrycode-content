@@ -18,6 +18,7 @@ Start by choosing the agent workspace that fits how you work, then follow its gu
 | --- | --- | --- |
 | **ChatGPT / Codex** | The default choice for code, files, and local tasks, with a visual app | [ChatGPT / Codex](/docs/runtime/codex) |
 | **Claude Code** | Code, terminal tasks, and long-running autonomous work | [Claude Code](/docs/runtime/claude-code) |
+| **Cursor Agent** | Code, files, and project tasks inside an editor | [Cursor Agent](/docs/runtime/cursor) |
 | **OpenCode** | An open-source, multi-model agent with both desktop and terminal apps | [OpenCode](/docs/runtime/opencode) |
 | **DSH** | DeepSeek's open-source Web agent with configurable Responses models | [DSH](/docs/runtime/dsh) |
 | **Pi Agent** | A lightweight, flexible terminal agent with configurable Responses-compatible models | [Pi Agent](/docs/runtime/pi-agent) |

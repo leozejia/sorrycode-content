@@ -18,6 +18,7 @@ section_order: 1
 | --- | --- | --- |
 | **ChatGPT / Codex** | 默认选择。适合代码、文件和本机任务，也有可视化 App | [ChatGPT / Codex](/docs/runtime/codex) |
 | **Claude Code** | 适合代码、终端任务和长时间自主执行 | [Claude Code](/docs/runtime/claude-code) |
+| **Cursor Agent** | 适合在编辑器里完成代码、文件和项目任务 | [Cursor Agent](/docs/runtime/cursor) |
 | **OpenCode** | 开源、多模型的 Agent，有桌面客户端和终端版 | [OpenCode](/docs/runtime/opencode) |
 | **DSH** | DeepSeek 开源的 Web Agent，可以配置 Responses 兼容模型 | [DSH](/docs/runtime/dsh) |
 | **Pi Agent** | 轻量、灵活的终端 Agent，可以自行配置 Responses 兼容模型 | [Pi Agent](/docs/runtime/pi-agent) |

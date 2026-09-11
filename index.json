@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-09-09",
+  "updatedAt": "2026-09-11",
   "articles": [
     {
       "type": "article",
@@ -590,6 +590,36 @@
       "markdownPath": "articles/runtime/claude-desktop/zh.md",
       "assetBaseUrl": "articles/runtime/claude-desktop/",
       "route": "/docs/runtime/claude-desktop"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Models & Runtimes",
+      "sectionOrder": 10,
+      "slug": "cursor",
+      "locale": "en",
+      "title": "Cursor Agent",
+      "summary": "Configure SorryCode models in the Cursor editor and use Agent for code and file tasks.",
+      "order": 1,
+      "updatedAt": "2026-09-11",
+      "markdownPath": "articles/runtime/cursor/en.md",
+      "assetBaseUrl": "articles/runtime/cursor/",
+      "route": "/docs/runtime/cursor"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "模型与工作台",
+      "sectionOrder": 10,
+      "slug": "cursor",
+      "locale": "zh",
+      "title": "Cursor Agent",
+      "summary": "在 Cursor 编辑器中配置 SorryCode 自定义模型，使用 Agent 完成代码和文件任务。",
+      "order": 1,
+      "updatedAt": "2026-09-11",
+      "markdownPath": "articles/runtime/cursor/zh.md",
+      "assetBaseUrl": "articles/runtime/cursor/",
+      "route": "/docs/runtime/cursor"
     },
     {
       "type": "article",

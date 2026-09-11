@@ -119,6 +119,12 @@ DeepSeek 可以作为经过验证的推荐示例，但不能写成 Pi 的模型�
 只作为 CLI 和高级用户的备用路径。不在公开页面复制完整模型目录，也不另建通用 API Key
 环境变量方案。每个 provider 只绑定一把分组 Key；跨分组模型必须拆成不同 provider。
 
+`Cursor Agent` 作为独立的编辑器型工作台维护，不归入 OpenAI 分组。页面只维护 Cursor 桌面编辑器
+的 Agent 模式、OpenAI-compatible Base URL 覆盖、匹配分组的 Key、准确模型 ID 和首条文本 / 文件任务验证。
+Cursor 的 OpenAI Base URL 覆盖通常只承载一把活动 Key，不按 OpenCode 的多 provider 方式展开。Tab、
+Background Agent、`cursor-agent` CLI 和 Cursor 专有模型服务不进入 SorryCode 接入承诺，也不新增安装器、
+环境变量或运行时补丁。
+
 `Agent 能力是怎么扩展的` 负责解释 Runtime、Expert / Agent、Skill、MCP / Tool / Connector
 和 Plugin 的层级关系。Plugin 是特定 runtime 的打包与分发单元，不是 Tool 的同义词；
 Expert 是角色与协作机制，不是权限来源。各产品的安装和配置步骤留在对应 runtime 页面，
