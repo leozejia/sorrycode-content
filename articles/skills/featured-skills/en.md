@@ -2,7 +2,7 @@
 title: What Are Skills
 slug: featured-skills
 order: 1
-summary: A skill is an instruction manual for the agent. After installing Codex or Claude Code, use skills for document design, slides, project reading, and engineering workflows; read the GPT Image 2 guide for image generation.
+summary: A skill is an instruction manual for the agent. After installing Codex or Claude Code, use skills for document design, slides, project reading, and engineering workflows; install SorryCode Image2 for image generation.
 section: skills
 section_title: Skills
 section_order: 15
@@ -101,7 +101,7 @@ If you have not installed a runtime yet, start here:
 
 After your runtime works, choose by goal:
 
-- First image: [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2)
+- First image: [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
 - First one-pager, resume, report, or web deck: [Skills / Creation and Design](/docs/skills/creation-design)
 - Work with Word / Excel / PowerPoint / PDF: [Skills / Office Docs](/docs/skills/office-docs)
 - Diagnose business questions, benchmarks, or content direction: [Skills / DBSkill](/docs/skills/dbskill)

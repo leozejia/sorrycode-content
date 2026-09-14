@@ -15,6 +15,8 @@ group_order: 10
 
 SorryCode exposes `gpt-image-2` through an OpenAI-compatible Images API. An agent can read this page and execute the request in a Codex task, or you can call the endpoint from your own program.
 
+If you want the agent to install the Skill, configure its key, save the image, and check the result, read [SorryCode Image2](/docs/skills/sorrycode-image2). This page only maintains the `gpt-image-2` model and Images API usage.
+
 For GPT Image 2.5, read [GPT Image 2.5](/docs/runtime/gpt-image-2-5). Its API uses `gpt-image-2.5-flare` or `gpt-image-2.5-sunburst`; the examples on this page remain specific to `gpt-image-2`.
 
 > **Let Your Agent Configure It**

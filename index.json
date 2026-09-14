@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-09-11",
+  "updatedAt": "2026-09-14",
   "articles": [
     {
       "type": "article",
@@ -421,7 +421,7 @@
       "title": "ChatGPT / Codex",
       "summary": "Set up ChatGPT / Codex with a SorryCode API key, then start in the desktop app or Codex CLI.",
       "order": 1,
-      "updatedAt": "2026-08-28",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/runtime/codex/en.md",
       "assetBaseUrl": "articles/runtime/codex/",
       "route": "/docs/runtime/codex"
@@ -436,7 +436,7 @@
       "title": "ChatGPT / Codex",
       "summary": "先认识 ChatGPT / Codex，再准备 API Key，完成一键安装，然后直接开始用。",
       "order": 1,
-      "updatedAt": "2026-08-28",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/runtime/codex/zh.md",
       "assetBaseUrl": "articles/runtime/codex/",
       "route": "/docs/runtime/codex"
@@ -811,7 +811,7 @@
       "title": "GPT Image 2",
       "summary": "Use gpt-image-2 through the SorryCode Images API for generation and editing; built-in Codex generation depends on the tools exposed in the current session.",
       "order": 2,
-      "updatedAt": "2026-09-04",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/runtime/gpt-image-2/en.md",
       "assetBaseUrl": "articles/runtime/gpt-image-2/",
       "route": "/docs/runtime/gpt-image-2"
@@ -826,7 +826,7 @@
       "title": "GPT Image 2",
       "summary": "通过 SorryCode Images API 使用 gpt-image-2 生成和编辑图片；Codex 内置生图以当前会话实际提供的工具为准。",
       "order": 2,
-      "updatedAt": "2026-09-04",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/runtime/gpt-image-2/zh.md",
       "assetBaseUrl": "articles/runtime/gpt-image-2/",
       "route": "/docs/runtime/gpt-image-2"
@@ -841,7 +841,7 @@
       "title": "GPT Image 2.5",
       "summary": "Use gpt-image-2.5-flare for fast generation or gpt-image-2.5-sunburst for high-quality generation and precise editing.",
       "order": 3,
-      "updatedAt": "2026-09-09",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/runtime/gpt-image-2-5/en.md",
       "assetBaseUrl": "articles/runtime/gpt-image-2-5/",
       "route": "/docs/runtime/gpt-image-2-5"
@@ -856,7 +856,7 @@
       "title": "GPT Image 2.5",
       "summary": "使用 gpt-image-2.5-flare 快速生成图片，或使用 gpt-image-2.5-sunburst 进行高质量生成和精确编辑。",
       "order": 3,
-      "updatedAt": "2026-09-09",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/runtime/gpt-image-2-5/zh.md",
       "assetBaseUrl": "articles/runtime/gpt-image-2-5/",
       "route": "/docs/runtime/gpt-image-2-5"
@@ -931,7 +931,7 @@
       "title": "Creation and Design",
       "summary": "The entry point for images, posters, one-pagers, resumes, reports, portfolios, and presentation work.",
       "order": 1,
-      "updatedAt": "2026-05-12",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/skills/creation-design/en.md",
       "assetBaseUrl": "articles/skills/creation-design/",
       "route": "/docs/skills/creation-design"
@@ -946,7 +946,7 @@
       "title": "创作与设计",
       "summary": "图片、海报、一页纸、简历、报告、作品集和演示表达的入口。先判断你要生成图片、处理内容，还是做 PPT / slides。",
       "order": 1,
-      "updatedAt": "2026-05-12",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/skills/creation-design/zh.md",
       "assetBaseUrl": "articles/skills/creation-design/",
       "route": "/docs/skills/creation-design"
@@ -959,9 +959,9 @@
       "slug": "featured-skills",
       "locale": "en",
       "title": "What Are Skills",
-      "summary": "A skill is an instruction manual for the agent. After installing Codex or Claude Code, use skills for document design, slides, project reading, and engineering workflows; read the GPT Image 2 guide for image generation.",
+      "summary": "A skill is an instruction manual for the agent. After installing Codex or Claude Code, use skills for document design, slides, project reading, and engineering workflows; install SorryCode Image2 for image generation.",
       "order": 1,
-      "updatedAt": "2026-09-04",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/skills/featured-skills/en.md",
       "assetBaseUrl": "articles/skills/featured-skills/",
       "route": "/docs/skills/featured-skills"
@@ -974,9 +974,9 @@
       "slug": "featured-skills",
       "locale": "zh",
       "title": "Skills 是什么",
-      "summary": "Skill 是给 agent 读的操作说明书。装好 Codex 或 Claude Code 后，用 Skills 让 agent 稳定完成排版、PPT、读项目和工程流程；图片生成请读取 GPT Image 2 文档。",
+      "summary": "Skill 是给 agent 读的操作说明书。装好 Codex 或 Claude Code 后，用 Skills 让 agent 稳定完成排版、PPT、读项目和工程流程；图片生成可以安装 SorryCode Image2。",
       "order": 1,
-      "updatedAt": "2026-09-04",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/skills/featured-skills/zh.md",
       "assetBaseUrl": "articles/skills/featured-skills/",
       "route": "/docs/skills/featured-skills"
@@ -1042,6 +1042,38 @@
       "assetBaseUrl": "articles/skills/waza/",
       "route": "/docs/skills/waza",
       "sourceUrl": "https://github.com/tw93/Waza"
+    },
+    {
+      "type": "article",
+      "section": "skills",
+      "sectionTitle": "Skills",
+      "sectionOrder": 15,
+      "slug": "sorrycode-image2",
+      "locale": "en",
+      "title": "SorryCode Image2",
+      "summary": "A reusable Agent Skill for generating or editing GPT Image 2 and GPT Image 2.5 images through SorryCode, with saved outputs and completion checks.",
+      "order": 5,
+      "updatedAt": "2026-09-14",
+      "markdownPath": "articles/skills/sorrycode-image2/en.md",
+      "assetBaseUrl": "articles/skills/sorrycode-image2/",
+      "route": "/docs/skills/sorrycode-image2",
+      "sourceUrl": "https://github.com/linxiverse/sorrycode-image2"
+    },
+    {
+      "type": "article",
+      "section": "skills",
+      "sectionTitle": "Skills",
+      "sectionOrder": 15,
+      "slug": "sorrycode-image2",
+      "locale": "zh",
+      "title": "SorryCode Image2",
+      "summary": "通过一个可复用的 Agent Skill，使用 SorryCode 生成或编辑 GPT Image 2 和 GPT Image 2.5 图片，并把结果保存到项目目录。",
+      "order": 5,
+      "updatedAt": "2026-09-14",
+      "markdownPath": "articles/skills/sorrycode-image2/zh.md",
+      "assetBaseUrl": "articles/skills/sorrycode-image2/",
+      "route": "/docs/skills/sorrycode-image2",
+      "sourceUrl": "https://github.com/linxiverse/sorrycode-image2"
     },
     {
       "type": "article",
@@ -1463,7 +1495,7 @@
       "title": "How AI Remembers What You Said",
       "summary": "Tired of repeating yourself? Three ways to make AI remember your work style, design preferences, and project rules long-term.",
       "order": 1,
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/agent-memory/overview/en.md",
       "assetBaseUrl": "articles/agent-memory/overview/",
       "route": "/docs/agent-memory/overview"
@@ -1478,7 +1510,7 @@
       "title": "AI 怎么记住我说过的话",
       "summary": "每次都要重新解释？三种方式让 AI 长期记住你的工作方式、设计风格和项目规则。",
       "order": 1,
-      "updatedAt": "2026-07-08",
+      "updatedAt": "2026-09-14",
       "markdownPath": "articles/agent-memory/overview/zh.md",
       "assetBaseUrl": "articles/agent-memory/overview/",
       "route": "/docs/agent-memory/overview"

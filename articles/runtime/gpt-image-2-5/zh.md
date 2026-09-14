@@ -22,6 +22,8 @@ SorryCode 通过 OpenAI 兼容的 Images API 提供两个 GPT Image 2.5 模型�
 
 两者都接受文字或图片输入，输出图片。请求中的 `model` 必须填写表格中的完整模型 ID。
 
+如果你想让 Agent 负责安装、配置 Skill、保存图片和检查结果，请看 [SorryCode Image2](/docs/skills/sorrycode-image2)。本页只维护 GPT Image 2.5 的模型和参数。
+
 <h2 id="prepare">配置 API Key</h2>
 
 1. 在 [API Key 页面](https://sorrycode.com/keys) 创建或选择一把 Key。

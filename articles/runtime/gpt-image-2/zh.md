@@ -15,6 +15,8 @@ group_order: 10
 
 SorryCode 通过 OpenAI 兼容的 Images API 提供 `gpt-image-2`。你可以在 Codex 的自然语言任务中让 Agent 读取本页并执行请求，也可以自己写程序调用接口。
 
+如果你想让 Agent 负责安装、配置 Skill、保存图片和检查结果，请看 [SorryCode Image2](/docs/skills/sorrycode-image2)。本页只维护 `gpt-image-2` 的模型和 Images API 用法。
+
 如果你要使用 GPT Image 2.5，请改看 [GPT Image 2.5](/docs/runtime/gpt-image-2-5)。GPT Image 2.5 在 API 中使用 `gpt-image-2.5-flare` 或 `gpt-image-2.5-sunburst`，本页示例仍然只针对 `gpt-image-2`。
 
 > **交给 Agent 配置**

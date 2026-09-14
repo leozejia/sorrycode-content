@@ -2,7 +2,7 @@
 title: Skills 是什么
 slug: featured-skills
 order: 1
-summary: Skill 是给 agent 读的操作说明书。装好 Codex 或 Claude Code 后，用 Skills 让 agent 稳定完成排版、PPT、读项目和工程流程；图片生成请读取 GPT Image 2 文档。
+summary: Skill 是给 agent 读的操作说明书。装好 Codex 或 Claude Code 后，用 Skills 让 agent 稳定完成排版、PPT、读项目和工程流程；图片生成可以安装 SorryCode Image2。
 section: skills
 section_title: Skills
 section_order: 15
@@ -101,7 +101,7 @@ npx skills remove --global skill-name
 
 已经装好 runtime 后，可以按目标选：
 
-- 第一次生成图片：[模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)
+- 第一次生成图片：[Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
 - 第一次做一页纸、简历、报告或网页 PPT：[Skills / 创作与设计](/docs/skills/creation-design)
 - 想处理 Word / Excel / PPT / PDF：[Skills / 办公文档](/docs/skills/office-docs)
 - 想诊断商业问题、找对标或判断内容方向：[Skills / DBSkill](/docs/skills/dbskill)

@@ -23,7 +23,7 @@ These artifacts usually need a few revisions. Start with an editable draft, then
 
 | What you need | Start with |
 | --- | --- |
-| Generate covers, posters, illustrations, product visuals, or 2D game assets | [GPT Image 2](/docs/runtime/gpt-image-2) |
+| Generate covers, posters, illustrations, product visuals, or 2D game assets | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | Make one-pagers, resumes, reports, white papers, portfolios, or paper-style slides | [Kami](/docs/skills/kami) |
 | Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 | Make code-based decks with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
@@ -81,7 +81,7 @@ I want to create a polished artifact that I can share with other people. First d
 If you already know you need an image:
 
 ```text
-Read the GPT Image 2 guide, generate an article cover about AI coding for beginners, keep the title clear, and save it to outputs/images/cover/.
+Read the SorryCode Image2 guide, generate an article cover about AI coding for beginners, keep the title clear, and save it to outputs/images/cover/.
 ```
 
 If you need a one-pager:
@@ -94,6 +94,6 @@ Use Kami to turn the product introduction below into a one-pager for first-time 
 
 Install [Codex](/docs/runtime/codex) or [Claude Code](/docs/runtime/claude-code) first, then install the skill that matches the task.
 
-For a first run, read [GPT Image 2](/docs/runtime/gpt-image-2) for image generation. Install [Kami](/docs/skills/kami) when you need a finished document. Use the [Presentation / PPT Delivery Route](#presentation-route) for presentations, and use [Open Slide](/docs/tools/open-slide) or [HyperFrames](/docs/tools/hyperframes) for a code-based deck or video toolchain.
+For a first image run, read [SorryCode Image2](/docs/skills/sorrycode-image2). Use [GPT Image 2](/docs/runtime/gpt-image-2) when you need to call the Images API manually. Install [Kami](/docs/skills/kami) when you need a finished document. Use the [Presentation / PPT Delivery Route](#presentation-route) for presentations, and use [Open Slide](/docs/tools/open-slide) or [HyperFrames](/docs/tools/hyperframes) for a code-based deck or video toolchain.
 
 If you want a full design workbench instead of a single skill, see [Tools / Open Design](/docs/tools/open-design).
