@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-09-14",
+  "updatedAt": "2026-10-13",
   "articles": [
     {
       "type": "article",
@@ -440,66 +440,6 @@
       "markdownPath": "articles/runtime/codex/zh.md",
       "assetBaseUrl": "articles/runtime/codex/",
       "route": "/docs/runtime/codex"
-    },
-    {
-      "type": "article",
-      "section": "runtime",
-      "sectionTitle": "Models & Runtimes",
-      "sectionOrder": 10,
-      "slug": "codex-multi-model",
-      "locale": "en",
-      "title": "Use Other Models in ChatGPT / Codex",
-      "summary": "Use Grok, DeepSeek, and other third-party models in the ChatGPT desktop app or Codex CLI through SorryCode Responses.",
-      "order": 2,
-      "updatedAt": "2026-08-17",
-      "markdownPath": "articles/runtime/codex-multi-model/en.md",
-      "assetBaseUrl": "articles/runtime/codex-multi-model/",
-      "route": "/docs/runtime/codex-multi-model"
-    },
-    {
-      "type": "article",
-      "section": "runtime",
-      "sectionTitle": "模型与工作台",
-      "sectionOrder": 10,
-      "slug": "codex-multi-model",
-      "locale": "zh",
-      "title": "在 ChatGPT / Codex 中使用其他模型",
-      "summary": "通过 SorryCode 的 Responses 接口，在 ChatGPT 桌面 App 或 Codex CLI 中使用 Grok、DeepSeek 等第三方模型。",
-      "order": 2,
-      "updatedAt": "2026-08-17",
-      "markdownPath": "articles/runtime/codex-multi-model/zh.md",
-      "assetBaseUrl": "articles/runtime/codex-multi-model/",
-      "route": "/docs/runtime/codex-multi-model"
-    },
-    {
-      "type": "article",
-      "section": "runtime",
-      "sectionTitle": "Models & Runtimes",
-      "sectionOrder": 10,
-      "slug": "gpt-5-6-sol",
-      "locale": "en",
-      "title": "How to Use GPT-5.6 Sol",
-      "summary": "Use GPT-5.6 Sol for complex professional work, choose reasoning effort intentionally, and validate leaner prompts on representative tasks.",
-      "order": 2,
-      "updatedAt": "2026-07-15",
-      "markdownPath": "articles/runtime/gpt-5-6-sol/en.md",
-      "assetBaseUrl": "articles/runtime/gpt-5-6-sol/",
-      "route": "/docs/runtime/gpt-5-6-sol"
-    },
-    {
-      "type": "article",
-      "section": "runtime",
-      "sectionTitle": "模型与工作台",
-      "sectionOrder": 10,
-      "slug": "gpt-5-6-sol",
-      "locale": "zh",
-      "title": "GPT-5.6 Sol 怎么用",
-      "summary": "用 GPT-5.6 Sol 处理复杂专业任务，正确选择 reasoning effort，并用代表性任务验证精简提示词的效果。",
-      "order": 2,
-      "updatedAt": "2026-07-15",
-      "markdownPath": "articles/runtime/gpt-5-6-sol/zh.md",
-      "assetBaseUrl": "articles/runtime/gpt-5-6-sol/",
-      "route": "/docs/runtime/gpt-5-6-sol"
     },
     {
       "type": "article",
@@ -1664,6 +1604,36 @@
       "markdownPath": "articles/agent-memory/strong-model-project-rules/zh.md",
       "assetBaseUrl": "articles/agent-memory/strong-model-project-rules/",
       "route": "/docs/agent-memory/strong-model-project-rules"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Models & Runtimes",
+      "sectionOrder": 10,
+      "slug": "magpie",
+      "locale": "zh",
+      "title": "magpie - 统一管理所有 AI 工具",
+      "summary": "用 magpie 统一管理 Claude Code、Codex、Pi 等所有 AI 工具的模型配置，一个命令切换场景。",
+      "order": 0,
+      "updatedAt": "2026-10-13",
+      "markdownPath": "articles/runtime/magpie/zh.md",
+      "assetBaseUrl": "articles/runtime/magpie/",
+      "route": "/docs/runtime/magpie"
+    },
+    {
+      "type": "article",
+      "section": "runtime",
+      "sectionTitle": "Models & Runtimes",
+      "sectionOrder": 10,
+      "slug": "magpie",
+      "locale": "en",
+      "title": "magpie - Unified Model Management",
+      "summary": "Use magpie to manage model configurations for Claude Code, Codex, Pi, and other AI tools in one place, switch scenarios with a single command.",
+      "order": 0,
+      "updatedAt": "2026-10-13",
+      "markdownPath": "articles/runtime/magpie/en.md",
+      "assetBaseUrl": "articles/runtime/magpie/",
+      "route": "/docs/runtime/magpie"
     }
   ]
 }
