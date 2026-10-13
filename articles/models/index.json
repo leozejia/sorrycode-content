@@ -12,19 +12,19 @@
       {
         "id": "overview",
         "title": { "en": "Overview", "zh": "总览" },
-        "items": ["current-lineup", "how-to-choose"]
+        "items": ["how-to-query", "how-to-choose"]
       },
       {
-        "id": "families",
-        "title": { "en": "Model Families", "zh": "模型系列" },
-        "items": ["gpt-family", "claude-family"]
+        "id": "understanding",
+        "title": { "en": "Understanding Models", "zh": "理解模型" },
+        "items": ["naming-convention", "model-capabilities"]
       }
     ]
   },
   "articles": [
-    "current-lineup",
+    "how-to-query",
     "how-to-choose",
-    "gpt-family",
-    "claude-family"
+    "naming-convention",
+    "model-capabilities"
   ]
 }

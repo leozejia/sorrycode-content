@@ -141,6 +141,35 @@ This confirms two things early:
 - the runtime opened the correct project folder
 - it can read the project and respond normally
 
+<h2 id="gateway-model-discovery">Let Claude Code Discover Gateway Models</h2>
+
+If you want Claude Code's `/model` picker to show the models currently exposed by the SorryCode gateway, add this entry under `env` in `~/.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "1"
+  }
+}
+```
+
+If `env` already exists, add this entry without replacing the other settings. This switch belongs to Claude Code only; it does not configure the model list in Claude Desktop.
+
+You can inspect the model directory currently returned by the gateway:
+
+```bash
+curl -sS https://api.sorrycode.com/v1/models \
+  -H "Authorization: Bearer <your SorryCode API key>"
+```
+
+Use the exact values in `data[].id` as model IDs. The directory can change with gateway routing, API key groups, and permissions, so do not permanently hard-code a complete list from one query. When you need to pin a specific version, prefer the full model ID:
+
+```bash
+claude --model claude-opus-5-5
+```
+
+You can also enter `/model` after starting Claude Code to inspect the available choices. If a model returned by the gateway does not appear in the picker, confirm that the switch is in the correct `settings.json`, restart Claude Code, and check that the current API key has permission to use that model.
+
 <h2 id="install-skills-with-agent">Next: Let Claude Code Manage Skills</h2>
 
 After Claude Code is running, you do not need to study `npx`, `Git`, or `Homebrew` yourself. Paste this into Claude Code and let it read the current SorryCode Skills docs, prepare the environment, and install, list, or remove the skills you need:
