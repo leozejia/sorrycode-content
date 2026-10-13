@@ -595,8 +595,6 @@ magpie codex grok/grok-4.7
 
 ## 进一步阅读
 
-- [当前模型阵容](/docs/models/current-lineup) - 了解所有可用模型
-- [如何选择模型](/docs/models/how-to-choose) - 根据任务选择合适的模型
 - [Claude Code](/docs/runtime/claude-code) - Claude Code 详细指南
 - [Codex](/docs/runtime/codex) - Codex 详细指南
 - [Pi Agent](/docs/runtime/pi-agent) - Pi Agent 详细指南

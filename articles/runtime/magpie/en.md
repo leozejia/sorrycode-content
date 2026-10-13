@@ -411,8 +411,6 @@ magpie use baseline
 
 ## Further Reading
 
-- [How to Query Models](/docs/models/how-to-query) - Learn all available models
-- [How to Choose Models](/docs/models/how-to-choose) - Choose right model for tasks
 - [Claude Code](/docs/runtime/claude-code) - Claude Code detailed guide
 - [Codex](/docs/runtime/codex) - Codex detailed guide
 - [Pi Agent](/docs/runtime/pi-agent) - Pi Agent detailed guide
