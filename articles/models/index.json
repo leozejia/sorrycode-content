@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "section": "models",
+  "title": {
+    "en": "Models",
+    "zh": "模型"
+  },
+  "updatedAt": "2026-10-13",
+  "navigation": {
+    "style": "curated-shelf",
+    "groups": [
+      {
+        "id": "overview",
+        "title": { "en": "Overview", "zh": "总览" },
+        "items": ["current-lineup", "how-to-choose"]
+      },
+      {
+        "id": "families",
+        "title": { "en": "Model Families", "zh": "模型系列" },
+        "items": ["gpt-family", "claude-family"]
+      }
+    ]
+  },
+  "articles": [
+    "current-lineup",
+    "how-to-choose",
+    "gpt-family",
+    "claude-family"
+  ]
+}
