@@ -13,6 +13,17 @@ group_order: 10
 
 # GPT Image 2
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+
 SorryCode 通过 OpenAI 兼容的 Images API 提供 `gpt-image-2`。你可以在 Codex 的自然语言任务中让 Agent 读取本页并执行请求，也可以自己写程序调用接口。
 
 如果你想让 Agent 负责安装、配置 Skill、保存图片和检查结果，请看 [SorryCode Image2](/docs/skills/sorrycode-image2)。本页只维护 `gpt-image-2` 的模型和 Images API 用法。

@@ -13,6 +13,17 @@ group_order: 20
 
 # Claude Desktop
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+
 如果你想用 `Claude Desktop` 的图形界面，又希望模型请求走 SorryCode，这页就是最短路径。
 
 你不需要先学终端，也不需要手动改配置文件。准备好 SorryCode API Key，在 Claude Desktop 里打开第三方推理配置，填入 Gateway 地址和 Key，重启后能正常进入 `Cowork 3P · Gateway`，就说明已经接通。

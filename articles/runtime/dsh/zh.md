@@ -13,6 +13,17 @@ group_order: 22
 
 # DSH
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+
 DSH 是 DeepSeek 开源的 Agent Harness，全名是 DeepSeek Harness。它提供 Web UI，可以选择工作目录、管理模型，并让 Agent 读取文件、执行命令和完成任务。
 
 DSH 不只支持 DeepSeek 模型。它可以添加自定义提供方，通过 SorryCode 使用 Responses 模型，也可以使用 `claude-opus-5`、`claude-opus-4-6` 等 Claude 模型。

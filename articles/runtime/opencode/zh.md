@@ -13,6 +13,17 @@ group_order: 21
 
 # OpenCode
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+
 OpenCode 是开源的多模型 Agent。第一次接入 SorryCode，直接使用 Desktop 客户端的可视化配置即可。
 
 > **交给 Agent 配置**

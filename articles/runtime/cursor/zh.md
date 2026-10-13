@@ -13,6 +13,17 @@ group_order: 15
 
 # Cursor Agent
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+
 Cursor 是面向代码项目的编辑器型 Agent。它可以读取项目、修改文件、运行命令，并在编辑器里持续完成任务。
 
 本页说的是 Cursor 桌面编辑器里的 Agent 模式，不是 `cursor-agent` 命令行工具。命令行工具使用 Cursor 自己的账号和 API 凭证，不能直接把 SorryCode API Key 当成它的登录凭证。

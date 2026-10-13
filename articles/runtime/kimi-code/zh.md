@@ -13,6 +13,17 @@ group_order: 25
 
 # Kimi Code
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+
 Kimi Code 是一个运行在终端里的 coding agent，可以读项目、改文件、执行命令，也可以用单条命令完成非交互任务。
 
 这页配置的是 Kimi Code 的模型 provider。API Key 来自 SorryCode，模型请求走 SorryCode；Kimi 官方账号和 `/login` 流程不参与这条链路。

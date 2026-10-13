@@ -13,6 +13,17 @@ group_order: 30
 
 # Grok 视频生成
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+
 Grok 视频是异步 API。第一次请求只负责创建任务并返回 `request_id`；你还需要调用状态接口，直到任务变成 `done`、`failed` 或 `expired`。
 
 本页只讲已经通过 SorryCode 生产验证的三件事：

@@ -13,6 +13,17 @@ group_order: 20
 
 # Claude Fable 5 怎么用
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+
 `claude-fable-5` 是 Anthropic 面向高难度推理和长程 Agent 任务的模型。它适合过去需要人工作数小时、数天，或者需要多轮交接才能完成的工作。
 
 如果你还没有接入 Claude Code，先完成[模型与工作台 / Claude Code](/docs/runtime/claude-code)。这页不重复安装和 API Key 配置，只讲什么时候选 Fable 5，以及怎样给它任务。
