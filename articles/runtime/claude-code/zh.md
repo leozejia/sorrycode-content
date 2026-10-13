@@ -15,9 +15,46 @@ group_order: 20
 
 如果你想在本地直接让模型帮你读项目、改代码、执行命令，这页就是最短路径。
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+>
+> **用 magpie 配置 Claude Code**：
+> ```bash
+> # 1. 安装 magpie
+> curl -fsSL https://usemagpie.ai/install.sh | sh
+> 
+> # 2. 添加 sorrycode provider（Claude 专用）
+> magpie provider add "SorryCode Claude" \
+>   url=https://sorrycode.com \
+>   key=sk-你的key \
+>   anthropic=true
+> 
+> # 3. 配置模型
+> magpie provider models sorrycode-claude \
+>   claude-opus-5-5 \
+>   claude-sonnet-5-5 \
+>   claude-haiku-4-5-20251001
+> 
+> # 4. 配置 Claude Code
+> magpie claude sorrycode-claude/claude-opus-5-5 effort max
+> magpie claude haiku sorrycode-claude/claude-haiku-4-5-20251001
+> ```
+>
+> Claude Code 无需重启，配置实时生效。
+
 对第一次接触这类工具的人来说，先把链路跑通最重要。不要先去研究配置文件，也不用先学一堆终端命令。
 
-> **你走哪条路？**
+> **传统方式：单独配置 Claude Code**
+>
+> 如果你只用 Claude Code，或者不想用 magpie，可以单独配置。
 >
 > **→ 一键安装（推荐）：** 在 API Key 页面点 `接入工具` → 复制命令 → 粘贴到本机终端 → 完成。适合绝大多数人。
 >
@@ -140,6 +177,35 @@ claude
 
 - 它已经进到了对的项目目录
 - 它能正常读项目并给你回应
+
+<h2 id="gateway-model-discovery">让 Claude Code 读取网关模型目录</h2>
+
+如果你希望在 Claude Code 的 `/model` 里看到 SorryCode 网关当前实际提供的模型，请在 `~/.claude/settings.json` 的 `env` 中加入：
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "1"
+  }
+}
+```
+
+如果已有 `env`，只追加这一项，不要覆盖原来的配置。这个开关只属于 Claude Code，不会配置 Claude Desktop 的模型列表。
+
+你可以直接检查网关当前返回的模型目录：
+
+```bash
+curl -sS https://api.sorrycode.com/v1/models \
+  -H "Authorization: Bearer <你的 SorryCode API Key>"
+```
+
+只使用返回结果中的 `data[].id` 作为模型 ID。模型目录可能随网关路由、API Key 分组和权限变化，不要把某次查询得到的完整列表永久写死在配置里。需要锁定具体版本时，优先使用完整模型 ID：
+
+```bash
+claude --model claude-opus-5-5
+```
+
+启动后也可以输入 `/model` 查看当前可选项。如果模型选择器没有显示刚从网关返回的 ID，请先确认开关已经写入正确的 `settings.json`，重启 Claude Code，再检查当前 API Key 是否有该模型的权限。
 
 <h2 id="install-skills-with-agent">下一步：把 Skills 交给 Claude Code 管理</h2>
 

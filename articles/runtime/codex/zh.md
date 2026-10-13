@@ -15,9 +15,43 @@ group_order: 10
 
 如果你想在 ChatGPT 桌面 App 或 Codex CLI 中让模型帮你读项目、改代码、执行命令，这页就是最短路径。
 
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+>
+> **用 magpie 配置 Codex**：
+> ```bash
+> # 1. 安装 magpie
+> curl -fsSL https://usemagpie.ai/install.sh | sh
+> 
+> # 2. 添加 sorrycode provider
+> magpie provider add "SorryCode" url=https://api.sorrycode.com/v1 key=sk-你的key
+> 
+> # 3. 配置模型
+> magpie provider models sorrycode gpt-6.1-sol claude-opus-5-5
+> 
+> # 4. 配置 Codex
+> magpie codex sorrycode/gpt-6.1-sol effort xhigh
+> ```
+>
+> 配置后需要重启 Codex 和 Codex app-server：
+> ```bash
+> codex app-server daemon restart
+> # 然后重启 Codex app
+> ```
+
 对第一次接触这类工具的人来说，先把链路跑通最重要。不要先去研究配置文件，也不用先学一堆终端命令。
 
-> **你走哪条路？**
+> **传统方式：单独配置 Codex**
+>
+> 如果你只用 Codex，或者不想用 magpie，可以单独配置。
 >
 > **→ 一键安装（推荐）：** 在 API Key 页面点 `接入工具` → 复制命令 → 粘贴到本机终端 → 完成。适合绝大多数人。
 >
@@ -125,7 +159,34 @@ cmd /c "curl -fsSL -o %TEMP%\sorrycode-codex.bat {{INSTALL_BAT_URL}} && %TEMP%\s
 
 Codex App 的 Plugin 从侧边栏插件入口安装或启用。Plugin、Skill 和 MCP 的关系见 [Agent 能力是怎么扩展的](/docs/runtime/agent-capabilities)。
 
-Grok、DeepSeek 等第三方模型也可以在 ChatGPT / Codex 中使用。切换前先选择包含目标模型的分组 Key，再按[在 ChatGPT / Codex 中使用其他模型](/docs/runtime/codex-multi-model)修改模型。
+<h2 id="multi-model">使用其他模型（Grok、DeepSeek 等）</h2>
+
+**推荐方式：使用 magpie**
+
+magpie 让你可以轻松在 Codex 中使用任何 sorrycode 支持的模型：
+
+```bash
+# 使用 Grok
+magpie codex sorrycode/grok-4.7 effort high
+
+# 使用 DeepSeek
+magpie codex sorrycode/deepseek-flash effort high
+
+# 使用 Claude
+magpie codex sorrycode/claude-sonnet-5-5 effort high
+```
+
+配置后需要重启 Codex：
+```bash
+codex app-server daemon restart
+# 然后重启 Codex app
+```
+
+👉 [完整指南：使用 magpie 管理多模型](/docs/runtime/magpie#multi-model)
+
+**传统方式：手动配置**
+
+如果不使用 magpie，可以手动修改 `~/.codex/config.toml`。详见之前的文档（已不推荐）。
 
 <h2 id="cli-fallback">备用：继续用终端</h2>
 

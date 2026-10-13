@@ -17,7 +17,40 @@ Pi 是 [earendil-works/pi](https://github.com/earendil-works/pi) 提供的终端
 
 这里说的是 [pi.dev](https://pi.dev/) 对应的 Pi，不是其他同名项目。
 
-> **交给 Agent 配置**
+> **🎯 推荐：使用 magpie 统一管理（多工具用户）**
+>
+> 如果你同时使用多个 AI 工具（Claude Code、Codex、Pi 等），推荐先配置 magpie。
+> 
+> **magpie 能做什么**：
+> - ✅ 一次配置，管理所有 AI 工具
+> - ✅ 一个命令切换模型和场景
+> - ✅ 多账号自动轮换
+> 
+> 👉 [完整指南：使用 magpie 管理所有 AI 工具](/docs/runtime/magpie)
+>
+> **用 magpie 配置 Pi**：
+> ```bash
+> # 1. 安装 magpie
+> curl -fsSL https://usemagpie.ai/install.sh | sh
+> 
+> # 2. 添加 sorrycode providers
+> magpie provider add "SorryCode GPT" \
+>   url=https://sorrycode.com/v1 \
+>   key=sk-你的gpt-key \
+>   responses=true
+> 
+> # 3. 配置模型
+> magpie provider models sorrycode-gpt gpt-6.1-sol
+> 
+> # 4. 配置 Pi
+> magpie pi sorrycode-gpt/gpt-6.1-sol thinking xhigh
+> ```
+>
+> Pi 无需重启，配置实时生效。
+
+> **传统方式：手动配置 models.json**
+>
+> 如果你不使用 magpie，或者需要精细控制 Pi 的配置，可以手动编辑 `~/.pi/agent/models.json`。
 >
 > 点击右上角的「复制 Markdown」，把内容发给你正在使用的 Agent。让它根据当前环境完成可以自动执行的配置和验证，并列出需要你手动确认的步骤。Agent 能读取网页时，也可以直接发送本页链接。不要在对话中粘贴 API Key。
 
