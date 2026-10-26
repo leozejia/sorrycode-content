@@ -94,6 +94,8 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 `/docs/runtime/*`。导航按供应商生态或独立工作台组织，当前文章和分组以 `articles/runtime/index.json`
 为准。不要创建没有文章的空分组。新增页面前，先确认用户入口、模型、接口和生产验证。
 
+`Magpie` 页面只说明通过图形界面接入 SorryCode 的最短路径：从官网安装、按 SorryCode 模型分组分别添加自定义供应商和对应 API Key、获取模型，然后在 Agent 面板启用。不要在这篇入门文档维护未经当前界面验证的 CLI、场景、账号轮换或工具兼容性说明。
+
 ChatGPT / Codex 相关页面按下面分工，现有 `codex` slug 保持不变：
 
 - `ChatGPT / Codex` 负责安装、API Key、Base URL 和第一次使用；

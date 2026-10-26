@@ -1,7 +1,7 @@
 {
   "version": 4,
   "kind": "sorrycode-content-index",
-  "updatedAt": "2026-10-13",
+  "updatedAt": "2026-10-26",
   "articles": [
     {
       "type": "article",
@@ -1612,10 +1612,10 @@
       "sectionOrder": 10,
       "slug": "magpie",
       "locale": "zh",
-      "title": "magpie - 统一管理所有 AI 工具",
-      "summary": "用 magpie 统一管理 Claude Code、Codex、Pi 等所有 AI 工具的模型配置，一个命令切换场景。",
+      "title": "用 Magpie 配置 SorryCode",
+      "summary": "从官网安装 Magpie，在供应商中为 SorryCode 的不同模型分组添加 API Key，获取模型后到 Agent 面板启用。",
       "order": 0,
-      "updatedAt": "2026-10-13",
+      "updatedAt": "2026-10-26",
       "markdownPath": "articles/runtime/magpie/zh.md",
       "assetBaseUrl": "articles/runtime/magpie/",
       "route": "/docs/runtime/magpie"
@@ -1627,10 +1627,10 @@
       "sectionOrder": 10,
       "slug": "magpie",
       "locale": "en",
-      "title": "magpie - Unified Model Management",
-      "summary": "Use magpie to manage model configurations for Claude Code, Codex, Pi, and other AI tools in one place, switch scenarios with a single command.",
+      "title": "Configure SorryCode in Magpie",
+      "summary": "Install Magpie, add a SorryCode API key for each model group, fetch its models, and enable one in the Agent panel.",
       "order": 0,
-      "updatedAt": "2026-10-13",
+      "updatedAt": "2026-10-26",
       "markdownPath": "articles/runtime/magpie/en.md",
       "assetBaseUrl": "articles/runtime/magpie/",
       "route": "/docs/runtime/magpie"
