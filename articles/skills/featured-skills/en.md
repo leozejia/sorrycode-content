@@ -104,7 +104,6 @@ After your runtime works, choose by goal:
 - First image: [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
 - First one-pager, resume, report, or web deck: [Skills / Creation and Design](/docs/skills/creation-design)
 - Work with Word / Excel / PowerPoint / PDF: [Skills / Office Docs](/docs/skills/office-docs)
-- Diagnose business questions, benchmarks, or content direction: [Skills / DBSkill](/docs/skills/dbskill)
 - Make AI coding workflows steadier: [Skills / Waza](/docs/skills/waza)
 
 To understand `AGENTS.md / CLAUDE.md / DESIGN.md / MCP / Skills` as standards and capability mechanisms, go to [Agent Infrastructure](/docs/agent-memory/overview).

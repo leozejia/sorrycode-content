@@ -43,7 +43,7 @@ source_url: https://github.com/op7418/guizang-ppt-skill
 - 想要网页翻页、视觉完整、可直接展示的 HTML deck
 - 需要围绕同一视觉系统生成 PPT 配图或平台封面
 
-如果你只需要改已有 `.pptx`，先看[办公文档](/docs/skills/office-docs)。如果你要做可维护的 React deck，先看[工具 / Open Slide](/docs/tools/open-slide)。
+如果你只需要改已有 `.pptx`，先看[办公文档](/docs/skills/office-docs)。
 
 <h2 id="presentation-route">和其他 PPT 能力怎么选</h2>
 
@@ -52,7 +52,6 @@ source_url: https://github.com/op7418/guizang-ppt-skill
 | 修改已有 PowerPoint、套公司模板、最终交付 `.pptx` | [办公文档](/docs/skills/office-docs) |
 | 快速生成有明确视觉风格的网页演示 | `藏师傅的 PPT Skill` |
 | 把文章、报告、简历或作品集整理成纸面风材料 | [Kami](/docs/skills/kami) |
-| 做可维护、可评论、可导出 HTML/PDF 的代码式 deck | [工具 / Open Slide](/docs/tools/open-slide) |
 
 <h2 id="what-is-not-good-for">不适合做什么</h2>
 
@@ -146,7 +145,7 @@ ppt/
 <h2 id="common-issues">常见问题</h2>
 
 - 提示 `npx`、`node` 或 `npm` 找不到
-  先去看 [环境准备 / Node.js](/docs/environment/nodejs)
+  先去看 [常见问题 / Node.js](/docs/start/common-errors#nodejs)
 - 它会生成 `.pptx` 吗
   默认不会，它生成的是单文件 HTML 幻灯片
 - 为什么站内不写完整主题和版式清单

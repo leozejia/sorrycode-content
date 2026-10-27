@@ -135,8 +135,8 @@ curl.exe "{{ANTHROPIC_BASE_URL}}/v1/messages" `
 ## 如果失败
 
 - `401 / 404 / 429`
-  去看 [排障 / 常见问题](/docs/troubleshoot/common-errors)
+  去看 [常见问题](/docs/start/common-errors)
 - 超时 / TLS
-  去看 [环境准备 / Node.js](/docs/environment/nodejs#network)
+  去看 [常见问题 / 网络与连接](/docs/start/common-errors#network)
 - Windows 脚本问题
-  去看 [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)
+  去看 [常见问题 / Windows PowerShell](/docs/start/common-errors#windows-powershell)

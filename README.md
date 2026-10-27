@@ -19,12 +19,11 @@ articles/
     magpie/
       zh.md
       en.md
-  tools/
+  start/
     index.json
-    codex-history/
+    common-errors/
       zh.md
       en.md
-      cover.png
 ```
 
 ## Current Scope
@@ -36,9 +35,8 @@ This repository can carry public docs for these sections:
 - `agents`
 - `skills`
 - `agent-memory`
-- `tools`
-- `environment`
-- `troubleshoot`
+
+`start` includes a `常见问题 / FAQ` page for connection errors and optional environment help.
 
 The main `sorrycode` repository still owns routing, backend caching, asset proxying, fallback behavior, sanitization, Markdown rendering, and release experience.
 

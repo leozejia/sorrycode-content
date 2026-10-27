@@ -140,5 +140,4 @@ Skills provide the task workflow. `DESIGN.md` stores visual constraints for the 
 <h2 id="next">What's Next</h2>
 
 - Choose a design capability: [Skills / Creation and Design](/docs/skills/creation-design)
-- Explore a design workbench: [Tools / Open Design](/docs/tools/open-design)
 - Store development rules: [Make AI Remember Project Rules](/docs/agent-memory/remember-rules)

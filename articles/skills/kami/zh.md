@@ -172,9 +172,9 @@ npx skills add tw93/kami -a claude-code -g -y
 <h2 id="common-issues">常见问题</h2>
 
 - 提示 `npx` 或 `node` 找不到
-  先去看 [环境准备 / Node.js](/docs/environment/nodejs)
+  先去看 [常见问题 / Node.js](/docs/start/common-errors#nodejs)
 - 提示 `npm` 找不到
-  先去看 [环境准备 / Node.js](/docs/environment/nodejs)
+  先去看 [常见问题 / Node.js](/docs/start/common-errors#nodejs)
 - 我已经装了，但不知道怎么调用
   直接用自然语言描述目标，`Kami` 会自动触发
 - 我想做 PPT，是不是还要装第二个 skill

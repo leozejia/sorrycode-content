@@ -135,8 +135,8 @@ If both are true, at least these layers are working:
 ## If It Fails
 
 - `401` / `404` / `429`
-  go to [Troubleshoot / Common Questions](/docs/troubleshoot/common-errors)
+  go to [FAQ](/docs/start/common-errors)
 - timeout / TLS
-  go to [Environment / Node.js](/docs/environment/nodejs#network)
+  go to [FAQ / Network and Connections](/docs/start/common-errors#network)
 - Windows script issues
-  go to [Environment / Windows PowerShell](/docs/environment/windows-powershell)
+  go to [FAQ / Windows PowerShell](/docs/start/common-errors#windows-powershell)

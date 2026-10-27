@@ -16,7 +16,7 @@ Claude Code 适合在终端里处理代码、文件和项目任务。这里说�
 
 打开 [Claude Code 官方安装说明](https://code.claude.com/docs/en/overview)，按你的系统完成安装。Windows 用户使用说明中的 PowerShell 命令，不要复制 macOS 命令。
 
-不知道怎么打开终端时，看 [Windows PowerShell](/docs/environment/windows-powershell)。
+不知道怎么打开终端时，看 [Windows PowerShell](/docs/start/common-errors#windows-powershell)。
 
 ## 2. 在 Magpie 中启用
 
@@ -38,4 +38,4 @@ claude
 先解释这个文件夹的用途和主要文件，不要修改任何内容。
 ```
 
-需要扩展任务能力时看 [Skills](/docs/skills/featured-skills)；接入报错看[常见问题](/docs/troubleshoot/common-errors)。
+需要扩展任务能力时看 [Skills](/docs/skills/featured-skills)；接入报错看[常见问题](/docs/start/common-errors)。

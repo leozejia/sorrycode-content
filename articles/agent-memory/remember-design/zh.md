@@ -140,5 +140,4 @@ Skill 提供任务流程，`DESIGN.md` 保存当前项目的视觉约束。只�
 <h2 id="next">接下来</h2>
 
 - 选择设计类能力：[Skills / 创作与设计](/docs/skills/creation-design)
-- 了解设计工作台：[Tools / Open Design](/docs/tools/open-design)
 - 保存开发规则：[让 AI 记住项目规则](/docs/agent-memory/remember-rules)

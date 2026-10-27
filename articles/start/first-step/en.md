@@ -32,4 +32,4 @@ Tell me which files matter most in this folder. Read only; do not modify anythin
 
 If you already use another tool, choose [Claude Code](/docs/agents/claude-code), [DeepSeek Harness](/docs/agents/dsh), [WorkBuddy](/docs/agents/workbuddy), or [Other Agents](/docs/agents/other-agents). Connect through the matching entry in Magpie instead of learning a separate configuration process.
 
-Once it replies normally, add [Skills](/docs/skills/featured-skills) for your tasks. For connection failures, see [Common Questions](/docs/troubleshoot/common-errors). Use [First Request](/docs/start/first-request) only when you need a manual API check.
+Once it replies normally, add [Skills](/docs/skills/featured-skills) for your tasks. For connection failures, see [Common Questions](/docs/start/common-errors). Use [First Request](/docs/start/first-request) only when you need a manual API check.

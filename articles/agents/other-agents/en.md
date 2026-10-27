@@ -28,4 +28,4 @@ If you have not chosen a tool, start with [Codex](/docs/agents/codex). If you al
 2. Follow [Configure SorryCode in Magpie](/docs/agents/magpie) to add a provider and models, then enable the matching client in the Agent panel. Use only entries that Magpie displays and supports. Do not apply Cursor Private Inference settings to the regular Cursor editor.
 3. Reopen the tool, choose a working folder, and send: “List the main files in this folder. Do not modify anything.”
 
-If Magpie does not recognize the client, confirm that installation is complete and the client type matches, then update Magpie. Do not run an old connector or edit configuration files to overwrite its settings. For other errors, see [Common Questions](/docs/troubleshoot/common-errors).
+If Magpie does not recognize the client, confirm that installation is complete and the client type matches, then update Magpie. Do not run an old connector or edit configuration files to overwrite its settings. For other errors, see [Common Questions](/docs/start/common-errors).

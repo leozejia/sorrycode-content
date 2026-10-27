@@ -16,7 +16,7 @@ Claude Code handles code, files, and project tasks in the terminal. This is Clau
 
 Open the [official Claude Code installation guide](https://code.claude.com/docs/en/overview) and follow the instructions for your system. On Windows, use its PowerShell commands rather than the macOS commands.
 
-For help opening a terminal on Windows, see [Windows PowerShell](/docs/environment/windows-powershell).
+For help opening a terminal on Windows, see [Windows PowerShell](/docs/start/common-errors#windows-powershell).
 
 ## 2. Enable it in Magpie
 
@@ -38,4 +38,4 @@ Send your first message:
 Explain what this folder is for and which files matter most. Do not modify anything.
 ```
 
-For more task capabilities, see [Skills](/docs/skills/featured-skills). For connection errors, see [Common Questions](/docs/troubleshoot/common-errors).
+For more task capabilities, see [Skills](/docs/skills/featured-skills). For connection errors, see [Common Questions](/docs/start/common-errors).

@@ -49,8 +49,7 @@
           "zh": "工作流"
         },
         "items": [
-          "waza",
-          "dbskill"
+          "waza"
         ]
       }
     ]
@@ -62,7 +61,6 @@
     "kami",
     "magazine-web-ppt",
     "sorrycode-image2",
-    "waza",
-    "dbskill"
+    "waza"
   ]
 }

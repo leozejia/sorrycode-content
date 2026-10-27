@@ -30,4 +30,4 @@ Choose a working folder and send:
 Read the documents in this folder and write a one-sentence summary for each file, labeled by filename. Reply only; do not modify the originals.
 ```
 
-Grant access to that folder as needed. You do not need to open access to other folders for this first test. For connection errors, see [Common Questions](/docs/troubleshoot/common-errors).
+Grant access to that folder as needed. You do not need to open access to other folders for this first test. For connection errors, see [Common Questions](/docs/start/common-errors).

@@ -29,15 +29,13 @@ sorrycode                     产品站、renderer、proxy、cache、安全校�
 
 | 栏目 | 回答的问题 | 写法 |
 | --- | --- | --- |
-| 开始使用 | SorryCode 适合谁，如何创建 Key、验证链路和理解成本 | 第一章，先给默认路径，再提供必要的平台参考 |
+| 开始使用 | SorryCode 适合谁，如何接入、理解成本和处理常见问题 | 第一章，先给默认路径，常见问题作为二级页面 |
+| 核心概念 | Agent、模型、上下文和任务委派是什么 | 按需理解，不作为接入前置 |
 | AGENTS | 怎么接入 SorryCode，安装 Agent 并完成第一个任务 | 默认用 Magpie 图形界面配置，不按厂商分组 |
 | Skills | 装好 runtime 后，给 agent 增加什么能力 | 能力选择、安装、触发、边界 |
-| 工具 | 独立工具链或工作台怎么用 | 初始化、使用、适用边界 |
 | Agent 基建 | 长期上下文、AGENTS.md、CLAUDE.md、DESIGN.md、MCP、Skills 这些长期标准是什么 | 原理、标准、可长期引用 |
-| 环境准备 | 多个路径共用的稳定前置 | 少量共享准备 |
-| 排障 | 共性错误怎么分型和修复 | 错误现象、原因、下一步 |
 
-交叉是正常的。比如做 PPT 会经过 `Skills`、`工具` 和 `办公文档`。治理目标不是消灭交叉，而是避免同一段解释在多个页面重复。
+交叉是正常的。比如做 PPT 会经过 `Skills / 创作与设计` 和 `Skills / 办公文档`。治理目标不是消灭交叉，而是避免同一段解释在多个页面重复。
 
 ## 页面职责
 
@@ -63,14 +61,16 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 
 - 给 agent 的链接使用 `/docs/<section>/<slug>.md?locale=...` 或 `/llms.txt`，不要使用普通 SPA 页面作为唯一入口。
 - 不在 `Skills 是什么` 或单个 skill 页写死“默认安装清单”；skills 会增长，推荐关系应通过当前 section index、分类页和单个文章维护。
-- 单个 skill 页不重复解释 `Node.js / Git / Homebrew / PowerShell` 等共享环境。共享环境只在环境准备或排障页按需承接，不作为桌面 Agent 的通用前置。
+- 单个 skill 页不重复解释 `Node.js / Git / Homebrew / PowerShell` 等共享环境。共享环境只在常见问题中按需承接，不作为桌面 Agent 的通用前置。
 - 如果用户不知道装什么，agent 应先读当前 Skills 分类和相关文章，再按用户目标决定，而不是凭历史记忆安装旧组合。
 
-### Tools
+### 常见问题与收录边界
 
-`Tools` 放项目型工具链和独立工作台。判断标准是：用户第一步是不是初始化或使用一个工具，而不是安装一个全局 skill。
+`常见问题` 不单独占一级栏目，作为 `开始使用` 下的一篇二级页面，英文名为 `FAQ`，路由为 `/docs/start/common-errors`。接入报错、Node.js 和 Windows PowerShell 合在这一页，按标题查阅，不再拆独立环境页。开始使用保留原有五篇文章和这篇常见问题，导航平铺。Node.js 和终端只在实际需要时查阅，不是 Magpie 或桌面 Agent 的安装前置。
 
-`Open Slide`、`HyperFrames`、`Open Design` 这类页面放在 Tools。它们可以被 Skills 页面引用，但不要伪装成普通 skill。
+删除独立的工具栏目及其全部正文和资源，不搬到 Skills。Skills 不再收录 DBSkill。同步删除推荐、示例和提示词里的相关入口，不以其他不等价能力替换。
+
+原 `tools`、`environment` 和 `troubleshoot` 路径硬切删除，不保留兼容入口或重定向。
 
 ### 开始使用、AGENTS 和 Agent 基建
 
@@ -85,6 +85,7 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 - `创建 API Key`：只讲创建、分组、限额和密钥安全，创建后前往 Magpie，不重复各工具配置；
 - `首条请求`：提供手动验证和排障入口；
 - `AI 成本怎么计算`：解释 input、output、cache 和倍率。
+- `常见问题`：按接入报错和环境问题查阅，不要求初次使用时通读。
 
 `工具不是模型` 继续放在核心概念，回答工作台、模型、API Key、Base URL 的关系。
 安装页和首条请求页只负责执行路径，不再承担商业定位或成本科普。

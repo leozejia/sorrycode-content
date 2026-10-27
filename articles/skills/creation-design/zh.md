@@ -26,8 +26,6 @@ group: creation-design
 | 生成封面、海报、插图、产品视觉或 2D 游戏素材 | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | 做一页纸、简历、报告、白皮书、作品集或纸面风幻灯片 | [Kami](/docs/skills/kami) |
 | 快速生成有明确视觉风格的网页演示 | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
-| 做可评论、可维护、可导出 HTML/PDF 的代码式 PPT | [工具 / Open Slide](/docs/tools/open-slide) |
-| 做产品短视频、发布动效或社媒 MP4 | [工具 / HyperFrames](/docs/tools/hyperframes) |
 | 想让一个项目长期保持同一套视觉规则 | [Agent 基建 / DESIGN.md](/docs/agent-memory/remember-design) |
 
 <h2 id="office-vs-design">它和办公文档的区别</h2>
@@ -45,8 +43,6 @@ PPT 不是一种单一工具，而是一种交付形态。先看最终要交付�
 | 修改已有 PowerPoint、套公司模板、最终交付 `.pptx` | [办公文档](/docs/skills/office-docs) |
 | 快速做一套有明确视觉风格的网页演示 | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 | 把文章、报告、简历或作品集整理成纸面风材料 | [Kami](/docs/skills/kami) |
-| 做可维护、可评论、可导出 HTML/PDF 的代码式 deck | [工具 / Open Slide](/docs/tools/open-slide) |
-| 做演示视频、发布动效或社媒 MP4 | [工具 / HyperFrames](/docs/tools/hyperframes) |
 
 第一次只是想做一套分享稿，可以直接使用[藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt)。
 
@@ -75,7 +71,7 @@ PPT 不是一种单一工具，而是一种交付形态。先看最终要交付�
 如果你还不知道该用哪个 skill，可以直接问 agent：
 
 ```text
-我想做一个可以发给别人的成品材料。请先判断我应该用 GPT Image 2、Kami、藏师傅的 PPT Skill、PPTX、Open Slide 还是 HyperFrames，再问我必要问题。
+我想做一个可以发给别人的成品材料。请先判断我应该用 SorryCode Image2、Kami、藏师傅的 PPT Skill 还是办公文档 Skills，再问我必要问题。
 ```
 
 如果你已经知道要做图片：
@@ -94,6 +90,4 @@ PPT 不是一种单一工具，而是一种交付形态。先看最终要交付�
 
 先安装 [Codex](/docs/agents/codex) 或 [Claude Code](/docs/agents/claude-code)，再按任务安装对应 skill。
 
-如果你只是第一次尝试图片生成，先看 [SorryCode Image2](/docs/skills/sorrycode-image2)。需要文档成品时再装 [Kami](/docs/skills/kami)。需要演讲展示时，再看 [演示 / PPT 交付路线](#presentation-route)；需要代码式 PPT 或视频工具链时，再看 [Open Slide](/docs/tools/open-slide) 和 [HyperFrames](/docs/tools/hyperframes)。
-
-如果你想研究完整设计工作台，而不是只安装一个 skill，可以看 [工具 / Open Design](/docs/tools/open-design)。
+如果你只是第一次尝试图片生成，先看 [SorryCode Image2](/docs/skills/sorrycode-image2)。需要文档成品时再装 [Kami](/docs/skills/kami)。需要演讲展示时，再看 [演示 / PPT 交付路线](#presentation-route)。

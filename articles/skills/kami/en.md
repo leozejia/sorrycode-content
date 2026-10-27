@@ -170,9 +170,9 @@ Turn this into a long document and add a revenue breakdown donut chart plus a us
 <h2 id="common-issues">Common Issues</h2>
 
 - `npx` or `node` is missing
-  start with [Environment / Node.js](/docs/environment/nodejs)
+  start with [FAQ / Node.js](/docs/start/common-errors#nodejs)
 - `npm` is missing
-  start with [Environment / Node.js](/docs/environment/nodejs)
+  start with [FAQ / Node.js](/docs/start/common-errors#nodejs)
 - it is installed but I do not know how to call it
   describe the result you want in plain language and let Kami trigger itself
 - I want to make PPT, do I need another skill

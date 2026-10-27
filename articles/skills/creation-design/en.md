@@ -26,8 +26,6 @@ These artifacts usually need a few revisions. Start with an editable draft, then
 | Generate covers, posters, illustrations, product visuals, or 2D game assets | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | Make one-pagers, resumes, reports, white papers, portfolios, or paper-style slides | [Kami](/docs/skills/kami) |
 | Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
-| Make code-based decks with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
-| Make product videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
 | Keep one project aligned to the same visual rules over time | [Agent Infrastructure / DESIGN.md](/docs/agent-memory/remember-design) |
 
 <h2 id="office-vs-design">How It Differs From Office Docs</h2>
@@ -45,8 +43,6 @@ PPT is not one tool category. It is a delivery format. Start with what you actua
 | Edit an existing PowerPoint file, use a company template, deliver `.pptx` | [Office Docs](/docs/skills/office-docs) |
 | Quickly make a web deck with a strong visual system | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 | Turn writing, reports, resumes, or portfolios into paper-like artifacts | [Kami](/docs/skills/kami) |
-| Build a code-based deck with comments and HTML/PDF export | [Tools / Open Slide](/docs/tools/open-slide) |
-| Build presentation videos, launch motion, or social MP4 clips | [Tools / HyperFrames](/docs/tools/hyperframes) |
 
 For a first sharing deck, start with [Guizang PPT Skill](/docs/skills/magazine-web-ppt).
 
@@ -75,7 +71,7 @@ Do not rebuild the full deck. Only revise slides 3 through 6. Improve projector 
 If you do not know which skill to use, ask the agent:
 
 ```text
-I want to create a polished artifact that I can share with other people. First decide whether I should use GPT Image 2, Kami, Guizang PPT Skill, PPTX, Open Slide, or HyperFrames, then ask me the necessary questions.
+I want to create a polished artifact that I can share with other people. First decide whether I should use SorryCode Image2, Kami, Guizang PPT Skill, or Office Docs Skills, then ask me the necessary questions.
 ```
 
 If you already know you need an image:
@@ -94,6 +90,4 @@ Use Kami to turn the product introduction below into a one-pager for first-time 
 
 Install [Codex](/docs/agents/codex) or [Claude Code](/docs/agents/claude-code) first, then install the skill that matches the task.
 
-For a first image run, read [SorryCode Image2](/docs/skills/sorrycode-image2). Install [Kami](/docs/skills/kami) when you need a finished document. Use the [Presentation / PPT Delivery Route](#presentation-route) for presentations, and use [Open Slide](/docs/tools/open-slide) or [HyperFrames](/docs/tools/hyperframes) for a code-based deck or video toolchain.
-
-If you want a full design workbench instead of a single skill, see [Tools / Open Design](/docs/tools/open-design).
+For a first image run, read [SorryCode Image2](/docs/skills/sorrycode-image2). Install [Kami](/docs/skills/kami) when you need a finished document. Use the [Presentation / PPT Delivery Route](#presentation-route) for presentations.

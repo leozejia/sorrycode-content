@@ -28,4 +28,4 @@ section_order: 10
 2. 按[用 Magpie 配置 SorryCode](/docs/agents/magpie)添加供应商和模型，在 Agent 面板启用对应客户端。只按 Magpie 实际显示和支持的项目操作；不要把 Cursor Private Inference 的配置用于普通 Cursor 编辑器。
 3. 重新打开工具，选择工作目录，发送「列出这个文件夹的主要文件，不要修改内容」。
 
-如果 Magpie 没有识别到客户端，先确认安装是否完成、客户端形态是否匹配，再更新 Magpie。不要同时运行旧接入脚本或手改配置来覆盖它。其他错误见[常见问题](/docs/troubleshoot/common-errors)。
+如果 Magpie 没有识别到客户端，先确认安装是否完成、客户端形态是否匹配，再更新 Magpie。不要同时运行旧接入脚本或手改配置来覆盖它。其他错误见[常见问题](/docs/start/common-errors)。

@@ -28,4 +28,4 @@ Select a working folder in DSH and send:
 Read this folder and list the files by type. Reply with the list only. Do not move or modify any files.
 ```
 
-Once the reply reflects the actual files, continue with your own task. DSH is changing quickly, so follow the interface in your installed version. For connection errors, see [Common Questions](/docs/troubleshoot/common-errors).
+Once the reply reflects the actual files, continue with your own task. DSH is changing quickly, so follow the interface in your installed version. For connection errors, see [Common Questions](/docs/start/common-errors).
