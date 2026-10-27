@@ -80,8 +80,8 @@ npx skills add tw93/Waza -a claude-code -g -y
 
 如果你还没装好 runtime，先回到：
 
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+- [AGENTS / Codex](/docs/agents/codex)
+- [AGENTS / Claude Code](/docs/agents/claude-code)
 
 `Waza` 是整包，可能会安装多个子 skill。如果不想继续使用，先运行 `npx skills list --global` 复制实际名称，再用 `npx skills remove --global skill-name` 逐个卸载。
 

@@ -80,8 +80,8 @@ npx skills add tw93/Waza -a claude-code -g -y
 
 If you have not installed a runtime yet, start here:
 
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+- [AGENTS / Codex](/docs/agents/codex)
+- [AGENTS / Claude Code](/docs/agents/claude-code)
 
 `Waza` is a pack and may install multiple child skills. If you no longer need it, run `npx skills list --global`, copy the actual names, then remove them one by one with `npx skills remove --global skill-name`.
 

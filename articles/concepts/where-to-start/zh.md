@@ -65,7 +65,7 @@ C. 我想系统性地把 AI 用起来，当日常工具
 不确定 → 先装 Codex，当前最简单的新手入口
 ```
 
-具体的安装步骤在 [Runtime / Codex](/docs/runtime/codex) 或 [Runtime / Claude Code](/docs/runtime/claude-code)。安装过程通常是一条命令，几分钟搞定。
+先按 [Magpie](/docs/agents/magpie)配置模型，再安装 [Codex](/docs/agents/codex) 开始使用；已经习惯 [Claude Code](/docs/agents/claude-code) 时也可以继续用。
 
 **第二步：装一个 Skill**
 
@@ -74,7 +74,7 @@ Skill 是给 Agent 的能力包。你想做什么，就装对应的 Skill：
 | 你想做什么 | 装哪个 Skill |
 | --- | --- |
 | 处理 Word / Excel / PPT / PDF | [办公文档](/docs/skills/office-docs) |
-| 生成图片、海报、封面 | [GPT Image 2](/docs/runtime/gpt-image-2) |
+| 生成图片、海报、封面 | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | 做一页纸、简历、作品集 | [Kami](/docs/skills/kami) |
 | 做网页 PPT | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 

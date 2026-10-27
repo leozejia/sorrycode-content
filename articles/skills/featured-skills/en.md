@@ -96,8 +96,8 @@ Please check the Codex / Claude Code / agents skill install directories and find
 
 If you have not installed a runtime yet, start here:
 
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+- [AGENTS / Codex](/docs/agents/codex)
+- [AGENTS / Claude Code](/docs/agents/claude-code)
 
 After your runtime works, choose by goal:
 

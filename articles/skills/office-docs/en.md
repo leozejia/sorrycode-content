@@ -30,7 +30,7 @@ These Skills work with existing Word, Excel, PowerPoint, and PDF files. To creat
 
 <h2 id="install">Install</h2>
 
-Install [Codex](/docs/runtime/codex) or [Claude Code](/docs/runtime/claude-code), then run one command for the file type:
+Install [Codex](/docs/agents/codex) or [Claude Code](/docs/agents/claude-code), then run one command for the file type:
 
 | Skill | Codex | Claude Code |
 | --- | --- | --- |

@@ -2,7 +2,7 @@
 title: 常见问题
 slug: common-errors
 order: 1
-summary: 按错误码和现象给出最短修复路径。
+summary: 先检查 Magpie 接入状态，再按认证、模型权限和网络错误排查。
 section: troubleshoot
 section_title: 排障
 section_order: 50
@@ -10,53 +10,38 @@ section_order: 50
 
 # 常见问题
 
-## 401 Unauthorized
+默认通过 Magpie 接入时，先确认 Magpie 正在运行，目标 Agent 已启用「接入」，并且配置后已经重新打开 Agent。不要同时运行旧接入器来覆盖配置。
 
-优先检查：
+## 模型没有出现，或 Agent 没有识别
 
-- API Key 是否完整
-- 认证头是不是写对了
-- 你是不是把站内 key 和上游官方 key 混用了
+- 在 Magpie 的供应商配置里重新点击「获取模型」，确认已保存并选中所需模型。
+- 检查 Agent 是否安装完成，Magpie 中的项目是否对应实际客户端。WorkBuddy 与 WorkBuddy AI、Cursor 的不同客户端形态不能混用。
+- 更新 Magpie 后重新打开；仍不支持的客户端不要照搬其他工具的配置。
 
-协议差异也要看：
+## 401 Unauthorized / API KEY REQUIRED
 
-- OpenAI-compatible 常用 `Authorization: Bearer ...`
-- Anthropic-compatible 常用 `x-api-key: ...`
+`API KEY REQUIRED` 表示服务端没有收到支持的认证信息，不等于余额不足。其他 `401` 也可能是 Key 无效或已禁用。
+
+先检查 Magpie 供应商中的 Key 是否完整、有效，是否属于所选分组；再确认请求确实经过 Magpie。尤其留意旧接入脚本、手动配置或环境变量是否把 Agent 指向了其他地址。不要把 Key 贴到聊天里排查。
+
+Magpie 的供应商 Base URL 是 SorryCode 地址；Agent 连接的可以是本机 Magpie 网关地址。两者同时存在是正常的，不要为了统一地址而相互覆盖。
+
+## 403 / 模型不可用
+
+检查 Key 所属分组是否开放目标模型。回 Magpie 获取最新模型列表，从列表选择，不要手抄旧教程的型号。切换分组后也要重新获取模型。
 
 ## 404 Not Found
 
-优先检查请求使用的完整地址。不同接口对 `/v1` 的要求不同，不要统一补上或删除：
-
-- 对照当前 Runtime 或 API 文档中的 Base URL 和路径
-- 检查客户端是否重复拼接了 `/v1`
-- 检查是否混用了 OpenAI-compatible 和 Anthropic-compatible 路径
-- 确认当前 Key 的分组确实开放了请求中的模型和接口
+检查 Magpie 供应商的 Base URL，按[配置教程](/docs/agents/magpie)填写，不要重复拼接 `/v1` 或完整请求路径。手动 API 请求则须分别核对协议和路径，不能把所有接口都按同一规则改地址。
 
 ## 429 / 配额不足
 
-先判断是哪一类：
+先检查余额和这把 Key 的额度，再降低请求频率与并发。限频和余额不足不是同一件事。
 
-- 余额不足
-- 限频触发
-- 短时间并发过高
+## 超时 / TLS / 连接中断
 
-如果只是验证链路，先降低并发和请求频率再试。
+确认 Magpie 正在运行，再检查网络或代理是否能访问供应商地址。不要反复重装工具；付费图片请求中断后，先确认上次是否已完成，不要连续重复提交。
 
-## 超时 / TLS 错误
+## 仍然失败
 
-先看：
-
-- [环境准备 / Node.js](/docs/environment/nodejs#network)
-
-## PowerShell 执行策略报错
-
-先看：
-
-- [环境准备 / Windows PowerShell](/docs/environment/windows-powershell)
-
-## 你不知道该先查哪一页
-
-回到：
-
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+记录 Agent 与 Magpie 版本、发生时间、完整错误和 request ID，并隐藏 Key 与个人信息。需要区分网关和客户端问题时，再做[手动 API 验证](/docs/start/first-request)。Windows 命令或编码问题看 [Windows PowerShell](/docs/environment/windows-powershell)。

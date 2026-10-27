@@ -98,6 +98,8 @@ Skill 把这些经验写下来，让同类任务更稳定。
 
 它们可以组合。比如图片任务可以读取 `DESIGN.md`，再调用图片 API 或 MCP 工具。
 
+Plugin 是工作台打包和安装能力的方式，可以包含 Skill 和 MCP 配置；Expert 或子 Agent 用来组织角色和协作。它们都不会自动获得额外权限。Magpie 只负责模型接入，需要图片接口、外部服务或文件访问时，仍须满足对应的凭证和授权要求。
+
 <h2 id="where-next">下一步</h2>
 
 如果你想安装具体 skills，去 [Skills / Skills 是什么](/docs/skills/featured-skills)。

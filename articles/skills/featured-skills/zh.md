@@ -96,8 +96,8 @@ npx skills remove --global skill-name
 
 如果你还没装 runtime，先从这里开始：
 
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+- [AGENTS / Codex](/docs/agents/codex)
+- [AGENTS / Claude Code](/docs/agents/claude-code)
 
 已经装好 runtime 后，可以按目标选：
 

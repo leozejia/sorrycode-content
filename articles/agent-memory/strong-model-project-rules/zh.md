@@ -163,10 +163,9 @@ Skill 仍然适合承载：
 
 确认审计结果后，再允许 Agent 修改。这样可以避免一次大胆删减把真正有用的方法、脚本和边界一起删除。
 
-<h2 id="model-guides">不同模型还要注意什么</h2>
+<h2 id="model-guides">换模型后怎么检查</h2>
 
-- Claude Fable 5 强调长程任务、进度证据、自治边界、子 Agent 和记忆，并提醒旧 Skills 可能规定得太细。继续看[Claude Fable 5 怎么用](/docs/runtime/claude-fable-5)。
-- GPT-5.6 Sol 强调精简提示词、reasoning effort、工具调用边界和代表性任务评测。继续看[GPT-5.6 Sol 怎么用](/docs/runtime/gpt-5-6-sol)。
+在 [Magpie](/docs/agents/magpie) 中选择当前可用模型，用同一组代表性任务检查结果，再决定是否调整项目规则。不要把某个型号的临时参数和提示习惯写成长期要求。
 
 <h2 id="default-rule">默认判断</h2>
 

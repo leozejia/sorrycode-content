@@ -10,12 +10,9 @@ section_order: 1
 
 # First Request
 
-This page mainly serves two cases:
+Use [Magpie](/docs/agents/magpie) for the default agent setup. Skip this page if chat works. The direct checks below are only for manual development or separating client and gateway failures; they do not test Magpie's local gateway.
 
-- you are on the manual path and want to verify the connection directly
-- the installer ended with a failed connectivity check and you want to verify it yourself
-
-If one-click install already finished and the desktop app works normally, you can usually skip this step for now.
+Copy an exact model ID from the current key group's model catalog and replace `MODEL_ID` in the matching example. Do not copy a local provider prefix displayed by Magpie in an agent. Replace the key placeholder with your own complete key, and keep it out of chat.
 
 ## First Decide Which Protocol You Want to Verify
 
@@ -39,7 +36,7 @@ curl {{API_BASE_URL}}/chat/completions \
   -H "Authorization: Bearer sk-replace-with-openai-group-key" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "gpt-5.4",
+    "model": "MODEL_ID",
     "messages": [
       {"role": "user", "content": "Reply with READY."}
     ]
@@ -50,7 +47,7 @@ curl {{API_BASE_URL}}/chat/completions \
 
 ```powershell
 $body = @{
-  model = "gpt-5.4"
+  model = "MODEL_ID"
   messages = @(
     @{
       role = "user"
@@ -88,7 +85,7 @@ curl {{ANTHROPIC_BASE_URL}}/v1/messages \
   -H "anthropic-version: 2023-06-01" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "claude-sonnet-4-5",
+    "model": "MODEL_ID",
     "max_tokens": 16,
     "messages": [
       {"role": "user", "content": "Reply with READY."}
@@ -100,7 +97,7 @@ curl {{ANTHROPIC_BASE_URL}}/v1/messages \
 
 ```powershell
 $body = @{
-  model = "claude-sonnet-4-5"
+  model = "MODEL_ID"
   max_tokens = 16
   messages = @(
     @{

@@ -253,5 +253,5 @@ SorryCode 当前充值口径是：
 - 不知道自己适不适合用 SorryCode：看 [开始使用 / SorryCode 适合谁](/docs/start/who-is-sorrycode-for)
 - 不知道工具和模型怎么分：看 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)
 - 想直接开始：看 [开始使用 / 创建 API Key](/docs/start/create-api-key)
-- 想走 GPT 路径：看 [Runtime / Codex](/docs/runtime/codex)
-- 想走 Claude 路径：看 [Runtime / Claude Code](/docs/runtime/claude-code)
+- 想走 GPT 路径：看 [AGENTS / Codex](/docs/agents/codex)
+- 想走 Claude 路径：看 [AGENTS / Claude Code](/docs/agents/claude-code)

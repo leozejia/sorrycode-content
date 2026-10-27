@@ -52,7 +52,7 @@ The upstream quickstart states:
 - macOS, Linux, and WSL2 are the primary paths
 - optional local agent CLI: Codex, Claude Code, Gemini CLI, and others
 
-This differs from SorryCode’s current one-click Node 22 LTS path, so it should not be the default first step for beginners.
+These are Open Design requirements, not prerequisites for Magpie or desktop agents. You do not need this toolchain to connect to SorryCode for the first time.
 
 <h2 id="how-to-start">How to Start</h2>
 

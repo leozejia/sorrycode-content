@@ -23,7 +23,7 @@ Use it when you want to:
 - choose a model, size, quality, or output directory explicitly
 - have the agent verify that the saved image can actually be read
 
-If you only want to call the Images API yourself, read [GPT Image 2](/docs/runtime/gpt-image-2) or [GPT Image 2.5](/docs/runtime/gpt-image-2-5). Install this Skill when you want the agent to execute the request and save the result for you.
+Magpie handles the agent's model connection. This Skill calls the image API and saves the result; those are separate setup steps.
 
 > **Let Your Agent Configure It**
 >
@@ -31,7 +31,7 @@ If you only want to call the Images API yourself, read [GPT Image 2](/docs/runti
 
 <h2 id="install">Install</h2>
 
-Install [Codex](/docs/runtime/codex) or [Claude Code](/docs/runtime/claude-code) first, then run:
+Install [Codex](/docs/agents/codex) or [Claude Code](/docs/agents/claude-code) first, then run:
 
 ```bash
 npx skills add linxiverse/sorrycode-image2 -a codex -a claude-code -g -y
@@ -64,7 +64,7 @@ SORRYCODE_IMAGE2_API_KEY
 
 This `.env` belongs only to the Skill. It is user-readable and user-writable, and it is not written to Git, project files, or diagnostics. If a reinstall replaces the whole Skill directory, run the configurator again. You can also provide the same variable in the process environment; it takes precedence over the Skill-local `.env`.
 
-Do not put the key in prompts, screenshots, project files, or shell history. Direct API calls do not need this Skill-specific variable; use the Bearer Token shown in the model guide instead.
+Do not put the key in prompts, screenshots, project files, or shell history. This variable belongs to the Skill and does not change the agent connection managed by Magpie.
 
 <h2 id="use">Use It After Installation</h2>
 
@@ -113,8 +113,6 @@ If a request is interrupted, times out, or fails while downloading the result, d
 - This Skill generates and edits images through the SorryCode Images API. It does not handle Grok images or videos.
 - Edit inputs can be PNG, JPEG, or WebP.
 - It sends one paid request at a time and does not switch keys, models, or applications automatically.
-- For video, read [Grok Video Generation](/docs/runtime/grok-video).
-- For manual request formats and the full Images API guidance, read [GPT Image 2](/docs/runtime/gpt-image-2) and [GPT Image 2.5](/docs/runtime/gpt-image-2-5).
 
 <h2 id="troubleshoot">Common Issues</h2>
 
@@ -126,6 +124,4 @@ If a request is interrupted, times out, or fails while downloading the result, d
 
 <h2 id="references">References</h2>
 
-- [GPT Image 2](/docs/runtime/gpt-image-2): Images API, streaming, and edit requests for `gpt-image-2`
-- [GPT Image 2.5](/docs/runtime/gpt-image-2-5): model selection and parameters for Flare and Sunburst
 - [SorryCode Image2 repository](https://github.com/linxiverse/sorrycode-image2): the install package and latest scripts

@@ -15,7 +15,7 @@ source_url: https://code.visualstudio.com/
 
 你可以先把它理解成：项目文件管理器 + 代码编辑器 + 改动查看器。它不是 `Codex`，也不是 `Claude Code`，而是一个可以承载这些插件的可视化工作台。
 
-如果你还没跑通 `Codex` 或 `Claude Code`，不用先学 VS Code。SorryCode 的默认路径是：先一键安装，再用官方桌面 App 进入项目。
+如果你还没跑通 `Codex` 或 `Claude Code`，不用先学 VS Code。SorryCode 默认先用 [Magpie](/docs/agents/magpie)配置，再进入 Agent 开始任务。
 
 <h2 id="when-to-use">什么时候适合用</h2>
 
@@ -62,8 +62,8 @@ VS Code 的插件都从左侧 `Extensions` 面板安装。
 
 建议顺序：
 
-1. 先完成 [Runtime / Codex](/docs/runtime/codex) 的一键安装
-2. 下载并打开 `Codex App`，确认能选择项目
+1. 按 [Codex](/docs/agents/codex)完成安装和 Magpie 接入
+2. 打开桌面端，确认能选择项目并正常对话
 3. 再安装 VS Code
 4. 按 OpenAI 官方说明安装 Codex IDE 插件
 5. 如果插件要求登录或授权，按插件自己的提示完成
@@ -78,8 +78,8 @@ VS Code 的插件都从左侧 `Extensions` 面板安装。
 
 建议顺序：
 
-1. 先完成 [Runtime / Claude Code](/docs/runtime/claude-code) 的一键安装
-2. 下载 `Claude Desktop`，或确认 `claude` 能在终端里启动
+1. 按 [Claude Code](/docs/agents/claude-code)完成安装和 Magpie 接入
+2. 确认 `claude` 能在终端里启动并正常对话
 3. 再安装 VS Code
 4. 按官方说明安装 Claude Code 插件
 5. 如果插件要求登录、授权或配置，按插件自己的提示完成
@@ -115,12 +115,12 @@ VS Code 的插件都从左侧 `Extensions` 面板安装。
 - 它和 Codex App 有什么区别
   `Codex App` 是 Codex 自己的桌面应用；`VS Code` 是通用编辑器，可以装不同插件，也适合看文件和改动。
 - 插件装完就一定能用 SorryCode 吗
-  不一定。先按 SorryCode runtime 页完成一键安装；如果插件弹出登录或配置提示，以插件官方说明为准。
+  不一定。先按 AGENTS 栏目完成 Magpie 接入；如果插件弹出登录或配置提示，以插件官方说明为准。
 - 我应该先学 VS Code 还是先学 Codex
   先把 `Codex` 或 `Claude Code` 跑通。VS Code 是后续让过程更可视化的选择。
 
 <h2 id="next">下一步</h2>
 
-- 要跑 Codex：去 [Runtime / Codex](/docs/runtime/codex)
-- 要跑 Claude Code：去 [Runtime / Claude Code](/docs/runtime/claude-code)
+- 要跑 Codex：去 [AGENTS / Codex](/docs/agents/codex)
+- 要跑 Claude Code：去 [AGENTS / Claude Code](/docs/agents/claude-code)
 - 要理解 Skills：去 [Skills / Skills 是什么](/docs/skills/featured-skills)

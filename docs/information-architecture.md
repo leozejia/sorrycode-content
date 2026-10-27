@@ -1,6 +1,6 @@
 # SorryCode Content IA
 
-更新时间：2026-08-26
+更新时间：2026-10-27
 
 这份文档定义 `sorrycode-content` 的内容维护边界。它是内容团队内部文档，不进入线上 docs。
 
@@ -30,7 +30,7 @@ sorrycode                     产品站、renderer、proxy、cache、安全校�
 | 栏目 | 回答的问题 | 写法 |
 | --- | --- | --- |
 | 开始使用 | SorryCode 适合谁，如何创建 Key、验证链路和理解成本 | 第一章，先给默认路径，再提供必要的平台参考 |
-| 模型与工作台 | 不同供应商生态的工作台、模型和媒体能力怎么用 | 按供应商生态分组，执行路径必须闭环 |
+| AGENTS | 怎么接入 SorryCode，安装 Agent 并完成第一个任务 | 默认用 Magpie 图形界面配置，不按厂商分组 |
 | Skills | 装好 runtime 后，给 agent 增加什么能力 | 能力选择、安装、触发、边界 |
 | 工具 | 独立工具链或工作台怎么用 | 初始化、使用、适用边界 |
 | Agent 基建 | 长期上下文、AGENTS.md、CLAUDE.md、DESIGN.md、MCP、Skills 这些长期标准是什么 | 原理、标准、可长期引用 |
@@ -63,7 +63,7 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 
 - 给 agent 的链接使用 `/docs/<section>/<slug>.md?locale=...` 或 `/llms.txt`，不要使用普通 SPA 页面作为唯一入口。
 - 不在 `Skills 是什么` 或单个 skill 页写死“默认安装清单”；skills 会增长，推荐关系应通过当前 section index、分类页和单个文章维护。
-- 单个 skill 页不重复解释 `Node.js / Git / Homebrew / PowerShell` 等共享环境。共享环境只在 runtime、环境准备或排障页按需承接。
+- 单个 skill 页不重复解释 `Node.js / Git / Homebrew / PowerShell` 等共享环境。共享环境只在环境准备或排障页按需承接，不作为桌面 Agent 的通用前置。
 - 如果用户不知道装什么，agent 应先读当前 Skills 分类和相关文章，再按用户目标决定，而不是凭历史记忆安装旧组合。
 
 ### Tools
@@ -72,82 +72,51 @@ Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Cod
 
 `Open Slide`、`HyperFrames`、`Open Design` 这类页面放在 Tools。它们可以被 Skills 页面引用，但不要伪装成普通 skill。
 
-### 开始使用、模型与工作台和 Agent 基建
+### 开始使用、AGENTS 和 Agent 基建
 
-`开始使用` 同时承担第一次上手和必要的平台参考。`模型与工作台` 写具体供应商生态的
-工作台、模型和媒体能力。`Agent 基建` 写长期标准和协议。
+`开始使用` 给出唯一默认上手路线和必要的平台参考。`AGENTS` 负责 Magpie 配置与 Agent 首次使用。`Agent 基建` 写长期标准和协议。
 
 不要把某个 skill 的详细工作流写进这些栏目。
 
 `开始使用` 作为第一章，文章保持分工，不合并成一篇长文：
 
-- `第一次使用 SorryCode`：只做 Agent 工具分流，不重复各工具的安装和首次任务；
+- `第一次使用 SorryCode`：按创建 Key、Magpie 配置、安装并启用 Agent、首次任务的顺序引导；不知道选什么时默认 Codex，不先让用户比较所有工具；
 - `SorryCode 适合谁`：回答用户定位、余额制价值、订阅制取舍；
-- `创建 API Key`：完成实际配置；
+- `创建 API Key`：只讲创建、分组、限额和密钥安全，创建后前往 Magpie，不重复各工具配置；
 - `首条请求`：提供手动验证和排障入口；
 - `AI 成本怎么计算`：解释 input、output、cache 和倍率。
 
 `工具不是模型` 继续放在核心概念，回答工作台、模型、API Key、Base URL 的关系。
 安装页和首条请求页只负责执行路径，不再承担商业定位或成本科普。
 
-`articles/runtime/` 的公开展示名是“模型与工作台 / Models & Runtimes”，URL 保持
-`/docs/runtime/*`。导航按供应商生态或独立工作台组织，当前文章和分组以 `articles/runtime/index.json`
-为准。不要创建没有文章的空分组。新增页面前，先确认用户入口、模型、接口和生产验证。
+`articles/agents/` 的公开展示名在中英文中均为 `AGENTS`，URL 为 `/docs/agents/*`。导航平铺，不按 OpenAI、Anthropic 等厂商分组。默认六篇：
+
+1. 用 Magpie 配置 SorryCode
+2. Codex
+3. Claude Code
+4. DeepSeek Harness
+5. WorkBuddy
+6. 其他 Agents
+
+原 `runtime` 栏目硬切删除，不保留旧正文、兼容路由或重定向。
 
 `Magpie` 页面只说明通过图形界面接入 SorryCode 的最短路径：从官网安装、按 SorryCode 模型分组分别添加自定义供应商和对应 API Key、获取模型，然后在 Agent 面板启用。不要在这篇入门文档维护未经当前界面验证的 CLI、场景、账号轮换或工具兼容性说明。
 
-ChatGPT / Codex 相关页面按下面分工，现有 `codex` slug 保持不变：
+各 Agent 页只保留官方安装入口、在 Magpie 启用、打开工作目录和一个首次任务。Codex、DSH、WorkBuddy 默认走桌面端；Claude Code 按当前官方终端安装方式说明，不混同 Claude Desktop。换模型回 Magpie 操作，不在各页维护手写配置、环境变量或第二套 SorryCode 安装器。
 
-- `ChatGPT / Codex` 负责安装、API Key、Base URL 和第一次使用；
-- `在 ChatGPT / Codex 中使用其他模型` 负责说明 CLI 显式模型、官方 profile，以及 App 修改顶层默认模型并重启的当前操作方式；
-- 多模型页只写 ChatGPT / Codex 原生使用路径。切换时保留用户现有的 `model_provider`，按目标模型选择匹配分组的 Key，再修改顶层 `model`。页面不承载旧方案迁移说明。App 需要明确模型选择器的限制、完整退出要求、恢复 GPT 的方法和用量记录验证方式；
-- Grok 放在多模型页，作为经过 Responses 连通验证的第三方模型，不把 Grok 归入 GPT 系列，也不另建 Grok 文字模型页。
+OpenCode、Pi、Kimi Code、Grok Build 和 Cursor 合并到“其他 Agents”，只保留官方下载入口与必要边界。Cursor CLI、普通编辑器和 Cursor Private Inference 必须区分，不把某一种形态的支持推及全部产品。Magpie 不显示或不支持的客户端，不承诺能一键接入。
 
-`DeepSeek Harness` 使用独立的 `DSH` 页面，归入 DeepSeek 分组。页面只维护官方 Web UI 启动、自定义 OpenAI-compatible provider、SorryCode Key、`openai-responses` 协议、模型选择和首条连通验证。DSH 仍处于开发者预览期，不把具体配置文件结构或当前 RC 版本细节写成长期契约。
+不再维护具体模型版本的独立使用页或完整型号清单。模型选择以当前分组返回的目录为准，不因型号迭代新增入门文章。
 
-跨工作台的模型组合只验证请求能通过约定协议稳定返回。提示理解、工具选择和输出质量属于模型与工作台自身行为，不作为 SorryCode 接入阻塞，也不为此维护本地补丁或组合穷举表。
-
-WorkBuddy 只维护一篇闭环页面，包含下载安装、SorryCode 自定义模型配置、第一个文件任务和
-Expert / Expert Team 入口及必要的权限边界。不要为通用安全常识、单个菜单或尚未形成稳定用户问题的功能单独建页。
-UI 是自定义模型的公开配置路径，不公开讲解本地配置文件格式。
-
-`Pi Agent` 作为独立工作台维护，官方项目固定为 `pi.dev` / `earendil-works/pi`，不归入任何模型供应商。
-页面只维护 Pi 安装、SorryCode 自定义 provider、Responses 兼容模型选择和首次工具调用验证。
-DeepSeek 可以作为经过验证的推荐示例，但不能写成 Pi 的模型归属或使用限制。
-
-`OpenCode` 作为独立的多模型工作台维护，不归入 OpenAI、Anthropic、Google 或 xAI 分组。
-页面以 Desktop 的 `设置 -> 提供商 -> 自定义提供商` 为默认路径，只维护官方下载、字段填写、
-匹配分组的 Key、少量模型示例和首次连通验证。API Key 页的 `接入工具 -> OpenCode` 生成配置
-只作为 CLI 和高级用户的备用路径。不在公开页面复制完整模型目录，也不另建通用 API Key
-环境变量方案。每个 provider 只绑定一把分组 Key；跨分组模型必须拆成不同 provider。
-
-`Cursor Agent` 作为独立的编辑器型工作台维护，不归入 OpenAI 分组。页面只维护 Cursor 桌面编辑器
-的 Agent 模式、OpenAI-compatible Base URL 覆盖、匹配分组的 Key、准确模型 ID 和首条文本 / 文件任务验证。
-Cursor 的 OpenAI Base URL 覆盖通常只承载一把活动 Key，不按 OpenCode 的多 provider 方式展开。Tab、
-Background Agent、`cursor-agent` CLI 和 Cursor 专有模型服务不进入 SorryCode 接入承诺，也不新增安装器、
-环境变量或运行时补丁。
-
-`Agent 能力是怎么扩展的` 负责解释 Runtime、Expert / Agent、Skill、MCP / Tool / Connector
-和 Plugin 的层级关系。Plugin 是特定 runtime 的打包与分发单元，不是 Tool 的同义词；
-Expert 是角色与协作机制，不是权限来源。各产品的安装和配置步骤留在对应 runtime 页面，
-通用概念页不维护跨产品兼容性表。
-
-模型使用页只承接当前模型的选择、参数、提示方法和验证边界，不重复 runtime 的安装步骤：
-
-- `GPT-5.6 Sol 怎么用`：解释模型定位、reasoning effort、精简提示词、工具调用和长上下文边界；
-- `Claude Fable 5 怎么用`：解释模型定位、effort、长程任务、自治边界、子 Agent 和旧规则迁移；
-- 安装、API Key 和 Base URL 继续由 `Codex`、`Claude Code` 和 `首条请求` 页面负责。
+取消独立的“Agent 能力是怎么扩展的”文章。稳定的 Skill、MCP、Plugin 与权限关系只在已有工作方法页面简要说明，不作为上手前置。
 
 `Agent 基建 / 强模型的项目规则怎么写` 负责审计 `AGENTS.md`、`CLAUDE.md` 和常驻 Skills。
 它不重复基础规则文件和 Skills 教程，只讲强模型下哪些规则应保留、哪些规则需要用同一组
 代表性任务逐批删减。
 
-图片能力按供应商页面维护，不在“开始使用”中另建图片总览。可执行的 Skill 另有独立入口，但不复制模型页的 API 细节：
+图片任务通过已有的 `SorryCode Image2` Skill 承接。删除 GPT Image 2 / 2.5、Grok 图片与视频的独立模型/API 教程，引用同时改为可执行的任务入口或删除。不把原始 API 说明搬到 Skills 凑篇数。
 
-- `GPT Image 2` 和 `GPT Image 2.5` 分别维护各自的模型与参数边界，同时承接 Codex 自然语言生图和显式 Images API。`SorryCode Image2` 只维护安装、Skill 专用 Key、触发、落盘和边界，模型页与 Skill 页互相链接；
-- `Grok 图片生成` 只讲经过生产验证的 xAI-compatible Images API；
-- `Grok 视频生成` 只讲文生视频、图生视频和异步轮询；未采用的 edit / extension
-  不进入公开文档。
+Magpie 接入不等于 Agent 自动获得生图或视频工具。Skills 需要的凭证、工具与权限仍须单独满足；没有稳定任务入口的能力不进入默认推荐。
 
 更多素材生产和视觉资产工作流仍可指向 `sorryassets.com`，但不在 SorryCode 文档里展开其私有模型、价格或接口。
 
@@ -157,19 +126,18 @@ Expert 是角色与协作机制，不是权限来源。各产品的安装和配�
 
 - 能否复用一把 Key，取决于它所属分组是否开放目标模型，以及该工具使用的协议和接口是否兼容；不是按工具名称强制一对一分配。
 - 兼容的工具可以共用一把 Key。按工具或用途分开创建 Key，是为了更清晰地统计用量、设置限额、排查问题或轮换凭证。
-- Kimi Code、Grok Build、Grok 图片、Grok 视频和 GPT Image 2 仍要分别说明所需的模型、协议和分组权限；不要把“需要匹配分组”写成“必须创建专用 Key”。
+- Magpie 按 SorryCode 分组分别添加供应商和对应 Key。同一兼容分组可供多个 Agent 使用，不要把“需要匹配分组”写成“每个 Agent 必须创建专用 Key”。
 - REST API 示例直接在请求头中提供可替换的分组 Key 占位值，不要求用户先设置通用环境变量。
-- runtime 一键安装器负责保存当前工具选择的 Key。公开页面不要求用户手动同步安装器内部的变量名。
-- 只有具体 Skill 确实依赖环境变量时，才在该 Skill 页面公开变量名。GPT Image 2 的公开接入文档不要求通用环境变量；Agent 使用当前运行环境已配置的分组 Key，手动请求使用 Bearer Token 占位值。
-- runtime 的模型目录默认只保存 `/v1/models` 返回的准确模型 ID。未返回但可路由的别名只用于诊断；同一模型的别名与规范 ID 不得同时写入配置。
-- runtime 按 provider route 保存凭据时，每把独立 Key 使用唯一的本地 Provider ID。同一 Key 分组开放的多个模型可以共用该 route；切换分组时新增 route，不覆盖已有 Key。
-- 公开 runtime 页面只保留足以说明配置结构的最小已验证示例，不复制持续变化的完整模型目录。模型 ID、能力和思考档位以当前分组与实际请求验证为准。
+- 默认由 Magpie 管理 Agent 的接入配置。控制台已有接入工具不在本轮删除，但不再作为公开入门文档的竞争默认路线。
+- 只有具体 Skill 确实依赖环境变量时，才在该 Skill 页面公开变量名，并区分 Skill 凭证与 Magpie 接入。手动 API 排障示例使用 Bearer Token 占位值，不引入通用密钥环境变量。
+- 手动 API 排障示例使用当前分组返回的准确模型 ID，不把 Magpie 本地生成的供应商前缀拼进直连请求。
+- 不复制持续变化的完整模型目录。模型 ID、能力和思考档位以当前分组与实际请求验证为准。
 
 不要把一个通用变量名写成 SorryCode 全局 Key，也不要仅凭 `sk-...` 判断不同分组的 Key 可以互换。
 
 ## 执行型教程的 Agent 提示
 
-安装、终端命令、配置文件、API 接入和首次验证等执行型教程，在导语之后、第一个二级标题之前放一次统一的 Agent 提示。概念、模型介绍、成本说明和路线选择页不放。
+需要已有 Agent 执行安装脚本、配置文件或 API 验证的教程，在导语之后、第一个二级标题之前放一次统一的 Agent 提示。首次接入的 Magpie 图形界面、Agent 安装与开始使用页不放，避免要求尚未装好 Agent 的用户先交给 Agent 配置。概念、成本说明和路线选择页也不放。
 
 GUI 教程只能承诺 Agent 完成可以安全执行的步骤，并列出需要用户手动确认的操作。手动步骤必须继续保留，用于核对、排障和 Agent 无法执行时的备用路径。
 

@@ -10,12 +10,9 @@ section_order: 1
 
 # 首条请求
 
-这页主要给两种场景用：
+默认先通过 [Magpie](/docs/agents/magpie)接入 Agent。能正常对话就跳过这页。只有手动开发或需要区分客户端与网关问题时，才做下面的直连检查；它不用于验证 Magpie 的本地网关。
 
-- 你走的是手动安装，想先确认链路真的通了
-- 一键安装最后的连通性检查失败了，你想自己再核一遍
-
-如果你已经完成一键安装，而且桌面 App 能正常使用，这一步通常可以先跳过。
+先从当前 Key 所属分组的模型目录复制准确 ID，替换对应示例中的 `MODEL_ID`。不要直接复制 Magpie 在 Agent 中显示的本地供应商前缀。密钥也要替换成自己的完整 Key，不要把真实值发到聊天里。
 
 ## 先判断你要验证哪种协议
 
@@ -39,7 +36,7 @@ curl {{API_BASE_URL}}/chat/completions \
   -H "Authorization: Bearer sk-replace-with-openai-group-key" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "gpt-5.4",
+    "model": "MODEL_ID",
     "messages": [
       {"role": "user", "content": "Reply with READY."}
     ]
@@ -50,7 +47,7 @@ curl {{API_BASE_URL}}/chat/completions \
 
 ```powershell
 $body = @{
-  model = "gpt-5.4"
+  model = "MODEL_ID"
   messages = @(
     @{
       role = "user"
@@ -78,7 +75,7 @@ curl.exe "{{API_BASE_URL}}/chat/completions" `
 
 `{{ANTHROPIC_BASE_URL}}/v1/messages`
 
-选择一把已经分配到 Anthropic-compatible 分组的 Key，并替换下面的占位值。不要拿 Grok 或 Codex Key 来做这条验证。
+选择一把已经分配到 Anthropic-compatible 分组的 Key，并替换下面的占位值。不要使用未开放此协议或模型的分组 Key。
 
 ### macOS / Linux
 
@@ -88,7 +85,7 @@ curl {{ANTHROPIC_BASE_URL}}/v1/messages \
   -H "anthropic-version: 2023-06-01" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "claude-sonnet-4-5",
+    "model": "MODEL_ID",
     "max_tokens": 16,
     "messages": [
       {"role": "user", "content": "Reply with READY."}
@@ -100,7 +97,7 @@ curl {{ANTHROPIC_BASE_URL}}/v1/messages \
 
 ```powershell
 $body = @{
-  model = "claude-sonnet-4-5"
+  model = "MODEL_ID"
   max_tokens = 16
   messages = @(
     @{

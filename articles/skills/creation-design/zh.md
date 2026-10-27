@@ -92,8 +92,8 @@ PPT 不是一种单一工具，而是一种交付形态。先看最终要交付�
 
 <h2 id="install-note">安装说明</h2>
 
-先安装 [Codex](/docs/runtime/codex) 或 [Claude Code](/docs/runtime/claude-code)，再按任务安装对应 skill。
+先安装 [Codex](/docs/agents/codex) 或 [Claude Code](/docs/agents/claude-code)，再按任务安装对应 skill。
 
-如果你只是第一次尝试图片生成，先看 [SorryCode Image2](/docs/skills/sorrycode-image2)；需要手动调用 Images API 时，再看 [GPT Image 2](/docs/runtime/gpt-image-2)。需要文档成品时再装 [Kami](/docs/skills/kami)。需要演讲展示时，再看 [演示 / PPT 交付路线](#presentation-route)；需要代码式 PPT 或视频工具链时，再看 [Open Slide](/docs/tools/open-slide) 和 [HyperFrames](/docs/tools/hyperframes)。
+如果你只是第一次尝试图片生成，先看 [SorryCode Image2](/docs/skills/sorrycode-image2)。需要文档成品时再装 [Kami](/docs/skills/kami)。需要演讲展示时，再看 [演示 / PPT 交付路线](#presentation-route)；需要代码式 PPT 或视频工具链时，再看 [Open Slide](/docs/tools/open-slide) 和 [HyperFrames](/docs/tools/hyperframes)。
 
 如果你想研究完整设计工作台，而不是只安装一个 skill，可以看 [工具 / Open Design](/docs/tools/open-design)。

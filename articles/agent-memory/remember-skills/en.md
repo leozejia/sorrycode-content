@@ -98,6 +98,8 @@ Skills capture that working method.
 
 They can work together. An image task can read `DESIGN.md`, then call an image API or an MCP tool.
 
+A Plugin packages capabilities for a workspace and can include Skills and MCP configuration. Experts or subagents organize roles and collaboration. None of them grants extra permissions automatically. Magpie handles model connections; image APIs, external services, and file access still need their own credentials and authorization.
+
 <h2 id="where-next">Next</h2>
 
 To install concrete skills, go to [Skills / What Are Skills](/docs/skills/featured-skills).

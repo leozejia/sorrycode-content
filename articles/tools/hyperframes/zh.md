@@ -17,7 +17,7 @@ source_url: https://github.com/heygen-com/hyperframes
 
 Codex App 插件只是入口之一。如果你在 CLI 里用 Codex 或 Claude Code，也可以使用 HyperFrames。
 
-如果你选择 Codex App 插件入口，请在侧边栏的插件页面启用 HyperFrames。Plugin、Skill 和 MCP 的关系见 [Agent 能力是怎么扩展的](/docs/runtime/agent-capabilities)。
+如果你选择 Codex App 插件入口，请在侧边栏的插件页面启用 HyperFrames。Plugin、Skill 和 MCP 的区别见[工作方法说明](/docs/agent-memory/remember-skills#relationship)。
 
 本页继续讲 HyperFrames 本身：什么时候适合用它，以及怎么初始化、预览和渲染视频项目。
 
@@ -31,7 +31,7 @@ Codex App 插件只是入口之一。如果你在 CLI 里用 Codex 或 Claude Co
 - 把网页式视觉做成 MP4
 - 用 agent 生成可复用的视频 composition
 
-如果你只需要一张静态图，先看 [GPT Image 2](/docs/runtime/gpt-image-2)。如果你要做演讲幻灯片，先看 [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) 或 [Open Slide](/docs/tools/open-slide)。
+如果你只需要一张静态图，先看 [SorryCode Image2](/docs/skills/sorrycode-image2)。如果你要做演讲幻灯片，先看 [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) 或 [Open Slide](/docs/tools/open-slide)。
 
 <h2 id="how-it-works">它怎么工作</h2>
 
@@ -85,7 +85,7 @@ npx hyperframes doctor
 
 | 需求 | 优先看 |
 | --- | --- |
-| 静态封面、海报、插图 | [GPT Image 2](/docs/runtime/gpt-image-2) |
+| 静态封面、海报、插图 | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | 有明确视觉风格的网页演示 | [藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt) |
 | 代码式 React deck | [Open Slide](/docs/tools/open-slide) |
 | MP4 短视频和网页式动效 | `HyperFrames` |

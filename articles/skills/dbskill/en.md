@@ -43,7 +43,7 @@ It is useful if you are:
 
 If you only want image generation, document layout, or web-style presentation decks, start here instead:
 
-- [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2)
+- [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
 - [Skills / Kami](/docs/skills/kami)
 - [Skills / Guizang PPT Skill](/docs/skills/magazine-web-ppt)
 
@@ -65,8 +65,8 @@ npx skills add dontbesilent2025/dbskill -a claude-code -g -y
 
 If your runtime is not ready yet, start here:
 
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+- [AGENTS / Codex](/docs/agents/codex)
+- [AGENTS / Claude Code](/docs/agents/claude-code)
 
 `DBSkill` is a pack and may install multiple child skills. If you no longer need it, run `npx skills list --global`, copy the actual names, then remove them one by one with `npx skills remove --global skill-name`.
 

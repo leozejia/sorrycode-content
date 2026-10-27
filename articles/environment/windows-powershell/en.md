@@ -2,7 +2,7 @@
 title: Windows PowerShell
 slug: windows-powershell
 order: 2
-summary: The Windows terminal entry for SorryCode one-click install: how to open it, paste commands, and avoid shell or encoding mistakes.
+summary: Open PowerShell, copy Windows commands, and avoid shell and encoding mismatches.
 section: environment
 section_title: Environment
 section_order: 40
@@ -10,92 +10,36 @@ section_order: 40
 
 # Windows PowerShell
 
-If you are on Windows, use `PowerShell` or `Windows Terminal` for SorryCode one-click install.
+The default Magpie GUI setup does not require a terminal. Use this page only when installing terminal tools or Skills, or troubleshooting manually.
 
-You do not need to learn the command line first. Copy the full install command from the SorryCode console, open the terminal, paste it, and press Enter.
+<h2 id="open">Open PowerShell</h2>
 
-<h2 id="open">How to Open It</h2>
+Press `Win`, search for “Windows PowerShell,” and open it. If you use Windows Terminal, confirm that the active tab is running PowerShell.
 
-1. Press the `Win` key
-2. Type `PowerShell` or `Terminal`
-3. Open `Windows PowerShell` or `Windows Terminal`
-4. Paste the `Windows` one-click install command from the SorryCode console or docs
-5. Press Enter once
+<h2 id="install">Copy a command</h2>
 
-If you are unsure, open `Windows Terminal` first. If it is not installed, open `Windows PowerShell`.
+Copy the complete command labeled for Windows PowerShell, paste it, and press Enter. For Claude Code, follow the Windows path in its [official installation guide](/docs/agents/claude-code). Do not run an old SorryCode connector over Magpie's settings.
 
-<h2 id="install">How to Paste the Installer</h2>
+<h2 id="dont-mix-shells">Do not mix shell syntax</h2>
 
-Prefer the API key page first: click `Connect Tool`, choose `Codex` or `Claude Code`, choose `Windows`, then copy the full command from the modal.
+PowerShell, cmd, Git Bash, and WSL are different environments. Windows Terminal is a terminal window; not every tab runs PowerShell. Do not paste macOS or Linux commands directly into PowerShell.
 
-If you cannot open the console modal, go to `Runtime / Codex` or `Runtime / Claude Code`, find the generic command under `Windows`, and copy the whole command.
+<h2 id="execution-policy">A script is blocked by execution policy</h2>
 
-Do not copy only half of it. Do not split it into multiple lines yourself.
-
-- Install Codex: [Runtime / Codex](/docs/runtime/codex)
-- Install Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
-
-<h2 id="dont-mix-shells">Do Not Mix Shells</h2>
-
-Windows has several command-line entry points:
-
-| Name | Can you paste SorryCode Windows commands directly? |
-| --- | --- |
-| `PowerShell` | Yes |
-| `Windows Terminal` | Yes, usually running PowerShell inside |
-| `cmd` | Do not rewrite commands manually; the docs already wrap them with `cmd /c` |
-| `Git Bash` | Do not paste PowerShell commands there |
-| `WSL` | Do not paste Windows commands there; it behaves more like Linux |
-
-Beginner rule:
-
-```text
-Run Windows docs commands in PowerShell / Windows Terminal.
-```
-
-<h2 id="execution-policy">Execution Policy</h2>
-
-If you see `ExecutionPolicy` or “script cannot run”, do not permanently loosen your system policy first.
-
-SorryCode's Windows one-click install only uses temporary `Bypass` for the current install process. It does not permanently change your machine policy.
-
-If you are copying the Windows one-click command from a Runtime page, you usually do not need to run the commands below manually.
-
-Use this section only when you are manually running a local `.ps1` file, or when support explicitly asks you to handle execution policy.
-
-### Allow the Current Window Temporarily
-
-This only affects the current PowerShell window. It stops working after you close the window, so prefer this first:
+Check that the script source is trusted and read the error first. If you need to run a local `.ps1`, allow it only for the current window:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-### Allow Local Scripts for the Current User
+This setting ends when the window closes. You do not need a permanent system policy change. On managed devices, follow your administrator's policy instead of bypassing organization controls.
 
-This affects the current Windows user. Use it only when you understand the tradeoff or someone is guiding you:
+<h2 id="encoding">Chinese text and JSON encoding</h2>
 
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-```
+A common cause is a Windows console code page / PowerShell encoding mismatch. Write JSON to a UTF-8 file without BOM, then send it with `curl.exe`. Do not squeeze multiline JSON into an inline command.
 
-If it still fails, send the full error to the community or support instead of copying other long-term policy commands from the internet.
-
-<h2 id="encoding">Encoding and JSON</h2>
-
-Windows terminals can hit `console code page / PowerShell encoding mismatch`, which may break Chinese text, JSON, or file contents.
-
-That is why SorryCode Windows examples usually:
-
-- avoid inline complex JSON
-- write `request.json` first
-- save it as UTF-8 without BOM
-- let `curl` read the file
-
-If you are a beginner, you do not need to learn these terms. Copy the PowerShell examples as written, and do not convert macOS / Linux commands into Windows commands yourself.
+[First Request](/docs/start/first-request) includes complete PowerShell file-writing examples. Use them without mixing cmd or Bash syntax. Hide keys and personal information before sharing errors.
 
 <h2 id="next">Next</h2>
 
-- Install Codex: [Runtime / Codex](/docs/runtime/codex)
-- Install Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
-- Prepare Node.js: [Environment / Node.js](/docs/environment/nodejs)
+Return to [Claude Code](/docs/agents/claude-code) or the [Skill](/docs/skills/featured-skills) you are installing. If model access is not configured yet, start with [Magpie](/docs/agents/magpie).

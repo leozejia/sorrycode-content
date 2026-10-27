@@ -23,7 +23,7 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 - 指定模型、尺寸、质量和输出目录
 - 让 Agent 保存图片后检查文件是否真的可读取
 
-如果你只想手动调用 Images API，直接看 [GPT Image 2](/docs/runtime/gpt-image-2) 或 [GPT Image 2.5](/docs/runtime/gpt-image-2-5)。如果你希望 Agent 负责执行和保存结果，再安装这个 Skill。
+Magpie 负责 Agent 的模型接入；这个 Skill 负责调用图片接口并保存结果，两者不是同一步配置。
 
 > **交给 Agent 配置**
 >
@@ -31,7 +31,7 @@ source_url: https://github.com/linxiverse/sorrycode-image2
 
 <h2 id="install">安装</h2>
 
-先安装 [Codex](/docs/runtime/codex) 或 [Claude Code](/docs/runtime/claude-code)，再运行：
+先安装 [Codex](/docs/agents/codex) 或 [Claude Code](/docs/agents/claude-code)，再运行：
 
 ```bash
 npx skills add linxiverse/sorrycode-image2 -a codex -a claude-code -g -y
@@ -64,7 +64,7 @@ SORRYCODE_IMAGE2_API_KEY
 
 这个 `.env` 只属于该 Skill，文件权限是用户可读写，且不会写入 Git、项目文件或诊断输出。重新安装并替换整个 Skill 目录后，需要再次运行配置脚本。也可以在进程环境中临时提供同名变量，进程环境优先于 Skill 本地 `.env`。
 
-不要把 Key 放进 Prompt、截图、项目文件或 shell 历史。直接调用 API 时，不需要设置这个 Skill 专用变量，按模型页面在请求头中发送 Bearer Token 即可。
+不要把 Key 放进提示词、截图、项目文件或 shell 历史。这个变量只属于该 Skill，不会改变 Magpie 管理的 Agent 接入。
 
 <h2 id="use">安装后怎么用</h2>
 
@@ -113,8 +113,6 @@ Skill 会保存请求摘要、必要的诊断信息和最终图片。流式请�
 - 这个 Skill 只负责通过 SorryCode Images API 生成和编辑图片，不负责 Grok 图片或视频。
 - 编辑输入支持 PNG、JPEG 和 WebP。
 - 一次只发送一笔付费请求，不会自动切换 Key、模型或其他应用。
-- 需要视频时，请看 [Grok 视频生成](/docs/runtime/grok-video)。
-- 需要手动请求格式和完整 Images API 说明时，请看 [GPT Image 2](/docs/runtime/gpt-image-2) 和 [GPT Image 2.5](/docs/runtime/gpt-image-2-5)。
 
 <h2 id="troubleshoot">常见问题</h2>
 
@@ -126,6 +124,4 @@ Skill 会保存请求摘要、必要的诊断信息和最终图片。流式请�
 
 <h2 id="references">参考</h2>
 
-- [GPT Image 2](/docs/runtime/gpt-image-2)：`gpt-image-2` 的 Images API、流式返回和编辑请求
-- [GPT Image 2.5](/docs/runtime/gpt-image-2-5)：Flare 和 Sunburst 的模型选择与参数
 - [SorryCode Image2 官方仓库](https://github.com/linxiverse/sorrycode-image2)：Skill 安装包和最新脚本

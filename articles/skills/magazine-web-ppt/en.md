@@ -81,8 +81,8 @@ npx skills add op7418/guizang-ppt-skill -a claude-code -g -y
 
 If you have not installed a runtime yet, start here:
 
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+- [AGENTS / Codex](/docs/agents/codex)
+- [AGENTS / Claude Code](/docs/agents/claude-code)
 
 If you no longer need it, run `npx skills list --global` to confirm the name, then remove it with `npx skills remove --global guizang-ppt-skill`.
 

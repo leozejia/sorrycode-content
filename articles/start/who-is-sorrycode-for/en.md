@@ -97,11 +97,8 @@ For example, one for Codex, one for Claude Code, and one for GPT Image 2. They c
 
 Choose by task:
 
-- GPT path: start with [Runtime / Codex](/docs/runtime/codex)
-- Claude path: start with [Runtime / Claude Code](/docs/runtime/claude-code)
-- OpenAI images: start with [Models & Runtimes / GPT Image 2](/docs/runtime/gpt-image-2)
-- Grok images and video: see [Grok Image Generation](/docs/runtime/grok-image) and
-  [Grok Video Generation](/docs/runtime/grok-video)
+- Default setup: start with [Magpie](/docs/agents/magpie). If unsure which agent to choose, use [Codex](/docs/agents/codex)
+- Image tasks: start with [SorryCode Image2](/docs/skills/sorrycode-image2)
 - Office files: read [Skills / Office Docs](/docs/skills/office-docs)
 
 ### Easier experimentation
@@ -116,12 +113,11 @@ If the word API feels unfamiliar, use this first:
 API Key = the key that lets a tool use your SorryCode balance
 ```
 
-You do not need to write API requests on day one. Create the key you need, then install Codex or Claude Code based on your goal.
+You do not need to write API requests on day one. Create a key, then connect your chosen agent through [Magpie](/docs/agents/magpie).
 
 ## Next
 
 - Unsure where AI cost comes from: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)
 - Unsure how tools and models differ: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - Ready to start: [Getting Started / Create API Key](/docs/start/create-api-key)
-- GPT path: [Runtime / Codex](/docs/runtime/codex)
-- Claude path: [Runtime / Claude Code](/docs/runtime/claude-code)
+- Ready to configure: use [Magpie](/docs/agents/magpie), and choose [Codex](/docs/agents/codex) if unsure

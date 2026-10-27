@@ -104,4 +104,6 @@ PY
 
 ## 上线预期
 
-push 到 `main` 后，公开文章会通过 `sorrycode` 后端代理热更新。生产后端有缓存，通常等几分钟再看线上结果。
+push 到 `main` 后，生产每五分钟将内容仓库同步为本地只读快照，用户请求不会直连 GitHub / CDN。内容更新不需要重建或重启 SorryCode 应用。
+
+上线后检查公开 index、目标正文、同目录图片和 Markdown 直出；不要只看侧栏。同步与故障恢复以主项目 `docs/operations/deploy-jakarta-workflow.md` 为准。

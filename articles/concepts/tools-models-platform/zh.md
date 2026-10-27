@@ -141,11 +141,9 @@ OpenAI 有 Codex。Anthropic 有 Claude Code。Google 有 Gemini 的各种集成
 | 你现在的状态 | 建议 |
 | --- | --- |
 | 我什么都不知道 | 先看 [AI 到底是什么](/docs/concepts/what-is-ai) |
-| 我想试试，不知道装什么 | 装 Codex，它是当前最简单的新手入口 |
-| 我主要用 GPT | [Runtime / Codex](/docs/runtime/codex) |
-| 我主要用 Claude | [Runtime / Claude Code](/docs/runtime/claude-code) |
-| 我用国产模型 | 看对应厂商的 Agent 客户端，安装逻辑类似 |
-| 我想一次接入多个模型 | 用 SorryCode 做统一 API 入口，按需切换 |
+| 我想试试，不知道装什么 | 先用 [Magpie](/docs/agents/magpie)配置，再安装 [Codex](/docs/agents/codex) |
+| 我已经有习惯的工具 | 在 [AGENTS](/docs/agents/other-agents) 中找对应入口 |
+| 我想一次接入多个模型 | 在 Magpie 中按分组添加供应商，再选择模型 |
 | 我已经在用了，想管得更好 | [Agent 进阶](/docs/agent-memory/overview) |
 
 <h2 id="remember">记住一件事</h2>

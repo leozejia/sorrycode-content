@@ -2,7 +2,7 @@
 title: First Time Using SorryCode
 slug: first-step
 order: 1
-summary: Choose an agent workspace, then confirm model, protocol, and API key group compatibility.
+summary: Create an API key, configure Magpie, then open Codex and complete your first task.
 section: start
 section_title: Getting Started
 section_order: 1
@@ -10,32 +10,26 @@ section_order: 1
 
 # First Time Using SorryCode
 
-Start by choosing the agent workspace that fits how you work, then follow its guide to connect it to SorryCode. A workspace is not a model. The same workspace can use different models when its protocol and API key group support them.
+Follow these three steps. You do not need to learn terminal commands, edit configuration files, or compare every model first.
 
-<h2 id="choose-tool">Choose a Workspace</h2>
+## 1. Create an API key
 
-| Workspace | Good for | Setup guide |
-| --- | --- | --- |
-| **ChatGPT / Codex** | The default choice for code, files, and local tasks, with a visual app | [ChatGPT / Codex](/docs/runtime/codex) |
-| **Claude Code** | Code, terminal tasks, and long-running autonomous work | [Claude Code](/docs/runtime/claude-code) |
-| **Cursor Agent** | Code, files, and project tasks inside an editor | [Cursor Agent](/docs/runtime/cursor) |
-| **OpenCode** | An open-source, multi-model agent with both desktop and terminal apps | [OpenCode](/docs/runtime/opencode) |
-| **DSH** | DeepSeek's open-source Web agent with configurable Responses models | [DSH](/docs/runtime/dsh) |
-| **Pi Agent** | A lightweight, flexible terminal agent with configurable Responses-compatible models | [Pi Agent](/docs/runtime/pi-agent) |
-| **Kimi Code** | Coding and long-context tasks with Kimi models | [Kimi Code](/docs/runtime/kimi-code) |
-| **WorkBuddy** | Documents, spreadsheets, and local files in a desktop app | [WorkBuddy](/docs/runtime/workbuddy) |
-| **Grok Build** | Grok models and xAI capabilities | [Grok Build](/docs/runtime/grok-build) |
+Sign in to the [SorryCode console](https://sorrycode.com), recharge your balance, and follow [Create an API Key](/docs/start/create-api-key) to select a model group and copy the key.
 
-If you are unsure, start with ChatGPT / Codex. Choose DSH for a Web UI with configurable Responses models, or OpenCode for an open-source workspace that can use models from multiple providers.
+## 2. Configure Magpie
 
-<h2 id="prepare-key">Prepare a Compatible API Key</h2>
+Follow [Configure SorryCode in Magpie](/docs/agents/magpie): install Magpie from its website, add a custom provider, enter the matching group's key, and click **Fetch Models**.
 
-Sign in to the [SorryCode console](https://sorrycode.com) and confirm that your balance is available. After choosing a model, check that the API key's group supports both that model and the protocol used by the workspace. You can reuse a compatible key; create a separate one only for usage tracking, spending limits, or credential rotation.
+Start with one group you want to use. You do not need to add every model.
 
-See [Create API Key](/docs/start/create-api-key) for the steps and group rules. If the difference between workspaces and models is still unclear, read [Tools Are Not Models](/docs/concepts/tools-models-platform).
+## 3. Install an agent and start a task
 
-<h2 id="continue">Continue with the Tool Guide</h2>
+If unsure, follow [Codex](/docs/agents/codex) to install the desktop app, enable it in Magpie's Agent panel, then open a folder and try:
 
-Each workspace page contains its installation method, configuration entry, and first verification task. If it is already installed, complete only the SorryCode connection steps.
+```text
+Tell me which files matter most in this folder. Read only; do not modify anything.
+```
 
-For a manual API check, see [First Request](/docs/start/first-request). For shared errors, see [Common Errors](/docs/troubleshoot/common-errors).
+If you already use another tool, choose [Claude Code](/docs/agents/claude-code), [DeepSeek Harness](/docs/agents/dsh), [WorkBuddy](/docs/agents/workbuddy), or [Other Agents](/docs/agents/other-agents). Connect through the matching entry in Magpie instead of learning a separate configuration process.
+
+Once it replies normally, add [Skills](/docs/skills/featured-skills) for your tasks. For connection failures, see [Common Questions](/docs/troubleshoot/common-errors). Use [First Request](/docs/start/first-request) only when you need a manual API check.

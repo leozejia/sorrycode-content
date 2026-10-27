@@ -92,8 +92,8 @@ Use Kami to turn the product introduction below into a one-pager for first-time 
 
 <h2 id="install-note">Install Note</h2>
 
-Install [Codex](/docs/runtime/codex) or [Claude Code](/docs/runtime/claude-code) first, then install the skill that matches the task.
+Install [Codex](/docs/agents/codex) or [Claude Code](/docs/agents/claude-code) first, then install the skill that matches the task.
 
-For a first image run, read [SorryCode Image2](/docs/skills/sorrycode-image2). Use [GPT Image 2](/docs/runtime/gpt-image-2) when you need to call the Images API manually. Install [Kami](/docs/skills/kami) when you need a finished document. Use the [Presentation / PPT Delivery Route](#presentation-route) for presentations, and use [Open Slide](/docs/tools/open-slide) or [HyperFrames](/docs/tools/hyperframes) for a code-based deck or video toolchain.
+For a first image run, read [SorryCode Image2](/docs/skills/sorrycode-image2). Install [Kami](/docs/skills/kami) when you need a finished document. Use the [Presentation / PPT Delivery Route](#presentation-route) for presentations, and use [Open Slide](/docs/tools/open-slide) or [HyperFrames](/docs/tools/hyperframes) for a code-based deck or video toolchain.
 
 If you want a full design workbench instead of a single skill, see [Tools / Open Design](/docs/tools/open-design).

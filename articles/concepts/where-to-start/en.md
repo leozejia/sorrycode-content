@@ -65,7 +65,7 @@ Using Claude models → install Claude Code
 Not sure → install Codex, currently the simplest beginner entry
 ```
 
-Specific installation steps are in [Runtime / Codex](/docs/runtime/codex) or [Runtime / Claude Code](/docs/runtime/claude-code). Installation is usually one command, done in minutes.
+Configure models in [Magpie](/docs/agents/magpie), then install [Codex](/docs/agents/codex). If you already use [Claude Code](/docs/agents/claude-code), you can keep using it.
 
 **Step 2: Install a Skill**
 
@@ -74,7 +74,7 @@ A Skill is a capability pack for your Agent. Install the one matching your task:
 | What you want to do | Which Skill to install |
 | --- | --- |
 | Process Word / Excel / PPT / PDF | [Office Docs](/docs/skills/office-docs) |
-| Generate images, posters, covers | [GPT Image 2](/docs/runtime/gpt-image-2) |
+| Generate images, posters, covers | [SorryCode Image2](/docs/skills/sorrycode-image2) |
 | Create one-pagers, resumes, portfolios | [Kami](/docs/skills/kami) |
 | Make web-based slide decks | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
 

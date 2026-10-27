@@ -1,159 +1,43 @@
 ---
-title: Create API Key
+title: Create an API Key
 slug: create-api-key
 order: 3
-summary: Understand what an API key is, then prepare sk-... keys that match your protocol and group access.
+summary: Create an API key for the model group you need, then configure it in Magpie.
 section: start
 section_title: Getting Started
 section_order: 1
 ---
 
-# Create API Key
+# Create an API Key
 
-An `API` is the channel tools use to talk to models.
+An API key identifies the account responsible for model usage and charges. Put it in Magpie after creation, not in chat.
 
-When you chat with AI in a browser, you type into a web page. Tools like `Codex`, `Claude Code`, and `Skills` do not click web pages like humans do. They need a software-to-software way to request a model. That way is called an API.
+## 1. Open API Keys
 
-An `API Key` is the key on that channel. It proves that this is your SorryCode account using the model. It usually starts with `sk-...`.
+Sign in to the [SorryCode console](https://sorrycode.com), confirm that your balance is available, and open **API Keys** in the sidebar. You can also go directly to the [API key list](https://sorrycode.com/keys).
 
-No matter whether you use Codex, Claude Code, OpenCode, Grok, GPT Image 2, or manual setup, this step is unavoidable. The console can generate install commands or configuration from this key, so create the key first.
+![API Keys in the console sidebar](./api-key-menu.png)
 
-One SorryCode balance can have multiple API keys. Reuse one key across tools when their protocol and group access are compatible; create more keys when separate management is useful.
+## 2. Create a key and select a group
 
-Match each key to the protocol, models, and group access the tool needs. When you want separate usage records, spending limits, or credential rotation, create keys by purpose. A practical setup is:
+Create a key, give it a recognizable name such as “Daily work,” and select the model group you need.
 
-| Key name | Selected group | Used for |
-| --- | --- | --- |
-| `Codex` | A group that supports Codex / OpenAI-compatible traffic and image generation | Codex and the GPT Image 2 API |
-| `Claude Code` | A group that supports Anthropic-compatible traffic | Claude Code |
-| `OpenCode` | The group for the target model | OpenCode |
-| `Grok` | A Grok group | Grok Build, Grok images, and Grok video |
+The group determines available models and the billing multiplier. Start with one group. If you add more groups in Magpie, prepare a matching key for each.
 
-This does not split your balance. The balance is still shared. Separate keys make usage records, group switching, spending limits, and troubleshooting much clearer.
+A spending limit of `0` means no separate limit; set a budget if needed. If unsure about rate limits or expiration, leave the defaults for now.
 
-## The Shortest Path
+![Set the key name and group](./create-key-dialog.png)
 
-1. Open `https://sorrycode.com/login` and sign in to the SorryCode console
-2. Find `API Keys` in the left menu
-3. Create a new key
-4. Name it by use, such as `Codex`, `Claude Code`, or `Grok`
-5. Select a group
-6. Copy the key and store it safely
+## 3. Copy it into Magpie
 
-What you should end up with is an `sk-...`.
-
-The quick link is:
-
-`https://sorrycode.com/keys`
-
-But do not rely on the URL alone. A first-time user usually needs to know where this page sits inside the console.
-
-![API Keys entry in the console sidebar](./api-key-menu.png)
-
-## What to Fill In
-
-The name is only for you. Use the tool or purpose:
-
-```text
-Codex
-Claude Code
-Grok
-Test Request
-```
-
-The group decides which model group and billing multiplier this key uses. You can switch the group later from the API key list.
-
-The spending limit controls the maximum balance this key can consume. `0` means no separate limit. Beginners can leave it alone first, then add limits after regular usage starts.
-
-The rate limit controls request frequency. It is not the model multiplier. If you are just using Codex or Claude Code normally, you usually do not need to enable it first.
-
-The key expiration is useful for temporary test keys. Long-term Codex / Claude Code keys usually do not need an expiration date at the start.
-
-![When creating a key, start with the name and group](./create-key-dialog.png)
-
-## What You Actually Need to Remember
-
-As a beginner, remember three lines:
-
-- `API` is the channel
-- `API Key` is the key
-- `SorryCode` is where you create the key, manage balance, and connect tools to models
-
-Then remember one more line:
-
-```text
-one balance can have multiple API keys.
-```
-
-You can create separate keys for separate tools, such as one for Codex, one for Claude Code, and one for Grok. The GPT Image 2 API reuses an OpenAI / Codex-group key instead of introducing another image key. It still uses the same balance, while records, groups, and limits remain organized around the main tools.
-
-Do not treat every `sk-...` value as interchangeable. Check whether the key's group exposes the model and protocol the tool needs. Reuse a key when they are compatible; a mismatch can cause access errors, unavailable models, or incorrect routing.
-
-If you use one-click install, the installer writes most config for you. You usually do not need to understand `Base URL` first.
-
-Only continue with the values below when you are configuring manually:
-
-- API Key: the `sk-...` value you just created
-- which Base URL your target workbench needs
-
-If you use `Codex` and other OpenAI-compatible paths, the Base URL is:
-
-- `{{API_BASE_URL}}`
-
-If you use `Claude Code` and other Anthropic-compatible paths, the Base URL is:
-
-- `{{ANTHROPIC_BASE_URL}}`
-
-Some runtime field names can look misleading.
-
-For example, `Claude Code` calls the field `ANTHROPIC_AUTH_TOKEN`, but the value inside it is still the same `sk-...`.
-
-## How to Use It After Creation
-
-After creation, the console shows the full key. Copy the `sk-...` value.
+Copy the complete key. Follow [Configure SorryCode in Magpie](/docs/agents/magpie) and paste it into the API Key field of the matching custom provider.
 
 ![Copy the API key after creation](./key-created-copy.png)
 
-When you use `Connect Tool`, you usually do not need to place the key into a command or configuration by hand. Codex, Claude Code, and Grok Build generate install commands. OpenCode CLI generates an `opencode.json` configuration; for OpenCode Desktop, you can copy the key and use the visual form instead.
+One account balance can serve multiple keys. A key in a compatible group can be shared by several agents; you do not need a new key for every tool. Split keys only when you need separate usage records, limits, or credential rotation.
 
-The easier path is to return to the API key list, find this key, and click `Connect Tool`:
+You can switch a key's group from the list. After switching, check the matching provider configuration in Magpie and fetch models again. Do not mix keys from different groups.
 
-![Connect Tool button on the right side of the API key list](./connect-tool-button.png)
+![Switch a key's group from the list](./key-group-switch.png)
 
-1. choose the tool you want to connect, such as `Codex`, `Claude Code`, `OpenCode`, or `Grok Build`
-2. for an installer, choose your operating system and copy the command; for OpenCode CLI, copy the generated configuration; for OpenCode Desktop, follow its visual setup guide
-3. follow that workspace's guide to run the installer or save the configuration
-
-The generated command or configuration already includes the current API key. Handle the raw `sk-...` value yourself only for manual setup or troubleshooting.
-
-If you already created a key, the API key list lets you:
-
-- copy the key
-- connect a tool
-- rename it
-- switch its group
-- set a spending limit
-- disable or delete keys you no longer use
-
-Compatible tools can share one key. Separate keys are useful when you want clearer usage records, limits, or troubleshooting. The GPT Image 2 API does not need another image key or a general-purpose environment variable.
-
-![You can switch groups from the API key list](./key-group-switch.png)
-
-## Security Rules
-
-- do not commit it into a repo
-- do not paste it into public chats
-- do not put it directly into long-lived shell history
-- commands and configurations copied from `Connect Tool` include the current key, so do not show them on shared computers, recorded screens, or public terminals
-- revoke and recreate it immediately if it leaks
-
-## Next
-
-- Unsure whether SorryCode fits you: [Getting Started / Who SorryCode Is For](/docs/start/who-is-sorrycode-for)
-- Want to understand AI cost: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)
-- Want to start with Codex: [Runtime / Codex](/docs/runtime/codex)
-- Want to start with Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
-- Want an open-source terminal agent that can use multiple model providers: [Models & Runtimes / OpenCode](/docs/runtime/opencode)
-- Unsure how runtimes and models relate: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
-- Want a minimal validation first: [Getting Started / First Request](/docs/start/first-request)
-- Want to use other models in ChatGPT / Codex: [Models & Runtimes / Use Other Models in ChatGPT / Codex](/docs/runtime/codex-multi-model)
+Keep keys out of prompts, public screenshots, and code repositories. If a key leaks, disable or delete it in the console immediately and create a new one.

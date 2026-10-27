@@ -163,10 +163,9 @@ Then choose 3 to 5 representative tasks and design a baseline. Later changes mus
 
 Approve the audit before allowing edits. This prevents a large cleanup from deleting useful methods, scripts, and safety boundaries together.
 
-<h2 id="model-guides">Model-Specific Guidance</h2>
+<h2 id="model-guides">Check rules after changing models</h2>
 
-- Claude Fable 5 emphasizes long runs, evidence-backed progress, autonomy boundaries, subagents, and memory. Anthropic also warns that older Skills can be too prescriptive. Continue with [How to Use Claude Fable 5](/docs/runtime/claude-fable-5).
-- GPT-5.6 Sol emphasizes leaner prompts, reasoning effort, tool-routing boundaries, and evaluation on representative tasks. Continue with [How to Use GPT-5.6 Sol](/docs/runtime/gpt-5-6-sol).
+Choose a currently available model in [Magpie](/docs/agents/magpie), test it on the same representative tasks, then decide whether project rules need changes. Do not turn one model version's temporary parameters or prompting habits into permanent rules.
 
 <h2 id="default-rule">Default Test</h2>
 

@@ -1,5 +1,7 @@
 # SorryCode Content Handoff
 
+> 历史观察记录，不是当前待办或执行规则。当前 AGENTS 栏目与收录方式以 `information-architecture.md` 为准，不因本记录自动扩展重构范围。
+
 更新时间：2026-08-27
 
 ## Agent Runtime 收录

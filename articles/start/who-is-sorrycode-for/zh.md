@@ -97,11 +97,8 @@ SorryCode 不是要替代所有订阅。
 
 你可以按任务选择入口：
 
-- GPT 路径：优先看 [Runtime / Codex](/docs/runtime/codex)
-- Claude 路径：优先看 [Runtime / Claude Code](/docs/runtime/claude-code)
-- OpenAI 图片：先看 [模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)
-- Grok 图片和视频：看 [Grok 图片生成](/docs/runtime/grok-image) 与
-  [Grok 视频生成](/docs/runtime/grok-video)
+- 默认接入：先看 [Magpie](/docs/agents/magpie)，不知道选哪个 Agent 就用 [Codex](/docs/agents/codex)
+- 图片任务：先看 [SorryCode Image2](/docs/skills/sorrycode-image2)
 - 办公文档：看 [Skills / 办公文档](/docs/skills/office-docs)
 
 ### 更适合试错
@@ -118,12 +115,11 @@ SorryCode 不是要替代所有订阅。
 API Key = 让工具使用你 SorryCode 余额的钥匙
 ```
 
-你不需要第一天就会写代码请求。先按目标创建 Key，再安装 Codex 或 Claude Code。
+你不需要第一天就会写代码请求。先创建 Key，再通过 [Magpie](/docs/agents/magpie)接入自己选的 Agent。
 
 ## 下一步
 
 - 不知道 AI 钱花在哪里：看 [开始使用 / AI 成本怎么计算](/docs/start/ai-cost-basics)
 - 不知道工具和模型怎么分：看 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)
 - 已经决定开始：看 [开始使用 / 创建 API Key](/docs/start/create-api-key)
-- 想直接走 GPT 路径：看 [Runtime / Codex](/docs/runtime/codex)
-- 想直接走 Claude 路径：看 [Runtime / Claude Code](/docs/runtime/claude-code)
+- 想直接配置：看 [Magpie](/docs/agents/magpie)，不确定用什么就选 [Codex](/docs/agents/codex)

@@ -52,7 +52,7 @@ Open Design 当前更适合愿意折腾本地环境的人。
 - macOS、Linux、WSL2 是主要路径
 - 可选本地 agent CLI：Codex、Claude Code、Gemini CLI 等
 
-这和 SorryCode 当前一键安装默认的 Node 22 LTS 路径不同，所以我们不把它作为小白默认第一步。
+这是 Open Design 自己的环境要求，不是安装 Magpie 或桌面 Agent 的前置。不要为了首次接入 SorryCode 先准备这套工具链。
 
 <h2 id="how-to-start">怎么开始</h2>
 

@@ -64,8 +64,8 @@ npx skills add tw93/kami -a claude-code -g -y
 
 If your runtime is not ready yet, go back first:
 
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+- [AGENTS / Codex](/docs/agents/codex)
+- [AGENTS / Claude Code](/docs/agents/claude-code)
 
 If you no longer need it, run `npx skills list --global` to confirm the name, then remove it with `npx skills remove --global kami`.
 

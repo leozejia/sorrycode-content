@@ -43,7 +43,7 @@ source_url: https://github.com/dontbesilent2025/dbskill
 
 如果你只是想生成图片、排版文档或做网页 PPT，先看：
 
-- [模型与工作台 / GPT Image 2](/docs/runtime/gpt-image-2)
+- [Skills / SorryCode Image2](/docs/skills/sorrycode-image2)
 - [Skills / Kami](/docs/skills/kami)
 - [Skills / 藏师傅的 PPT Skill](/docs/skills/magazine-web-ppt)
 
@@ -65,8 +65,8 @@ npx skills add dontbesilent2025/dbskill -a claude-code -g -y
 
 如果你还没装好 runtime，先回到：
 
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+- [AGENTS / Codex](/docs/agents/codex)
+- [AGENTS / Claude Code](/docs/agents/claude-code)
 
 `DBSkill` 是整包，可能会安装多个子 skill。如果不想继续使用，先运行 `npx skills list --global` 复制实际名称，再用 `npx skills remove --global skill-name` 逐个卸载。
 

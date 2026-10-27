@@ -2,7 +2,7 @@
 title: Common Questions
 slug: common-errors
 order: 1
-summary: The shortest fix path by error code and symptom.
+summary: Check the Magpie connection first, then narrow down authentication, model access, and network errors.
 section: troubleshoot
 section_title: Troubleshoot
 section_order: 50
@@ -10,53 +10,38 @@ section_order: 50
 
 # Common Questions
 
-## 401 Unauthorized
+With the default Magpie setup, first confirm that Magpie is running, **Connect** is enabled for the target agent, and you reopened the agent after setup. Do not run an old connector over this configuration.
 
-Check these first:
+## Missing models or an unrecognized agent
 
-- is the API key complete
-- is the auth header correct
-- did you mix a SorryCode key with an upstream official key
+- Click **Fetch Models** again in the Magpie provider settings, save, and select the models you need.
+- Confirm that the agent is installed and the Magpie entry matches the actual client. WorkBuddy and WorkBuddy AI, and the different Cursor client types, are not interchangeable.
+- Update and reopen Magpie. Do not copy another tool's configuration into an unsupported client.
 
-Protocol differences matter too:
+## 401 Unauthorized / API KEY REQUIRED
 
-- OpenAI-compatible usually uses `Authorization: Bearer ...`
-- Anthropic-compatible usually uses `x-api-key: ...`
+`API KEY REQUIRED` means the server did not receive supported authentication information. It does not mean the balance is empty. Other `401` errors can also indicate an invalid or disabled key.
+
+Check that the provider's key in Magpie is complete, active, and belongs to the selected group. Then confirm that the request actually goes through Magpie. Old connectors, manual settings, or environment variables may point the agent elsewhere. Do not paste your key into chat for troubleshooting.
+
+The provider Base URL in Magpie points to SorryCode. The agent may connect to a local Magpie gateway URL instead. These addresses can coexist; do not overwrite one with the other to make them match.
+
+## 403 / unavailable model
+
+Check whether the key's group exposes the requested model. Fetch the current model list in Magpie and choose from it instead of copying model names from an old guide. Fetch models again after changing groups.
 
 ## 404 Not Found
 
-Check the full request URL first. Different APIs handle `/v1` differently, so do not add or remove it everywhere:
-
-- Compare the Base URL and path with the current runtime or API guide
-- Check whether the client appended `/v1` twice
-- Check whether OpenAI-compatible and Anthropic-compatible paths were mixed
-- Confirm that the current key group exposes the requested model and endpoint
+Check the provider Base URL against the [Magpie guide](/docs/agents/magpie). Do not append `/v1` twice or include a full request path. For manual API calls, check each protocol and path separately rather than applying one URL rule to every endpoint.
 
 ## 429 / quota problems
 
-Separate the cause first:
+Check the account balance and key spending limit, then reduce request frequency and concurrency. Rate limiting and insufficient balance are different causes.
 
-- no balance left
-- rate limiting
-- too much concurrency in a short window
+## Timeout / TLS / interrupted connection
 
-If you are only validating the path, reduce frequency and concurrency first.
+Confirm that Magpie is running, then check whether your network or proxy can reach the provider URL. Reinstalling repeatedly is not a network fix. For an interrupted paid image request, check whether it already completed before submitting another.
 
-## Timeout / TLS errors
+## Still failing
 
-Start with:
-
-- [Environment / Node.js](/docs/environment/nodejs#network)
-
-## PowerShell execution policy errors
-
-Start with:
-
-- [Environment / Windows PowerShell](/docs/environment/windows-powershell)
-
-## Not sure where to look first
-
-Go back to:
-
-- [Runtime / Codex](/docs/runtime/codex)
-- [Runtime / Claude Code](/docs/runtime/claude-code)
+Record the agent and Magpie versions, time, full error, and request ID. Hide the key and personal information. Use a [manual API check](/docs/start/first-request) only when you need to separate gateway and client failures. For Windows command or encoding issues, see [Windows PowerShell](/docs/environment/windows-powershell).

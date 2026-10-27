@@ -15,7 +15,7 @@ source_url: https://code.visualstudio.com/
 
 For a beginner, think of it as a project file browser + code editor + change viewer. It is not `Codex`, and it is not `Claude Code`. It is a visual workspace that can host extensions for those tools.
 
-If you have not started `Codex` or `Claude Code` yet, you do not need VS Code first. The SorryCode default path is: run one-click install, then use the official desktop app to open your project.
+If you have not started `Codex` or `Claude Code` yet, you do not need VS Code first. The SorryCode default is to configure [Magpie](/docs/agents/magpie), then open an agent and start a task.
 
 <h2 id="when-to-use">When to Use It</h2>
 
@@ -62,8 +62,8 @@ If you want to use Codex inside VS Code, start with OpenAI's official IDE Extens
 
 Recommended order:
 
-1. Finish one-click install in [Runtime / Codex](/docs/runtime/codex)
-2. Download and open `Codex App`, and confirm it can choose your project
+1. Follow [Codex](/docs/agents/codex) to install it and connect through Magpie
+2. Open the desktop app and confirm it can choose your project and chat
 3. Install VS Code
 4. Install the Codex IDE extension by following OpenAI's official docs
 5. If the extension asks for sign-in, authorization, or setup, follow the extension prompt
@@ -78,8 +78,8 @@ If you want to use Claude Code inside VS Code, start with the official Claude Co
 
 Recommended order:
 
-1. Finish one-click install in [Runtime / Claude Code](/docs/runtime/claude-code)
-2. Download `Claude Desktop`, or confirm `claude` can start from your terminal
+1. Follow [Claude Code](/docs/agents/claude-code) to install it and connect through Magpie
+2. Confirm that `claude` launches in the terminal and replies
 3. Install VS Code
 4. Install the Claude Code extension by following the official docs
 5. If the extension asks for sign-in, authorization, or setup, follow the extension prompt
@@ -115,12 +115,12 @@ Do not change files yet. Read the current project first, then tell me what it do
 - How is it different from Codex App?
   `Codex App` is Codex's own desktop app. `VS Code` is a general editor that can install different extensions and is useful for viewing files and diffs.
 - Will extensions automatically work with SorryCode after install?
-  Not always. Finish the SorryCode runtime setup first; if an extension asks for sign-in or configuration, follow the official extension docs.
+  Not always. Complete Magpie setup from the AGENTS section first; if an extension asks for sign-in or configuration, follow the official extension docs.
 - Should I learn VS Code or Codex first?
   Get `Codex` or `Claude Code` running first. VS Code is a later option for making the workflow more visual.
 
 <h2 id="next">Next</h2>
 
-- Want Codex: [Runtime / Codex](/docs/runtime/codex)
-- Want Claude Code: [Runtime / Claude Code](/docs/runtime/claude-code)
+- Want Codex: [AGENTS / Codex](/docs/agents/codex)
+- Want Claude Code: [AGENTS / Claude Code](/docs/agents/claude-code)
 - Want to understand Skills: [Skills / What Skills Are](/docs/skills/featured-skills)

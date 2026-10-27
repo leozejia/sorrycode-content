@@ -30,7 +30,7 @@ group_order: 10
 
 <h2 id="install">安装</h2>
 
-先安装 [Codex](/docs/runtime/codex) 或 [Claude Code](/docs/runtime/claude-code)，再按文件类型运行一条命令：
+先安装 [Codex](/docs/agents/codex) 或 [Claude Code](/docs/agents/claude-code)，再按文件类型运行一条命令：
 
 | Skill | Codex | Claude Code |
 | --- | --- | --- |

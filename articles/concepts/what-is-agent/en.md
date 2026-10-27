@@ -187,5 +187,4 @@ Agent is powerful, but there's one practical question: how do you make it unders
 Next chapter: [Talking to AI Is Not Spellcasting](/docs/concepts/what-is-prompt)
 
 If you want to install an Agent and try it right now:
-- GPT path: [Runtime / Codex](/docs/runtime/codex)
-- Claude path: [Runtime / Claude Code](/docs/runtime/claude-code)
+Configure models in [Magpie](/docs/agents/magpie), then start with [Codex](/docs/agents/codex) if unsure.

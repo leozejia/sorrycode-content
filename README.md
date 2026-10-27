@@ -14,9 +14,9 @@ docs/
   public-article-assets.md
   presentation-skills-strategy.md
 articles/
-  runtime/
+  agents/
     index.json
-    codex-multi-model/
+    magpie/
       zh.md
       en.md
   tools/
@@ -32,12 +32,11 @@ articles/
 This repository can carry public docs for these sections:
 
 - `start`
-- `platform`
-- `runtime`
+- `concepts`
+- `agents`
 - `skills`
-- `village`
+- `agent-memory`
 - `tools`
-- `agent-infra`
 - `environment`
 - `troubleshoot`
 
@@ -134,16 +133,16 @@ For grouped navigation, `navigation.groups[].items` is the rendered article orde
 ```json
 {
   "version": 1,
-  "section": "runtime",
+  "section": "agents",
   "title": {
-    "zh": "Runtime",
-    "en": "Runtime"
+    "zh": "AGENTS",
+    "en": "AGENTS"
   },
   "updatedAt": "2026-05-11",
   "navigation": {
     "style": "flat",
     "groups": []
   },
-  "articles": ["codex", "codex-plugins"]
+  "articles": ["magpie", "codex", "claude-code", "dsh", "workbuddy", "other-agents"]
 }
 ```

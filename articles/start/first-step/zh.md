@@ -2,7 +2,7 @@
 title: 第一次使用 SorryCode
 slug: first-step
 order: 1
-summary: 先选适合的 Agent 工作台，再确认模型、协议和 API Key 分组兼容。
+summary: 创建 API Key，用 Magpie 配置，再打开 Codex 完成第一个任务。
 section: start
 section_title: 开始使用
 section_order: 1
@@ -10,32 +10,26 @@ section_order: 1
 
 # 第一次使用 SorryCode
 
-第一次使用时，先选适合自己的 Agent 工作台，再按对应指南接入 SorryCode。工作台和模型是两回事，同一个工作台可以由不同模型驱动，具体取决于它使用的协议和 API Key 所属分组。
+第一次使用，按下面三步走。不需要先学终端命令、配置文件或比较所有模型。
 
-<h2 id="choose-tool">选择工作台</h2>
+## 1. 创建 API Key
 
-| 工作台 | 适合什么 | 接入指南 |
-| --- | --- | --- |
-| **ChatGPT / Codex** | 默认选择。适合代码、文件和本机任务，也有可视化 App | [ChatGPT / Codex](/docs/runtime/codex) |
-| **Claude Code** | 适合代码、终端任务和长时间自主执行 | [Claude Code](/docs/runtime/claude-code) |
-| **Cursor Agent** | 适合在编辑器里完成代码、文件和项目任务 | [Cursor Agent](/docs/runtime/cursor) |
-| **OpenCode** | 开源、多模型的 Agent，有桌面客户端和终端版 | [OpenCode](/docs/runtime/opencode) |
-| **DSH** | DeepSeek 开源的 Web Agent，可以配置 Responses 兼容模型 | [DSH](/docs/runtime/dsh) |
-| **Pi Agent** | 轻量、灵活的终端 Agent，可以自行配置 Responses 兼容模型 | [Pi Agent](/docs/runtime/pi-agent) |
-| **Kimi Code** | 使用 Kimi 模型完成代码和长上下文任务 | [Kimi Code](/docs/runtime/kimi-code) |
-| **WorkBuddy** | 在桌面界面处理文档、表格和本地文件 | [WorkBuddy](/docs/runtime/workbuddy) |
-| **Grok Build** | 使用 Grok 模型和 xAI 生态能力 | [Grok Build](/docs/runtime/grok-build) |
+登录 [SorryCode 控制台](https://sorrycode.com)，充值余额，并按[创建 API Key](/docs/start/create-api-key)选择需要的模型分组、复制密钥。
 
-不确定时先用 ChatGPT / Codex。想使用 Web UI 自行配置 Responses 模型，可以选择 DSH；想在开源工作台里使用多家模型，可以选择 OpenCode。
+## 2. 用 Magpie 配置
 
-<h2 id="prepare-key">准备兼容的 API Key</h2>
+按[用 Magpie 配置 SorryCode](/docs/agents/magpie)，从官网安装 Magpie，添加自定义供应商、填入对应分组的 Key，再点击「获取模型」。
 
-登录 [SorryCode 控制台](https://sorrycode.com)，确认余额可用。选定模型后，检查 API Key 所属分组是否同时支持这个模型和工作台使用的协议。符合条件的 Key 可以直接复用；需要分开统计用量、设置限额或轮换凭证时，再按用途新建 Key。
+先配置一个要用的分组即可，不用一次添加全部模型。
 
-创建方法和分组原则见 [创建 API Key](/docs/start/create-api-key)。仍不清楚工作台和模型的区别，可以先看 [工具不是模型](/docs/concepts/tools-models-platform)。
+## 3. 安装 Agent，开始任务
 
-<h2 id="continue">进入对应指南</h2>
+不确定选什么，就按 [Codex](/docs/agents/codex)安装桌面端，在 Magpie 的 Agent 面板启用，然后打开一个文件夹试用：
 
-每个工作台页面都会给出安装方式、配置入口和首次验证方法。已经安装过时，只需完成 SorryCode 接入部分。
+```text
+告诉我这个文件夹里有哪些主要文件。先只读取，不修改内容。
+```
 
-需要手动验证 API 时，看 [首条请求](/docs/start/first-request)。遇到共性错误时，看 [常见错误](/docs/troubleshoot/common-errors)。
+已经习惯其他工具，也可以用 [Claude Code](/docs/agents/claude-code)、[DeepSeek Harness](/docs/agents/dsh)、[WorkBuddy](/docs/agents/workbuddy) 或[其他 Agents](/docs/agents/other-agents)。它们都从 Magpie 的对应入口接入，不用再学一套配置。
+
+能正常回复后，再按任务安装 [Skills](/docs/skills/featured-skills)。接入失败看[常见问题](/docs/troubleshoot/common-errors)；只有需要手动排查 API 时才看[首条请求](/docs/start/first-request)。

@@ -141,11 +141,9 @@ There are tutorials online showing how to run GPT through Claude Code, or DeepSe
 | Where you are now | Recommendation |
 | --- | --- |
 | I know nothing | Start with [What AI Actually Is](/docs/concepts/what-is-ai) |
-| I want to try, not sure what to install | Install Codex — simplest beginner entry point |
-| I primarily use GPT | [Runtime / Codex](/docs/runtime/codex) |
-| I primarily use Claude | [Runtime / Claude Code](/docs/runtime/claude-code) |
-| I use a Chinese model | Check the vendor's Agent client; setup logic is similar |
-| I want multi-model access through one entry | Use SorryCode as a unified API gateway, switch models as needed |
+| I want to try but do not know what to install | Configure [Magpie](/docs/agents/magpie), then install [Codex](/docs/agents/codex) |
+| I already have a preferred tool | Find its entry in [AGENTS](/docs/agents/other-agents) |
+| I want to use several models | Add a provider for each group in Magpie, then choose models |
 | I'm already using it, want to manage it better | [Agent Advanced](/docs/agent-memory/overview) |
 
 <h2 id="remember">Remember One Thing</h2>
