@@ -14,7 +14,7 @@ section_order: 5
 
 一个 Skill 通常以 `SKILL.md` 为主说明，还可以附带参考资料、脚本和模板。它告诉 Agent 这类任务怎么做，不是另一个模型。
 
-<h2 id="when">什么时候需要</h2>
+<h2 id="when-to-use">什么时候需要</h2>
 
 先直接让 Agent 完成任务。已有能力够用，就不必额外安装 Skill。
 

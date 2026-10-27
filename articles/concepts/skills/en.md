@@ -14,7 +14,7 @@ When you repeatedly ask an agent to follow the same process, you can save that p
 
 A Skill usually has a `SKILL.md` instruction file and may include reference material, scripts, and templates. It explains how to do a type of task. It is not another model.
 
-<h2 id="when">When You Need One</h2>
+<h2 id="when-to-use">When You Need One</h2>
 
 Start by asking the agent to do the task. If its existing capabilities are enough, you do not need another Skill.
 
