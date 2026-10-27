@@ -83,7 +83,7 @@ AI 可以通过三种方式记住你说过的话：
 - 想在不同项目复用的能力
 
 **怎么做：**  
-看 [让 AI 记住工作方法](/docs/agent-memory/remember-skills)
+看[核心概念 / Skills 是什么](/docs/concepts/skills)
 
 ---
 
@@ -114,8 +114,8 @@ AI 可以通过三种方式记住你说过的话：
            ↓ 调用
 ┌─────────────────────────────────────────┐
 │        技能记忆（工作方法）                │
-│   SorryCode Image2: "怎么生成并保存图片"   │
-│   Waza: "怎么审查代码"                    │
+│   图片流程：生成后检查并保存图片            │
+│   审查流程：检查改动并报告问题              │
 │   → 需要时触发                            │
 └─────────────────────────────────────────┘
 ```
@@ -142,8 +142,7 @@ AI 可以通过三种方式记住你说过的话：
 
 当你发现自己反复做同一类任务时：
 
-1. 找一个现成的 Skill（看 [Skills / 精选 Skills](/docs/skills/featured-skills)）
-2. 或者自己做一个（看 [让 AI 记住工作方法](/docs/agent-memory/remember-skills)）
+按自己的任务选择现成的 Skill，或把已有流程做成自己的 Skill。用途和用法见[核心概念 / Skills 是什么](/docs/concepts/skills)，不需要先装一套推荐清单。
 
 <h2 id="not-perfect">AI 记忆不完美</h2>
 
@@ -178,4 +177,4 @@ AI 可以通过三种方式记住你说过的话：
 
 - 开发者 → [让 AI 记住项目规则](/docs/agent-memory/remember-rules)
 - 设计师 → [让 AI 记住你的设计风格](/docs/agent-memory/remember-design)
-- 想做自己的 Skill → [让 AI 记住工作方法](/docs/agent-memory/remember-skills)
+- 想了解或制作 Skill → [Skills 是什么](/docs/concepts/skills)

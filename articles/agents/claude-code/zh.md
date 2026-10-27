@@ -38,4 +38,4 @@ claude
 先解释这个文件夹的用途和主要文件，不要修改任何内容。
 ```
 
-需要扩展任务能力时看 [Skills](/docs/skills/featured-skills)；接入报错看[常见问题](/docs/start/common-errors)。
+需要复用工作方法时了解 [Skills](/docs/concepts/skills)，按需选择；接入报错看[常见问题](/docs/start/common-errors)。

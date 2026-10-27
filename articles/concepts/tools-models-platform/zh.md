@@ -156,6 +156,4 @@ OpenAI 有 Codex。Anthropic 有 Claude Code。Google 有 Gemini 的各种集成
 
 <h2 id="next">下一步</h2>
 
-概念都讲完了。最后一章：到底从哪里开始？
-
-[从哪开始](/docs/concepts/where-to-start)
+想了解 Agent 怎么复用工作方法，看 [Skills 是什么](/docs/concepts/skills)。准备开始任务时，去看[从哪开始](/docs/concepts/where-to-start)。

@@ -156,6 +156,4 @@ Pick your workbench first — where you produce work is where AI stacks its buff
 
 <h2 id="next">Next Step</h2>
 
-All the concepts are covered. Last chapter: where do you actually start?
-
-[Where to Start](/docs/concepts/where-to-start)
+To learn how agents reuse working methods, read [What Are Skills](/docs/concepts/skills). When you are ready for a task, see [Where to Start](/docs/concepts/where-to-start).

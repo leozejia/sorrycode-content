@@ -111,7 +111,7 @@ The project should feel calm, clear, and credible. Avoid exaggerated sci-fi styl
 After putting `DESIGN.md` in the work folder, name it in the task:
 
 ```text
-Read DESIGN.md first, then use Kami to turn this content into a one-pager. Before starting, tell me which design constraints you'll follow.
+Read DESIGN.md first, then turn this content into a one-pager. Before starting, tell me which design constraints you'll follow.
 ```
 
 For long-term use, reference it from `AGENTS.md`, `CLAUDE.md`, or the project instructions supported by the current tool. Follow that agent's official documentation for the instruction file.
@@ -119,7 +119,7 @@ For long-term use, reference it from `AGENTS.md`, `CLAUDE.md`, or the project in
 For an image task, you can say:
 
 ```text
-Read DESIGN.md first, then read and use [SorryCode Image2](/docs/skills/sorrycode-image2) to generate a product poster. Keep the existing project style and save to outputs/images/poster/.
+Read DESIGN.md first, then check the available image tools. If generation is available, make a product poster in the existing project style and save to outputs/images/poster/. Tell me if tools or permissions are missing instead of claiming an image was generated.
 ```
 
 <h2 id="relationship">How It Relates to Skills</h2>
@@ -139,5 +139,5 @@ Skills provide the task workflow. `DESIGN.md` stores visual constraints for the 
 
 <h2 id="next">What's Next</h2>
 
-- Choose a design capability: [Skills / Creation and Design](/docs/skills/creation-design)
+- Learn about reusable working methods: [What Are Skills](/docs/concepts/skills)
 - Store development rules: [Make AI Remember Project Rules](/docs/agent-memory/remember-rules)

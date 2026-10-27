@@ -111,7 +111,7 @@ section_order: 15
 把 `DESIGN.md` 放进工作文件夹后，在任务中明确要求读取：
 
 ```text
-请先读取 DESIGN.md，再用 Kami 把这份内容做成一页纸。开始前告诉我你会遵守哪些设计约束。
+请先读取 DESIGN.md，再把这份内容做成一页纸。开始前告诉我你会遵守哪些设计约束。
 ```
 
 项目长期使用时，可以在 `AGENTS.md`、`CLAUDE.md` 或对应工具的项目规则中引用它。具体规则文件以当前 Agent 的官方说明为准。
@@ -119,7 +119,7 @@ section_order: 15
 图片任务也可以直接说：
 
 ```text
-请先读取 DESIGN.md，再读取并使用 [SorryCode Image2](/docs/skills/sorrycode-image2)，生成一张产品海报。保持项目既有视觉风格，输出到 outputs/images/poster/。
+请先读取 DESIGN.md，再检查当前可用的图片工具。能生成时，保持项目既有视觉风格，制作一张产品海报，输出到 outputs/images/poster/。缺少工具或权限时先告诉我，不要假装已经生成。
 ```
 
 <h2 id="relationship">它和 skill 的关系</h2>
@@ -139,5 +139,5 @@ Skill 提供任务流程，`DESIGN.md` 保存当前项目的视觉约束。只�
 
 <h2 id="next">接下来</h2>
 
-- 选择设计类能力：[Skills / 创作与设计](/docs/skills/creation-design)
+- 了解可复用的工作方法：[Skills 是什么](/docs/concepts/skills)
 - 保存开发规则：[让 AI 记住项目规则](/docs/agent-memory/remember-rules)

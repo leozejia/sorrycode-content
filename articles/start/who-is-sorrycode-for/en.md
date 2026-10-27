@@ -98,8 +98,7 @@ For example, one for Codex, one for Claude Code, and one for GPT Image 2. They c
 Choose by task:
 
 - Default setup: start with [Magpie](/docs/agents/magpie). If unsure which agent to choose, use [Codex](/docs/agents/codex)
-- Image tasks: start with [SorryCode Image2](/docs/skills/sorrycode-image2)
-- Office files: read [Skills / Office Docs](/docs/skills/office-docs)
+- Reusable working methods: learn about [Skills](/docs/concepts/skills) and choose for your own tasks and preferences
 
 ### Easier experimentation
 

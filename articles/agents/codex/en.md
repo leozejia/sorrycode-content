@@ -30,4 +30,4 @@ Open the folder you want to work with in Codex and send:
 Look through this folder and tell me which files I should read first. Do not modify or delete any files.
 ```
 
-Confirm that it reads the right folder and replies before starting real work. For images, documents, and other tasks, see [Skills](/docs/skills/featured-skills). For connection errors, see [Common Questions](/docs/start/common-errors).
+Confirm that it reads the right folder and replies before starting real work. Read about [Skills](/docs/concepts/skills) when you need a reusable working method; installing one is optional. For connection errors, see [Common Questions](/docs/start/common-errors).

@@ -14,7 +14,7 @@ Old `AGENTS.md`, `CLAUDE.md`, and Skills do not expire when the model changes. A
 
 The goal is not the fewest possible rules. Use the minimum correct design: keep what the model cannot infer reliably from the task and what directly affects correctness.
 
-For a first rules file, read [Make AI Remember Project Rules](/docs/agent-memory/remember-rules). For the structure and purpose of Skills, read [Make AI Remember Work Methods](/docs/agent-memory/remember-skills). This page focuses on auditing existing rules after a model upgrade.
+For a first rules file, read [Make AI Remember Project Rules](/docs/agent-memory/remember-rules). For the purpose of Skills, read [What Are Skills](/docs/concepts/skills). This page focuses on auditing existing rules after a model upgrade.
 
 <h2 id="keep">What to Keep</h2>
 

@@ -30,47 +30,37 @@ sorrycode                     产品站、renderer、proxy、cache、安全校�
 | 栏目 | 回答的问题 | 写法 |
 | --- | --- | --- |
 | 开始使用 | SorryCode 适合谁，如何接入、理解成本和处理常见问题 | 第一章，先给默认路径，常见问题作为二级页面 |
-| 核心概念 | Agent、模型、上下文和任务委派是什么 | 按需理解，不作为接入前置 |
+| 核心概念 | Agent、模型、上下文、Skills 和任务委派是什么 | 按需理解，不作为接入前置 |
 | AGENTS | 怎么接入 SorryCode，安装 Agent 并完成第一个任务 | 默认用 Magpie 图形界面配置，不按厂商分组 |
-| Skills | 装好 runtime 后，给 agent 增加什么能力 | 能力选择、安装、触发、边界 |
-| Agent 基建 | 长期上下文、AGENTS.md、CLAUDE.md、DESIGN.md、MCP、Skills 这些长期标准是什么 | 原理、标准、可长期引用 |
+| Agent 基建 | 怎么管理上下文、项目规则和设计要求 | 长期规则、按需引用，不重复基础概念 |
 
-交叉是正常的。比如做 PPT 会经过 `Skills / 创作与设计` 和 `Skills / 办公文档`。治理目标不是消灭交叉，而是避免同一段解释在多个页面重复。
+概念只保留一个主页面。使用页可以链接过去，不重复解释，也不把可选能力变成入门前置。
 
 ## 页面职责
 
 ### Skills
 
-`Skills` 是能力选择和能力说明。它回答“我应该装哪个 skill，装完怎么触发”。
-
-单个 skill 页只讲这个 skill：
-
-- 它是什么
-- 适合什么
-- 不适合什么
-- 怎么安装
-- 第一话怎么说
-- 常见问题
-- 上游参考
-
-如果某个任务域里有多个 skill，比如 PPT，不要把其中一个 skill 写成整个任务域。先做路线图，再写单个 skill。
-
-Skills 安装采用 agent-first 口径：先让用户把 `Codex` 或 `Claude Code` 跑起来，再把安装环境和 skill 安装交给 agent 处理。公开文档可以给用户一段可复制的话，让 agent 读取当前机器可读 Markdown 后动态判断安装范围。
+Skills 只在核心概念中保留一篇 `Skills 是什么`，路径为 `/docs/concepts/skills`。说明用途、何时需要、如何使用、怎样保存自己的工作方法，以及与项目规则和 MCP 的区别。保持简短，不做推荐清单。
 
 维护规则：
 
-- 给 agent 的链接使用 `/docs/<section>/<slug>.md?locale=...` 或 `/llms.txt`，不要使用普通 SPA 页面作为唯一入口。
-- 不在 `Skills 是什么` 或单个 skill 页写死“默认安装清单”；skills 会增长，推荐关系应通过当前 section index、分类页和单个文章维护。
-- 单个 skill 页不重复解释 `Node.js / Git / Homebrew / PowerShell` 等共享环境。共享环境只在常见问题中按需承接，不作为桌面 Agent 的通用前置。
-- 如果用户不知道装什么，agent 应先读当前 Skills 分类和相关文章，再按用户目标决定，而不是凭历史记忆安装旧组合。
+- 删除独立 Skills 栏目、具体 Skill 教程和资源，不迁入其他栏目。
+- 合并并删除 `Agent 基建 / 让 AI 记住工作方法`，不保留第二篇 Skills 教程。
+- 不维护精选榜单、默认安装包、任务分流表或具体 Skill 的安装命令。用户按任务、偏好和所用 Agent 自行选择。
+- 首次使用先完成任务，不要求安装 Skill。只有需要复用特定流程时再了解 Skills。
+- 安装与管理方式以所用 Agent 和 Skill 来源的说明为准，不假定所有客户端共用目录或命令。
+- `Node.js / PowerShell` 等环境说明只在常见问题中按需承接。
+- Skills 不自动提供工具、外部服务凭证或额外权限。Magpie 模型接入与 Skill 安装保持区分。
+
+给 Agent 的链接使用 `/docs/<section>/<slug>.md?locale=...` 或 `/llms.txt`，不要使用普通 SPA 页面作为唯一入口。
 
 ### 常见问题与收录边界
 
 `常见问题` 不单独占一级栏目，作为 `开始使用` 下的一篇二级页面，英文名为 `FAQ`，路由为 `/docs/start/common-errors`。接入报错、Node.js 和 Windows PowerShell 合在这一页，按标题查阅，不再拆独立环境页。开始使用保留原有五篇文章和这篇常见问题，导航平铺。Node.js 和终端只在实际需要时查阅，不是 Magpie 或桌面 Agent 的安装前置。
 
-删除独立的工具栏目及其全部正文和资源，不搬到 Skills。Skills 不再收录 DBSkill。同步删除推荐、示例和提示词里的相关入口，不以其他不等价能力替换。
+删除独立的工具和 Skills 栏目及其全部正文和资源。同步删除推荐、示例和提示词里的相关入口，不以其他不等价能力替换。
 
-原 `tools`、`environment` 和 `troubleshoot` 路径硬切删除，不保留兼容入口或重定向。
+原 `tools`、`skills`、`environment`、`troubleshoot` 与 `agent-memory/remember-skills` 路径硬切删除，不保留兼容入口或重定向。
 
 ### 开始使用、AGENTS 和 Agent 基建
 
@@ -109,15 +99,15 @@ OpenCode、Pi、Kimi Code、Grok Build 和 Cursor 合并到“其他 Agents”�
 
 不再维护具体模型版本的独立使用页或完整型号清单。模型选择以当前分组返回的目录为准，不因型号迭代新增入门文章。
 
-取消独立的“Agent 能力是怎么扩展的”文章。稳定的 Skill、MCP、Plugin 与权限关系只在已有工作方法页面简要说明，不作为上手前置。
+取消独立的“Agent 能力是怎么扩展的”文章。稳定的 Skill、MCP 与权限关系只在核心概念的 Skills 页面简要说明，不作为上手前置。
 
 `Agent 基建 / 强模型的项目规则怎么写` 负责审计 `AGENTS.md`、`CLAUDE.md` 和常驻 Skills。
 它不重复基础规则文件和 Skills 教程，只讲强模型下哪些规则应保留、哪些规则需要用同一组
 代表性任务逐批删减。
 
-图片任务通过已有的 `SorryCode Image2` Skill 承接。删除 GPT Image 2 / 2.5、Grok 图片与视频的独立模型/API 教程，引用同时改为可执行的任务入口或删除。不把原始 API 说明搬到 Skills 凑篇数。
+不维护 GPT Image、Grok 图片与视频的独立模型/API 教程，也不再指定某个 Skill 承接图片或办公任务。删除相关推荐，不把原始 API 说明搬到概念页。
 
-Magpie 接入不等于 Agent 自动获得生图或视频工具。Skills 需要的凭证、工具与权限仍须单独满足；没有稳定任务入口的能力不进入默认推荐。
+Magpie 接入不等于 Agent 自动获得生图或视频工具。所需凭证、工具与权限仍须单独满足。
 
 更多素材生产和视觉资产工作流仍可指向 `sorryassets.com`，但不在 SorryCode 文档里展开其私有模型、价格或接口。
 
@@ -130,7 +120,7 @@ Magpie 接入不等于 Agent 自动获得生图或视频工具。Skills 需要�
 - Magpie 按 SorryCode 分组分别添加供应商和对应 Key。同一兼容分组可供多个 Agent 使用，不要把“需要匹配分组”写成“每个 Agent 必须创建专用 Key”。
 - REST API 示例直接在请求头中提供可替换的分组 Key 占位值，不要求用户先设置通用环境变量。
 - 默认由 Magpie 管理 Agent 的接入配置。控制台已有接入工具不在本轮删除，但不再作为公开入门文档的竞争默认路线。
-- 只有具体 Skill 确实依赖环境变量时，才在该 Skill 页面公开变量名，并区分 Skill 凭证与 Magpie 接入。手动 API 排障示例使用 Bearer Token 占位值，不引入通用密钥环境变量。
+- 不在 Skills 概念页维护具体服务的凭证变量。手动 API 排障示例使用 Bearer Token 占位值，不引入通用密钥环境变量。
 - 手动 API 排障示例使用当前分组返回的准确模型 ID，不把 Magpie 本地生成的供应商前缀拼进直连请求。
 - 不复制持续变化的完整模型目录。模型 ID、能力和思考档位以当前分组与实际请求验证为准。
 
@@ -172,14 +162,4 @@ GUI 教程只能承诺 Agent 完成可以安全执行的步骤，并列出需要
 
 ## 收录原则
 
-公开 docs 不是 marketplace。只收录我们读过、试过、愿意解释的工具或 skill。
-
-收录一个社区 skill 前，至少确认：
-
-- 上游是公开可访问的仓库。
-- 安装命令能被解释清楚。
-- 站内第一句示例能稳定触发。
-- 页面能讲清适合和不适合的场景。
-- 上游明显破坏时，SorryCode 能更新说明、隐藏入口或切换到稳定版本。
-
-站内不要搬运上游完整 README。站内负责选择、安装、触发、边界和最近验证口径；上游负责最新能力细节。
+公开 docs 只负责 SorryCode 接入和必要概念，不做工具或 Skills marketplace。不按个人偏好扩充推荐页，不搬运第三方 README。第三方能力的安装、兼容性和最新说明由其来源维护。

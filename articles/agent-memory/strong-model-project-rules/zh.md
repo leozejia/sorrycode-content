@@ -14,7 +14,7 @@ section_order: 15
 
 这不意味着项目规则越少越好。目标是最小正确设计：只保留模型无法从现场可靠推断、又会直接影响正确性的内容。
 
-第一次写规则文件，先看[让 AI 记住项目规则](/docs/agent-memory/remember-rules)。需要了解 Skill 的结构和用途，先看[让 AI 记住工作方法](/docs/agent-memory/remember-skills)。这页只讲模型升级后怎样审计已有规则。
+第一次写规则文件，先看[让 AI 记住项目规则](/docs/agent-memory/remember-rules)。需要了解 Skill 的用途，先看[Skills 是什么](/docs/concepts/skills)。这页只讲模型升级后怎样审计已有规则。
 
 <h2 id="keep">哪些内容应该保留</h2>
 

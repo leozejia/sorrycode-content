@@ -83,7 +83,7 @@ Turn repetitive workflows into Skills, teaching AI how to do specific types of t
 - Capabilities you want to reuse across projects
 
 **How to do it:**  
-See [Make AI Remember Work Methods](/docs/agent-memory/remember-skills)
+See [Core Concepts / What Are Skills](/docs/concepts/skills)
 
 ---
 
@@ -116,9 +116,8 @@ See [Make AI Remember Work Methods](/docs/agent-memory/remember-skills)
            ↓ invokes
 ┌─────────────────────────────────────────┐
 │      Skill Memory (Work Methods)         │
-│   SorryCode Image2: "How to generate and │
-│                      save images"        │
-│   Waza: "How to review code"             │
+│   Image workflow: check and save output  │
+│   Review workflow: inspect and report    │
 │   → Triggered when needed                │
 └─────────────────────────────────────────┘
 ```
@@ -145,8 +144,7 @@ When you find yourself repeatedly explaining the same rules:
 
 When you find yourself repeatedly doing the same type of task:
 
-1. Find an existing Skill (see [Skills / Featured Skills](/docs/skills/featured-skills))
-2. Or make your own (see [Make AI Remember Work Methods](/docs/agent-memory/remember-skills))
+Choose an existing Skill for your tasks or package your own process. See [Core Concepts / What Are Skills](/docs/concepts/skills) for usage. You do not need a recommended starter bundle.
 
 <h2 id="not-perfect">AI Memory Is Not Perfect</h2>
 
@@ -181,4 +179,4 @@ Which content should be cleared?
 
 - Developers → [Make AI Remember Project Rules](/docs/agent-memory/remember-rules)
 - Designers → [Make AI Remember Your Design Style](/docs/agent-memory/remember-design)
-- Want to make your own Skill → [Make AI Remember Work Methods](/docs/agent-memory/remember-skills)
+- Want to understand or make a Skill → [What Are Skills](/docs/concepts/skills)

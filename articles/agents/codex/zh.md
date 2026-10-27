@@ -30,4 +30,4 @@ section_order: 10
 先看看这个文件夹里有什么，告诉我哪些文件值得先读。不要修改或删除文件。
 ```
 
-确认它能读取正确的目录并回复，再开始实际工作。需要做图片、文档等任务时，继续看 [Skills](/docs/skills/featured-skills)；接入报错看[常见问题](/docs/start/common-errors)。
+确认它能读取正确的目录并回复，再开始实际工作。需要复用特定工作方法时，再了解 [Skills](/docs/concepts/skills)，不必先安装；接入报错看[常见问题](/docs/start/common-errors)。

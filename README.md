@@ -12,7 +12,6 @@ docs/
   information-architecture.md
   operator-restructuring-guide.md
   public-article-assets.md
-  presentation-skills-strategy.md
 articles/
   agents/
     index.json
@@ -33,10 +32,10 @@ This repository can carry public docs for these sections:
 - `start`
 - `concepts`
 - `agents`
-- `skills`
 - `agent-memory`
 
 `start` includes a `常见问题 / FAQ` page for connection errors and optional environment help.
+`concepts` includes one Skills explanation. There is no separate Skills catalog or recommendation list.
 
 The main `sorrycode` repository still owns routing, backend caching, asset proxying, fallback behavior, sanitization, Markdown rendering, and release experience.
 
@@ -58,7 +57,6 @@ For major content restructuring, read these first:
 1. `docs/operator-restructuring-guide.md`
 2. `docs/information-architecture.md`
 3. If adding covers or article screenshots, read `docs/public-article-assets.md`
-4. Any relevant topic strategy, such as `docs/presentation-skills-strategy.md`
 
 If a public name, slug, directory path, category, or route is conceptually wrong, restructure it with a hard cut. Do not keep old paths just for compatibility.
 

@@ -98,8 +98,7 @@ SorryCode 不是要替代所有订阅。
 你可以按任务选择入口：
 
 - 默认接入：先看 [Magpie](/docs/agents/magpie)，不知道选哪个 Agent 就用 [Codex](/docs/agents/codex)
-- 图片任务：先看 [SorryCode Image2](/docs/skills/sorrycode-image2)
-- 办公文档：看 [Skills / 办公文档](/docs/skills/office-docs)
+- 需要复用特定工作方法：了解 [Skills](/docs/concepts/skills)，按自己的任务和偏好选择
 
 ### 更适合试错
 

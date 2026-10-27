@@ -32,4 +32,4 @@ section_order: 1
 
 已经习惯其他工具，也可以用 [Claude Code](/docs/agents/claude-code)、[DeepSeek Harness](/docs/agents/dsh)、[WorkBuddy](/docs/agents/workbuddy) 或[其他 Agents](/docs/agents/other-agents)。它们都从 Magpie 的对应入口接入，不用再学一套配置。
 
-能正常回复后，再按任务安装 [Skills](/docs/skills/featured-skills)。接入失败看[常见问题](/docs/start/common-errors)；只有需要手动排查 API 时才看[首条请求](/docs/start/first-request)。
+能正常回复后，就可以开始自己的任务，不必先装 Skill。需要复用工作方法时，再了解 [Skills](/docs/concepts/skills)。接入失败看[常见问题](/docs/start/common-errors)；只有需要手动排查 API 时才看[首条请求](/docs/start/first-request)。

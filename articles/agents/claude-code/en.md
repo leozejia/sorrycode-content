@@ -38,4 +38,4 @@ Send your first message:
 Explain what this folder is for and which files matter most. Do not modify anything.
 ```
 
-For more task capabilities, see [Skills](/docs/skills/featured-skills). For connection errors, see [Common Questions](/docs/start/common-errors).
+For reusable working methods, read about [Skills](/docs/concepts/skills) and choose when needed. For connection errors, see [Common Questions](/docs/start/common-errors).

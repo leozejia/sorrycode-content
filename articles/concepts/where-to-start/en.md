@@ -1,7 +1,7 @@
 ---
 title: "Where to Start"
 slug: where-to-start
-order: 8
+order: 9
 summary: All the concepts are covered. Now three paths: just curious — try web chat AI first. Have a specific task — install an Agent and complete one deliverable. Ready to go deep — create your project rules file. Completing one small task beats reading ten tutorials.
 section: concepts
 section_title: Core Concepts
@@ -10,7 +10,7 @@ section_order: 5
 
 # Where to Start
 
-You've read the previous seven chapters. By now you know:
+If you have read the earlier concepts, you now know:
 
 - AI is an intern who has read every book in the world but has a terrible memory
 - Three breakthroughs turned it from a "chat toy" into a "production tool"
@@ -55,7 +55,7 @@ Nothing to install.
 
 You have a specific task you want AI to help with. Organizing reports. Writing documents. Making slides. Analyzing data.
 
-**You need the full pipeline: install workbench → install skill → complete one task.**
+**Install a workbench, then complete one small task.**
 
 **Step 1: Pick a workbench**
 
@@ -67,24 +67,15 @@ Not sure → install Codex, currently the simplest beginner entry
 
 Configure models in [Magpie](/docs/agents/magpie), then install [Codex](/docs/agents/codex). If you already use [Claude Code](/docs/agents/claude-code), you can keep using it.
 
-**Step 2: Install a Skill**
-
-A Skill is a capability pack for your Agent. Install the one matching your task:
-
-| What you want to do | Which Skill to install |
-| --- | --- |
-| Process Word / Excel / PPT / PDF | [Office Docs](/docs/skills/office-docs) |
-| Generate images, posters, covers | [SorryCode Image2](/docs/skills/sorrycode-image2) |
-| Create one-pagers, resumes, portfolios | [Kami](/docs/skills/kami) |
-| Make web-based slide decks | [Guizang PPT Skill](/docs/skills/magazine-web-ppt) |
-
-**Step 3: Complete one task**
+**Step 2: Complete one task**
 
 Don't start with something complex. Pick something small and take it end to end.
 
 Example: "Take this Excel report, aggregate the data by month, generate three trend charts, and output a PDF."
 
 Copy this sentence to your Agent. It will read the file, propose a plan, wait for your confirmation, then execute.
+
+You do not need to install a Skill first. Learn about [Skills](/docs/concepts/skills) when existing capabilities are not enough or you want to reuse a process, then choose for your own needs.
 
 ```text
 Path B goal: install a workbench, complete your first task.
@@ -133,13 +124,13 @@ Whatever path you choose, remember three "don'ts":
    Pick one workbench. Install it. Complete one task. Then consider switching.
 
 3. Don't try to learn everything at once.
-   You don't need to master all seven chapters today.
+   You don't need to master every concept today.
    Learn as you go. Route first, then load.
 ```
 
 <h2 id="recap">What This Book Covered</h2>
 
-Seven chapters. One theme:
+The earlier concepts share one theme:
 
 ```text
 How to train "an intern who has read every book in the world
@@ -149,9 +140,9 @@ but has a terrible memory" into an "employee" who can do work for you.
 The path was:
 
 ```text
-Understand it (Chapters 1-3)
-→ Command it (Chapters 4-6)
-→ Choose it (Chapter 7)
+Understand it
+→ Command it
+→ Choose a workbench and the capabilities you need
 → Start using it (You are here)
 ```
 

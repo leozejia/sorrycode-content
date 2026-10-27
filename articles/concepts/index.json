@@ -49,6 +49,7 @@
         },
         "items": [
           "tools-models-platform",
+          "skills",
           "where-to-start"
         ],
         "description": {
@@ -66,6 +67,7 @@
     "what-is-context",
     "calibration",
     "tools-models-platform",
+    "skills",
     "where-to-start"
   ]
 }

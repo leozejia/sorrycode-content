@@ -16,7 +16,7 @@
 - `codex`、`claude-code`、`dsh`、`workbuddy`：安装、在 Magpie 启用、首次任务。
 - `other-agents`：OpenCode、Pi、Kimi Code、Grok Build、Cursor 的官方入口与必要边界。
 
-不新增 models 栏目或型号清单。不再维护 Fable、Agent 扩展机制和四篇媒体 API 独立教程，Claude Desktop Gateway 路线也退出默认推荐。图片任务由现有 SorryCode Image2 Skill 承接，Skill 所需凭证不由 Magpie 接入代替。
+不新增 models 栏目或型号清单。不再维护 Fable、Agent 扩展机制和四篇媒体 API 独立教程，Claude Desktop Gateway 路线也退出默认推荐。不指定具体 Skill 承接图片或办公任务；Skills 只在核心概念保留一篇，所需工具、凭证和权限不由 Magpie 接入代替。
 
 ## 维护与验证
 
