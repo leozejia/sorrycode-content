@@ -141,8 +141,8 @@ There are tutorials online showing how to run GPT through Claude Code, or DeepSe
 | Where you are now | Recommendation |
 | --- | --- |
 | I know nothing | Start with [What AI Actually Is](/docs/concepts/what-is-ai) |
-| I want to try but do not know what to install | Configure [Magpie](/docs/agents/magpie), then install [Codex](/docs/agents/codex) |
-| I already have a preferred tool | Find its entry in [AGENTS](/docs/agents/other-agents) |
+| I want to try but do not know what to install | Configure [Magpie](/docs/agents/magpie), then install [Codex](/docs/agents/agent-setup) |
+| I already have a preferred tool | Find its entry in [AGENTS](/docs/agents/agent-setup) |
 | I want to use several models | Add a provider for each group in Magpie, then choose models |
 | I'm already using it, want to manage it better | [Agent Advanced](/docs/agent-memory/overview) |
 

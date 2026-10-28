@@ -32,7 +32,7 @@ section_order: 10
 
 ## 3. 在 Agent 面板启用模型
 
-先安装你要使用的 Agent；不确定选什么就用 [Codex](/docs/agents/codex)。打开 Agent 面板，在目标 Agent 上启用「接入」，再从模型列表中选择刚才添加的供应商和模型。截图示例展示了多个 Agent 使用不同模型的配置。
+先安装你要使用的 Agent；不确定选什么就用 [Codex](/docs/agents/agent-setup)。打开 Agent 面板，在目标 Agent 上启用「接入」，再从模型列表中选择刚才添加的供应商和模型。截图示例展示了多个 Agent 使用不同模型的配置。
 
 ![在 Agent 面板启用供应商和模型](./agent-models.png)
 
@@ -40,4 +40,4 @@ section_order: 10
 
 还没有 SorryCode API Key？请先看[创建 API Key](/docs/start/create-api-key)。
 
-配置后重新打开目标 Agent，使用期间保持 Magpie 运行。其他选择见 [Claude Code](/docs/agents/claude-code)、[DeepSeek Harness](/docs/agents/dsh)、[WorkBuddy](/docs/agents/workbuddy) 和[其他 Agents](/docs/agents/other-agents)。
+配置后重新打开目标 Agent，使用期间保持 Magpie 运行。其他工具的安装与启动步骤见[安装和使用 Agent](/docs/agents/agent-setup)；Cursor 编辑器见[手动配置](/docs/agents/cursor)。

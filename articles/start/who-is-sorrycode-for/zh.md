@@ -97,7 +97,7 @@ SorryCode 不是要替代所有订阅。
 
 你可以按任务选择入口：
 
-- 默认接入：先看 [Magpie](/docs/agents/magpie)，不知道选哪个 Agent 就用 [Codex](/docs/agents/codex)
+- 默认接入：先看 [Magpie](/docs/agents/magpie)，不知道选哪个 Agent 就用 [Codex](/docs/agents/agent-setup)
 - 需要复用特定工作方法：了解 [Skills](/docs/concepts/skills)，按自己的任务和偏好选择
 
 ### 更适合试错
@@ -121,4 +121,4 @@ API Key = 让工具使用你 SorryCode 余额的钥匙
 - 不知道 AI 钱花在哪里：看 [开始使用 / AI 成本怎么计算](/docs/start/ai-cost-basics)
 - 不知道工具和模型怎么分：看 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)
 - 已经决定开始：看 [开始使用 / 创建 API Key](/docs/start/create-api-key)
-- 想直接配置：看 [Magpie](/docs/agents/magpie)，不确定用什么就选 [Codex](/docs/agents/codex)
+- 想直接配置：看 [Magpie](/docs/agents/magpie)，不确定用什么就选 [Codex](/docs/agents/agent-setup)

@@ -65,7 +65,7 @@ C. 我想系统性地把 AI 用起来，当日常工具
 不确定 → 先装 Codex，当前最简单的新手入口
 ```
 
-先按 [Magpie](/docs/agents/magpie)配置模型，再安装 [Codex](/docs/agents/codex) 开始使用；已经习惯 [Claude Code](/docs/agents/claude-code) 时也可以继续用。
+先按 [Magpie](/docs/agents/magpie)配置模型，再安装 [Codex](/docs/agents/agent-setup) 开始使用；已经习惯 [Claude Code](/docs/agents/agent-setup) 时也可以继续用。
 
 **第二步：跑通一个任务**
 

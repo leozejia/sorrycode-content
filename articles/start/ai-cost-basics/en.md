@@ -253,5 +253,4 @@ The multiplier is a price multiplier, not a speed multiplier.
 - Unsure whether SorryCode fits you: [Getting Started / Who SorryCode Is For](/docs/start/who-is-sorrycode-for)
 - Unsure how tools and models differ: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - Ready to start: [Getting Started / Create API Key](/docs/start/create-api-key)
-- GPT path: [AGENTS / Codex](/docs/agents/codex)
-- Claude path: [AGENTS / Claude Code](/docs/agents/claude-code)
+- To install a tool, see [Install and Use an Agent](/docs/agents/agent-setup), then choose a model in Magpie

@@ -216,4 +216,4 @@ Prompt 不是咒语，是工作指令。
 
 答案在下一章：[AI 的"记性"怎么管](/docs/concepts/what-is-context)
 
-如果你想直接开始实践：[AGENTS / Codex](/docs/agents/codex)
+如果你想直接开始实践：[AGENTS / Codex](/docs/agents/agent-setup)

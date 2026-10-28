@@ -24,12 +24,12 @@ section_order: 1
 
 ## 3. 安装 Agent，开始任务
 
-不确定选什么，就按 [Codex](/docs/agents/codex)安装桌面端，在 Magpie 的 Agent 面板启用，然后打开一个文件夹试用：
+不确定选什么，就按 [Codex](/docs/agents/agent-setup)安装桌面端，在 Magpie 的 Agent 面板启用，然后打开一个文件夹试用：
 
 ```text
 告诉我这个文件夹里有哪些主要文件。先只读取，不修改内容。
 ```
 
-已经习惯其他工具，也可以用 [Claude Code](/docs/agents/claude-code)、[DeepSeek Harness](/docs/agents/dsh)、[WorkBuddy](/docs/agents/workbuddy) 或[其他 Agents](/docs/agents/other-agents)。它们都从 Magpie 的对应入口接入，不用再学一套配置。
+已经习惯其他工具，可以查看[安装和使用 Agent](/docs/agents/agent-setup)。Magpie 是否支持对应客户端，以当前面板显示为准；Cursor 编辑器另见[手动配置](/docs/agents/cursor)。
 
 能正常回复后，就可以开始自己的任务，不必先装 Skill。需要复用工作方法时，再了解 [Skills](/docs/concepts/skills)。接入失败看[常见问题](/docs/start/common-errors)；只有需要手动排查 API 时才看[首条请求](/docs/start/first-request)。

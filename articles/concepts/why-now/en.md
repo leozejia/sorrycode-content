@@ -218,4 +218,4 @@ The answer is in the next chapter: [Agent: From Chat to Work](/docs/concepts/wha
 
 If you want to understand how these changes affect cost: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)
 
-If you want to start using an Agent right now: [AGENTS / Codex](/docs/agents/codex)
+If you want to start using an Agent right now: [AGENTS / Codex](/docs/agents/agent-setup)

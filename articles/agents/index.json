@@ -5,17 +5,14 @@
     "zh": "AGENTS",
     "en": "AGENTS"
   },
-  "updatedAt": "2026-10-27",
+  "updatedAt": "2026-10-28",
   "navigation": {
     "style": "flat",
     "groups": []
   },
   "articles": [
     "magpie",
-    "codex",
-    "claude-code",
-    "dsh",
-    "workbuddy",
-    "other-agents"
+    "agent-setup",
+    "cursor"
   ]
 }

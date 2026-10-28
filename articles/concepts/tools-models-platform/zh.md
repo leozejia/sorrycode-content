@@ -141,8 +141,8 @@ OpenAI 有 Codex。Anthropic 有 Claude Code。Google 有 Gemini 的各种集成
 | 你现在的状态 | 建议 |
 | --- | --- |
 | 我什么都不知道 | 先看 [AI 到底是什么](/docs/concepts/what-is-ai) |
-| 我想试试，不知道装什么 | 先用 [Magpie](/docs/agents/magpie)配置，再安装 [Codex](/docs/agents/codex) |
-| 我已经有习惯的工具 | 在 [AGENTS](/docs/agents/other-agents) 中找对应入口 |
+| 我想试试，不知道装什么 | 先用 [Magpie](/docs/agents/magpie)配置，再安装 [Codex](/docs/agents/agent-setup) |
+| 我已经有习惯的工具 | 在 [AGENTS](/docs/agents/agent-setup) 中找对应入口 |
 | 我想一次接入多个模型 | 在 Magpie 中按分组添加供应商，再选择模型 |
 | 我已经在用了，想管得更好 | [Agent 进阶](/docs/agent-memory/overview) |
 

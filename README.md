@@ -139,6 +139,6 @@ For grouped navigation, `navigation.groups[].items` is the rendered article orde
     "style": "flat",
     "groups": []
   },
-  "articles": ["magpie", "codex", "claude-code", "dsh", "workbuddy", "other-agents"]
+  "articles": ["magpie", "agent-setup", "cursor"]
 }
 ```

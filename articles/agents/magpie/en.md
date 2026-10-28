@@ -32,7 +32,7 @@ The example uses separate entries named `SorryCode GPT`, `SorryCode Claude`, `So
 
 ## 3. Enable a model in the Agent panel
 
-Install the agent you want to use first. If unsure, choose [Codex](/docs/agents/codex). Open the Agent panel and turn on **Connect** for the agent you want to configure. Then choose a provider and model you added. The screenshot shows several agents configured with different models.
+Install the agent you want to use first. If unsure, choose [Codex](/docs/agents/agent-setup). Open the Agent panel and turn on **Connect** for the agent you want to configure. Then choose a provider and model you added. The screenshot shows several agents configured with different models.
 
 ![Enable providers and models in the Agent panel](./agent-models.png)
 
@@ -40,4 +40,4 @@ If the model does not appear in the agent's list, return to Providers, check tha
 
 Need a SorryCode API key? See [Create an API Key](/docs/start/create-api-key).
 
-Reopen the target agent after setup, and keep Magpie running while you use it. Other choices: [Claude Code](/docs/agents/claude-code), [DeepSeek Harness](/docs/agents/dsh), [WorkBuddy](/docs/agents/workbuddy), and [Other Agents](/docs/agents/other-agents).
+Reopen the target agent after setup, and keep Magpie running while you use it. See [Install and Use an Agent](/docs/agents/agent-setup) for other tools, or [manual Cursor setup](/docs/agents/cursor) for the Cursor editor.

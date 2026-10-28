@@ -97,7 +97,7 @@ For example, one for Codex, one for Claude Code, and one for GPT Image 2. They c
 
 Choose by task:
 
-- Default setup: start with [Magpie](/docs/agents/magpie). If unsure which agent to choose, use [Codex](/docs/agents/codex)
+- Default setup: start with [Magpie](/docs/agents/magpie). If unsure which agent to choose, use [Codex](/docs/agents/agent-setup)
 - Reusable working methods: learn about [Skills](/docs/concepts/skills) and choose for your own tasks and preferences
 
 ### Easier experimentation
@@ -119,4 +119,4 @@ You do not need to write API requests on day one. Create a key, then connect you
 - Unsure where AI cost comes from: [Getting Started / How AI Cost Works](/docs/start/ai-cost-basics)
 - Unsure how tools and models differ: [Getting Started / Tools Are Not Models](/docs/concepts/tools-models-platform)
 - Ready to start: [Getting Started / Create API Key](/docs/start/create-api-key)
-- Ready to configure: use [Magpie](/docs/agents/magpie), and choose [Codex](/docs/agents/codex) if unsure
+- Ready to configure: use [Magpie](/docs/agents/magpie), and choose [Codex](/docs/agents/agent-setup) if unsure

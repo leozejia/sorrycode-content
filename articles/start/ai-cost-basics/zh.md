@@ -253,5 +253,4 @@ SorryCode 当前充值口径是：
 - 不知道自己适不适合用 SorryCode：看 [开始使用 / SorryCode 适合谁](/docs/start/who-is-sorrycode-for)
 - 不知道工具和模型怎么分：看 [开始使用 / 工具不是模型](/docs/concepts/tools-models-platform)
 - 想直接开始：看 [开始使用 / 创建 API Key](/docs/start/create-api-key)
-- 想走 GPT 路径：看 [AGENTS / Codex](/docs/agents/codex)
-- 想走 Claude 路径：看 [AGENTS / Claude Code](/docs/agents/claude-code)
+- 安装工具：看 [安装和使用 Agent](/docs/agents/agent-setup)，再在 Magpie 里选择所需模型

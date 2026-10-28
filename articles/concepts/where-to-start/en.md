@@ -65,7 +65,7 @@ Using Claude models → install Claude Code
 Not sure → install Codex, currently the simplest beginner entry
 ```
 
-Configure models in [Magpie](/docs/agents/magpie), then install [Codex](/docs/agents/codex). If you already use [Claude Code](/docs/agents/claude-code), you can keep using it.
+Configure models in [Magpie](/docs/agents/magpie), then install [Codex](/docs/agents/agent-setup). If you already use [Claude Code](/docs/agents/agent-setup), you can keep using it.
 
 **Step 2: Complete one task**
 

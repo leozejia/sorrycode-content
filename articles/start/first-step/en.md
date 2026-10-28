@@ -24,12 +24,12 @@ Start with one group you want to use. You do not need to add every model.
 
 ## 3. Install an agent and start a task
 
-If unsure, follow [Codex](/docs/agents/codex) to install the desktop app, enable it in Magpie's Agent panel, then open a folder and try:
+If unsure, follow [Codex](/docs/agents/agent-setup) to install the desktop app, enable it in Magpie's Agent panel, then open a folder and try:
 
 ```text
 Tell me which files matter most in this folder. Read only; do not modify anything.
 ```
 
-If you already use another tool, choose [Claude Code](/docs/agents/claude-code), [DeepSeek Harness](/docs/agents/dsh), [WorkBuddy](/docs/agents/workbuddy), or [Other Agents](/docs/agents/other-agents). Connect through the matching entry in Magpie instead of learning a separate configuration process.
+If you already use another tool, see [Install and Use an Agent](/docs/agents/agent-setup). Check Magpie's current panel for client support; for the Cursor editor, see [manual setup](/docs/agents/cursor).
 
 Once it replies normally, start your own task. You do not need to install a Skill first. Read about [Skills](/docs/concepts/skills) when you want to reuse a working method. For connection failures, see [Common Questions](/docs/start/common-errors). Use [First Request](/docs/start/first-request) only when you need a manual API check.

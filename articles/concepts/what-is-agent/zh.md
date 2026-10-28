@@ -187,4 +187,4 @@ Agent 很强大，但一个问题是：你怎么让它听懂你的指令？
 下一章：[跟 AI 说话，不是念咒](/docs/concepts/what-is-prompt)
 
 如果你想直接装一个 Agent 试试：
-先按 [Magpie](/docs/agents/magpie)配置模型，不知道选什么就用 [Codex](/docs/agents/codex)。
+先按 [Magpie](/docs/agents/magpie)配置模型，不知道选什么就用 [Codex](/docs/agents/agent-setup)。

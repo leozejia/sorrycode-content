@@ -80,22 +80,13 @@ Skills 只在核心概念中保留一篇 `Skills 是什么`，路径为 `/docs/c
 `工具不是模型` 继续放在核心概念，回答工作台、模型、API Key、Base URL 的关系。
 安装页和首条请求页只负责执行路径，不再承担商业定位或成本科普。
 
-`articles/agents/` 的公开展示名在中英文中均为 `AGENTS`，URL 为 `/docs/agents/*`。导航平铺，不按 OpenAI、Anthropic 等厂商分组。默认六篇：
+`articles/agents/` 的公开展示名在中英文中均为 `AGENTS`，URL 为 `/docs/agents/*`。导航平铺，不按厂商分组：
 
-1. 用 Magpie 配置 SorryCode
-2. Codex
-3. Claude Code
-4. DeepSeek Harness
-5. WorkBuddy
-6. 其他 Agents
+1. 用 Magpie 配置 SorryCode：唯一共享的供应商与模型配置教程。
+2. 安装和使用 Agent：合并 Codex、Claude Code、DeepSeek Harness、WorkBuddy 和其他 Agent 的共同步骤，保留各客户端的安装、启动、选择模型、工作区和权限差异。Magpie 支持与否以当前实际界面为准。
+3. Cursor 手动配置：保留桌面编辑器的独立操作路径，并明确旧路径未在当前版本复测；不将其推及 Cursor CLI 或 Private Inference。
 
-原 `runtime` 栏目硬切删除，不保留旧正文、兼容路由或重定向。
-
-`Magpie` 页面只说明通过图形界面接入 SorryCode 的最短路径：从官网安装、按 SorryCode 模型分组分别添加自定义供应商和对应 API Key、获取模型，然后在 Agent 面板启用。不要在这篇入门文档维护未经当前界面验证的 CLI、场景、账号轮换或工具兼容性说明。
-
-各 Agent 页只保留官方安装入口、在 Magpie 启用、打开工作目录和一个首次任务。Codex、DSH、WorkBuddy 默认走桌面端；Claude Code 按当前官方终端安装方式说明，不混同 Claude Desktop。换模型回 Magpie 操作，不在各页维护手写配置、环境变量或第二套 SorryCode 安装器。
-
-OpenCode、Pi、Kimi Code、Grok Build 和 Cursor 合并到“其他 Agents”，只保留官方下载入口与必要边界。Cursor CLI、普通编辑器和 Cursor Private Inference 必须区分，不把某一种形态的支持推及全部产品。Magpie 不显示或不支持的客户端，不承诺能一键接入。
+原 `runtime` 栏目与合并前的 Agent 独立页面硬切删除，不保留旧正文、兼容路由或重定向。不要为了合并而丢掉不同客户端必要的手动步骤，也不要重复维护 Magpie 供应商配置。未实测的备用配置不得宣称可用。
 
 不再维护具体模型版本的独立使用页或完整型号清单。模型选择以当前分组返回的目录为准，不因型号迭代新增入门文章。
 

@@ -217,4 +217,4 @@ Why do even clear instructions sometimes fail after a long conversation?
 
 The answer is in the next chapter: [How to Manage AI's Memory](/docs/concepts/what-is-context)
 
-If you want to practice right now: [AGENTS / Codex](/docs/agents/codex)
+If you want to practice right now: [AGENTS / Codex](/docs/agents/agent-setup)
