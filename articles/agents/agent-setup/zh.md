@@ -17,7 +17,7 @@ section_order: 10
 | Agent | 安装和启动 | 适合什么场景 |
 | --- | --- | --- |
 | Codex | 下载 [Codex 桌面端](https://learn.chatgpt.com/docs/app)，在应用内进入 Codex | 文件、代码和项目任务 |
-| Claude Code | 按[官方说明](https://code.claude.com/docs/en/overview)安装；在工作文件夹打开终端，运行 `claude` | 终端任务，注意它不是 Claude Desktop |
+| Claude Code | 下载 [Claude 桌面端](https://claude.com/download)，打开 Code；也可以按[官方说明](https://code.claude.com/docs/en/overview)安装终端版 | 文件、代码和项目任务 |
 | DeepSeek Harness | 从[官网](https://www.deepseek.com/harness/)下载桌面版并安装 | 桌面文件和项目任务 |
 | WorkBuddy | 从[官网](https://www.workbuddy.cn/)下载安装，按提示登录 | 文档、表格和本地文件 |
 | OpenCode、Pi、Kimi Code、Grok Build 等 | 从各自的官方来源安装，按实际版本启动 | 已经熟悉这些工具的用户 |
@@ -30,9 +30,9 @@ section_order: 10
 2. 在 Magpie 的 Agent 面板找到已安装的工具，打开「接入」，选择供应商和模型。
 3. 重新打开该工具，并保持 Magpie 运行。如果没有显示，先检查是否安装了对应客户端，再用面板中的重新检测；以当前版本的实际支持为准。
 
-Codex 桌面端要完整退出后重新打开。WorkBuddy 和 WorkBuddy AI 是不同客户端，选择与你安装的版本相符的入口；在 WorkBuddy 的模型选择器中选择刚配置的模型。DSH 如输入框不可用，先选择模型和工作区。Claude Code 在终端执行 `claude`；Windows 请按官方说明选择对应的安装命令。
+Codex 桌面端要完整退出后重新打开。WorkBuddy 在应用的模型选择器中选择刚配置的模型。DSH 如输入框不可用，先选择模型和工作区。使用 Claude Code 终端版时，在工作文件夹中运行 `claude`。
 
-Claude Desktop 与 Claude Code 是不同客户端，按 Magpie 面板中对应入口操作，不要混用配置。Cursor 编辑器不在这条默认路径中，请看 [Cursor 手动配置](/docs/agents/cursor)。
+Cursor 编辑器不在这条默认路径中，请看 [Cursor 手动配置](/docs/agents/cursor)。
 
 ## 3. 开始第一个任务
 

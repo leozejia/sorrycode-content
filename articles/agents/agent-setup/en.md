@@ -17,9 +17,9 @@ Choose one tool. If you are unsure, start with Codex. The table keeps the instal
 | Agent | Install and start | When to use it |
 | --- | --- | --- |
 | Codex | Download the [Codex desktop app](https://learn.chatgpt.com/docs/app) and open Codex in the app | Files, code, and project tasks |
-| Claude Code | Follow the [official instructions](https://code.claude.com/docs/en/overview); open a terminal in your working folder and run `claude` | Terminal tasks; this is not Claude Desktop |
+| Claude Code | Download the [Claude desktop app](https://claude.com/download) and open Code, or follow the [official instructions](https://code.claude.com/docs/en/overview) to install the terminal version | Files, code, and project tasks |
 | DeepSeek Harness | Download and install the desktop app from the [official site](https://www.deepseek.com/harness/) | Desktop file and project tasks |
-| WorkBuddy | Download and install it from the [official site](https://www.workbuddy.cn/), then sign in as prompted | Documents, spreadsheets, and local files |
+| WorkBuddy | Download and install it from the [official site](https://www.workbuddy.ai/), then sign in as prompted | Documents, spreadsheets, and local files |
 | OpenCode, Pi, Kimi Code, Grok Build, and others | Install from their official sources and start the version you installed | Users already familiar with these tools |
 
 Other official sources: [OpenCode](https://opencode.ai/download), [Pi](https://pi.dev/), [Kimi Code](https://www.kimi.com/code/docs/kimi-code-cli/guides/getting-started.html), and [Grok Build](https://x.ai/cli/install.sh). If you cannot open a terminal, see [Windows PowerShell](/docs/start/common-errors#windows-powershell).
@@ -30,9 +30,9 @@ Other official sources: [OpenCode](https://opencode.ai/download), [Pi](https://p
 2. Find the installed tool in Magpie's Agent panel, turn on **Connect**, and choose a provider and model.
 3. Reopen the tool and keep Magpie running. If it does not appear, check that the matching client is installed and use the panel's detection button. Support depends on the current version.
 
-Quit Codex desktop completely before reopening it. WorkBuddy and WorkBuddy AI are different clients; select the entry matching your installation, then select the configured model in WorkBuddy's model picker. If DSH's input is unavailable, select a model and workspace first. For Claude Code, run `claude` in a terminal; on Windows, use the appropriate installation command from its official instructions.
+Quit Codex desktop completely before reopening it. In WorkBuddy, select the configured model in the app's model picker. If DSH's input is unavailable, select a model and workspace first. For the terminal version of Claude Code, run `claude` from your working folder.
 
-Claude Desktop and Claude Code are different clients. Use the matching entry in Magpie rather than mixing their configurations. The Cursor editor is not part of this default path; see [manual Cursor setup](/docs/agents/cursor).
+The Cursor editor is not part of this default path; see [manual Cursor setup](/docs/agents/cursor).
 
 ## 3. Try Your First Task
 
